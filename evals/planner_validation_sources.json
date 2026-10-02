@@ -1,0 +1,223 @@
+{
+  "V01": [
+    {
+      "label": "FY2024",
+      "ticker": "ADBE",
+      "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000004/adbe-20241129.htm",
+      "context": {
+        "start": "2023-12-02",
+        "end": "2024-11-29",
+        "accn": "0000796343-25-000004",
+        "fy": 2024,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2025-01-13"
+      },
+      "basis": "Exact public SEC duration context; selected independently of FiscalCalendar."
+    }
+  ],
+  "V02": [
+    {
+      "label": "Q2 FY2025",
+      "ticker": "ADBE",
+      "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000073/adbe-20250530.htm",
+      "context": {
+        "start": "2025-03-01",
+        "end": "2025-05-30",
+        "accn": "0000796343-25-000073",
+        "fy": 2025,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2025-06-25"
+      },
+      "basis": "Exact public SEC duration context; selected independently of FiscalCalendar."
+    }
+  ],
+  "V03": [
+    {
+      "label": "6M FY2025",
+      "ticker": "INTU",
+      "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000015/intu-20250131.htm",
+      "context": {
+        "start": "2024-08-01",
+        "end": "2025-01-31",
+        "accn": "0000896878-25-000015",
+        "fy": 2025,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2025-02-25"
+      },
+      "basis": "Exact public SEC duration context; selected independently of FiscalCalendar."
+    }
+  ],
+  "V04": [
+    {
+      "label": "Q2 FY2025",
+      "ticker": "INTU",
+      "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000015/intu-20250131.htm",
+      "context": {
+        "start": "2024-11-01",
+        "end": "2025-01-31",
+        "accn": "0000896878-25-000015",
+        "fy": 2025,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2025-02-25"
+      },
+      "basis": "Exact public SEC duration context; selected independently of FiscalCalendar."
+    }
+  ],
+  "V05": [
+    {
+      "label": "FY2024",
+      "ticker": "HD",
+      "url": "https://www.sec.gov/Archives/edgar/data/354950/000035495025000085/hd-20250202.htm",
+      "context": {
+        "start": "2024-01-29",
+        "end": "2025-02-02",
+        "accn": "0000354950-25-000085",
+        "fy": 2024,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2025-03-21"
+      },
+      "basis": "Exact public SEC duration context; selected independently of FiscalCalendar."
+    }
+  ],
+  "V06": [
+    {
+      "label": "Q2 2025",
+      "ticker": "HD",
+      "url": "https://www.sec.gov/Archives/edgar/data/354950/000035495025000217/hd-20250803.htm",
+      "context": {
+        "start": "2025-05-05",
+        "end": "2025-08-03",
+        "accn": "0000354950-25-000217",
+        "fy": 2025,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2025-08-26"
+      },
+      "basis": "Exact public SEC duration context; selected independently of FiscalCalendar."
+    }
+  ],
+  "V07": [
+    {
+      "label": "Q2 FY2025",
+      "ticker": "PEP",
+      "url": "https://www.sec.gov/Archives/edgar/data/77476/000007747625000044/pep-20250614.htm",
+      "context": {
+        "start": "2025-03-23",
+        "end": "2025-06-14",
+        "accn": "0000077476-25-000044",
+        "fy": 2025,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2025-07-17"
+      },
+      "basis": "Exact public SEC duration context; selected independently of FiscalCalendar."
+    }
+  ],
+  "V08": [
+    {
+      "label": "FY2024",
+      "ticker": "PEP",
+      "url": "https://www.sec.gov/Archives/edgar/data/77476/000007747625000007/pep-20241228.htm",
+      "context": {
+        "start": "2023-12-31",
+        "end": "2024-12-28",
+        "accn": "0000077476-25-000007",
+        "fy": 2024,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2025-02-04"
+      },
+      "basis": "Exact public SEC duration context; selected independently of FiscalCalendar."
+    }
+  ],
+  "V09": [
+    {
+      "label": "Calendar Q1 2025",
+      "basis": "Explicit calendar dates or inclusive as-of news-window arithmetic; not inferred from the agent."
+    }
+  ],
+  "V10": [
+    {
+      "label": "FY2024",
+      "ticker": "TSM",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000119312525083423/d896993d20f.htm",
+      "context": {
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "accn": "0001193125-25-083423",
+        "fy": 2024,
+        "fp": "FY",
+        "form": "20-F",
+        "filed": "2025-04-17"
+      },
+      "basis": "Exact public SEC duration context; selected independently of FiscalCalendar."
+    }
+  ],
+  "V11": [
+    {
+      "label": "Calendar H1 2024",
+      "basis": "Explicit calendar dates or inclusive as-of news-window arithmetic; not inferred from the agent."
+    }
+  ],
+  "V12": [
+    {
+      "label": "Calendar Q1 2025",
+      "basis": "Explicit calendar dates or inclusive as-of news-window arithmetic; not inferred from the agent."
+    }
+  ],
+  "V13": [
+    {
+      "label": "Q4 FY2027",
+      "ticker": "INTU",
+      "basis": "Future May-July quarter from the submissions July 31 fiscal year end; must be unreported at the as-of date.",
+      "url": "https://data.sec.gov/submissions/CIK0000896878.json"
+    }
+  ],
+  "V14": [
+    {
+      "label": "Q1 FY2025",
+      "ticker": "AAPL",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000008/aapl-20241228.htm",
+      "context": {
+        "start": "2024-09-29",
+        "end": "2024-12-28",
+        "accn": "0000320193-25-000008",
+        "fy": 2025,
+        "fp": "Q1",
+        "form": "10-Q",
+        "filed": "2025-01-31"
+      },
+      "basis": "Exact public SEC duration context; selected independently of FiscalCalendar."
+    }
+  ],
+  "V15": [
+    {
+      "label": "Q3 FY2025",
+      "ticker": "NKE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320187/000032018725000016/nke-20250228.htm",
+      "context": {
+        "start": "2024-12-01",
+        "end": "2025-02-28",
+        "accn": "0000320187-25-000016",
+        "fy": 2025,
+        "fp": "Q3",
+        "form": "10-Q",
+        "filed": "2025-04-03"
+      },
+      "basis": "Exact public SEC duration context; selected independently of FiscalCalendar."
+    }
+  ],
+  "V16": [],
+  "V17": [
+    {
+      "label": "14-day news window",
+      "basis": "Explicit calendar dates or inclusive as-of news-window arithmetic; not inferred from the agent."
+    }
+  ],
+  "V18": []
+}

@@ -21,10 +21,11 @@ class Mentions(Record):
 
 EXTRACT_PROMPT = """Extract the companies being researched from the user question.
 Return one concise company name or ticker for each reporting entity, in order.
+Prefer its widely used stock ticker when confident, otherwise its official name.
 Resolve product/business names to their parent (AWS -> Amazon, Azure -> Microsoft,
 Google Cloud -> Alphabet). Facebook -> Meta Platforms. Do not invent extra companies.
 Prefer the reporting parent over a spin-off when the question asks about its consolidated
-results. 'Honeywell' refers to HON unless the user explicitly asks for Honeywell Aerospace.
+results. Respect an explicitly named spin-off as its own reporting entity.
 Consolidated sales vs sales excluding a division/spin-off is a comparison of the
 parent's reporting bases, not a request to resolve the excluded division separately.
 GOOG and GOOGL are share classes of one Alphabet registrant; return only Alphabet.

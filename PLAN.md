@@ -147,6 +147,17 @@ The baseline comes first so every later change can be measured against the start
 
 See `results/planner_m3_final_verified.md` and `docs/M3.md`. Run `uv run pytest -q` and `uv run python -m evals.planner`.
 
+**M3 hardening (2026-10-02):**
+- Fixed the review's five scope failures with general quarter ordering/list/range rules, explicit calendar windows, fiscal half-years and local company ownership. Unsupported subannual language defers to the existing structured planning call. Company-specific disclosure assertions were removed from the planning prompt.
+- Kept `golden.jsonl` unchanged. Added a separate ownership reference and strict company-period scoring; swapped, missing or duplicate owners fail even when dates match.
+- **80 offline tests pass.** The original 30-question live regression run passes every required check, including **25/25 fixed periods** and **30/30 period ownership**. Final code also reproduces all 29 explicitly bound regression scopes offline; the leadership question uses model fallback.
+- A frozen, source-checked **18-question validation set** covers six new companies, several as-of dates, weekly/53-week calendars, calendar and fiscal scopes, leadership/news, a foreign filer and a private company. Resolution uses the full 10,434-entry SEC ticker snapshot rather than a shortlist. Questions and first-run production hashes were recorded before inference.
+- **First validation: 16/18 all checks; 16/18 company/ownership; 17/18 periods.** Both misses are the same TSMC alias-resolution gap. All 18 researcher, query and budget checks pass, and both required unreported/missing-data flags pass. The confirmation run retains the same two misses. No TSMC-specific production rule was added.
+- This is developer-authored validation, not a blind holdout or user-verified financial-answer set. The first score is preserved. A post-run source review added conservative calendar-clause ownership and multiple-half-year guards; the confirmation is a repeat, not fresh generalization evidence. The validation command deliberately exits 1 for the known misses.
+- The hardening acceptance checks are the five reviewed scope fixes, unchanged original regression performance under stricter ownership scoring, and publication of the frozen validation result including failures. They do not require fitting every new validation case. End-to-end answer accuracy remains M5.
+
+See `results/planner_m3_hardened_regression_final.md`, `results/planner_m3_validation_first.md`, `results/planner_m3_validation_confirmation.md` and `evals/planner_validation_manifest.json`. M4 has not started.
+
 ## M4: Researchers and evidence store
 
 **What we build**

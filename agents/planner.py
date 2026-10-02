@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from datetime import date, timedelta
 from typing import Literal
 
@@ -17,15 +18,17 @@ from agents.calendar import DAY, FiscalCalendar, add_months
 from agents.company import resolve
 from agents.edgar import EdgarClient
 from agents.models import SMALL_MODEL, structured
-from agents.periods import explicit_periods
+from agents.periods import calendar_period, explicit_periods
 from agents.schemas import Brief, EdgarFetch, Period, Record, Researcher, ResearchPlan, Resolution, Search
 
 class PeriodChoice(Record):
     keys: list[str] = Field(default_factory=list)
-    transform: Literal["identity", "union", "ttm", "next_twelve_months", "news_window", "calendar_year", "comp_window"] = "identity"
+    transform: Literal["identity", "union", "ttm", "next_twelve_months", "news_window", "calendar_year", "calendar_quarter", "calendar_half", "comp_window"] = "identity"
     label: str = ""
     year: int | None = None
     days: int | None = None
+    part: int | None = None  # calendar quarter 1..4 or half 1..2
+    tickers: list[str] = Field(default_factory=list)  # calendar windows only
 
 
 class FetchChoice(Record):
@@ -76,22 +79,25 @@ same dates. A nine-month implied total needs a 9M period (not separate quarters)
 'ttm' is twelve months ending at one selected quarter; 'next_twelve_months' is the
 next year after its end (only when the question asks for the forward time window).
 'news_window' uses days=30 for an inclusive last-30-days window; 'calendar_year'
-uses year; 'comp_window' is a 13-week comparison window ending at a selected quarter.
+uses year; 'calendar_quarter'/'calendar_half' use year and part, with tickers naming
+the owners. Calendar requests retain calendar dates even for non-calendar filers;
+their filing fetches may need several fiscal periods. 'comp_window' is a 13-week
+comparison window ending at a selected quarter. Half-year fiscal requests select
+the 6M catalog key; year-first quarter wording has the same meaning as quarter-first.
 Prefer the catalog label. Add 'implied' or 'actual' to aggregate periods where
 needed; add company names to distinguish periods in multi-company comparisons.
 Do not replace fiscal with calendar labels. Calendar-year companies use Qn YYYY.
-Target's FY labels refer to the starting calendar year; Walmart's to the ending year.
-Honeywell's calendar-convention periods are used, not its operational closing date.
-For Walmart U.S. comparable-sales comparisons, use comp_window on the financial
-quarter to obtain its disclosed 13-week window. Target fiscal quarters already
-span 13 weeks; render their year as Qn YYYY. Costco Q4 spans 16 weeks.
+Use the supplied dates and labels rather than assumptions about quarter lengths
+or whether a fiscal year is named for its starting or ending year. Bind each period
+to the company in its local clause; introductions can use a different company order.
 For news/management questions, do not invent a financial period when none is needed.
 Use filing histories to distinguish most recently REPORTED quarters from merely
 ended quarters; earnings may be released via 8-K before a 10-Q appears.
 
 Brief: identify metrics, answer type and potential missing/unreported data. Private
-companies cannot supply a public 10-K; Apple stopped disclosing iPhone unit sales;
-Azure margin/revenue dollars are not separately disclosed. Do not substitute estimates.
+companies may not supply a public 10-K. Requested product or segment metrics may
+not be separately disclosed. Plan to verify availability at the as-of date rather
+than presume a disclosure or substitute estimates or a broader segment.
 
 Choose only necessary researchers from financials, news, company, industry:
 - numerical financial lookup/calculation/reconciliation -> financials
@@ -108,7 +114,8 @@ provide source context. Do not return an empty search list when the budget is po
 The company researcher also covers leadership changes and RPO disclosures. Financials
 must be included when a requested financial metric may be unreported, even if the
 plan expects to abstain. Current cross-company capex guidance needs industry, news,
-and company. For Honeywell consolidated/ex-Aerospace results, include only HON.
+and company. Consolidated vs ex-division results concern the reporting parent;
+do not add an excluded division as another reporting entity.
 Financial information is sourced from SEC first; search supplements the filings.
 Search intents must be short, specific, and factual. Code adds companies, dates
 and fiscal labels. Do not rely on topic=finance being better (it is untested).
@@ -149,10 +156,17 @@ def materialize(choice: PeriodChoice, catalog: dict[str, Period], today: date) -
         if not 1 <= days <= 366:
             raise ValueError("Invalid news window length")
         return Period(label=choice.label or f"{days}-day news window", start=today - timedelta(days=days-1), end=today)
-    if choice.transform == "calendar_year":
+    if choice.transform in ("calendar_year", "calendar_quarter", "calendar_half"):
         if not choice.year:
             raise ValueError("A calendar-year period needs its year")
-        return Period(label=choice.label or f"Calendar {choice.year}", start=date(choice.year, 1, 1), end=date(choice.year, 12, 31))
+        known_tickers = {t for p in catalog.values() for t in p.tickers}
+        if not set(choice.tickers) <= known_tickers:
+            raise ValueError('Calendar period references an unknown company')
+        if choice.transform != 'calendar_year':
+            if choice.part is None:
+                raise ValueError('Calendar quarter/half requires its part')
+            return calendar_period(choice.year, choice.part, 3 if choice.transform == 'calendar_quarter' else 6, choice.tickers)
+        return Period(label=f"Calendar {choice.year}", start=date(choice.year, 1, 1), end=date(choice.year, 12, 31), tickers=choice.tickers)
     if not selected:
         raise ValueError("Period selection needs a known catalog key")
     period = selected[0].model_copy(deep=True)
@@ -226,6 +240,11 @@ def plan(question: str, entity: Resolution, today: date, budget: int = 16, *,
     periods = bound_periods if bound_periods is not None else [materialize(p, catalog, today) for p in draft.periods]
     by_ticker = {e.ticker: e for e in entity.entities if e.status == "resolved"}
     aliases = {t: e.ticker for e in by_ticker.values() for t in e.tickers}
+    for p in periods:
+        if not p.tickers and p.label.startswith('Calendar'):
+            p.tickers = list(by_ticker)
+        if any(t not in by_ticker for t in p.tickers):
+            raise ValueError('Period references an unknown reporting company')
     fetches = []
     for f in draft.edgar_fetches:
         prefix, sep, label = f.key.partition(":")
@@ -309,7 +328,8 @@ def required_researchers(question: str, entity: Resolution, brief: Brief) -> set
         required.add("financials")
     if any(w in text for w in ("guidance", "guiding", "outlook", "management", "rpo", "performance obligations", "ceo")):
         required.add("company")
-    if (any(w in text for w in ("latest", "most recent", "right now", "current", "past 30", "what drove"))
+    if (any(w in text for w in ("latest", "most recent", "right now", "current", "what drove", "ceo"))
+            or re.search(r'\b(?:past|last)\s+\d+\s+days\b', text)
             or brief.may_be_unreported or any(e.status == "unresolved" for e in entity.entities)):
         required.add("news")
     if len(entity.entities) > 1 or any(w in text for w in ("export controls", "competitor", "industry")):
