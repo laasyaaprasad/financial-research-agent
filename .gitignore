@@ -1,0 +1,18 @@
+# Secrets: never commit
+.env
+.env.*
+!.env.example
+
+# Provided reference file: must not be in the submission repo
+starter_agent.py
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Local run artifacts (commit only curated scorecards)
+results/raw/
+
+# Assignment brief (not ours to publish)
+2606_Tavily_FDE_TakeHomeAssignment.md
