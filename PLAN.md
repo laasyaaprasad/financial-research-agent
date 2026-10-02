@@ -156,12 +156,12 @@ See `results/planner_m3_final_verified.md` and `docs/M3.md`. Run `uv run pytest 
 - This is developer-authored validation, not a blind holdout or user-verified financial-answer set. The first score is preserved. A post-run source review added conservative calendar-clause ownership and multiple-half-year guards; the confirmation is a repeat, not fresh generalization evidence. The validation command deliberately exits 1 for the known misses.
 - The hardening acceptance checks are the five reviewed scope fixes, unchanged original regression performance under stricter ownership scoring, and publication of the frozen validation result including failures. They do not require fitting every new validation case. End-to-end answer accuracy remains M5.
 
-See `results/planner_m3_hardened_regression_final.md`, `results/planner_m3_validation_first.md`, `results/planner_m3_validation_confirmation.md` and `evals/planner_validation_manifest.json`. M4 has not started.
+See `results/planner_m3_hardened_regression_final.md`, `results/planner_m3_validation_first.md`, `results/planner_m3_validation_confirmation.md` and `evals/planner_validation_manifest.json`. Retrieval and end-to-end answer metrics are tracked in the following milestones.
 
 ## M4: Researchers and evidence store
 
 **What we build**
-- **Up to four researchers running in parallel,** only the ones the planner chose: financials (EDGAR XBRL `companyfacts` plus Tavily `topic=finance`), news, company (investor-relations site `map` + `extract`) and industry. They run the planner's queries rather than writing their own.
+- **Up to four researchers running in parallel,** only the ones the planner chose: financials (EDGAR XBRL `companyfacts` plus Tavily; general search retained after the topic experiment), news, company (investor-relations site `map` + `extract`) and industry. They run the planner's queries rather than writing their own.
 - **Optional, only if the scorecard shows retrieval misses:** one extra search round for a researcher that found nothing above the score threshold. The Vals benchmark found that agents which adjust their search do better.
 - **The same Tavily process in each:** search, drop results scoring below the threshold, then `extract` the top URLs.
   - Queries stay under 400 characters, as `tavily-best-practices` recommends.
@@ -170,7 +170,7 @@ See `results/planner_m3_hardened_regression_final.md`, `results/planner_m3_valid
   - Each result must mention the resolved company's name or ticker.
   - The source tier is decided from the hostname, because `include_domains` alone doesn't guarantee every result comes from an allowed host.
 - **Notes from a small model:** about 300 words, citing sources.
-- **The evidence store:** `{id, url, tier, value, period, unit, as_of, tavily_request_id, basis}` with duplicate URLs removed, saved as JSON for each run. `basis` is either `page` (full extract) or `snippet` (search result only).
+- **The evidence store:** `{id, url, tier, value, period, unit, as_of, tavily_request_id, basis}` with duplicate URLs removed, saved as JSON for each run. `basis` is either `page` (retrieved extract excerpts) or `snippet` (search result only).
 - **Replay mode** for saved Tavily results.
 
 **Acceptance criteria**
@@ -223,3 +223,9 @@ See `results/planner_m3_hardened_regression_final.md`, `results/planner_m3_valid
 - A fresh clone plus `.env` runs both the agent and the eval by following the README alone.
 - The repo doesn't include `starter_agent.py` or `.env`.
 - Every claim in the statement has a measured result or a source behind it.
+
+## M4 measured result (2026-10-02 UTC)
+
+All 30 fixed-plan questions completed. Relevant retrieved-source share was 44.6% versus 24.6% for the recorded traced baseline; primary share was 68.2% versus 11.4%. The 530 evidence facts passed numeric unit/period/as-of completeness. Mean/max Tavily credits were 3.73/8.00, below the 25-credit cap. Exact replay reproduced all 30 bundles with socket connections blocked and no model calls. All 95 offline tests passed.
+
+The first three-question pilot missed the relevance criterion (31.6% versus 33.3%). General fixes added current requested-period SEC filings ahead of comparative filings and excluded monetary sales from quantity-only XBRL evidence. The full run retains source-relevance failures; retrieval precision does not establish answer completeness. See `docs/M4.md` and the final retrieval/topic scorecards.

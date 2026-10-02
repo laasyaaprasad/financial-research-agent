@@ -36,7 +36,8 @@ class Trace:
             output=output.get("answer"),
             metadata={
                 "tavily_credits": output.get("tavily_credits"),
-                "searches": len(output.get("tool_calls") or []),
+                "searches": sum('search' in c.get('name','') for c in output.get('tool_calls') or []),
+                "tavily_calls": len(output.get('tool_calls') or []),
                 "latency_s": output.get("latency_s"),
                 "tokens_input": (output.get("tokens") or {}).get("input"),
                 "tokens_output": (output.get("tokens") or {}).get("output"),
@@ -89,3 +90,25 @@ def flush() -> None:
         from langfuse import get_client
 
         get_client().flush()
+
+
+@dataclass
+class ToolSpan:
+    span: Any = None
+
+    def finish(self, output: dict):
+        if self.span is not None:
+            self.span.update(output=output, metadata={'tavily_credits': output.get('credits')})
+
+
+@contextmanager
+def tool_span(name: str, parameters: dict):
+    """SDK tools join the current question trace without capturing HTTP headers."""
+    if enabled():
+        from langfuse import get_client
+        client = get_client()
+        if client.get_current_trace_id():
+            with client.start_as_current_observation(as_type='tool', name=name, input=parameters) as span:
+                yield ToolSpan(span)
+            return
+    yield ToolSpan()
