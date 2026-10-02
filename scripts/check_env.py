@@ -8,6 +8,7 @@ import sys
 from dotenv import load_dotenv
 
 REQUIRED = ["TAVILY_API_KEY", "NEBIUS_API_KEY", "SEC_USER_AGENT"]
+OPTIONAL = ["LANGFUSE_PUBLIC_KEY", "LANGFUSE_SECRET_KEY", "LANGFUSE_HOST"]  # tracing
 
 
 def main() -> int:
@@ -17,6 +18,8 @@ def main() -> int:
         present = bool(os.getenv(name))
         missing += not present
         print(f"{name}: {'present' if present else 'missing'}")
+    for name in OPTIONAL:
+        print(f"{name} (optional, tracing): {'present' if os.getenv(name) else 'missing'}")
     return 1 if missing else 0
 
 

@@ -51,10 +51,13 @@ def build_agent(model: str = MODEL):
     )
 
 
-def run(question: str, model: str = MODEL) -> dict[str, Any]:
+def run(question: str, model: str = MODEL, callbacks: list | None = None) -> dict[str, Any]:
     agent = build_agent(model)
     start = time.perf_counter()
-    result = agent.invoke({"messages": [{"role": "user", "content": question}]})
+    result = agent.invoke(
+        {"messages": [{"role": "user", "content": question}]},
+        config={"callbacks": callbacks or []},
+    )
     latency = time.perf_counter() - start
 
     tool_calls, tool_results = [], []

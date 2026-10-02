@@ -18,6 +18,7 @@ from typing import Annotated, Callable
 import typer
 from rich.console import Console
 
+from agents import tracing
 from evals.scorers import JUDGE_MODEL, _primary_hosts, score_row
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -136,15 +137,16 @@ def write_scorecard(name: str, agent: str, summary: dict, records: list[dict]) -
         "",
         "## Per question",
         "",
-        "| ID | Category | Verdict | Score | Credits | Latency | Judge rationale |",
-        "|---|---|---|---|---|---|---|",
+        "| ID | Category | Verdict | Score | Credits | Latency | Trace | Judge rationale |",
+        "|---|---|---|---|---|---|---|---|",
     ]
     for r in sorted(records, key=lambda r: r["id"]):
         c = r["scores"]["correctness"]
         rationale = (r["output"].get("error") or c["rationale"]).replace("|", "/").replace("\n", " ")[:220]
+        trace = f"[trace]({r['output']['trace_url']})" if r["output"].get("trace_url") else "–"
         lines.append(
             f"| {r['id']} | {r['category']} | {c['verdict']} | {c['score']:.2f} | {r['output'].get('tavily_credits', 0)} "
-            f"| {r['output'].get('latency_s', 0):.0f} s | {rationale} |"
+            f"| {r['output'].get('latency_s', 0):.0f} s | {trace} | {rationale} |"
         )
     path = RESULTS / f"scorecard_{name}.md"
     path.write_text("\n".join(lines) + "\n")
@@ -186,15 +188,19 @@ def run(
     raw_dir.mkdir(parents=True, exist_ok=True)
 
     def one(row: dict) -> dict:
-        try:
-            output = agent_fn(row["question"])
-        except Exception as exc:
-            output = {"answer": "", "tool_calls": [], "tool_results": [], "tokens": {"input": 0, "output": 0},
-                      "tavily_credits": 0, "latency_s": 0.0, "error": f"{type(exc).__name__}: {exc}"[:500]}
+        with tracing.trace_question(agent, row["question"], name, row) as trace:
+            try:
+                output = agent_fn(row["question"], callbacks=trace.callbacks)
+            except Exception as exc:
+                output = {"answer": "", "tool_calls": [], "tool_results": [], "tokens": {"input": 0, "output": 0},
+                          "tavily_credits": 0, "latency_s": 0.0, "error": f"{type(exc).__name__}: {exc}"[:500]}
+            trace.finish(output)
+        output["trace_id"], output["trace_url"] = trace.trace_id, trace.url
         try:
             scores = score_row(row, output, primary_hosts)
         except Exception:
             raise RuntimeError(f"judge failed on {row['id']}:\n{traceback.format_exc()}")
+        tracing.attach_scores(trace.trace_id, scores)
         rec = {**{k: row[k] for k in ("id", "category", "difficulty", "time_sensitivity", "answer_type",
                                       "question", "grading", "answer")}, "output": output, "scores": scores}
         (raw_dir / f"{row['id']}.json").write_text(json.dumps(rec, indent=1, ensure_ascii=False))
@@ -210,6 +216,7 @@ def run(
             console.print(f"{rec['id']}: {c['verdict']} ({c['score']:.2f}) · {rec['output'].get('latency_s', 0):.0f}s"
                           + (f" · ERROR {rec['output']['error'][:80]}" if rec["output"].get("error") else ""))
 
+    tracing.flush()
     summary = summarize(records)
     (RESULTS / f"summary_{name}.json").write_text(json.dumps(summary, indent=1))
     card = write_scorecard(name, agent, summary, records)

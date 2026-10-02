@@ -86,7 +86,7 @@ The baseline comes first so every later change can be measured against the start
 - **Run-to-run variation:** 12 of 30 verdicts changed between the two runs. Re-judging run 1's saved answers changed only 1 of 30, so the variation comes from the agent, not the judge.
 - **Judge agreement:** 8 of 9 with the user's grades, 9 of 10 including one delegated grade. See `results/judge_agreement_baseline_r1.md`.
 
-## M2: Tracing
+## M2: Tracing (done)
 
 **What we build**
 - OpenTelemetry traces sent to Langfuse or LangSmith, using the standard span names for agents and tools.
@@ -97,6 +97,16 @@ The baseline comes first so every later change can be measured against the start
 - One baseline eval run appears as one trace per question, with every model call and Tavily call visible, including latency and tokens.
 - Starting from a failing question in the scorecard, you can open its trace in two clicks.
 - No key values appear in any span.
+
+**Result (2026-10-02):**
+- **Traces:** a traced baseline run over all 30 questions produced 30 complete Langfuse traces. `scripts/verify_traces.py` confirms each one has:
+  - a single `invoke_agent` root span tagged with its `golden_id`
+  - every model call, with token usage
+  - one tool span per Tavily call
+- **Secrets:** no Tavily, Nebius or Langfuse secret key appears in any trace. The Langfuse public key does appear in every span, because the SDK adds it to identify the project. It isn't a secret.
+- **Scores and links:** eval scores are attached to each trace, and the scorecard links each question to its trace.
+- **Span names:** the root span follows OpenTelemetry's naming for AI agents. Child spans keep LangChain's names (`ChatNebius`, `tavily_search`), with Langfuse types `GENERATION` and `TOOL`.
+- **Langfuse API note:** new Langfuse organizations can only read data through the v2 observations API and the v3 scores API. The older trace endpoints are unavailable.
 
 ## M3: Company lookup and planner
 
