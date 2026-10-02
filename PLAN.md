@@ -28,7 +28,7 @@ The baseline comes first so every later change can be measured against the start
 - `uv run scripts/check_env.py` reports every required key as `present`, and never prints a value.
 - After `git init`, `git status` doesn't list `.env` or `starter_agent.py`.
 
-## M1: Baseline benchmark (current focus)
+## M1: Baseline benchmark (done)
 
 **What we build**
 - `evals/golden.jsonl`: 30 questions, drafted by an analyst-persona subagent and built on the published benchmark designs from FinanceBench and the Vals Finance Agent benchmark.
@@ -43,8 +43,8 @@ The baseline comes first so every later change can be measured against the start
     - each question's category and the failure mode it targets
     - where the answer should come from
     - a grading rule (tolerance or rubric)
-    - empty `answer`, `evidence` and `expected_periods` fields, plus `verified_by_human`
-  - **Answers still to fill in:** the `answer` and `evidence` fields are filled from the filings, then checked by the user.
+    - `answer`, `evidence` and `expected_periods` fields, plus `verified_by_human`
+  - **Source review (2026-10-01):** all 30 answers and evidence fields are populated, with period metadata. All 25 fixed-answer rows have primary-source evidence; the 5 dynamic rows contain dated snapshots and remain reference-free. `evals/golden_review.md` records corrections and source limitations. Amazon's G28 capex guide still needs primary-source support. The user signed off on 2026-10-01: all 25 fixed-answer rows have `verified_by_human: true`. The 5 time-sensitive rows are dated snapshots, graded without a fixed answer.
   - **`expected_periods`:** a list of `{label, start, end}`, filled in at the same time. The dates come from the filing itself (period dates in the XBRL data or on the cover page), not from the question text. M3 tests the planner against these.
   - **How the 5 time-sensitive questions are graded:** without a fixed answer, on recency and whether each claim is supported by its source.
 
@@ -66,6 +66,7 @@ The baseline comes first so every later change can be measured against the start
 - All 25 fixed-answer questions have an `answer`, `evidence` and `expected_periods`, with `verified_by_human` set to true.
 - Reference answers come only from primary sources: sec.gov filings or the company's own releases. The Tavily CLI can help find a document, but a Tavily snippet is never the evidence, which keeps the benchmark from depending on the tool it tests.
 - Each Tavily client is created with a `project_id` (`dev`, `eval-baseline`, `eval-v1`) so credits can be separated by purpose.
+  - **Exception:** the baseline uses the starter agent's `langchain-tavily` tool, which can't send `X-Project-ID` (checked in the package source). Its credits are counted from its calls: 1 per `basic`/`fast` search, 2 per `advanced`. From M4 on, `tavily-python` clients set `project_id`.
 - `uv run evals/run.py --agent baseline` runs all questions in one command and writes the scorecard.
 - The scorecard reports, per category and overall:
   - correctness
@@ -76,6 +77,14 @@ The baseline comes first so every later change can be measured against the start
 - The baseline has been run twice, and the variation between runs is reported.
 - The judge agrees with the user's own grades on at least 9 of 10 sampled answers.
 - `grep -r "tvly-" results/` finds nothing.
+
+**Result (2026-10-01):**
+- **Fixed-answer questions fully correct:** 11/25 in run 1 and 13/25 in run 2. Mean scores 0.71 and 0.80.
+- **Time-sensitive questions:** rubric scores 0.69 and 0.30.
+- **Sources:** about 86% of numbers cite a source, but only 51–75% of cited claims are supported by the retrieved text, and only 20–24% of cited URLs are primary sources.
+- **Cost:** 7–9 Tavily credits and about 81k tokens per question.
+- **Run-to-run variation:** 12 of 30 verdicts changed between the two runs. Re-judging run 1's saved answers changed only 1 of 30, so the variation comes from the agent, not the judge.
+- **Judge agreement:** 8 of 9 with the user's grades, 9 of 10 including one delegated grade. See `results/judge_agreement_baseline_r1.md`.
 
 ## M2: Tracing
 
