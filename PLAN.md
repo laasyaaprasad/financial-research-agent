@@ -108,11 +108,11 @@ The baseline comes first so every later change can be measured against the start
 - **Span names:** the root span follows OpenTelemetry's naming for AI agents. Child spans keep LangChain's names (`ChatNebius`, `tavily_search`), with Langfuse types `GENERATION` and `TOOL`.
 - **Langfuse API note:** new Langfuse organizations can only read data through the v2 observations API and the v3 scores API. The older trace endpoints are unavailable.
 
-## M3: Company lookup and planner
+## M3: Company lookup and planner (done)
 
 **What we build**
 - **Company lookup:** `resolve(question)` returns `{ticker, cik, company_name, fiscal_year_end}`. It uses the SEC's `company_tickers.json` and the submissions API, with a small model to pull the company name out of the question.
-- **Planner:** `plan(question, entity, today, budget)` makes one call to a small model and returns a structured plan. It runs once, with no re-planning loop, the same as OpenAI's `financial_research_agent`.
+- **Planner:** `plan(question, entity, today, budget)` makes one call to a small model and returns a structured plan. It runs once, with no re-planning loop. Explicit period requests are bound in code to SEC XBRL duration contexts and inferred fiscal calendar rules; the model plans retrieval intents and handles period selections when the question has no supported explicit scope. The model never supplies a CIK or invents a fiscal boundary.
   - **Research brief:** the metrics, the answer type, and `may_be_unreported` (true when the period may not be reported yet).
   - **Periods:** each one has a fiscal label and an explicit start and end date, worked out from the fiscal year end. For example, Walmart's "Q2 2026" becomes "Q2 FY2027" with that quarter's exact start and end dates.
   - **EDGAR fetches:** the form, period end and item to retrieve. Code runs these, not web search.
@@ -134,6 +134,18 @@ The baseline comes first so every later change can be measured against the start
   - Extra researchers are allowed but reported, and the average number of researchers per question is shown.
 - **Budget:** no plan goes over it, and every query is under 400 characters.
 - **Tests:** unit tests pass using saved EDGAR responses, with no network access. Planner tests run on all 30 golden questions without calling Tavily.
+
+**Result (2026-10-01):**
+- **Company lookup:** 30/30 correct registrants, CIKs, names and fiscal year ends, including Facebook/Meta, Alphabet share classes, HON vs HONA, multi-company comparisons and the NVO 20-F filer. Private Cargill remains unresolved for EDGAR; its June–May calendar has a company-published source and does not create a ticker or CIK.
+- **Periods:** 25/25 fixed-answer questions have exact fiscal identities and start/end dates. Display-only prefixes/descriptors are excluded from label comparison; fiscal vs calendar, quarter/year and implied vs actual aggregate basis are preserved. All five dynamic questions also matched the October 1 snapshot's period metadata.
+- **Unreported periods:** G11 is flagged, and its ended-but-unreported Apple quarter produces no actual-results filing fetch.
+- **Researcher coverage:** all required researchers included in 30/30 plans; mean 2.27 per question. Extra researchers are listed in the scorecard.
+- **Limits:** 30/30 plans respect the 16-credit search budget (extraction budget is reserved for M4), the eight-search cap and queries below 400 characters. `topic=finance` is not assumed to improve retrieval; general search is used until the M4 comparison.
+- **Validation:** 54 offline tests pass. The live benchmark makes 60 Nebius requests (one extraction and one planning call per question), with no SEC or Tavily network calls. Public SEC response projections and their source manifest are committed for offline reproduction.
+- **Operations:** median resolve + plan latency 3.02 s, mean 6,267 model tokens per question, and 2.97 planned search credits (not spent). The planner uses `Qwen/Qwen3.8-27B` with native JSON-schema output and reasoning disabled.
+- **Scope:** this proves company/period planning, not financial-answer correctness; the end-to-end comparison remains M5. Future week-based boundaries are marked projected, including uncertainty about the next 53-week adjustment.
+
+See `results/planner_m3_final_verified.md` and `docs/M3.md`. Run `uv run pytest -q` and `uv run python -m evals.planner`.
 
 ## M4: Researchers and evidence store
 

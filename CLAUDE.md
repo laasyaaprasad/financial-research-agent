@@ -21,3 +21,4 @@ API keys live in `.env` (`TAVILY_API_KEY`, `NEBIUS_API_KEY`, plus any added late
 - SEC EDGAR requests need a `User-Agent` with contact info; read it from the `SEC_USER_AGENT` environment variable, never hardcode it.
 - Every milestone must pass its acceptance criteria in `PLAN.md` before the next starts. Report eval numbers as measured; don't round up or omit failures.
 - Claims from research that were not verified (vendor benchmarks, unconfirmed API behaviour such as `topic="finance"`) must be tested or caveated before they appear in the README or technical statement.
+- After each milestone passes its acceptance criteria and tests, commit it and give a brief summary of what changed and the measured results. Stop before starting the next milestone unless the user asks to continue.
