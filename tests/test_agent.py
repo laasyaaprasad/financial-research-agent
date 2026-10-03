@@ -187,3 +187,34 @@ def test_production_code_has_no_evaluation_companies():
         source = path.read_text()
         found = [n for n in names if re.search(rf"\b{re.escape(n)}\b", source)]
         assert not found, f"{path.name} mentions evaluation companies: {found}"
+
+
+# ---------- tables ----------
+
+def test_table_rendering_pivots_cells_with_citations():
+    from agents.pipeline import _table
+    cells = [{"row": "Q1 FY2026", "column": "Revenue (USD m)", "value": "100", "evidence_ids": ["E1"]},
+             {"row": "Q1 FY2026", "column": "Margin (%)", "value": "20.0", "evidence_ids": ["E1"]},
+             {"row": "Q2 FY2026", "column": "Revenue (USD m)", "value": "110", "evidence_ids": ["E2"]}]
+    lines = _table(cells, lambda ids: "".join(f"[{i[1:]}]" for i in ids))
+    assert lines[0] == "| | Revenue (USD m) | Margin (%) |"
+    assert lines[2] == "| Q1 FY2026 | 100 [1] | 20.0 [1] |"
+    assert lines[3] == "| Q2 FY2026 | 110 [2] | — |"
+
+
+def test_xbrl_evidence_always_includes_core_lines():
+    from agents.fiscal import Filing
+    from agents.research import _xbrl_evidence, terms
+    filing = Filing(form="10-Q", filed=date(2026, 5, 1), accession="0001-26-000001", url="u", report_date=date(2026, 3, 31))
+    long_label = {"label": "Revenue from Contract with Customer, Excluding Assessed Tax",
+                  "units": {"USD": [{"accn": filing.accession, "start": "2026-01-01", "end": "2026-03-31", "val": 1000}]}}
+    noise = {f"OtherIncome{i}": {"label": f"Other Income Item {i}",
+                                 "units": {"USD": [{"accn": filing.accession, "end": "2026-03-31", "val": i}]}} for i in range(40)}
+
+    class Facts:
+        def companyfacts(self, cik):
+            return {"facts": {"us-gaap": {"RevenueFromContractWithCustomerExcludingAssessedTax": long_label, **noise}}}
+
+    company = Company(requested="X", name="X Corp", ticker="XX", cik="1")
+    text = _xbrl_evidence(company, [filing], terms("quarterly revenue and other income"), Facts())[0].text
+    assert "RevenueFromContractWithCustomerExcludingAssessedTax" in text

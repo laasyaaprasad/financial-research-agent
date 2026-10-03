@@ -1,0 +1,73 @@
+{
+ "manifest": {
+  "agent": "agent",
+  "set": "dev_tables",
+  "set_sha256": "81285e3ffd991b6de6f2c2d8b27e168725439648bb4642fa38ba88b847b558b9",
+  "code": "80b9802+uncommitted",
+  "ids": [
+   "D01",
+   "D02",
+   "D03"
+  ],
+  "web": false,
+  "web_cache_from": null,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash"
+ },
+ "overall": {
+  "n": 3,
+  "fixed_n": 3,
+  "fixed_correct": 3,
+  "fixed_score": 1.0,
+  "dynamic_n": 0,
+  "dynamic_score": null,
+  "numeric_claims": 37,
+  "numeric_cited": 37,
+  "cited_claims": 44,
+  "supported": 39,
+  "cited_urls": 23,
+  "cited_primary": 23,
+  "errors": 0,
+  "judge_errors": 0
+ },
+ "by_category": {
+  "Market analysis": {
+   "n": 1,
+   "fixed_n": 1,
+   "fixed_correct": 1,
+   "fixed_score": 1.0,
+   "dynamic_n": 0,
+   "dynamic_score": null,
+   "numeric_claims": 9,
+   "numeric_cited": 9,
+   "cited_claims": 14,
+   "supported": 9,
+   "cited_urls": 4,
+   "cited_primary": 4,
+   "errors": 0,
+   "judge_errors": 0
+  },
+  "Trends": {
+   "n": 2,
+   "fixed_n": 2,
+   "fixed_correct": 2,
+   "fixed_score": 1.0,
+   "dynamic_n": 0,
+   "dynamic_score": null,
+   "numeric_claims": 28,
+   "numeric_cited": 28,
+   "cited_claims": 30,
+   "supported": 30,
+   "cited_urls": 19,
+   "cited_primary": 19,
+   "errors": 0,
+   "judge_errors": 0
+  }
+ },
+ "ops": {
+  "latency_p50_s": 55.29,
+  "latency_p95_s": 190.39,
+  "tokens_per_q": 82190.33333333333,
+  "credits_per_q": 0.0,
+  "credits_total": 0.0
+ }
+}

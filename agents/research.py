@@ -137,17 +137,35 @@ def _exhibits(client: EdgarClient, cik: str, filing: Filing) -> list[dict]:
         return []
 
 
+MAX_CONCEPTS = 20
+# Core income-statement lines (standard US-GAAP / IFRS tags) are always included; other concepts
+# are ranked by how well their label matches the question.
+CORE_CONCEPTS = {"Revenues", "RevenueFromContractWithCustomerExcludingAssessedTax", "Revenue", "CostOfRevenue",
+                 "CostOfGoodsAndServicesSold", "GrossProfit", "OperatingIncomeLoss", "ProfitLossFromOperatingActivities",
+                 "NetIncomeLoss", "ProfitLoss", "EarningsPerShareDiluted", "DilutedEarningsLossPerShare"}
+
+
 def _xbrl_evidence(company: Company, filings: list[Filing], query: list[str], client: EdgarClient) -> list[Evidence]:
-    """Exact tagged values reported in the given filings, most relevant concepts first."""
+    """Exact tagged values reported in the given filings: all facts of the most relevant concepts.
+
+    A concept's relevance favours labels the question covers fully ("Revenues" beats
+    "Comprehensive Income (Loss), Net of Tax, Attributable to Parent" for "revenue").
+    """
     accessions = {f.accession: f for f in filings}
-    rows: dict[str, list[tuple[float, str]]] = {}
     q = set(query)
+    by_filing: dict[str, dict[str, tuple[float, list[str]]]] = {}
     for namespace in client.companyfacts(company.cik).get("facts", {}).values():
         for concept, data in namespace.items():
             label = data.get("label") or concept
-            relevance = len(q & set(terms(label + " " + re.sub(r"([a-z])([A-Z])", r"\1 \2", concept))))
-            if not relevance:
+            words = set(terms(label + " " + re.sub(r"([a-z])([A-Z])", r"\1 \2", concept)))
+            matched = len(q & words)
+            if concept in CORE_CONCEPTS:
+                relevance = 100.0
+            elif not matched:
                 continue
+            else:
+                first = (terms(label) or [""])[0]
+                relevance = matched / math.sqrt(len(words)) + (1.0 if first in q else 0.0)
             for unit, facts in data.get("units", {}).items():
                 for fact in facts:
                     f = accessions.get(fact.get("accn"))
@@ -155,14 +173,16 @@ def _xbrl_evidence(company: Company, filings: list[Filing], query: list[str], cl
                         continue
                     span = f"{fact['start']} to {fact['end']}" if fact.get("start") else f"as of {fact['end']}"
                     value = f"{fact['val']:,}" if isinstance(fact["val"], (int, float)) else str(fact["val"])
-                    rows.setdefault(f.accession, []).append((relevance, f"{label} ({concept}): {value} {unit}, {span}"))
+                    entry = by_filing.setdefault(f.accession, {}).setdefault(concept, (relevance, []))
+                    entry[1].append(f"{label} ({concept}): {value} {unit}, {span}")
     out = []
-    for acc, lines in rows.items():
+    for acc, concepts in by_filing.items():
         f = accessions[acc]
-        best = [line for _, line in sorted(lines, key=lambda r: -r[0])[:40]]
+        top = sorted(concepts.values(), key=lambda c: -c[0])[:MAX_CONCEPTS]
+        lines = sorted({line for _, facts in top for line in facts})
         out.append(Evidence(id="", url=f"{ARCHIVES}/{int(company.cik)}/{acc.replace('-', '')}/",
                             title=f"{company.name} XBRL data tagged in {f.form} filed {f.filed}",
-                            tier="primary", date=str(f.filed), text="\n".join(sorted(set(best)))))
+                            tier="primary", date=str(f.filed), text="\n".join(lines)))
     return out
 
 
@@ -181,8 +201,20 @@ def sec_evidence(question: str, plan: Plan, companies: list[Company], today: dat
         evidence.append(Evidence(id="", url=url, title=title, tier="primary", date=str(filing.filed),
                                  text=top_passages(text, query, k), period=f"{company.ticker} {period}" if period else None))
         used_filings.setdefault(company.cik, (company, []))[1].append(filing)
+    # Tagged financial data for every answer period, so multi-period tables don't need every filing
+    # read in full. A fiscal Q4 is usually tagged only as full year and nine months, so include Q3 too.
+    by_ticker = {c.ticker: c for c in companies if c.resolved}
+    for ref in plan.answer_periods:
+        company = by_ticker.get(ref.ticker)
+        if not company:
+            continue
+        labels = [ref.label] + ([ref.label.replace("Q4", "Q3", 1)] if ref.label.startswith("Q4 ") else [])
+        for p in company.periods:
+            if p.label in labels and p.report:
+                used_filings.setdefault(company.cik, (company, []))[1].append(p.report)
     for company, filings in used_filings.values():
-        evidence += _xbrl_evidence(company, [f for f in filings if f.form not in ("8-K", "6-K")], query, client)
+        unique = list({f.accession: f for f in filings if f.form not in ("8-K", "6-K")}.values())
+        evidence += _xbrl_evidence(company, unique, query, client)
     return evidence
 
 

@@ -63,6 +63,9 @@ period labels, exact dates and status (filed / earnings release only / not yet r
      an earnings_release needs an earnings release listed for that period.
 3. availability_notes: if a requested period is not yet reported, the company is not an SEC
    registrant, or the metric may not be disclosed, say so. Never plan to estimate it.
+   - Tables (several companies or periods): list EVERY answer period; tagged financial-statement
+     data for each answer period's filing is fetched automatically, so documents are only needed
+     for figures outside the financial statements (segments, guidance, commentary, notes).
 4. recent_filings_days: set it (e.g. 45) only when the question is about recent events.
 5. searches (at most {MAX_SEARCHES}, each costs credits): use the web only for what filings
    can't give: recent news and events (topic "news" with days_back), management remarks on

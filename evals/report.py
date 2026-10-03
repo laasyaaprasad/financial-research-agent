@@ -19,7 +19,7 @@ RAW = Path(__file__).resolve().parent.parent / "results" / "raw"
 
 
 def load(run: str) -> list[dict]:
-    return [json.loads(p.read_text()) for p in sorted((RAW / run).glob("[GTH][0-9]*.json"))]
+    return [json.loads(p.read_text()) for p in sorted((RAW / run).glob("[GTHDX][0-9]*.json"))]
 
 
 def group_metrics(runs: list[str]) -> dict:
@@ -45,6 +45,8 @@ def group_metrics(runs: list[str]) -> dict:
         "fixed_mean": statistics.mean(r["scores"]["correctness"]["score"] for r in fixed) if fixed else None,
         "dynamic_mean": statistics.mean(r["scores"]["correctness"]["score"] for r in dyn) if dyn else None,
         "verified_correct": sum(verified(r) for r in fixed),
+        "cells_correct": sum(r["scores"]["correctness"].get("cells_correct", 0) for r in recs),
+        "cells_total": sum(r["scores"]["correctness"].get("cells_total", 0) for r in recs),
         "unsupported": unsupported, "cited": cited,
         "primary": primary, "urls": urls,
         "credits": sum(r["output"].get("tavily_credits", 0) for r in recs),
@@ -58,6 +60,7 @@ def group_metrics(runs: list[str]) -> dict:
 def table(groups: list[str]) -> str:
     rows = [("Runs", lambda m: str(m["runs"])),
             ("Fixed answers fully correct", lambda m: f"{m['fixed_correct']}/{m['fixed_n']} ({m['fixed_mean']:.2f})"),
+            ("Table cells correct", lambda m: f"{m['cells_correct']}/{m['cells_total']} ({100 * m['cells_correct'] / m['cells_total']:.0f}%)" if m["cells_total"] else "–"),
             ("Verified-correct (correct, every cited claim supported, every number cited)",
              lambda m: f"{m['verified_correct']}/{m['fixed_n']}"),
             ("Time-sensitive rubric score", lambda m: f"{m['dynamic_mean']:.2f}" if m["dynamic_mean"] is not None else "–"),

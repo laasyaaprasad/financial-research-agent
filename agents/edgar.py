@@ -32,9 +32,10 @@ class EdgarClient:
     _last_request = 0.0
     MIN_INTERVAL_S = 0.15  # SEC fair-access limit is 10 requests/second
 
-    def __init__(self, cache_dir: Path | str = "results/sec", *, offline: bool = False):
+    def __init__(self, cache_dir: Path | str = "results/sec", *, offline: bool = False, json_max_age_s: float = 6 * 3600):
         self.cache_dir = Path(cache_dir)
         self.offline = offline
+        self.json_max_age_s = json_max_age_s  # submissions/companyfacts change as companies file
 
     # ---------- transport ----------
 
@@ -42,8 +43,9 @@ class EdgarClient:
         if not url.startswith(("https://www.sec.gov/", "https://data.sec.gov/")):
             raise EdgarError("Only SEC endpoints are permitted")
         path = self.cache_dir / kind / (hashlib.sha256(url.encode()).hexdigest() + ".txt")
-        if path.exists():
-            return path.read_text()
+        fresh = kind != "json" or time.time() - path.stat().st_mtime < self.json_max_age_s if path.exists() else False
+        if path.exists() and (fresh or self.offline):
+            return path.read_text()  # filing documents and indexes never change; API data expires
         if self.offline:
             raise EdgarError(f"No cached SEC response for {url}")
         user_agent = os.getenv("SEC_USER_AGENT")

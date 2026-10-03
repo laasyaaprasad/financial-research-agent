@@ -58,6 +58,17 @@ class Citations(BaseModel):
     claims: list[Claim]
 
 
+class CellValue(BaseModel):
+    index: int
+    found: bool = Field(description="True only if the answer gives this exact entity, period and metric")
+    value: float | str | None = Field(description="The answer's value converted to the requested unit (text cells: the text)")
+    note: str = ""
+
+
+class CellExtraction(BaseModel):
+    cells: list[CellValue]
+
+
 def _judge(schema, prompt: str, retries: int = 4):
     llm = ChatNebius(model=JUDGE_MODEL, temperature=0, timeout=240).with_structured_output(schema, method="function_calling")
     error = None
@@ -150,6 +161,50 @@ Instructions:
     return {"score": round(score, 3), **result.model_dump()}
 
 
+def score_table(row: dict, answer: str) -> dict:
+    """Table tasks: the judge only EXTRACTS each requested cell from the answer; code compares to the reference."""
+    cells = row["cells"]
+    if not answer.strip():
+        return {"score": 0.0, "verdict": "incorrect", "points": [], "rationale": "No answer produced.",
+                "cells_correct": 0, "cells_total": len(cells)}
+    wanted = "\n".join(f"{i}. {c['entity']} | {c['period']} (period ending {c['period_end']}) | {c['metric']} | unit: {c['unit']}"
+                       for i, c in enumerate(cells))
+    prompt = f"""Extract values from a financial analyst's answer. Do not judge or correct them.
+
+For each requested cell below, find the value the answer gives for exactly that company, period
+and metric. Convert it to the requested unit (e.g. $96.2 billion -> 96200 for "USD millions";
+a margin of 66.2% -> 66.2 for "%"). If the answer doesn't give that cell, or gives it only for a
+different period, set found=false. Text cells: return the text the answer gives.
+
+Requested cells:
+{wanted}
+
+Question: {row['question']}
+
+Answer:
+<<<
+{answer}
+>>>"""
+    extracted = {c.index: c for c in _judge(CellExtraction, prompt).cells}
+    points, correct = [], 0
+    for i, ref in enumerate(cells):
+        got = extracted.get(i)
+        if ref["unit"] == "text":
+            ok = bool(got and got.found and str(got.value).strip().lower() == str(ref["value"]).strip().lower())
+        else:
+            try:
+                ok = bool(got and got.found and abs(float(got.value) - float(ref["value"])) <= float(ref["tolerance"]) + 1e-9)
+            except (TypeError, ValueError):
+                ok = False
+        correct += ok
+        points.append({"point": f"{ref['entity']} {ref['period']} {ref['metric']} = {ref['value']} {ref['unit']}",
+                       "met": ok, "note": f"answer: {got.value if got and got.found else 'missing'}"})
+    score = correct / len(cells)
+    verdict = "correct" if correct == len(cells) else "partial" if correct else "incorrect"
+    return {"score": round(score, 3), "verdict": verdict, "points": points,
+            "rationale": f"{correct}/{len(cells)} cells correct", "cells_correct": correct, "cells_total": len(cells)}
+
+
 def score_citations(answer: str, retrieved: dict[str, dict]) -> dict:
     empty = {"claims": [], "numeric_claims": 0, "numeric_cited": 0, "cited": 0, "supported": 0, "not_retrieved": 0}
     if not answer.strip():
@@ -193,7 +248,7 @@ def score_row(row: dict, output: dict, hosts: set[str]) -> dict:
     retrieved = retrieved_index(output.get("tool_results") or [])
     scores = {"sources": score_sources(answer, retrieved, hosts)}
     try:
-        scores["correctness"] = score_correctness(row, answer, retrieved)
+        scores["correctness"] = score_table(row, answer) if row.get("cells") else score_correctness(row, answer, retrieved)
     except RuntimeError as exc:
         scores["correctness"] = {"score": 0.0, "verdict": "incorrect", "points": [], "rationale": f"JUDGE ERROR: {exc}"[:300],
                                  "judge_error": True}

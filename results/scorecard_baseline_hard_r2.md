@@ -1,0 +1,48 @@
+# Scorecard: baseline_hard_r2
+
+Agent `baseline` · set `hard` · model `deepseek-ai/DeepSeek-V4.1-Flash` · judge `nvidia/Nemotron-3-Ultra-550b-a55b` · code `80b9802` · questions 20 · agent errors 0 · judge errors 0
+
+| Slice | Qs | Fixed answers: fully correct (mean score) | Time-sensitive: rubric score | Numbers with a citation | Cited claims supported | Cited URLs that are primary |
+|---|---|---|---|---|---|---|
+| All | 20 | 18/18 (1.00) | 1.00 (n=2) | 97% | 86% | 41% |
+
+| Median latency | p95 latency | Tokens / question | Tavily credits / question | Tavily credits total |
+|---|---|---|---|---|
+| 25.1 s | 146.4 s | 32,457 | 5.2 | 105 |
+
+## By category
+
+| Slice | Qs | Fixed answers: fully correct (mean score) | Time-sensitive: rubric score | Numbers with a citation | Cited claims supported | Cited URLs that are primary |
+|---|---|---|---|---|---|---|
+| Adjustments | 1 | 1/1 (1.00) | – | 100% | 75% | 33% |
+| Beat or miss | 2 | 2/2 (1.00) | – | 100% | 100% | 33% |
+| Complex retrieval | 3 | 3/3 (1.00) | – | 100% | 100% | 40% |
+| Financial modeling | 2 | 2/2 (1.00) | – | 96% | 96% | 44% |
+| Numerical reasoning | 2 | 2/2 (1.00) | – | 100% | 100% | 30% |
+| Qualitative retrieval | 3 | 1/1 (1.00) | 1.00 (n=2) | 95% | 59% | 36% |
+| Quantitative retrieval | 7 | 7/7 (1.00) | – | 95% | 88% | 53% |
+
+## Per question
+
+| ID | Category | Verdict | Score | Credits | Latency | Trace | Judge rationale |
+|---|---|---|---|---|---|---|---|
+| H01 | Complex retrieval | correct | 1.00 | 2 | 19 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/aa2c0ff021cbfd26d637550365cdf4a7) | Both required points are met: the latest reported quarter as of November 20, 2025 is Q2 fiscal 2025 with net sales $679.6M, and the fiscal 2025 net sales outlook is $2.631-2.644 billion. The agent does not use the later Q3 results, misinter |
+| H02 | Complex retrieval | correct | 1.00 | 5 | 53 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/a4cddb58ba263499fad49b0fe6fbe8d4) | Both required points are fully satisfied: the agent correctly identifies the latest reported quarter as fiscal Q2 2026 with diluted EPS $5.53, and the fiscal 2026 EBITDA growth guidance as 15% to 17% (as of the December 9, 2025 update). The |
+| H03 | Quantitative retrieval | correct | 1.00 | 6 | 41 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/23092a2d28d96c1b319506b13da2a422) | Both required key points are satisfied: the agent correctly identifies the latest reported quarter as fiscal Q3 2025 (ended Sep 27, 2025), reports domestic same store sales growth of -5.6%, and system-wide sales of $1.4B (+10.0% y/y), which |
+| H04 | Complex retrieval | correct | 1.00 | 4 | 35 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/3d4a9c7927922777c7a7c520108e8005) | Both required key points are fully satisfied. The agent correctly identifies the latest reported quarter as fiscal Q3 2026 with adjusted EPS $2.38 (GAAP loss $6.79) and the in-effect net sales growth guidance as 3.5%–4.0% (narrowed from 3.5 |
+| H05 | Adjustments | correct | 1.00 | 2 | 22 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/aac6bafc22c62fd98b9f268e58eaca3a) | The agent provides both required EPS ranges exactly as they stood on July 15, 2026: GAAP $1.28–$1.37 (updated May 28) and adjusted $1.43–$1.51 (reaffirmed). The answer correctly avoids the later August 27 update and the pre-May GAAP range,  |
+| H06 | Quantitative retrieval | correct | 1.00 | 2 | 10 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/75ab55d13b63de722b495fae7126abee) | The agent's answer matches all required elements: the exact RPO amount in thousands, the correct 23% recognition share, proper units, correct date and measure, and no confusion with other metrics or prior-year data. |
+| H07 | Quantitative retrieval | correct | 1.00 | 4 | 13 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/8a8eab71f55160291c28912b8d5b2202) | The agent's answer fully satisfies all grading requirements: it identifies all four customers that contributed 10% or more of Fabrinet's FY2026 revenue, provides each customer's percentage within the allowed tolerance, and does not confuse  |
+| H08 | Quantitative retrieval | correct | 1.00 | 3 | 9 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/382a19164e4651c541121e206fdb533a) | The agent's answer precisely matches the required figure, includes correct context, avoids failure modes, and uses proper units. |
+| H09 | Quantitative retrieval | correct | 1.00 | 7 | 26 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/83e5de4cdb09b3622061802bc818ed57) | All four key requirements are met with numbers matching the reference within the allowed tolerance. The agent correctly identifies the fiscal quarter (Q1 FY2027 = May–Jul 2026), uses the equity-statement cost, and notes the program expansio |
+| H10 | Numerical reasoning | correct | 1.00 | 8 | 146 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/2cca1de04adc06b7a5134d7182b3c27d) | All six requirements are satisfied: the dollar figures match the reference within the allowed tolerances, the margin is within 0.3pp, the TTM window is exactly the required period, GAAP net income is used, and the computation method is vali |
+| H11 | Financial modeling | correct | 1.00 | 14 | 62 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/0a7ef4d8972e7ad7d3cb9e9fdb54705c) | All grading requirements are satisfied: the implied Q4 revenue, GAAP operating income, and GAAP operating margin are correctly derived from FY2026 10-K minus nine-month 10-Q figures, within the specified tolerances, and no failure modes are |
+| H12 | Numerical reasoning | correct | 1.00 | 4 | 21 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/7afc67e52993e74c3397436b8d52ef9f) | All requirements are met: the agent provides the correct TTM Professional net sales ($3,853.5M), segment profit ($748.5M), and margin (19.4%), computed using the proper rolling-twelve-month formula and window, without substituting nine-mont |
+| H13 | Financial modeling | correct | 1.00 | 6 | 25 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/1bc4293b64548098efa0fcc75f318dbc) | All grading requirements are satisfied: the agent's TTM revenue, income from operations, and operating margin match the reference values within the allowed tolerances; the window is correctly identified as the 52 weeks ended June 30, 2026;  |
+| H14 | Quantitative retrieval | correct | 1.00 | 6 | 45 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/67cbf8460549a3bc59f177e1e4daaf75) | The agent correctly abstains from providing Q4 2026 results, states they are not yet reported, provides the latest reported quarter (Q3 FY2026) and the order announcement with proper labeling, and does not present any Q4 revenue or EPS as f |
+| H15 | Qualitative retrieval | correct | 1.00 | 3 | 24 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/80a392bb663d00c41862b9e99fd790e1) | The agent correctly states that Kinsale does not disclose a combined ratio for the Commercial Property division, explains the single reportable segment, provides the consolidated FY2025 combined ratio with components clearly labelled, and d |
+| H16 | Quantitative retrieval | correct | 1.00 | 6 | 26 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/7a88b5e9957a8bae028a329b36b6362f) | The agent correctly identifies that no 10-Q exists for the quarter ended June 30, 2026 due to Skechers being taken private in September 2025, provides the correct reason and timeline, states SEC-filed figures are unavailable, and cites the  |
+| H17 | Beat or miss | correct | 1.00 | 4 | 16 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/072a02496614ac3c1746b23928317158) | The agent accurately compares Plexus's fiscal Q3 2026 results against the company's own April 29, 2026 guidance for all three key metrics. Revenue and GAAP diluted EPS are correctly identified as above the guided ranges, and non-GAAP operat |
+| H18 | Beat or miss | correct | 1.00 | 7 | 138 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/6bedd75210c7842647aec9dcfd720f57) | All required comparisons are accurate and correctly labeled relative to the company's own May 2026 guidance. GAAP EPS is correctly identified as below guidance, avoiding the failure mode of calling it a beat or claiming a clean sweep of met |
+| H19 | Qualitative retrieval | correct | 1.00 | 4 | 15 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/33adc8637e64f5b63d39412c4479b916) | All grading requirements are satisfied: the agent correctly identifies the September 30, 2026 announcement (agreement dated September 29), the $1.055B cash price with adjustments, the expected fiscal Q1 2027 closing with HSR/regulatory cond |
+| H20 | Qualitative retrieval | correct | 1.00 | 8 | 105 s | [trace](https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/33fdc0936a0492fb7cce332e79d869b9) | The agent's answer includes all four required key points with correct dates and figures, satisfying the rule that any three points with correct dates earn credit. The answer is properly dated and sourced. No failure modes are triggered: fis |

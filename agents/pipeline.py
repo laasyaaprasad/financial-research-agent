@@ -25,6 +25,16 @@ DISCLAIMER = ("Draft for analyst review. Every figure is quoted from the cited s
               "from quoted inputs; claims that failed verification were removed.")
 
 
+def _table(cells: list[dict], cite) -> list[str]:
+    """Pivot verified cells into a markdown table, each value followed by its citations."""
+    rows = list(dict.fromkeys(c["row"] for c in cells))
+    cols = list(dict.fromkeys(c["column"] for c in cells))
+    grid = {(c["row"], c["column"]): f"{c['value']} {cite(c['evidence_ids'])}".strip() for c in cells}
+    out = ["| | " + " | ".join(cols) + " |", "|---|" + "---|" * len(cols)]
+    out += [f"| {r} | " + " | ".join(grid.get((r, c), "—") for c in cols) + " |" for r in rows]
+    return out
+
+
 def render(question: str, today: date, result: dict, evidence: dict) -> str:
     """Markdown brief with numbered citations to the sources actually used."""
     order: list[str] = []
@@ -39,6 +49,8 @@ def render(question: str, today: date, result: dict, evidence: dict) -> str:
         return "".join(marks)
 
     lines = [f"**Question:** {question}", f"*As of {today}*", ""]
+    if result.get("table"):
+        lines += _table(result["table"], cite) + [""]
     if result["claims"]:
         lines += [f"- {c['text']} {cite(c['evidence_ids'])}" for c in result["claims"]]
     if result["unavailable"]:
@@ -94,10 +106,11 @@ def run(question: str, *, today: date | None = None, callbacks=None, web_cache: 
 
     by_id = {e["id"]: e for e in to_dicts(evidence)}
     answer = render(question, today, result, by_id)
-    cited = {i for c in result["claims"] for i in c["evidence_ids"]} | {i for u in result["unavailable"] for i in u["evidence_ids"]}
+    supported = result["claims"] + result.get("table", [])
+    cited = {i for c in supported for i in c["evidence_ids"]} | {i for u in result["unavailable"] for i in u["evidence_ids"]}
     # What the scorers see as "retrieved": every evidence item, with the quotes used from it first.
     quotes = {}
-    for c in result["claims"]:
+    for c in supported:
         for i in c["evidence_ids"]:
             quotes.setdefault(i, []).extend(c["quotes"])
     retrieved = [{"url": e["url"], "title": e["title"], "published_date": e["date"],
@@ -115,6 +128,7 @@ def run(question: str, *, today: date | None = None, callbacks=None, web_cache: 
         "plan": research_plan.model_dump(),
         "evidence_ids_cited": sorted(cited),
         "claims": result["claims"],
+        "table": result.get("table", []),
         "unavailable": result["unavailable"],
         "removed": result["removed"],
         "semantic_check": result["semantic_check"],

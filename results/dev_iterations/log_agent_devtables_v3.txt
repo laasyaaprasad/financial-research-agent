@@ -1,0 +1,5 @@
+D02: correct (1.00) · 36s · 0 cr
+D03: correct (1.00) · 55s · 0 cr
+D01: correct (1.00) · 190s · 0 cr
+agent_devtables_v3: fixed 3/3 fully correct (mean 1.00) · credits 0 → 
+results/scorecard_agent_devtables_v3.md

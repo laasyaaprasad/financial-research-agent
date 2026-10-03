@@ -51,8 +51,18 @@ class Unavailable(BaseModel):
     evidence_ids: list[str] = Field(default_factory=list)
 
 
+class Cell(BaseModel):
+    row: str = Field(description="Row label, e.g. the company or the fiscal period")
+    column: str = Field(description="Column label with unit, e.g. 'Revenue (USD millions)' or 'Operating margin (%)'")
+    value: str = Field(description="The value as displayed; {result} if calculated. No citation markers.")
+    evidence_ids: list[str]
+    quotes: list[str] = Field(description="Verbatim excerpts containing the value or its inputs")
+    calculation: Calculation | None = None
+
+
 class Draft(BaseModel):
-    claims: list[Claim]
+    claims: list[Claim] = Field(default_factory=list)
+    table: list[Cell] = Field(default_factory=list, description="One cell per value when the question asks for a table")
     unavailable: list[Unavailable] = Field(default_factory=list)
 
 
@@ -89,6 +99,12 @@ Write the answer as a list of claims. Each claim is one factual sentence with:
   company does not file with the SEC, list it under `unavailable` with the reason. Never
   estimate it or substitute a different metric, period or company. Use `unavailable` only for
   things the question asks for, not for background.
+- Tables: when the question asks for several companies, periods or metrics (comps, trends),
+  put each value in `table` as one cell (row = company or period, column = metric with unit;
+  include the fiscal label and period end date in the row or column). Each cell carries its
+  own evidence, quotes and, if derived, calculation. If a quarter is not reported on its own
+  (often fiscal Q4, reported only as the full year), calculate it as full year minus the
+  nine-month figure. Use claims for anything that isn't a table value.
 - Prefer company filings and releases. Use news sources for events and commentary, and say
   who reported it. Keep it concise: only claims that answer the question."""
 
@@ -223,6 +239,13 @@ def _result(claim: Claim, evidence: dict[str, Evidence]) -> float | None:
 
 # ---------- orchestration ----------
 
+def _items(draft: Draft) -> list[Claim]:
+    """Claims followed by table cells, each cell checked like a claim ("row | column: value")."""
+    cells = [Claim(text=f"{c.row} | {c.column}: {c.value}", evidence_ids=c.evidence_ids, quotes=c.quotes,
+                   calculation=c.calculation) for c in draft.table]
+    return list(draft.claims) + cells
+
+
 def _evidence_block(evidence: list[Evidence]) -> str:
     return "\n\n".join(f"[{e.id}] {e.title} | {e.tier} source | date: {e.date or 'unknown'} | {e.url}\n{e.text}"
                        for e in evidence)
@@ -230,7 +253,7 @@ def _evidence_block(evidence: list[Evidence]) -> str:
 
 def _draft_block(draft: Draft, texts: list[str]) -> str:
     lines = []
-    for n, (c, text) in enumerate(zip(draft.claims, texts), start=1):
+    for n, (c, text) in enumerate(zip(_items(draft), texts), start=1):
         lines.append(f"Claim {n}: {text}\n  evidence: {c.evidence_ids}\n  quotes: {c.quotes}")
         if c.calculation:
             lines.append(f"  calculation: {c.calculation.expression} with "
@@ -255,10 +278,11 @@ def write(question: str, today: date, plan_notes: list[str], evidence: list[Evid
     add(t)
     semantic_check = True
     for attempt in range(2):
-        computed = [r for c in draft.claims if (r := _result(c, by_id)) is not None]
-        results = [check_claim(c, by_id, computed) for c in draft.claims]
+        items = _items(draft)
+        computed = [r for c in items if (r := _result(c, by_id)) is not None]
+        results = [check_claim(c, by_id, computed) for c in items]
         texts = [text for _, text in results]
-        cited = {i for c in draft.claims for i in c.evidence_ids} | {i for u in draft.unavailable for i in u.evidence_ids}
+        cited = {i for c in items for i in c.evidence_ids} | {i for u in draft.unavailable for i in u.evidence_ids}
         try:
             review, t = structured(Review, VERIFIER, f"Today: {today}\nQuestion: {question}\n\nDRAFT\n"
                                    f"{_draft_block(draft, texts)}\n\nCITED EVIDENCE\n"
@@ -287,12 +311,18 @@ def write(question: str, today: date, plan_notes: list[str], evidence: list[Evid
             break  # revision failed: keep the checked first draft; its failing claims are withheld below
         add(t)
 
-    claims, removed = [], []
-    for n, (claim, (_, text)) in enumerate(zip(draft.claims, results), start=1):
+    claims, table, removed = [], [], []
+    n_claims = len(draft.claims)
+    for n, (item, (_, text)) in enumerate(zip(_items(draft), results), start=1):
         if n in problems:
             removed.append({"text": text, "problem": problems[n]})
+            continue
+        record = {"text": text, "evidence_ids": item.evidence_ids, "quotes": item.quotes,
+                  "calculation": item.calculation.model_dump() if item.calculation else None}
+        if n <= n_claims:
+            claims.append(record)
         else:
-            claims.append({"text": text, "evidence_ids": claim.evidence_ids, "quotes": claim.quotes,
-                           "calculation": claim.calculation.model_dump() if claim.calculation else None})
-    return {"claims": claims, "unavailable": [u.model_dump() for u in draft.unavailable],
+            cell = draft.table[n - n_claims - 1]
+            table.append({**record, "row": cell.row, "column": cell.column, "value": text.split(": ", 1)[-1]})
+    return {"claims": claims, "table": table, "unavailable": [u.model_dump() for u in draft.unavailable],
             "removed": removed, "missing": review.missing, "semantic_check": semantic_check, "tokens": tokens}
