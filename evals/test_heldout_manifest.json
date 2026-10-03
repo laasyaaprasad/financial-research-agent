@@ -1,0 +1,10 @@
+{
+  "file": "evals/test_heldout.jsonl",
+  "sha256": "4169c93e751baa0687eb353558be62a30f9b0f2f2638f6153a08404f06e26525",
+  "frozen_at": "2026-10-03",
+  "questions": 20,
+  "companies": 21,
+  "as_of": "2026-10-03",
+  "built_by": "research subagent from SEC filings and company releases (no Tavily); references cross-checked by the main agent against SEC XBRL (11/11 matched)",
+  "rule": "No agent code changes in response to results on this set after its first run (crash fixes only, reported)."
+}
