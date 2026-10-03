@@ -1,0 +1,11 @@
+{
+  "file": "evals/test_tables.jsonl",
+  "sha256": "ad1b1ea8f80bcdcfb4b9c47520d3c279592b3bce4d3cd373232b6a1e21ce5e02",
+  "frozen_at": "2026-10-03",
+  "tasks": 8,
+  "cells": 86,
+  "companies": 21,
+  "design": "Analyst table work (peer comps across fiscal calendars, 8-quarter trend, TTM comps, balance-sheet comps, segment trend, point-in-time trend, growth comps, derived-Q4 margin trend), added because single-answer questions saturated. Built blind by a research subagent from SEC filings; graded cell by cell (an LLM only extracts values; code compares within tolerance).",
+  "verification": "builder: 81/81 numeric cells matched to filing text, 67 to XBRL, 48 derived values recomputed; main agent: XBRL spot checks consistent",
+  "rule": "Frozen before either agent's first run on it; no agent code changes in response to its results."
+}
