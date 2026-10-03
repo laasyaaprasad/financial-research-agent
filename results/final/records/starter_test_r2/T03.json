@@ -1,0 +1,105 @@
+{
+ "id": "T03",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Dell Technologies' revenue from AI-optimized servers in the second quarter of fiscal 2027 (the quarter ended July 31, 2026)? Answer in USD millions.",
+ "grading": "±0.5%, USD millions (accept $16.4B). Period must be Q2 FY2027 (three months ended 2026-07-31). Fail if orders, backlog, six-month (32,533) or ISG total (31,782) is given as the answer.",
+ "answer": "AI-optimized servers revenue was USD 16,401 million in Q2 FY2027 (three months ended July 31, 2026), up 100% from USD 8,208 million a year earlier. It sits within ISG revenue of USD 31,782 million; total Dell net revenue was USD 46,971 million. [T03-E1, T03-E2]",
+ "output": {
+  "answer": " Dell Technologies reported **$16,400 million** (or $16.4 billion) in revenue from AI-optimized servers in the second quarter of fiscal 2027 (quarter ended July 31, 2026). This represented a 100% year-over-year increase.\n\n**Sources:**\n- [Yahoo Finance - Dell Technologies Delivers Second Quarter Fiscal 2027 Financial Results](https://finance.yahoo.com/markets/stocks/articles/dell-technologies-delivers-second-quarter-200500304.html)\n- [Yahoo Finance - Dell Earnings Surge: Is It the Next Big AI Stock to Buy in 2026?](https://finance.yahoo.com/technology/ai/articles/dell-earnings-surge-next-big-190000922.html)\n- [Yahoo Finance - Why Is Dell Technologies (DELL) Up 9.3% Since Last Earnings Report?](https://finance.yahoo.com/markets/stocks/articles/why-dell-technologies-dell-9-143003212.html)",
+  "tokens": {
+   "input": 5136,
+   "output": 942
+  },
+  "tavily_credits": 2,
+  "latency_s": 10.04,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/35dfa8e8fc10b44fd0ea083b9dbad0bb",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Dell Technologies AI-optimized servers revenue Q2 fiscal 2027 quarter ended July 31 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/dell-technologies-delivers-second-quarter-200500304.html",
+    "https://finance.yahoo.com/markets/stocks/articles/why-dell-technologies-dell-9-143003212.html",
+    "https://finance.yahoo.com/technology/ai/articles/dell-earnings-surge-next-big-190000922.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 10,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer in USD millions",
+     "met": true,
+     "note": "Agent answered $16,400 million."
+    },
+    {
+     "point": "Value within ±0.5% of 16,401 million",
+     "met": true,
+     "note": "16,400 million is within 0.006% of reference 16,401 million."
+    },
+    {
+     "point": "Period is Q2 FY2027 (three months ended July 31, 2026)",
+     "met": true,
+     "note": "Agent explicitly states quarter ended July 31, 2026."
+    },
+    {
+     "point": "Answer is AI-optimized servers revenue, not orders, backlog, six-month, or ISG total",
+     "met": true,
+     "note": "Agent specifies revenue from AI-optimized servers."
+    },
+    {
+     "point": "No fiscal confusion (not calendar Q2 or Q2 FY2026)",
+     "met": true,
+     "note": "Agent correctly identifies fiscal 2027 quarter ended July 31, 2026."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent provided the correct figure ($16,400 million) for AI-optimized servers revenue in Q2 FY2027, within the allowed tolerance, with the correct period and no confusion with other metrics."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Dell Technologies reported $16,400 million (or $16.4 billion) in revenue from AI-optimized servers in the second quarter of fiscal 2027 (quarter ended July 31, 2026)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/dell-technologies-delivers-second-quarter-200500304.html",
+     "reason": "The retrieved source states: 'Record AI-Optimized Servers revenue: $16.4 billion, up 100% year over year.' This matches the claimed amount and period.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "This represented a 100% year-over-year increase",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/dell-technologies-delivers-second-quarter-200500304.html",
+     "reason": "The same source explicitly says 'up 100% year over year' for AI-Optimized Servers revenue. Additional retrieved sources also confirm the 100% year-over-year increase (e.g., 'AI-optimized server revenue, which reached $16.4 billion in the fiscal second quarter, a 100% year-over-year increase' and 'AI-optimized server revenues doubled to $16.4 billion').",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 2,
+   "numeric_cited": 2,
+   "cited": 2,
+   "supported": 2,
+   "not_retrieved": 0
+  }
+ }
+}

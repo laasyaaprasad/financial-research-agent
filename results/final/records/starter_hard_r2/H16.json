@@ -1,0 +1,167 @@
+{
+ "id": "H16",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "abstain",
+ "question": "Pull Skechers' latest 10-Q and give me net sales and earnings from operations for its quarter ended June 30, 2026, in USD millions.",
+ "grading": "Must state that no Skechers 10-Q exists for the quarter ended June 30, 2026 because Skechers was taken private (merger closed Sept 12, 2025; Form 15 deregistration filed Sept 23, 2025), so SEC-filed net sales and earnings from operations are unavailable. May cite the last filed quarter (June 30, 2025: net sales USD 2,440.0M; earnings from operations USD 173.1M) clearly labelled as 2025. Fail if any 2026 net sales or operating earnings figure is presented as filed.",
+ "answer": "There is no such filing. Skechers was acquired by 3G Capital (merger completed September 12, 2025; NYSE delisting) and filed a Form 15 on September 23, 2025 terminating its SEC reporting duties, with one holder of record [H16-E1][H16-E2]. Its last periodic reports on EDGAR are the 10-Q for the quarter ended June 30, 2025 (filed August 8, 2025: net sales USD 2,440.0 million; earnings from operations USD 173.1 million) and the FY2024 10-K (filed February 28, 2025); there is no 10-K for 2025 and no 10-Q for 2026 [H16-E3][H16-E4].",
+ "output": {
+  "answer": " No Skechers 10-Q for the quarter ended **June 30, 2026** appears to be filed or available on EDGAR yet.  \n\nThe most recent filing for a June 30 quarter is the **Q2 2025** 10-Q (filed August 8,  2025),  which shows:\n\n- **Net sales:** **$2,440 million** (USD)  \n- **Earnings from operations:** **$173.1 million** (USD)  \n\n*(Source: SEC EDGAR 10-Q for period ended June 30, 2025 – https://www.sec.gov/Archives/edgar/data/1065837/000095017025105871/skx-20250630.htm and Skechers press release https://about.skechers.com/press-release/skechers-announces-second-quarter-2025-financial-results)*\n\nIf you are looking for projections or guidance for Q2 2026, that would typically appear in a later 8-K or earnings call transcript rather than in a filed 10-Q.",
+  "tokens": {
+   "input": 54139,
+   "output": 3092
+  },
+  "tavily_credits": 5,
+  "latency_s": 33.39,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/8f3a2a65d446c73e01180dff21116491",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Skechers SKX latest 10-Q SEC filing June 2026 quarter earnings operations net sales"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Skechers 10-Q June 30, 2026 earnings from operations net sales sec.gov site:sec.gov",
+     "include_domains": [
+      "sec.gov"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Skechers\" \"10-Q\" \"June 30, 2026\" OR \"2026-06-30\" sec filing",
+     "include_domains": [
+      "sec.gov"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Skechers SKX SEC filing 10-Q period ended June 30 2026 Q2 2026",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://about.skechers.com/press-release/skechers-announces-second-quarter-2025-financial-results",
+    "https://www.sec.gov/Archives/edgar/data/1065837/000095017025105871/skx-20250630.htm"
+   ],
+   "cited_primary": 1,
+   "retrieved": 27,
+   "retrieved_primary": 18
+  },
+  "correctness": {
+   "score": 0.4,
+   "points": [
+    {
+     "point": "State that no Skechers 10-Q exists for the quarter ended June 30, 2026",
+     "met": false,
+     "note": "Agent says 'appears to be filed or available on EDGAR yet' – not a definitive statement that it does not exist; 'yet' implies it might appear later."
+    },
+    {
+     "point": "State the reason: because Skechers was taken private (merger closed Sept 12, 2025; Form 15 deregistration filed Sept 23, 2025)",
+     "met": false,
+     "note": "Agent does not mention the merger, privatization, or Form 15 filing at all."
+    },
+    {
+     "point": "State that SEC-filed net sales and earnings from operations are unavailable",
+     "met": false,
+     "note": "Agent implies unavailability by noting no 10-Q filed, but does not explicitly state that SEC-filed figures are unavailable due to deregistration."
+    },
+    {
+     "point": "Cite the last filed quarter (June 30, 2025: net sales USD 2,440.0M; earnings from operations USD 173.1M) clearly labelled as 2025",
+     "met": true,
+     "note": "Agent provides Q2 2025 figures ($2,440M net sales, $173.1M earnings from operations) and clearly labels them as 2025."
+    },
+    {
+     "point": "No 2026 net sales or operating earnings figure presented as filed",
+     "met": true,
+     "note": "Agent does not present any 2026 figures as filed; only mentions projections/guidance would appear in 8-K or earnings calls."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The agent correctly identifies that no 10-Q for June 30, 2026 is on EDGAR and provides the last available quarter (2025) with accurate figures, but fails to state the essential reason: Skechers was taken private in September 2025 (merger closed Sept 12, 2025; Form 15 filed Sept 23, 2025) and therefore no longer files SEC reports. The answer's use of 'yet' incorrectly suggests a future filing might occur. This omission of the privatization context means the core requirement of the grading rule is not met."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "No Skechers 10-Q for the quarter ended June 30, 2026 appears to 2026 appears to be filed or available on EDGAR yet",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The retrieved SEC filings for Skechers (CIK 1065837) include 10-Qs for periods ended March 31 2025, June 30 2025, and September 30 2024, but none for June 30 2026. The most recent June‑30 quarter filing is for 2025.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "The most recent filing for a June 30 quarter is the Q2 2025 10-Q filed August 8 2025",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/SKX/page-4.html",
+     "reason": "The StockTitan filing archive for SKX states: 'The most recent SEC filing for SKECHERS USA (SKX) was filed on August 8, 2025.' The press release dated Aug 8 2025 and the SEC 10‑Q for June 30 2025 are consistent with that filing date.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Net sales: $2,440 million (USD) for the quarter ended June 30 2025",
+     "numeric": true,
+     "cited_url": "https://about.skechers.com/press-release/skechers-announces-second-quarter-2025-financial-results",
+     "reason": "The press release table shows 'Sales' of $2,440,024 thousand for the three months ended June 30 2025, which equals $2,440.024 million. Rounded to the nearest million this is $2,440 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Earnings from operations: $173.1 million (USD) for the quarter ended June 30 2025",
+     "numeric": true,
+     "cited_url": "https://about.skechers.com/press-release/skechers-announces-second-quarter-2025-financial-results",
+     "reason": "The press release states: 'Operating expenses rose 15.4% to $1.13 billion … which reduced operating income to $173.1 million from $206.5 million a year earlier.' Operating income is equivalent to earnings from operations.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "SEC EDGAR 10-Q for period ended June 30 2025 is available at https://www.sec.gov/Archives/edgar/data/1065837/000095017025105871/skx-20250630.htm",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1065837/000095017025105871/skx-20250630.htm",
+     "reason": "The retrieved source list includes this exact URL with title '10-Q' and content matching the Skechers 10‑Q for the quarter ended June 30 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Skechers press release for Q2 2025 results is available at https://about.skechers.com/press-release/skechers-announces-second-quarter-2025-financial-results",
+     "numeric": false,
+     "cited_url": "https://about.skechers.com/press-release/skechers-announces-second-quarter-2025-financial-results",
+     "reason": "The retrieved source list includes this URL with title 'Skechers Announces Second Quarter 2025 Financial Results' and content containing the cited financial tables.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Projections or guidance for Q2 2026 would typically appear in a later 8-K or earnings call transcript rather than in a filed 10-Q",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "This is a general statement about SEC filing practices; no specific source is cited in the answer. The retrieved sources do not contain forward‑looking guidance for Q2 2026.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 5,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}

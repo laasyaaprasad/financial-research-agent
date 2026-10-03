@@ -1,0 +1,183 @@
+{
+ "id": "T11",
+ "category": "Beat or miss",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "Did lululemon's second-quarter fiscal 2026 (quarter ended August 2, 2026) net revenue and diluted EPS land above, within or below the Q2 guidance ranges the company gave in its first-quarter release in June 2026?",
+ "grading": "Key points: (1) revenue USD 2,415.6M vs guidance USD 2,450M-2,475M = BELOW the range; (2) diluted EPS USD 2.92 vs guidance USD 1.76-1.81 = ABOVE the range; (3) notes the guidance did not include IEEPA tariff refunds and that Q2 EPS included USD 0.86/share from refunds and interest, so EPS excluding that (~USD 2.06) is still above the top of the range; (4) benchmark is company guidance, not consensus. Fail if both are called beats or if consensus is used.",
+ "answer": "Against the Q2 guidance in the June 4, 2026 release (net revenue USD 2.450-2.475 billion; diluted EPS USD 1.76-1.81; guidance excluded any IEEPA tariff refunds) [T11-E1], Q2 FY2026 net revenue was USD 2,415.6 million (below the low end by about 1.4%) and diluted EPS was USD 2.92 (above the high end). The EPS includes USD 0.86 per share from IEEPA tariff refunds ($134.5M) and associated interest ($4.1M); excluding that, EPS is about USD 2.06, still above the USD 1.81 top of the range. [T11-E2]",
+ "output": {
+  "answer": " Based on the available information, here's how Lululemon's Q2 FY2026 results compared to their own guidance:\n\n## Q2 FY2026 Guidance (from Q1 release in June 2026):\n- **Net revenue:** $2.45 billion to $2.475 billion (or $2.47 billion in other reports) [1][2]\n- **Diluted EPS:** $1.76 to $1.81 [1][2]\n\n## Q2 FY2026 Actual Results (quarter ended August 2, 2026):\n- **Net revenue:** $2.4 billion (down 4% YoY) — **Below** the guidance range [3][4][5]\n- **GAAP diluted EPS:** $2.92 [4][6] — **Above** the guidance range\n\n## Key Context on EPS:\nThe reported GAAP EPS of $2.92 includes a **$134.5 million tariff refund** (under the IEEPA) which boosted EPS by approximately **$0.86 per share** [4][5]. Excluding this one-time benefit, adjusted EPS would have been roughly **$2.06**, which would still fall **above** the company's guidance range of $1.76–$1.81.\n\n## Bottom Line:\n- **Revenue:** Landed **below** the Q2 guidance range\n- **Diluted EPS:** Landed **above** the Q2 guidance range (even on an adjusted basis ex-tariff refunds)\n\n---\n\n**Sources:**\n[1] https://finance.yahoo.com/markets/stocks/articles/lululemon-q1-profit-falls-despite-090752488.html  \n[2] https://ca.finance.yahoo.com/news/lululemon-beats-q1-earnings-expectations-215257665.html  \n[3] https://finance.yahoo.com/markets/stocks/articles/lululemon-shares-fall-17-fy2026-094142265.html  \n[4] https://finance.yahoo.com/markets/stocks/articles/lululemon-stock-falls-18-tariff-122626593.html  \n[5] https://finance.yahoo.com/markets/stocks/articles/lululemon-plunges-20-trades-lowest-190143245.html  \n[6] https://finance.yahoo.com/markets/stocks/articles/lululemon-athletica-inc-announces-second-200500621.html",
+  "tokens": {
+   "input": 33531,
+   "output": 4200
+  },
+  "tavily_credits": 8,
+  "latency_s": 38.42,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/50c39f90cf7d66a174ea61929a186e1f",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "lululemon Q2 fiscal 2026 results net revenue diluted EPS actual versus guidance August 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "lululemon Q1 fiscal 2026 guidance Q2 2026 net revenue earnings per share outlook June 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"lululemon\" \"Q2 FY2026\" \"diluted EPS\" \"$2.92\" OR \"$3.10\" actual results official",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"lululemon\" \"Q2 2026\" \"adjusted EPS\" \"tariff refund\" \"$2.92\" official results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://ca.finance.yahoo.com/news/lululemon-beats-q1-earnings-expectations-215257665.html",
+    "https://finance.yahoo.com/markets/stocks/articles/lululemon-athletica-inc-announces-second-200500621.html",
+    "https://finance.yahoo.com/markets/stocks/articles/lululemon-plunges-20-trades-lowest-190143245.html",
+    "https://finance.yahoo.com/markets/stocks/articles/lululemon-q1-profit-falls-despite-090752488.html",
+    "https://finance.yahoo.com/markets/stocks/articles/lululemon-shares-fall-17-fy2026-094142265.html",
+    "https://finance.yahoo.com/markets/stocks/articles/lululemon-stock-falls-18-tariff-122626593.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 32,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Revenue USD 2,415.6M vs guidance USD 2,450M-2,475M = BELOW the range",
+     "met": true,
+     "note": "Agent states net revenue $2.4B below guidance range $2.45-2.475B; actual $2,415.6M vs guidance $2,450-2,475M, conclusion correct."
+    },
+    {
+     "point": "Diluted EPS USD 2.92 vs guidance USD 1.76-1.81 = ABOVE the range",
+     "met": true,
+     "note": "Agent states GAAP diluted EPS $2.92 above guidance range $1.76-1.81; matches reference."
+    },
+    {
+     "point": "Notes the guidance did not include IEEPA tariff refunds and that Q2 EPS included USD 0.86/share from refunds and interest, so EPS excluding that (~USD 2.06) is still above the top of the range",
+     "met": true,
+     "note": "Agent explicitly mentions $134.5M tariff refund boosting EPS by $0.86, adjusted EPS ~$2.06 still above guidance top of $1.81."
+    },
+    {
+     "point": "Benchmark is company guidance, not consensus. Fail if both are called beats or if consensus is used.",
+     "met": true,
+     "note": "Agent uses company guidance from Q1 release, no consensus used."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly identifies revenue below guidance, EPS above guidance, includes the tariff refund context, and uses company guidance as benchmark."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q2 FY2026 guidance net revenue range: $2.45 billion to $2.475 billion (or $2.47 billion in other reports)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-q1-profit-falls-despite-090752488.html",
+     "reason": "Source [1] states: 'For Q2 FY26, Lululemon expects revenue between $2.45bn and $2.47bn'. Source [2] states: 'second-quarter net revenue is expected to decline two per cent to three per cent to between US$2.45 billion to $2.475 billion'. Both support the claimed range.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 guidance diluted EPS range: $1.76 to $1.81",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-q1-profit-falls-despite-090752488.html",
+     "reason": "Source [1] states: 'diluted earnings per share projected at $1.76 to $1.81'. Source [2] does not mention EPS in the retrieved snippet, but [1] is sufficient.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 actual net revenue: $2.4 billion, down 4% year-over-year",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-shares-fall-17-fy2026-094142265.html",
+     "reason": "Source [3] states: 'Revenue declined 4% year over year to $2.4 billion'. Source [4] states: 'net revenue of $2.42 billion, down 4%'. Source [6] states: 'Revenue decreased 4% to $2.4 billion'. All support the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 actual GAAP diluted EPS: $2.92",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-shares-fall-17-fy2026-094142265.html",
+     "reason": "Source [3] states: 'Adjusted earnings per share were $2.92'. Source [4] states: 'Diluted EPS came in at $2.92'. Source [5] states: 'GAAP EPS of $2.92'. Source [6] states: 'Diluted EPS of $2.92'. All support the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual net revenue ($2.4B) landed below the Q2 guidance range ($2.45B–$2.475B)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-shares-fall-17-fy2026-094142265.html",
+     "reason": "Guidance range from sources [1] and [2] is $2.45B–$2.475B. Actual revenue from sources [3], [4], [6] is $2.4B. The comparison is correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual GAAP diluted EPS ($2.92) landed above the Q2 guidance range ($1.76–$1.81)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-shares-fall-17-fy2026-094142265.html",
+     "reason": "Guidance EPS range from source [1] is $1.76–$1.81. Actual GAAP EPS from sources [3]–[6] is $2.92. The comparison is correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The reported GAAP EPS of $2.92 includes a $134.5 million tariff refund under the IEEPA, which boosted EPS by approximately $0.86 per share",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-stock-falls-18-tariff-122626593.html",
+     "reason": "Source [4] states: 'That figure includes $0.86 from International Emergency Economic Powers Act tariff refunds of $134.5 million'. Source [5] states: 'included an $0.86 per share benefit from a $134.5M IEEPA tariff refund'. Source [6] states: 'This includes $134.5 million of tariff refunds'. All support the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Excluding the tariff refund, adjusted EPS would have been roughly $2.06, still above the guidance range of $1.76–$1.81",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-stock-falls-18-tariff-122626593.html",
+     "reason": "Derived calculation: $2.92 (GAAP EPS) - $0.86 (tariff refund boost) = $2.06. Guidance range is $1.76–$1.81. $2.06 is above that range. Arithmetic is correct and inputs are supported by sources [4], [5], [6].",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 quarter ended August 2, 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-shares-fall-17-fy2026-094142265.html",
+     "reason": "Source [4] (cited as [4] in the answer) states: 'For the quarter ending 2 August 2026'. The answer cites sources [3], [4], [5] for the actual results, and at least source [4] supports the date.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 9,
+   "numeric_cited": 9,
+   "cited": 9,
+   "supported": 9,
+   "not_retrieved": 0
+  }
+ }
+}

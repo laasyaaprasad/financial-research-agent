@@ -1,0 +1,126 @@
+{
+ "id": "H03",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "As of January 20, 2026, what were Wingstop's most recently reported quarterly domestic same store sales growth and system-wide sales (state the fiscal quarter)?",
+ "grading": "Key points (both required): fiscal Q3 2025 (13 weeks ended Sep 27, 2025): domestic same store sales growth -5.6%; system-wide sales USD 1,356M (accept USD 1.36B, +10.0% y/y). Fail if fiscal Q4 2025 (-5.8%) or a year-to-date figure is presented as the latest.",
+ "answer": "As of January 20, 2026 the latest reported quarter was Wingstop's fiscal Q3 2025 (13 weeks ended September 27, 2025): domestic same store sales decreased 5.6% and system-wide sales were USD 1,356.4 million (USD 1.4 billion rounded; +10.0% y/y) [H03-E1][H03-E2]. Fiscal Q4 2025 results (domestic same store sales -5.8%) were published on February 18, 2026, after the as_of date [H03-E3].",
+ "output": {
+  "answer": " As of **January 20, 2026**, the most recently reported quarter was Wingstop's **Fiscal Third Quarter 2025** (Q3 FY2025, ended around September 2025):\n\n*   **Domestic same-store sales growth:** **Declined 5.6%**\n*   **System-wide sales:** **$1.4 billion** (up approximately 10% year-over-year)\n\n**Sources:**\n*   [Yahoo Finance: Wingstop Q3 2025 Results and Guidance Update](https://finance.yahoo.com/news/wingstop-shares-tumble-revenue-misses-131316684.html)\n*   [Yahoo Finance: Wingstop Q3 2025 Earnings Call Highlights](https://finance.yahoo.com/news/wingstop-inc-wing-q3-2025-211614030.html)\n\n*(Note: Wingstop's Fiscal Q4 2025 results were scheduled to be reported on February 18, 2026, and therefore had not yet been released as of January 20, 2026.)*",
+  "tokens": {
+   "input": 22053,
+   "output": 8719
+  },
+  "tavily_credits": 6,
+  "latency_s": 64.46,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/3f928cb0f02ca0e9a5f5c350a1261890",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Wingstop quarterly earnings domestic same store sales growth system-wide sales latest quarter 2025 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Wingstop fiscal second quarter 2026 earnings reported January 2026 most recent quarter",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Wingstop Q3 2025 fiscal third quarter earnings domestic same store sales system-wide sales reported October November 2025",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/news/wingstop-inc-wing-q3-2025-211614030.html",
+    "https://finance.yahoo.com/news/wingstop-shares-tumble-revenue-misses-131316684.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 27,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Fiscal quarter correctly identified as Q3 2025 (13 weeks ended Sep 27, 2025)",
+     "met": true,
+     "note": "Agent states 'Fiscal Third Quarter 2025 (Q3 FY2025, ended around September 2025)' which matches the required fiscal quarter."
+    },
+    {
+     "point": "Domestic same store sales growth -5.6%",
+     "met": true,
+     "note": "Agent reports 'Declined 5.6%' which exactly matches the required figure."
+    },
+    {
+     "point": "System-wide sales USD 1,356M (accept USD 1.36B, +10.0% y/y)",
+     "met": true,
+     "note": "Agent reports '$1.4 billion (up approximately 10% year-over-year)'. $1.4B is an acceptable rounding of 1,356M (1.356B) and the growth rate matches +10.0% y/y."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly identifies the latest reported quarter as fiscal Q3 2025, provides the correct domestic same store sales growth of -5.6%, and system-wide sales of $1.4 billion (approx 10% y/y), consistent with the reference. The agent also correctly notes that Q4 2025 results were not yet released as of the as_of date."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "As of January 20, 2026, the most recently reported quarter was Wingstop's Fiscal Third Quarter 2025 (Q3 FY2025, ended around September 2025).",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/wingstop-shares-tumble-revenue-misses-131316684.html",
+     "reason": "The cited article reports Wingstop's third-quarter 2025 results, confirming Q3 FY2025 as the latest reported quarter at the time of publication. Combined with the retrieved announcement that Q4 FY2025 results were scheduled for February 18, 2026, the claim that Q3 FY2025 was the most recent as of January 20, 2026 is consistent.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Domestic same-store sales growth: Declined 5.6%.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/wingstop-shares-tumble-revenue-misses-131316684.html",
+     "reason": "The cited article explicitly states: 'domestic same-store sales declined 5.6%'. The second cited source (Q3 2025 Earnings Call Highlights) also confirms a 5.6% decline in same-store sales in Q3.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "System-wide sales: $1.4 billion (up approximately 10% year-over-year).",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/wingstop-shares-tumble-revenue-misses-131316684.html",
+     "reason": "The cited article states: 'System-wide sales increased 10% to $1.4 billion compared to the same period last year'. This matches the claimed figure and growth rate.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Wingstop's Fiscal Q4 2025 results were scheduled to be reported on February 18, 2026, and therefore had not yet been released as of January 20, 2026.",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer includes this as an uncited note. A retrieved source (https://finance.yahoo.com/news/wingstop-inc-announce-fiscal-fourth-130000804.html) confirms the announcement of Q4 FY2025 results on February 18, 2026, supporting the claim.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 3,
+   "cited": 3,
+   "supported": 3,
+   "not_retrieved": 0
+  }
+ }
+}

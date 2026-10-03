@@ -1,0 +1,223 @@
+{
+ "id": "H09",
+ "category": "Quantitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "How many shares did Casey's General Stores repurchase in its fiscal first quarter of 2027 (three months ended July 31, 2026), at what total cost and average price per share, and how much repurchase authorization remained at quarter end?",
+ "grading": "Key points: 54,647 shares repurchased in the quarter; total cost about USD 45.6M (45,642 thousand per the equity statement; accept USD 44.9M-45.7M if cash-flow basis is explained); average price USD 835.19; maximum dollar value remaining under the program USD 972.6M (972,601,128), after the Board expanded the program to USD 1.0B on June 4, 2026. Tolerance +/-0.5%. Fail if a prior-year quarter is used.",
+ "answer": "In fiscal Q1 2027 (May 1-July 31, 2026) Casey's repurchased 54,647 shares at an average price of USD 835.19 (monthly: 18,696 at USD 842.06; 17,386 at USD 814.82; 18,565 at USD 847.35), a total cost of about USD 45.6 million (USD 45,642 thousand in the statement of shareholders' equity; cash paid incl. excise taxes USD 44.9 million). USD 972.6 million (972,601,128) remained under the repurchase program at July 31, 2026, after the Board expanded the program from USD 400 million to USD 1.0 billion on June 4, 2026 [H09-E1].",
+ "output": {
+  "answer": " Based on my search results, here are the share repurchase figures for **Casey's General Stores (CASY)** for its fiscal first quarter ended **July 31, 2026** (which is Q1 of fiscal 2027):\n\n| Metric | Amount |\n|--------|--------|\n| **Shares repurchased** | 54,647 |\n| **Total cost** | ~$45.6 million |\n| **Average price per share** | ~**$834.45** |\n| **Remaining authorization at quarter end** | ~**$973 million** |\n\n### Sources\n- **SEC 10-Q Filing**: \"During the first quarter, we repurchased and retired **54,647 shares** of our common stock under the share repurchase programs for a total of **$45.6 million**.\" [Yahoo Finance SEC Filing](https://ca.finance.yahoo.com/sec-filing/CASY/0000726958-26-000085_726958)\n- **Earnings Press Release**: \"During the quarter, the Company repurchased approximately **$45.6 million** of shares. The Company has approximately **$973 million** remaining under its [share repurchase authorization].\" [BusinessWire/Casey's Q1 Results](https://finance.yahoo.com/markets/stocks/articles/caseys-announces-first-quarter-results-203000237.html)\n\n**Note**: July 31, 2026 falls in the future relative to my training data; the figures above are based on retrieved web sources referencing actual SEC filings and press releases for that period. Casey's fiscal year ends April 30, so the three-month period ended July 31, 2026 represents the first quarter of fiscal 2027.",
+  "tokens": {
+   "input": 112688,
+   "output": 3849
+  },
+  "tavily_credits": 16,
+  "latency_s": 44.79,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/6b2a26ad67d5f5ebe850475d3ea9e21a",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Casey's General Stores share repurchases fiscal first quarter 2025 three months ended July 31 2024 total cost average price remaining authorization",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Casey's General Stores CASY quarterly earnings report share repurchase buyback authorization 2024 2025",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Casey's General Stores\" \"share repurchase\" OR \"buy back\" OR \"stock repurchase\" 2024 2025 quarterly results",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "site:siouxlandproud.com OR site:businesswire.com OR site:globenewswire.com OR site:prnewswire.com \"Casey's\" \"fiscal\" share repurchase buyback",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Casey\\'s Announces First Quarter Results\" 2026 share repurchase $45.6 million",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Casey\\'s General Stores\" \"54,647\" OR \"$45.6 million\" share repurchase \"July 31, 2026\" authorization",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Casey\\'s Announces First Quarter Results\" 2026 2027 \"$45.6 million\" \"$973 million\" share repurchase 54,647",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Casey's General Stores 10-Q three months ended July 31 2026 share repurchase 54,647 $45.6 million",
+     "topic": "finance",
+     "search_depth": "advanced",
+     "include_domains": [
+      "sec.gov",
+      "yahoo.com",
+      "businesswire.com",
+      "globenewswire.com",
+      "prnewswire.com"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://ca.finance.yahoo.com/sec-filing/CASY/0000726958-26-000085_726958",
+    "https://finance.yahoo.com/markets/stocks/articles/caseys-announces-first-quarter-results-203000237.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 50,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 0.8,
+   "points": [
+    {
+     "point": "54,647 shares repurchased in the quarter",
+     "met": true,
+     "note": "Agent states 54,647 shares repurchased, matches reference."
+    },
+    {
+     "point": "total cost about USD 45.6M (45,642 thousand per the equity statement; accept USD 44.9M-45.7M if cash-flow basis is explained)",
+     "met": true,
+     "note": "Agent states ~$45.6 million, within tolerance."
+    },
+    {
+     "point": "average price USD 835.19",
+     "met": true,
+     "note": "Agent states ~$834.45, within 0.5% tolerance (0.0886% difference)."
+    },
+    {
+     "point": "maximum dollar value remaining under the program USD 972.6M (972,601,128), after the Board expanded the program to USD 1.0B on June 4, 2026",
+     "met": false,
+     "note": "Agent states ~$973 million remaining but does not mention the program expansion to $1.0B on June 4, 2026, which is a required element per grading rule."
+    },
+    {
+     "point": "Correct fiscal quarter: fiscal Q1 2027 (May-Jul 2026)",
+     "met": true,
+     "note": "Agent correctly identifies fiscal Q1 2027 as three months ended July 31, 2026."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The agent correctly reports the share count, total cost, average price, and remaining authorization within tolerance, and identifies the correct fiscal quarter. However, the agent omits mention of the board's expansion of the repurchase program to $1.0B on June 4, 2026, which is a required element per the grading rule."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Casey's General Stores (CASY) fiscal first quarter ended July 31, 2026 (Q1 of fiscal 2027)",
+     "numeric": true,
+     "cited_url": "https://ca.finance.yahoo.com/sec-filing/CASY/0000726958-26-000085_726958",
+     "reason": "The SEC filing content references 'Three Months Ended July 31, 2026' which aligns with a fiscal quarter ending July 31. The answer's note about fiscal year ending April 30 is consistent with this being Q1 of fiscal 2027 (May-July 2026).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Shares repurchased: 54,647",
+     "numeric": true,
+     "cited_url": "https://ca.finance.yahoo.com/sec-filing/CASY/0000726958-26-000085_726958",
+     "reason": "The SEC filing content explicitly states: 'During the first quarter, we repurchased and retired 54,647 shares of our common stock under the share repurchase programs for a total of $45.6' (repeated multiple times).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total cost: ~$45.6 million",
+     "numeric": true,
+     "cited_url": "https://ca.finance.yahoo.com/sec-filing/CASY/0000726958-26-000085_726958",
+     "reason": "The SEC filing content states 'for a total of $45.6' (million implied). The BusinessWire press release also confirms 'approximately $45.6 million of shares'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Average price per share: ~$834.45",
+     "numeric": true,
+     "cited_url": "https://ca.finance.yahoo.com/sec-filing/CASY/0000726958-26-000085_726958",
+     "reason": "Derived calculation: $45.6 million / 54,647 shares = $834.45. The SEC filing provides both inputs (54,647 shares and $45.6 million total). Calculation: 45,600,000 / 54,647 = 834.45 (rounded to two decimals).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Remaining authorization at quarter end: ~$973 million",
+     "numeric": true,
+     "cited_url": "https://www.businesswire.com/news/home/20260908113862/en/Caseys-Announces-First-Quarter-Results",
+     "reason": "The BusinessWire press release content states: 'The Company has approximately $973 million remaining under its [share repurchase authorization].'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "SEC 10-Q Filing states: 'During the first quarter, we repurchased and retired 54,647 shares of our common stock under the share repurchase programs for a total of $45.6 million.'",
+     "numeric": false,
+     "cited_url": "https://ca.finance.yahoo.com/sec-filing/CASY/0000726958-26-000085_726958",
+     "reason": "The SEC filing content matches this quote almost exactly (shows 'for a total of $45.6' with million implied).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Earnings Press Release states: 'During the quarter, the Company repurchased approximately $45.6 million of shares. The Company has approximately $973 million remaining under its [share repurchase authorization].'",
+     "numeric": false,
+     "cited_url": "https://www.businesswire.com/news/home/20260908113862/en/Caseys-Announces-First-Quarter-Results",
+     "reason": "The BusinessWire content matches this quote: 'During the quarter, the Company repurchased approximately $45.6 million of shares. The Company has approximately $973 million remaining under'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Casey's fiscal year ends April 30",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "This is stated as a note in the answer but not directly cited from any retrieved source. The fiscal year end date is not explicitly mentioned in the retrieved content.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "The three-month period ended July 31, 2026 represents the first quarter of fiscal 2027",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "This is a logical inference based on a fiscal year ending April 30 (Q1 = May-July). Not directly stated in retrieved sources.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 7,
+   "numeric_cited": 5,
+   "cited": 7,
+   "supported": 7,
+   "not_retrieved": 0
+  }
+ }
+}

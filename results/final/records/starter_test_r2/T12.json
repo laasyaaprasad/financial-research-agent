@@ -1,0 +1,151 @@
+{
+ "id": "T12",
+ "category": "Beat or miss",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "Did Qualcomm's fiscal Q3 2026 (quarter ended June 28, 2026) total revenues and non-GAAP diluted EPS come in above, within or below the guidance ranges it gave with its fiscal Q2 2026 results in April 2026?",
+ "grading": "Key points: (1) revenues USD 9,947M vs guided USD 9.2B-10.0B = WITHIN the range (upper end); (2) non-GAAP diluted EPS USD 2.21 vs guided USD 2.10-2.30 = WITHIN the range; (3) benchmark is the company's own guidance. Optional: GAAP EPS 1.87 vs GAAP guide 1.26-1.46 is above the range. Fail if either is called above or below the range or consensus is used.",
+ "answer": "Guidance from the April 29, 2026 release for Q3 FY26: revenues USD 9.2-10.0 billion and non-GAAP diluted EPS USD 2.10-2.30. [T12-E1] Actual Q3 FY2026: revenues USD 9,947 million (within the range, near the high end) and non-GAAP diluted EPS USD 2.21 (within the range). GAAP EPS was USD 1.87 against GAAP guidance of USD 1.26-1.46 (above). [T12-E2]",
+ "output": {
+  "answer": " Based on the search results, Qualcomm's fiscal Q3 2026 results were **within** the guidance ranges provided with its Q2 2026 results in April 2026:\n\n| Metric | Q3 Guidance (issued April 2026) | Q3 Actual Results |\n|--------|--------------------------------|-------------------|\n| **Total Revenue** | $9.2B – $10.0B | ~$9.9B (at the high end of guidance) |\n| **Non-GAAP Diluted EPS** | $2.10 – $2.30 | $2.21 |\n\n**Revenue** came in at approximately **$9.9 billion** (one source cites $9.95 billion), which is **within** the guided range and described as \"at the high end of guidance\" [[1]](https://finance.yahoo.com/markets/stocks/articles/qualcomm-inc-qcom-q3-2026-050244984.html).\n\n**Non-GAAP diluted EPS** of **$2.21** was also **within** the guidance range of $2.10–$2.30. While this slightly missed the Zacks Consensus Estimate of $2.22, it was squarely inside Qualcomm's own guidance [[2]](https://finance.yahoo.com/markets/stocks/articles/qualcomm-misses-q3-earnings-estimates-142300229.html)[[3]](https://finance.yahoo.com/markets/stocks/articles/qualcomm-faces-crucial-test-brutal-194700071.html).\n\n**Sources:**\n- [Qualcomm Inc (QCOM) Q3 2026 Earnings Call Highlights](https://finance.yahoo.com/markets/stocks/articles/qualcomm-inc-qcom-q3-2026-050244984.html)\n- [Qualcomm Misses Q3 Earnings Estimates, Revenues Beat on Auto Growth](https://finance.yahoo.com/markets/stocks/articles/qualcomm-misses-q3-earnings-estimates-142300229.html)\n- [Qualcomm faces crucial test after brutal 35% slide](https://finance.yahoo.com/markets/stocks/articles/qualcomm-faces-crucial-test-brutal-194700071.html)",
+  "tokens": {
+   "input": 6386,
+   "output": 1334
+  },
+  "tavily_credits": 2,
+  "latency_s": 11.52,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/9a2c6e667d9ffca314d84b1331352b1e",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Qualcomm fiscal Q3 2026 earnings results revenue EPS guidance Q2 2026",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/qualcomm-faces-crucial-test-brutal-194700071.html",
+    "https://finance.yahoo.com/markets/stocks/articles/qualcomm-inc-qcom-q3-2026-050244984.html",
+    "https://finance.yahoo.com/markets/stocks/articles/qualcomm-misses-q3-earnings-estimates-142300229.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 10,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Revenue USD 9,947M vs guided USD 9.2B-10.0B = WITHIN the range (upper end)",
+     "met": true,
+     "note": "Agent states revenue ~$9.9B (at high end) within guided range $9.2B-$10.0B."
+    },
+    {
+     "point": "Non-GAAP diluted EPS USD 2.21 vs guided USD 2.10-2.30 = WITHIN the range",
+     "met": true,
+     "note": "Agent states non-GAAP diluted EPS $2.21 within guidance range $2.10-$2.30."
+    },
+    {
+     "point": "Benchmark is the company's own guidance (issued April 2026 with Q2 results)",
+     "met": true,
+     "note": "Agent explicitly uses Qualcomm's own guidance from April 2026 release."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All three key requirements are satisfied: revenue and non-GAAP EPS are correctly identified as within the company's own guidance ranges, and the agent avoids the failure modes (does not call revenue a 'beat', does not compare GAAP EPS to non-GAAP range, does not use consensus as benchmark)."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Qualcomm's fiscal Q3 2026 results were within the guidance ranges provided with its Q2 2026 results in April 2026",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-faces-crucial-test-brutal-194700071.html",
+     "reason": "Source 3 states: 'Qualcomm's own Q3 guidance, issued with Q2 results in April, projected total revenues of $9.2 billion to $10.0 billion and non-GAAP EPS of $2.10'. Sources 1 and 2 confirm actual revenue of $9.9B and EPS of $2.21, both within those ranges.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Guidance for Q3 Total Revenue: $9.2B – $10.0B",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-faces-crucial-test-brutal-194700071.html",
+     "reason": "Source 3 explicitly states: 'Qualcomm's own Q3 guidance, issued with Q2 results in April, projected total revenues of $9.2 billion to $10.0 billion'. Source 1 (Q2 earnings call highlights) also shows 'Guidance for Q3 Revenue: $9.2 billion to $10 billion'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual Q3 Total Revenue: ~$9.9B (at the high end of guidance)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-inc-qcom-q3-2026-050244984.html",
+     "reason": "Source 1 states: 'Revenue: $9.9 billion, at the high end of guidance.' This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "One source cites $9.95 billion for revenue",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-inc-qcom-q3-2026-050244984.html",
+     "reason": "The answer cites source 1 for this claim, but source 1 only mentions $9.9 billion. Source 2 (https://finance.yahoo.com/markets/stocks/articles/qualcomm-misses-q3-earnings-estimates-142300229.html) states 'Revenues of $9.95 billion'. Since the cited URL (source 1) does not support the $9.95 figure, the claim is not supported by the cited source.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Guidance for Q3 Non-GAAP Diluted EPS: $2.10 – $2.30",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-faces-crucial-test-brutal-194700071.html",
+     "reason": "Source 3 states: 'Qualcomm's own Q3 guidance, issued with Q2 results in April, projected total revenues of $9.2 billion to $10.0 billion and non-GAAP EPS of $2.10'. The upper bound $2.30 is implied; source 1 (Q2 earnings call highlights) explicitly shows 'Guidance for Q3 Non-GAAP EPS: $2.10 to $2.30'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual Q3 Non-GAAP Diluted EPS: $2.21",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-misses-q3-earnings-estimates-142300229.html",
+     "reason": "Source 2 states: 'Qualcomm Incorporated QCOM reported third-quarter fiscal 2026 non-GAAP earnings of $2.21 per share'. This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Non-GAAP diluted EPS of $2.21 was within guidance range",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-misses-q3-earnings-estimates-142300229.html",
+     "reason": "Guidance range $2.10–$2.30 (source 3) and actual $2.21 (source 2) confirm the actual is within the range.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "This slightly missed the Zacks Consensus Estimate of $2.22",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-misses-q3-earnings-estimates-142300229.html",
+     "reason": "Source 2 states: 'missing the Zacks Consensus Estimate of $2.22 by 0.5%'. This supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "It was squarely inside Qualcomm's own guidance",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-faces-crucial-test-brutal-194700071.html",
+     "reason": "Source 3 provides Qualcomm's own guidance ($2.10–$2.30) and source 2 provides actual $2.21, which is inside the range.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 9,
+   "supported": 8,
+   "not_retrieved": 0
+  }
+ }
+}

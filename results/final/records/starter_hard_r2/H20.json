@@ -1,0 +1,103 @@
+{
+ "id": "H20",
+ "category": "Qualitative retrieval",
+ "difficulty": "hard",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "What has Cal-Maine Foods reported or announced in the 30 days before October 3, 2026 about its quarterly results, shareholder returns and financing? Give dates and key figures.",
+ "grading": "Snapshot as of 2026-10-03; key points: (1) Sept 30, 2026: fiscal Q1 2027 (13 weeks ended Aug 29, 2026) net sales USD 539.6M (-41.5% y/y) and net loss attributable USD 58.6M or USD 1.26 per diluted share (vs net income USD 199.3M / USD 4.12); conventional shell egg segment loss USD 71.0M on a 59.3% lower average selling price; (2) no dividend for Q1 under the variable dividend policy (cumulative loss to recover USD 94.5M); (3) buybacks: 66,601 shares for USD 5.0M in Q1, USD 315.7M left of the USD 500M authorization, plus 204,888 shares for USD 14.9M after quarter end; (4) Aug 31/Sept 2, 2026: new five-year senior unsecured revolving credit facility up to USD 250M (accordion up to +USD 250M), maturing Aug 31, 2031, undrawn. Any three points with correct dates earn credit; must be dated and sourced; fail if fiscal 2026 Q1 numbers are presented as the latest or if Q1 is described as profitable.",
+ "answer": "Snapshot as of October 3, 2026. (1) September 30, 2026: Cal-Maine reported fiscal Q1 2027 (13 weeks ended August 29, 2026): net sales USD 539.6 million (-41.5% from USD 922.6 million), gross profit USD 0.4 million, operating loss USD 82.2 million and a net loss attributable of USD 58.6 million, or USD 1.26 per diluted share, versus net income of USD 199.3 million (USD 4.12) a year earlier [H20-E1][H20-E3]. Conventional shell egg net sales fell 59.5% on a 59.3% lower average selling price (segment loss USD 71.0 million); Specialty Shell Eggs and Prepared Foods rose to 54.1% of net sales [H20-E1]. (2) Under the variable dividend policy no dividend is payable for the quarter; USD 94.5 million of cumulative loss must be recovered before any future dividend [H20-E1]. (3) Buybacks: 66,601 shares for USD 5.0 million in the quarter (USD 315.7 million left of the USD 500 million program) and 204,888 shares for USD 14.9 million after quarter end [H20-E1]. (4) On August 31, 2026 (8-K filed September 2) the company entered into a Second Amended and Restated Credit Agreement: a five-year senior unsecured revolver of up to USD 250 million (accordion up to another USD 250 million), maturing August 31, 2031, with nothing borrowed at September 1 [H20-E2]. Secondary coverage corroborates the loss and dividend decision [H20-E4].",
+ "output": {
+  "answer": " I don’t have access to information from September–October 2026, since that date is in the future and my search tools retrieve current/past web data only.\n\nIf you meant a different date—such as **October 3, 2024** or **October 3, 2023**—I can search Cal-Maine Foods’ announcements around that period. Could you confirm the year?\n\nFor reference, Cal-Maine Foods typically reports quarterly results according to its fiscal calendar (its fiscal year ends the Saturday closest to May 31). Please let me know the correct year and I’ll pull the relevant filings and press releases with dates, key figures, and source links.",
+  "tokens": {
+   "input": 1511,
+   "output": 1185
+  },
+  "tavily_credits": 0,
+  "latency_s": 5.56,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/92c88a6174dd146ad07a691d03907069",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [],
+   "cited_primary": 0,
+   "retrieved": 0,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.0,
+   "points": [
+    {
+     "point": "Reported fiscal Q1 2027 results on Sept 30, 2026 with net sales USD 539.6M, net loss USD 58.6M, EPS -1.26, conventional shell egg segment loss USD 71.0M",
+     "met": false,
+     "note": "Agent did not provide this information; stated inability to access future data."
+    },
+    {
+     "point": "No dividend for Q1 under variable dividend policy, cumulative loss to recover USD 94.5M",
+     "met": false,
+     "note": "Agent did not provide this information; stated inability to access future data."
+    },
+    {
+     "point": "Buybacks: 66,601 shares for USD 5.0M in Q1, USD 315.7M left of USD 500M authorization, plus 204,888 shares for USD 14.9M after quarter end",
+     "met": false,
+     "note": "Agent did not provide this information; stated inability to access future data."
+    },
+    {
+     "point": "New credit facility on Aug 31/Sept 2, 2026: five-year senior unsecured revolver up to USD 250M, accordion up to +USD 250M, maturing Aug 31, 2031, undrawn",
+     "met": false,
+     "note": "Agent did not provide this information; stated inability to access future data."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The agent refused to answer, citing the date as in the future, and provided none of the required financial announcements from the 30 days before October 3, 2026. All four key points are missing."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "The assistant does not have access to information from September–October 2026",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer explicitly states this limitation in the first sentence.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "The assistant's search tools retrieve only current or past web data",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer states 'my search tools retrieve current/past web data only'.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Cal-Maine Foods typically reports quarterly results according to its fiscal calendar",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer includes this statement about the company's reporting practice.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Cal-Maine Foods' fiscal year ends the Saturday closest to May 31",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer specifies this detail about the fiscal year end.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 0,
+   "numeric_cited": 0,
+   "cited": 0,
+   "supported": 0,
+   "not_retrieved": 0
+  }
+ }
+}

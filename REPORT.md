@@ -21,10 +21,10 @@ The starter as shipped (Kimi K2.6) searches the web for everything, doesn't know
 
 | Set | Fully correct | Verified-correct | Primary-source citations | Tavily credits per question |
 |---|---|---|---|---|
-| Held-out sets 1 and 2 (34 fixed-answer questions, 1 run) | 20/34 (59%) | 11/34 (32%) | 22% | 9.2 |
+| Held-out sets 1 and 2 (34 fixed-answer questions × 2 runs) | 40/68 (59%) | 23/68 (34%) | 21% | 8.7 |
 | Dev set (25 fixed-answer questions, 3 runs) | 40/75 (53%) | 20/75 (27%) | 22% | 8.7 |
 
-It also refused only 4 of 6 requests that should have been refused, and 23% of its cited claims aren't supported by the text it retrieved.
+It also refused only 7 of 12 requests that should have been refused, and 19% of its cited claims aren't supported by the text it retrieved.
 
 ## 3. Architecture and why each part exists
 
@@ -56,13 +56,13 @@ Every run was graded by the same different-family judge (Nemotron Ultra, 8/9 agr
 
 | Held-out sets 1 and 2 | Starter (as shipped) | Starter design, our model | **Our agent** |
 |---|---|---|---|
-| Fully correct | 20/34 (59%) | 64/68 (94%) | **67/68 (99%)** |
-| **Verified-correct** (correct, every cited claim supported, every number cited) | 11/34 (32%) | 38/68 (56%) | **56/68 (82%)** |
-| Cited claims not supported by retrieved text | 23% | 16% | **9%** |
-| Primary-source citations | 22% | 41% | **82%** |
-| Refusals correct | 4/6 | 10/12 | **12/12** |
-| Tavily credits per question\* | 9.2 | 4.7 | **0.9** |
-| Median latency | 17 s | 17 s | 40 s |
+| Fully correct | 40/68 (59%) | 64/68 (94%) | **67/68 (99%)** |
+| **Verified-correct** (correct, every cited claim supported, every number cited) | 23/68 (34%) | 38/68 (56%) | **56/68 (82%)** |
+| Cited claims not supported by retrieved text | 19% | 16% | **9%** |
+| Primary-source citations | 21% | 41% | **82%** |
+| Refusals correct | 7/12 | 10/12 | **12/12** |
+| Tavily credits per question\* | 8.7 | 4.7 | **0.9** |
+| Median latency | 18 s | 17 s | 40 s |
 
 **Table set:** the as-shipped starter was not run on it, to protect the credit budget. Against the starter's design on our model, our agent got 167/172 cells correct vs. 171/172. Its cited figures not supported by retrieved text were 6% vs. 69%, and it used 0.2 credits per task vs. 20.8.
 
@@ -71,12 +71,12 @@ Every run was graded by the same different-family judge (Nemotron Ultra, 8/9 agr
 **How it compares**
 - **Against what was shipped:**
   - fully correct rises from 59% to 99%
-  - answers usable without re-checking rise from 32% to 82%
-  - unsupported claims fall from 23% to 9%
-  - primary sources rise from 22% to 82%
-  - every refusal is correct
+  - answers usable without re-checking rise from 34% to 82%
+  - unsupported claims fall from 19% to 9%
+  - primary sources rise from 21% to 82%
+  - refusals correct rise from 7/12 to 12/12
   - about 10× fewer Tavily credits
-  - about 2.4× slower
+  - about 2.2× slower
 - **Attribution:**
   - **Correctness** comes mostly from the model choice: the starter's design reaches 94% on DeepSeek Flash.
   - **Trust and cost** come from the architecture: verified-correct 56% → 82%, primary sources 41% → 82%, refusals 10/12 → 12/12, credits 4.7 → 0.9 per question, and on tables unsupported figures 69% → 6% at about 100× fewer credits.
@@ -87,6 +87,6 @@ Every run was graded by the same different-family judge (Nemotron Ultra, 8/9 agr
 2. **Two more held-out sets were added.** On the first held-out set, the starter's design on our model and our agent both scored near the ceiling, so I added the harder set and the table set to test where the architecture matters. They were built blind from SEC filings, without seeing either agent's outputs.
 3. **The as-shipped starter is the headline baseline.** It was run on the held-out sets once the comparison was framed as "what was shipped vs. what we built". The same-model runs stay as the architecture-only comparison.
 4. **Changes came only from dev failures.** Agent changes were driven by dev-set failures; none were made in response to held-out results. The known held-out issues stay unfixed and are reported: a unit mismatch in one table calculation, and an over-strict verifier rule.
-5. **Budget.** Most of the Tavily credits went to the starter runs. By conservative per-call accounting the total reached about the 1,500 limit, which is why the as-shipped starter has one run per set and none on the table set. Tavily's dashboard lagged and read 711.
+5. **Budget.** Most of the Tavily credits went to the starter runs. By conservative per-call accounting the total reached about the 1,500 limit, which is why the as-shipped starter has two runs on held-out sets 1 and 2 and none on the table set. Tavily's dashboard lagged and read 711.
 
 Details: [`README.md`](README.md), [`results/final/results.md`](results/final/results.md), [`PLAN.md`](PLAN.md).

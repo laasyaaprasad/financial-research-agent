@@ -1,0 +1,122 @@
+{
+ "id": "H01",
+ "category": "Complex retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "As of November 20, 2025, what was Ollie's Bargain Outlet's most recently reported quarterly net sales (state the fiscal quarter), and what full-year fiscal 2025 net sales outlook range was the company guiding to?",
+ "grading": "Key points (both required): (1) latest reported quarter = Q2 fiscal 2025 (13 weeks ended Aug 2, 2025), net sales USD 679.6M (accept 679,556K, +/-0.5%); (2) fiscal 2025 net sales outlook USD 2.631-2.644 billion (raised on Aug 28, 2025 from 2.579-2.599 billion). Fail if a period reported after 2025-11-20 (Q3 fiscal 2025, released 2025-12-09: net sales 613.6M, outlook 2.648-2.655B) is presented as the latest or in effect, or if a range for adjusted EPS/operating income is given instead of net sales.",
+ "answer": "As of November 20, 2025 the latest reported quarter was Ollie's fiscal Q2 2025 (13 weeks ended August 2, 2025), with net sales of USD 679.6 million (679,556 thousand; +17.5% y/y; 613 stores) [H01-E1][H01-E2]. The company was guiding to fiscal 2025 (year ending January 31, 2026) net sales of USD 2.631-2.644 billion, raised on August 28, 2025 from USD 2.579-2.599 billion (adjusted EPS outlook USD 3.76-3.84) [H01-E1]. Fiscal Q3 results (net sales USD 613.6 million, outlook raised to USD 2.648-2.655 billion) were not released until December 9, 2025 and must not be used [H01-E3]. EDGAR shows no 8-K Item 2.02 earnings filing between 2025-08-28 and 2025-12-09 [H01-E4].",
+ "output": {
+  "answer": "",
+  "tokens": {
+   "input": 114891,
+   "output": 19598
+  },
+  "tavily_credits": 18,
+  "latency_s": 138.57,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/2e4569e1aeec37eebbe9fa4b9c5fd8b0",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Ollie's Bargain Outlet quarterly earnings net sales fiscal 2025 guidance outlook",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Ollie's Bargain Outlet Q2 2026 earnings results net sales August September 2025",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Ollie's Bargain Outlet\" Q4 fiscal 2025 OR \"full year 2025\" earnings results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Ollie's Bargain Outlet\" Q3 fiscal 2025 net sales $614 million raised full year guidance",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Ollie's Bargain Outlet fiscal year end January February 2025 Q4 results March April",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Ollie's Bargain Outlet Q3 FY2026 November 2025 earnings results net sales guidance outlook",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Ollie's Bargain Outlet Q2 FY2026 September 2025 earnings results net sales guidance",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Ollie's Bargain Outlet\" earnings release September August 2025 net sales guidance outlook",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Ollie's Bargain Outlet fiscal year end date January 2026 annual report net sales guidance fiscal 2025",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [],
+   "cited_primary": 0,
+   "retrieved": 46,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.0,
+   "verdict": "incorrect",
+   "points": [],
+   "rationale": "No answer produced."
+  },
+  "citations": {
+   "claims": [],
+   "numeric_claims": 0,
+   "numeric_cited": 0,
+   "cited": 0,
+   "supported": 0,
+   "not_retrieved": 0
+  }
+ }
+}

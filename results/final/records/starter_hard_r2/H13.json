@@ -1,0 +1,152 @@
+{
+ "id": "H13",
+ "category": "Financial modeling",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "What were Texas Roadhouse's trailing-twelve-month total revenue and income-from-operations margin as of the end of its fiscal Q2 2026 (quarter ended June 30, 2026)?",
+ "grading": "Computation: TTM = FY2025 + 26 weeks 2026 - 26 weeks 2025. TTM total revenue USD 6,231.5M (6,231,515K); TTM income from operations USD 482.8M (482,795K); margin 7.75% (+/-0.2pp). Accept +/-0.5% on dollar figures. Fail if the window is not the 52 weeks ended June 30, 2026 or if net income is substituted.",
+ "answer": "TTM total revenue = 5,878,075 (FY2025) + 3,313,142 (26 weeks to June 30, 2026) - 2,959,702 (26 weeks to July 1, 2025) = USD 6,231,515 thousand (USD 6,231.5 million). TTM income from operations = 474,740 + 289,129 - 281,074 = USD 482,795 thousand (USD 482.8 million). TTM operating margin = 482,795 / 6,231,515 = 7.75% [H13-E1][H13-E2].",
+ "output": {
+  "answer": " As of the end of Texas Roadhouse's fiscal Q2 2026 (June 30, 2026):\n\n| Metric | Value | Source |\n|---|---|---|\n| **Trailing-12-Month Total Revenue** | **$6.23 billion** (up 9.89% YoY) | [StockAnalysis](https://stockanalysis.com/stocks/txrh/revenue), [MacroTrends](https://www.macrotrends.net/stocks/charts/TXRH/texas-roadhouse/revenue) |\n| **Income-from-Operations Margin (TTM)** | **8.51%** | [Yahoo Finance](https://finance.yahoo.com/quote/TXRH/key-statistics) |\n\n**Supporting data points:**\n- TTM revenue of ~$6.232B comprises the four quarters through Q2 2026.\n- Quarterly Q2 revenue was $1.68B with income from operations of $142.8M.\n- For the full Q2 2026 10-Q filing, see the [official investor relations announcement](https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx).",
+  "tokens": {
+   "input": 17508,
+   "output": 2213
+  },
+  "tavily_credits": 2,
+  "latency_s": 16.94,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/a07e89cf421d510422c17ccb199b032c",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Texas Roadhouse TXRH fiscal Q2 2026 results earnings June 30 2026"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Texas Roadhouse TTM trailing twelve months operating income operating margin June 30 2026"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/quote/TXRH/key-statistics",
+    "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+    "https://stockanalysis.com/stocks/txrh/revenue",
+    "https://www.macrotrends.net/stocks/charts/TXRH/texas-roadhouse/revenue"
+   ],
+   "cited_primary": 1,
+   "retrieved": 17,
+   "retrieved_primary": 6
+  },
+  "correctness": {
+   "score": 0.429,
+   "points": [
+    {
+     "point": "TTM total revenue = USD 6,231.5M (6,231,515K) with tolerance +/-0.5%",
+     "met": true,
+     "note": "Agent reports $6.23B, which is within +/-0.5% of the reference $6.2315B."
+    },
+    {
+     "point": "TTM income from operations = USD 482.8M (482,795K) with tolerance +/-0.5%",
+     "met": false,
+     "note": "Agent does not explicitly state this figure; the implied income from operations from the reported margin (8.51% * $6.23B ≈ $530M) is far outside the tolerance range."
+    },
+    {
+     "point": "TTM operating margin = 7.75% with tolerance +/-0.2 percentage points",
+     "met": false,
+     "note": "Agent reports 8.51%, which is outside the acceptable range of 7.55%–7.95%."
+    },
+    {
+     "point": "The trailing-twelve-month window is the 52 weeks ended June 30, 2026",
+     "met": false,
+     "note": "Agent describes the TTM as 'four quarters through Q2 2026', which does not match the required FY2025 + 26w2026 − 26w2025 construction; the margin error further indicates a window mismatch."
+    },
+    {
+     "point": "The answer does not substitute net income for income from operations",
+     "met": false,
+     "note": "The 8.51% figure likely comes from a net income margin (Yahoo Finance key statistics) rather than income from operations."
+    },
+    {
+     "point": "The answer does not substitute restaurant margin for income from operations",
+     "met": true,
+     "note": "Agent labels the metric as 'Income-from-Operations Margin'; there is no indication restaurant margin was used."
+    },
+    {
+     "point": "Units are correctly expressed (millions/billions for revenue, percent for margin)",
+     "met": true,
+     "note": "Agent uses billions for revenue and percent for margin, which is acceptable."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The agent's reported revenue is within tolerance, but the income-from-operations margin (8.51%) is materially different from the correct 7.75% (outside the ±0.2pp tolerance). This error indicates the trailing-twelve-month window was not correctly constructed (likely using a simple four-quarter sum instead of the required FY2025 + 26w2026 − 26w2025) and that net income margin was substituted for income from operations. Since the core answer includes both revenue and margin, and the margin is wrong, the answer is incorrect."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Trailing-12-Month Total Revenue as of June 30, 2026 is $6.23 billion (up 9.89% YoY)",
+     "numeric": true,
+     "cited_url": "https://stockanalysis.com/stocks/txrh/revenue",
+     "reason": "StockAnalysis states: 'Texas Roadhouse revenue for the twelve months ending June 30, 2026 was $6.232B, a 9.89% increase year-over-year.' MacroTrends confirms the same figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Income-from-Operations Margin (TTM) as of June 30, 2026 is 8.51%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/TXRH/key-statistics",
+     "reason": "Yahoo Finance key statistics page shows 'Operating Margin (ttm) | 8.51%'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TTM revenue of ~$6.232B comprises the four quarters through Q2 2026",
+     "numeric": true,
+     "cited_url": "https://stockanalysis.com/stocks/txrh/revenue",
+     "reason": "Trailing twelve-month revenue by definition comprises the last four quarters; StockAnalysis and MacroTrends both report TTM revenue ending June 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Quarterly Q2 2026 revenue was $1.68B with income from operations of $142.8M",
+     "numeric": true,
+     "cited_url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+     "reason": "The official earnings release shows total revenue of $1,679,976 (thousands) and income from operations of $142,788 (thousands), matching the rounded figures.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The official investor relations announcement provides access to the full Q2 2026 10-Q filing",
+     "numeric": false,
+     "cited_url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+     "reason": "The retrieved content for the announcement page shows the earnings release but does not explicitly display a link to the 10-Q; the investor relations overview page (different URL) lists 'Form 10-Q'.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Texas Roadhouse's fiscal Q2 2026 ended June 30, 2026",
+     "numeric": false,
+     "cited_url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+     "reason": "The earnings release is for the '13 and 26 weeks ended June 30, 2026', confirming the quarter end date.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 6,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}

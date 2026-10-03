@@ -1,0 +1,213 @@
+{
+ "id": "H10",
+ "category": "Numerical reasoning",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "What were Ollie's Bargain Outlet's trailing-twelve-month net sales and net income as of the end of its fiscal Q2 2026 (quarter ended August 1, 2026), and what was the implied TTM net margin?",
+ "grading": "Computation: TTM = FY2025 + 26 weeks FY2026 - 26 weeks FY2025. Net sales USD 2,793.1M (2,793,108K); GAAP net income USD 273.6M (273,580K); net margin 9.79% (+/-0.3pp). Accept +/-0.5% on dollar figures. Fail if the TTM window is wrong (not Aug 3, 2025-Aug 1, 2026) or adjusted net income is used.",
+ "answer": "TTM to August 1, 2026 = FY2025 (52 weeks ended Jan 31, 2026) + 26 weeks ended Aug 1, 2026 - 26 weeks ended Aug 2, 2025. Net sales: 2,649,198 + 1,400,233 - 1,256,323 = USD 2,793,108 thousand (USD 2,793.1 million). Net income: 240,596 + 141,854 - 108,870 = USD 273,580 thousand (USD 273.6 million). TTM net margin = 273,580 / 2,793,108 = 9.79% [H10-E1][H10-E2].",
+ "output": {
+  "answer": " Based on the latest filings and financial data for Ollie’s Bargain Outlet ($OLLI) through its fiscal Q2 2026 quarter ended August 1, 2026, here are the trailing-twelve-month (TTM) figures and implied margin:\n\n- **TTM Net Sales:** approximately **$2.79 billion** (implied from TTM net income and the reported TTM profit margin)\n- **TTM Net Income:** **$273.6 million** (or $273.58M)\n- **Implied TTM Net Margin:** **9.8%**\n\n**Sources & derivation:**\n- The quarterly results for Q2 2026 show net sales of **$741.3M** and net income of **$85.5M** for that quarter alone (TradingView, Kalkine Media). [TradingView](https://www.tradingview.com/news/tradingview:31fa2f3c87985:0-ollie-s-bargain-outlet-reports-q2-fiscal-2026-sales-741-3m-net-income-85-5m-adj-diluted-eps-1-42)\n- Yahoo Finance key statistics report **Net Income Avi to Common (ttm) of $273.58M** and a **Profit Margin (ttm) of 9.80%** for OLLI as of 8/1/2026. [Yahoo Finance](https://finance.yahoo.com/quote/OLLI/key-statistics)\n- **Calculation:** TTM Net Sales ≈ $273.58M / 9.80% = ~$2.79B; TTM Net Margin = $273.58M / ~$2.79B = 9.8%.\n\nNote: The Q2 2026 quarter alone had a higher net margin of ~11.5% ($85.5M / $741.3M), but the TTM margin reflects the full trailing-twelve-month period.",
+  "tokens": {
+   "input": 96263,
+   "output": 8750
+  },
+  "tavily_credits": 12,
+  "latency_s": 67.85,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/7fda4d53fa75ad12622678586a99d712",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Ollie's Bargain Outlet Q2 2026 earnings results trailing twelve month net sales net income August 1 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Ollie's Bargain Outlet\" \"second quarter\" OR \"Q2\" 2026 \"net sales\" \"net income\" OR \"earnings\" results financial",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Ollie's Bargain Outlet\" \"trailing twelve months\" OR \"TTM\" net sales net income August 1 2026 OR \"twelve months ended\"",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Ollie's Bargain Outlet\" \"trailing twelve month\" OR \"TTM\" revenue OR \"net sales\" 2026 \"273.58\" OR \"net income avi to common\"",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Ollie's Bargain Outlet\" OLLI \"total revenue\" OR \"revenue\" \"ttm\" OR \"trailing twelve months\" 2.79 billion OR 2.8 billion 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Ollie's Bargain Outlet\" OR OLLI \"Q2\" \"six months ended August 1\" OR \"six months ended\" \"2026\" \"10-Q\" OR \"earnings release\" revenue net income",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/quote/OLLI/key-statistics",
+    "https://www.tradingview.com/news/tradingview:31fa2f3c87985:0-ollie-s-bargain-outlet-reports-q2-fiscal-2026-sales-741-3m-net-income-85-5m-adj-diluted-eps-1-42"
+   ],
+   "cited_primary": 0,
+   "retrieved": 43,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "TTM net sales USD 2,793.1M (2,793,108K) within +/-0.5% tolerance",
+     "met": true,
+     "note": "Agent reports ~$2.79B ($2,790M); reference is $2,793.1M. Difference ~0.11%, well within 0.5% tolerance."
+    },
+    {
+     "point": "TTM net income USD 273.6M (273,580K) within +/-0.5% tolerance",
+     "met": true,
+     "note": "Agent reports $273.6M ($273.58M); reference is $273.6M. Exact match."
+    },
+    {
+     "point": "TTM net margin 9.79% within +/-0.3pp tolerance",
+     "met": true,
+     "note": "Agent reports 9.8%; reference is 9.79%. Difference 0.01pp, within 0.3pp tolerance."
+    },
+    {
+     "point": "TTM window correct (Aug 3, 2025 to Aug 1, 2026)",
+     "met": true,
+     "note": "Agent uses Yahoo Finance TTM figures as of 8/1/2026, which correspond to the correct trailing-twelve-month window ending August 1, 2026. No indication of wrong fiscal period."
+    },
+    {
+     "point": "Uses GAAP net income, not adjusted",
+     "met": true,
+     "note": "Agent cites Yahoo Finance 'Net Income Avi to Common (ttm)', which is GAAP net income. No mention of adjusted net income."
+    },
+    {
+     "point": "Avoids failure modes: no fiscal-label mismatch, no fiscal 2025 as TTM, no double 26-week addition, no mixing adjusted/GAAP, no margin rounding error",
+     "met": true,
+     "note": "Agent does not sum last four quarters with fiscal-label mismatch, does not use fiscal 2025 as TTM, does not add 26 weeks twice, does not mix adjusted and GAAP, and margin rounding is within tolerance."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All six requirements are satisfied. The agent's reported TTM net sales, net income, and net margin match the reference values within the specified tolerances. The TTM window is correct, GAAP net income is used, and none of the listed failure modes are present."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "TTM Net Income is $273.58 million for trailing twelve months ended August 1, 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/OLLI/key-statistics",
+     "reason": "Yahoo Finance key statistics page shows 'Net Income Avi to Common (ttm), 273.58M' with date 8/1/2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TTM Profit Margin (net margin) is 9.80% for trailing twelve months ended August 1, 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/OLLI/key-statistics",
+     "reason": "Yahoo Finance key statistics page shows 'Profit Margin, 9.80%' with date 8/1/2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TTM Net Sales is approximately $2.79 billion (derived from TTM net income and margin)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/OLLI/key-statistics",
+     "reason": "Derived by dividing TTM net income $273.58M by TTM profit margin 9.80%: $273.58M / 0.098 = $2,791.6M ≈ $2.79B. Arithmetic is correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 quarterly net sales were $741.3 million",
+     "numeric": true,
+     "cited_url": "https://www.tradingview.com/news/tradingview:31fa2f3c87985:0-ollie-s-bargain-outlet-reports-q2-fiscal-2026-sales-741-3m-net-income-85-5m-adj-diluted-eps-1-42",
+     "reason": "TradingView article states 'Ollie’s Bargain Outlet reported second-quarter fiscal 2026 net sales of $741.3 million'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 quarterly net income was $85.5 million",
+     "numeric": true,
+     "cited_url": "https://www.tradingview.com/news/tradingview:31fa2f3c87985:0-ollie-s-bargain-outlet-reports-q2-fiscal-2026-sales-741-3m-net-income-85-5m-adj-diluted-eps-1-42",
+     "reason": "TradingView article states 'net income of $85.5 million' for Q2 fiscal 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 quarterly net margin was approximately 11.5%",
+     "numeric": true,
+     "cited_url": "https://www.tradingview.com/news/tradingview:31fa2f3c87985:0-ollie-s-bargain-outlet-reports-q2-fiscal-2026-sales-741-3m-net-income-85-5m-adj-diluted-eps-1-42",
+     "reason": "Calculated as $85.5M / $741.3M = 0.11534 ≈ 11.5%. Arithmetic is correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal Q2 2026 quarter ended August 1, 2026",
+     "numeric": false,
+     "cited_url": "https://www.tradingview.com/news/tradingview:31fa2f3c87985:0-ollie-s-bargain-outlet-reports-q2-fiscal-2026-sales-741-3m-net-income-85-5m-adj-diluted-eps-1-42",
+     "reason": "TradingView article refers to 'second-quarter fiscal 2026' and the Yahoo Finance key statistics page shows date 8/1/2026 for the most recent quarter.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Yahoo Finance key statistics as of 8/1/2026 report Net Income Avi to Common (ttm) $273.58M and Profit Margin (ttm) 9.80%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/OLLI/key-statistics",
+     "reason": "The page shows exactly those values with the date 8/1/2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TradingView and Kalkine Media report Q2 2026 net sales $741.3M and net income $85.5M",
+     "numeric": true,
+     "cited_url": "https://kalkinemedia.com/us/news/announcements/ollies-bargain-outlet-nasdaq-olli-posts-741m-in-net-sales-and-855m-net-income-for-q2-2026",
+     "reason": "Kalkine Media article states 'Ollie’s Bargain Outlet announced $741.305 million in revenue and $85.454 million in net income for the thirteen weeks ending August 1, 2026'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Derived TTM Net Sales calculation: $273.58M / 9.80% = ~$2.79B",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/OLLI/key-statistics",
+     "reason": "Using the TTM net income and profit margin from Yahoo Finance, the division yields $2.7916B, which rounds to $2.79B.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 9,
+   "numeric_cited": 9,
+   "cited": 10,
+   "supported": 10,
+   "not_retrieved": 0
+  }
+ }
+}

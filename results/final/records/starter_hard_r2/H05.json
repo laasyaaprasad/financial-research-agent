@@ -1,0 +1,103 @@
+{
+ "id": "H05",
+ "category": "Adjustments",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "As of July 15, 2026, what GAAP diluted EPS range and adjusted diluted EPS range was Hormel Foods guiding to for fiscal 2026?",
+ "grading": "Key points (both required): GAAP diluted EPS guidance USD 1.28-1.37 (updated May 28, 2026, previously 1.37-1.46) AND adjusted diluted EPS guidance USD 1.43-1.51 (reaffirmed). Fail if the Aug 27, 2026 ranges (GAAP 1.06-1.12; adjusted 1.45-1.51) are given as in effect on July 15, 2026, or if only one of the two measures is provided.",
+ "answer": "As of July 15, 2026 the guidance in effect was the one issued with Hormel's Q2 fiscal 2026 results on May 28, 2026: GAAP diluted EPS of USD 1.28-1.37 (lowered from USD 1.37-1.46 to include the loss on the sale of the whole-bird turkey business) and adjusted diluted EPS of USD 1.43-1.51 (reaffirmed; +4% to +10%) for fiscal 2026 (ending October 25, 2026) [H05-E1]. The Q3 update on August 27, 2026 (GAAP USD 1.06-1.12; adjusted USD 1.45-1.51) came after the as_of date [H05-E2]. Between May 28 and July 15 Hormel filed only Item 5.02 officer-change 8-Ks, no guidance changes [H05-E3].",
+ "output": {
+  "answer": " As of July 15, 2026 — which was before Hormel Foods reported its third-quarter fiscal 2026 results — the company was guiding to the following ranges for full-year fiscal 2026 based on its most recent guidance at that time (released with Q2 fiscal 2026 results):\n\n- **GAAP diluted EPS:** **$1.28 – $1.37**\n- **Adjusted diluted EPS:** **$1.43 – $1.51**\n\nHormel updated these ranges when it reported Q3 results on August 26, 2026 (lowering GAAP guidance to $1.06 – $1.12 and raising the bottom end of adjusted guidance to $1.45 – $1.51).\n\n**Sources:**\n- Hormel Foods Q2 fiscal 2026 earnings release (guidance prior to Q3 update): [https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-reports-strong-second-quarter-fiscal-2026-results](https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-reports-strong-second-quarter-fiscal-2026-results)\n- Hormel Foods Q3 fiscal 2026 earnings release (subsequent update): [https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-reports-third-quarter-fiscal-2026-results](https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-reports-third-quarter-fiscal-2026-results)",
+  "tokens": {
+   "input": 7049,
+   "output": 1249
+  },
+  "tavily_credits": 1,
+  "latency_s": 11.33,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/46f944775cda30e03fa0b0876ae2c84d",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Hormel Foods fiscal 2026 GAAP diluted EPS guidance adjusted diluted EPS guidance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-reports-strong-second-quarter-fiscal-2026-results",
+    "https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-reports-third-quarter-fiscal-2026-results"
+   ],
+   "cited_primary": 0,
+   "retrieved": 10,
+   "retrieved_primary": 4
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "GAAP diluted EPS guidance USD 1.28-1.37 (updated May 28, 2026, previously 1.37-1.46)",
+     "met": true,
+     "note": "Agent states GAAP diluted EPS: $1.28 – $1.37, matching the required range."
+    },
+    {
+     "point": "Adjusted diluted EPS guidance USD 1.43-1.51 (reaffirmed)",
+     "met": true,
+     "note": "Agent states Adjusted diluted EPS: $1.43 – $1.51, matching the required range."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly provides both required guidance ranges as of July 15, 2026: GAAP diluted EPS $1.28–$1.37 and adjusted diluted EPS $1.43–$1.51. The answer also correctly notes that the Q3 update (August 26, 2026) came after the as-of date and does not confuse fiscal periods or quote outdated ranges."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "As of July 15, 2026, Hormel Foods guided GAAP diluted EPS for full-year fiscal 2026 at $1.28–$1.37",
+     "numeric": true,
+     "cited_url": "https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-reports-strong-second-quarter-fiscal-2026-results",
+     "reason": "The Q2 earnings release states: 'Updates diluted earnings per share guidance to be in the range of $1.28 to $1.37'. This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "As of July 15, 2026, Hormel Foods guided adjusted diluted EPS for full-year fiscal 2026 at $1.43–$1.51",
+     "numeric": true,
+     "cited_url": "https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-reports-strong-second-quarter-fiscal-2026-results",
+     "reason": "The Q2 earnings release states: 'Reaffirms adjusted diluted earnings per share1 to be in the range of $1.43 to $1.51'. This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hormel updated guidance on August 26, 2026 (Q3 results), lowering GAAP diluted EPS guidance to $1.06–$1.12",
+     "numeric": true,
+     "cited_url": "https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-reports-third-quarter-fiscal-2026-results",
+     "reason": "The Q3 earnings release states: 'Updates diluted earnings per share guidance to be in the range of $1.06 to $1.12' and shows a table with 'Diluted Earnings per Share | $1.06 - $1.12 | $1.28 - $1.37'. This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hormel updated guidance on August 26, 2026, raising the bottom end of adjusted diluted EPS guidance to $1.45–$1.51",
+     "numeric": true,
+     "cited_url": "https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-reports-third-quarter-fiscal-2026-results",
+     "reason": "The Q3 earnings release states: 'Raises adjusted diluted earnings per share1 guidance to be in the range of $1.45 to $1.51' and shows a table with 'Adj. Diluted Earnings per Share1 | $1.45 - $1.51 | $1.43 - $1.51'. This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 4,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}

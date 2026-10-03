@@ -1,0 +1,278 @@
+{
+ "id": "T08",
+ "category": "Financial modeling",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What were Applied Materials' trailing-twelve-month net revenues as of the end of fiscal Q3 2026 (quarter ended July 26, 2026)? Build it from filed figures and answer in USD millions.",
+ "grading": "±0.5% of 30,837, USD millions (accept $30.8B). The TTM window is 2025-07-28 to 2026-07-26. Equivalent routes: FY2025 + 9M FY2026 - 9M FY2025, or Q4 FY2025 + Q1 + Q2 + Q3 FY2026 (6,800 + 7,012 + 7,910 + 9,115).",
+ "answer": "TTM net revenue for the four quarters ended July 26, 2026 was USD 30,837 million = FY2025 net revenue 28,368 + nine months FY2026 24,037 - nine months FY2025 21,568. Quarter-by-quarter: Q4 FY2025 6,800 (28,368 - 21,568) + Q1 FY2026 7,012 + Q2 FY2026 7,910 + Q3 FY2026 9,115 = 30,837. [T08-E1, T08-E2]",
+ "output": {
+  "answer": " As of end of fiscal Q3 2026 (quarter ended July 26, 2026), Applied Materials' **trailing-twelve-month net revenues were approximately \\$30,837 million**.\n\nBuilt from the last four filed quarterly figures:\n\n| Quarter | Period Ended | Net Revenue (USD millions) |\n|---------|-------------|---------------------------|\n| Q4 FY2025 | Oct 26, 2025 | **6,800** |\n| Q1 FY2026 | Jan 25, 2026 | **7,012** |\n| Q2 FY2026 | Apr 26, 2026 | **7,910** |\n| Q3 FY2026 | Jul 26, 2026 | **9,115** |\n| **TTM Total** | | **30,837** |\n\n**Sources:**\n- Q4 FY2025: SEC 8-K / AMAT earnings release (recorded net revenue of \\$6.80 billion) — [link](https://ir.appliedmaterials.com/static-files/975be0c9-6ae2-4abd-9d4f-dea2e40ea8d7)\n- Q1 FY2026: SEC 8-K / AMAT earnings release (revenue of \\$7.01 billion) — [link](https://www.sec.gov/Archives/edgar/data/6951/000162828026007661/exhibit991q12026earningsre.htm)\n- Q2 FY2026: SEC 10-Q / AMAT earnings release (recorded revenue of \\$7.91 billion) — [link](https://ir.appliedmaterials.com/static-files/c02d8253-7dc3-44d3-a9a9-29d07fb26f17)\n- Q3 FY2026: SEC 8-K / AMAT earnings release (recorded revenue of \\$9.115 billion) — [link](https://ir.appliedmaterials.com/static-files/451f2bde-588d-4168-81d5-b7f3b6c2f5a3)",
+  "tokens": {
+   "input": 57178,
+   "output": 2075
+  },
+  "tavily_credits": 8,
+  "latency_s": 34.11,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/9de01f59982b79ee02186fd437c6ad26",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Applied Materials Q3 2026 earnings results net revenue filed figures",
+     "search_depth": "advanced",
+     "include_domains": [
+      "sec.gov",
+      "appliedmaterials.com",
+      "bloomberg.com",
+      "reuters.com",
+      "cnbc.com",
+      "wsj.com",
+      "investors.appliedmaterials.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Applied Materials Q2 FY2026 second quarter revenue ended April 2026",
+     "search_depth": "advanced",
+     "include_domains": [
+      "sec.gov",
+      "appliedmaterials.com",
+      "ir.appliedmaterials.com",
+      "bloomberg.com",
+      "reuters.com",
+      "cnbc.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Applied Materials Q1 FY2026 first quarter revenue January 2026",
+     "search_depth": "advanced",
+     "include_domains": [
+      "sec.gov",
+      "appliedmaterials.com",
+      "ir.appliedmaterials.com",
+      "bloomberg.com",
+      "reuters.com",
+      "cnbc.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Applied Materials Q4 FY2025 fourth quarter revenue ended October 2025",
+     "search_depth": "advanced",
+     "include_domains": [
+      "sec.gov",
+      "appliedmaterials.com",
+      "ir.appliedmaterials.com",
+      "bloomberg.com",
+      "reuters.com",
+      "cnbc.com"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://ir.appliedmaterials.com/static-files/451f2bde-588d-4168-81d5-b7f3b6c2f5a3",
+    "https://ir.appliedmaterials.com/static-files/975be0c9-6ae2-4abd-9d4f-dea2e40ea8d7",
+    "https://ir.appliedmaterials.com/static-files/c02d8253-7dc3-44d3-a9a9-29d07fb26f17",
+    "https://www.sec.gov/Archives/edgar/data/6951/000162828026007661/exhibit991q12026earningsre.htm"
+   ],
+   "cited_primary": 4,
+   "retrieved": 31,
+   "retrieved_primary": 31
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer provides trailing-twelve-month net revenues as of end of fiscal Q3 2026 (quarter ended July 26, 2026)",
+     "met": true,
+     "note": "Agent explicitly states 'As of end of fiscal Q3 2026 (quarter ended July 26, 2026), Applied Materials' trailing-twelve-month net revenues were approximately $30,837 million.'"
+    },
+    {
+     "point": "Answer built from filed figures (quarterly SEC filings/earnings releases)",
+     "met": true,
+     "note": "Agent provides a table with four quarters (Q4 FY2025, Q1 FY2026, Q2 FY2026, Q3 FY2026) and cites SEC 8-K/10-Q sources for each."
+    },
+    {
+     "point": "Answer expressed in USD millions",
+     "met": true,
+     "note": "Agent's table shows 'Net Revenue (USD millions)' and total '30,837' million."
+    },
+    {
+     "point": "Value within ±0.5% of 30,837 (i.e., 30,837 ± 154)",
+     "met": true,
+     "note": "Agent's value is exactly 30,837 million, well within tolerance."
+    },
+    {
+     "point": "Uses correct TTM window (2025-07-28 to 2026-07-26) and correct quarters (Q4 FY2025, Q1 FY2026, Q2 FY2026, Q3 FY2026)",
+     "met": true,
+     "note": "Agent's quarterly breakdown matches the reference quarters: Q4 FY2025 6,800, Q1 FY2026 7,012, Q2 FY2026 7,910, Q3 FY2026 9,115."
+    },
+    {
+     "point": "Does not use wrong fiscal period (e.g., calendar year or fiscal year 2025, nine-month figure)",
+     "met": true,
+     "note": "Agent does not use FY2025 full-year (28,368) or nine-month FY2026 (24,037) as TTM; uses the four-quarter sum."
+    },
+    {
+     "point": "Does not add wrong quarter (e.g., Q3 FY2025 instead of Q4 FY2025)",
+     "met": true,
+     "note": "Agent correctly uses Q4 FY2025 (6,800) not Q3 FY2025."
+    },
+    {
+     "point": "Does not mix fiscal and calendar labels",
+     "met": true,
+     "note": "All quarters are labeled with fiscal year (FY2025, FY2026) consistently."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer exactly matches the reference TTM net revenue of 30,837 million USD, built from the correct four quarters (Q4 FY2025 through Q3 FY2026) with proper sourcing and units. All grading requirements are satisfied."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Applied Materials' trailing-twelve-month net revenues as of end of fiscal Q3 2026 (quarter ended July 26, 2026) were approximately $30,837 million.",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Sum of four quarterly net revenues: Q4 FY2025 $6,800M + Q1 FY2026 $7,012M + Q2 FY2026 $7,910M + Q3 FY2026 $9,115M = $30,837M.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Q4 FY2025 net revenue was $6,800 million for quarter ended Oct 26, 2025.",
+     "numeric": true,
+     "cited_url": "https://ir.appliedmaterials.com/static-files/975be0c9-6ae2-4abd-9d4f-dea2e40ea8d7",
+     "reason": "Source shows 'Quarterly revenue $6.80 billion' and table 'Net revenue $ 6,800'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY2026 net revenue was $7,012 million for quarter ended Jan 25, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026007661/exhibit991q12026earningsre.htm",
+     "reason": "Source shows 'Revenue $ 7,012'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 net revenue was $7,910 million for quarter ended Apr 26, 2026.",
+     "numeric": true,
+     "cited_url": "https://ir.appliedmaterials.com/static-files/c02d8253-7dc3-44d3-a9a9-29d07fb26f17",
+     "reason": "Source shows 'Applied generated record revenue of $7.91 billion' and 'Total revenue $ 7,910'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 net revenue was $9,115 million for quarter ended Jul 26, 2026.",
+     "numeric": true,
+     "cited_url": "https://ir.appliedmaterials.com/static-files/451f2bde-588d-4168-81d5-b7f3b6c2f5a3",
+     "reason": "Source shows 'Revenue $ 9,115'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The quarterly figures are GAAP net revenues from SEC filings (8-K, 10-Q).",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The sources are SEC 8-K and 10-Q filings, which report GAAP results.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "The TTM period covers four quarters: Q4 FY2025, Q1 FY2026, Q2 FY2026, Q3 FY2026.",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Answer states 'Built from the last four filed quarterly figures' and lists the four quarters.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "The sum of the four quarters equals $30,837 million.",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "6,800 + 7,012 + 7,910 + 9,115 = 30,837.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Company is Applied Materials (AMAT).",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Answer refers to 'Applied Materials' and ticker AMAT appears in sources.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Metric is trailing-twelve-month net revenues.",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Answer title.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Period is as of end of fiscal Q3 2026 (quarter ended July 26, 2026).",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Answer states 'As of end of fiscal Q3 2026 (quarter ended July 26, 2026)'.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Units are USD millions.",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Answer table shows 'Net Revenue (USD millions)'.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Accounting basis is GAAP.",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Sources are GAAP earnings releases.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Figures are actual reported results, not guidance.",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Sources are earnings releases reporting actual results.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Publication dates: Q4 FY2025 Nov 13, 2025; Q1 FY2026 Feb 12, 2026; Q2 FY2026 May 14, 2026; Q3 FY2026 Aug 13, 2026.",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Retrieved sources show filing dates.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 4,
+   "cited": 4,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -21,16 +21,16 @@ The baseline is the **starter exactly as shipped**: its prompt, Tavily tool and 
 
 | Measure | Starter (as shipped) | Starter design on our model | **Our agent** |
 |---|---|---|---|
-| Fixed answers fully correct | 20/34 (59%) | 64/68 (94%) | **67/68 (99%)** |
-| **Verified-correct**: correct, every cited claim supported by retrieved text, every number cited | 11/34 (32%) | 38/68 (56%) | **56/68 (82%)** |
-| Cited claims not supported by the text the agent retrieved | 23% | 16% | **9%** |
-| Cited sources that are primary (SEC or company) | 22% | 41% | **82%** |
-| Refusals correct (unreported period, undisclosed metric, non-SEC company) | 4/6 | 10/12 | **12/12** |
-| Tavily credits per question | 9.2 | 4.7 | **0.9** |
-| Tokens per question | 82k | 33k | 51k |
-| Median / p95 latency | 17 s / 118 s | 17 s / 116 s | 40 s / 217 s |
+| Fixed answers fully correct | 40/68 (59%) | 64/68 (94%) | **67/68 (99%)** |
+| **Verified-correct**: correct, every cited claim supported by retrieved text, every number cited | 23/68 (34%) | 38/68 (56%) | **56/68 (82%)** |
+| Cited claims not supported by the text the agent retrieved | 19% | 16% | **9%** |
+| Cited sources that are primary (SEC or company) | 21% | 41% | **82%** |
+| Refusals correct (unreported period, undisclosed metric, non-SEC company) | 7/12 | 10/12 | **12/12** |
+| Tavily credits per question | 8.7 | 4.7 | **0.9** |
+| Tokens per question | 80k | 33k | 51k |
+| Median / p95 latency | 18 s / 118 s | 17 s / 116 s | 40 s / 217 s |
 
-Runs per column: one, two and two. The as-shipped starter wasn't run on held-out set 3, the analyst tables (8 tasks, 86 cells): at 9–14 credits per question it risked exhausting the 1,500-credit budget mid-run. On that set, against the starter's design on our model:
+Two runs per column (68 graded fixed answers each). The as-shipped starter wasn't run on held-out set 3, the analyst tables (8 tasks, 86 cells): at about 9 credits per question it would have exceeded the 1,500-credit budget. On that set, against the starter's design on our model:
 
 | Measure | Starter design on our model | Our agent |
 |---|---|---|
@@ -45,12 +45,12 @@ Baseline credits are counted from its calls (1 per basic search, 2 per advanced)
 **What this shows**
 - **Against what was shipped:**
   - fully correct rises from 59% to 99%
-  - answers an analyst can use without re-checking rise from 32% to 82%
-  - cited claims not supported by the source fall from 23% to 9%
-  - primary sources rise from 22% to 82%
-  - all refusals are correct
+  - answers an analyst can use without re-checking rise from 34% to 82%
+  - cited claims not supported by the source fall from 19% to 9%
+  - primary sources rise from 21% to 82%
+  - refusals correct rise from 7/12 to 12/12
   - about 10× fewer Tavily credits
-  - the cost is about 2.4× median latency
+  - the cost is about 2.2× median latency
 - **Where the gain comes from:**
   - **The model choice** accounts for most of the correctness gain: the starter's own design on DeepSeek Flash reaches 94%.
   - **The architecture** accounts for most of the trust and cost gains: verified-correct 56% → 82%, primary sources 41% → 82%, every refusal correct, and Tavily credits 4.7 → 0.9 per question. On tables, unsupported figures fall from 69% to 6%, with about 100× fewer credits.
@@ -148,7 +148,7 @@ uv run python scripts/check_secrets.py       # scan files for key material
 ## Limitations and what I didn't do
 
 - **The architecture alone doesn't raise correctness.** Given the same model, the starter's design is about as accurate as ours and slightly ahead on table cells (99% vs. 97%). The architecture's gains are verifiability, primary sourcing, refusals and cost; the correctness gain over the shipped starter comes mostly from the model choice.
-- **The as-shipped starter has one run per held-out set and none on the table set** (Tavily budget). Our agent and the same-model starter have two runs per set.
+- **The as-shipped starter wasn't run on the table set** (Tavily budget). On held-out sets 1 and 2 all three configurations have two runs.
 - **A known bug found in held-out runs.** A table calculation can come out in a different unit than its column: inputs in thousands under a "USD millions" column, so 1,000× too large. A unit check per column would catch it. It was not fixed after the held-out runs, so the results still include it.
 - **Slower:** 2× median latency.
 - **Not delivered by the verifier:** its "net sales is not revenue" strictness once withheld a correct cell.

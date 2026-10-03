@@ -1,0 +1,90 @@
+{
+ "id": "T05",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What were Uber's Gross Bookings in the second quarter of 2026 (three months ended June 30, 2026)? Answer in USD millions.",
+ "grading": "±0.5%, USD millions (accept $58.0B). Fail if revenue, outlook or growth percentage is given as the level.",
+ "answer": "Uber's Gross Bookings were USD 58,022 million in Q2 2026, up 24% (22% in constant currency) from USD 46,756 million in Q2 2025. [T05-E1, T05-E2]",
+ "output": {
+  "answer": " Uber's Gross Bookings for the second quarter of 2026 (three months ended June 30, 2026) were **$58,022 million** ($58.022 billion).\n\n**Sources:**\n- Uber Investor Relations Q2 2026 Earnings Release: [investor.uber.com](https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx)\n- Uber Q2 2026 SEC 8-K Filing: [stocktitan.net](https://www.stocktitan.net/sec-filings/UBER/8-k-uber-technologies-inc-reports-material-event-53d1afaac00c.html)",
+  "tokens": {
+   "input": 9450,
+   "output": 782
+  },
+  "tavily_credits": 2,
+  "latency_s": 7.46,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/d8fc59dcb92ed70686e65b28bfcc011f",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Uber Gross Bookings Q2 2026 earnings results three months ended June 30 2026",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx",
+    "https://www.stocktitan.net/sec-filings/UBER/8-k-uber-technologies-inc-reports-material-event-53d1afaac00c.html"
+   ],
+   "cited_primary": 1,
+   "retrieved": 10,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer must be Gross Bookings for Q2 2026 (three months ended June 30, 2026)",
+     "met": true,
+     "note": "Agent explicitly states 'Uber's Gross Bookings for the second quarter of 2026 (three months ended June 30, 2026) were $58,022 million'."
+    },
+    {
+     "point": "Answer must be in USD millions",
+     "met": true,
+     "note": "Agent provides the figure as '$58,022 million' and also notes '$58.022 billion', satisfying the unit requirement."
+    },
+    {
+     "point": "Answer must be within ±0.5% of the correct value (58,022 million); accept $58.0B",
+     "met": true,
+     "note": "Agent's value of 58,022 million matches the reference exactly (0% deviation)."
+    },
+    {
+     "point": "Must not return revenue ($14,191M), Q3 2026 outlook ($58.25-60.25B), or constant-currency growth figure",
+     "met": true,
+     "note": "Agent provides the Gross Bookings level only, not revenue, outlook, or growth percentage."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer exactly matches the verified reference value of 58,022 million USD for Q2 2026 Gross Bookings, uses the correct unit (USD millions), and does not confuse the metric with revenue, outlook, or growth rates. All grading requirements are satisfied."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Uber's Gross Bookings for Q2 2026 (three months ended June 30, 2026) were $58,022 million ($58.022 billion)",
+     "numeric": true,
+     "cited_url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx",
+     "reason": "The investor.uber.com source contains a table showing Gross Bookings for the three months ended June 30, 2026 as $58,022 million (in millions), with a 24% year-over-year increase and 22% on a constant currency basis.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 1,
+   "numeric_cited": 1,
+   "cited": 1,
+   "supported": 1,
+   "not_retrieved": 0
+  }
+ }
+}

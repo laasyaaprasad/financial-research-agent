@@ -1,0 +1,92 @@
+{
+ "id": "H06",
+ "category": "Quantitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "What did Jack Henry & Associates' fiscal 2026 Form 10-K report as remaining performance obligations at June 30, 2026 (in USD), and what share of that amount did the company expect to recognize over the next 12 months?",
+ "grading": "Key points: RPO at June 30, 2026 = USD 8,440,905 thousand (USD 8.44 billion; +/-0.5%); about 23% expected to be recognized over the next 12 months (about USD 1.94 billion; accept 23%). Optional detail: 18% in months 13-24. Fail if units are wrong by a factor of 1,000, or the figure is for another date/measure.",
+ "answer": "Jack Henry's FY2026 10-K (year ended June 30, 2026) reports remaining performance obligations of USD 8,440,905 thousand (about USD 8.44 billion) at June 30, 2026, of which approximately 23% (about USD 1.94 billion) is expected to be recognized over the next 12 months, 18% in months 13-24 and the balance thereafter [H06-E1][H06-E2]. The figure is not in the Q4 earnings release [H06-E3].",
+ "output": {
+  "answer": " According to Jack Henry & Associates' fiscal 2026 Form 10-K filed with the SEC, as of June 30, 2026, the company reported remaining performance obligations (estimated future revenue related to unsatisfied or partially unsatisfied performance obligations) of:\n\n**$8,440,905**\n\nThe company expected to recognize approximately **23%** of that amount over the next 12 months, with an additional 18% in months 13–24, and the balance thereafter.\n\nSource: SEC EDGAR Filing (jkhy-20260630.htm) – https://www.sec.gov/Archives/edgar/data/779152/000077915226000067/jkhy-20260630.htm",
+  "tokens": {
+   "input": 8552,
+   "output": 657
+  },
+  "tavily_credits": 2,
+  "latency_s": 10.2,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/2a16089fd6182f4c3547a50fed80c5ba",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Jack Henry & Associates fiscal 2026 Form 10-K remaining performance obligations June 30 2026",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/779152/000077915226000067/jkhy-20260630.htm"
+   ],
+   "cited_primary": 1,
+   "retrieved": 10,
+   "retrieved_primary": 7
+  },
+  "correctness": {
+   "score": 0.667,
+   "points": [
+    {
+     "point": "RPO at June 30, 2026 = USD 8,440,905 thousand (USD 8.44 billion; +/-0.5%)",
+     "met": false,
+     "note": "Agent reported $8,440,905 without specifying thousands, which is a units error (factor of 1,000). The filing states USD thousands."
+    },
+    {
+     "point": "about 23% expected to be recognized over the next 12 months",
+     "met": true,
+     "note": "Agent correctly reported approximately 23%."
+    },
+    {
+     "point": "Optional detail: 18% in months 13-24",
+     "met": true,
+     "note": "Agent included the optional 18% detail."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The agent reported the correct numeric value for RPO but omitted the 'thousands' unit, resulting in a factor-of-1,000 error. The 12-month recognition share (23%) and optional 18% detail are correct."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Jack Henry & Associates reported remaining performance obligations of $8,440,905 as of June 30, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/779152/000077915226000067/jkhy-20260630.htm",
+     "reason": "The retrieved source explicitly states: 'As of June 30, 2026, estimated revenue expected to be recognized in the future related to performance obligations that are unsatisfied (or partially unsatisfied) at the end of the reporting period totaled $8,440,905.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The company expected to recognize approximately 23% of that amount over the next 12 months, 18% in months 13–24, and the balance thereafter",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/779152/000077915226000067/jkhy-20260630.htm",
+     "reason": "The retrieved source states: 'The Company expects to recognize approximately 23% over the next 12 months, 18% in 13 - 24 months, and the balance thereafter.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 2,
+   "numeric_cited": 2,
+   "cited": 2,
+   "supported": 2,
+   "not_retrieved": 0
+  }
+ }
+}

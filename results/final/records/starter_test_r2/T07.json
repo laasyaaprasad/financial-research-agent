@@ -1,0 +1,171 @@
+{
+ "id": "T07",
+ "category": "Numerical reasoning",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Autodesk's GAAP operating margin (income from operations as a percentage of total net revenue) in the second quarter of fiscal 2027 (quarter ended July 31, 2026)? Compute it from the reported figures.",
+ "grading": "29.3% ±0.3pp (599 / 2,046). The release's rounded '29%' is also accepted. Must be GAAP, quarterly, Q2 FY2027. Fail if non-GAAP (41%) or six-month margin (28.6%) is given.",
+ "answer": "GAAP income from operations was USD 599 million on total net revenue of USD 2,046 million in Q2 FY2027, a GAAP operating margin of 599 / 2,046 = 29.3% (the release rounds to 29%, up about 4 points from 444 / 1,763 = 25.2% in Q2 FY2026). [T07-E1, T07-E2]",
+ "output": {
+  "answer": " Based on Autodesk's second quarter fiscal 2027 results (quarter ended July 31, 2026), the reported figures are:\n\n- **Total net revenue:** $2,046 million\n- **Income from operations (GAAP):** $599 million\n\n**Calculation:**\n\n\\[\n\\text{GAAP Operating Margin} = \\frac{\\$599\\,\\text{million}}{\\$2,046\\,\\text{million}} \\times 100 = \\boxed{29.3\\%}\n\\]\n\nThis rounds to the **29%** GAAP operating margin disclosed in Autodesk's earnings release, representing a 4 percentage-point expansion from the prior-year period.\n\n**Sources:**\n- [Stock Titan - Autodesk Q2 FY2027 Results](https://www.stocktitan.net/news/ADSK/autodesk-inc-announces-fiscal-2027-second-quarter-auz2j06ewmj9.html)\n- [Ad-hoc News - Autodesk Operating Profit](https://www.ad-hoc-news.de/boerse/news/corporate-news/autodesk-stock-reports-16-percent-revenue-growth-in-q2/70168815)\n- [Linevest News - 29.3% Operating Margin](https://linevestnews.com/article/2026-09-11-autodesk-adsk-q2-fy2027-293-operating-margin-10-billi)",
+  "tokens": {
+   "input": 34933,
+   "output": 1110
+  },
+  "tavily_credits": 8,
+  "latency_s": 18.12,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/413313162363cc5a55847659481c60f0",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Autodesk Q2 fiscal 2027 GAAP operating margin income from operations July 31 2026 earnings results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Autodesk Q2 FY2027 second quarter fiscal 2027 GAAP income from operations total net revenue July 2026 earnings press release",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Autodesk\" \"Q2 FY2027\" \"income from operations\" \"GAAP\" \"$\" billion million July 2026 earnings",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Autodesk Q2 FY2027 fiscal 2027 second quarter \"GAAP operating margin\" OR \"operating margin\" 29% revenue $2.046 billion July 31 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://linevestnews.com/article/2026-09-11-autodesk-adsk-q2-fy2027-293-operating-margin-10-billi",
+    "https://www.ad-hoc-news.de/boerse/news/corporate-news/autodesk-stock-reports-16-percent-revenue-growth-in-q2/70168815",
+    "https://www.stocktitan.net/news/ADSK/autodesk-inc-announces-fiscal-2027-second-quarter-auz2j06ewmj9.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 31,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "GAAP operating margin (income from operations as percentage of total net revenue) for Q2 FY2027 (quarter ended July 31, 2026)",
+     "met": true,
+     "note": "Agent correctly identifies the quarter and uses GAAP income from operations."
+    },
+    {
+     "point": "Compute from reported figures: income from operations = $599 million, total net revenue = $2,046 million",
+     "met": true,
+     "note": "Agent cites exactly these figures and performs the division."
+    },
+    {
+     "point": "Result: 29.3% (or 29% rounded) within ±0.3pp tolerance",
+     "met": true,
+     "note": "Agent calculates 599/2046 = 29.3% and notes the release rounds to 29%."
+    },
+    {
+     "point": "Must be GAAP, not non-GAAP (41%)",
+     "met": true,
+     "note": "Agent explicitly labels the figures as GAAP and does not mention non-GAAP."
+    },
+    {
+     "point": "Must be quarterly, not six-month margin (28.6%)",
+     "met": true,
+     "note": "Agent specifies second quarter fiscal 2027 and uses quarterly figures."
+    },
+    {
+     "point": "Must use correct denominator (total net revenue 2,046, not billings 1,854)",
+     "met": true,
+     "note": "Agent uses total net revenue of $2,046 million."
+    },
+    {
+     "point": "Must be correct fiscal period (Q2 FY2027 = May-Jul 2026)",
+     "met": true,
+     "note": "Agent states quarter ended July 31, 2026, which matches Q2 FY2027."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer matches the verified reference in all respects: correct GAAP figures, correct quarter, correct calculation, and correct result within tolerance. No failure modes are triggered."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Autodesk's second quarter fiscal 2027 results are for the quarter ended July 31, 2026",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/news/ADSK/autodesk-inc-announces-fiscal-2027-second-quarter-auz2j06ewmj9.html",
+     "reason": "The Stock Titan article states: 'The Autodesk release reports fiscal 2027 second-quarter results for the period ended July 31, 2026'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total net revenue: $2,046 million",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/news/ADSK/autodesk-inc-announces-fiscal-2027-second-quarter-auz2j06ewmj9.html",
+     "reason": "The Stock Titan article reports: 'Revenue +16% YoY to $2.046 billion in Q2 FY27'. Ad-hoc News and Linevest News also cite $2.046 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Income from operations (GAAP): $599 million",
+     "numeric": true,
+     "cited_url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/autodesk-stock-reports-16-percent-revenue-growth-in-q2/70168815",
+     "reason": "The Ad-hoc News article explicitly states: 'operating profit was USD 599 million'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "GAAP Operating Margin = 29.3% (calculated as $599M / $2,046M × 100)",
+     "numeric": true,
+     "cited_url": "https://linevestnews.com/article/2026-09-11-autodesk-adsk-q2-fy2027-293-operating-margin-10-billi",
+     "reason": "Linevest News reports: 'Autodesk's operating margin reached 29.3% in the quarter ended July 31, 2026'. The calculation 599/2046 = 29.276% rounds to 29.3%.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "This rounds to the 29% GAAP operating margin disclosed in Autodesk's earnings release",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/news/ADSK/autodesk-inc-announces-fiscal-2027-second-quarter-auz2j06ewmj9.html",
+     "reason": "Stock Titan article states: 'GAAP operating margin reached 29%'. Ad-hoc News also mentions 'GAAP operating margin of 29 percent'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Representing a 4 percentage-point expansion from the prior-year period",
+     "numeric": true,
+     "cited_url": "https://linevestnews.com/article/2026-09-11-autodesk-adsk-q2-fy2027-293-operating-margin-10-billi",
+     "reason": "Linevest News notes the margin was 'up from 25.2% a year earlier', a 4.1 percentage-point increase, consistent with a 4 percentage-point expansion.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 6,
+   "supported": 4,
+   "not_retrieved": 2
+  }
+ }
+}

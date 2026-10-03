@@ -1,0 +1,180 @@
+{
+ "id": "T16",
+ "category": "Qualitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "Has Workday announced any restructuring recently? What are the details and expected costs?",
+ "grading": "Reference-free (no fixed answer), graded for recency and support. Expect: announced 2026-09-29; reorganizations including a reduction of approximately 2.5% of the workforce, primarily in Product and Technology, plus select leased office space reductions; estimated charges USD 65M-80M (about USD 55M-70M in Q3 FY2027 and about USD 10M in Q4 FY2027); fiscal 2027 Q3 and full-year guidance reiterated except GAAP operating margin. Snapshot as of 2026-10-03.",
+ "answer": "On September 29, 2026 Workday disclosed in an 8-K (Items 2.02 and 2.05) that certain functions announced reorganizations including a reduction of approximately 2.5% of its workforce, primarily within the Product and Technology team, and select leased office space reductions, while continuing to hire in strategic areas. It estimates charges of about USD 65-80 million, of which about USD 55-70 million in Q3 FY2027 and about USD 10 million in Q4 FY2027 (roughly USD 40-55 million future cash for severance and benefits, about USD 10 million non-cash stock-based compensation and about USD 15 million non-cash lease impairment). Workday reiterated its Q3 and full-year FY2027 guidance from August 27 except GAAP operating margin (now about 20-21 points below non-GAAP in Q3 and about 19 points below for the full year). [T16-E1, T16-E2] Separately, on October 1, 2026 Workday entered into a new USD 1.5 billion revolving credit agreement replacing its USD 1.0 billion 2022 facility; this is not part of the restructuring. [T16-E3]",
+ "output": {
+  "answer": " Yes. On **September 29, 2026**, Workday announced a reorganization that includes a workforce reduction and office-space cuts.\n\nKey details\n\n| Item | Detail |\n|------|--------|\n| **Workforce cut** | ~2.5% (~500–525 employees), primarily in **Product and Technology** |\n| **Office space** | Select leased-office reductions |\n| **Restructuring charges** | **$65M–$80M** total (some filings cite up to $85M) |\n| **Timing of charges** | $55M–$70M in fiscal Q3 2027; ~$10M in fiscal Q4 2027 |\n| **Charge breakdown** | • $40M–$55M cash for severance/benefits<br>• ~$10M non-cash stock-based compensation<br>• ~$15M non-cash lease impairments |\n| **Completion** | Workforce actions substantially complete by fiscal Q1 2028; real estate actions by fiscal Q4 2027 |\n| **Other impacts** | GAAP operating margin in Q3 will trail non-GAAP by ~20–21 percentage points; all other guidance was maintained |\n| **Context** | Second round of cuts in 2026 (a prior ~2% reduction targeted Global Customer Operations in February) |\n\nWorkday said it will **continue hiring** in key strategic areas and locations during fiscal 2027 while making these cuts to better align team structures with growth priorities.\n\nSources: [SEC 8-K filing via StockTitan](https://www.stocktitan.net/sec-filings/WDAY/8-k-workday-inc-reports-material-event-e5a30bf1a264.html), [People Matters](https://www.peoplematters.in/news/strategic-hr/workday-cuts-500-jobs-as-restructuring-targets-product-and-technology-teams-52468), [Kalkine Media](https://kalkinemedia.com/us/news/announcements/workday-reports-25-workforce-cut-and-65m-80m-restructuring-costs-in-q3-2026-filing), [GuruFocus](https://www.gurufocus.com/news/9102122/workday-wday-announces-25-workforce-reduction-amid-strategic-realignment)",
+  "tokens": {
+   "input": 8125,
+   "output": 926
+  },
+  "tavily_credits": 2,
+  "latency_s": 10.47,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/dc732ac8290113a82915b2579863d440",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Workday restructuring announcement recent details expected costs",
+     "search_depth": "advanced",
+     "time_range": "month"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://kalkinemedia.com/us/news/announcements/workday-reports-25-workforce-cut-and-65m-80m-restructuring-costs-in-q3-2026-filing",
+    "https://www.gurufocus.com/news/9102122/workday-wday-announces-25-workforce-reduction-amid-strategic-realignment",
+    "https://www.peoplematters.in/news/strategic-hr/workday-cuts-500-jobs-as-restructuring-targets-product-and-technology-teams-52468",
+    "https://www.stocktitan.net/sec-filings/WDAY/8-k-workday-inc-reports-material-event-e5a30bf1a264.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 10,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Announced on 2026-09-29",
+     "met": true,
+     "note": "Agent states 'On September 29, 2026, Workday announced a reorganization...' matching the required date."
+    },
+    {
+     "point": "Reorganizations include reduction of approximately 2.5% of workforce, primarily in Product and Technology",
+     "met": true,
+     "note": "Agent's table shows '~2.5% (~500–525 employees), primarily in Product and Technology'."
+    },
+    {
+     "point": "Select leased office space reductions",
+     "met": true,
+     "note": "Agent includes 'Select leased-office reductions' in the table."
+    },
+    {
+     "point": "Estimated charges USD 65M-80M total",
+     "met": true,
+     "note": "Agent lists 'Restructuring charges: $65M–$80M total (some filings cite up to $85M)'."
+    },
+    {
+     "point": "About USD 55M-70M in Q3 FY2027",
+     "met": true,
+     "note": "Agent states 'Timing of charges: $55M–$70M in fiscal Q3 2027'."
+    },
+    {
+     "point": "About USD 10M in Q4 FY2027",
+     "met": true,
+     "note": "Agent states '~$10M in fiscal Q4 2027'."
+    },
+    {
+     "point": "Fiscal 2027 Q3 and full-year guidance reiterated except GAAP operating margin",
+     "met": true,
+     "note": "Agent notes 'GAAP operating margin in Q3 will trail non-GAAP by ~20–21 percentage points; all other guidance was maintained', which covers the reiteration of guidance except GAAP operating margin."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer accurately captures all required details from the grading rule: the announcement date, workforce reduction percentage and focus, office space cuts, restructuring charge totals and quarterly timing, and the guidance reiteration with the GAAP operating margin exception. The answer is well-supported by recent sources and avoids the failure modes (confusion with earlier layoffs, mis-stating charges as savings)."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "On September 29, 2026, Workday announced a reorganization that includes a workforce reduction and office-space cuts.",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/WDAY/8-k-workday-inc-reports-material-event-e5a30bf1a264.html",
+     "reason": "The SEC 8-K filing via StockTitan states: 'On September 29, 2026, certain functions within Workday announced team reorganizations and select leased-office reductions, including an approximately 2.5% reduction of Workday's current workforce, primarily in Product and Technology.' This directly supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Workforce cut: ~2.5% (~500–525 employees), primarily in Product and Technology.",
+     "numeric": true,
+     "cited_url": "https://www.peoplematters.in/news/strategic-hr/workday-cuts-500-jobs-as-restructuring-targets-product-and-technology-teams-52468",
+     "reason": "People Matters reports the 2.5% figure and notes Workday employed 20,896 people as of July 31, 2026, yielding ~522 employees (2.5% of 20,896). The article says the reduction could affect around 500 employees per Business Insider, and GuruFocus cites ~525 jobs. The 500–525 range is consistent with the headcount and percentage.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Office space: Select leased-office reductions.",
+     "numeric": false,
+     "cited_url": "https://www.stocktitan.net/sec-filings/WDAY/8-k-workday-inc-reports-material-event-e5a30bf1a264.html",
+     "reason": "The SEC filing explicitly mentions 'select leased-office reductions' as part of the reorganization.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Restructuring charges: $65M–$80M total (some filings cite up to $85M).",
+     "numeric": true,
+     "cited_url": "https://www.gurufocus.com/news/9102122/workday-wday-announces-25-workforce-reduction-amid-strategic-realignment",
+     "reason": "The SEC filing gives $65M–$80M. GuruFocus states 'Workday expects restructuring charges between $65 million and $85 million,' supporting the parenthetical that some filings cite up to $85M.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Timing of charges: $55M–$70M in fiscal Q3 2027; ~$10M in fiscal Q4 2027.",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/WDAY/8-k-workday-inc-reports-material-event-e5a30bf1a264.html",
+     "reason": "The SEC filing says: 'approximately $55 million to $70 million is expected to be recognized in the third quarter of fiscal 2027, and $10 million is expected to be recognized in the fourth quarter of fiscal 2027.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Charge breakdown: $40M–$55M cash for severance/benefits; ~$10M non-cash stock-based compensation; ~$15M non-cash lease impairments.",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/WDAY/8-k-workday-inc-reports-material-event-e5a30bf1a264.html",
+     "reason": "The SEC filing lists: '$40 million to $55 million of future cash expenditures related to severance payments, employee benefits, and related costs,' 'approximately $10 million in non-cash charges for stock-based compensation,' and 'approximately $15 million in non-cash charges related to the impairment of certain leased office space.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Completion: Workforce actions substantially complete by fiscal Q1 2028; real estate actions by fiscal Q4 2027.",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/WDAY/8-k-workday-inc-reports-material-event-e5a30bf1a264.html",
+     "reason": "The retrieved SEC filing text is truncated: 'Employee actions are expected to be substantially completed by the first quarter of fiscal [...]' It does not show the real-estate completion target. Other retrieved sources (TipRanks, The Globe and Mail) include both dates, but the cited URL's retrieved text does not fully support the claim.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Other impacts: GAAP operating margin in Q3 will trail non-GAAP by ~20–21 percentage points; all other guidance was maintained.",
+     "numeric": true,
+     "cited_url": "https://www.gurufocus.com/news/9102122/workday-wday-announces-25-workforce-reduction-amid-strategic-realignment",
+     "reason": "GuruFocus states the GAAP operating margin will 'fall approximately 21 percentage points below the non-GAAP margin during that period.' The Globe and Mail (not cited) says 20–21 points. The claim's ~20–21 range is consistent with the cited source.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Context: Second round of cuts in 2026 (a prior ~2% reduction targeted Global Customer Operations in February).",
+     "numeric": true,
+     "cited_url": "https://www.peoplematters.in/news/strategic-hr/workday-cuts-500-jobs-as-restructuring-targets-product-and-technology-teams-52468",
+     "reason": "People Matters mentions an earlier round of layoffs in February with roughly 400 positions eliminated, but does not specify the percentage (~2%) or the division (Global Customer Operations). Those details appear in The Globe and Mail (not cited). Therefore the cited source does not fully support the claim's specifics.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Workday said it will continue hiring in key strategic areas and locations during fiscal 2027 while making these cuts.",
+     "numeric": false,
+     "cited_url": "https://www.stocktitan.net/sec-filings/WDAY/8-k-workday-inc-reports-material-event-e5a30bf1a264.html",
+     "reason": "The SEC filing states: 'Workday plans to continue to hire in key strategic areas and locations throughout its fiscal 2027.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 8,
+   "cited": 10,
+   "supported": 8,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,153 @@
+{
+ "id": "H19",
+ "category": "Qualitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "What is the most significant news for Hormel Foods in the past 30 days (as of October 3, 2026)? Give the date, deal terms and expected timing.",
+ "grading": "Snapshot as of 2026-10-03; key points: (1) Hormel announced on Sept 30, 2026 (agreement dated Sept 29) a definitive agreement to acquire Brakebush Brothers, LLC, a value-added chicken company; (2) price about USD 1.055 billion in cash, subject to customary adjustments; (3) expected to close in Hormel's fiscal Q1 2027 subject to customary conditions including HSR/regulatory approval (outside date March 29, 2027, with an automatic 3-month extension in specified circumstances); (4) any two of: Brakebush ~USD 1.2B LTM net sales, results primarily in Foodservice, expected accretive to adjusted EPS from fiscal 2028, ~USD 20M run-rate cost synergies by end of fiscal 2028, implied 10.7x adjusted EBITDA. Must carry the date and cite a primary or dated news source; fail if the deal is described as closed or if the price/timing is wrong.",
+ "answer": "Snapshot as of October 3, 2026: on September 29-30, 2026 Hormel Foods entered into (and announced) a definitive agreement to acquire Brakebush Brothers, LLC, a Wisconsin-based value-added chicken company, from the Brakebush family for a base purchase price of about USD 1.055 billion in cash, subject to customary adjustments [H19-E1][H19-E2]. Closing is expected in Hormel's fiscal Q1 2027 (roughly late October 2026 to late January 2027), subject to customary conditions including HSR waiting-period expiry; the agreement's outside date is March 29, 2027 with an automatic three-month extension in specified circumstances [H19-E1]. Brakebush had about USD 1.2 billion of net sales over the last twelve months, five production facilities and two R&D labs; results will be reported primarily in Foodservice; Hormel expects the deal to be accretive to adjusted EPS beginning in fiscal 2028, with about USD 20 million of run-rate cost synergies by the end of fiscal 2028 and an implied adjusted EBITDA multiple of 10.7x (8.9x after synergies) [H19-E2][H19-E3]. Secondary coverage corroborates the terms [H19-E4].",
+ "output": {
+  "answer": " The most significant Hormel Foods news in the past 30 days is the **acquisition of Brakebush Brothers, LLC**.\n\n**Date:** September 30, 2026\n\n**Deal Terms:** Approximately **$1.055 billion in cash** (reported as roughly $1.06 billion in some articles). Brakebush Brothers is a family-owned, value-added processor of chicken products that generated around $1.2 billion in net sales over the trailing 12 months. The deal is expected to expand Hormel's foodservice presence and increase its exposure to the growing chicken category.\n\n**Expected Timing:** The transaction is expected to close in the **first quarter of fiscal 2027**.\n\n---\n\n**Sources:**\n- [Yahoo Finance – Hormel Foods to buy Brakebush Brothers for $1.055 billion](https://finance.yahoo.com/markets/stocks/articles/hormel-foods-acquire-brakebush-brothers-140936128.html)\n- [Yahoo Finance – Can Hormel Foods' Brakebush Deal Accelerate...](https://finance.yahoo.com/markets/stocks/articles/hormel-foods-brakebush-deal-accelerate-133900878.html)\n- [Bloomberg – Spam Maker Hormel Expands Chicken Business With $1 Billion Deal](https://www.bloomberg.com/news/articles/2026-09-30/spam-maker-hormel-expands-chicken-business-with-1-billion-deal)\n- [Wall Street Journal – Spam Maker Hormel Foods to Buy Brakebush Brothers for $1.06 Billion](https://www.wsj.com/business/deals/hormel-foods-to-buy-brakebush-brothers-for-about-1-06-billion-6adef7ff)",
+  "tokens": {
+   "input": 25605,
+   "output": 1079
+  },
+  "tavily_credits": 4,
+  "latency_s": 10.47,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/84f86b72b92666768525f0a3f7abb482",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Hormel Foods news deal acquisition sale significant announcement September October 2026",
+     "start_date": "2026-09-03",
+     "end_date": "2026-10-03",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Hormel Foods acquires Brakebush Brothers expected closing date timing 2026",
+     "start_date": "2026-09-03",
+     "end_date": "2026-10-03",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/hormel-foods-acquire-brakebush-brothers-140936128.html",
+    "https://finance.yahoo.com/markets/stocks/articles/hormel-foods-brakebush-deal-accelerate-133900878.html",
+    "https://www.bloomberg.com/news/articles/2026-09-30/spam-maker-hormel-expands-chicken-business-with-1-billion-deal",
+    "https://www.wsj.com/business/deals/hormel-foods-to-buy-brakebush-brothers-for-about-1-06-billion-6adef7ff"
+   ],
+   "cited_primary": 0,
+   "retrieved": 15,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.5,
+   "points": [
+    {
+     "point": "Hormel announced on Sept 30, 2026 (agreement dated Sept 29) a definitive agreement to acquire Brakebush Brothers, LLC, a value-added chicken company",
+     "met": true,
+     "note": "Agent states the announcement date as September 30, 2026 and identifies the target as Brakebush Brothers, a value-added chicken company."
+    },
+    {
+     "point": "Price about USD 1.055 billion in cash, subject to customary adjustments",
+     "met": true,
+     "note": "Agent gives the price as approximately $1.055 billion in cash, but does not mention 'subject to customary adjustments'."
+    },
+    {
+     "point": "Expected to close in Hormel's fiscal Q1 2027 subject to customary conditions including HSR/regulatory approval (outside date March 29, 2027, with an automatic 3-month extension in specified circumstances)",
+     "met": false,
+     "note": "Agent states closing expected in first quarter of fiscal 2027 but omits the HSR/regulatory approval condition and the outside date with extension."
+    },
+    {
+     "point": "Any two of: Brakebush ~USD 1.2B LTM net sales, results primarily in Foodservice, expected accretive to adjusted EPS from fiscal 2028, ~USD 20M run-rate cost synergies by end of fiscal 2028, implied 10.7x adjusted EBITDA",
+     "met": false,
+     "note": "Agent mentions ~$1.2B trailing 12-month net sales (one item) and vaguely references foodservice presence, but does not clearly provide a second distinct item such as results primarily in Foodservice, EPS accretion, synergies, or EBITDA multiple."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The answer correctly identifies the Brakebush acquisition as the most significant news, provides the correct announcement date (Sept 30, 2026) and purchase price (~$1.055B cash), and states the expected closing quarter (fiscal Q1 2027). However, it omits several required details: the price is not qualified as 'subject to customary adjustments'; the closing timing lacks mention of HSR/regulatory approval conditions and the outside date (March 29, 2027 with extension); and only one of the required additional details (LTM net sales ~$1.2B) is clearly provided, while a second (e.g., results primarily in Foodservice, EPS accretion, synergies, or EBITDA multiple) is missing or only vaguely implied. The answer cites dated news sources. Therefore, the answer is partially correct."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Hormel Foods agreed to acquire Brakebush Brothers, LLC",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/hormel-foods-acquire-brakebush-brothers-140936128.html",
+     "reason": "The Yahoo Finance article titled 'Hormel Foods to acquire Brakebush Brothers for $1.055 billion' and the retrieved source https://finance.yahoo.com/markets/stocks/articles/hormel-foods-bets-1-06b-170302684.html state 'Hormel Foods (NYSE:HRL) has agreed to acquire value-added chicken company Brakebush Brothers, LLC'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Announcement date is September 30, 2026",
+     "numeric": true,
+     "cited_url": "https://www.bloomberg.com/news/articles/2026-09-30/spam-maker-hormel-expands-chicken-business-with-1-billion-deal",
+     "reason": "The Bloomberg article URL contains '2026-09-30', indicating publication on September 30, 2026. The Wall Street Journal article is also dated the same day. Retrieved sources do not explicitly show the date but the URL is strong evidence.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Deal value is approximately $1.055 billion in cash (roughly $1.06 billion in some reports)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/hormel-foods-acquire-brakebush-brothers-140936128.html",
+     "reason": "Retrieved source https://finance.yahoo.com/markets/stocks/articles/hormel-foods-bets-1-06b-170302684.html states 'approximately $1.055 billion in cash'. The Wall Street Journal retrieved source says 'about $1.055 billion'. Bloomberg says '$1 billion acquisition'. The figures are consistent with rounding.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Brakebush Brothers is a family-owned, value-added processor of chicken products",
+     "numeric": false,
+     "cited_url": "https://www.bloomberg.com/news/articles/2026-09-30/spam-maker-hormel-expands-chicken-business-with-1-billion-deal",
+     "reason": "Bloomberg retrieved source: 'Hormel will buy Brakebush Brothers LLC, a family-owned value-added chicken company'. Wall Street Journal retrieved source: 'a family-owned value-added processor of chicken products'. Both support the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Brakebush generated around $1.2 billion in net sales over the trailing 12 months",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/hormel-foods-brakebush-deal-accelerate-133900878.html",
+     "reason": "Retrieved source for the Yahoo Finance 'Can Hormel Foods' Brakebush Deal Accelerate...' article states: 'Brakebush generated about $1.2 billion in net sales over the past 12 months.' Wall Street Journal retrieved source: 'Brakebush generated around $1.2 billion in sales over the last 12 months.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The acquisition is expected to expand Hormel's foodservice presence and increase exposure to the growing chicken category",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/hormel-foods-acquire-brakebush-brothers-140936128.html",
+     "reason": "Retrieved source https://finance.yahoo.com/markets/stocks/articles/hormel-foods-bets-1-06b-170302684.html: 'a transaction the company said would expand its foodservice presence and increase its exposure to the chicken category.' Bloomberg: 'acquisition advances Hormel's strategy of investing in growing protein categories.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Transaction expected to close in the first quarter of fiscal 2027",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/hormel-foods-brakebush-deal-accelerate-133900878.html",
+     "reason": "Retrieved source for the Yahoo Finance article 'Can Hormel Foods' Brakebush Deal Accelerate...' explicitly states: 'The transaction is expected to close in the first quarter of fiscal 2027.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 7,
+   "supported": 7,
+   "not_retrieved": 0
+  }
+ }
+}

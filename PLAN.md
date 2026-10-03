@@ -209,19 +209,19 @@ The superseded code was removed from the working tree; it remains in git history
    - baseline runs on those sets reused, since the baseline code is unchanged
 
 **Result (final runs):**
-- **Baseline:** the starter as shipped (Kimi K2.6), re-run on held-out sets 1 and 2 (one run each) and re-graded on its three dev runs. It wasn't run on the table set because of the Tavily budget.
+- **Baseline:** the starter as shipped (Kimi K2.6), run twice on held-out sets 1 and 2 and re-graded on its three dev runs. It wasn't run on the table set because of the Tavily budget.
 - **Our agent:** v3, on DeepSeek V4.1 Flash.
 - **Architecture-only comparison:** the starter's design on that same model.
 
 | Held-out sets 1 and 2 | Starter (as shipped) | Starter design, our model | Our agent |
 |---|---|---|---|
-| Fully correct | 20/34 (59%) | 64/68 (94%) | 67/68 (99%) |
-| Verified-correct | 11/34 (32%) | 38/68 (56%) | 56/68 (82%) |
-| Cited claims not supported | 23% | 16% | 9% |
-| Primary-source citations | 22% | 41% | 82% |
-| Refusals correct | 4/6 | 10/12 | 12/12 |
-| Tavily credits per question | 9.2 | 4.7 | 0.9 |
-| Median latency | 17 s | 17 s | 40 s |
+| Fully correct | 40/68 (59%) | 64/68 (94%) | 67/68 (99%) |
+| Verified-correct | 23/68 (34%) | 38/68 (56%) | 56/68 (82%) |
+| Cited claims not supported | 19% | 16% | 9% |
+| Primary-source citations | 21% | 41% | 82% |
+| Refusals correct | 7/12 | 10/12 | 12/12 |
+| Tavily credits per question | 8.7 | 4.7 | 0.9 |
+| Median latency | 18 s | 17 s | 40 s |
 
 - **Table set (same-model comparison):**
   - cells correct: 171/172 for the starter design vs. 167/172 for ours

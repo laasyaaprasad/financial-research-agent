@@ -1,0 +1,188 @@
+{
+ "id": "T20",
+ "category": "Market analysis",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "For calendar Q2 2026 (April 1 to June 30, 2026), what was net revenue at Visa and at Mastercard, and by how much did Visa's exceed Mastercard's? Use each company's own reported quarter that corresponds to those dates and answer in USD millions.",
+ "grading": "List of three: Visa net revenue USD 11,633M (fiscal Q3 2026), Mastercard net revenue USD 9,277M (Q2 2026), each ±0.5%; difference (Visa minus Mastercard) USD 2,356M ±1% (Visa about 25% larger). Optional: YoY growth Visa 14.4% vs Mastercard 14.1% (±0.3pp). Both quarters end 2026-06-30. Fail if Visa's March quarter or any non-matching Mastercard quarter is used.",
+ "answer": "Visa's fiscal Q3 2026 (quarter ended June 30, 2026) net revenue was USD 11,633 million, up from USD 10,172 million a year earlier (+14.4%). Mastercard's Q2 2026 (quarter ended June 30, 2026) net revenue was USD 9,277 million, up from USD 8,133 million (+14.1%). Visa's net revenue exceeded Mastercard's by USD 2,356 million (about 25% higher). [T20-E1, T20-E2, T20-E3]",
+ "output": {
+  "answer": " For calendar Q2 2026 (April 1 – June 30, 2026):\n\n| Company | Reported quarter | Net revenue (USD millions) | Source |\n|---|---|---|---|\n| **Visa** | Fiscal Q3 2026 | **$11,633** (reported as $11.6B) | [SEC filing](https://www.sec.gov/Archives/edgar/data/1403161/000140316126000103/q32026earningsrelease.htm) / [Visa press release](https://s1.q4cdn.com/050606653/files/doc_financials/2026/q3/Q3-2026-Earnings-Release_vF.pdf) |\n| **Mastercard** | Q2 2026 | **$9,277** (reported as $9.28B) | [Mastercard earnings release](https://s25.q4cdn.com/479285134/files/doc_financials/2026/q2/2Q26-Mastercard-Earnings-Release.pdf) / [Tickeron recap](https://tickeron.com/earnings/MA) |\n\nVisa’s net revenue exceeded Mastercard’s by **$2,356 million** (about $2.36 billion).",
+  "tokens": {
+   "input": 31265,
+   "output": 1989
+  },
+  "tavily_credits": 5,
+  "latency_s": 19.79,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/cec9166a58bce81d927f34cb6ea002dc",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "current date today what year is it Visa Mastercard earnings Q2 2026",
+     "search_depth": "basic"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Visa Inc Q3 2026 earnings results net revenue July 2026",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Mastercard Q2 2026 exact net revenue $9.28 billion $9.3 billion earnings release",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://s1.q4cdn.com/050606653/files/doc_financials/2026/q3/Q3-2026-Earnings-Release_vF.pdf",
+    "https://s25.q4cdn.com/479285134/files/doc_financials/2026/q2/2Q26-Mastercard-Earnings-Release.pdf",
+    "https://tickeron.com/earnings/MA",
+    "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000103/q32026earningsrelease.htm"
+   ],
+   "cited_primary": 1,
+   "retrieved": 28,
+   "retrieved_primary": 7
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Visa net revenue USD 11,633M (fiscal Q3 2026) ±0.5%",
+     "met": true,
+     "note": "Agent reports Visa fiscal Q3 2026 net revenue as $11,633 million, matching the reference exactly."
+    },
+    {
+     "point": "Mastercard net revenue USD 9,277M (Q2 2026) ±0.5%",
+     "met": true,
+     "note": "Agent reports Mastercard Q2 2026 net revenue as $9,277 million, matching the reference exactly."
+    },
+    {
+     "point": "Difference (Visa minus Mastercard) USD 2,356M ±1%",
+     "met": true,
+     "note": "Agent states Visa's net revenue exceeded Mastercard's by $2,356 million, which equals 11,633 - 9,277."
+    },
+    {
+     "point": "Both quarters end 2026-06-30",
+     "met": true,
+     "note": "Agent identifies Visa's quarter as fiscal Q3 2026 and Mastercard's as Q2 2026, both corresponding to April–June 2026 (ended June 30, 2026)."
+    },
+    {
+     "point": "Not using Visa's March quarter (fiscal Q2)",
+     "met": true,
+     "note": "Agent correctly uses Visa fiscal Q3 2026, not fiscal Q2 (Jan–Mar)."
+    },
+    {
+     "point": "Not using non-matching Mastercard quarter",
+     "met": true,
+     "note": "Agent correctly uses Mastercard Q2 2026, not Q1 or Q3."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All required figures match the reference values within the specified tolerances, the correct fiscal quarters are used (Visa fiscal Q3 2026, Mastercard Q2 2026), and no disqualifying errors are present."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Visa's fiscal Q3 2026 net revenue was $11,633 million (reported as $11.6B)",
+     "numeric": true,
+     "cited_url": "https://s1.q4cdn.com/050606653/files/doc_financials/2026/q3/Q3-2026-Earnings-Release_vF.pdf",
+     "reason": "The PDF includes a table 'Reported Nominal USD (in millions)' showing Net Revenue $11,633.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mastercard's Q2 2026 net revenue was $9,277 million (reported as $9.28B)",
+     "numeric": true,
+     "cited_url": "https://tickeron.com/earnings/MA",
+     "reason": "The Tickeron recap states 'Mastercard reported Q2 2026 net revenue of $9.28 billion', consistent with $9,277 million rounded.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Visa's net revenue exceeded Mastercard's by $2,356 million (about $2.36 billion)",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Calculated as $11,633 million - $9,277 million = $2,356 million.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "The comparison period is calendar Q2 2026 (April 1 – June 30, 2026)",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Visa's fiscal Q3 2026 ended June 30, 2026; Mastercard's Q2 2026 ended June 30, 2026. Both cover April-June 2026.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Visa's reported quarter is fiscal Q3 2026",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000103/q32026earningsrelease.htm",
+     "reason": "The SEC filing title is 'Visa Reports Fiscal Third Quarter 2026 Results'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mastercard's reported quarter is Q2 2026",
+     "numeric": false,
+     "cited_url": "https://s25.q4cdn.com/479285134/files/doc_financials/2026/q2/2Q26-Mastercard-Earnings-Release.pdf",
+     "reason": "The PDF title is 'Mastercard Incorporated Reports Second Quarter 2026 Financial Results'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Visa's net revenue source includes SEC filing",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000103/q32026earningsrelease.htm",
+     "reason": "The answer cites this URL as a source for Visa's net revenue.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Visa's net revenue source includes Visa press release",
+     "numeric": false,
+     "cited_url": "https://s1.q4cdn.com/050606653/files/doc_financials/2026/q3/Q3-2026-Earnings-Release_vF.pdf",
+     "reason": "The answer cites this URL as a source for Visa's net revenue.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mastercard's net revenue source includes Mastercard earnings release",
+     "numeric": false,
+     "cited_url": "https://s25.q4cdn.com/479285134/files/doc_financials/2026/q2/2Q26-Mastercard-Earnings-Release.pdf",
+     "reason": "The answer cites this URL as a source for Mastercard's net revenue.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mastercard's net revenue source includes Tickeron recap",
+     "numeric": false,
+     "cited_url": "https://tickeron.com/earnings/MA",
+     "reason": "The answer cites this URL as a source for Mastercard's net revenue.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 2,
+   "cited": 8,
+   "supported": 8,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,122 @@
+{
+ "id": "T06",
+ "category": "Numerical reasoning",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "By what percentage did AMD's Data Center segment revenue grow year over year in Q2 2026 (quarter ended June 27, 2026 versus the quarter ended June 28, 2025)? Compute it from the reported segment revenue figures.",
+ "grading": "107.35% ±0.3pp; the company's own rounded 107% is also accepted. Inputs: Data Center segment revenue USD 6,718M (Q2 2026) and USD 3,240M (Q2 2025). Fail if total-company, sequential or six-month growth is given.",
+ "answer": "Data Center segment revenue was USD 6,718 million in Q2 2026 versus USD 3,240 million in Q2 2025, so growth = 6,718 / 3,240 - 1 = 107.35% (AMD's release rounds this to 107%). [T06-E1, T06-E2]",
+ "output": {
+  "answer": " **107%**\n\n**Calculation:**\n\n| Quarter | Period Ended | Data Center Revenue |\n|---|---|---|\n| Q2 2026 | June 27, 2026 | **$6.718 billion** |\n| Q2 2025 | June 28, 2025 | **$3.240 billion** |\n\nYoY Growth = ($6.718B − $3.240B) / $3.240B × 100 ≈ **107%**\n\nAMD reported this figure directly in its Q2 2026 earnings release and SEC filing, noting Data Center net revenue rose 107% compared to the prior-year period.\n\n**Sources:**\n- AMD Q2 2026 earnings tables (comparative segment revenue): https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results\n- AMD SEC 10-Q for Q2 2026: https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/amd-20260627.htm\n- AMD Q2 2025 results recap: https://www.techpowerup.com/forums/threads/amd-reports-second-quarter-2025-financial-results.339649",
+  "tokens": {
+   "input": 14689,
+   "output": 1274
+  },
+  "tavily_credits": 4,
+  "latency_s": 14.75,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/91e6cc331c3d56d5f5fe14d06cbd2738",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AMD Data Center segment revenue Q2 2026 quarter ended June 27 2026",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AMD Data Center segment revenue Q2 2025 quarter ended June 28 2025",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
+    "https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/amd-20260627.htm",
+    "https://www.techpowerup.com/forums/threads/amd-reports-second-quarter-2025-financial-results.339649"
+   ],
+   "cited_primary": 2,
+   "retrieved": 18,
+   "retrieved_primary": 8
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer is the year-over-year growth percentage for AMD's Data Center segment revenue in Q2 2026 vs Q2 2025",
+     "met": true,
+     "note": "Agent explicitly states Data Center segment revenue for Q2 2026 ($6.718B) and Q2 2025 ($3.240B) and computes YoY growth."
+    },
+    {
+     "point": "Computed value is 107.35% ±0.3pp, or the company's own rounded 107% is accepted",
+     "met": true,
+     "note": "Agent reports 107%, which matches AMD's own rounded figure (accepted per grading rule)."
+    },
+    {
+     "point": "Answer does not use total-company growth (50%), sequential Q/Q change (+16%), or six-month comparison",
+     "met": true,
+     "note": "Agent uses only the Data Center segment figures for the two quarters, not total company or other periods."
+    },
+    {
+     "point": "No arithmetic slip from mixing Q1 2026 column",
+     "met": true,
+     "note": "Calculation uses only Q2 2026 and Q2 2025 Data Center revenues; no Q1 2026 data appears."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly computes the Data Center segment year-over-year growth as 107% using the reported revenues for Q2 2026 and Q2 2025, matching AMD's own rounded figure and avoiding all failure modes."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "AMD's Data Center segment revenue for Q2 2026 (three months ended June 27, 2026) was $6.718 billion",
+     "numeric": true,
+     "cited_url": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
+     "reason": "The AMD Q2 2026 press release shows a table with 'Data Center Segment' revenue of $6,718 million for the three months ended June 27, 2026, which equals $6.718 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "AMD's Data Center segment revenue for Q2 2025 (three months ended June 28, 2025) was $3.240 billion",
+     "numeric": true,
+     "cited_url": "https://www.techpowerup.com/forums/threads/amd-reports-second-quarter-2025-financial-results.339649",
+     "reason": "The AMD Q2 2025 results recap states 'Data Center segment revenue was $3.2 billion', and the Q2 2026 press release comparative table shows $3,240 million for June 28, 2025, confirming $3.240 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The year-over-year growth rate for Data Center segment revenue from Q2 2025 to Q2 2026 was approximately 107%",
+     "numeric": true,
+     "cited_url": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
+     "reason": "Calculated as ($6.718B - $3.240B) / $3.240B × 100 = 107.3%, which rounds to 107%. The press release explicitly states 'Data Center segment revenue was $6.7 billion, up 107% year-over-year'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "AMD reported in its Q2 2026 earnings release and SEC filing that Data Center net revenue rose 107% year-over-year",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/amd-20260627.htm",
+     "reason": "The SEC 10-Q filing states: 'Data Center net revenue of $6.7 billion for the three months ended June 27, 2026 increased by 107%, compared to net revenue of $3.2 billion for the prior year period.' The press release also confirms this.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 4,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}

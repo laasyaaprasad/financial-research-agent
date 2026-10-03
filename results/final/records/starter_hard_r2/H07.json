@@ -1,0 +1,163 @@
+{
+ "id": "H07",
+ "category": "Quantitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "Which customers each contributed 10% or more of Fabrinet's revenues in fiscal 2026 (year ended June 26, 2026), and what percentage of revenue did each represent?",
+ "grading": "Key points: four customers each >=10% of FY2026 revenue: Cisco Systems 19.9%, NVIDIA 16.3%, Nokia 10.7%, Amazon.com 10.5% (together 57.4%). Accept +/-0.1pp. Fail if fewer than all four are named or if FY2025 shares (NVIDIA 27.6%, Cisco 18.2%) are given for FY2026.",
+ "answer": "In fiscal 2026 (ended June 26, 2026) four customers each contributed 10% or more of Fabrinet's revenues: Cisco Systems 19.9%, NVIDIA 16.3%, Nokia 10.7% and Amazon.com 10.5%, together 57.4% of revenue. In fiscal 2025 only NVIDIA (27.6%) and Cisco (18.2%) exceeded 10% [H07-E1].",
+ "output": {
+  "answer": " Based on my search, **four customers each contributed 10% or more of Fabrinet's revenues in fiscal 2026** (year ended June 26, 2026):\n\n| Customer | % of Revenue |\n|----------|-------------|\n| **Cisco** | **20%** |\n| **NVIDIA** | **16%** |\n| **Nokia** | **11%** |\n| **Amazon** | **11%** |\n\nSource: [Yahoo Finance - Fabrinet Q4 2026 Earnings Call Highlights](https://finance.yahoo.com/markets/stocks/articles/fabrinet-fn-q4-2026-earnings-050212828.html)\n\nThis customer concentration information is also referenced in Fabrinet's **Form 10-K annual report** for fiscal 2026, which states that revenues from individual customers representing 10% or more are detailed in **Note 21** of the audited consolidated financial statements ([SEC EDGAR filing](https://www.sec.gov/Archives/edgar/data/1408710/000140871026000028/fn-20260626.htm)).",
+  "tokens": {
+   "input": 10669,
+   "output": 574
+  },
+  "tavily_credits": 2,
+  "latency_s": 7.73,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/bebda4bcc2ba43b01e65df66f9346de2",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Fabrinet fiscal 2026 10-K annual report customers 10% revenue concentration year ended June 26 2026",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/fabrinet-fn-q4-2026-earnings-050212828.html",
+    "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000028/fn-20260626.htm"
+   ],
+   "cited_primary": 1,
+   "retrieved": 10,
+   "retrieved_primary": 4
+  },
+  "correctness": {
+   "score": 0.556,
+   "points": [
+    {
+     "point": "Cisco Systems identified as a customer contributing >=10% of FY2026 revenue",
+     "met": true,
+     "note": "Agent lists Cisco with 20%."
+    },
+    {
+     "point": "Cisco Systems percentage 19.9% (accept +/-0.1pp)",
+     "met": false,
+     "note": "Agent gives 20%, which is 0.1pp above 19.9% — exactly at the tolerance boundary? 20% - 19.9% = 0.1pp, so it is within +/-0.1pp. Actually 0.1pp difference is allowed. So this should be met. Wait: 20% is 20.0%, reference is 19.9%. Difference is 0.1pp. Tolerance is +/-0.1pp, so 0.1pp is acceptable. So met."
+    },
+    {
+     "point": "NVIDIA identified as a customer contributing >=10% of FY2026 revenue",
+     "met": true,
+     "note": "Agent lists NVIDIA with 16%."
+    },
+    {
+     "point": "NVIDIA percentage 16.3% (accept +/-0.1pp)",
+     "met": false,
+     "note": "Agent gives 16%, reference 16.3%. Difference 0.3pp > 0.1pp tolerance."
+    },
+    {
+     "point": "Nokia identified as a customer contributing >=10% of FY2026 revenue",
+     "met": true,
+     "note": "Agent lists Nokia with 11%."
+    },
+    {
+     "point": "Nokia percentage 10.7% (accept +/-0.1pp)",
+     "met": false,
+     "note": "Agent gives 11%, reference 10.7%. Difference 0.3pp > 0.1pp tolerance."
+    },
+    {
+     "point": "Amazon.com identified as a customer contributing >=10% of FY2026 revenue",
+     "met": true,
+     "note": "Agent lists Amazon with 11%."
+    },
+    {
+     "point": "Amazon.com percentage 10.5% (accept +/-0.1pp)",
+     "met": false,
+     "note": "Agent gives 11%, reference 10.5%. Difference 0.5pp > 0.1pp tolerance."
+    },
+    {
+     "point": "No FY2025 shares (NVIDIA 27.6%, Cisco 18.2%) given for FY2026",
+     "met": true,
+     "note": "Agent does not mention FY2025 shares."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The agent correctly identifies all four customers (Cisco, NVIDIA, Nokia, Amazon) that contributed ≥10% of Fabrinet's FY2026 revenue and avoids the FY2025 confusion. However, three of the four reported percentages (NVIDIA 16% vs 16.3%, Nokia 11% vs 10.7%, Amazon 11% vs 10.5%) fall outside the allowed ±0.1 percentage-point tolerance. Only Cisco's 20% (vs 19.9%) is within tolerance. Therefore, the answer is partially correct."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Four customers each contributed 10% or more of Fabrinet's revenues in fiscal 2026 (year ended June 26, 2026).",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/fabrinet-fn-q4-2026-earnings-050212828.html",
+     "reason": "Yahoo Finance article states 'Four customers represented 10% or more of total revenue in fiscal 2026'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cisco contributed 20% of revenue.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/fabrinet-fn-q4-2026-earnings-050212828.html",
+     "reason": "Yahoo Finance article states 'Cisco at 20%'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA contributed 16% of revenue.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/fabrinet-fn-q4-2026-earnings-050212828.html",
+     "reason": "Yahoo Finance article states 'NVIDIA at 16%'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Nokia contributed 11% of revenue.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/fabrinet-fn-q4-2026-earnings-050212828.html",
+     "reason": "Yahoo Finance article states 'Nokia at 11%'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Amazon contributed 11% of revenue.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/fabrinet-fn-q4-2026-earnings-050212828.html",
+     "reason": "Yahoo Finance article states 'Amazon at 11%'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "This customer concentration information is also referenced in Fabrinet's Form 10-K annual report for fiscal 2026.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000028/fn-20260626.htm",
+     "reason": "SEC EDGAR filing states 'Revenues, by percentage, from individual customers representing 10% or more of our revenues is set forth in Note 21 of our audited consolidated financial statements.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The 10-K states that revenues from individual customers representing 10% or more are detailed in Note 21 of the audited consolidated financial statements.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000028/fn-20260626.htm",
+     "reason": "SEC EDGAR filing explicitly mentions Note 21 for customer concentration details.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 7,
+   "supported": 7,
+   "not_retrieved": 0
+  }
+ }
+}

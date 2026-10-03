@@ -1,0 +1,132 @@
+{
+ "id": "T14",
+ "category": "Adjustments",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "What caused Boeing's Defense, Space & Security segment to post an operating loss in the second quarter of 2026?",
+ "grading": "Key points: (1) BDS posted a loss from operations of USD 15M (margin -0.2%) vs earnings of USD 110M (margin 1.7%) in Q2 2025; (2) the main driver was a USD 280M reach-forward loss on the VC-25B (Air Force One) program; (3) management ties it to additional production and certification resources / higher costs for structural and wiring installation and airworthiness certification, with first delivery still anticipated in 2028; (4) revenue still rose 13% to USD 7,483M on higher volume, so the loss is a charge, not a demand issue. Partial credit for 3 of 4.",
+ "answer": "Boeing's Defense, Space & Security segment recorded a loss from operations of USD 15 million in Q2 2026 (margin -0.2%) versus earnings of USD 110 million (1.7%) a year earlier, even though revenue grew 13% to USD 7,483 million on higher volume. The release says results include USD 280 million of losses on the VC-25B program, primarily driven by an investment in additional production and certification resources (first delivery still anticipated in 2028). [T14-E1] The 10-Q attributes the USD 125 million earnings decrease mainly to USD 186 million higher net unfavorable cumulative catch-up adjustments, driven by the USD 280 million 2026 reach-forward loss on VC-25B, and to higher G&A, partially offset by higher volume; the loss reflects higher estimated costs for structural and wiring installation and airworthiness certification. [T14-E2]",
+ "output": {
+  "answer": " A **$280 million charge on the VC-25B presidential aircraft program** (Air Force One) caused Boeing's Defense, Space & Security segment to swing to a **$15 million operating loss** in Q2 2026. \n\nThe segment had been profitable a year earlier, posting a **$110 million operating profit** in Q2 2025. Despite revenue growing 13% year over year to $7.483 billion in Q2 2026, the VC-25B charge wiped out profitability and resulted in a negative 0.2% operating margin for the division.\n\n**Sources:**\n- [Yahoo Finance – \"The 1 Number Behind Boeing’s Q2 2026 Earnings\"](https://finance.yahoo.com/markets/stocks/articles/1-number-behind-boeing-q2-151513228.html)\n- [Yahoo Finance – \"Boeing Has No Rival on a New $131 Billion F-15 Contract\"](https://finance.yahoo.com/markets/stocks/articles/boeing-no-rival-131-billion-182010181.html)\n- [Yahoo Finance – \"Boeing Reports Wider-Than-Expected Second-Quarter Loss\"](https://finance.yahoo.com/markets/stocks/articles/boeing-reports-wider-expected-second-133100528.html)",
+  "tokens": {
+   "input": 9257,
+   "output": 939
+  },
+  "tavily_credits": 4,
+  "latency_s": 7.92,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/941a7415e0c0d6c3b5ab087c00de34a4",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Boeing Defense Space Security operating loss second quarter 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Boeing Defense Space Security segment operating loss Q2 2024 recent losses fixed price contracts",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/1-number-behind-boeing-q2-151513228.html",
+    "https://finance.yahoo.com/markets/stocks/articles/boeing-no-rival-131-billion-182010181.html",
+    "https://finance.yahoo.com/markets/stocks/articles/boeing-reports-wider-expected-second-133100528.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 19,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.5,
+   "points": [
+    {
+     "point": "BDS posted a loss from operations of USD 15M (margin -0.2%) vs earnings of USD 110M (margin 1.7%) in Q2 2025",
+     "met": false,
+     "note": "Agent states $15M loss, $110M profit, and -0.2% margin for Q2 2026, but omits the 1.7% margin for Q2 2025."
+    },
+    {
+     "point": "The main driver was a USD 280M reach-forward loss on the VC-25B (Air Force One) program",
+     "met": true,
+     "note": "Agent explicitly identifies the $280M charge on the VC-25B (Air Force One) program as the cause."
+    },
+    {
+     "point": "Management ties it to additional production and certification resources / higher costs for structural and wiring installation and airworthiness certification, with first delivery still anticipated in 2028",
+     "met": false,
+     "note": "Agent does not mention the additional production/certification resources, higher structural/wiring installation costs, airworthiness certification, or the 2028 delivery timeline."
+    },
+    {
+     "point": "Revenue still rose 13% to USD 7,483M on higher volume, so the loss is a charge, not a demand issue",
+     "met": true,
+     "note": "Agent states revenue grew 13% year over year to $7.483B and that the VC-25B charge wiped out profitability."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The answer correctly identifies the VC-25B charge as the driver and notes the revenue growth, but omits the Q2 2025 operating margin (1.7%) and the management explanation regarding additional production/certification resources and 2028 delivery timeline."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Boeing booked a $280 million charge on the VC-25B presidential aircraft program in Q2 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/1-number-behind-boeing-q2-151513228.html",
+     "reason": "Retrieved source states: 'Boeing booked $280 million in additional charges on the VC-25B presidential aircraft program during the second quarter of 2026'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The VC-25B charge caused the Defense, Space & Security segment to swing to a $15 million operating loss in Q2 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/1-number-behind-boeing-q2-151513228.html",
+     "reason": "Retrieved source states: 'Boeing's $280M VC-25B charge flipped its Defense segment from a $110M profit to a $15M operating loss in Q2 2026' and 'the segment swung to an operating loss of $15 million from a $110 million profit in Q2 2025'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Defense, Space & Security segment posted a $110 million operating profit in Q2 2025",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/1-number-behind-boeing-q2-151513228.html",
+     "reason": "Retrieved source states: 'flipped its Defense segment from a $110M profit to a $15M operating loss in Q2 2026' and 'the segment swung to an operating loss of $15 million from a $110 million profit in Q2 2025'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Defense, Space & Security revenue grew 13% year over year to $7.483 billion in Q2 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/1-number-behind-boeing-q2-151513228.html",
+     "reason": "Retrieved source states: 'Defense, Space & Security sales of $7.483 billion, up 13% year over year'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Defense, Space & Security segment's operating margin was negative 0.2% in Q2 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/boeing-reports-wider-expected-second-133100528.html",
+     "reason": "Retrieved source states: 'the business reported an operating margin of negative 0.2%, reflecting $280 million of programme losses related to the VC-25B aircraft.' This matches the derived margin: $15M loss / $7.483B revenue ≈ -0.2%.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 5,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}
