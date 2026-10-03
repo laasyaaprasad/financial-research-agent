@@ -1,0 +1,56 @@
+{
+ "manifest": {
+  "agent": "agent",
+  "set": "dev",
+  "set_sha256": "9c61f551c9cd4858826ebc6e6123de136554570f35fc7f682dea68d367344e02",
+  "code": "0a39a4e+uncommitted",
+  "ids": [
+   "G28",
+   "G30"
+  ],
+  "web": true,
+  "web_cache_from": null,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash"
+ },
+ "overall": {
+  "n": 2,
+  "fixed_n": 1,
+  "fixed_correct": 1,
+  "fixed_score": 1.0,
+  "dynamic_n": 1,
+  "dynamic_score": 0.125,
+  "numeric_claims": 16,
+  "numeric_cited": 16,
+  "cited_claims": 23,
+  "supported": 23,
+  "cited_urls": 18,
+  "cited_primary": 11,
+  "errors": 0,
+  "judge_errors": 0
+ },
+ "by_category": {
+  "Market analysis": {
+   "n": 2,
+   "fixed_n": 1,
+   "fixed_correct": 1,
+   "fixed_score": 1.0,
+   "dynamic_n": 1,
+   "dynamic_score": 0.125,
+   "numeric_claims": 16,
+   "numeric_cited": 16,
+   "cited_claims": 23,
+   "supported": 23,
+   "cited_urls": 18,
+   "cited_primary": 11,
+   "errors": 0,
+   "judge_errors": 0
+  }
+ },
+ "ops": {
+  "latency_p50_s": 133.85999999999999,
+  "latency_p95_s": 214.76,
+  "tokens_per_q": 187420.5,
+  "credits_per_q": 2.5,
+  "credits_total": 5.0
+ }
+}

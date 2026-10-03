@@ -19,7 +19,7 @@ RAW = Path(__file__).resolve().parent.parent / "results" / "raw"
 
 
 def load(run: str) -> list[dict]:
-    return [json.loads(p.read_text()) for p in sorted((RAW / run).glob("[GT][0-9]*.json"))]
+    return [json.loads(p.read_text()) for p in sorted((RAW / run).glob("[GTH][0-9]*.json"))]
 
 
 def group_metrics(runs: list[str]) -> dict:

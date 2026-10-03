@@ -165,7 +165,7 @@ def test_top_passages_keeps_relevant_text():
 
 def test_production_code_has_no_evaluation_companies():
     companies = set()
-    for name in ("golden.jsonl", "test_heldout.jsonl"):
+    for name in ("golden.jsonl", "test_heldout.jsonl", "test_hard.jsonl"):
         path = ROOT / "evals" / name
         if path.exists():
             for line in path.read_text().splitlines():

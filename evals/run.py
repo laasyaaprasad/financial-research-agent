@@ -27,7 +27,8 @@ from agents import tracing
 from evals.scorers import JUDGE_MODEL, primary_hosts, score_row
 
 ROOT = Path(__file__).resolve().parent.parent
-SETS = {"dev": ROOT / "evals" / "golden.jsonl", "test": ROOT / "evals" / "test_heldout.jsonl"}
+SETS = {"dev": ROOT / "evals" / "golden.jsonl", "test": ROOT / "evals" / "test_heldout.jsonl",
+        "hard": ROOT / "evals" / "test_hard.jsonl"}
 RESULTS = ROOT / "results"
 FIELDS = ("id", "category", "difficulty", "time_sensitivity", "answer_type", "question", "grading", "answer")
 
@@ -36,6 +37,8 @@ console = Console()
 
 
 def load_set(name: str, ids: str | None = None) -> list[dict]:
+    if not SETS[name].exists():
+        return []
     rows = [json.loads(line) for line in SETS[name].read_text().splitlines() if line.strip()]
     if ids:
         wanted = set(ids.split(","))
@@ -183,7 +186,7 @@ def finish(name: str, manifest: dict, records: list[dict]) -> dict:
 @app.command()
 def run(
     agent: Annotated[str, typer.Option(help="baseline | agent")] = "agent",
-    set_name: Annotated[str, typer.Option("--set", help="dev | test")] = "dev",
+    set_name: Annotated[str, typer.Option("--set", help="dev | test | hard")] = "dev",
     name: Annotated[str, typer.Option(help="Run name (output files)")] = "dev_run",
     ids: Annotated[str | None, typer.Option(help="Comma-separated question IDs")] = None,
     workers: Annotated[int, typer.Option(help="Questions in parallel")] = 4,
@@ -195,10 +198,10 @@ def run(
     rows = load_set(set_name, ids)
     raw_dir = RESULTS / "raw" / name
     done = {}
-    if raw_dir.exists() and any(raw_dir.glob("[GT][0-9]*.json")):
+    if raw_dir.exists() and any(raw_dir.glob("[GTH][0-9]*.json")):
         if not resume:
             raise typer.BadParameter(f"results/raw/{name} already exists; choose a new run name or pass --resume")
-        done = {p.stem: json.loads(p.read_text()) for p in raw_dir.glob("[GT][0-9]*.json")}
+        done = {p.stem: json.loads(p.read_text()) for p in raw_dir.glob("[GTH][0-9]*.json")}
     raw_dir.mkdir(parents=True, exist_ok=True)
     runner = agent_runner(agent, name, web, web_cache_from)
     hosts = primary_hosts([r for s in SETS for r in load_set(s)])
@@ -257,7 +260,7 @@ def rescore(source: str, name: str, workers: int = 4) -> None:
         return rec
 
     with ThreadPoolExecutor(max_workers=workers) as pool:
-        records = list(pool.map(one, sorted(src.glob("[GT][0-9]*.json"))))
+        records = list(pool.map(one, sorted(src.glob("[GTH][0-9]*.json"))))
     finish(name, manifest, records)
 
 
@@ -265,7 +268,7 @@ def rescore(source: str, name: str, workers: int = 4) -> None:
 def compare(run_a: str, run_b: str) -> None:
     """Side-by-side metrics and per-question verdict changes for two runs on the same set."""
     def load(n):
-        recs = {p.stem: json.loads(p.read_text()) for p in (RESULTS / "raw" / n).glob("[GT][0-9]*.json")}
+        recs = {p.stem: json.loads(p.read_text()) for p in (RESULTS / "raw" / n).glob("[GTH][0-9]*.json")}
         return recs, json.loads((RESULTS / f"summary_{n}.json").read_text())
 
     (ra, sa), (rb, sb) = load(run_a), load(run_b)
