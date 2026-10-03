@@ -6,16 +6,16 @@ The baseline comes first so every later change can be measured against the start
 
 ## Milestone overview
 
-| # | Milestone | Proves | Depends on |
+| # | Milestone | Proves | Status |
 |---|---|---|---|
-| M0 | Project setup | Repo runs and keys load safely | none |
-| M1 | Baseline benchmark | How good the starter agent is today | M0 |
-| M2 | Tracing | Every run is inspectable step by step | M1 |
-| M3 | Company lookup and planner | Right company and fiscal calendar; correct periods, researchers and queries planned before any search runs | M1 |
-| M4 | Researchers and evidence store | Better retrieval than the baseline | M3 |
-| M5 | Writer and verifier | Better answers and citations end to end | M4 |
-| M6 | Fresh eval set and tuning | Holds up on new questions; settings justified by data | M5 |
-| M7 | Submission package | Deliverables complete | M5 (M6 optional) |
+| M0 | Project setup | Repo runs and keys load safely | done |
+| M1 | Baseline benchmark | How good the starter agent is today | done |
+| M2 | Tracing | Every run is inspectable step by step | done |
+| — | Course correction (2026-10-03) | First M3–M5 attempt was overfit; re-scoped and rebuilt | see below |
+| M3 | Rebuilt agent | Generic pipeline: resolve → plan → evidence → write → verify | done |
+| M4 | Held-out test set | 20 new questions, frozen before the agent ever runs on them | done (`7ae904f`) |
+| M5 | Final evaluation | Baseline vs. agent on dev and held-out sets, same model, within the credit budget | pending |
+| M6 | Submission package | README, technical statement, build record | pending |
 
 ## M0: Project setup
 
@@ -108,124 +108,100 @@ The baseline comes first so every later change can be measured against the start
 - **Span names:** the root span follows OpenTelemetry's naming for AI agents. Child spans keep LangChain's names (`ChatNebius`, `tavily_search`), with Langfuse types `GENERATION` and `TOOL`.
 - **Langfuse API note:** new Langfuse organizations can only read data through the v2 observations API and the v3 scores API. The older trace endpoints are unavailable.
 
-## M3: Company lookup and planner (done)
+## Course correction (2026-10-03)
 
-**What we build**
-- **Company lookup:** `resolve(question)` returns `{ticker, cik, company_name, fiscal_year_end}`. It uses the SEC's `company_tickers.json` and the submissions API, with a small model to pull the company name out of the question.
-- **Planner:** `plan(question, entity, today, budget)` makes one call to a small model and returns a structured plan. It runs once, with no re-planning loop. Explicit period requests are bound in code to SEC XBRL duration contexts and inferred fiscal calendar rules; the model plans retrieval intents and handles period selections when the question has no supported explicit scope. The model never supplies a CIK or invents a fiscal boundary.
-  - **Research brief:** the metrics, the answer type, and `may_be_unreported` (true when the period may not be reported yet).
-  - **Periods:** each one has a fiscal label and an explicit start and end date, worked out from the fiscal year end. For example, Walmart's "Q2 2026" becomes "Q2 FY2027" with that quarter's exact start and end dates.
-  - **EDGAR fetches:** the form, period end and item to retrieve. Code runs these, not web search.
-  - **Searches:** up to about 8, each with:
-    - its researcher (`financials`, `news`, `company` or `industry`)
-    - a reason
-    - the query, under 400 characters, using the fiscal labels and dates
-    - its Tavily settings (`topic`, `search_depth`, date filter, preferred domains)
-  - **Researchers are chosen per question.** The planner only includes the researchers a question needs, which follows Anthropic's rule of scaling effort to the question. For example, a revenue lookup needs only financials.
+A first M3–M5 implementation (commits `b01e1ed`, `1898e41`, `9c42987` and uncommitted M5 work) reached 21/25 on the dev set in its best fresh run, but a review found it would not hold up:
 
-**Acceptance criteria**
-- **Company lookup:**
-  - 100% exact match on the golden set's company fields, including the ambiguous-company questions.
-  - Questions about non-US companies or companies EDGAR doesn't cover return a clear "unresolved" result rather than a guess.
-- **Planner periods:** match `expected_periods` exactly, both fiscal label and dates, on every fixed-answer golden question.
-- **Unreported periods:** `may_be_unreported` is true on the "should say not available" questions about periods that haven't been reported (G11).
-- **Researcher choice:**
-  - Every researcher listed in a question's `lens` field is included.
-  - Extra researchers are allowed but reported, and the average number of researchers per question is shown.
-- **Budget:** no plan goes over it, and every query is under 400 characters.
-- **Tests:** unit tests pass using saved EDGAR responses, with no network access. Planner tests run on all 30 golden questions without calling Tavily.
+- **Overfit to the dev set.** The planner prompt had one rule per golden question (implied Q4 from guidance, TTM plus RPO windows, constant-currency growth, cross-company capex, ex-division results, export controls, leadership changes). The code had named-company special cases (`if company_name == "Cargill, Incorporated"`, an alias table of exactly the golden companies, `'novo'` token handling) and keyword lists tuned to golden questions (`rpo`, `membership`, `DKK`).
+- **Unstable.** Fresh full runs ranged from 11/25 to 21/25, and the held-out checks it ran scored 2/6 and 3/6.
+- **Too large to review.** About 5,700 lines in a dense style, with dozens of result files.
 
-**Result (2026-10-01):**
-- **Company lookup:** 30/30 correct registrants, CIKs, names and fiscal year ends, including Facebook/Meta, Alphabet share classes, HON vs HONA, multi-company comparisons and the NVO 20-F filer. Private Cargill remains unresolved for EDGAR; its June–May calendar has a company-published source and does not create a ticker or CIK.
-- **Periods:** 25/25 fixed-answer questions have exact fiscal identities and start/end dates. Display-only prefixes/descriptors are excluded from label comparison; fiscal vs calendar, quarter/year and implied vs actual aggregate basis are preserved. All five dynamic questions also matched the October 1 snapshot's period metadata.
-- **Unreported periods:** G11 is flagged, and its ended-but-unreported Apple quarter produces no actual-results filing fetch.
-- **Researcher coverage:** all required researchers included in 30/30 plans; mean 2.27 per question. Extra researchers are listed in the scorecard.
-- **Limits:** 30/30 plans respect the 16-credit search budget (extraction budget is reserved for M4), the eight-search cap and queries below 400 characters. `topic=finance` is not assumed to improve retrieval; general search is used until the M4 comparison.
-- **Validation:** 54 offline tests pass. The live benchmark makes 60 Nebius requests (one extraction and one planning call per question), with no SEC or Tavily network calls. Public SEC response projections and their source manifest are committed for offline reproduction.
-- **Operations:** median resolve + plan latency 3.02 s, mean 6,267 model tokens per question, and 2.97 planned search credits (not spent). The planner uses `Qwen/Qwen3.8-27B` with native JSON-schema output and reasoning disabled.
-- **Scope:** this proves company/period planning, not financial-answer correctness; the end-to-end comparison remains M5. Future week-based boundaries are marked projected, including uncertainty about the next 53-week adjustment.
+**What changed**
+- **Narrower scope:** cited, period-correct answers about SEC-reporting companies: reported results, calculations over them, management guidance and commentary, and recent developments. Private companies, unreported periods and undisclosed metrics get an explicit refusal.
+- **No special period transforms.** The planner chooses reported fiscal periods from each company's real calendar. Derived figures (TTM, growth, implied quarters) are calculations over cited numbers, evaluated in code.
+- **No company-specific code or question-specific prompt rules.** Fiscal-year naming comes from the company's own annual-report XBRL; quarters come from the order of its 10-Q filings.
+- **Honest evaluation.** The original 30 questions are now the **dev set**, inspected during development. Final claims rest on a new **held-out test set** that is frozen before the agent runs on it.
+- **Same model for both agents.** The baseline and the new agent both run on `deepseek-ai/DeepSeek-V4.1-Flash`, the cheapest Nebius model, so the comparison measures architecture rather than model choice.
+- **Different-family judge.** The judge is `nvidia/Nemotron-3-Ultra-550b-a55b`, which agreed with the user's grades on 8 of 9 sample answers. That matches the earlier judge, and its one disagreement is the same G04 citation-quality case. The first choice, Qwen3.5-397B, also scored 8/9 but was withdrawn from Nebius mid-project.
+- **Credit budget.** Tavily credits are capped at 1,500 for the rest of the project and used only for final end-to-end runs. Development runs use SEC data, which is free.
 
-See `results/planner_m3_final_verified.md` and `docs/M3.md`. Run `uv run pytest -q` and `uv run python -m evals.planner`.
+The superseded code was removed from the working tree; it remains in git history.
 
-**M3 hardening (2026-10-02):**
-- Fixed the review's five scope failures with general quarter ordering/list/range rules, explicit calendar windows, fiscal half-years and local company ownership. Unsupported subannual language defers to the existing structured planning call. Company-specific disclosure assertions were removed from the planning prompt.
-- Kept `golden.jsonl` unchanged. Added a separate ownership reference and strict company-period scoring; swapped, missing or duplicate owners fail even when dates match.
-- **80 offline tests pass.** The original 30-question live regression run passes every required check, including **25/25 fixed periods** and **30/30 period ownership**. Final code also reproduces all 29 explicitly bound regression scopes offline; the leadership question uses model fallback.
-- A frozen, source-checked **18-question validation set** covers six new companies, several as-of dates, weekly/53-week calendars, calendar and fiscal scopes, leadership/news, a foreign filer and a private company. Resolution uses the full 10,434-entry SEC ticker snapshot rather than a shortlist. Questions and first-run production hashes were recorded before inference.
-- **First validation: 16/18 all checks; 16/18 company/ownership; 17/18 periods.** Both misses are the same TSMC alias-resolution gap. All 18 researcher, query and budget checks pass, and both required unreported/missing-data flags pass. The confirmation run retains the same two misses. No TSMC-specific production rule was added.
-- This is developer-authored validation, not a blind holdout or user-verified financial-answer set. The first score is preserved. A post-run source review added conservative calendar-clause ownership and multiple-half-year guards; the confirmation is a repeat, not fresh generalization evidence. The validation command deliberately exits 1 for the known misses.
-- The hardening acceptance checks are the five reviewed scope fixes, unchanged original regression performance under stricter ownership scoring, and publication of the frozen validation result including failures. They do not require fitting every new validation case. End-to-end answer accuracy remains M5.
+## M3: Rebuilt agent
 
-See `results/planner_m3_hardened_regression_final.md`, `results/planner_m3_validation_first.md`, `results/planner_m3_validation_confirmation.md` and `evals/planner_validation_manifest.json`. Retrieval and end-to-end answer metrics are tracked in the following milestones.
-
-## M4: Researchers and evidence store
-
-**What we build**
-- **Up to four researchers running in parallel,** only the ones the planner chose: financials (EDGAR XBRL `companyfacts` plus Tavily; general search retained after the topic experiment), news, company (investor-relations site `map` + `extract`) and industry. They run the planner's queries rather than writing their own.
-- **Optional, only if the scorecard shows retrieval misses:** one extra search round for a researcher that found nothing above the score threshold. The Vals benchmark found that agents which adjust their search do better.
-- **The same Tavily process in each:** search, drop results scoring below the threshold, then `extract` the top URLs.
-  - Queries stay under 400 characters, as `tavily-best-practices` recommends.
-  - `extract` passes a `query` with `chunks_per_source`. It tries `basic` depth first and retries with `advanced` only when that fails.
-- **Checks after filtering:** Tavily's relevance score doesn't confirm a result is about the right company.
-  - Each result must mention the resolved company's name or ticker.
-  - The source tier is decided from the hostname, because `include_domains` alone doesn't guarantee every result comes from an allowed host.
-- **Notes from a small model:** about 300 words, citing sources.
-- **The evidence store:** `{id, url, tier, value, period, unit, as_of, tavily_request_id, basis}` with duplicate URLs removed, saved as JSON for each run. `basis` is either `page` (retrieved extract excerpts) or `snippet` (search result only).
-- **Replay mode** for saved Tavily results.
+**What we build** (package `agents/`)
+- `company.py`: the model names the companies; code resolves them against SEC's ticker list. Unmatched names (e.g. private companies) are unresolved, never guessed.
+- `fiscal.py`: each company's reporting calendar as of the question date. Every period has its fiscal label, exact dates and status: filed, earnings release only, or not yet reported.
+- `planner.py`: one model call chooses answer periods, filings to read (earnings release and/or 10-Q/10-K), recent 8-Ks, and at most 3 web searches. Code validates every choice against the calendar.
+- `research.py`: builds an evidence list:
+  - passages from the chosen filings, ranked by relevance (BM25)
+  - exact XBRL facts for the chosen periods
+  - Tavily search plus extract for what filings can't give
+- `writer.py`: the model writes claims, each with evidence IDs and verbatim quotes. Calculations are expressions over quoted inputs, evaluated in code.
+- **Checks in code:** every quote must appear in its cited source, and every number must appear in a quote or come from a calculation. A separate verifier call then checks each claim's meaning: entity, metric, period, basis, and actual vs. guidance. The writer gets one revision; claims that still fail are removed and listed as unverified.
+- `pipeline.py`: runs the steps above, renders a cited brief marked as a draft for analyst review, and provides a CLI.
 
 **Acceptance criteria**
-- Retrieval scores on the golden set beat the baseline on two measures: relevance and share of primary sources.
-- Every number in the evidence store has a period, a unit and an as-of date.
-- Tavily credits stay at or below the agreed budget, about 25 per question.
-- A replay run makes no Tavily calls and reproduces the saved evidence exactly.
-- Before relying on `topic="finance"`, test whether it changes results compared with `general`, and write down what you find.
+- Offline unit tests cover the calendar, quote and number checks, the calculator and planner validation.
+- The production code contains no company names, tickers or question-specific rules (checked by grep).
+- A dev-set run using SEC data only completes for all 30 questions with no crashes.
 
-## M5: Writer and verifier (end to end)
+**Result (2026-10-03, dev set only; graded by the first judge, Qwen3.5-397B):**
+- **SEC data only, no Tavily:** 17–18/25 fixed answers fully correct (mean 0.85–0.89); 98% of cited claims supported; 100% of cited URLs primary.
+- **With Tavily:** 19/25 (mean 0.89); 98% of cited claims supported; 86% of cited URLs primary; 12 credits for all 30 questions; median latency 50 s.
+- **The Kimi-based starter, for context:** 11–13/25 across three runs, with 20–24% of cited URLs primary.
+- **Changes made after inspecting dev failures (all generic):**
+  - Number grounding now ignores years, form names and period lengths.
+  - Calculated values can be reused across claims.
+  - Source precision is kept, and rates are computed from reported figures.
+  - Common financial synonyms (sales/revenue, profit/income) are used for ranking.
+  - Reasoning effort is set per step, which halved median latency.
+  - The verifier checks that a claim uses exactly the metric the question asks about.
+  - The planner searches earnings-call coverage when a question asks for guidance or management's explanation.
+  - A failed revision or verifier call falls back to the checked draft instead of crashing.
+- **Offline tests:** 19 pass, including a guard that no evaluation-set company appears in `agents/`.
+- **Size:** agent code is about 1,400 lines, down from about 5,700.
+- **Iteration scorecards:** in `results/dev_iterations/`. Final numbers come from the M5 runs with the final judge.
 
-**What we build**
-- A writer that produces structured claims, each citing an evidence ID, and can answer "not found".
-- A verifier that labels each claim supported, unsupported, contradicted or stale, allows one revision, and then flags anything still failing.
-- A cited brief rendered from the claims, marked as a draft for analyst review.
-
-**Acceptance criteria**
-- `uv run evals/run.py --agent v1` produces a scorecard next to the baseline.
-- No numbers without a citation.
-- At least 90% of cited claims are supported by their sources.
-- Every company field correct.
-- Correctness beats the baseline overall and on the fiscal-year questions. The improvement must be larger than the run-to-run variation measured in M1.
-- All "should say not available" questions are refused correctly.
-- If a numeric error is planted in a draft, the verifier flags it at least 9 times out of 10.
-- Cost and latency are reported. Any increase over the baseline is explained by the quality it buys.
-
-## M6: Fresh eval set and tuning (optional)
+## M4: Held-out test set
 
 **What we build**
-- One batch of fresh questions generated from recent news, using Tavily's Dynamic Eval Dataset Generator pattern.
-- These are scored without fixed answers: relevance, citation support and recency.
-- Then test one setting at a time: search depth, `max_results`, the score threshold and the model used for each step.
+- `evals/test_heldout.jsonl`: 20 questions about 15+ companies not used in development, covering:
+  - reported figures
+  - calculations
+  - guidance and beat/miss
+  - management drivers
+  - recent developments
+  - three refusals
+  - one cross-calendar comparison
+- References come from primary sources (SEC filings, company releases), drafted by a research subagent and checked against SEC XBRL data where possible.
 
 **Acceptance criteria**
-- Scores on the fresh batch are reported next to the fixed set.
-- Each default setting has a recorded reason in the form "setting X: +a% quality for b× cost".
+- Every fixed numeric reference is checked against SEC data or the cited document.
+- The file's hash is recorded before the agent's first run on it.
+- No code changes after that first run, other than crash fixes, which are reported.
 
-## M7: Submission package
+## M5: Final evaluation
 
 **What we build**
-- **A README** with:
-  - the architecture diagram
-  - a one-command setup
-  - the baseline vs. v1 scorecard
-  - "what I didn't do and why"
-- **A technical statement** on the approach, the reasoning and the business value.
-- **The exported build transcript.**
+- Baseline (starter configuration on DeepSeek V4.1 Flash) and the new agent, each run on:
+  - the dev set, once
+  - the held-out set, twice
+- Scored by the same judge and scorers.
 
 **Acceptance criteria**
-- A fresh clone plus `.env` runs both the agent and the eval by following the README alone.
-- The repo doesn't include `starter_agent.py` or `.env`.
+- The new agent beats the baseline on the held-out set by more than the baseline's run-to-run variation.
+- On the held-out set, all three refusals are correct and at least 90% of cited claims are supported.
+- Tavily credits stay within the 1,500 budget; cost and latency are reported next to quality.
+
+## M6: Submission package
+
+**What we build**
+- **README:** architecture diagram, one-command setup, results table, limitations, and "what I didn't do and why".
+- **Technical statement.**
+- **Build record:** the exported transcript.
+
+**Acceptance criteria**
+- A fresh clone plus `.env` runs the agent and the eval by following the README alone.
+- No `starter_agent.py` or `.env` in the repo.
 - Every claim in the statement has a measured result or a source behind it.
-
-## M4 measured result (2026-10-02 UTC)
-
-All 30 fixed-plan questions completed. Relevant retrieved-source share was 44.6% versus 24.6% for the recorded traced baseline; primary share was 68.2% versus 11.4%. The 530 evidence facts passed numeric unit/period/as-of completeness. Mean/max Tavily credits were 3.73/8.00, below the 25-credit cap. Exact replay reproduced all 30 bundles with socket connections blocked and no model calls. All 95 offline tests passed.
-
-The first three-question pilot missed the relevance criterion (31.6% versus 33.3%). General fixes added current requested-period SEC filings ahead of comparative filings and excluded monetary sales from quantity-only XBRL evidence. The full run retains source-relevance failures; retrieval precision does not establish answer completeness. See `docs/M4.md` and the final retrieval/topic scorecards.

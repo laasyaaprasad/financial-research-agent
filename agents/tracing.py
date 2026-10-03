@@ -36,8 +36,7 @@ class Trace:
             output=output.get("answer"),
             metadata={
                 "tavily_credits": output.get("tavily_credits"),
-                "searches": sum('search' in c.get('name','') for c in output.get('tool_calls') or []),
-                "tavily_calls": len(output.get('tool_calls') or []),
+                "tavily_calls": len(output.get("tool_calls") or []),
                 "latency_s": output.get("latency_s"),
                 "tokens_input": (output.get("tokens") or {}).get("input"),
                 "tokens_output": (output.get("tokens") or {}).get("output"),
@@ -96,19 +95,20 @@ def flush() -> None:
 class ToolSpan:
     span: Any = None
 
-    def finish(self, output: dict):
+    def finish(self, output: dict) -> None:
         if self.span is not None:
-            self.span.update(output=output, metadata={'tavily_credits': output.get('credits')})
+            self.span.update(output=output, metadata={"tavily_credits": output.get("credits")})
 
 
 @contextmanager
-def tool_span(name: str, parameters: dict):
-    """SDK tools join the current question trace without capturing HTTP headers."""
-    if enabled():
+def tool_span(name: str, parameters: dict) -> Iterator[ToolSpan]:
+    """A tool span inside the current question's trace (records parameters, never HTTP headers)."""
+    from opentelemetry import trace as otel
+
+    if enabled() and otel.get_current_span().get_span_context().is_valid:
         from langfuse import get_client
-        client = get_client()
-        if client.get_current_trace_id():
-            with client.start_as_current_observation(as_type='tool', name=name, input=parameters) as span:
-                yield ToolSpan(span)
-            return
+
+        with get_client().start_as_current_observation(as_type="tool", name=name, input=parameters) as span:
+            yield ToolSpan(span)
+        return
     yield ToolSpan()

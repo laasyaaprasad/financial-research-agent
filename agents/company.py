@@ -1,97 +1,75 @@
-"""Extract company mentions, then resolve exclusively against SEC registrants.
+"""Resolve the companies in a question to SEC registrants.
 
-The model cannot supply a CIK or a fiscal year end. Share classes are collapsed
-by CIK and ambiguous/private/uncovered entities are returned as unresolved.
+The model only names the companies (and a ticker if it knows one). Code looks them up
+in SEC's ticker list, so CIKs and fiscal calendars always come from SEC data. Anything
+that doesn't match exactly one registrant is returned unresolved (e.g. private companies).
 """
 
 from __future__ import annotations
 
 import re
+from dataclasses import dataclass, field
+from datetime import date
 
-from pydantic import Field
+from pydantic import BaseModel, Field
 
 from agents.edgar import EdgarClient
-from agents.models import SMALL_MODEL, structured
-from agents.schemas import Entity, Record, Resolution
+from agents.fiscal import Period, calendar
+from agents.llm import structured
 
 
-class Mentions(Record):
-    names: list[str] = Field(min_length=1, max_length=8)
+class Mention(BaseModel):
+    name: str = Field(description="Company name as the parent reporting company")
+    ticker: str | None = Field(default=None, description="Its primary US stock ticker, if publicly listed and known")
 
 
-EXTRACT_PROMPT = """Extract the companies being researched from the user question.
-Return one concise company name or ticker for each reporting entity, in order.
-Prefer its widely used stock ticker when confident, otherwise its official name.
-Resolve product/business names to their parent (AWS -> Amazon, Azure -> Microsoft,
-Google Cloud -> Alphabet). Facebook -> Meta Platforms. Do not invent extra companies.
-Prefer the reporting parent over a spin-off when the question asks about its consolidated
-results. Respect an explicitly named spin-off as its own reporting entity.
-Consolidated sales vs sales excluding a division/spin-off is a comparison of the
-parent's reporting bases, not a request to resolve the excluded division separately.
-GOOG and GOOGL are share classes of one Alphabet registrant; return only Alphabet.
-Return private/unknown names as supplied so code can return unresolved.
-Do not provide IDs, dates, financial results, or an answer to the question."""
+class Mentions(BaseModel):
+    companies: list[Mention] = Field(description="Each distinct company the question asks about, in order")
 
 
-def normalized(name: str) -> str:
-    name = re.sub(r"(?:'s|’s)$", "", name.casefold())
-    name = re.sub(r"\b(?:corporation|corp|incorporated|inc|company|co|limited|ltd|plc)\b", "", name)
+PROMPT = """List the companies a financial analyst's question is about.
+- Use the parent reporting company: map products, brands, segments, subsidiaries and former
+  names to the company that files the financial reports (e.g. a cloud unit -> its parent).
+- One entry per company, even if several share classes or tickers are mentioned.
+- Give the primary US ticker only if you are confident it is publicly listed; otherwise null.
+- Do not answer the question."""
+
+
+@dataclass
+class Company:
+    requested: str
+    name: str
+    ticker: str | None = None
+    cik: str | None = None
+    fiscal_year_end: str | None = None  # MMDD from SEC
+    periods: list[Period] = field(default_factory=list)
+    resolved: bool = True
+    reason: str = ""
+
+
+def _norm(name: str) -> str:
+    name = re.sub(r"\b(corporation|corp|incorporated|inc|company|co|holdings|plc|ltd|limited|the)\b", "", name.lower())
     return re.sub(r"[^a-z0-9]", "", name)
 
 
-ALIASES = {"facebook": "META", "fb": "META", "google": "GOOGL",
-           "googlecloud": "GOOGL", "aws": "AMZN", "azure": "MSFT",
-           "honeywell": "HON", "honeywelltechnologies": "HON", "honeywellinternational": "HON", "cargill": "Cargill"}
-
-# Public calendar metadata only, not a financial reference answer. SEC resolution
-# remains unresolved for private Cargill; no ticker or CIK is manufactured.
-PUBLIC_CALENDARS = {"cargill": {"name": "Cargill, Incorporated", "fye": "0531",
-                               "source": "https://www.cargill.com/sustainability/2025-impact-report"}}
-
-
-def resolve(question: str, *, client: EdgarClient | None = None, model: str = SMALL_MODEL,
-            callbacks: list | None = None, mentions: list[str] | None = None) -> Resolution:
-    client = client or EdgarClient()
-    tokens = {}
-    if mentions is None:
-        extracted, tokens = structured(Mentions, EXTRACT_PROMPT, question,
-                                       model=model, callbacks=callbacks)
-        mentions = extracted.names
-    index = list(client.tickers().values())
-    entities, seen = [], set()
-    for name in mentions:
-        key = ALIASES.get(normalized(name), name)
-        exact_ticker = [r for r in index if r["ticker"].casefold() == key.casefold()]
-        matches = exact_ticker or [r for r in index if normalized(r["title"]) == normalized(key)]
+def resolve(question: str, today: date, client: EdgarClient, callbacks=None) -> tuple[list[Company], dict]:
+    mentions, tokens = structured(Mentions, PROMPT, question, reasoning="none", callbacks=callbacks)
+    rows = list(client.tickers().values())
+    companies: list[Company] = []
+    for m in mentions.companies:
+        matches = [r for r in rows if m.ticker and r["ticker"].upper() == m.ticker.upper().replace(".", "-")]
         if not matches:
-            # Require a full prefix at a word boundary, never arbitrary substring matches.
-            words = re.sub(r"[^a-z0-9 ]", " ", key.casefold()).split()
-            prefix = " ".join(words)
-            matches = [r for r in index if prefix and (
-                r["title"].casefold().startswith(prefix + " ") or
-                r["title"].casefold() == prefix)]
-        ciks = {str(r["cik_str"]) for r in matches}
+            matches = [r for r in rows if _norm(r["title"]) == _norm(m.name)]
+        ciks = {r["cik_str"] for r in matches}
         if len(ciks) != 1:
-            public_calendar = PUBLIC_CALENDARS.get(normalized(name), {})
-            entities.append(Entity(requested_name=name, status="unresolved",
-                                   company_name=public_calendar.get("name"),
-                                   fiscal_year_end=public_calendar.get("fye"),
-                                   calendar_source_urls=[public_calendar["source"]] if public_calendar else [],
-                                   reason="Ambiguous SEC registrants" if ciks else "No matching publicly traded SEC registrant"))
+            reason = "matches several SEC registrants" if ciks else "no SEC-registered public company with this name"
+            companies.append(Company(requested=m.name, name=m.name, resolved=False, reason=reason))
             continue
-        cik = ciks.pop()
-        if cik in seen:
+        cik = str(ciks.pop())
+        if any(c.cik == cik for c in companies):
             continue
-        seen.add(cik)
         sub = client.submissions(cik)
-        forms = sub.get("filings", {}).get("recent", {}).get("form", [])
-        annual = next((f for f in forms if f in ("10-K", "20-F", "40-F")), None)
-        tickers = sub.get("tickers") or [matches[0]["ticker"]]
-        # A canonical class, independent of the class named in the question.
-        ticker = "GOOGL" if "GOOGL" in tickers else tickers[0]
-        entities.append(Entity(requested_name=name, status="resolved", ticker=ticker,
-                               cik=f"{int(cik):010d}", company_name=sub["name"],
-                               fiscal_year_end=sub.get("fiscalYearEnd"), tickers=tickers,
-                               calendar_source_urls=[f"https://data.sec.gov/submissions/CIK{int(cik):010d}.json"],
-                               annual_form=annual))
-    return Resolution(entities=entities, tokens=tokens)
+        companies.append(Company(requested=m.name, name=sub["name"], ticker=(sub.get("tickers") or [matches[0]["ticker"]])[0],
+                                 cik=cik, fiscal_year_end=sub.get("fiscalYearEnd"),
+                                 periods=calendar(client, cik, today)))
+    return companies, tokens

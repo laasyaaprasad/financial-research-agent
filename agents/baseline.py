@@ -1,8 +1,9 @@
 """Baseline: the starter agent's configuration, reproduced without the CLI or streaming.
 
-Same model, system prompt and TavilySearch defaults as the provided starter_agent.py
-(which can't be committed). Returns the answer plus everything the eval needs:
-tool calls, tool results, token usage, estimated Tavily credits and latency.
+Same system prompt, TavilySearch defaults and LangChain agent loop as the provided
+starter_agent.py (which can't be committed). The starter defaulted to Kimi-K2.6; for a fair
+comparison the baseline runs on the same model as the new agent (the starter exposes a
+--model option for exactly this). Returns the answer plus everything the eval needs.
 """
 
 from __future__ import annotations
@@ -16,9 +17,11 @@ from langchain.agents import create_agent
 from langchain_nebius import ChatNebius
 from langchain_tavily import TavilySearch
 
+from agents.llm import AGENT_MODEL
+
 load_dotenv()
 
-MODEL = "moonshotai/Kimi-K2.6"
+MODEL = AGENT_MODEL  # starter default was "moonshotai/Kimi-K2.6"
 
 SYSTEM_PROMPT = """You are a concise research assistant.
 Use Tavily search when you need current or factual web information.

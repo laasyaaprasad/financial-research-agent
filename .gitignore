@@ -19,3 +19,5 @@ results/raw/
 results/log_*.txt
 results/sec/
 .pytest_cache/
+results/archive_superseded/
+results/tavily_cache/
