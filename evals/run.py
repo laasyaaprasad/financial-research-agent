@@ -59,10 +59,11 @@ def code_version() -> str:
 
 
 def agent_runner(agent: str, name: str, web: bool, web_cache_from: str | None):
-    if agent == "baseline":
-        from agents.baseline import run
+    if agent in ("baseline", "starter"):
+        from agents.baseline import STARTER_MODEL, run
 
-        return lambda row, callbacks: run(row["question"], callbacks=callbacks)
+        model = STARTER_MODEL if agent == "starter" else None  # starter = exactly as shipped (Kimi K2.6)
+        return lambda row, callbacks: run(row["question"], callbacks=callbacks, **({"model": model} if model else {}))
     if agent == "agent":
         from agents.pipeline import run
 

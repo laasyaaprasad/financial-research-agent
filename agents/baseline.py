@@ -1,9 +1,9 @@
 """Baseline: the starter agent's configuration, reproduced without the CLI or streaming.
 
 Same system prompt, TavilySearch defaults and LangChain agent loop as the provided
-starter_agent.py (which can't be committed). The starter defaulted to Kimi-K2.6; for a fair
-comparison the baseline runs on the same model as the new agent (the starter exposes a
---model option for exactly this). Returns the answer plus everything the eval needs.
+starter_agent.py (which can't be committed). Two configurations are evaluated: the starter
+exactly as shipped (its default model, Kimi K2.6) and the same design on the new agent's model,
+which isolates what the architecture contributes. Returns the answer plus everything the eval needs.
 """
 
 from __future__ import annotations
@@ -21,7 +21,8 @@ from agents.llm import AGENT_MODEL
 
 load_dotenv()
 
-MODEL = AGENT_MODEL  # starter default was "moonshotai/Kimi-K2.6"
+MODEL = AGENT_MODEL                       # same-model baseline: isolates the architecture
+STARTER_MODEL = "moonshotai/Kimi-K2.6"     # the starter's default model, i.e. exactly as shipped
 
 SYSTEM_PROMPT = """You are a concise research assistant.
 Use Tavily search when you need current or factual web information.
