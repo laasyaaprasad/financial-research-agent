@@ -161,6 +161,19 @@ Instructions:
     return {"score": round(score, 3), **result.model_dump()}
 
 
+def _same_label(answer: str, reference: str) -> bool:
+    """Text cells are fiscal period labels: equal if quarter and fiscal year match, however worded."""
+    def key(text):
+        for word, n in (("first", 1), ("second", 2), ("third", 3), ("fourth", 4)):
+            text = re.sub(rf"\b{word}\s+(?:fiscal\s+)?quarter\b", f"Q{n}", text, flags=re.I)
+        quarter = re.search(r"\bQ([1-4])\b", text, re.I)
+        year = re.search(r"(?:FY|fiscal(?:\s+year)?)\s*'?(\d{2,4})", text, re.I) or re.search(r"\b(20\d{2})\b", text)
+        if quarter and year:
+            return quarter.group(1), year.group(1)[-2:]
+        return re.sub(r"\W+", " ", text.lower()).strip()
+    return key(answer) == key(reference)
+
+
 def score_table(row: dict, answer: str) -> dict:
     """Table tasks: the judge only EXTRACTS each requested cell from the answer; code compares to the reference."""
     cells = row["cells"]
@@ -190,7 +203,7 @@ Answer:
     for i, ref in enumerate(cells):
         got = extracted.get(i)
         if ref["unit"] == "text":
-            ok = bool(got and got.found and str(got.value).strip().lower() == str(ref["value"]).strip().lower())
+            ok = bool(got and got.found and _same_label(str(got.value), str(ref["value"])))
         else:
             try:
                 ok = bool(got and got.found and abs(float(got.value) - float(ref["value"])) <= float(ref["tolerance"]) + 1e-9)

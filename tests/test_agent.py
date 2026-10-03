@@ -218,3 +218,11 @@ def test_xbrl_evidence_always_includes_core_lines():
     company = Company(requested="X", name="X Corp", ticker="XX", cik="1")
     text = _xbrl_evidence(company, [filing], terms("quarterly revenue and other income"), Facts())[0].text
     assert "RevenueFromContractWithCustomerExcludingAssessedTax" in text
+
+
+def test_table_text_cells_match_on_fiscal_label():
+    from evals.scorers import _same_label
+    assert _same_label("Q3 FY2026, quarter ended August 31, 2026", "Q3 FY2026 (quarter ended Aug 31, 2026)")
+    assert _same_label("third quarter of fiscal 2026", "Q3 FY2026")
+    assert not _same_label("Q2 FY2026", "Q3 FY2026")
+    assert not _same_label("Q3 FY2025", "Q3 FY2026")

@@ -13,8 +13,8 @@ The baseline comes first so every later change can be measured against the start
 | M2 | Tracing | Every run is inspectable step by step | done |
 | — | Course correction (2026-10-03) | First M3–M5 attempt was overfit; re-scoped and rebuilt | see below |
 | M3 | Rebuilt agent | Generic pipeline: resolve → plan → evidence → write → verify | done |
-| M4 | Held-out test set | 20 new questions, frozen before the agent ever runs on them | done (`7ae904f`) |
-| M5 | Final evaluation | Baseline vs. agent on dev and held-out sets, same model, within the credit budget | pending |
+| M4 | Held-out test sets | 20 questions (`7ae904f`), 20 hard questions (`80b9802`), 8 table tasks (`38a7190`), each frozen before the agent ran on it | done |
+| M5 | Final evaluation | Baseline vs. agent on dev, held-out, hard and table sets, same model, within the credit budget | in progress |
 | M6 | Submission package | README, technical statement, build record | pending |
 
 ## M0: Project setup
@@ -184,15 +184,35 @@ The superseded code was removed from the working tree; it remains in git history
 ## M5: Final evaluation
 
 **What we build**
-- Baseline (starter configuration on DeepSeek V4.1 Flash) and the new agent, each run on:
-  - the dev set, once
-  - the held-out set, twice
-- Scored by the same judge and scorers.
+- Baseline (starter configuration on DeepSeek V4.1 Flash) and the new agent, scored by the same judge and scorers.
+
+**What happened, in order (2026-10-03)**
+1. **v1 (`c3c29cf`) on the held-out set (×2) and the dev set (×1).**
+   - **Correctness was saturated.** The baseline on DeepSeek Flash is far stronger than the Kimi-based starter: 28/32 held-out answers fully correct vs. 29/32 for the agent, and 21/25 vs. 18/25 on dev.
+   - **The agent won on trust and cost:**
+     - unsupported cited claims: 3% vs. 14%
+     - primary-source citations: 84% vs. 34%
+     - Tavily credits: about 6× fewer
+2. **v2 (`be27f6b`, `bb252b0`).** Changes driven only by dev-set failures:
+   - gap-filling search
+   - report disclosed rates as disclosed
+   - tolerant quote matching
+   - retries on provider errors
+
+   Held-out 30/32; dev 19/25. These are reported as a second use of the held-out set.
+3. **Judge replaced mid-run.** Qwen3.5-397B was withdrawn from Nebius; Nemotron-3-Ultra agreed with the user's grades on 8 of 9 and graded all final runs.
+4. **Hard held-out set (`80b9802`).** 20 questions covering point-in-time, filing-only figures for mid- and small-caps, multi-step fiscal calculations, traps, and guidance vs. actual. Still near the ceiling for both agents: run 1 was 18/18 for the baseline and 17/18 for the agent. Finding: with a capable 2026 model, Tavily search reliably surfaces press releases and sec.gov filings, so single-answer questions don't separate the agents.
+5. **Held-out table set (`38a7190`).** The task was widened rather than the company scope: 8 analyst table tasks, 86 cells, graded cell by cell. Table support in the agent (v3, `41e36b7`) was developed only on dev table tasks D01–D03.
+6. **Final runs on v3:**
+   - table set: both agents ×2
+   - agent v3 on the held-out (×2), hard (×2) and dev (×1) sets
+   - baseline runs on those sets reused, since the baseline code is unchanged
 
 **Acceptance criteria**
-- The new agent beats the baseline on the held-out set by more than the baseline's run-to-run variation.
-- On the held-out set, all three refusals are correct and at least 90% of cited claims are supported.
-- Tavily credits stay within the 1,500 budget; cost and latency are reported next to quality.
+- **Headline:** the README reports quality next to credits, tokens and latency, without picking runs.
+- **Bar on the held-out sets:** the agent beats the baseline on at least one held-out measure an analyst cares about, by more than run-to-run variation. Otherwise the README says so plainly.
+- **Refusals and support:** all refusals correct, and at least 90% of cited claims supported.
+- **Budget:** total Tavily credits stay within 1,500 (about 735 used before the v3 final runs).
 
 ## M6: Submission package
 
