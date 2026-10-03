@@ -1,0 +1,151 @@
+{
+ "id": "G08",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "number",
+ "question": "What is Microsoft's most recent guidance for Azure revenue growth for the upcoming quarter, and is it in constant currency?",
+ "grading": "Reference-free: use the latest guidance before the run timestamp, quote the disclosed point estimate or range accurately, state currency basis and fiscal quarter. October 1 snapshot: approximately 45% CC for Q1 FY2027; no range should be invented.",
+ "answer": "The July 29, 2026 FY2026 Q4 call guided Azure revenue growth of approximately 45% in constant currency for Q1 FY2027, July 1–September 30, 2026. This was a point estimate, not a disclosed growth range. It is the latest earnings-call guide before the October 1 snapshot. [G08-E1]",
+ "output": {
+  "answer": " Based on my search, I found some relevant information, though the results include a mix of sources with varying date contexts. Here's what I found:\n\n**Azure Revenue Growth Guidance:**\nMicrosoft's most recent guidance mentioned in available sources indicates:\n\n- **For Q1 Fiscal 2027**: Management guided to Azure revenue growth of **approximately 45% in constant currency**\n- Growth was expected to accelerate further in the first half of the fiscal year\n\n**Constant Currency Basis:**\nYes, this guidance is specified **in constant currency**. Microsoft's Azure growth metrics are typically reported in constant currency to normalize for foreign exchange effects.\n\n**Context from Recent Performance:**\nIn their prior fiscal Q4 results, Azure and other cloud services revenues grew **43% year-over-year**, ahead of previous guidance. For the full recent fiscal year, Azure revenues surpassed $100 billion for the first time, up 41%.\n\n**Sources:**\n- [Yahoo Finance article on Microsoft stock](https://finance.yahoo.com/markets/stocks/articles/3-reasons-hold-microsoft-stock-143200324.html)\n\n**Note:** The search results include references to future fiscal periods that may be speculative or dated. For the most precise and up-to-date figure for the *very next* upcoming quarter, I'd recommend reviewing Microsoft's most recent official earnings call transcript directly, as published guidance can be updated between reporting periods.",
+  "tokens": {
+   "input": 31810,
+   "output": 1183
+  },
+  "tavily_credits": 6,
+  "latency_s": 16.24,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Microsoft Azure revenue growth guidance upcoming quarter Q3 FY25 constant currency",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Microsoft latest earnings call Azure revenue growth guidance Q3 2025",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Microsoft MSFT most recent earnings call Azure guidance Q2 FY26 2025",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "time_range": "week"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/3-reasons-hold-microsoft-stock-143200324.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 26,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Quote the disclosed point estimate or range accurately",
+     "met": true,
+     "note": "Agent states 'approximately 45% in constant currency' which matches the snapshot's 'approximately 45% CC'."
+    },
+    {
+     "point": "State currency basis",
+     "met": true,
+     "note": "Agent explicitly says 'Yes, this guidance is specified in constant currency.'"
+    },
+    {
+     "point": "State fiscal quarter",
+     "met": true,
+     "note": "Agent identifies the guidance as for 'Q1 Fiscal 2027', matching the snapshot's Q1 FY2027."
+    },
+    {
+     "point": "No range invented",
+     "met": true,
+     "note": "Agent provides a point estimate ('approximately 45%') and does not invent a range."
+    },
+    {
+     "point": "Use latest guidance before run timestamp (2026-10-01)",
+     "met": true,
+     "note": "Agent's guidance aligns with the July 29, 2026 call for Q1 FY2027, which is the latest before the snapshot."
+    },
+    {
+     "point": "Correct fiscal labeling (not older quarter or 'Q3 2026')",
+     "met": true,
+     "note": "Agent labels it Q1 Fiscal 2027, avoiding the failure mode of mislabeling as Q3 2026."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer accurately quotes the point estimate (~45%), states constant currency basis, identifies the correct fiscal quarter (Q1 FY2027), and does not invent a range. It matches the October 1 snapshot exactly and avoids the tested failure mode."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "For Q1 Fiscal 2027, management guided to Azure revenue growth of approximately 45% in constant currency",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/3-reasons-hold-microsoft-stock-143200324.html",
+     "reason": "The source explicitly states: 'For the first quarter of fiscal 2027, management guided to Azure revenue growth of approximately 45% in constant currency'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Growth was expected to accelerate further in the first half of the fiscal year",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/3-reasons-hold-microsoft-stock-143200324.html",
+     "reason": "The source states: 'with growth expected to accelerate further in the first half of the fiscal year'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "This guidance is specified in constant currency",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/3-reasons-hold-microsoft-stock-143200324.html",
+     "reason": "The source explicitly includes the phrase 'in constant currency' when describing the guidance",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "In prior fiscal Q4 results, Azure and other cloud services revenues grew 43% year-over-year, ahead of previous guidance",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/3-reasons-hold-microsoft-stock-143200324.html",
+     "reason": "The source states: 'In its fiscal fourth-quarter results, the company reported that Azure and other cloud services revenues grew 43% year over year, ahead of its prior guidance'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "For the full recent fiscal year, Azure revenues surpassed $100 billion for the first time, up 41%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/3-reasons-hold-microsoft-stock-143200324.html",
+     "reason": "The source states: 'full-year Azure revenues surpassed $100 billion for the first time, up 41%'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 5,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,273 @@
+{
+ "id": "G19",
+ "category": "Trends",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "Give NVIDIA's Data Center revenue for each quarter from Q2 FY2026 through Q2 FY2027 and the QoQ growth for each.",
+ "grading": "Each quarterly value ±0.5% USD millions; QoQ ±0.5pp; fail if Compute & Networking segment figures substituted or quarters mislabeled",
+ "answer": "Data Center market-platform revenue (USD millions) / calculated QoQ growth: Q2 FY2026: 41,096 / 5.0726%; Q3 FY2026: 51,215 / 24.6228%; Q4 FY2026: 62,314 / 21.6714%; Q1 FY2027: 75,246 / 20.7530%; Q2 FY2027: 89,023 / 18.3093%. Q2 FY2026 growth uses the Q1 FY2026 baseline of USD 39,112 million. These are Data Center figures, not Compute & Networking segment revenue. [G19-E1, G19-E2]",
+ "output": {
+  "answer": " I need to be straightforward with you: **NVIDIA does not publicly report Data Center revenue by segment for future quarters**, and **there are no established consensus estimates** (e.g., from FactSet or Bloomberg) at that level of granularity for each quarter from Q2 FY2026 through Q2 FY2027.\n\nHere is what is actually available:\n\n### What NVIDIA Reports\n- **Historical actuals**: Reported in earnings releases after the quarter closes.\n- **Guidance**: NVIDIA provides **total company revenue** guidance (with a ±2% range) only for the immediately upcoming quarter. It does **not** break out segment-level guidance.\n\n### For the Quarters You Asked About\nThose quarters are **future/unreported quarters**. Here is what I found in terms of analyst/projections:\n\n- **Cantor Fitzgerald analyst C.J. Muse** has modeled NVIDIA's Data Center revenue at approximately **$200 billion for calendar 2025** and **$300 billion for calendar 2026** (these are full-year figures, not by quarter).\n  - Source: [Yahoo Finance – Nvidia's AI Expansion Could Push Revenue To $300 Billion By 2026](https://finance.yahoo.com/news/nvidias-ai-expansion-could-push-152217191.html)\n- Other articles reference NVIDIA seeing \"**visibility to a half a trillion dollars** in Blackwell and Rubin revenue from the start of 2025 through the end of calendar 2026\" (CFO Colette Kress comment). This refers to product platform revenue over a multi-year period, not quarterly Data Center revenue.\n  - Source: [Yahoo Finance – Nvidia says it has visibility to a half a trillion dollars](https://finance.yahoo.com/news/nvidia-says-visibility-half-trillion-003000844.html)\n\n### Why QoQ Data Isn't Available\n- NVIDIA does not issue quarterly segment guidance.\n- Wall Street consensus estimates tracked by data providers typically focus on **total revenue and EPS**, with segment estimates varying by individual analyst and model. There is no standard, publicly available consensus Data Center revenue estimate by quarter for that entire range.\n\nIf you are looking for **historical** Data Center revenue and QoQ growth for already-reported quarters, I can provide that. If you are working from a specific analyst model or research report that breaks out those future quarterly estimates, please share the source and I can help contextualize it.",
+  "tokens": {
+   "input": 34998,
+   "output": 3601
+  },
+  "tavily_credits": 10,
+  "latency_s": 25.44,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Data Center revenue quarter Q2 FY2025 Q3 FY2025 latest earnings historical",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Data Center revenue forecast guidance FY2026 FY2027 future quarters",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"NVIDIA\" \"Data Center\" revenue \"Q2 FY2026\" OR \"Q3 FY2026\" OR \"Q4 FY2026\" OR \"Q1 FY2027\" OR \"Q2 FY2027\" analyst estimates consensus",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Data Center revenue financial model projections calendar 2025 2026 quarterly",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Data Center revenue consensus estimates by quarter FY2026 FY2027 FactSet Wall Street",
+     "topic": "finance",
+     "search_depth": "advanced",
+     "include_domains": [
+      "bloomberg.com",
+      "reuters.com",
+      "wsj.com",
+      "finance.yahoo.com",
+      "seekingalpha.com",
+      "marketwatch.com",
+      "investopedia.com"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/news/nvidia-says-visibility-half-trillion-003000844.html",
+    "https://finance.yahoo.com/news/nvidias-ai-expansion-could-push-152217191.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 40,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.154,
+   "points": [
+    {
+     "point": "Provide Data Center revenue for Q2 FY2026 (USD millions) within ±0.5% tolerance",
+     "met": false,
+     "note": "Agent states data is not available and provides no figure; reference value is 41,096 million."
+    },
+    {
+     "point": "Provide QoQ growth for Q2 FY2026 within ±0.5pp",
+     "met": false,
+     "note": "Agent provides no QoQ growth; reference is 5.0726%."
+    },
+    {
+     "point": "Provide Data Center revenue for Q3 FY2026 (USD millions) within ±0.5% tolerance",
+     "met": false,
+     "note": "Agent provides no figure; reference is 51,215 million."
+    },
+    {
+     "point": "Provide QoQ growth for Q3 FY2026 within ±0.5pp",
+     "met": false,
+     "note": "Agent provides no QoQ growth; reference is 24.6228%."
+    },
+    {
+     "point": "Provide Data Center revenue for Q4 FY2026 (USD millions) within ±0.5% tolerance",
+     "met": false,
+     "note": "Agent provides no figure; reference is 62,314 million."
+    },
+    {
+     "point": "Provide QoQ growth for Q4 FY2026 within ±0.5pp",
+     "met": false,
+     "note": "Agent provides no QoQ growth; reference is 21.6714%."
+    },
+    {
+     "point": "Provide Data Center revenue for Q1 FY2027 (USD millions) within ±0.5% tolerance",
+     "met": false,
+     "note": "Agent provides no figure; reference is 75,246 million."
+    },
+    {
+     "point": "Provide QoQ growth for Q1 FY2027 within ±0.5pp",
+     "met": false,
+     "note": "Agent provides no QoQ growth; reference is 20.7530%."
+    },
+    {
+     "point": "Provide Data Center revenue for Q2 FY2027 (USD millions) within ±0.5% tolerance",
+     "met": false,
+     "note": "Agent provides no figure; reference is 89,023 million."
+    },
+    {
+     "point": "Provide QoQ growth for Q2 FY2027 within ±0.5pp",
+     "met": false,
+     "note": "Agent provides no QoQ growth; reference is 18.3093%."
+    },
+    {
+     "point": "Must not substitute Compute & Networking segment figures",
+     "met": true,
+     "note": "Agent does not provide any segment figures, so no substitution occurs."
+    },
+    {
+     "point": "Must not mislabel quarters",
+     "met": true,
+     "note": "Agent does not label any quarters with data, so no mislabeling occurs."
+    },
+    {
+     "point": "Q4 FY2026 must come from 10-K/8-K",
+     "met": false,
+     "note": "Agent provides no Q4 FY2026 figure at all."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The agent's answer fails to provide any of the required quarterly Data Center revenue figures or QoQ growth rates. It incorrectly claims the quarters are future/unreported when several are historical, and offers only high-level analyst projections instead of the specific segment data requested. All numeric requirements are unmet."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "NVIDIA does not publicly report Data Center revenue by segment for future quarters",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer states this as a general fact about NVIDIA's reporting practices. No specific source is cited in the answer. Retrieved sources show historical Data Center revenue (e.g., Q2 FY2025 $26.3B, Q3 FY2026 $51.2B) but no future segment guidance.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "There are no established consensus estimates (e.g., from FactSet or Bloomberg) at that level of granularity for each quarter from Q2 FY2026 through Q2 FY2027",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer asserts no standard consensus Data Center revenue estimates exist for those future quarters. No source cited. Retrieved sources include analyst EPS estimates (MarketWatch) and some total revenue guidance, but no quarterly Data Center consensus.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Cantor Fitzgerald analyst C.J. Muse has modeled NVIDIA's Data Center revenue at approximately $200 billion for calendar 2025 and $300 billion for calendar 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/nvidias-ai-expansion-could-push-152217191.html",
+     "reason": "Retrieved source (entry 12) states: 'Cantor Fitzgerald analyst C.J. Muse has modeled Nvidia's Data Center revenue at $200 billion for calendar 2025 and $300 billion for calendar 2026, well above current Street forecasts of $181 billion and $235 billion, respectively.' This matches the claim exactly.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "These are full-year figures, not by quarter",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/news/nvidias-ai-expansion-could-push-152217191.html",
+     "reason": "The same source provides annual figures for calendar 2025 and 2026, not quarterly breakdowns. The answer correctly characterizes them as full-year figures.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA CFO Colette Kress commented that the company has 'visibility to a half a trillion dollars' in Blackwell and Rubin revenue from the start of 2025 through the end of calendar 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/nvidia-says-visibility-half-trillion-003000844.html",
+     "reason": "Retrieved source (entry 13) states: 'Nvidia sees \"visibility to a half a trillion dollars\" in Blackwell and Rubin revenue from the start of 2025 through the end of calendar 2026.' This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "This refers to product platform revenue over a multi-year period, not quarterly Data Center revenue",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/news/nvidia-says-visibility-half-trillion-003000844.html",
+     "reason": "The source specifies 'Blackwell and Rubin revenue' which are product platforms, not the Data Center segment as a whole, and covers a multi-year period (start of 2025 through end of 2026). The answer's interpretation is consistent with the source.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA does not issue quarterly segment guidance",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer states this as a fact about NVIDIA's guidance practice. No source cited. Retrieved sources show total revenue guidance (e.g., Q1 FY2027 ~$78B) but no segment-level guidance.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Wall Street consensus estimates tracked by data providers typically focus on total revenue and EPS",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "General statement about consensus estimates. No source cited. Retrieved MarketWatch data shows quarterly EPS estimates and total revenue surprises, supporting the focus on EPS and total revenue.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Segment estimates vary by individual analyst and model",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer notes segment estimates are not standardized. No source cited. Retrieved sources show individual analyst models (e.g., Muse) but no consensus segment data.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "There is no standard, publicly available consensus Data Center revenue estimate by quarter for that entire range",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Reiterates the lack of consensus quarterly Data Center estimates. No source cited. Retrieved sources do not show such consensus data.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Historical actuals are reported in earnings releases after the quarter closes",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Describes NVIDIA's reporting timing. No source cited. Retrieved earnings call transcripts (e.g., Q2 FY2025, Q3 FY2026) confirm historical actuals are released post-quarter.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "NVIDIA provides total company revenue guidance (with a ±2% range) only for the immediately upcoming quarter",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "States NVIDIA's guidance practice. No source cited. Retrieved sources mention guidance with ±2% range (e.g., Q1 FY2027 guidance ~$78B ±2%).",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "NVIDIA does not break out segment-level guidance",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "States NVIDIA does not provide segment guidance. No source cited. Retrieved sources show only total revenue guidance, no segment breakdown.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 2,
+   "cited": 4,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}

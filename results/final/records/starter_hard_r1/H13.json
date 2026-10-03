@@ -1,0 +1,142 @@
+{
+ "id": "H13",
+ "category": "Financial modeling",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "What were Texas Roadhouse's trailing-twelve-month total revenue and income-from-operations margin as of the end of its fiscal Q2 2026 (quarter ended June 30, 2026)?",
+ "grading": "Computation: TTM = FY2025 + 26 weeks 2026 - 26 weeks 2025. TTM total revenue USD 6,231.5M (6,231,515K); TTM income from operations USD 482.8M (482,795K); margin 7.75% (+/-0.2pp). Accept +/-0.5% on dollar figures. Fail if the window is not the 52 weeks ended June 30, 2026 or if net income is substituted.",
+ "answer": "TTM total revenue = 5,878,075 (FY2025) + 3,313,142 (26 weeks to June 30, 2026) - 2,959,702 (26 weeks to July 1, 2025) = USD 6,231,515 thousand (USD 6,231.5 million). TTM income from operations = 474,740 + 289,129 - 281,074 = USD 482,795 thousand (USD 482.8 million). TTM operating margin = 482,795 / 6,231,515 = 7.75% [H13-E1][H13-E2].",
+ "output": {
+  "answer": " Based on the search results:\n\n**Trailing-Twelve-Month Total Revenue:** ~$6.2 billion  \n**Income-from-Operations (Operating) Margin (TTM):** 8.51%\n\nThese figures are as of June 30, 2026 (end of fiscal Q2 2026). For additional context, Texas Roadhouse's Q2 2026 quarterly revenue was approximately $1.68 billion, with a quarterly operating margin of 8.5% (down from 9.7% in the prior year period).\n\n**Sources:**\n- TTM Revenue: [Yahoo Finance - Texas Roadhouse CFO Sells 819 Shares](https://finance.yahoo.com/markets/stocks/articles/texas-roadhouse-cfo-sells-819-182003789.html)\n- Operating Margin (ttm): [Yahoo Finance - TXRH.MX Key Statistics](https://finance.yahoo.com/quote/TXRH.MX/key-statistics)\n- Q2 2026 quarterly results: [Yahoo Finance - Texas Roadhouse Reports Q2 CY2026](https://finance.yahoo.com/markets/stocks/articles/texas-roadhouse-nasdaq-txrh-reports-203723647.html)",
+  "tokens": {
+   "input": 21214,
+   "output": 1131
+  },
+  "tavily_credits": 6,
+  "latency_s": 12.39,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/1a37d15619ab35059795b815af207e48",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Texas Roadhouse Q2 2026 results trailing twelve month revenue income from operations margin June 30 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Texas Roadhouse TXRH earnings results Q2 2026 revenue income operations margin",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Texas Roadhouse TTM trailing twelve months revenue operating margin 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/texas-roadhouse-cfo-sells-819-182003789.html",
+    "https://finance.yahoo.com/markets/stocks/articles/texas-roadhouse-nasdaq-txrh-reports-203723647.html",
+    "https://finance.yahoo.com/quote/TXRH.MX/key-statistics"
+   ],
+   "cited_primary": 0,
+   "retrieved": 29,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.167,
+   "points": [
+    {
+     "point": "TTM total revenue is approximately USD 6,231.5 million (within +/-0.5% tolerance)",
+     "met": false,
+     "note": "Agent states ~$6.2 billion (6,200 million). Reference is 6,231.5 million. Difference is -31.5 million (-0.505%), just outside the +/-0.5% tolerance."
+    },
+    {
+     "point": "TTM income from operations is approximately USD 482.8 million (within +/-0.5% tolerance)",
+     "met": false,
+     "note": "Agent does not explicitly state TTM income from operations. Implied from stated revenue (~$6.2B) and margin (8.51%) is ~$527.6M, which is 9.3% above the reference 482.8M, well outside tolerance."
+    },
+    {
+     "point": "TTM operating margin is 7.75% (within +/-0.2 percentage points tolerance)",
+     "met": false,
+     "note": "Agent states 8.51%, which is 0.76 percentage points above the reference 7.75%, exceeding the +/-0.2pp tolerance."
+    },
+    {
+     "point": "Calculation uses the correct 52-week window ended June 30, 2026",
+     "met": false,
+     "note": "Agent cites Yahoo Finance TTM figures but the margin (8.51%) does not match the verified 52-week window calculation (7.75%), suggesting a different window or metric."
+    },
+    {
+     "point": "Metric used is income from operations (not net income or restaurant margin)",
+     "met": false,
+     "note": "Agent labels the margin as 'Income-from-Operations (Operating) Margin' but the value 8.51% matches neither the verified income-from-operations margin (7.75%) nor the reference; likely a restaurant margin or net income margin was used."
+    },
+    {
+     "point": "Units are correctly represented (millions/billions consistent)",
+     "met": true,
+     "note": "Agent uses billions for revenue and percent for margin, which is acceptable scaling."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The agent's answer fails on all substantive requirements: revenue is slightly outside tolerance, operating margin is significantly off (0.76pp vs allowed 0.2pp), implied income from operations is far from the reference, and the margin likely reflects a different metric (restaurant or net income margin) rather than income from operations. The core answer is wrong."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Trailing-twelve-month total revenue is approximately $6.2 billion as of June 30, 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/texas-roadhouse-cfo-sells-819-182003789.html",
+     "reason": "The retrieved text for this URL states: 'Texas Roadhouse, headquartered in Louisville, reported trailing-twelve-month revenue of $6.2 billion and net income of $413.2 million.' This matches the claimed figure and period.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Income-from-operations (operating) margin (TTM) is 8.51% as of June 30, 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/TXRH.MX/key-statistics",
+     "reason": "The retrieved text for this URL shows: '6/30/2026. Profitability. Profit Margin, 6.63%. Operating Margin (ttm), 8.51%.' This directly supports the claimed margin and date.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 quarterly revenue was approximately $1.68 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/texas-roadhouse-nasdaq-txrh-reports-203723647.html",
+     "reason": "The retrieved text for this URL does not mention quarterly revenue; it only states 'Operating Margin: 8.5%, down from 9.7% in the same quarter last year.' Therefore, the cited source does not support the revenue figure.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 quarterly operating margin was 8.5%, down from 9.7% in the prior year period",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/texas-roadhouse-nasdaq-txrh-reports-203723647.html",
+     "reason": "The retrieved text for this URL states: 'Operating Margin: 8.5%, down from 9.7% in the same quarter last year.' This supports the claimed quarterly operating margin and year-over-year comparison.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 4,
+   "supported": 3,
+   "not_retrieved": 0
+  }
+ }
+}

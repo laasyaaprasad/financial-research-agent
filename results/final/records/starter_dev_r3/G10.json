@@ -1,0 +1,136 @@
+{
+ "id": "G10",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "abstain",
+ "question": "How many iPhone units did Apple sell in fiscal 2025?",
+ "grading": "Expected refusal: Apple does not disclose unit sales. May provide iPhone net sales from the 10-K, and may cite third-party shipment estimates only if clearly labeled as estimates with source.",
+ "answer": "Apple did not disclose FY2025 iPhone unit sales in its 10-K. A reported unit count cannot be supplied. The filing reports iPhone net sales of USD 209,586 million; revenue is not a unit count, and third-party shipment estimates must be labeled as estimates. [G10-E1]",
+ "output": {
+  "answer": " According to IDC estimates, Apple shipped a record of approximately **247 million iPhones in 2025** (with sources citing figures between 247.4 million and 247.8 million units). \n\nHowever, there are two important caveats:\n\n1. **Apple no longer reports unit sales.** The company stopped disclosing iPhone unit figures after fiscal 2018. Modern numbers come from third-party analysts like IDC and Counterpoint Research.\n\n2. **Fiscal vs. calendar year.** Apple's fiscal 2025 ended on **September 27, 2025**, while the 247 million shipment estimate generally refers to calendar year 2025 (January–December 2025). What Apple officially confirmed in its fiscal 2025 SEC filing (10-K) is **$209.6 billion in iPhone revenue**, up from $201.2 billion in fiscal 2024.\n\nSources:\n- Skillademia citing IDC: 247.4 million iPhones shipped in 2025 ([skillademia.com](https://www.skillademia.com/statistics/iphone-statistics))\n- Business of Apps: 247 million units sold in 2025, a new record ([businessofapps.com](https://www.businessofapps.com/data/apple-statistics))\n- Apple's fiscal 2025 10-K filing showing $209.586 billion in iPhone revenue ([sec.gov](https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm))",
+  "tokens": {
+   "input": 8873,
+   "output": 921
+  },
+  "tavily_credits": 2,
+  "latency_s": 7.88,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/97bc839869494e275d6f367843152510",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Apple iPhone units sold fiscal 2025 sales figures how many iPhones sold 2025",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.businessofapps.com/data/apple-statistics",
+    "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+    "https://www.skillademia.com/statistics/iphone-statistics"
+   ],
+   "cited_primary": 1,
+   "retrieved": 10,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Agent clearly states that Apple does not disclose unit sales for fiscal 2025 (refusal to provide a reported figure).",
+     "met": true,
+     "note": "Agent says: 'Apple no longer reports unit sales. The company stopped disclosing iPhone unit figures after fiscal 2018.' This conveys that fiscal 2025 unit sales are not disclosed."
+    },
+    {
+     "point": "Agent provides iPhone net sales from the 10-K.",
+     "met": true,
+     "note": "Agent cites '$209.6 billion in iPhone revenue' from Apple's fiscal 2025 10-K filing."
+    },
+    {
+     "point": "Agent cites third-party shipment estimates only if clearly labeled as estimates with source.",
+     "met": true,
+     "note": "Agent presents IDC estimates as 'According to IDC estimates... approximately 247 million iPhones in 2025' and provides two source links."
+    },
+    {
+     "point": "Agent does not pass off third-party estimates as reported figures.",
+     "met": true,
+     "note": "Estimates are explicitly labeled as estimates and attributed to IDC; agent also notes the fiscal vs. calendar year distinction."
+    },
+    {
+     "point": "Agent addresses the fiscal 2025 period (either by stating no data for fiscal 2025 or providing a fiscal 2025 estimate if available).",
+     "met": true,
+     "note": "Agent notes Apple's fiscal 2025 ended September 27, 2025, and that the 247 million estimate refers to calendar year 2025, making clear that no fiscal 2025 unit estimate is provided."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent meets all requirements: it refuses to supply a reported unit count (stating Apple stopped disclosing units after FY2018), provides the official iPhone net sales figure from the 10-K, cites third-party shipment estimates with clear labeling and sources, does not present estimates as reported figures, and properly distinguishes fiscal 2025 from calendar 2025. The answer aligns with the expected refusal and permitted supplementary information."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Apple shipped a record of approximately 247 million iPhones in 2025 (IDC estimates, figures between 247.4M and 247.8M)",
+     "numeric": true,
+     "cited_url": "https://www.skillademia.com/statistics/iphone-statistics",
+     "reason": "Retrieved source skillademia.com states 'Apple shipped a record 247.4 million iPhones in 2025, up 6.1% year over year, according to IDC.' Other retrieved sources (sellcell.com, demandsage.com) show 247.8 million. The range 247.4M–247.8M matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Apple no longer reports unit sales; the company stopped disclosing iPhone unit figures after fiscal 2018",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Retrieved source sqmagazine.co.uk confirms: 'Apple no longer says. The company stopped reporting iPhone unit sales from fiscal Q1 2019.' This aligns with stopping after fiscal 2018.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Modern iPhone shipment numbers come from third-party analysts like IDC and Counterpoint Research",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Retrieved sources cite IDC (skillademia.com, sellcell.com), Counterpoint Research (demandsage.com), Statista, Canalys, etc., as sources for post-2018 shipment estimates.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Apple's fiscal 2025 ended on September 27, 2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "reason": "The SEC 10-K filing retrieved shows 'For the fiscal year ended September 27, 2025' at the top of the document.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The 247 million shipment estimate generally refers to calendar year 2025 (January–December 2025)",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Skillademia.com notes Apple's fiscal year ends Sept 27, 2025, and presents the 247.4M figure as '2025' shipment data from IDC, which is understood to be calendar year. The claim is consistent with the context.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Apple officially confirmed in its fiscal 2025 SEC filing (10-K) $209.6 billion in iPhone revenue, up from $201.2 billion in fiscal 2024",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "reason": "The retrieved 10-K shows iPhone revenue of $209,586 million for 2025 and $201,183 million for 2024, matching the claimed figures (rounded to one decimal).",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 3,
+   "supported": 3,
+   "not_retrieved": 0
+  }
+ }
+}

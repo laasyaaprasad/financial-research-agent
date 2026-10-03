@@ -1,0 +1,192 @@
+{
+ "id": "G09",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "number",
+ "question": "What was Nike's revenue in its most recently reported quarter, and which fiscal quarter and date range was that?",
+ "grading": "Reference-free recency: must pick the newest released quarter as of query time, label it in fiscal terms with period-end date, and give revenue ±0.5% USD millions; fail if an older quarter is presented as latest",
+ "answer": "At the October 1, 2026 after-market snapshot, Nike had released Q1 FY2027 results: revenue was USD 11,213 million for June 1–August 31, 2026. The release is dated October 1. [G09-E1]",
+ "output": {
+  "answer": " Based on the most recently reported earnings, Nike's revenue was **$11.1 billion** in its **fourth quarter of fiscal 2025** (ended **May 31, 2025**), reported on June 26, 2025. This represents the fiscal quarter covering roughly **March 2025 through May 2025**.\n\n**Key details:**\n- **Quarter**: Fiscal Q4 2025\n- **Date range**: Quarter ended May 31, 2025 (~March 1 – May 31, 2025)\n- **Revenue**: $11.1 billion\n- **Year-over-year change**: Down 12% on a reported basis; down 11% on a currency-neutral basis\n- **Reported**: June 26, 2025\n\n- **Sources**: [Bloomberg](https://www.bloomberg.com/news/videos/2025-06-26/the-key-takeaways-from-nike-s-4th-qtr-earnings-report-video), [Yahoo Finance](https://finance.yahoo.com/news/nike-net-income-falls-86-091240393.html), [Yahoo Finance](https://finance.yahoo.com/news/compared-estimates-nike-nke-q4-220002920.html), [Yahoo Finance](https://finance.yahoo.com/news/nike-readies-sport-offense-q4-120421048.html)",
+  "tokens": {
+   "input": 148962,
+   "output": 3628
+  },
+  "tavily_credits": 16,
+  "latency_s": 42.21,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nike revenue most recent quarter fiscal quarter date range latest earnings report",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nike NKE latest quarterly earnings revenue report 2024 2025 fiscal quarter date",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nike fiscal 2025 Q4 earnings revenue report June 2025 OR Nike fiscal 2025 Q3 earnings March 2025",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Nike\" \"Q4 2025\" \"fourth quarter\" revenue \"March\" \"May\" \"June 26\" earnings report date range",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nike fiscal 2025 fourth quarter earnings results revenue $11.1 billion May 2025",
+     "topic": "finance",
+     "search_depth": "advanced",
+     "time_range": "year"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nike Q4 fiscal 2025 earnings results June 2025 revenue $11.1 billion OR Nike Q1 fiscal 2026 earnings revenue",
+     "topic": "finance",
+     "search_depth": "advanced",
+     "time_range": "year"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nike investor relations most recent quarterly results 2024 2025 OR SEC filing 10-Q Nike revenue latest quarter",
+     "topic": "finance",
+     "search_depth": "advanced",
+     "time_range": "year"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Nike\" \"fourth quarter\" \"fiscal 2025\" revenue \"$11.1 billion\" \"June 26\" OR \"June 2025\" earnings report",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/news/compared-estimates-nike-nke-q4-220002920.html",
+    "https://finance.yahoo.com/news/nike-net-income-falls-86-091240393.html",
+    "https://finance.yahoo.com/news/nike-readies-sport-offense-q4-120421048.html",
+    "https://www.bloomberg.com/news/videos/2025-06-26/the-key-takeaways-from-nike-s-4th-qtr-earnings-report-video"
+   ],
+   "cited_primary": 0,
+   "retrieved": 63,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.0,
+   "points": [
+    {
+     "point": "Pick the newest released quarter as of query time (2026-10-01).",
+     "met": false,
+     "note": "Agent presented Q4 FY2025 (ended May 31, 2025) instead of Q1 FY2027 (June–August 2026, released October 1, 2026)."
+    },
+    {
+     "point": "Label the quarter in fiscal terms with period-end date.",
+     "met": false,
+     "note": "Agent labeled Q4 FY2025 with period-end date May 31, 2025, but this is not the newest quarter; the correct fiscal label for the newest quarter is Q1 FY2027 with period-end date August 31, 2026."
+    },
+    {
+     "point": "Give revenue ±0.5% USD millions.",
+     "met": false,
+     "note": "Agent gave $11.1 billion (11,100 million) for Q4 FY2025; the correct revenue for Q1 FY2027 is 11,213 million, a difference of ~1%, outside tolerance."
+    },
+    {
+     "point": "Fail if an older quarter is presented as latest.",
+     "met": false,
+     "note": "Agent presented Q4 FY2025 as the most recently reported quarter, but Q1 FY2027 had been released on October 1, 2026."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The agent's answer is outdated, presenting Q4 FY2025 as the latest quarter when Q1 FY2027 results were released on October 1, 2026, per the snapshot. The revenue figure also does not match the latest quarter within tolerance."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Nike's revenue was $11.1 billion in its fourth quarter of fiscal 2025",
+     "numeric": true,
+     "cited_url": "https://www.bloomberg.com/news/videos/2025-06-26/the-key-takeaways-from-nike-s-4th-qtr-earnings-report-video",
+     "reason": "The answer cites Bloomberg as a source for the revenue figure. However, this URL does not appear in the retrieved sources, so the claim cannot be verified against the retrieved text.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The quarter ended May 31, 2025",
+     "numeric": true,
+     "cited_url": "https://www.bloomberg.com/news/videos/2025-06-26/the-key-takeaways-from-nike-s-4th-qtr-earnings-report-video",
+     "reason": "The answer states the quarter ended May 31, 2025, citing Bloomberg. The cited URL is not in the retrieved sources, so support cannot be determined.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The earnings were reported on June 26, 2025",
+     "numeric": true,
+     "cited_url": "https://www.bloomberg.com/news/videos/2025-06-26/the-key-takeaways-from-nike-s-4th-qtr-earnings-report-video",
+     "reason": "The answer cites Bloomberg for the report date. The URL is not in the retrieved sources, so support is null.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The fiscal quarter covers roughly March 2025 through May 2025",
+     "numeric": false,
+     "cited_url": "https://www.bloomberg.com/news/videos/2025-06-26/the-key-takeaways-from-nike-s-4th-qtr-earnings-report-video",
+     "reason": "The answer describes the quarter's approximate date range. The cited URL is not retrieved, so support is null.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue decreased 12% year-over-year on a reported basis",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/nike-net-income-falls-86-091240393.html",
+     "reason": "The answer cites a Yahoo Finance article for the year-over-year change. This URL is not in the retrieved sources, so support is null.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue decreased 11% year-over-year on a currency-neutral basis",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/nike-net-income-falls-86-091240393.html",
+     "reason": "The answer cites the same Yahoo Finance article for the currency-neutral change. The URL is not retrieved, so support is null.",
+     "supported": null,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 6,
+   "supported": 0,
+   "not_retrieved": 0
+  }
+ }
+}

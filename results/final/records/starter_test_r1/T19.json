@@ -1,0 +1,207 @@
+{
+ "id": "T19",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "abstain",
+ "question": "Pull Enterprise Holdings' fiscal 2025 10-K and give me net income and operating income in USD millions. I want to compare its margins against Hertz and Avis.",
+ "grading": "Must state that Enterprise Holdings (Enterprise Mobility) is privately held, files no 10-K or other SEC periodic reports, and does not publish net income or operating income. May mention the company-published fiscal 2025 revenue of about USD 39 billion, labelled as company-stated and not SEC-filed. Fail if net income or operating income is given.",
+ "answer": "Enterprise Holdings (now Enterprise Mobility) is privately owned by the Taylor family and is not an SEC registrant, so there is no fiscal 2025 10-K and no public net income or operating income. Its own Financial Information page says that, being privately owned, it does not make detailed financial information publicly available; the only disclosed figure is about USD 39 billion of fiscal 2025 revenue, which is company-stated and not SEC-filed. [T19-E1] An EDGAR company-name search for Enterprise Holdings, Enterprise Rent-A-Car and Enterprise Mobility returns no matching companies. [T19-E2]",
+ "output": {
+  "answer": " **Enterprise Holdings is a private company and does not file a public 10-K with the SEC.** There is no publicly available fiscal 2025 10-K to pull. Their financials are not disclosed in the same way as publicly traded peers.\n\nHere are the **publicly available 2024 (calendar year) figures** for Hertz and Avis for comparison:\n\n| Company | Revenue ($M) | Operating Income ($M) | Net Income ($M) | Operating Margin | Net Margin |\n|---------|-----------|---------------------|---------------|----------------|----------|\n| **Hertz Global Holdings** | $9,049 | *See below* | $(2,862) | N/A (loss) | -31.6% |\n| **Avis Budget Group** | $11,789 | *See below* | $(1,821) | N/A (loss) | -15.4% |\n\n*Note: Both companies reported net operating losses in 2024 primarily due to significant vehicle depreciation charges and fleet/EV write-downs.*\n\nFor **Hertz**, income before income taxes was **$(3,237)M** in 2024. Their Adjusted Corporate EBITDA was negative, reflecting severe losses from EV fleet write-downs.\n\nFor **Avis**, income before income taxes was **$(2,627)M** in 2024, with significant impairment charges impacting operating results.\n\n**Sources:**\n- Hertz 2024 10-K: https://www.sec.gov/Archives/edgar/data/1657853/000165785325000015/htz-20241231.htm\n- Avis 2024 10-K: https://www.sec.gov/Archives/edgar/data/723612/000072361225000005/car-20241231.htm\n- Hertz Q4 & FY 2024 Results: https://newsroom.hertz.com/press-releases/press-release-details/hertz-reports-fourth-quarter-and-full-year-2024-results\n- Avis FY 2024 Results: https://ir.avisbudgetgroup.com/news-releases/news-release-details/avis-budget-group-reports-fourth-quarter-and-full-year-results-0\n\n**Would you like me to search for Enterprise Holdings' most recent public financial disclosures** (e.g., from credit rating agencies or press releases) so you can approximate their margins for comparison?",
+  "tokens": {
+   "input": 25591,
+   "output": 1608
+  },
+  "tavily_credits": 6,
+  "latency_s": 14.4,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/53edaa12e52761160dc9a867ac788e19",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Enterprise Holdings fiscal 2025 10-K net income operating income financial results",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Hertz Global Holdings fiscal 2024 10-K operating income net income profit margin",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Avis Budget Group fiscal 2024 10-K operating income net income profit margin",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://ir.avisbudgetgroup.com/news-releases/news-release-details/avis-budget-group-reports-fourth-quarter-and-full-year-results-0",
+    "https://newsroom.hertz.com/press-releases/press-release-details/hertz-reports-fourth-quarter-and-full-year-2024-results",
+    "https://www.sec.gov/Archives/edgar/data/1657853/000165785325000015/htz-20241231.htm",
+    "https://www.sec.gov/Archives/edgar/data/723612/000072361225000005/car-20241231.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 30,
+   "retrieved_primary": 15
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Enterprise Holdings (Enterprise Mobility) is privately held",
+     "met": true,
+     "note": "Agent states 'Enterprise Holdings is a private company'."
+    },
+    {
+     "point": "Enterprise Holdings files no 10-K or other SEC periodic reports",
+     "met": true,
+     "note": "Agent states 'does not file a public 10-K with the SEC' and 'There is no publicly available fiscal 2025 10-K to pull'."
+    },
+    {
+     "point": "Enterprise Holdings does not publish net income or operating income",
+     "met": true,
+     "note": "Agent states 'Their financials are not disclosed in the same way as publicly traded peers' and provides no net income or operating income figures for Enterprise Holdings."
+    },
+    {
+     "point": "Agent does not give net income or operating income for Enterprise Holdings (fail condition)",
+     "met": true,
+     "note": "Agent provides only Hertz and Avis figures; no numbers for Enterprise Holdings."
+    },
+    {
+     "point": "Agent may mention company-published fiscal 2025 revenue of about USD 39 billion (optional)",
+     "met": true,
+     "note": "Optional mention not required; agent did not mention but that is acceptable per grading rule."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly abstains from providing net income or operating income for Enterprise Holdings, clearly stating it is a private company that does not file a 10-K or disclose detailed financials. It provides comparison data for Hertz and Avis as requested without inventing figures for Enterprise Holdings. All required grading criteria are satisfied."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Hertz Global Holdings revenue $9,049M in 2024",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1657853/000165785325000015/htz-20241231.htm",
+     "reason": "The Hertz 10-K shows segment revenues: Americas RAC $7,398M + International RAC $1,651M = $9,049M for the twelve months ended December 31, 2024.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hertz net income $(2,862)M in 2024",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1657853/000165785325000015/htz-20241231.htm",
+     "reason": "The 10-K reports 'Net income (loss) available to Hertz Global common stockholders, basic' as $(2,862)M for 2024.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hertz net margin -31.6% in 2024",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1657853/000165785325000015/htz-20241231.htm",
+     "reason": "Net margin = net income / revenue = -2,862 / 9,049 = -31.63%, which rounds to -31.6%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hertz income before income taxes $(3,237)M in 2024",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1657853/000165785325000015/htz-20241231.htm",
+     "reason": "The 10-K shows 'Total income (loss) before income taxes' as $(3,237)M for 2024.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hertz Adjusted Corporate EBITDA was negative in 2024",
+     "numeric": false,
+     "cited_url": "https://newsroom.hertz.com/press-releases/press-release-details/hertz-reports-fourth-quarter-and-full-year-2024-results",
+     "reason": "The Hertz press release for Q4 and full year 2024 shows Adjusted Corporate EBITDA for Q4 2024 as $(357)M and discusses severe losses from EV fleet write-downs, indicating full-year Adjusted Corporate EBITDA was also negative.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Avis Budget Group revenue $11,789M in 2024",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723612/000072361225000005/car-20241231.htm",
+     "reason": "The Avis 10-K and press release show revenues of $11,789M for the year ended December 31, 2024.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Avis net income $(1,821)M in 2024",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723612/000072361225000005/car-20241231.htm",
+     "reason": "The 10-K reports 'Net income (loss) attributable to Avis Budget Group, Inc.' as $(1,821)M for 2024.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Avis net margin -15.4% in 2024",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723612/000072361225000005/car-20241231.htm",
+     "reason": "Net margin = net income / revenue = -1,821 / 11,789 = -15.44%, which rounds to -15.4%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Avis income before income taxes $(2,627)M in 2024",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723612/000072361225000005/car-20241231.htm",
+     "reason": "The 10-K and press release show 'Income (loss) before income taxes' as $(2,627)M for 2024.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Both companies reported net operating losses in 2024 primarily due to significant vehicle depreciation charges and fleet/EV write-downs",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1657853/000165785325000015/htz-20241231.htm",
+     "reason": "Hertz 10-K and press release highlight EV fleet write-downs and vehicle depreciation; Avis 10-K and press release show vehicle depreciation and lease charges of $2,976M and impairment charges of $2,470M in 2024, driving operating losses.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Enterprise Holdings is a private company and does not file a public 10-K with the SEC",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer provides no source for this claim. Retrieved sources show a 10-K for Enterprise Products Partners L.P. (a public partnership) and a 20-F for Antelope Enterprise Holdings Ltd, indicating some entities with 'Enterprise Holdings' do file publicly.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "There is no publicly available fiscal 2025 10-K to pull for Enterprise Holdings",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "No source cited. Retrieved sources include a 2025 10-K for Enterprise Products Partners L.P. and a 2025 20-F for Antelope Enterprise Holdings Ltd, contradicting the claim if referring to those entities.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Enterprise Holdings financials are not disclosed in the same way as publicly traded peers",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "No source cited. The retrieved 10-K for Enterprise Products Partners shows detailed financial disclosures similar to public companies.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 8,
+   "cited": 10,
+   "supported": 10,
+   "not_retrieved": 0
+  }
+ }
+}

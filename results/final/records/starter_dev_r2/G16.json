@@ -1,0 +1,171 @@
+{
+ "id": "G16",
+ "category": "Beat or miss",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "Did Walmart's Q2 FY2027 results land above, within, or below the Q2 guidance it gave in its Q1 FY2027 release, on net sales growth (cc), adjusted operating income growth (cc), and adjusted EPS?",
+ "grading": "Key points: (1) states each of the 3 guidance ranges correctly; (2) states each actual correctly (cc where specified); (3) correct per-metric verdict (above/within/below); (4) does not use LSEG/FactSet consensus as the benchmark",
+ "answer": "Against the Q1 release guide: net sales growth in constant currency was 5.0% versus 4.0–5.0%, within at the upper end; adjusted operating income growth in constant currency was 17.4% versus 7.0–10.0%, above; adjusted EPS was $0.81 versus $0.72–$0.74, above. Use net sales growth, not the 5.1% constant-currency total-revenue headline. The guide excluded tariff-refund benefits. [G16-E1, G16-E2]",
+ "output": {
+  "answer": " Here is how Walmart's Q2 FY2027 results landed versus the guidance issued in its Q1 FY2027 release (May 2026):\n\n| Metric | Guidance (Q1 release) | Actual Q2 Result | vs Guidance |\n|---|---|---|---|\n| **Net sales growth (cc)** | +4.0% to +5.0% | **+5.0%** (at the top end of the range) | **Within** (top end) |\n| **Adjusted operating income growth (cc)** | +7.0% to +10.0% | **+17.4%** | **Above** |\n| **Adjusted EPS** | $0.72 to $0.74 | **$0.81** | **Above** |\n\n**Key context:**\n- **Operating income** was well above the guided range due to a **~750 basis point net benefit from tariff refunds** received in the quarter. Excluding that tailwind, Walmart noted that *underlying* operating income growth was at the top end of the 7–10% guidance.\n- **Adjusted EPS** significantly exceeded the guided range by $0.07–$0.09.\n- **Net sales (cc)** came in right at the top of the 4–5% guidance bracket (total revenue was up 5.1% in constant currency).\n\nSources: [Q1 FY2027 guidance presentation](https://stock.walmart.com/_assets/_5813cf69129ed45d080396680f549a44/walmart/db/938/9995/presentation/Earnings+Presentation+%28FY27+Q1%29.pdf) · [Q2 FY2027 earnings release](https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/earnings_release/Earnings+Release+%28FY27+Q2%29.pdf) · [CNBC Q2 recap](https://www.cnbc.com/2026/08/20/walmart-wmt-q2-2027-earnings.html) · [Walmart corporate news](https://corporate.walmart.com/news/2026/08/20/walmart-releases-q2-fy27-earnings)",
+  "tokens": {
+   "input": 15111,
+   "output": 4425
+  },
+  "tavily_credits": 4,
+  "latency_s": 24.57,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY2027 results earnings guidance Q1 FY2027",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart most recent quarterly earnings results FY2025 FY2026 guidance vs actual",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://corporate.walmart.com/news/2026/08/20/walmart-releases-q2-fy27-earnings",
+    "https://stock.walmart.com/_assets/_5813cf69129ed45d080396680f549a44/walmart/db/938/9995/presentation/Earnings+Presentation+%28FY27+Q1%29.pdf",
+    "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/earnings_release/Earnings+Release+%28FY27+Q2%29.pdf",
+    "https://www.cnbc.com/2026/08/20/walmart-wmt-q2-2027-earnings.html"
+   ],
+   "cited_primary": 3,
+   "retrieved": 17,
+   "retrieved_primary": 10
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "states each of the 3 guidance ranges correctly",
+     "met": true,
+     "note": "Agent lists net sales growth (cc) guidance as +4.0% to +5.0%, adjusted operating income growth (cc) as +7.0% to +10.0%, and adjusted EPS as $0.72 to $0.74, matching the reference guidance ranges exactly."
+    },
+    {
+     "point": "states each actual correctly (cc where specified)",
+     "met": true,
+     "note": "Agent reports actual net sales growth (cc) +5.0%, adjusted operating income growth (cc) +17.4%, and adjusted EPS $0.81, matching the reference actuals exactly."
+    },
+    {
+     "point": "correct per-metric verdict (above/within/below)",
+     "met": true,
+     "note": "Agent verdicts: net sales growth (cc) within (top end), adjusted operating income growth (cc) above, adjusted EPS above — all correct per the reference."
+    },
+    {
+     "point": "does not use LSEG/FactSet consensus as the benchmark",
+     "met": true,
+     "note": "Agent explicitly uses Walmart's Q1 FY2027 release guidance and Q2 FY2027 earnings release actuals; no consensus estimates are referenced."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All four grading requirements are satisfied: guidance ranges, actuals, verdicts, and benchmark source are all correct and match the verified reference answer."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q2 FY2027 net sales growth (constant currency) guidance range was +4.0% to +5.0%",
+     "numeric": true,
+     "cited_url": "https://stock.walmart.com/_assets/_5813cf69129ed45d080396680f549a44/walmart/db/938/9995/presentation/Earnings+Presentation+%28FY27+Q1%29.pdf",
+     "reason": "The Q1 FY2027 guidance presentation explicitly states: 'Consolidated metric Q2 FY27 Net sales (cc) Increase 4.0% to 5.0%'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual Q2 FY2027 net sales growth (constant currency) was +5.0%",
+     "numeric": true,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/earnings_release/Earnings+Release+%28FY27+Q2%29.pdf",
+     "reason": "The Q2 earnings release states: 'Revenue growth of 5.9%, up 5.1% in constant currency (cc)'. The claim says +5.0%, but the source reports 5.1%. This is outside the rounding tolerance (5.0% implies 4.95–5.05%).",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2027 adjusted operating income growth (constant currency) guidance range was +7.0% to +10.0%",
+     "numeric": true,
+     "cited_url": "https://stock.walmart.com/_assets/_5813cf69129ed45d080396680f549a44/walmart/db/938/9995/presentation/Earnings+Presentation+%28FY27+Q1%29.pdf",
+     "reason": "The Q1 guidance presentation states: 'Operating income (cc) Increase 7.0% to 10.0%'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual Q2 FY2027 adjusted operating income growth (constant currency) was +17.4%",
+     "numeric": true,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/earnings_release/Earnings+Release+%28FY27+Q2%29.pdf",
+     "reason": "The Q2 earnings release states: 'Operating income growth of 28.8%, up 17.4% adjusted (cc)'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2027 adjusted EPS guidance range was $0.72 to $0.74",
+     "numeric": true,
+     "cited_url": "https://stock.walmart.com/_assets/_5813cf69129ed45d080396680f549a44/walmart/db/938/9995/presentation/Earnings+Presentation+%28FY27+Q1%29.pdf",
+     "reason": "The Q1 guidance presentation states: 'Adjusted EPS $0.72 to $0.74'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual Q2 FY2027 adjusted EPS was $0.81",
+     "numeric": true,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/earnings_release/Earnings+Release+%28FY27+Q2%29.pdf",
+     "reason": "The Q2 earnings release states: 'GAAP EPS of $0.80; Adjusted EPS1 of $0.81'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2027 adjusted operating income included a ~750 basis point net benefit from tariff refunds",
+     "numeric": true,
+     "cited_url": "https://corporate.walmart.com/news/2026/08/20/walmart-releases-q2-fy27-earnings",
+     "reason": "The Walmart corporate news release states: 'Adjusted operating income2 growth in constant currency1 of ~17% in Q2 included a 750bps net benefit from tariff refunds received.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Excluding the tariff refund benefit, underlying operating income growth was at the top end of the 7–10% guidance range",
+     "numeric": false,
+     "cited_url": "https://corporate.walmart.com/news/2026/08/20/walmart-releases-q2-fy27-earnings",
+     "reason": "The same corporate news release states: 'Setting aside this benefit, underlying operating income growth was at the top end of our 7-10% guidance.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Adjusted EPS exceeded the guided range by $0.07–$0.09",
+     "numeric": true,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/earnings_release/Earnings+Release+%28FY27+Q2%29.pdf",
+     "reason": "Guidance from Q1 presentation: $0.72–$0.74. Actual from Q2 release: $0.81. The difference is $0.81 - $0.74 = $0.07 and $0.81 - $0.72 = $0.09, yielding a $0.07–$0.09 exceedance.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Net sales (constant currency) came in at the top of the 4–5% guidance bracket, with total revenue up 5.1% in constant currency",
+     "numeric": true,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/earnings_release/Earnings+Release+%28FY27+Q2%29.pdf",
+     "reason": "The Q2 earnings release reports revenue growth of 5.1% in constant currency. The guidance bracket from Q1 is 4–5%. The 5.1% figure is slightly above the top of the bracket (5.0%), but the source supports the 5.1% constant currency growth figure.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 9,
+   "numeric_cited": 9,
+   "cited": 10,
+   "supported": 9,
+   "not_retrieved": 0
+  }
+ }
+}

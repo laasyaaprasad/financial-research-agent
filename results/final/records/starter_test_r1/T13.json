@@ -1,0 +1,156 @@
+{
+ "id": "T13",
+ "category": "Qualitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "What did Eli Lilly say drove its second-quarter 2026 revenue growth?",
+ "grading": "Key points (all four): (1) revenue rose 48% to about USD 23.0B (22,974M vs 15,558M); (2) driven by a 60% volume increase, partly offset by a 13% decrease in realized prices; (3) led by Mounjaro and Zepbound volume (Mounjaro about USD 9.9B, Zepbound about USD 4.9B); (4) U.S. +33% (volume +37%, price -3%) and ex-U.S. +80% (volume +113%, price -36%, Mounjaro's addition to China's NRDL). Partial credit for 3 of 4.",
+ "answer": "Lilly's Q2 2026 worldwide revenue increased 48% to USD 22,974 million (from USD 15,558 million), driven by a 60% increase in volume, partially offset by a 13% decrease in realized prices; growth was led by Mounjaro (USD 9,943 million, +91%) and Zepbound (USD 4,928 million, +46%). U.S. revenue rose 33% to USD 14.4 billion (volume +37%, prices -3%); revenue outside the U.S. rose 80% to USD 8.6 billion (volume +113%, prices -36%, driven primarily by Mounjaro's addition to China's NRDL). [T13-E1]",
+ "output": {
+  "answer": "  Eli Lilly attributed its second-quarter 2026 revenue growth primarily to **soaring demand for its cardiometabolic medicines Mounjaro and Zepbound**, which generated **$14.9 billion in combined sales** and accounted for **$6.3 billion of incremental growth** versus the prior year.\n\nKey drivers included:\n- **U.S. volume growth** for Zepbound and Mounjaro (U.S. revenue up 33%)\n- **International expansion**, with Europe revenue up 55% and Japan up 30% (constant currency)\n- Strong uptake of its **new product portfolio** (including Foundayo, Kisunla, and others), which contributed $15.7 billion total\n- A 78% year-over-year increase in U.S. obesity prescriptions and expanded Medicare coverage\n\nOverall revenue surged **48%** to $22.97 billion.\n\nSources:\n- https://finance.yahoo.com/healthcare/articles/eli-lilly-company-q2-earnings-160404200.html\n- https://finance.yahoo.com/healthcare/articles/eli-lilly-co-lly-q2-210754282.html\n- https://finance.yahoo.com/markets/stocks/articles/lilly-lly-down-2-7-153031973.html",
+  "tokens": {
+   "input": 6002,
+   "output": 814
+  },
+  "tavily_credits": 2,
+  "latency_s": 7.35,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/2f44b1168ebdacef0c3b260207b4d815",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Eli Lilly Q2 2026 revenue growth drivers earnings",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/healthcare/articles/eli-lilly-co-lly-q2-210754282.html",
+    "https://finance.yahoo.com/healthcare/articles/eli-lilly-company-q2-earnings-160404200.html",
+    "https://finance.yahoo.com/markets/stocks/articles/lilly-lly-down-2-7-153031973.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 10,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.25,
+   "points": [
+    {
+     "point": "revenue rose 48% to about USD 23.0B (22,974M vs 15,558M)",
+     "met": true,
+     "note": "Agent states overall revenue surged 48% to $22.97 billion, matching the reference."
+    },
+    {
+     "point": "driven by a 60% volume increase, partly offset by a 13% decrease in realized prices",
+     "met": false,
+     "note": "Agent does not mention volume increase of 60% or realized price decrease of 13%."
+    },
+    {
+     "point": "led by Mounjaro and Zepbound volume (Mounjaro about USD 9.9B, Zepbound about USD 4.9B)",
+     "met": false,
+     "note": "Agent mentions combined sales of $14.9B for Mounjaro and Zepbound but does not provide individual revenue figures of ~$9.9B and ~$4.9B."
+    },
+    {
+     "point": "U.S. +33% (volume +37%, price -3%) and ex-U.S. +80% (volume +113%, price -36%, Mounjaro's addition to China's NRDL)",
+     "met": false,
+     "note": "Agent mentions U.S. revenue up 33% but omits volume/price breakdown and ex-U.S. growth details including China NRDL effect."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "Only 1 of 4 key points is met; the answer omits volume/price drivers, individual product revenues, and geographic split with China NRDL impact."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Overall revenue surged 48% to $22.97 billion in Q2 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lilly-lly-down-2-7-153031973.html",
+     "reason": "Retrieved source states: 'Revenues of $22.97 billion rose 48% year over year, driven by robust volume growth of Mounjaro and Zepbound.' This matches both the percentage and the dollar amount exactly.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mounjaro and Zepbound generated $14.9 billion in combined sales in Q2 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/healthcare/articles/eli-lilly-company-q2-earnings-160404200.html",
+     "reason": "Retrieved source states: 'Lilly reported 48% year-over-year revenue growth in Q2 2026, with MOUNJARO and ZEPBOUND generating $14.9 billion in combined sales.' The figure is directly stated.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mounjaro and Zepbound accounted for $6.3 billion of incremental growth versus the prior year",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/healthcare/articles/eli-lilly-co-lly-q2-210754282.html",
+     "reason": "Retrieved source states: 'Mounjaro and Zepbound Combined Revenue: $14.9 billion, contributing $6.3 billion of growth compared to Q2 2025.' This directly supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "U.S. revenue increased 33% driven by volume growth of Zepbound and Mounjaro",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/healthcare/articles/eli-lilly-co-lly-q2-210754282.html",
+     "reason": "Retrieved source states: 'US Revenue: Increased 33%, primarily driven by volume growth of Zepbound and Mounjaro.' Matches the percentage and the driver.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Europe revenue grew 55% and Japan revenue grew 30% in constant currency",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/healthcare/articles/eli-lilly-co-lly-q2-210754282.html",
+     "reason": "Retrieved source states: 'Europe Revenue: Grew 55% in constant currency, driven by Mounjaro volume growth and a $250 million charge and milestone payment. Japan Revenue: Grew 30% in constant currency, driven by Mounjaro and Kisunla.' Both percentages and constant-currency basis are explicitly mentioned.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "New product portfolio (including Foundayo, Kisunla, and others) contributed $15.7 billion total in Q2 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lilly-lly-down-2-7-153031973.html",
+     "reason": "Retrieved source states: 'Lilly's key new products (Ebglyss, Foundayo, Inluriyo, Jaypirca, Kisunla, Mounjaro, Omvoh, and Zepbound) contributed $15.7 billion to revenues in the second quarter.' The list includes Foundayo and Kisunla, and the total matches.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "U.S. obesity prescriptions increased 78% year over year",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/healthcare/articles/eli-lilly-company-q2-earnings-160404200.html",
+     "reason": "Retrieved source states: 'Demand for obesity medicines remained strong, with U.S. obesity prescriptions up 78% year over year.' Directly supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Medicare coverage expanded for obesity medicines (Medicare GLP-1 Bridge Program expanded coverage by 35%)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/healthcare/articles/eli-lilly-company-q2-earnings-160404200.html",
+     "reason": "Retrieved source states: 'Lilly said the Medicare GLP-1 Bridge Program expanded coverage for its obesity medicines by 35%.' The claim mentions expanded Medicare coverage; the source provides the specific 35% figure, which is consistent.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue growth was primarily attributed to soaring demand for cardiometabolic medicines Mounjaro and Zepbound",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/healthcare/articles/eli-lilly-company-q2-earnings-160404200.html",
+     "reason": "Retrieved source states: 'Eli Lilly and Company (NYSE:LLY) reported 48% revenue growth in the second quarter of 2026, driven primarily by continued demand for its cardiometabolic medicines MOUNJARO and ZEPBOUND.' This directly supports the attribution.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 8,
+   "cited": 9,
+   "supported": 9,
+   "not_retrieved": 0
+  }
+ }
+}

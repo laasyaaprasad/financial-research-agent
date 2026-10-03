@@ -1,0 +1,109 @@
+{
+ "id": "G04",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Oracle's total remaining performance obligations at the end of Q1 FY2027, and what percentage does Oracle expect to recognize as revenue over the next 12 months?",
+ "grading": "RPO ±0.5% in USD billions; next-12-month % exact as disclosed; period must be 2026-08-31",
+ "answer": "Oracle had USD 664 billion of RPO at August 31, 2026 and expected to recognize approximately 13% over the next twelve months. [G04-E1]",
+ "output": {
+  "answer": " Based on Oracle's Q1 FY2027 results:\n\n**Total Remaining Performance Obligations (RPO):** **$664 billion** as of Q1 FY2027, an increase of $26 billion sequentially from Q4 FY2026 and up $209 billion year-over-year.\n\n**Revenue Recognition Expectation:** Oracle expects approximately **13%** of the $664 billion RPO to be recognized as revenue over the next 12 months. Additionally, about **37%** is expected to convert between months 13 and 36, meaning roughly half the total backlog is expected to turn into recognized sales over the next 36 months.\n\n**Sources:**\n- Oracle Q1 FY2027 earnings press release confirming $664 billion RPO: [Oracle Investor Relations](https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx)\n- Q1 FY2027 10-Q analysis indicating ~13% conversion over next 12 months: [Reddit r/OracleStock](https://www.reddit.com/r/OracleStock/comments/1we6w6v/oracle_corporation_q1_fy2027_form_10q_analysis)\n- Management commentary on ~50% conversion over next 36 months: [Alpha Spread Earnings Call Transcript](https://www.alphaspread.com/security/nyse/orcl/investor-relations/earnings-call/q1-2027)",
+  "tokens": {
+   "input": 21149,
+   "output": 2472
+  },
+  "tavily_credits": 4,
+  "latency_s": 21.19,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle total remaining performance obligations RPO Q1 FY2027 revenue recognition next 12 months",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle Q1 FY2027 RPO remaining performance obligations 12 months revenue recognition percentage next twelve months",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx",
+    "https://www.alphaspread.com/security/nyse/orcl/investor-relations/earnings-call/q1-2027",
+    "https://www.reddit.com/r/OracleStock/comments/1we6w6v/oracle_corporation_q1_fy2027_form_10q_analysis"
+   ],
+   "cited_primary": 1,
+   "retrieved": 15,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "RPO value within ±0.5% of 664 billion USD and in USD billions",
+     "met": true,
+     "note": "Agent states $664 billion, exactly matching the reference value of 664 billion USD."
+    },
+    {
+     "point": "Next-12-month percentage exact as disclosed (approximately 13%)",
+     "met": true,
+     "note": "Agent states approximately 13%, matching the reference's 'approximately 13%'."
+    },
+    {
+     "point": "Period must be 2026-08-31 (Q1 FY2027 quarter end)",
+     "met": true,
+     "note": "Agent explicitly references Q1 FY2027 results and the press release for that quarter, which ended August 31, 2026."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer matches the verified reference exactly: RPO of $664 billion at August 31, 2026 (Q1 FY2027), with approximately 13% expected to be recognized over the next 12 months. All grading criteria are satisfied."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Total Remaining Performance Obligations (RPO): $664 billion as of Q1 FY2027, an increase of $26 billion sequentially from Q4 FY2026 and up $209 billion year-over-year.",
+     "numeric": true,
+     "cited_url": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx",
+     "reason": "The press release confirms RPO of $664 billion and a year-over-year increase of $209 billion. However, the sequential increase of $26 billion from Q4 FY2026 is not mentioned in this press release; it is supported by other sources (e.g., earnings call transcript). The retrieved text for the cited URL supports the total RPO and YoY increase but not the sequential increase.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Oracle expects approximately 13% of the $664 billion RPO to be recognized as revenue over the next 12 months.",
+     "numeric": true,
+     "cited_url": "https://www.reddit.com/r/OracleStock/comments/1we6w6v/oracle_corporation_q1_fy2027_form_10q_analysis",
+     "reason": "The Reddit post analyzing the 10-Q states 'Remaining performance obligations of $664bn convert at approximately 13 per cent over the next twelve months'. This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "About 37% is expected to convert between months 13 and 36, meaning roughly half the total backlog is expected to turn into recognized sales over the next 36 months.",
+     "numeric": true,
+     "cited_url": "https://www.alphaspread.com/security/nyse/orcl/investor-relations/earnings-call/q1-2027",
+     "reason": "The Alpha Spread earnings call transcript states 'We now expect around half of our RPO to convert to sales over the next 36 months.' This supports the 'roughly half' portion. The 37% figure for months 13-36 is not explicitly in this transcript but is consistent with the 13% + 37% = 50% breakdown from the 10-Q analysis (Reddit). The cited source supports the overall 36-month conversion expectation.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 3,
+   "supported": 2,
+   "not_retrieved": 0
+  }
+ }
+}

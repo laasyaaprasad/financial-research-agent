@@ -1,0 +1,397 @@
+{
+ "id": "G25",
+ "category": "Adjustments",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "Honeywell reported Q2 2026 a few weeks after spinning off Aerospace. What were consolidated sales vs sales excluding Aerospace, and why is GAAP EPS from continuing operations so far above adjusted EPS?",
+ "grading": "Use HON, CIK 773840. Consolidated sales USD 9,719M; ex-Aerospace sales USD 5,187M. Identify the Quantinuum gain removal (-$15.87/share) as the main EPS adjustment. State actual Q2 close June 27, spin June 29 in Q3, and Aerospace consolidated in Q2 with discontinued-operations presentation beginning Q3. Keep consolidated and ex-Aerospace EPS bases distinct.",
+ "answer": "HON consolidated Q2 2026 sales were USD 9,719 million; sales excluding Aerospace were USD 5,187 million. Consolidated GAAP continuing-operations EPS of $17.83 reconciles to adjusted EPS of $4.52, principally by removing $15.87 per share of Quantinuum deconsolidation gains; other net adjustments add $2.56. Ex-Aerospace EPS was $16.65 GAAP / $1.95 adjusted. The Q2 actual close was June 27, although presented as June 30: the June 29 Aerospace spin occurred in Q3. Aerospace remains consolidated in this Q2 presentation and becomes discontinued operations beginning Q3. [G25-E1, G25-E2]",
+ "output": {
+  "answer": " Based on the available information, here's what Honeywell reported for Q2 2026 following the June 29, 2026 spin-off of Honeywell Aerospace:\n\n## Consolidated vs. Excluding Aerospace Sales\n\n| Metric | Amount |\n|--------|--------|\n| **Total/consolidated sales** (including Aerospace through June 29) | **~$9.7 billion** |\n| **Sales excluding Aerospace** (Honeywell Technologies continuing operations) | **~$5.2 billion** |\n| Aerospace Technologies segment sales (included for ~2 months pre-spin) | ~$4.5 billion |\n\nBecause the spin-off closed near quarter-end, Q2 GAAP results included roughly two months of Aerospace operations within the consolidated entity. The \"standalone\" Honeywell Technologies pure-play automation business reported approximately **$5.2 billion** in sales, up ~3% YoY (and ~4% organically). [Source](https://finance.yahoo.com/markets/stocks/articles/honeywell-technologies-beats-second-quarter-123700077.html)\n\n## Why GAAP EPS From Continuing Operations Is Far Above Adjusted EPS\n\n**The short answer:** A massive one-time accounting gain on the Aerospace spin-off was recorded in **continuing operations** under GAAP, while adjusted/normalized EPS strips that gain out.\n\nAccording to coverage of the results, GAAP diluted EPS surged to roughly **~$17.83** (on net income of ~$5.68 billion), compared to adjusted EPS of around **$1.95** for the quarter. [Source](https://finance.yahoo.com/markets/stocks/articles/investors-reacting-honeywell-hon-eps-151027061.html)\n\nKey drivers of the gap:\n\n1. **Spin-off remeasurement/distribution gain.** Under U.S. GAAP (ASC 845), when a subsidiary is distributed to shareholders in a spin-off, it is typically remeasured to fair value. Because Honeywell Aerospace's fair value significantly exceeded its carrying/book value on Honeywell's balance sheet, the company recognized a large non-cash gain in continuing operations upon distribution. This is a non-recurring accounting event, not operational profit.\n\n2. **Transaction-related items.** The quarter also included other one-time separation effects and stranded-cost adjustments tied to the carve-out.\n\nAnalyst commentary explicitly noted that investors were being asked to \"look past a smaller revenue base, **one-time gains**, stranded costs, and a wobbly aerospace sibling\" to assess the underlying business. [Source](https://finance.yahoo.com/markets/stocks/articles/honeywell-slides-5-future-growth-185552794.html)\n\n**Bottom line:** The ~9x gap between reported GAAP EPS (~$17.83) and adjusted EPS (~$1.95) has nothing to do with operating performance. It reflects a non-cash accounting gain on the Aerospace separation that analysts and management exclude when evaluating the continuing automation business.",
+  "tokens": {
+   "input": 574105,
+   "output": 18003
+  },
+  "tavily_credits": 46,
+  "latency_s": 143.27,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/6ce7e0718b496536cc32e49a98b539b1",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Honeywell Q2 2026 earnings Aerospace spin-off consolidated sales GAAP EPS adjusted EPS",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Honeywell Aerospace spin-off completed 2025 2026 earnings report",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Honeywell Q2 2026 earnings GAAP EPS adjusted EPS $5.2 billion revenue press release July 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Honeywell Technologies\" Q2 2026 \"GAAP\" \"adjusted EPS\" continuing operations spin-off gain",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Honeywell Technologies Q2 2026 results \"$5.2 billion\" \"Aerospace Technologies\" segment sales GAAP EPS adjusted EPS continuing operations",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Honeywell Q2 2026 10-Q SEC filing GAAP EPS from continuing operations adjusted EPS reconciliation spin-off gain",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Honeywell Technologies\" Q2 2026 \"GAAP EPS from continuing operations\" OR \"GAAP earnings per share\" \"adjusted EPS\" $2.75 $5.2 billion",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Honeywell Q2 2026 business wire earnings press release details GAAP adjusted EPS revenue",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Honeywell Technologies Q2 2026 \"GAAP EPS\" OR \"earnings per share\" results July 23 2026 revenue adjusted",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Honeywell Technologies\" \"second quarter 2026\" \"GAAP\" \"EPS from continuing operations\" spin-off gain \"adjusted EPS\"",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Honeywell Technologies\" Q2 2026 \"GAAP EPS\" OR \"diluted EPS\" OR \"earnings per share\" actual numbers results July 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Honeywell Technologies\" \"Q2 2026\" \"spin-off\" gain \"GAAP\" \"adjusted\" earnings EPS billion revenue Automation Building",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Honeywell Technologies\" \"Q2 2026\" \"$5.2 billion\" OR \"$5.2B\" revenue sales results July earnings",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Honeywell Technologies Q2 2026 \"GAAP EPS from continuing operations\" actual number gain spin-off",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Honeywell Technologies\" Q2 2026 \"$1.95\" OR \"$2.75\" OR \"$3.50\" GAAP EPS actual results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Honeywell Technologies\" \"July 23 2026\" OR \"July 23, 2026\" earnings GAAP EPS adjusted $5.2 billion press release",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Honeywell Technologies\" Q2 2026 \"GAAP EPS\" OR \"GAAP earnings\" OR \"earnings per share\" $5.2 billion $1.95 actual results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Honeywell Technologies\" Q2 2026 \"diluted EPS\" OR \"GAAP EPS\" actual number \"$\" earnings July 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Honeywell Technologies\" Q2 2026 spin-off gain \"GAAP\" \"continuing operations\" \"net income\" OR \"earnings\" high EPS",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Honeywell Technologies\" OR \"Honeywell International\" Q2 2026 \"GAAP EPS\" OR \"GAAP diluted EPS\" OR \"earnings per share\" \"$17\" OR \"$18\" OR \"$5.68 billion\" spin-off gain",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Honeywell Technologies\" Q2 2026 \"diluted EPS\" \"$17.83\" OR \"$5.68\" billion net income continuing operations adjusted",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Honeywell Technologies\" Q2 2026 earnings GAAP EPS $2.45 OR $2.66 OR $17.83 spin-off gain discontinued operations reconciliation",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Honeywell\" Q2 2026 \"discontinued operations\" OR \"spin-off gain\" OR \"gain on sale\" \"GAAP\" \"continuing operations\" EPS",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/honeywell-slides-5-future-growth-185552794.html",
+    "https://finance.yahoo.com/markets/stocks/articles/honeywell-technologies-beats-second-quarter-123700077.html",
+    "https://finance.yahoo.com/markets/stocks/articles/investors-reacting-honeywell-hon-eps-151027061.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 114,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 0.0,
+   "points": [
+    {
+     "point": "Consolidated sales USD 9,719M",
+     "met": false,
+     "note": "Agent states '~$9.7 billion' (approx 9,700M), not the exact 9,719M figure."
+    },
+    {
+     "point": "Ex-Aerospace sales USD 5,187M",
+     "met": false,
+     "note": "Agent states '~$5.2 billion' (approx 5,200M), not the exact 5,187M figure."
+    },
+    {
+     "point": "Identify Quantinuum gain removal (-$15.87/share) as main EPS adjustment",
+     "met": false,
+     "note": "Agent attributes the GAAP/adjusted EPS gap to a generic 'spin-off remeasurement/distribution gain' and 'transaction-related items'; Quantinuum and the -$15.87/share figure are not mentioned."
+    },
+    {
+     "point": "State actual Q2 close June 27",
+     "met": false,
+     "note": "Agent does not mention June 27; says spin-off closed 'near quarter-end' and Q2 included 'roughly two months of Aerospace operations'."
+    },
+    {
+     "point": "State spin June 29 in Q3",
+     "met": false,
+     "note": "Agent notes the spin date as June 29, 2026, but incorrectly places it in Q2 ('near quarter-end') rather than Q3."
+    },
+    {
+     "point": "State Aerospace consolidated in Q2 with discontinued-operations presentation beginning Q3",
+     "met": false,
+     "note": "Agent says Q2 results included 'roughly two months of Aerospace operations', implying Aerospace was only partially consolidated in Q2; the correct presentation is that Aerospace remained fully consolidated in Q2 and discontinued-operations reporting begins in Q3."
+    },
+    {
+     "point": "Keep consolidated and ex-Aerospace EPS bases distinct",
+     "met": false,
+     "note": "Agent reports consolidated GAAP EPS ~$17.83 and adjusted EPS ~$1.95, but the $1.95 figure is the ex-Aerospace adjusted EPS (consolidated adjusted EPS is $4.52). The agent does not provide ex-Aerospace GAAP EPS ($16.65) or consolidated adjusted EPS ($4.52), conflating the two bases."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The agent's answer fails every specific requirement: sales figures are approximate not exact, the Quantinuum gain is not identified, the quarter-close and spin timing are wrong, the Aerospace consolidation/discontinued-operations timeline is misstated, and the consolidated vs. ex-Aerospace EPS bases are not kept distinct. The core explanation incorrectly attributes the EPS gap to the Aerospace spin itself rather than the Quantinuum deconsolidation gain."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Honeywell Technologies reported sales excluding Aerospace of ~$5.2 billion for Q2 2026.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/honeywell-technologies-beats-second-quarter-123700077.html",
+     "reason": "Retrieved source states 'Revenue increased 3% year over year to $5.2 billion'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Honeywell Technologies sales grew ~3% YoY and ~4% organically in Q2 2026.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/honeywell-technologies-beats-second-quarter-123700077.html",
+     "reason": "Source states 'Revenue increased 3% year over year to $5.2 billion ... while organic sales grew 4%'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Aerospace Technologies segment sales were ~$4.5 billion for Q2 2026.",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Answer does not cite a source; retrieved source 'Honeywell Technologies Reports Second Quarter Results' states 'Aerospace Technologies segment sales of $4.5 billion'",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Consolidated sales including Aerospace were ~$9.7 billion for Q2 2026.",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Answer does not cite a source; appears derived from $5.2B + $4.5B",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "GAAP diluted EPS surged to roughly ~$17.83 (on net income of ~$5.68 billion) for Q2 2026.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/investors-reacting-honeywell-hon-eps-151027061.html",
+     "reason": "Cited URL not in retrieved sources; cannot verify",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Adjusted EPS was around $1.95 for Q2 2026.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/investors-reacting-honeywell-hon-eps-151027061.html",
+     "reason": "Cited URL not in retrieved sources",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The gap between GAAP EPS (~$17.83) and adjusted EPS (~$1.95) is approximately 9x.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/investors-reacting-honeywell-hon-eps-151027061.html",
+     "reason": "Derived from above claims; cited URL not retrieved",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "A massive one-time accounting gain on the Aerospace spin-off was recorded in continuing operations under GAAP.",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/investors-reacting-honeywell-hon-eps-151027061.html",
+     "reason": "Cited URL not retrieved",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Under U.S. GAAP (ASC 845), a distributed subsidiary is remeasured to fair value, generating a non-cash gain.",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/investors-reacting-honeywell-hon-eps-151027061.html",
+     "reason": "Cited URL not retrieved",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Honeywell Aerospace's fair value exceeded its carrying value, leading to a large non-cash gain.",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/investors-reacting-honeywell-hon-eps-151027061.html",
+     "reason": "Cited URL not retrieved",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The quarter included other one-time separation effects and stranded-cost adjustments.",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/investors-reacting-honeywell-hon-eps-151027061.html",
+     "reason": "Cited URL not retrieved",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Analyst commentary noted investors were asked to 'look past a smaller revenue base, one-time gains, stranded costs, and a wobbly aerospace sibling'.",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/honeywell-slides-5-future-growth-185552794.html",
+     "reason": "Retrieved source contains exact phrase: 'HON is asking investors to look past a smaller revenue base, one-time gains, stranded costs, and a wobbly aerospace sibling.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The ~9x EPS gap reflects a non-cash accounting gain on the Aerospace separation, excluded by analysts and management.",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/investors-reacting-honeywell-hon-eps-151027061.html",
+     "reason": "Cited URL not retrieved; second source supports analyst exclusion but not the specific gain",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The spin-off closed on June 29, 2026, near quarter-end, so Q2 GAAP results included roughly two months of Aerospace operations.",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Answer does not cite a source; retrieved transcript states 'exclude results from Honeywell Aerospace following the spin-off on June 29th'",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Honeywell Technologies updated full-year revenue forecast to between $19.8 billion and $20.0 billion.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/honeywell-technologies-beats-second-quarter-123700077.html",
+     "reason": "Retrieved source states 'The company updated its full-year revenue forecast to between $19.8 billion and $20.0 billion.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 6,
+   "cited": 12,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,150 @@
+{
+ "id": "G21",
+ "category": "Complex retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "How much did Alphabet spend on share repurchases in Q2 2026, split between Class A (GOOGL) and Class C (GOOG), with share counts for each?",
+ "grading": "Both classes must show USD 0 million and 0 shares for Q2 2026. Zero is an exact expected value, so percentage tolerance is inapplicable; fail for any positive repurchase amount.",
+ "answer": "Alphabet repurchased no Class A or Class C shares in Q2 2026. Class A (GOOGL): USD 0 million and 0 shares. Class C (GOOG): USD 0 million and 0 shares. Total: USD 0 million. An unused authorization is not repurchase spending. [G21-E1]",
+ "output": {
+  "answer": " I need to flag an important issue with your question: **Q2 2026 is in the future** (April–June 2026). As of now, the latest available actual data is for Q2 2024. \n\nHere is what Alphabet actually spent on share repurchases in **Q2 2024**, broken down by class, from their official SEC filing:\n\n### Alphabet Q2 2024 Share Repurchases\n| Class | Shares Repurchased | Amount Spent |\n|-------|-------------------|--------------|\n| **Class A (GOOGL)** | 19 million | **$3.265 billion** |\n| **Class C (GOOG)** | 73 million | **$12.333 billion** |\n| **Total** | **92 million** | **$15.598 billion** |\n\n**Source:** Alphabet Inc. Form 10-Q for Q2 2024  \n[https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf](https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf)\n\nFor context, Alphabet also had **$74.9 billion remaining authorized** for future Class A and Class C repurchases as of June 30, 2024. The company repurchases both classes opportunistically through open market purchases and Rule 10b5-1 plans, but does not typically provide specific forward guidance on the exact split for future quarters.\n\nCould you clarify if you meant **Q2 2024**, or are you looking for analyst *projections* for a future period?",
+  "tokens": {
+   "input": 10069,
+   "output": 1548
+  },
+  "tavily_credits": 2,
+  "latency_s": 10.54,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Alphabet GOOGL GOOG share repurchases Q2 2024 Class A Class C share count",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf"
+   ],
+   "cited_primary": 1,
+   "retrieved": 10,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 0.0,
+   "points": [
+    {
+     "point": "Class A (GOOGL) must show USD 0 million repurchase amount for Q2 2026",
+     "met": false,
+     "note": "Agent provided $3.265 billion for Q2 2024, not Q2 2026; no data for Q2 2026 given."
+    },
+    {
+     "point": "Class A (GOOGL) must show 0 shares repurchased for Q2 2026",
+     "met": false,
+     "note": "Agent provided 19 million shares for Q2 2024, not Q2 2026."
+    },
+    {
+     "point": "Class C (GOOG) must show USD 0 million repurchase amount for Q2 2026",
+     "met": false,
+     "note": "Agent provided $12.333 billion for Q2 2024, not Q2 2026."
+    },
+    {
+     "point": "Class C (GOOG) must show 0 shares repurchased for Q2 2026",
+     "met": false,
+     "note": "Agent provided 73 million shares for Q2 2024, not Q2 2026."
+    },
+    {
+     "point": "Answer must be for Q2 2026, not a different quarter",
+     "met": false,
+     "note": "Agent explicitly states Q2 2026 is in the future and provides Q2 2024 data instead."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The agent did not answer the question as asked. The question requires Q2 2026 data (which is zero for both classes), but the agent provided Q2 2024 data with positive repurchase amounts and share counts. All grading requirements are unmet."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q2 2026 is in the future (April–June 2026)",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Calendar fact; Q2 2026 refers to April–June 2026, which is in the future relative to the answer's context (2024).",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "As of the answer's date, the latest available actual data is for Q2 2024",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Inferred from the fact that the cited 10-Q covers Q2 2024; no later quarter filing is referenced.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Alphabet Q2 2024 Class A (GOOGL) share repurchases: 19 million shares, $3.265 billion",
+     "numeric": true,
+     "cited_url": "https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf",
+     "reason": "The retrieved PDF shows a table for 'Three Months Ended June 30, 2024' with Class A share repurchases: 19 shares (millions) and $3,265 (millions).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet Q2 2024 Class C (GOOG) share repurchases: 73 million shares, $12.333 billion",
+     "numeric": true,
+     "cited_url": "https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf",
+     "reason": "The same table shows Class C share repurchases: 73 shares (millions) and $12,333 (millions).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet Q2 2024 total share repurchases: 92 million shares, $15.598 billion",
+     "numeric": true,
+     "cited_url": "https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf",
+     "reason": "The table totals: 92 shares (millions) and $15,598 (millions). The sum of Class A and Class C shares (19+73=92) and amounts ($3,265+$12,333=$15,598) matches.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet had $74.9 billion remaining authorized for future Class A and Class C repurchases as of June 30, 2024",
+     "numeric": true,
+     "cited_url": "https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf",
+     "reason": "The PDF text states: 'As of June 30, 2024, $74.9 billion remained available for Class A and Class C share repurchases.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The company repurchases both classes opportunistically through open market purchases and Rule 10b5-1 plans",
+     "numeric": false,
+     "cited_url": "https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf",
+     "reason": "The PDF states: 'Repurchases are executed from time to time, subject to general business and market conditions and other investment opportunities, through open market purchases or privately negotiated transactions, including through Rule 10b5-1 plans.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The company does not typically provide specific forward guidance on the exact split for future quarters",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "This claim is not directly supported by the cited PDF; it is an inference or general knowledge about Alphabet's disclosure practices.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 4,
+   "cited": 5,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}

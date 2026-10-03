@@ -1,0 +1,260 @@
+{
+ "id": "G13",
+ "category": "Qualitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "What are the latest developments in the past 30 days on U.S. export controls affecting NVIDIA's data center GPU sales to China, and what does NVIDIA's own Q3 FY2027 outlook assume about China?",
+ "grading": "Reference-free. Key points: (1) every development dated and within window; (2) quotes/paraphrases NVIDIA's own stated China assumption from the Q2 FY27 outlook; (3) clearly separates company statements from media/analyst speculation; (4) no uncited causal claims about revenue impact",
+ "answer": "Snapshot: September 2–October 1, 2026. September 9: C4ADS published evidence of restricted NVIDIA chips reaching China through institutional purchases and Southeast Asian trade networks; this is an enforcement-gap report, not a new U.S. rule. [G13-E1] September 28: Ars, citing The Information, reported China considering RTX Pro 5500 purchases by Alibaba and ByteDance; approval was uncertain and this concerns Chinese import policy, not a confirmed U.S. export-rule change. [G13-E2] The reviewed sources do not establish a newly enacted U.S. control in this window. Separately, NVIDIA’s August 26 outlook assumes no Data Center compute revenue from China in Q3 FY2027, within its USD 108 billion ±2% total-revenue guide. That company statement is older context and remains distinct from September reporting. [G13-E3]",
+ "output": {
+  "answer": " Based on the latest available information, here is the current state of U.S. export controls on NVIDIA's data center GPU sales to China and what NVIDIA's outlook assumes.\n\n## Latest Export Control Developments\n\n**Effectively Zero China Data Center Revenue:** NVIDIA's CEO Jensen Huang has stated that due to successive rounds of U.S. export controls, the company's share of China's advanced AI chip market has dropped **from approximately 95% to effectively zero**. Before the restrictions tightened, China accounted for roughly 20–25% of NVIDIA's data center revenue.\n\n**H20 License Requirement (April 2025):** The most impactful recent restriction came in April 2025, when the U.S. Commerce Department required NVIDIA to obtain export licenses for its H20 chips—a product specifically designed to comply with earlier China export controls. This forced NVIDIA to take a **$4.5 billion charge** for inventory and related commitments.\n\n**Limited License Grants but Minimal Sales:** While the U.S. government later granted some licenses for limited H20/H200 sales to specific Chinese customers (reportedly around August 2025), actual shipments have been minimal. Licensed H20 sales totaled only **roughly $50–60 million** in 2025—effectively zero against total revenue. As of mid-2026, NVIDIA reported it was \"effectively foreclosed from competing in China's data center computing/compute market.\"\n\n**China's Counter-Restrictions:** Beijing has actively discouraged purchases of NVIDIA chips even where U.S. licenses allow sales. China's government has encouraged customers to purchase from domestic competitors (such as Huawei) and has restricted orders through its own regulatory actions.\n\n**Gray Market and Enforcement Issues:** Investigations have revealed ongoing efforts to circumvent controls, including routing restricted GPUs through Southeast Asian countries and using front companies. Taiwanese authorities investigated suspected smuggling of advanced NVIDIA chips to China using forged documents as recently as May 2026.\n\n---\n\n## NVIDIA's Q3 FY2027 Outlook on China\n\n**Explicit $0 Assumption:** NVIDIA's official Q3 FY2027 guidance, issued with its most recent earnings report, states directly:\n\n> **\"NVIDIA is not assuming any Data Center compute revenue from China in its outlook.\"**\n\n**Revenue Guidance:** The company guided Q3 FY2027 revenue to approximately **$108 billion** (±2%), with this forecast built entirely on demand from global markets excluding China Data Center compute.\n\n**What This Means for Investors:** NVIDIA has made it clear that any China recovery should be treated as **optional upside**, not a base-case assumption. The company's forward growth story depends entirely on hyperscaler demand, Blackwell/Vera Rubin ramp-ups, and AI infrastructure spending outside of China. Even if U.S.-China talks result in export control easing, NVIDIA has indicated that under current rules, it **cannot deliver a competitive data center product for broad distribution in China** with both governments' approval.\n\n**Sources:**\n- NVIDIA Official Earnings Release (Q2 FY2027): https://nvidianews.nvidia.com/_gallery/download_pdf/6a8f4ad73d6332b41f76ab70\n- Motley Fool analysis of China assumptions: https://www.fool.com/investing/2026/09/21/nvidia-s-forecast-assumes-no-data-center-chip-sales-to-china-the-sept-24-u-s-china-summit-could-change-that\n- Congressional Research Service export control summary: https://www.congress.gov/crs-product/R48642",
+  "tokens": {
+   "input": 91959,
+   "output": 4129
+  },
+  "tavily_credits": 16,
+  "latency_s": 41.12,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA data center GPU China export controls U.S. past 30 days 2025",
+     "time_range": "month",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q3 FY2026 earnings outlook China revenue assumptions export controls",
+     "search_depth": "advanced",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA H20 H200 China export controls license U.S. government latest news 2025",
+     "search_depth": "advanced",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA earnings guidance China data center revenue assumption fiscal 2026 2027",
+     "search_depth": "advanced",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"H20\" \"NVIDIA\" China export controls October November December 2025 latest",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA latest earnings guidance Q3 FY2027 China revenue outlook 2025",
+     "search_depth": "advanced",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA export controls China October November 2025 latest news H20 H200",
+     "search_depth": "advanced",
+     "end_date": "2025-10-17",
+     "start_date": "2025-09-01"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA earnings Q3 FY2025 October 2025 guidance China revenue outlook",
+     "search_depth": "advanced",
+     "time_range": "month"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://nvidianews.nvidia.com/_gallery/download_pdf/6a8f4ad73d6332b41f76ab70",
+    "https://www.congress.gov/crs-product/R48642",
+    "https://www.fool.com/investing/2026/09/21/nvidia-s-forecast-assumes-no-data-center-chip-sales-to-china-the-sept-24-u-s-china-summit-could-change-that"
+   ],
+   "cited_primary": 1,
+   "retrieved": 64,
+   "retrieved_primary": 2
+  },
+  "correctness": {
+   "score": 0.0,
+   "points": [
+    {
+     "point": "Every development dated and within the 30-day window (Sept 2–Oct 1, 2026)",
+     "met": false,
+     "note": "Agent cites developments from April 2025, August 2025, May 2026, and mid-2026—all outside the 30-day window. The snapshot explicitly states no newly enacted U.S. control occurred in this window; the agent presents stale 2025 headlines as new."
+    },
+    {
+     "point": "Quotes/paraphrases NVIDIA's own stated China assumption from the Q2 FY27 outlook",
+     "met": false,
+     "note": "Agent attributes the $0 China assumption to 'NVIDIA's official Q3 FY2027 guidance' and cites a Motley Fool analysis, not NVIDIA's own Q2 FY27 earnings release. The snapshot shows the assumption comes from NVIDIA's August 26 (Q2 FY27) outlook."
+    },
+    {
+     "point": "Clearly separates company statements from media/analyst speculation",
+     "met": false,
+     "note": "Agent mixes company statements (e.g., 'NVIDIA reported') with uncited media claims (e.g., 'H20 License Requirement (April 2025)', 'Taiwanese authorities investigated...') without clear attribution. The snapshot distinguishes C4ADS enforcement-gap reporting from new U.S. rules; the agent does not."
+    },
+    {
+     "point": "No uncited causal claims about revenue impact",
+     "met": false,
+     "note": "Agent states 'forced NVIDIA to take a $4.5 billion charge' and 'Licensed H20 sales totaled only roughly $50–60 million in 2025' without any citation in the provided sources. These are uncited causal revenue-impact claims."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The answer fails all four key requirements: it presents outdated developments as current, misattributes NVIDIA's own outlook assumption to a secondary source, does not cleanly separate company statements from media reports, and makes uncited causal claims about revenue charges and license sales. The core failure modes tested—recency filtering, separating company-stated assumptions from press speculation, and avoiding stale headlines—are all violated."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "NVIDIA's official Q3 FY2027 guidance states: 'NVIDIA is not assuming any Data Center compute revenue from China in its outlook.'",
+     "numeric": false,
+     "cited_url": "https://nvidianews.nvidia.com/_gallery/download_pdf/6a8f4ad73d6332b41f76ab70",
+     "reason": "The claim quotes NVIDIA's Q3 FY2027 guidance directly. The cited URL is NVIDIA's official earnings release for Q2 FY2027, which would contain the guidance. However, this URL does not appear in the retrieved sources, so support cannot be verified from the provided documents.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The company guided Q3 FY2027 revenue to approximately $108 billion (±2%).",
+     "numeric": true,
+     "cited_url": "https://nvidianews.nvidia.com/_gallery/download_pdf/6a8f4ad73d6332b41f76ab70",
+     "reason": "The claim states a specific revenue guidance figure. The cited URL is NVIDIA's official earnings release. This URL is not in the retrieved sources, so support cannot be verified.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA's CEO Jensen Huang stated that due to successive rounds of U.S. export controls, the company's share of China's advanced AI chip market has dropped from approximately 95% to effectively zero.",
+     "numeric": true,
+     "cited_url": "https://www.fool.com/investing/2026/09/21/nvidia-s-forecast-assumes-no-data-center-chip-sales-to-china-the-sept-24-u-s-china-summit-could-change-that",
+     "reason": "The Motley Fool article (retrieved) states: 'By last October, Huang was saying Nvidia's share of China's AI chip market had dropped from about 95% to zero.' This matches the claim's 'approximately 95% to effectively zero.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Before the restrictions tightened, China accounted for roughly 20–25% of NVIDIA's data center revenue.",
+     "numeric": true,
+     "cited_url": "https://www.fool.com/investing/2026/09/21/nvidia-s-forecast-assumes-no-data-center-chip-sales-to-china-the-sept-24-u-s-china-summit-could-change-that",
+     "reason": "The retrieved article says: 'Before the limits, China accounted for roughly a fifth to a quarter of the company's data center revenue.' A fifth to a quarter equals 20–25%, supporting the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "In April 2025, the U.S. Commerce Department required NVIDIA to obtain export licenses for its H20 chips.",
+     "numeric": false,
+     "cited_url": "https://www.fool.com/investing/2026/09/21/nvidia-s-forecast-assumes-no-data-center-chip-sales-to-china-the-sept-24-u-s-china-summit-could-change-that",
+     "reason": "The retrieved article states: 'In April 2025, the U.S. government told Nvidia it needed a license to export even its H20 chip, a product designed specifically for China.' This directly supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "This forced NVIDIA to take a $4.5 billion charge for inventory and related commitments.",
+     "numeric": true,
+     "cited_url": "https://www.fool.com/investing/2026/09/21/nvidia-s-forecast-assumes-no-data-center-chip-sales-to-china-the-sept-24-u-s-china-summit-could-change-that",
+     "reason": "The retrieved article says: 'Nvidia took a $4.5 billion charge when that market closed.' This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The U.S. government later granted some licenses for limited H20/H200 sales to specific Chinese customers (reportedly around August 2025).",
+     "numeric": false,
+     "cited_url": "https://www.fool.com/investing/2026/09/21/nvidia-s-forecast-assumes-no-data-center-chip-sales-to-china-the-sept-24-u-s-china-summit-could-change-that",
+     "reason": "The retrieved article states licenses were issued starting in February 2025, not August 2025. The claim's timing ('around August 2025') is not supported by this source.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Licensed H20 sales totaled only roughly $50–60 million in 2025—effectively zero against total revenue.",
+     "numeric": true,
+     "cited_url": "https://www.fool.com/investing/2026/09/21/nvidia-s-forecast-assumes-no-data-center-chip-sales-to-china-the-sept-24-u-s-china-summit-could-change-that",
+     "reason": "The retrieved article mentions a $400 million charge on excess H200 inventory and that sales remained tiny, but does not provide a $50–60 million figure for licensed H20 sales in 2025. The claim is not supported by this source.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "As of mid-2026, NVIDIA reported it was 'effectively foreclosed from competing in China's data center computing/compute market.'",
+     "numeric": false,
+     "cited_url": "https://www.fool.com/investing/2026/09/21/nvidia-s-forecast-assumes-no-data-center-chip-sales-to-china-the-sept-24-u-s-china-summit-could-change-that",
+     "reason": "The retrieved article quotes Nvidia saying it 'cannot deliver a competitive data center product for broad distribution in China with both governments' approval.' The exact phrase 'effectively foreclosed' does not appear in this source.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Beijing has actively discouraged purchases of NVIDIA chips even where U.S. licenses allow sales.",
+     "numeric": false,
+     "cited_url": "https://www.fool.com/investing/2026/09/21/nvidia-s-forecast-assumes-no-data-center-chip-sales-to-china-the-sept-24-u-s-china-summit-could-change-that",
+     "reason": "The retrieved article states: 'Beijing limited the purchases, Chinese demand for the chip waned...' This supports the claim that Beijing restricted purchases despite U.S. licenses.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "China's government has encouraged customers to purchase from domestic competitors (such as Huawei) and has restricted orders through its own regulatory actions.",
+     "numeric": false,
+     "cited_url": "https://www.fool.com/investing/2026/09/21/nvidia-s-forecast-assumes-no-data-center-chip-sales-to-china-the-sept-24-u-s-china-summit-could-change-that",
+     "reason": "The retrieved article does not mention Huawei or explicit encouragement of domestic competitors. The claim is not supported by this source.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Investigations have revealed ongoing efforts to circumvent controls, including routing restricted GPUs through Southeast Asian countries and using front companies.",
+     "numeric": false,
+     "cited_url": "https://www.congress.gov/crs-product/R48642",
+     "reason": "The cited Congressional Research Service URL is not in the retrieved sources, so support cannot be verified.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Taiwanese authorities investigated suspected smuggling of advanced NVIDIA chips to China using forged documents as recently as May 2026.",
+     "numeric": false,
+     "cited_url": "https://www.congress.gov/crs-product/R48642",
+     "reason": "The cited URL is not in the retrieved sources, so support cannot be verified.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA has indicated that under current rules, it cannot deliver a competitive data center product for broad distribution in China with both governments' approval.",
+     "numeric": false,
+     "cited_url": "https://www.fool.com/investing/2026/09/21/nvidia-s-forecast-assumes-no-data-center-chip-sales-to-china-the-sept-24-u-s-china-summit-could-change-that",
+     "reason": "The retrieved article directly quotes: 'Even so, Nvidia says that under current rules, it cannot deliver a competitive data center product for broad distribution in China with both governments' approval.' This matches the claim exactly.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Any China recovery should be treated as optional upside, not a base-case assumption.",
+     "numeric": false,
+     "cited_url": "https://www.fool.com/investing/2026/09/21/nvidia-s-forecast-assumes-no-data-center-chip-sales-to-china-the-sept-24-u-s-china-summit-could-change-that",
+     "reason": "The retrieved article states: 'Suppose something gives anyway. Even a return to Nvidia's last quarter of H20 sales would be modest... Washington's permission by itself reopens nothing.' This implies China recovery is optional upside, not base-case.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 15,
+   "supported": 7,
+   "not_retrieved": 0
+  }
+ }
+}

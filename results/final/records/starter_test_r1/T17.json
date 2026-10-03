@@ -1,0 +1,198 @@
+{
+ "id": "T17",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "abstain",
+ "question": "What were Starbucks' global comparable store sales and total net revenues for its fiscal Q4 2026?",
+ "grading": "Must refuse: fiscal Q4 2026 (June 29 - September 27, 2026) has ended but Starbucks has not yet reported it as of 2026-10-03 (no Q4 earnings 8-K, no FY2026 10-K). May state the latest reported quarter is Q3 FY2026 and may mention the 2026-09-22 restructuring 8-K, but must not state any Q4 comparable sales or revenue figure as fact. Snapshot as of 2026-10-03; after the report date this question becomes answerable.",
+ "answer": "Not available as of 2026-10-03. Starbucks' fiscal Q4 2026 (June 29 - September 27, 2026) has ended but the company has not reported it: the most recent earnings 8-K and 10-Q (filed 2026-07-29) cover Q3 FY2026 (quarter ended June 28, 2026), and no fiscal 2026 10-K or Item 2.02 earnings 8-K for Q4 has been filed. [T17-E1, T17-E2] The only recent 8-K (September 24, 2026, Items 2.05 and 7.01) concerns store closures and restructuring, not quarterly results. [T17-E3] Third-party calendars list the Q4 earnings call for around October 29, 2026, which is after the as-of date.",
+ "output": {
+  "answer": "  Starbucks' **fiscal Q4 2026** results have **not yet been reported** as of available public information. Based on Starbucks' fiscal calendar, Q4 would end in late September 2026, and earnings are typically reported in late October or early November.\n\nHere is the **most recent available data** (Q3 FY2026, ended June 28, 2026):\n\n- **Total Net Revenues (Q3 FY2026):** **$9.32 billion**\n  - Company-operated stores: $7.51 billion\n  - Licensed stores: $1.20 billion\n  - Other: $616 million\n- **Global Comparable Store Sales (Q3 FY2026):** **(1.4)%**\n  - U.S. comparable store sales: +7.9% (transaction increase of +4.2%, ticket +3.6%)\n  - International comparable store sales: (1.4)%\n\n**Guidance/Outlook for Full Fiscal 2026:**\nStarbucks has provided the following updated full-year guidance (as of Q2 FY2026):\n- **Global comparable store sales:** **5% or better**\n- **EPS:** raised to **$2.25–$2.45**\n- **Total net revenues:** expected to be **roughly flat year-over-year** (due to a change in China to a joint venture licensing structure in the back half of FY2026)\n\nSource URLs:\n- Q3 FY2026 Results: https://investor.starbucks.com/news/financials/2026/q3/\n- Q2 FY2026 Transcript (guidance discussion): https://s203.q4cdn.com/326826266/files/doc_financials/2026/q2/Q2-FY26-SBUX-Transcript.pdf\n\nIf you are looking for **Q4 FY2025** results (which have been fully reported), those figures were:\n- **Total Net Revenues:** approximately $9.1 billion (Q4) / $37.2 billion (full year)\n- **Q4 Global Comparable Store Sales:** approximately +1% (U.S. 0%, International +3%)\n\nLet me know if you would like the complete Q4/FY2025 figures instead.",
+  "tokens": {
+   "input": 9649,
+   "output": 1472
+  },
+  "tavily_credits": 2,
+  "latency_s": 14.39,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/7c1f48410c0ffd6daebea4b70a9bc2f1",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Starbucks fiscal Q4 2026 comparable store sales total net revenues earnings results",
+     "search_depth": "advanced",
+     "time_range": "year"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.starbucks.com/news/financials/2026/q3/",
+    "https://s203.q4cdn.com/326826266/files/doc_financials/2026/q2/Q2-FY26-SBUX-Transcript.pdf"
+   ],
+   "cited_primary": 1,
+   "retrieved": 10,
+   "retrieved_primary": 4
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Agent refuses to provide Q4 2026 comparable store sales and total net revenues as fact",
+     "met": true,
+     "note": "Agent explicitly states: 'Starbucks' fiscal Q4 2026 results have not yet been reported as of available public information.'"
+    },
+    {
+     "point": "Agent states the latest reported quarter is Q3 FY2026",
+     "met": true,
+     "note": "Agent provides 'most recent available data (Q3 FY2026, ended June 28, 2026)' with figures."
+    },
+    {
+     "point": "Agent does not state any Q4 comparable sales or revenue figure as fact (i.e., does not fabricate Q4 2026 actuals)",
+     "met": true,
+     "note": "Agent only provides Q3 FY2026 actuals, full-year guidance, and Q4 FY2025 historical figures; no Q4 FY2026 actuals are presented."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent fully complies with the grading rule: it refuses to answer the unavailable Q4 FY2026 figures, correctly identifies Q3 FY2026 as the latest reported quarter, and does not fabricate any Q4 FY2026 comparable sales or revenue numbers. The optional mention of the restructuring 8-K is not required."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Starbucks' fiscal Q4 2026 results have not yet been reported as of available public information",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer does not cite a source for this claim. Retrieved sources show the latest reported quarter is Q3 FY2026 (ended June 28, 2026), so Q4 FY2026 (ending late September 2026) would not yet be reported.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Based on Starbucks' fiscal calendar, Q4 would end in late September 2026, and earnings are typically reported in late October or early November",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "No source cited in the answer for this fiscal calendar detail.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Most recent available data is Q3 FY2026, ended June 28, 2026",
+     "numeric": true,
+     "cited_url": "https://investor.starbucks.com/news/financials/2026/q3/",
+     "reason": "Retrieved source 3 (Q3 FY2026 results page) shows 'Quarter Ended Jun 28, 2026' in the consolidated statements of earnings.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Total Net Revenues (Q3 FY2026): $9.32 billion",
+     "numeric": true,
+     "cited_url": "https://investor.starbucks.com/news/financials/2026/q3/",
+     "reason": "Retrieved source 3 shows total net revenues of 9,322.7 million dollars, which rounds to $9.32 billion.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Company-operated stores: $7.51 billion",
+     "numeric": true,
+     "cited_url": "https://investor.starbucks.com/news/financials/2026/q3/",
+     "reason": "Retrieved source 3 shows company-operated stores net revenues of 7,506.1 million dollars, rounding to $7.51 billion.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Licensed stores: $1.20 billion",
+     "numeric": true,
+     "cited_url": "https://investor.starbucks.com/news/financials/2026/q3/",
+     "reason": "Retrieved source 3 shows licensed stores net revenues of 1,200.8 million dollars, rounding to $1.20 billion.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Other: $616 million",
+     "numeric": true,
+     "cited_url": "https://investor.starbucks.com/news/financials/2026/q3/",
+     "reason": "Retrieved source 3 shows other net revenues of 615.8 million dollars, rounding to $616 million.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Global Comparable Store Sales (Q3 FY2026): (1.4)%",
+     "numeric": true,
+     "cited_url": "https://investor.starbucks.com/news/financials/2026/q3/",
+     "reason": "Retrieved source 3 displays '(1.4)%' at the top of the comparable store sales section.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "U.S. comparable store sales: +7.9% (transaction increase of +4.2%, ticket +3.6%)",
+     "numeric": true,
+     "cited_url": "https://investor.starbucks.com/news/financials/2026/q3/",
+     "reason": "Retrieved source 3 shows U.S. comparable store sales change of 7.9%, transactions change of 4.2%, and ticket change of 3.6%.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "International comparable store sales: (1.4)%",
+     "numeric": true,
+     "cited_url": "https://investor.starbucks.com/news/financials/2026/q3/",
+     "reason": "Retrieved source 3 does not show international comparable store sales as (1.4)%; the transcript (source 2) states international comparable sales increased nearly 3%. The (1.4)% figure is the global comparable store sales, not international.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Guidance: Global comparable store sales: 5% or better",
+     "numeric": true,
+     "cited_url": "https://s203.q4cdn.com/326826266/files/doc_financials/2026/q2/Q2-FY26-SBUX-Transcript.pdf",
+     "reason": "Retrieved source 2 (Q2 transcript) states: 'take up our fiscal 2026 guidance for global comp growth to 5% or better'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Guidance: EPS raised to $2.25–$2.45",
+     "numeric": true,
+     "cited_url": "https://s203.q4cdn.com/326826266/files/doc_financials/2026/q2/Q2-FY26-SBUX-Transcript.pdf",
+     "reason": "Retrieved source 2 states: 'earnings per share to $2.25 to $2.45'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Guidance: Total net revenues expected to be roughly flat year-over-year due to China joint venture",
+     "numeric": false,
+     "cited_url": "https://s203.q4cdn.com/326826266/files/doc_financials/2026/q2/Q2-FY26-SBUX-Transcript.pdf",
+     "reason": "Retrieved source 2 states: 'we now expect our consolidated fiscal 2026 net revenues to be roughly flat year-over-year' and mentions the China joint venture licensing structure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2025 Total Net Revenues: approximately $9.1 billion (Q4) / $37.2 billion (full year)",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer does not cite a source for these figures. Retrieved source 4 shows Q4 segment revenues summing to ~$8.97 billion; source 9 shows full-year total net revenues of $37.184 billion.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Q4 FY2025 Global Comparable Store Sales: approximately +1% (U.S. 0%, International +3%)",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer does not cite a source. Retrieved source 4 shows U.S. comparable store sales 0% and International comparable store sales 3%.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 12,
+   "numeric_cited": 10,
+   "cited": 11,
+   "supported": 3,
+   "not_retrieved": 8
+  }
+ }
+}

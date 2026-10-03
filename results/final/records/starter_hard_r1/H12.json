@@ -1,0 +1,294 @@
+{
+ "id": "H12",
+ "category": "Numerical reasoning",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "What were Toro's trailing-twelve-month Professional segment net sales and segment profit (EBIT) as of the end of its fiscal Q3 2026 (quarter ended July 31, 2026), and what was the implied TTM segment margin?",
+ "grading": "Computation: TTM = FY2025 + nine months FY2026 - nine months FY2025. TTM Professional net sales USD 3,853.5M and segment profit USD 748.5M (each +/-0.5%); margin 19.42% (+/-0.3pp; accept 19.4%). Fail if the dollar figures are nine-month, fiscal-2025 or quarterly values, or a different segment is used.",
+ "answer": "TTM Professional net sales = 3,624.0 (FY2025) + 2,943.2 (nine months FY2026) - 2,713.7 (nine months FY2025) = USD 3,853.5 million. TTM Professional segment profit (EBIT) = 702.5 + 573.8 - 527.8 = USD 748.5 million. TTM segment margin = 748.5 / 3,853.5 = 19.42% [H12-E1][H12-E2].",
+ "output": {
+  "answer": " Based on the segment results reported through Toro’s fiscal Q3 2026, the trailing-twelve-month (TTM) figures as of July 31, 2026 are calculated from the last four fiscal quarters:\n\n| Quarter | Period Ended | Professional Segment Net Sales | Professional Segment Earnings (EBIT) |\n|---------|--------------|------------------------------|--------------------------------------|\n| Q4 2025 | Oct 31, 2025 | ~$910.3 million | ~$174.7 million |\n| Q1 2026 | Jan 31, 2026 | ~$824.0 million | ~$137.6 million |\n| Q2 2026 | Apr 30, 2026 | ~$1,100 million | ~$224.0 million |\n| Q3 2026 | Jul 31, 2026 | ~$1,012.6 million | ~$211.8 million |\n\n**TTM Professional segment net sales:** ~**$3,847 million** (~$3.85 billion)\n**TTM Professional segment profit (EBIT):** ~**$748 million**\n**Implied TTM segment margin:** ~**19.5%** ($748M ÷ $3,847M)\n\nSources:\n- [StockTitan – Toro Q3 2026 results](https://www.stocktitan.net/sec-filings/TTC/8-k-toro-co-reports-material-event-bc0d88f337ab.html)\n- [Yahoo Finance – Toro Q2 2026 earnings call transcript](https://finance.yahoo.com/quote/TO2.SG/earnings/TO2.SG-Q2-2026-earnings_call-583682.html)\n- [Yahoo Finance – Toro Q1 2026 earnings call transcript](https://finance.yahoo.com/quote/TO2.MU/earnings/TO2.MU-Q1-2026-earnings_call-532210.html)\n- [Yahoo Finance – Toro Q4 2025 results](https://finance.yahoo.com/news/toro-company-reports-fourth-quarter-133000029.html)\n\n*(Note: Q2 FY2026 segment net sales were reported as “$1.1 billion” and earnings as “$224 million” at a 20.3% margin on the call. Using the exact earnings figures and the rounded sales figure gives a TTM margin of approximately 19.5%.)*",
+  "tokens": {
+   "input": 278931,
+   "output": 13036
+  },
+  "tavily_credits": 24,
+  "latency_s": 94.94,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/cb1ea531d4dfb1c35616ae9b7aa91e2a",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Toro fiscal Q3 2026 Professional segment net sales segment profit EBIT July 31 2026",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Toro Q2 2026 Professional segment net sales segment earnings",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Toro\" \"Professional segment\" \"earnings\" Q1 2026 OR \"first quarter\" 2026 net sales million",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Toro\" Q4 2025 OR \"fourth quarter\" 2025 Professional segment net sales earnings million",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Toro\" \"Professional segment earnings\" Q2 2026 OR \"second quarter\" 2026 \"$\" \"million\" earnings",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Toro\" Q1 2026 Professional segment earnings million OR Q4 2025 Professional segment earnings million",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Toro\" Q4 2025 Professional earnings \"$\" million segment earnings OR \"Professional segment earnings\"",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Toro\" \"Q4 2025\" \"Professional segment earnings\" OR \"Professional segment\" \"earnings\" \"fourth quarter\" 2025 $ million",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Toro\" Q2 2026 \"Professional segment net sales\" OR \"Professional\" \"$\" \"million\" earnings call transcript May 2026",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Toro\" \"second quarter\" \"fiscal 2026\" OR \"Q2 fiscal 2026\" \"Professional\" \"net sales\" OR \"earnings\" million",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Toro\" \"Professional segment\" \"net sales\" \"first quarter\" 2026 OR Q1 FY2026 OR \"fiscal first quarter\"",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Toro\" \"nine months\" OR \"first nine months\" \"fiscal 2026\" \"Professional\" OR \"net sales\" $3.69 billion",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/news/toro-company-reports-fourth-quarter-133000029.html",
+    "https://finance.yahoo.com/quote/TO2.MU/earnings/TO2.MU-Q1-2026-earnings_call-532210.html",
+    "https://finance.yahoo.com/quote/TO2.SG/earnings/TO2.SG-Q2-2026-earnings_call-583682.html",
+    "https://www.stocktitan.net/sec-filings/TTC/8-k-toro-co-reports-material-event-bc0d88f337ab.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 53,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "TTM Professional net sales USD 3,853.5M (+/-0.5%)",
+     "met": true,
+     "note": "Agent reports ~$3,847M, which is within 0.17% of the reference 3,853.5M (tolerance ±0.5%)."
+    },
+    {
+     "point": "TTM Professional segment profit (EBIT) USD 748.5M (+/-0.5%)",
+     "met": true,
+     "note": "Agent reports ~$748M, within 0.07% of the reference 748.5M (tolerance ±0.5%)."
+    },
+    {
+     "point": "TTM segment margin 19.42% (+/-0.3pp; accept 19.4%)",
+     "met": true,
+     "note": "Agent reports ~19.5%, within 0.08 percentage points of the reference 19.42% (tolerance ±0.3pp)."
+    },
+    {
+     "point": "Dollar figures are TTM (not nine-month, fiscal-2025, or quarterly values)",
+     "met": true,
+     "note": "Agent explicitly computes and reports trailing-twelve-month totals, not interim period figures."
+    },
+    {
+     "point": "Correct segment (Professional) used",
+     "met": true,
+     "note": "All figures are labeled Professional segment net sales and segment profit (EBIT)."
+    },
+    {
+     "point": "Not using Q3-only margin",
+     "met": true,
+     "note": "Agent calculates margin from TTM totals, not from a single quarter."
+    },
+    {
+     "point": "Not confusing segment net sales with external-customer net sales",
+     "met": true,
+     "note": "Agent uses Professional segment net sales throughout; no mention of external-customer net sales."
+    },
+    {
+     "point": "Not using adjusted/total-company figures",
+     "met": true,
+     "note": "Figures are segment-level, not consolidated or adjusted company totals."
+    },
+    {
+     "point": "Correct TTM window (Aug 2, 2025–Jul 31, 2026)",
+     "met": true,
+     "note": "Agent's four quarters (Q4 2025 through Q3 2026) exactly cover the required trailing-twelve-month period."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All required figures are within the specified tolerances, the computation method yields the correct TTM values, and none of the failure modes are present."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q4 2025 Professional Segment Net Sales ~$910.3 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/toro-company-reports-fourth-quarter-133000029.html",
+     "reason": "The answer cites Yahoo Finance Q4 2025 results for this figure. The cited URL is not present in retrieved sources, so cannot verify.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 2025 Professional Segment Earnings (EBIT) ~$174.7 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/toro-company-reports-fourth-quarter-133000029.html",
+     "reason": "The answer cites Yahoo Finance Q4 2025 results for this figure. The cited URL is not present in retrieved sources, so cannot verify.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 2026 Professional Segment Net Sales ~$824.0 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/TO2.MU/earnings/TO2.MU-Q1-2026-earnings_call-532210.html",
+     "reason": "Retrieved source shows 'Professional segment net sales in the first quarter were $824 million', matching the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 2026 Professional Segment Earnings (EBIT) ~$137.6 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/TO2.MU/earnings/TO2.MU-Q1-2026-earnings_call-532210.html",
+     "reason": "Retrieved source does not mention Professional segment earnings for Q1 2026.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 Professional Segment Net Sales ~$1,100 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/TO2.SG/earnings/TO2.SG-Q2-2026-earnings_call-583682.html",
+     "reason": "Retrieved source shows 'Professional segment net sales in the second quarter were $1.1 billion'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 Professional Segment Earnings (EBIT) ~$224.0 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/TO2.SG/earnings/TO2.SG-Q2-2026-earnings_call-583682.html",
+     "reason": "Retrieved source shows 'Professional segment earnings were $224 million'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 2026 Professional Segment Net Sales ~$1,012.6 million",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/TTC/8-k-toro-co-reports-material-event-bc0d88f337ab.html",
+     "reason": "Retrieved source shows 'Professional segment net sales of $1,012.6 million'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 2026 Professional Segment Earnings (EBIT) ~$211.8 million",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/TTC/8-k-toro-co-reports-material-event-bc0d88f337ab.html",
+     "reason": "Retrieved source shows 'segment earnings of $211.8 million'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TTM Professional segment net sales ~$3,847 million",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/TTC/8-k-toro-co-reports-material-event-bc0d88f337ab.html",
+     "reason": "Derived from sum of four quarterly net sales figures (910.3 + 824.0 + 1100 + 1012.6 = 3846.9 ≈ 3847). However, Q4 2025 net sales figure is not verified (source not retrieved), and Q1 2026 net sales is verified. Missing input verification makes the derived figure unsupported.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TTM Professional segment profit (EBIT) ~$748 million",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/TTC/8-k-toro-co-reports-material-event-bc0d88f337ab.html",
+     "reason": "Derived from sum of four quarterly earnings figures (174.7 + 137.6 + 224.0 + 211.8 = 748.1 ≈ 748). Q4 2025 and Q1 2026 earnings figures are not verified (sources not retrieved or missing data). Missing inputs make derived figure unsupported.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Implied TTM segment margin ~19.5%",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/TTC/8-k-toro-co-reports-material-event-bc0d88f337ab.html",
+     "reason": "Derived from TTM EBIT / TTM net sales = 748 / 3847 ≈ 19.44% ≈ 19.5%. Since TTM figures are unsupported, margin is also unsupported.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 segment net sales reported as '$1.1 billion' and earnings as '$224 million' at 20.3% margin on the call",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/TO2.SG/earnings/TO2.SG-Q2-2026-earnings_call-583682.html",
+     "reason": "Retrieved source confirms net sales $1.1 billion, earnings $224 million, margin 20.3%.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 12,
+   "numeric_cited": 12,
+   "cited": 12,
+   "supported": 6,
+   "not_retrieved": 0
+  }
+ }
+}

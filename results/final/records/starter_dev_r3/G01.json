@@ -1,0 +1,119 @@
+{
+ "id": "G01",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was NVIDIA's total revenue for fiscal 2026, in USD millions, and how much did it grow vs fiscal 2025?",
+ "grading": "±0.5% on revenue, USD millions; period must be FY ended 2026-01-25; growth ±0.5pp; fail if any CY2026 or FY2027 quarter used",
+ "answer": "NVIDIA FY2026 revenue was USD 215,938 million, versus USD 130,497 million in FY2025: growth of 65.4735% (65% as rounded in the filing). [G01-E1]",
+ "output": {
+  "answer": " **NVIDIA Fiscal 2026 Revenue:** **$215,938 million**  \n**vs Fiscal 2025:** **$130,497 million**  \n**Year-over-year growth:** **65%** (an absolute increase of ~$85,441 million)\n\n**Sources:**\n- NVIDIA Investor Relations press release: [FY2026 results](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026)\n- SEC 10-K filing: [FY2026 annual report](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm)",
+  "tokens": {
+   "input": 11290,
+   "output": 627
+  },
+  "tavily_credits": 2,
+  "latency_s": 7.71,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/700316db337cf0a55fbc4e9c4bca8149",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA total revenue fiscal 2026 vs fiscal 2025 annual results",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 10,
+   "retrieved_primary": 9
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "FY2026 revenue within ±0.5% of 215,938 million USD",
+     "met": true,
+     "note": "Agent reports $215,938 million, exactly matching the reference value."
+    },
+    {
+     "point": "FY2025 revenue within ±0.5% of 130,497 million USD",
+     "met": true,
+     "note": "Agent reports $130,497 million, exactly matching the reference value."
+    },
+    {
+     "point": "Growth percentage within ±0.5pp of 65.4735%",
+     "met": true,
+     "note": "Agent reports 65% growth, which is 0.4735pp below the exact 65.4735% — within the ±0.5pp tolerance."
+    },
+    {
+     "point": "Period is FY ended 2026-01-25 (not CY2026 or FY2027)",
+     "met": true,
+     "note": "Agent explicitly states 'Fiscal 2026' and cites the FY2026 press release and 10-K filing; no calendar 2026 or FY2027 quarter data is used."
+    },
+    {
+     "point": "Units are USD millions",
+     "met": true,
+     "note": "Agent reports figures in 'million' USD, matching the required unit."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: the agent provides the exact FY2026 and FY2025 revenue figures in USD millions, the growth rate is within the allowed tolerance, the correct fiscal period (ended 2026-01-25) is used, and no incorrect calendar or future fiscal quarters are referenced."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "NVIDIA Fiscal 2026 Revenue: $215,938 million",
+     "numeric": true,
+     "cited_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026",
+     "reason": "The press release table shows GAAP Revenue for FY26 as $215,938 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA Fiscal 2025 Revenue: $130,497 million",
+     "numeric": true,
+     "cited_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026",
+     "reason": "The press release table shows GAAP Revenue for FY25 as $130,497 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Year-over-year growth: 65%",
+     "numeric": true,
+     "cited_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026",
+     "reason": "The press release table shows Y/Y growth of 65% for revenue.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Absolute increase: ~$85,441 million",
+     "numeric": true,
+     "cited_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026",
+     "reason": "Calculated as $215,938 million - $130,497 million = $85,441 million.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 4,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}

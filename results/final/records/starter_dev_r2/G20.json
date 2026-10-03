@@ -1,0 +1,192 @@
+{
+ "id": "G20",
+ "category": "Trends",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "Show Apple's Services net sales and Services gross margin percentage for FY2023, FY2024, and FY2025, and the change in Services gross margin over the period.",
+ "grading": "Net sales ±0.5% (USD millions); GM% exact to 0.1pp; change expressed in pp",
+ "answer": "Apple Services net sales / Services gross margin were: FY2023, USD 85,200 million / 70.8%; FY2024, USD 96,169 million / 73.9%; FY2025, USD 109,158 million / 75.4%. Services gross margin increased 4.6 percentage points from FY2023 to FY2025. FY2023 had 53 weeks, versus 52 weeks in FY2024 and FY2025. [G20-E1]",
+ "output": {
+  "answer": " Here are Apple's Services results for FY2023–FY2025, from Apple's FY2025 Form 10-K:\n\n| Fiscal Year | Services Net Sales | Services Gross Margin | Services Gross Margin % |\n|-------------|-------------------:|----------------------:|------------------------:|\n| **FY2023**  | $85,200 million    | $60,345 million       | 70.8%                   |\n| **FY2024**  | $96,169 million    | $71,050 million       | 73.9%                   |\n| **FY2025**  | $109,158 million   | $82,314 million       | 75.4%                   |\n\n**Change in Services gross margin over the period:**\n- **+4.6 percentage points** from FY2023 to FY2025 (from 70.8% to 75.4%)\n- **+3.1 pp** FY2023 → FY2024\n- **+1.5 pp** FY2024 → FY2025\n\nSource: Apple Inc. FY2025 Form 10-K — [SEC filing (PDF)](https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf)",
+  "tokens": {
+   "input": 10923,
+   "output": 806
+  },
+  "tavily_credits": 2,
+  "latency_s": 8.76,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Apple Services net sales and gross margin percentage FY2023 FY2024 FY2025 annual report earnings",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf"
+   ],
+   "cited_primary": 0,
+   "retrieved": 10,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Net sales for FY2023 within ±0.5% of 85,200 million USD",
+     "met": true,
+     "note": "Agent reports $85,200 million, exactly matching reference."
+    },
+    {
+     "point": "Net sales for FY2024 within ±0.5% of 96,169 million USD",
+     "met": true,
+     "note": "Agent reports $96,169 million, exactly matching reference."
+    },
+    {
+     "point": "Net sales for FY2025 within ±0.5% of 109,158 million USD",
+     "met": true,
+     "note": "Agent reports $109,158 million, exactly matching reference."
+    },
+    {
+     "point": "Services gross margin percentage for FY2023 exact to 0.1pp (70.8%)",
+     "met": true,
+     "note": "Agent reports 70.8%, exactly matching reference."
+    },
+    {
+     "point": "Services gross margin percentage for FY2024 exact to 0.1pp (73.9%)",
+     "met": true,
+     "note": "Agent reports 73.9%, exactly matching reference."
+    },
+    {
+     "point": "Services gross margin percentage for FY2025 exact to 0.1pp (75.4%)",
+     "met": true,
+     "note": "Agent reports 75.4%, exactly matching reference."
+    },
+    {
+     "point": "Change in Services gross margin over the period expressed in percentage points (pp) and correct value (4.6 pp)",
+     "met": true,
+     "note": "Agent states '+4.6 percentage points' from FY2023 to FY2025, matching reference."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All numerical values match the reference exactly within the specified tolerances. The change is correctly expressed in percentage points. No confusion with total company gross margin or fiscal year definitions is present."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "FY2023 Services Net Sales: $85,200 million",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf",
+     "reason": "The retrieved 10-K shows consolidated statements of operations with Net sales: Services $85,200 million for 2023 (in millions).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2023 Services Gross Margin: $60,345 million",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf",
+     "reason": "The 10-K reports Services gross margin of $60,345 million for 2023 (in millions). This matches net sales minus cost of sales: $85,200 - $24,855 = $60,345.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2023 Services Gross Margin %: 70.8%",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf",
+     "reason": "The 10-K explicitly states Services gross margin percentage for 2023 is 70.8%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2024 Services Net Sales: $96,169 million",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf",
+     "reason": "The 10-K shows Net sales: Services $96,169 million for 2024 (in millions).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2024 Services Gross Margin: $71,050 million",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf",
+     "reason": "The 10-K reports Services gross margin of $71,050 million for 2024. This matches net sales minus cost of sales: $96,169 - $25,119 = $71,050.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2024 Services Gross Margin %: 73.9%",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf",
+     "reason": "The 10-K explicitly states Services gross margin percentage for 2024 is 73.9%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 Services Net Sales: $109,158 million",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf",
+     "reason": "The 10-K shows Net sales: Services $109,158 million for 2025 (in millions).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 Services Gross Margin: $82,314 million",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf",
+     "reason": "The 10-K reports Services gross margin of $82,314 million for 2025. This matches net sales minus cost of sales: $109,158 - $26,844 = $82,314.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 Services Gross Margin %: 75.4%",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf",
+     "reason": "The 10-K explicitly states Services gross margin percentage for 2025 is 75.4%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Change in Services gross margin from FY2023 to FY2025: +4.6 percentage points (from 70.8% to 75.4%)",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf",
+     "reason": "Calculated as 75.4% - 70.8% = 4.6 percentage points. The 10-K provides the two percentages.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Change in Services gross margin from FY2023 to FY2024: +3.1 percentage points",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf",
+     "reason": "Calculated as 73.9% - 70.8% = 3.1 percentage points. The 10-K provides the two percentages.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Change in Services gross margin from FY2024 to FY2025: +1.5 percentage points",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf",
+     "reason": "Calculated as 75.4% - 73.9% = 1.5 percentage points. The 10-K provides the two percentages.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 12,
+   "numeric_cited": 12,
+   "cited": 12,
+   "supported": 12,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,211 @@
+{
+ "id": "T16",
+ "category": "Qualitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "Has Workday announced any restructuring recently? What are the details and expected costs?",
+ "grading": "Reference-free (no fixed answer), graded for recency and support. Expect: announced 2026-09-29; reorganizations including a reduction of approximately 2.5% of the workforce, primarily in Product and Technology, plus select leased office space reductions; estimated charges USD 65M-80M (about USD 55M-70M in Q3 FY2027 and about USD 10M in Q4 FY2027); fiscal 2027 Q3 and full-year guidance reiterated except GAAP operating margin. Snapshot as of 2026-10-03.",
+ "answer": "On September 29, 2026 Workday disclosed in an 8-K (Items 2.02 and 2.05) that certain functions announced reorganizations including a reduction of approximately 2.5% of its workforce, primarily within the Product and Technology team, and select leased office space reductions, while continuing to hire in strategic areas. It estimates charges of about USD 65-80 million, of which about USD 55-70 million in Q3 FY2027 and about USD 10 million in Q4 FY2027 (roughly USD 40-55 million future cash for severance and benefits, about USD 10 million non-cash stock-based compensation and about USD 15 million non-cash lease impairment). Workday reiterated its Q3 and full-year FY2027 guidance from August 27 except GAAP operating margin (now about 20-21 points below non-GAAP in Q3 and about 19 points below for the full year). [T16-E1, T16-E2] Separately, on October 1, 2026 Workday entered into a new USD 1.5 billion revolving credit agreement replacing its USD 1.0 billion 2022 facility; this is not part of the restructuring. [T16-E3]",
+ "output": {
+  "answer": " Yes. Workday has announced restructurings over the past year. The most recent was filed in **February 2026**, and there was a larger plan announced in **February 2025**.\n\n### February 2026 Restructuring (Most Recent)\n- **Scope:** About **400 job cuts** (~2% of the workforce), primarily in **Global Customer Operations** and other customer-facing, non-revenue generating roles.\n- **Purpose:** To “better align their people and resources to their highest priorities in fiscal 2027.”\n- **Expected Cost:** Approximately **$135 million** in restructuring and impairment charges. This includes an **$80 million impairment charge** related to office space consolidation. Workday cautioned actual costs could exceed the estimate.\n- **Timeline:** Expected to be largely completed by **late April 2026**.\n- **Leadership Context:** This announcement coincided with the resignation of CEO Carl Eschenbach, who had stepped in during 2024 and overseen the earlier restructuring.\n\n### February 2025 Restructuring (Fiscal 2026 Plan)\n- **Scope:** A reduction of approximately **7.5% to 8.5%** of the workforce, or about **1,750 employees**. The company also exited certain owned office space.\n- **Purpose:** To prioritize investments in AI and durable growth.\n- **Recorded Costs (through fiscal 2026):** \n  - **$133 million** for employee transition, severance, benefits, and share-based compensation (during the nine months ended October 31, 2025).\n  - **$39 million** for impairment of office space.\n  - For the full fiscal year 2026, share-based compensation associated with restructuring activities totaled **$56 million**.\n\n**Sources:**  \n- [Workday Fiscal 2026 Q3 Results (investor.workday.com)](https://investor.workday.com/news-and-events/press-releases/news-details/2025/Workday-Announces-Fiscal-2026-Third-Quarter-Financial-Results-11-25-2025/default.aspx)  \n- [Workday CEO Steps Down Amid Layoffs (The Register)](https://www.theregister.com/off-prem/2026/02/09/workday-ceo-steps-down-amid-layoffs-and-market-jitters/4539088)  \n- [Workday Files More Job Cuts; Customer Ops Hit (HR Executive)](https://hrexecutive.com/workday-files-more-job-cuts-customer-ops-teams-hit)  \n- [Business Insider Layoffs List 2026](https://www.businessinsider.com/recent-company-layoffs-laying-off-workers-2026)",
+  "tokens": {
+   "input": 9259,
+   "output": 2200
+  },
+  "tavily_credits": 2,
+  "latency_s": 17.91,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/06c7f25ee341d37e74f878784d76526a",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Workday restructuring layoffs reorganization announcement 2024 2025 costs",
+     "search_depth": "advanced",
+     "time_range": "year",
+     "topic": "news"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://hrexecutive.com/workday-files-more-job-cuts-customer-ops-teams-hit",
+    "https://investor.workday.com/news-and-events/press-releases/news-details/2025/Workday-Announces-Fiscal-2026-Third-Quarter-Financial-Results-11-25-2025/default.aspx",
+    "https://www.businessinsider.com/recent-company-layoffs-laying-off-workers-2026",
+    "https://www.theregister.com/off-prem/2026/02/09/workday-ceo-steps-down-amid-layoffs-and-market-jitters/4539088"
+   ],
+   "cited_primary": 1,
+   "retrieved": 10,
+   "retrieved_primary": 2
+  },
+  "correctness": {
+   "score": 0.0,
+   "points": [
+    {
+     "point": "Announced 2026-09-29",
+     "met": false,
+     "note": "Agent's answer states the most recent restructuring was filed in February 2026, missing the September 29, 2026 announcement entirely."
+    },
+    {
+     "point": "Reorganizations including a reduction of approximately 2.5% of the workforce, primarily in Product and Technology",
+     "met": false,
+     "note": "Agent describes February 2026 cuts of ~2% in Global Customer Operations, not the 2.5% reduction in Product and Technology from the September announcement."
+    },
+    {
+     "point": "Plus select leased office space reductions",
+     "met": false,
+     "note": "Agent mentions an $80 million impairment charge related to office space consolidation for the February 2026 plan, but does not reference the leased office space reductions from the September 2026 announcement."
+    },
+    {
+     "point": "Estimated charges USD 65M-80M (about USD 55M-70M in Q3 FY2027 and about USD 10M in Q4 FY2027)",
+     "met": false,
+     "note": "Agent cites approximately $135 million in restructuring and impairment charges for the February 2026 plan, with no breakdown matching the September 2026 estimate."
+    },
+    {
+     "point": "Fiscal 2027 Q3 and full-year guidance reiterated except GAAP operating margin",
+     "met": false,
+     "note": "Agent does not mention any guidance reiteration or GAAP operating margin exception."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The agent's answer fails to address the September 29, 2026 restructuring announcement, which is the most recent as of the snapshot date (2026-10-03). Instead, it describes earlier restructurings from February 2026 and February 2025, missing all key details required by the grading rule: the announcement date, the 2.5% workforce reduction in Product and Technology, leased office space reductions, the specific charge estimates and their quarterly allocation, and the guidance reiteration except for GAAP operating margin."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Most recent restructuring filed in February 2026",
+     "numeric": false,
+     "cited_url": "https://hrexecutive.com/workday-files-more-job-cuts-customer-ops-teams-hit",
+     "reason": "HR Executive article dated Feb 9, 2026 states 'Workday disclosed in a Feb. 4 regulatory filing that it will eliminate approximately 2% of its current workforce' confirming February 2026 filing.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Scope: About 400 job cuts (~2% of workforce)",
+     "numeric": true,
+     "cited_url": "https://hrexecutive.com/workday-files-more-job-cuts-customer-ops-teams-hit",
+     "reason": "HR Executive article states 'eliminate approximately 2% of its current workforce' and Business Insider 2026 article states 'Workday is cutting about 400 jobs... roughly 2% of its workforce'. Both sources align.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Primarily in Global Customer Operations and other customer-facing, non-revenue generating roles",
+     "numeric": false,
+     "cited_url": "https://hrexecutive.com/workday-files-more-job-cuts-customer-ops-teams-hit",
+     "reason": "HR Executive article mentions 'reduction in Global Customer Operations staff' and Business Insider 2026 states 'layoffs will primarily affect customer-facing roles that are non-revenue generating'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Purpose: To 'better align their people and resources to their highest priorities in fiscal 2027'",
+     "numeric": false,
+     "cited_url": "https://hrexecutive.com/workday-files-more-job-cuts-customer-ops-teams-hit",
+     "reason": "HR Executive article directly quotes the filing: 'better align their people and resources to their highest priorities in fiscal 2027'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Expected cost: Approximately $135 million in restructuring and impairment charges",
+     "numeric": true,
+     "cited_url": "https://hrexecutive.com/workday-files-more-job-cuts-customer-ops-teams-hit",
+     "reason": "HR Executive article states 'expected to include the approximately $135 million in restructuring and impairment charges' and Business Insider 2026 states 'expected to result in about $135 million in charges'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Includes $80 million impairment charge related to office space consolidation",
+     "numeric": true,
+     "cited_url": "https://hrexecutive.com/workday-files-more-job-cuts-customer-ops-teams-hit",
+     "reason": "HR Executive article explicitly states 'The $80 million impairment charge related to office space, the largest component of the total charges, suggests significant real estate consolidation.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Workday cautioned actual costs could exceed the estimate",
+     "numeric": false,
+     "cited_url": "https://hrexecutive.com/workday-files-more-job-cuts-customer-ops-teams-hit",
+     "reason": "HR Executive article states 'The company cautioned that the restructuring may not deliver the anticipated benefits and that actual costs could exceed the $135 million estimate.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Timeline: Expected to be largely completed by late April 2026",
+     "numeric": false,
+     "cited_url": "https://hrexecutive.com/workday-files-more-job-cuts-customer-ops-teams-hit",
+     "reason": "HR Executive article states 'The restructuring is expected to be largely completed by late April 2026, subject to local law and consultation requirements.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Leadership context: Announcement coincided with resignation of CEO Carl Eschenbach, who stepped in during 2024 and oversaw earlier restructuring",
+     "numeric": false,
+     "cited_url": "https://www.theregister.com/off-prem/2026/02/09/workday-ceo-steps-down-amid-layoffs-and-market-jitters/4539088",
+     "reason": "The Register article states 'Eschenbach was appointed CEO in January 2024' and 'In February 2025, Workday announced it was cutting 8.5 percent of its personnel' and 'Last week, the company said it was laying off about 2 percent of its staff' confirming he oversaw both restructurings.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Reduction of approximately 7.5% to 8.5% of workforce, or about 1,750 employees",
+     "numeric": true,
+     "cited_url": "https://investor.workday.com/news-and-events/press-releases/news-details/2025/Workday-Announces-Fiscal-2026-Third-Quarter-Financial-Results-11-25-2025/default.aspx",
+     "reason": "Workday Q3 FY2026 press release states 'The plan reduced Workday's workforce by approximately 7.5%.' Business Insider 2025 and Economic Times both state 8.5% or ~1,750 employees. The range 7.5%-8.5% is supported by multiple sources.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Company also exited certain owned office space",
+     "numeric": false,
+     "cited_url": "https://investor.workday.com/news-and-events/press-releases/news-details/2025/Workday-Announces-Fiscal-2026-Third-Quarter-Financial-Results-11-25-2025/default.aspx",
+     "reason": "Workday Q3 FY2026 press release states 'In connection with the plan, Workday has exited certain owned office space.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Purpose: To prioritize investments in AI and durable growth",
+     "numeric": false,
+     "cited_url": "https://investor.workday.com/news-and-events/press-releases/news-details/2025/Workday-Announces-Fiscal-2026-Third-Quarter-Financial-Results-11-25-2025/default.aspx",
+     "reason": "Workday Q3 FY2026 press release states the plan was 'intended to prioritize its investments and continue advancing its ongoing focus on durable growth.' The Register article also mentions 'because of AI investment.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Recorded costs through fiscal 2026: $133 million for employee transition, severance, benefits, and share-based compensation (during nine months ended October 31, 2025)",
+     "numeric": true,
+     "cited_url": "https://investor.workday.com/news-and-events/press-releases/news-details/2025/Workday-Announces-Fiscal-2026-Third-Quarter-Financial-Results-11-25-2025/default.aspx",
+     "reason": "Workday Q3 FY2026 press release states 'During the nine months ended October 31, 2025, Workday recorded expenses of $133 million for employee transition, severance payments, employee benefits, and share-based compensation expense.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "$39 million for impairment of office space",
+     "numeric": true,
+     "cited_url": "https://investor.workday.com/news-and-events/press-releases/news-details/2025/Workday-Announces-Fiscal-2026-Third-Quarter-Financial-Results-11-25-2025/default.aspx",
+     "reason": "Workday Q3 FY2026 press release states 'and $39 million related to an impairment of office space under the Fiscal 2026 Restructuring Plan.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "For full fiscal year 2026, share-based compensation associated with restructuring activities totaled $56 million",
+     "numeric": true,
+     "cited_url": "https://investor.workday.com/news-and-events/press-releases/news-details/2026/Workday-Announces-Fiscal-2026-Fourth-Quarter-and-Full-Year-Financial-Results/default.aspx",
+     "reason": "Workday Q4 FY2026 press release states 'share-based compensation associated with restructuring activities of $14 million and $8 million for the three months ended January 31, 2026, and 2025, respectively, and $56 million and $8 million for fiscal 2026 and 2025, respectively.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 7,
+   "numeric_cited": 7,
+   "cited": 15,
+   "supported": 15,
+   "not_retrieved": 0
+  }
+ }
+}

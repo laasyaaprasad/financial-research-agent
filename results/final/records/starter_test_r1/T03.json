@@ -1,0 +1,115 @@
+{
+ "id": "T03",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Dell Technologies' revenue from AI-optimized servers in the second quarter of fiscal 2027 (the quarter ended July 31, 2026)? Answer in USD millions.",
+ "grading": "±0.5%, USD millions (accept $16.4B). Period must be Q2 FY2027 (three months ended 2026-07-31). Fail if orders, backlog, six-month (32,533) or ISG total (31,782) is given as the answer.",
+ "answer": "AI-optimized servers revenue was USD 16,401 million in Q2 FY2027 (three months ended July 31, 2026), up 100% from USD 8,208 million a year earlier. It sits within ISG revenue of USD 31,782 million; total Dell net revenue was USD 46,971 million. [T03-E1, T03-E2]",
+ "output": {
+  "answer": " Based on the search results, Dell Technologies' revenue from AI-optimized servers in Q2 FY2027 (quarter ended July 31, 2026) was:\n\n**$16,400 million USD** (or $16.4 billion)\n\nThis represents a doubling year-over-year, according to Zacks earnings coverage of Dell's fiscal Q2 2027 results. Total Infrastructure Solutions Group (ISG) revenue hit a record $31.78 billion for the quarter.\n\nSources: [Yahoo Finance/Zacks](https://finance.yahoo.com/markets/stocks/articles/dell-q2-earnings-beat-estimates-182500028.html), [Yahoo Finance](https://finance.yahoo.com/technology/ai/articles/dell-technologies-q2-fy27-earnings-204127355.html)",
+  "tokens": {
+   "input": 11121,
+   "output": 1076
+  },
+  "tavily_credits": 4,
+  "latency_s": 11.09,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/19a9e53f51791860a545f5e9c7694e64",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Dell Technologies AI-optimized servers revenue Q2 FY2027 quarter ended July 31 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Dell Q2 FY27 AI server revenue billion July 31 2026 fiscal second quarter",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/dell-q2-earnings-beat-estimates-182500028.html",
+    "https://finance.yahoo.com/technology/ai/articles/dell-technologies-q2-fy27-earnings-204127355.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 18,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer is a number in USD millions (or billions convertible to millions)",
+     "met": true,
+     "note": "Agent gave $16,400 million USD (or $16.4 billion)."
+    },
+    {
+     "point": "Number within ±0.5% of reference 16,401 million (i.e., 16,319–16,483 million)",
+     "met": true,
+     "note": "16,400 million is within tolerance (difference 1 million, 0.006%)."
+    },
+    {
+     "point": "Period correctly identified as Q2 FY2027 (three months ended July 31, 2026)",
+     "met": true,
+     "note": "Agent explicitly states Q2 FY2027 (quarter ended July 31, 2026)."
+    },
+    {
+     "point": "Answer is not AI server orders ($60.9B), backlog ($95B), six-month (32,533), or ISG total (31,782)",
+     "met": true,
+     "note": "Agent provides AI-optimized servers revenue, not any of the failure-mode figures."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All requirements satisfied: the agent reports $16,400 million for AI-optimized servers revenue in Q2 FY2027, which matches the reference value of 16,401 million within the allowed tolerance, correctly identifies the fiscal quarter, and avoids the prohibited confusion with orders, backlog, six-month, or ISG total figures."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Dell Technologies' revenue from AI-optimized servers in Q2 FY2027 (quarter ended July 31, 2026) was $16,400 million USD ($16.4 billion)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/dell-q2-earnings-beat-estimates-182500028.html",
+     "reason": "The retrieved article states: 'AI-optimized server revenues doubled to $16.4 billion' for Dell's second-quarter fiscal 2027.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "AI-optimized server revenue doubled year-over-year in Q2 FY2027",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/dell-q2-earnings-beat-estimates-182500028.html",
+     "reason": "The same article explicitly says 'AI-optimized server revenues doubled to $16.4 billion', confirming a 100% year-over-year increase.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total Infrastructure Solutions Group (ISG) revenue hit a record $31.78 billion for Q2 FY2027",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/dell-q2-earnings-beat-estimates-182500028.html",
+     "reason": "The article states: 'Infrastructure Solutions Group (ISG) revenues jumped 89% year over year to a record $31.78 billion.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 3,
+   "supported": 3,
+   "not_retrieved": 0
+  }
+ }
+}

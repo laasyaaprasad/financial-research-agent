@@ -1,0 +1,140 @@
+{
+ "id": "G02",
+ "category": "Qualitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "Who is Apple's CEO right now, when did the change take effect, and what is Tim Cook's current role?",
+ "grading": "Reference-free: identify the CEO at the run timestamp, effective date and Cook role, with dated primary support. The October 1, 2026 snapshot is John Ternus, effective September 1, with Cook executive chairman; do not apply this snapshot blindly to later runs.",
+ "answer": "As of October 1, 2026, John Ternus is Apple CEO. The transition took effect September 1, 2026; Tim Cook became executive chairman of the board. [G02-E1]",
+ "output": {
+  "answer": " Based on the search results, **John Ternus** is Apple's CEO, having taken over from Tim Cook. The change took effect on **September 1, 2026**. Tim Cook currently serves as **Executive Chairman** of Apple's board of directors.\n\nApple announced the transition in April 2026 following a long-term succession planning process. Ternus, who previously served as Apple's senior vice president of Hardware Engineering, joined the board when he became chief executive. Cook remains involved with the company in his new board role, including engaging with policymakers globally.\n\n**Sources:**\n- [Apple Newsroom announcement](https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo)\n- [CNBC report](https://www.cnbc.com/2026/04/20/apple-names-john-ternus-ceo-replacing-tim-cook-who-becomes-chairman.html)\n- [Apple Leadership page for Tim Cook](https://www.apple.com/leadership/tim-cook)\n- [Wikipedia - Tim Cook](https://en.wikipedia.org/wiki/Tim_Cook)",
+  "tokens": {
+   "input": 5785,
+   "output": 3139
+  },
+  "tavily_credits": 1,
+  "latency_s": 17.06,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Apple CEO current 2024 2025 Tim Cook role",
+     "search_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://en.wikipedia.org/wiki/Tim_Cook",
+    "https://www.apple.com/leadership/tim-cook",
+    "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo",
+    "https://www.cnbc.com/2026/04/20/apple-names-john-ternus-ceo-replacing-tim-cook-who-becomes-chairman.html"
+   ],
+   "cited_primary": 2,
+   "retrieved": 9,
+   "retrieved_primary": 2
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Identify the CEO at the run timestamp (John Ternus)",
+     "met": true,
+     "note": "Agent states John Ternus is Apple's CEO, matching the 2026-10-01 snapshot."
+    },
+    {
+     "point": "Identify the effective date of the change (September 1, 2026)",
+     "met": true,
+     "note": "Agent explicitly states the change took effect on September 1, 2026, supported by Apple Newsroom and CNBC sources."
+    },
+    {
+     "point": "Identify Tim Cook's current role (Executive Chairman)",
+     "met": true,
+     "note": "Agent states Tim Cook serves as Executive Chairman of Apple's board, consistent with snapshot and sources."
+    },
+    {
+     "point": "Provide dated primary support for the transition",
+     "met": true,
+     "note": "Agent cites Apple Newsroom announcement (April 2026) and CNBC report (April 20, 2026) as primary/secondary sources with dates."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly identifies John Ternus as CEO, the effective date of September 1, 2026, and Tim Cook's role as Executive Chairman, with dated primary support from Apple's official announcement and corroborating reports. All grading requirements are satisfied."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "John Ternus is Apple's CEO, having taken over from Tim Cook",
+     "numeric": false,
+     "cited_url": "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo",
+     "reason": "Apple Newsroom announcement states: 'John Ternus, senior vice president of Hardware Engineering, will become Apple's next chief executive officer effective on September 1, 2026.' CNBC report confirms: 'Apple said on Monday that John Ternus is succeeding Tim Cook as CEO.' Wikipedia notes: 'Cook led a succession plan that saw John Ternus succeed him as CEO.' All retrieved sources support this claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The change took effect on September 1, 2026",
+     "numeric": false,
+     "cited_url": "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo",
+     "reason": "Apple Newsroom announcement explicitly states 'effective on September 1, 2026.' CNBC report says 'Cook assuming the role of executive chairman on Sept. 1.' YouTube transcript mentions 'September 1st of 2026.' Wikipedia notes 'executive chairman since September 2026.' All retrieved sources support the date.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tim Cook currently serves as Executive Chairman of Apple's board of directors",
+     "numeric": false,
+     "cited_url": "https://www.apple.com/leadership/tim-cook",
+     "reason": "Apple Leadership page states: 'Tim Cook has been a director since 2011 and serves as the executive chair of the board.' Apple Newsroom: 'Tim Cook will become executive chairman of Apple's board of directors.' CNBC: 'Cook assuming the role of executive chairman on Sept. 1.' Wikipedia: 'has been the company's executive chairman since September 2026.' All retrieved sources support this claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Apple announced the transition in April 2026 following a long-term succession planning process",
+     "numeric": false,
+     "cited_url": "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo",
+     "reason": "Apple Newsroom announcement (URL contains 2026/04) states: 'The transition, which was approved unanimously by the Board of Directors, follows a thoughtful, long-term succession planning process.' CNBC article date is April 20, 2026. France 24 and YouTube also reference an April announcement. Retrieved sources support both the April 2026 timing and the succession planning process.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Ternus previously served as Apple's senior vice president of Hardware Engineering",
+     "numeric": false,
+     "cited_url": "https://www.cnbc.com/2026/04/20/apple-names-john-ternus-ceo-replacing-tim-cook-who-becomes-chairman.html",
+     "reason": "CNBC report states: 'Ternus, a senior vice president of hardware engineering, will join Apple's board of directors when he becomes chief.' Apple Newsroom: 'John Ternus, senior vice president of Hardware Engineering, will become Apple's next chief executive officer.' France 24: 'became a senior vice president of hardware engineering over the course of the following two decades.' All retrieved sources support this claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Ternus joined the board when he became chief executive",
+     "numeric": false,
+     "cited_url": "https://www.cnbc.com/2026/04/20/apple-names-john-ternus-ceo-replacing-tim-cook-who-becomes-chairman.html",
+     "reason": "CNBC report explicitly states: 'Ternus, a senior vice president of hardware engineering, will join Apple's board of directors when he becomes chief.' Apple Newsroom implies board approval but does not explicitly state Ternus joins the board. Other retrieved sources do not mention board membership. The CNBC source directly supports this claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cook remains involved with the company in his new board role, including engaging with policymakers globally",
+     "numeric": false,
+     "cited_url": "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo",
+     "reason": "Apple Newsroom announcement states: 'As executive chairman, Cook will assist with certain aspects of the company, including engaging with policymakers around the world.' Apple Leadership page (not fully retrieved but likely) would support this. PBS mentions Cook helping maintain relationship with Trump, but not explicitly policymakers globally. The Apple Newsroom source directly supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 0,
+   "numeric_cited": 0,
+   "cited": 7,
+   "supported": 7,
+   "not_retrieved": 0
+  }
+ }
+}

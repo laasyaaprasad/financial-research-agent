@@ -1,0 +1,157 @@
+{
+ "id": "T12",
+ "category": "Beat or miss",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "Did Qualcomm's fiscal Q3 2026 (quarter ended June 28, 2026) total revenues and non-GAAP diluted EPS come in above, within or below the guidance ranges it gave with its fiscal Q2 2026 results in April 2026?",
+ "grading": "Key points: (1) revenues USD 9,947M vs guided USD 9.2B-10.0B = WITHIN the range (upper end); (2) non-GAAP diluted EPS USD 2.21 vs guided USD 2.10-2.30 = WITHIN the range; (3) benchmark is the company's own guidance. Optional: GAAP EPS 1.87 vs GAAP guide 1.26-1.46 is above the range. Fail if either is called above or below the range or consensus is used.",
+ "answer": "Guidance from the April 29, 2026 release for Q3 FY26: revenues USD 9.2-10.0 billion and non-GAAP diluted EPS USD 2.10-2.30. [T12-E1] Actual Q3 FY2026: revenues USD 9,947 million (within the range, near the high end) and non-GAAP diluted EPS USD 2.21 (within the range). GAAP EPS was USD 1.87 against GAAP guidance of USD 1.26-1.46 (above). [T12-E2]",
+ "output": {
+  "answer": " For Qualcomm’s fiscal Q3 2026 (ended June 28, 2026), **both total revenues and non-GAAP diluted EPS came in within the guidance ranges** provided in April 2026, with revenue at the high end and EPS near the midpoint.\n\n| Metric | Q3 FY2026 Guidance (given April 2026) | Q3 FY2026 Actual | Result |\n|--------|----------------------------------------|------------------|--------|\n| Total revenues | **$9.2B – $10.0B** | **$9.9B** | **Within** (high end) |\n| Non-GAAP diluted EPS | **$2.10 – $2.30** | **$2.21** | **Within** (~midpoint) |\n\n- The $9.9 billion revenue figure was described by management as coming in “at the high end of our guidance” [[1]](https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/FY2026-3rd-Quarter-Earnings-Presentation_7-29-26_Final.pdf)[[2]](https://www.qualcomm.com/news/releases/2026/07/qualcomm-announces-third-quarter-fiscal-2026-results).\n- The $2.21 non-GAAP diluted EPS sits essentially at the midpoint of the $2.10–$2.30 guided range [[3]](https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/FY2026-3rd-Quarter-Earnings-Presentation_7-29-26_Final.pdf)[[4]](https://www.alpha-sense.com/earnings/qcom).\n\n*Sources*:\n- Q2 FY2026 guidance via earnings presentation: [PDF](https://s204.q4cdn.com/645488518/files/doc_financials/2026/q2/FY2026-2nd-Quarter-Earnings-Presentation_4-29-26_Final.pdf) and [MarketsFN summary](https://www.marketsfn.com/article/qualcomm-qcom-q2-2026-financial-results-summary)\n- Q3 FY2026 results via earnings presentation: [PDF](https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/FY2026-3rd-Quarter-Earnings-Presentation_7-29-26_Final.pdf), [Qualcomm press release](https://www.qualcomm.com/news/releases/2026/07/qualcomm-announces-third-quarter-fiscal-2026-results), and [Alpha-Sense transcript](https://www.alpha-sense.com/earnings/qcom)",
+  "tokens": {
+   "input": 9818,
+   "output": 2285
+  },
+  "tavily_credits": 2,
+  "latency_s": 14.82,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/4ad575ca2b5e65d830c505dd2913fee9",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Qualcomm fiscal Q2 2026 earnings results guidance revenue EPS April 2026"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Qualcomm fiscal Q3 2026 earnings results revenue EPS quarter ended June 28 2026"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q2/FY2026-2nd-Quarter-Earnings-Presentation_4-29-26_Final.pdf",
+    "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/FY2026-3rd-Quarter-Earnings-Presentation_7-29-26_Final.pdf",
+    "https://www.alpha-sense.com/earnings/qcom",
+    "https://www.marketsfn.com/article/qualcomm-qcom-q2-2026-financial-results-summary",
+    "https://www.qualcomm.com/news/releases/2026/07/qualcomm-announces-third-quarter-fiscal-2026-results"
+   ],
+   "cited_primary": 0,
+   "retrieved": 17,
+   "retrieved_primary": 2
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "revenues USD 9,947M vs guided USD 9.2B-10.0B = WITHIN the range (upper end)",
+     "met": true,
+     "note": "Agent states revenue $9.9B within (high end) of guidance $9.2B–$10.0B, matching the reference."
+    },
+    {
+     "point": "non-GAAP diluted EPS USD 2.21 vs guided USD 2.10-2.30 = WITHIN the range",
+     "met": true,
+     "note": "Agent states non-GAAP diluted EPS $2.21 within (~midpoint) of guidance $2.10–$2.30, matching the reference."
+    },
+    {
+     "point": "benchmark is the company's own guidance (from Q2 FY2026 release April 2026)",
+     "met": true,
+     "note": "Agent cites Q2 FY2026 guidance via earnings presentation dated 4-29-26, which is the correct guidance source."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All three key requirements are satisfied: both revenue and non-GAAP EPS are correctly identified as within the company's own guidance ranges, and the correct guidance source (April 2026 Q2 release) is used. No failure modes are present (no GAAP vs non-GAAP confusion, no 'beat' mischaracterization, no consensus comparison)."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Qualcomm's fiscal Q3 2026 ended June 28, 2026",
+     "numeric": true,
+     "cited_url": "https://www.qualcomm.com/news/releases/2026/07/qualcomm-announces-third-quarter-fiscal-2026-results",
+     "reason": "The press release states 'fiscal third quarter ended June 28, 2026'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total revenues guidance for Q3 FY2026 (given April 2026) was $9.2B – $10.0B",
+     "numeric": true,
+     "cited_url": "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q2/FY2026-2nd-Quarter-Earnings-Presentation_4-29-26_Final.pdf",
+     "reason": "The Q2 earnings presentation shows Q3FY26 Guidance Revenues $9.2B - $10.0B.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual total revenues for Q3 FY2026 was $9.9B",
+     "numeric": true,
+     "cited_url": "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/FY2026-3rd-Quarter-Earnings-Presentation_7-29-26_Final.pdf",
+     "reason": "The Q3 earnings presentation shows Q3FY26 Results Revenues $9.9B.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual revenue came within guidance range (high end)",
+     "numeric": false,
+     "cited_url": "https://www.qualcomm.com/news/releases/2026/07/qualcomm-announces-third-quarter-fiscal-2026-results",
+     "reason": "Press release states 'quarterly revenues at the high end of guidance'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Non-GAAP diluted EPS guidance for Q3 FY2026 was $2.10 – $2.30",
+     "numeric": true,
+     "cited_url": "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q2/FY2026-2nd-Quarter-Earnings-Presentation_4-29-26_Final.pdf",
+     "reason": "Q2 presentation shows Q3FY26 Guidance Non-GAAP diluted EPS $2.10 - $2.30.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual non-GAAP diluted EPS for Q3 FY2026 was $2.21",
+     "numeric": true,
+     "cited_url": "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/FY2026-3rd-Quarter-Earnings-Presentation_7-29-26_Final.pdf",
+     "reason": "Q3 presentation shows Q3FY26 Results Non-GAAP diluted EPS $2.21.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual EPS sits essentially at midpoint of guided range ($2.10–$2.30)",
+     "numeric": false,
+     "cited_url": "https://www.alpha-sense.com/earnings/qcom",
+     "reason": "Alpha-Sense transcript shows EPS $2.21 and guidance range $2.10-$2.30; midpoint is $2.20, so $2.21 is essentially at midpoint.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The $9.9 billion revenue figure was described by management as coming in 'at the high end of our guidance'",
+     "numeric": false,
+     "cited_url": "https://www.qualcomm.com/news/releases/2026/07/qualcomm-announces-third-quarter-fiscal-2026-results",
+     "reason": "Press release quote: 'quarterly revenues at the high end of guidance'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The $2.21 non-GAAP diluted EPS sits essentially at the midpoint of the $2.10–$2.30 guided range",
+     "numeric": false,
+     "cited_url": "https://www.alpha-sense.com/earnings/qcom",
+     "reason": "Alpha-Sense transcript shows EPS $2.21 and guidance range $2.10-$2.30; midpoint $2.20.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 9,
+   "supported": 9,
+   "not_retrieved": 0
+  }
+ }
+}

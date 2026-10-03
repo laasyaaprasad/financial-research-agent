@@ -1,0 +1,143 @@
+{
+ "id": "G18",
+ "category": "Beat or miss",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "Did Broadcom's Q3 FY2026 AI semiconductor revenue beat the guidance it gave on its Q2 FY2026 call, and by how much in dollars and percent?",
+ "grading": "Beat amount ±$0.1B; beat % ±0.5pp; must benchmark against the company's AI semiconductor revenue guide",
+ "answer": "Broadcom Q3 FY2026 AI semiconductor revenue was $16.7 billion versus its Q2-release guidance of $16.0 billion: a $0.7 billion beat, or 4.375% of guidance. [G18-E1, G18-E2]",
+ "output": {
+  "answer": " **Yes, Broadcom beat its Q3 FY2026 AI semiconductor guidance.**\n\n| Metric | Guidance (from Q2 FY2026 call) | Q3 FY2026 Actual | Beat |\n|--------|-------------------------------|------------------|------|\n| AI Semiconductor Revenue | **$16.0 billion** | **$16.7 billion** | **+$0.7 billion** |\n| YoY Growth | \"over 200%\" | 221% | — |\n\n- **Dollar beat:** **$700 million** (or $0.7 billion)\n- **Percent beat vs. guidance:** **~4.4%** ($0.7B ÷ $16.0B)\n\n**Sources:**\n\n- Q2 FY2026 guidance of $16.0 billion: [Broadcom Q2 FY2026 earnings release](https://investors.broadcom.com/node/64371/pdf) and [Futurum analysis](https://futurumgroup.com/insights/broadcom-q2-fy-2026-vmware-stability-supports-ai-led-semiconductor-expansion)\n- Q3 FY2026 actual of $16.7 billion: [Broadcom Q3 FY2026 earnings release (PR Newswire)](https://www.prnewswire.com/news-releases/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial-results-and-quarterly-dividend-302868129.html) and [Yahoo Finance](https://finance.yahoo.com/technology/ai/articles/broadcom-inc-avgo-q3-2026-110030403.html)",
+  "tokens": {
+   "input": 8282,
+   "output": 1120
+  },
+  "tavily_credits": 2,
+  "latency_s": 8.94,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/23105a25279256f1a89836d05cafd95e",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Broadcom Q3 FY2026 AI semiconductor revenue earnings guidance Q2 FY2026",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/technology/ai/articles/broadcom-inc-avgo-q3-2026-110030403.html",
+    "https://futurumgroup.com/insights/broadcom-q2-fy-2026-vmware-stability-supports-ai-led-semiconductor-expansion",
+    "https://investors.broadcom.com/node/64371/pdf",
+    "https://www.prnewswire.com/news-releases/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial-results-and-quarterly-dividend-302868129.html"
+   ],
+   "cited_primary": 1,
+   "retrieved": 10,
+   "retrieved_primary": 2
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Beat amount in dollars within ±$0.1B of reference ($0.7B)",
+     "met": true,
+     "note": "Agent states $0.7 billion beat, matching reference $0.7 billion exactly."
+    },
+    {
+     "point": "Beat percent within ±0.5 percentage points of reference (4.375%)",
+     "met": true,
+     "note": "Agent states ~4.4%, which is within 0.025pp of reference 4.375%."
+    },
+    {
+     "point": "Benchmarks against company's AI semiconductor revenue guide (not total semiconductor revenue, not consensus)",
+     "met": true,
+     "note": "Agent uses Q2 FY2026 guidance of $16.0B for AI semiconductor revenue and Q3 FY2026 actual of $16.7B, correctly identifying the metric and fiscal periods."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All three grading requirements are satisfied: dollar beat, percent beat, and correct benchmark against the company's AI semiconductor revenue guide."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Broadcom beat its Q3 FY2026 AI semiconductor guidance",
+     "numeric": false,
+     "cited_url": "https://investors.broadcom.com/node/64371/pdf",
+     "reason": "The Q2 FY2026 earnings release states guidance for Q3 AI semiconductor revenue of $16.0 billion (over 200% YoY). The Q3 FY2026 earnings releases (PR Newswire and Yahoo Finance) report actual AI semiconductor revenue of $16.7 billion (221% YoY). The actual exceeds guidance by $0.7 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Guidance for Q3 FY2026 AI semiconductor revenue was $16.0 billion",
+     "numeric": true,
+     "cited_url": "https://investors.broadcom.com/node/64371/pdf",
+     "reason": "The Broadcom Q2 FY2026 earnings release PDF includes the statement: 'in Q3 we expect semiconductor revenue from AI to grow over 200 percent year-over-year to $16.0 billion.' The Futurum analysis also confirms this guidance figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 actual AI semiconductor revenue was $16.7 billion",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial-results-and-quarterly-dividend-302868129.html",
+     "reason": "The PR Newswire release for Q3 FY2026 states: 'Q3 AI semiconductor revenue of $16.7 billion grew 221% year-over-year.' The Yahoo Finance article also reports: 'AI semiconductor revenue surged 221% year-over-year to $16.7 billion.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Beat amount: +$0.7 billion (or $700 million)",
+     "numeric": true,
+     "cited_url": "https://investors.broadcom.com/node/64371/pdf",
+     "reason": "Derived from guidance ($16.0B) and actual ($16.7B): $16.7B - $16.0B = $0.7B. The arithmetic is correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "YoY growth guidance: 'over 200%'",
+     "numeric": false,
+     "cited_url": "https://investors.broadcom.com/node/64371/pdf",
+     "reason": "The Q2 earnings release says: 'grow over 200 percent year-over-year to $16.0 billion.' The Futurum analysis also quotes 'up over 200% YoY.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "YoY growth actual: 221%",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial-results-and-quarterly-dividend-302868129.html",
+     "reason": "Both the PR Newswire release and Yahoo Finance article state AI semiconductor revenue grew 221% year-over-year.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Dollar beat: $700 million (or $0.7 billion)",
+     "numeric": true,
+     "cited_url": "https://investors.broadcom.com/node/64371/pdf",
+     "reason": "Same as claim 4; the beat expressed in millions.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Percent beat vs. guidance: ~4.4% ($0.7B ÷ $16.0B)",
+     "numeric": true,
+     "cited_url": "https://investors.broadcom.com/node/64371/pdf",
+     "reason": "Calculation: $0.7B / $16.0B = 0.04375 = 4.375%, which rounds to 4.4% (half the last digit tolerance). The arithmetic is correct.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 8,
+   "supported": 8,
+   "not_retrieved": 0
+  }
+ }
+}

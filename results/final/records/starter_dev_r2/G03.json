@@ -1,0 +1,99 @@
+{
+ "id": "G03",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Costco's membership fee income for fiscal 2026, in USD millions, and the YoY growth?",
+ "grading": "±0.5%, USD millions; must be 52-week FY2026 column not 16-week Q4; fail if FY2025 presented as current",
+ "answer": "Costco FY2026 membership fee income was USD 5,907 million, versus USD 5,323 million in FY2025: 10.9713% YoY growth. These are the 52-week annual columns. [G03-E1]",
+ "output": {
+  "answer": " For **fiscal 2026**, Costco reported membership fee income of **$5,907 million** (i.e., $5.907 billion).\n\nThis represents a **~11% year-over-year increase** (approximately $584 million) compared to fiscal 2025's membership fee income of $5,323 billion.\n\n*Sources:*  \n- [Yahoo Finance – Costco fiscal 2026 results](https://ca.finance.yahoo.com/news/costco-cost-collects-more-membership-022301447.html)  \n- [Costco Investor Relations – Q3 FY2026 earnings data](https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Third-Quarter-and-Year-To-Date-Operating-Results-For-Fiscal-2026/default.aspx)",
+  "tokens": {
+   "input": 10090,
+   "output": 1212
+  },
+  "tavily_credits": 2,
+  "latency_s": 9.65,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Costco membership fee income fiscal 2026 revenue USD millions YoY growth",
+     "search_depth": "advanced",
+     "time_range": "year"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://ca.finance.yahoo.com/news/costco-cost-collects-more-membership-022301447.html",
+    "https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Third-Quarter-and-Year-To-Date-Operating-Results-For-Fiscal-2026/default.aspx"
+   ],
+   "cited_primary": 1,
+   "retrieved": 10,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "FY2026 membership fee income in USD millions within ±0.5% of 5,907 million",
+     "met": true,
+     "note": "Agent states $5,907 million, exactly matching the reference value of 5,907 million."
+    },
+    {
+     "point": "YoY growth percentage within ±0.5% of 10.9713%",
+     "met": true,
+     "note": "Agent states ~11% year-over-year increase; 11% is within 0.03% of the reference 10.9713%, well inside the ±0.5% tolerance."
+    },
+    {
+     "point": "Uses 52-week FY2026 column (not 16-week Q4)",
+     "met": true,
+     "note": "The reported figure of 5,907 million matches the 52-week annual column per the reference; the agent cites fiscal 2026 results, not a quarterly column."
+    },
+    {
+     "point": "Does not present FY2025 as current",
+     "met": true,
+     "note": "Agent clearly identifies fiscal 2026 as the current period and fiscal 2025 as the prior year."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: the FY2026 membership fee income is correctly given as 5,907 million USD, the YoY growth is correctly stated as ~11% (within tolerance), the data corresponds to the 52-week annual column, and FY2025 is not presented as the current year. The minor unit error in the agent's parenthetical for FY2025 ($5,323 billion instead of million) does not affect the core answer, which is fully correct."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Costco reported membership fee income of $5,907 million for fiscal 2026",
+     "numeric": true,
+     "cited_url": "https://ca.finance.yahoo.com/news/costco-cost-collects-more-membership-022301447.html",
+     "reason": "The Yahoo Finance article states: 'Results released September 24 showed membership-fee revenue of $5.907 billion, up from $5.323 billion.' This directly supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Membership fee income increased ~11% year-over-year (approximately $584 million) compared to fiscal 2025's $5,323 billion",
+     "numeric": true,
+     "cited_url": "https://ca.finance.yahoo.com/news/costco-cost-collects-more-membership-022301447.html",
+     "reason": "The same article states: 'That $584 million increase, or approximately 11%...' The arithmetic checks: $5,907M - $5,323M = $584M; $584M / $5,323M = 10.97% ≈ 11%.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 2,
+   "numeric_cited": 2,
+   "cited": 2,
+   "supported": 2,
+   "not_retrieved": 0
+  }
+ }
+}

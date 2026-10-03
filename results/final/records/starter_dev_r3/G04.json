@@ -1,0 +1,214 @@
+{
+ "id": "G04",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Oracle's total remaining performance obligations at the end of Q1 FY2027, and what percentage does Oracle expect to recognize as revenue over the next 12 months?",
+ "grading": "RPO ±0.5% in USD billions; next-12-month % exact as disclosed; period must be 2026-08-31",
+ "answer": "Oracle had USD 664 billion of RPO at August 31, 2026 and expected to recognize approximately 13% over the next twelve months. [G04-E1]",
+ "output": {
+  "answer": " Based on my research, here is what I found regarding Oracle's most recently reported figures:\n\n**Oracle's Total Remaining Performance Obligations (RPO) at the end of Q1 FY2027:**\n- **$664 billion**, up $209 billion year-over-year.\n\n**Percentage Expected to Be Recognized as Revenue Over the Next 12 Months:**\n- **12%** — This is the figure that Oracle management (specifically CFO Hilary Maxson) has consistently cited on recent earnings calls, including the Q4 FY2026 call in June 2026.\n\n**Contextual Details from Q1 FY2027:**\nOracle reported its Q1 FY2027 results in September 2026, posting record revenue of $19.3 billion (up 30%) and cloud infrastructure revenue growth of 121%. The company also noted it booked more than **$30 billion in new AI cloud contracts** during the quarter.\n\n**Source URLs:**\n- Forbes: https://www.forbes.com/sites/fionariley/2026/09/11/oracle-stock-rises-after-q1-results-show-ai-cloud-growth-lower-cash-burn\n- Yahoo Finance: https://finance.yahoo.com/technology/articles/oracle-q1-fy27-net-income-rises-60-to-4.7bn-as-cloud-070928415.html\n- Yahoo Finance: https://finance.yahoo.com/markets/stocks/articles/oracle-co-ceos-deliver-explosive-130535126.html\n- Yahoo Finance: https://finance.yahoo.com/markets/stocks/articles/oracle-q4-earnings-call-highlights-221200948.html (for the 12% disclosure from the Q4 FY2026 call)",
+  "tokens": {
+   "input": 220387,
+   "output": 5177
+  },
+  "tavily_credits": 24,
+  "latency_s": 67.59,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/900bb4067e4baa255a3974c3e4793374",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle total remaining performance obligations RPO Q1 FY2027 revenue recognition next 12 months",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle ORCL Q1 FY2027 earnings results remaining performance obligations actual reported",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle Q1 FY2027 earnings press release $664 billion RPO 12% revenue recognition next 12 months",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "include_domains": [
+      "oracle.com",
+      "sec.gov",
+      "prnewswire.com",
+      "businesswire.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Oracle\" \"Q1 FY2027\" \"remaining performance obligations\" \"$664 billion\" OR \"$664B\" \"12%\" revenue recognition",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "site:oracle.com Q1 FY2027 earnings remaining performance obligations $664 billion 12%",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Oracle\" \"Q1 2027\" \"remaining performance obligations\" OR \"RPO\" \"$664\" OR \"$664B\" actual reported",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle Q1 FY2027 10-Q SEC filing remaining performance obligations revenue recognition 12 months percentage",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Oracle\" \"Q1 FY2027\" \"convert\" OR \"recognize\" \"%\" OR \"percent\" \"RPO\" OR \"remaining performance obligations\" next 12 months next year",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle expects convert 12% RPO revenue next year earnings call management",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle Q1 FY2027 earnings call transcript \"12%\" OR \"34%\" RPO revenue recognition Hilary Maxson CFO",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle Q1 FY2027 earnings call transcript September 2026 Hilary Maxson RPO remaining performance obligations",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Oracle\" \"remaining performance obligations\" \"$664 billion\" \"12%\" OR \"34%\" OR \"half\" management expects convert recognize next 12 months",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/oracle-co-ceos-deliver-explosive-130535126.html",
+    "https://finance.yahoo.com/markets/stocks/articles/oracle-q4-earnings-call-highlights-221200948.html",
+    "https://finance.yahoo.com/technology/articles/oracle-q1-fy27-net-income-rises-60-to-4.7bn-as-cloud-070928415.html",
+    "https://www.forbes.com/sites/fionariley/2026/09/11/oracle-stock-rises-after-q1-results-show-ai-cloud-growth-lower-cash-burn"
+   ],
+   "cited_primary": 0,
+   "retrieved": 55,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 0.667,
+   "points": [
+    {
+     "point": "RPO value in USD billions with ±0.5% tolerance (reference: 664 billion)",
+     "met": true,
+     "note": "Agent reports $664 billion, which matches the reference value exactly and is within the ±0.5% tolerance."
+    },
+    {
+     "point": "Next-12-month revenue recognition percentage exact as disclosed (reference: approximately 13%)",
+     "met": false,
+     "note": "Agent reports 12%, citing the Q4 FY2026 earnings call, but the reference for Q1 FY2027 discloses approximately 13%. The percentage is not exact."
+    },
+    {
+     "point": "Period must be quarter ended 2026-08-31 (Q1 FY2027)",
+     "met": true,
+     "note": "Agent correctly identifies the period as end of Q1 FY2027 (quarter ended August 31, 2026)."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The agent correctly states the total RPO ($664 billion) and the correct fiscal period (Q1 FY2027 ended 2026-08-31). However, the expected revenue recognition percentage over the next 12 months is given as 12%, while the reference discloses approximately 13% for that quarter. Since the grading rule requires the percentage to be exact as disclosed, this requirement is not met."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Oracle's Total Remaining Performance Obligations (RPO) at the end of Q1 FY2027 was $664 billion, up $209 billion year-over-year.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/technology/articles/oracle-q1-fy27-net-income-rises-60-to-4.7bn-as-cloud-070928415.html",
+     "reason": "The retrieved source for this URL states: 'The company's remaining performance obligations at quarter end were $664bn, up $209bn from the previous year.' This directly supports the claim.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Oracle management (CFO Hilary Maxson) expects 12% of RPO to be recognized as revenue over the next 12 months, as disclosed on the Q4 FY2026 earnings call in June 2026.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/oracle-q4-earnings-call-highlights-221200948.html",
+     "reason": "The retrieved source for this URL states: 'Oracle expects 12% of RPO to be recognized over the next 12 months and another 34% between 13 and 36 months. Maxson said those percentages.' This supports the 12% figure and attributes it to Maxson (CFO).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Oracle reported Q1 FY2027 results in September 2026, posting record revenue of $19.3 billion, up 30% year-over-year.",
+     "numeric": true,
+     "cited_url": "https://www.forbes.com/sites/fionariley/2026/09/11/oracle-stock-rises-after-q1-results-show-ai-cloud-growth-lower-cash-burn",
+     "reason": "The retrieved text for the Forbes URL only mentions RPO ($664 billion) and does not contain the revenue figure ($19.3 billion) or the 30% growth. Therefore, the cited source does not support this claim in the retrieved text.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cloud infrastructure revenue grew 121% in Q1 FY2027.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/oracle-co-ceos-deliver-explosive-130535126.html",
+     "reason": "The retrieved source for this URL states: 'Oracle stock plunged 50% despite co-CEOs delivering a $664 billion contract backlog and 121% cloud infrastructure revenue growth in one year.' This directly supports the 121% growth claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Oracle booked more than $30 billion in new AI cloud contracts during Q1 FY2027.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/oracle-co-ceos-deliver-explosive-130535126.html",
+     "reason": "The retrieved source for this URL states: 'Remaining performance obligations, ended Q1 FY2027 at $664 billion, a $209 billion year-over-year increase. Oracle booked more than $30 billion.' This supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 5,
+   "supported": 3,
+   "not_retrieved": 1
+  }
+ }
+}

@@ -1,0 +1,114 @@
+{
+ "id": "H06",
+ "category": "Quantitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "What did Jack Henry & Associates' fiscal 2026 Form 10-K report as remaining performance obligations at June 30, 2026 (in USD), and what share of that amount did the company expect to recognize over the next 12 months?",
+ "grading": "Key points: RPO at June 30, 2026 = USD 8,440,905 thousand (USD 8.44 billion; +/-0.5%); about 23% expected to be recognized over the next 12 months (about USD 1.94 billion; accept 23%). Optional detail: 18% in months 13-24. Fail if units are wrong by a factor of 1,000, or the figure is for another date/measure.",
+ "answer": "Jack Henry's FY2026 10-K (year ended June 30, 2026) reports remaining performance obligations of USD 8,440,905 thousand (about USD 8.44 billion) at June 30, 2026, of which approximately 23% (about USD 1.94 billion) is expected to be recognized over the next 12 months, 18% in months 13-24 and the balance thereafter [H06-E1][H06-E2]. The figure is not in the Q4 earnings release [H06-E3].",
+ "output": {
+  "answer": " According to Jack Henry & Associates' fiscal 2026 Form 10‑K, the remaining performance obligations at June 30, 2026, totaled **$8,440,905**, and the company expected to recognize **approximately 23%** of that amount over the next 12 months. (The expected recognition thereafter was about 18% in months 13–24, with the balance recognized after that.)\n\nSources:  \n- SEC Form 10‑K filing for the fiscal year ended June 30, 2026: https://www.sec.gov/Archives/edgar/data/779152/000077915226000067/jkhy-20260630.htm  \n- StockTitan summary of the same filing: https://www.stocktitan.net/sec-filings/JKHY/10-k-jack-henry-associates-inc-files-annual-report-82d9b73174f1.html",
+  "tokens": {
+   "input": 7760,
+   "output": 584
+  },
+  "tavily_credits": 2,
+  "latency_s": 6.54,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/6f8a8d27131701239b768131eb23d9ed",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Jack Henry Associates fiscal 2026 Form 10-K remaining performance obligations June 30 2026",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/779152/000077915226000067/jkhy-20260630.htm",
+    "https://www.stocktitan.net/sec-filings/JKHY/10-k-jack-henry-associates-inc-files-annual-report-82d9b73174f1.html"
+   ],
+   "cited_primary": 1,
+   "retrieved": 10,
+   "retrieved_primary": 5
+  },
+  "correctness": {
+   "score": 0.5,
+   "points": [
+    {
+     "point": "RPO at June 30, 2026 = USD 8,440,905 thousand (USD 8.44 billion; +/-0.5%)",
+     "met": false,
+     "note": "Agent reported '$8,440,905' without indicating thousands; the filing reports 8,440,905 thousand USD (i.e., USD 8.44 billion). This is a units error by a factor of 1,000."
+    },
+    {
+     "point": "About 23% expected to be recognized over the next 12 months (accept 23%)",
+     "met": true,
+     "note": "Agent correctly stated approximately 23%."
+    },
+    {
+     "point": "Units must be correct (not wrong by a factor of 1,000)",
+     "met": false,
+     "note": "Agent omitted 'thousands' or 'billion', presenting the raw number as if it were dollars, which is a factor-of-1,000 error."
+    },
+    {
+     "point": "Figure must be for the correct date/measure (June 30, 2026, remaining performance obligations)",
+     "met": true,
+     "note": "Agent cited the correct date and measure."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The core figure for remaining performance obligations is reported with a units error (missing 'thousands'), which the grading rule explicitly treats as a failure. Although the 23% recognition share is correct, the RPO amount is wrong in scale, making the overall answer incorrect."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Remaining performance obligations at June 30, 2026 totaled $8,440,905",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/779152/000077915226000067/jkhy-20260630.htm",
+     "reason": "The SEC Form 10-K filing states: 'As of June 30, 2026, estimated revenue expected to be recognized in the future related to performance obligations that are unsatisfied (or partially unsatisfied) at the end of the reporting period totaled $8,440,905.' This matches the claim exactly.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Company expected to recognize approximately 23% of remaining performance obligations over the next 12 months",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/779152/000077915226000067/jkhy-20260630.htm",
+     "reason": "The same filing states: 'The Company expects to recognize approximately 23% over the next 12 months, 18% in 13 - 24 months, and the balance thereafter.' This supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Company expected to recognize approximately 18% of remaining performance obligations in months 13–24",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/779152/000077915226000067/jkhy-20260630.htm",
+     "reason": "The filing explicitly states '18% in 13 - 24 months' as part of the expected recognition pattern.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The balance of remaining performance obligations would be recognized after month 24",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/779152/000077915226000067/jkhy-20260630.htm",
+     "reason": "The filing states 'and the balance thereafter' after the 13-24 month period, confirming the claim.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 4,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}

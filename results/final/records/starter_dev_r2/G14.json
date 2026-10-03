@@ -1,0 +1,171 @@
+{
+ "id": "G14",
+ "category": "Adjustments",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "NVIDIA's Q2 FY2027 GAAP diluted EPS came in above non-GAAP. What were the two figures, and which reconciling items explain the gap?",
+ "grading": "Key points: (1) both EPS figures exact to the cent; (2) names the largest reconciling line items as shown in the table with sign; (3) explains why the net adjustment is negative; (4) no reasons not present in the filing",
+ "answer": "Q2 FY2027 diluted EPS was $2.46 GAAP and $2.22 non-GAAP. The reconciliation removes USD 7,771 million of equity-security gains, offset by USD 222 million of operating-cost adjustments, USD 298 million of other-income adjustments and USD 1,517 million of tax effects. Net income falls from USD 59,688 million to USD 53,954 million. Stock compensation remains included in non-GAAP starting FY2027. [G14-E1]",
+ "output": {
+  "answer": " The two figures were:\n\n- **GAAP diluted EPS:** **$2.46**\n- **Non-GAAP diluted EPS:** **$2.22**\n\nGAAP EPS was unusually above non-GAAP EPS. The reconciliation shows a **$0.24** gap driven mainly by one large positive item offset by several negative adjustments (all per-share impacts, moving from non-GAAP to GAAP):\n\n1. **Acquisition-related and other costs:** **–$0.01**\n2. **Gain on equity securities:** **+$0.32** (the dominant driver)\n3. **Other items:** **–$0.01**\n4. **Tax impact of adjustments:** **–$0.06**\n\nNet: \\($2.22 - $0.01 + $0.32 - $0.01 - $0.06 = $2.46\\).\n\nThe **$7.8 billion gain on marketable equity securities** ($0.32 EPS) is what flipped the typical relationship—without it, GAAP EPS would have been lower than the non-GAAP result.\n\n**Sources:**  \n- [NVIDIA Official Press Release](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027)  \n- [NVIDIA Q2 FY27 Quarterly Presentation PDF (Reconciliation Slide)](https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/NVDA-F2Q27-Quarterly-Presentation-final-1.pdf)  \n- [NextG Comm analysis](https://www.nextgcomm.com/financials-nvidia-q2-earning-results-deep-analysis)",
+  "tokens": {
+   "input": 10000,
+   "output": 2010
+  },
+  "tavily_credits": 2,
+  "latency_s": 14.89,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q2 FY2027 GAAP diluted EPS above non-GAAP reconciling items",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+    "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/NVDA-F2Q27-Quarterly-Presentation-final-1.pdf",
+    "https://www.nextgcomm.com/financials-nvidia-q2-earning-results-deep-analysis"
+   ],
+   "cited_primary": 2,
+   "retrieved": 10,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 0.75,
+   "points": [
+    {
+     "point": "both EPS figures exact to the cent",
+     "met": true,
+     "note": "Agent reports GAAP diluted EPS $2.46 and non-GAAP diluted EPS $2.22, matching reference exactly."
+    },
+    {
+     "point": "names the largest reconciling line items as shown in the table with sign",
+     "met": true,
+     "note": "Agent identifies gain on equity securities (+$0.32), acquisition-related and other costs (–$0.01), other items (–$0.01), tax impact of adjustments (–$0.06), corresponding to the reconciliation table's equity-security gains, operating-cost adjustments, other-income adjustments, and tax effects, with correct directional signs."
+    },
+    {
+     "point": "explains why the net adjustment is negative",
+     "met": false,
+     "note": "Agent explains why GAAP EPS is higher than non-GAAP (due to large equity-security gain), but does not explicitly explain why the net adjustment from GAAP to non-GAAP is negative (i.e., why net income falls). The answer focuses on the per-share gap rather than the net adjustment's negativity."
+    },
+    {
+     "point": "no reasons not present in the filing",
+     "met": true,
+     "note": "All cited reconciling items appear in the filing; no invented reasons."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The answer correctly states both EPS figures and identifies the key reconciling items with correct signs, but does not explicitly explain why the net adjustment (GAAP to non-GAAP) is negative, only why GAAP EPS is higher."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "GAAP diluted EPS for Q2 FY2027 was $2.46",
+     "numeric": true,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The NVIDIA press release shows a table with 'Diluted earnings per share' GAAP $2.46 for Q2 FY27.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Non-GAAP diluted EPS for Q2 FY2027 was $2.22",
+     "numeric": true,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The same press release table shows non-GAAP diluted earnings per share $2.22 for Q2 FY27.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "GAAP EPS was unusually above non-GAAP EPS (an inversion)",
+     "numeric": false,
+     "cited_url": "https://www.nextgcomm.com/financials-nvidia-q2-earning-results-deep-analysis",
+     "reason": "The NextG Comm analysis explicitly states: 'GAAP EPS of $2.46 exceeded non-GAAP EPS of $2.22 — an unusual inversion.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The reconciliation from non-GAAP to GAAP shows a $0.24 per-share gap",
+     "numeric": true,
+     "cited_url": "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/NVDA-F2Q27-Quarterly-Presentation-final-1.pdf",
+     "reason": "The PDF reconciliation slide shows non-GAAP diluted EPS $2.22 and GAAP diluted EPS $2.46, a difference of $0.24.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Acquisition-related and other costs adjustment: –$0.01 per share",
+     "numeric": true,
+     "cited_url": "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/NVDA-F2Q27-Quarterly-Presentation-final-1.pdf",
+     "reason": "The PDF reconciliation lists 'Acquisition-Related and Other Costs (A)' with a diluted EPS impact of $(0.01).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Gain on equity securities adjustment: +$0.32 per share (dominant driver)",
+     "numeric": true,
+     "cited_url": "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/NVDA-F2Q27-Quarterly-Presentation-final-1.pdf",
+     "reason": "The PDF reconciliation shows 'Gain/(loss) on Equity Securities' with a diluted EPS impact of $0.32.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Other items adjustment: –$0.01 per share",
+     "numeric": true,
+     "cited_url": "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/NVDA-F2Q27-Quarterly-Presentation-final-1.pdf",
+     "reason": "The PDF reconciliation lists 'Other (B)' with a diluted EPS impact of $(0.01).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tax impact of adjustments: –$0.06 per share",
+     "numeric": true,
+     "cited_url": "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/NVDA-F2Q27-Quarterly-Presentation-final-1.pdf",
+     "reason": "The PDF reconciliation shows 'Tax Impact of Adjustments' with a diluted EPS impact of $(0.06).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Net reconciliation: $2.22 - $0.01 + $0.32 - $0.01 - $0.06 = $2.46",
+     "numeric": true,
+     "cited_url": "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/NVDA-F2Q27-Quarterly-Presentation-final-1.pdf",
+     "reason": "The per-share adjustments in the PDF sum exactly to the GAAP EPS of $2.46; arithmetic verified: 2.22 - 0.01 + 0.32 - 0.01 - 0.06 = 2.46.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The gain on equity securities corresponds to a $7.8 billion gain on marketable equity securities",
+     "numeric": true,
+     "cited_url": "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/NVDA-F2Q27-Quarterly-Presentation-final-1.pdf",
+     "reason": "The PDF shows a net income impact of $7,771 million for 'Gain/(loss) on Equity Securities', which rounds to $7.8 billion. The NextG Comm analysis also cites $7,771m.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Without the $7.8B gain, GAAP EPS would have been lower than non-GAAP EPS",
+     "numeric": false,
+     "cited_url": "https://www.nextgcomm.com/financials-nvidia-q2-earning-results-deep-analysis",
+     "reason": "The NextG Comm analysis states that the non-GAAP number is the conservative one because it excludes the non-recurring gains, implying GAAP would be lower without them.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 9,
+   "numeric_cited": 9,
+   "cited": 11,
+   "supported": 11,
+   "not_retrieved": 0
+  }
+ }
+}

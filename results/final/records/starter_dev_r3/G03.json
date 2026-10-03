@@ -1,0 +1,158 @@
+{
+ "id": "G03",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Costco's membership fee income for fiscal 2026, in USD millions, and the YoY growth?",
+ "grading": "±0.5%, USD millions; must be 52-week FY2026 column not 16-week Q4; fail if FY2025 presented as current",
+ "answer": "Costco FY2026 membership fee income was USD 5,907 million, versus USD 5,323 million in FY2025: 10.9713% YoY growth. These are the 52-week annual columns. [G03-E1]",
+ "output": {
+  "answer": " Costco's membership fee income for **fiscal 2026** was **$5,907 million** (approximately $5.9 billion), representing year-over-year growth of **approximately 11%**.\n\nThis compares to fiscal 2025 membership fee revenue of $5,323 million. The $584 million increase was driven by the September 2024 membership fee hike (Gold Star from $60 to $65, Executive from $120 to $130), strong renewal rates, and continued growth in paid memberships and Executive tier penetration.\n\n**Sources:**\n- Yahoo Finance: https://finance.yahoo.com/markets/stocks/articles/costco-cost-collects-more-membership-022301447.html\n- TIKR.com: https://www.tikr.com/blog/why-costcos-next-quarter-is-the-real-test-of-its-7-fee-growth",
+  "tokens": {
+   "input": 24543,
+   "output": 2066
+  },
+  "tavily_credits": 4,
+  "latency_s": 20.02,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/9c1dd21366cce56026180b14953b8f11",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Costco membership fee income fiscal 2026 USD millions YoY growth",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Costco fiscal 2026 full year annual membership fee revenue total amount",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/costco-cost-collects-more-membership-022301447.html",
+    "https://www.tikr.com/blog/why-costcos-next-quarter-is-the-real-test-of-its-7-fee-growth"
+   ],
+   "cited_primary": 0,
+   "retrieved": 13,
+   "retrieved_primary": 2
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Membership fee income for fiscal 2026 in USD millions is 5,907 million (within tolerance)",
+     "met": true,
+     "note": "Agent states $5,907 million, matches reference exactly."
+    },
+    {
+     "point": "YoY growth percentage is approximately 11% (within ±0.5% of 10.9713%)",
+     "met": true,
+     "note": "Agent states approximately 11%, reference is 10.9713%, difference 0.0287% well within ±0.5%."
+    },
+    {
+     "point": "Uses 52-week FY2026 column, not 16-week Q4",
+     "met": true,
+     "note": "Agent's figure matches the 52-week annual column per reference."
+    },
+    {
+     "point": "Does not present FY2025 as current",
+     "met": true,
+     "note": "Agent clearly labels fiscal 2026 as current and fiscal 2025 as prior."
+    },
+    {
+     "point": "Answer derived from 8-K (latest filing) not FY2025 10-K",
+     "met": true,
+     "note": "Agent's numbers align with 8-K data; sources cited are secondary but data is correct."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent provides the correct membership fee income for fiscal 2026 ($5,907 million) and YoY growth (~11%), both within tolerance, uses the correct 52-week annual period, and does not misrepresent FY2025 as current."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Costco's membership fee income for fiscal 2026 was $5,907 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-collects-more-membership-022301447.html",
+     "reason": "The Yahoo Finance article states: 'Results released September 24 showed membership-fee revenue of $5.907 billion, up from $5.323 billion.' This directly supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal 2026 membership fee income represents approximately 11% year-over-year growth",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-collects-more-membership-022301447.html",
+     "reason": "The same article notes: 'That $584 million increase, or approximately 11%, strengthens recurring revenue.' The TIKR.com article also states: 'the quarterly results put fiscal 2026 at about $5.9 billion, up roughly 11%.' Both sources support the ~11% growth claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal 2025 membership fee revenue was $5,323 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-collects-more-membership-022301447.html",
+     "reason": "The Yahoo Finance article explicitly says membership-fee revenue was '$5.907 billion, up from $5.323 billion.' The TIKR.com article also references '$5.32 billion in fiscal 2025.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The increase was $584 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-collects-more-membership-022301447.html",
+     "reason": "The Yahoo Finance article states: 'That $584 million increase, or approximately 11%...' This matches the difference between $5,907 million and $5,323 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The increase was driven by the September 2024 membership fee hike (Gold Star from $60 to $65, Executive from $120 to $130)",
+     "numeric": true,
+     "cited_url": "https://www.tikr.com/blog/why-costcos-next-quarter-is-the-real-test-of-its-7-fee-growth",
+     "reason": "The retrieved TIKR.com article mentions the September 2024 fee increase but does not specify the exact fee amounts (Gold Star $60→$65, Executive $120→$130). Those details appear in another retrieved source (mmcginvest.com) but not in the cited TIKR.com snippet. Therefore, the cited source does not support the specific fee amounts.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Strong renewal rates contributed to the increase",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-collects-more-membership-022301447.html",
+     "reason": "The Yahoo Finance article reports: 'Renewal rates were 92.3% in the United States and Canada and 89.8% worldwide.' This supports the claim that strong renewal rates were a factor.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Continued growth in paid memberships contributed to the increase",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-collects-more-membership-022301447.html",
+     "reason": "The Yahoo Finance article states: 'Costco Wholesale Corporation (NASDAQ:COST) ended fiscal 2026 with 84.1 million paid memberships, up 3.8%.' This confirms paid membership growth.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Executive tier penetration growth contributed to the increase",
+     "numeric": false,
+     "cited_url": "https://www.tikr.com/blog/why-costcos-next-quarter-is-the-real-test-of-its-7-fee-growth",
+     "reason": "The TIKR.com article notes: 'Executive members reached 41.2 million in Q3 FY2026, up 9.6% year-over-year — growing more than twice as fast as total paid membership growth of 4.1%.' This supports the claim that Executive tier penetration grew.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 8,
+   "supported": 7,
+   "not_retrieved": 0
+  }
+ }
+}

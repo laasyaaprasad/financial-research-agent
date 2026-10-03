@@ -1,0 +1,173 @@
+{
+ "id": "G07",
+ "category": "Numerical reasoning",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Salesforce's current RPO at the end of Q2 FY2027, its YoY growth in both nominal and constant currency, and what share of total RPO it represents?",
+ "grading": "cRPO ±0.5%, USD billions; growth rates exact as disclosed (both labeled correctly); share ±1pp",
+ "answer": "Salesforce cRPO at July 31, 2026 was USD 33.5 billion, up 14% YoY in both nominal and constant currency terms. Total RPO was USD 66.3 billion, so cRPO represented 50.5279% of total RPO. [G07-E1]",
+ "output": {
+  "answer": " Based on Salesforce's Q2 FY2027 earnings results (ended July 31, 2026), here are the RPO figures:\n\n**Current RPO (cRPO):** $33.5 billion\n- **YoY growth:** 14% (both nominal and in constant currency)\n\n**Total RPO:** $66.3 billion\n- **YoY growth:** 11%\n\n**Share of Total RPO:** Current RPO represents approximately **50.5%** of total remaining performance obligation ($33.5B ÷ $66.3B).\n\nSource: [Salesforce Q2 FY2027 Earnings Press Release (PDF)](https://investor.salesforce.com/files/doc_financials/2027/q2/CRM-Q2-FY27-Earnings-Press-Release.pdf)",
+  "tokens": {
+   "input": 57777,
+   "output": 1211
+  },
+  "tavily_credits": 10,
+  "latency_s": 27.8,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/7238ccec304f1f981e7ed7345bb287df",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Salesforce Q2 FY2027 current RPO remaining performance obligation year over year growth constant currency share total RPO",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Salesforce Q2 FY2027 earnings results current RPO remaining performance obligation",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Salesforce Q2 FY2027 RPO remaining performance obligation 30.3 billion or current RPO specific numbers",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Salesforce\" \"Q2 FY2027\" \"current RPO\" OR \"cRPO\" OR \"remaining performance obligation\" billion growth constant currency",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Salesforce Q2 FY2027 earnings report RPO 30 billion current remaining performance obligation total RPO",
+     "topic": "finance",
+     "search_depth": "advanced",
+     "include_domains": [
+      "salesforce.com",
+      "sec.gov",
+      "prnewswire.com",
+      "businesswire.com"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.salesforce.com/files/doc_financials/2027/q2/CRM-Q2-FY27-Earnings-Press-Release.pdf"
+   ],
+   "cited_primary": 1,
+   "retrieved": 32,
+   "retrieved_primary": 8
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "cRPO value in USD billions (tolerance ±0.5%)",
+     "met": true,
+     "note": "Agent reports $33.5 billion, matching reference exactly (33.5 ±0.1675)."
+    },
+    {
+     "point": "YoY growth rates exact as disclosed, both nominal and constant currency labeled correctly",
+     "met": true,
+     "note": "Agent states 14% YoY growth for both nominal and constant currency, matching reference exactly."
+    },
+    {
+     "point": "cRPO share of total RPO (tolerance ±1 percentage point)",
+     "met": true,
+     "note": "Agent reports ~50.5%, reference is 50.5279%; difference is 0.03pp, well within ±1pp."
+    },
+    {
+     "point": "Correct fiscal period (Q2 FY2027 ended July 31, 2026)",
+     "met": true,
+     "note": "Agent explicitly notes the quarter ended July 31, 2026."
+    },
+    {
+     "point": "No confusion between cRPO and total RPO",
+     "met": true,
+     "note": "Agent clearly distinguishes cRPO ($33.5B) from total RPO ($66.3B)."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: cRPO value, growth rates (both nominal and constant currency), share of total RPO, fiscal period, and correct identification of cRPO vs total RPO."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Current RPO (cRPO) is $33.5 billion",
+     "numeric": true,
+     "cited_url": "https://investor.salesforce.com/files/doc_financials/2027/q2/CRM-Q2-FY27-Earnings-Press-Release.pdf",
+     "reason": "Retrieved text states: 'Current remaining performance obligation (\"cRPO\") of $33.5 billion'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "cRPO YoY growth is 14% (both nominal and in constant currency)",
+     "numeric": true,
+     "cited_url": "https://investor.salesforce.com/files/doc_financials/2027/q2/CRM-Q2-FY27-Earnings-Press-Release.pdf",
+     "reason": "Retrieved text states: 'up 14% year-over-year (\"Y/Y\") and in constant currency (\"CC\")'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total RPO is $66.3 billion",
+     "numeric": true,
+     "cited_url": "https://investor.salesforce.com/files/doc_financials/2027/q2/CRM-Q2-FY27-Earnings-Press-Release.pdf",
+     "reason": "Retrieved text states: 'Remaining performance obligation of $66.3 billion'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total RPO YoY growth is 11%",
+     "numeric": true,
+     "cited_url": "https://investor.salesforce.com/files/doc_financials/2027/q2/CRM-Q2-FY27-Earnings-Press-Release.pdf",
+     "reason": "Retrieved text states: 'up 11% Y/Y'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Current RPO represents approximately 50.5% of total RPO",
+     "numeric": true,
+     "cited_url": "https://investor.salesforce.com/files/doc_financials/2027/q2/CRM-Q2-FY27-Earnings-Press-Release.pdf",
+     "reason": "Derived from $33.5B / $66.3B = 0.5053 ≈ 50.5%; inputs supported by retrieved text",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Results are for Q2 FY2027 ended July 31, 2026",
+     "numeric": false,
+     "cited_url": "https://investor.salesforce.com/files/doc_financials/2027/q2/CRM-Q2-FY27-Earnings-Press-Release.pdf",
+     "reason": "Retrieved text mentions 'Second Quarter Financial Highlights' and 'FY27' but does not explicitly state quarter end date",
+     "supported": null,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 6,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}

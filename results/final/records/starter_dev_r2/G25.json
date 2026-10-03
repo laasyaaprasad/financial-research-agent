@@ -1,0 +1,137 @@
+{
+ "id": "G25",
+ "category": "Adjustments",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "Honeywell reported Q2 2026 a few weeks after spinning off Aerospace. What were consolidated sales vs sales excluding Aerospace, and why is GAAP EPS from continuing operations so far above adjusted EPS?",
+ "grading": "Use HON, CIK 773840. Consolidated sales USD 9,719M; ex-Aerospace sales USD 5,187M. Identify the Quantinuum gain removal (-$15.87/share) as the main EPS adjustment. State actual Q2 close June 27, spin June 29 in Q3, and Aerospace consolidated in Q2 with discontinued-operations presentation beginning Q3. Keep consolidated and ex-Aerospace EPS bases distinct.",
+ "answer": "HON consolidated Q2 2026 sales were USD 9,719 million; sales excluding Aerospace were USD 5,187 million. Consolidated GAAP continuing-operations EPS of $17.83 reconciles to adjusted EPS of $4.52, principally by removing $15.87 per share of Quantinuum deconsolidation gains; other net adjustments add $2.56. Ex-Aerospace EPS was $16.65 GAAP / $1.95 adjusted. The Q2 actual close was June 27, although presented as June 30: the June 29 Aerospace spin occurred in Q3. Aerospace remains consolidated in this Q2 presentation and becomes discontinued operations beginning Q3. [G25-E1, G25-E2]",
+ "output": {
+  "answer": " Based on Honeywell Technologies' Q2 2026 results (reported July 23, 2026), here are the sales and earnings figures, along with the explanation for the GAAP-adjusted EPS gap:\n\n## Sales Breakdown\n\n| Metric | Amount |\n|--------|--------|\n| **Consolidated sales** (including Aerospace) | **$9,719 million** |\n| **Sales excluding Aerospace** (Honeywell Technologies basis) | **$5,187 million** |\n| Aerospace segment standalone sales | ~$4.5 billion |\n\nThe spin-off of Honeywell Aerospace was completed on June 29, 2026, shortly before the earnings release.\n\n## EPS Discrepancy\n\n| Metric | Amount |\n|--------|--------|\n| **GAAP diluted EPS** | **$17.83** |\n| **Consolidated adjusted EPS** | **$4.52** |\n| Adjusted EPS (Honeywell Technologies basis, excluding Aerospace) | **$1.95** (up 10% YoY) |\n\n## Why GAAP EPS Is So Much Higher Than Adjusted EPS\n\nGAAP EPS from continuing operations was massively inflated by a **$6,629 million (approximately $6.6 billion) one-time gain on deconsolidation of Quantinuum** following its IPO in June 2026.\n\nWhen a parent company loses majority control of a subsidiary, GAAP requires it to mark its retained stake at fair value. Because Quantinuum's market value far exceeded its book value on Honeywell's balance sheet, this created a paper accounting gain of ~$6.6 billion. This was partially offset by:\n- **$311 million** impairment on assets held for sale\n- **$241 million** loss on debt extinguishment\n- **$265 million** equity losses on the retained Quantinuum stake\n\n**Net income from continuing operations** surged to **$5,686 million** vs. $1,383 million a year earlier, almost entirely driven by this one-time Quantinuum gain. Excluding this and other adjustments gives the much lower adjusted EPS figure ($4.52) that analysts use to assess operating performance.\n\nGoing forward, the Quantinuum gain drops out, and Honeywell will account for its ~48% retained stake using the equity method.\n\n**Sources:**\n- [Honeywell Technologies Q2 2026 10-Q (StockTitan)](https://www.stocktitan.net/sec-filings/HON/10-q-honeywell-international-inc-quarterly-earnings-report-57b4e107b0b6.html)\n- [Honeywell Technologies Earnings Summary (StockTitan 8-K)](https://stocktitan.net/sec-filings/HON/8-k-honeywell-international-inc-reports-material-event-7dc420d8b33e.html)\n- [Honeywell Aerospace Spin-off Details (Yahoo Finance)](https://finance.yahoo.com/markets/stocks/articles/honeywell-aerospace-reports-second-quarter-200500878.html)\n- [Quantinuum Deconsolidation Analysis (CryptoBriefing)](https://cryptobriefing.com/honeywell-quantinuum-deconsolidation-gain)",
+  "tokens": {
+   "input": 45417,
+   "output": 2249
+  },
+  "tavily_credits": 10,
+  "latency_s": 21.09,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Honeywell Aerospace spin off Q2 2024 earnings report continuing operations adjusted EPS sales",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Honeywell International Q2 2026 earnings GAAP EPS continuing operations adjusted EPS sales spin-off",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Honeywell Technologies\" \"second quarter of 2026\" GAAP EPS \"$4.52\" sales continuing operations earnings press release",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Honeywell HON Q2 2026 earnings consolidated sales $10 billion quarterly press release 8-K SEC filing",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Honeywell Quantinuum deconsolidation gain Q2 2026 $6629 million spin-off transaction",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://cryptobriefing.com/honeywell-quantinuum-deconsolidation-gain",
+    "https://finance.yahoo.com/markets/stocks/articles/honeywell-aerospace-reports-second-quarter-200500878.html",
+    "https://stocktitan.net/sec-filings/HON/8-k-honeywell-international-inc-reports-material-event-7dc420d8b33e.html",
+    "https://www.stocktitan.net/sec-filings/HON/10-q-honeywell-international-inc-quarterly-earnings-report-57b4e107b0b6.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 26,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.5,
+   "points": [
+    {
+     "point": "Consolidated sales USD 9,719M",
+     "met": true,
+     "note": "Agent reports consolidated sales of $9,719 million, matching reference."
+    },
+    {
+     "point": "Ex-Aerospace sales USD 5,187M",
+     "met": true,
+     "note": "Agent reports sales excluding Aerospace of $5,187 million, matching reference."
+    },
+    {
+     "point": "Identify Quantinuum gain removal (-$15.87/share) as main EPS adjustment",
+     "met": false,
+     "note": "Agent describes the Quantinuum deconsolidation gain of ~$6.6B but does not state the per-share adjustment of -$15.87."
+    },
+    {
+     "point": "State actual Q2 close June 27",
+     "met": false,
+     "note": "Agent does not mention the actual quarter close date of June 27."
+    },
+    {
+     "point": "State spin June 29 in Q3",
+     "met": false,
+     "note": "Agent notes the spin-off date of June 29 but does not clarify it occurred in Q3 2026."
+    },
+    {
+     "point": "State Aerospace consolidated in Q2 with discontinued-operations presentation beginning Q3",
+     "met": false,
+     "note": "Agent does not mention that Aerospace remains consolidated in Q2 and becomes discontinued operations in Q3."
+    },
+    {
+     "point": "Keep consolidated and ex-Aerospace EPS bases distinct",
+     "met": true,
+     "note": "Agent presents consolidated GAAP EPS ($17.83), consolidated adjusted EPS ($4.52), and ex-Aerospace adjusted EPS ($1.95) separately."
+    },
+    {
+     "point": "Use HON, CIK 773840",
+     "met": true,
+     "note": "Agent refers to Honeywell Technologies (ticker HON); CIK not explicitly cited but entity is correct."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The agent correctly reports the key sales figures and consolidated EPS numbers, and correctly attributes the GAAP-adjusted EPS gap to the Quantinuum deconsolidation gain. However, it misses several specific requirements: the per-share Quantinuum adjustment (-$15.87), the actual Q2 close date (June 27), the classification of the June 29 spin as a Q3 event, and the disclosure that Aerospace is consolidated in Q2 with discontinued-operations presentation starting in Q3. Because multiple requirements are unmet, the answer is partially correct."
+  },
+  "citations": {
+   "claims": [],
+   "numeric_claims": 0,
+   "numeric_cited": 0,
+   "cited": 0,
+   "supported": 0,
+   "not_retrieved": 0,
+   "judge_error": "judge failed after 4 attempts: no structured output"
+  }
+ }
+}

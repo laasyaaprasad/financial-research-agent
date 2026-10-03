@@ -1,0 +1,198 @@
+{
+ "id": "G12",
+ "category": "Quantitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "abstain",
+ "question": "Pull Cargill's FY2026 10-K: GAAP revenue, net income, and diluted EPS.",
+ "grading": "State that Cargill is privately held and no public FY2026 10-K supports the request. Net income and diluted EPS are not publicly disclosed in the annual report. May supply company-published FY2026 revenue with a citation and that label. Do not say EPS cannot exist or assert unaudited without evidence.",
+ "answer": "Cargill is privately held and restricts detailed financial information to authorized institutions; no public FY2026 10-K supports the request. [G12-E2] Its own annual report states FY2026 revenue of USD 164 billion. This is company-published revenue, not a verified SEC-filed GAAP figure; public net income and diluted EPS are not disclosed in the cited report. [G12-E1]",
+ "output": {
+  "answer": " Cargill is a **privately held company** and does **not file a Form 10-K** with the SEC. As the largest private company in the U.S., it is exempt from SEC filing requirements and does not publicly report GAAP net income or diluted EPS in the same manner as publicly traded firms.\n\n**What Cargill does disclose:**\nAccording to its annual reports and press disclosures, Cargill voluntarily publishes limited financial highlights. From available disclosures:\n- **FY2026 Revenue:** Approximately **$164 billion** ([VerityRank](https://www.verityrank.com/companies/cargill))\n- **Net Income / EPS:** Cargill does **not publicly disclose** GAAP net income or diluted EPS figures in its annual report. The company only selectively releases certain metrics (e.g., quarterly profit trends) and is not required to follow public-company GAAP disclosure standards.\n\n**Key point:** Because Cargill is family-owned (88% owned by the Cargill and MacMillan families, with employees holding the rest), there is no 10-K to pull, no SEC EDGAR filings with full income statements, and no publicly traded shares on which to calculate diluted EPS ([Motley Fool](https://www.fool.com/investing/how-to-invest/stocks/how-to-invest-in-cargill-stock), [UC Law Library Guide](https://libguides.uclawsf.edu/Company/SEC)).\n\nIf you need comparable public-company filings in the agribusiness sector, consider **Bunge (BG)**, **ADM**, or **Tyson Foods (TSN)**, all of which file standard 10-Ks with full GAAP financials.",
+  "tokens": {
+   "input": 10490,
+   "output": 1467
+  },
+  "tavily_credits": 3,
+  "latency_s": 13.61,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cargill FY2026 annual report revenue net income EPS",
+     "search_depth": "advanced",
+     "time_range": "year"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cargill private company does not file 10-K SEC",
+     "search_depth": "basic",
+     "time_range": "year"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://libguides.uclawsf.edu/Company/SEC",
+    "https://www.fool.com/investing/how-to-invest/stocks/how-to-invest-in-cargill-stock",
+    "https://www.verityrank.com/companies/cargill"
+   ],
+   "cited_primary": 0,
+   "retrieved": 20,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "State that Cargill is privately held",
+     "met": true,
+     "note": "Agent states 'Cargill is a privately held company'."
+    },
+    {
+     "point": "State that no public FY2026 10-K supports the request",
+     "met": true,
+     "note": "Agent states 'does not file a Form 10-K with the SEC'."
+    },
+    {
+     "point": "State that net income and diluted EPS are not publicly disclosed in the annual report",
+     "met": true,
+     "note": "Agent states 'Cargill does not publicly disclose GAAP net income or diluted EPS figures in its annual report'."
+    },
+    {
+     "point": "If supplying company-published FY2026 revenue, must include citation and label it as company-published",
+     "met": true,
+     "note": "Agent provides revenue ~$164 billion with citation to VerityRank and labels it as from 'annual reports and press disclosures' and 'voluntarily publishes limited financial highlights'."
+    },
+    {
+     "point": "Do not say EPS cannot exist",
+     "met": true,
+     "note": "Agent does not claim EPS cannot exist; it notes no publicly traded shares for diluted EPS calculation."
+    },
+    {
+     "point": "Do not assert unaudited without evidence",
+     "met": true,
+     "note": "Agent makes no claim about audit status."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly identifies Cargill as privately held with no public 10-K, states net income and diluted EPS are not publicly disclosed, provides company-published revenue with citation and appropriate labeling, and avoids prohibited statements."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Cargill is a privately held company",
+     "numeric": false,
+     "cited_url": "https://www.fool.com/investing/how-to-invest/stocks/how-to-invest-in-cargill-stock",
+     "reason": "Motley Fool article states: 'Cargill is not a publicly traded company. It is a private, family-owned business.' UC Law Library Guide also lists Cargill as an example of a private company.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cargill does not file a Form 10-K with the SEC",
+     "numeric": false,
+     "cited_url": "https://libguides.uclawsf.edu/Company/SEC",
+     "reason": "UC Law Library Guide explains private companies are not required to submit filings to the SEC. Motley Fool also notes Cargill is private and does not file 10-Ks.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cargill is the largest private company in the U.S.",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Answer states this but does not cite a source. Retrieved sources (Instagram, Dragon Sourcing) mention Cargill as the largest private company with $154B/$160B revenue, but the answer itself does not provide a citation.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Cargill is exempt from SEC filing requirements",
+     "numeric": false,
+     "cited_url": "https://libguides.uclawsf.edu/Company/SEC",
+     "reason": "UC Law Library Guide states private companies are not obligated to submit filings to the SEC. The Global Database source also confirms private companies have zero filing obligation unless they cross asset/shareholder thresholds.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cargill does not publicly report GAAP net income or diluted EPS in the same manner as publicly traded firms",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Answer asserts this but does not cite a specific source. Motley Fool says Cargill 'publicly discloses some of its financial results in its annual report' but only mentions revenue, not net income or EPS. The lack of 10-K filing supports that GAAP net income and diluted EPS are not reported per public-company standards.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "FY2026 Revenue: Approximately $164 billion",
+     "numeric": true,
+     "cited_url": "https://www.verityrank.com/companies/cargill",
+     "reason": "VerityRank source states: 'Revenue reached approximately US$164 billion in fiscal 2026.' This matches the claim exactly.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cargill does not publicly disclose GAAP net income or diluted EPS figures in its annual report",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Answer states this without a direct citation. Motley Fool indicates Cargill's annual report discloses revenue but does not mention net income or EPS. TTNews article references quarterly net income figures, suggesting some profit trends are released selectively, but not full GAAP net income or diluted EPS annually.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "The company only selectively releases certain metrics (e.g., quarterly profit trends)",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Answer mentions this but does not cite a source. TTNews article discusses Cargill's quarterly net income and revenue, supporting that some quarterly profit data is released.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Cargill is not required to follow public-company GAAP disclosure standards",
+     "numeric": false,
+     "cited_url": "https://libguides.uclawsf.edu/Company/SEC",
+     "reason": "UC Law Library Guide states private companies are not required to disclose financial information to the public, implying they are not subject to public-company GAAP disclosure standards.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cargill is family-owned: 88% owned by the Cargill and MacMillan families, with employees holding the rest",
+     "numeric": true,
+     "cited_url": "https://www.fool.com/investing/how-to-invest/stocks/how-to-invest-in-cargill-stock",
+     "reason": "Motley Fool article states: 'Descendants of the company's founders (the Cargill and MacMillan families) own an estimated 88% of its shares, with employees owning the remainder.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "There is no 10-K to pull, no SEC EDGAR filings with full income statements, and no publicly traded shares on which to calculate diluted EPS",
+     "numeric": false,
+     "cited_url": "https://www.fool.com/investing/how-to-invest/stocks/how-to-invest-in-cargill-stock",
+     "reason": "Motley Fool confirms Cargill is private and not publicly traded, so no 10-K filings exist. UC Law Library Guide also states private companies do not file SEC financial statements.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Comparable public companies in the agribusiness sector include Bunge (BG), ADM, and Tyson Foods (TSN), all of which file standard 10-Ks with full GAAP financials",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Answer suggests these as comparable public companies but does not cite sources. Retrieved sources include Tyson Foods 10-K and Bunge annual report, confirming they file 10-Ks. ADM is not in retrieved sources but is a known public agribusiness.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 2,
+   "numeric_cited": 2,
+   "cited": 7,
+   "supported": 7,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,161 @@
+{
+ "id": "T20",
+ "category": "Market analysis",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "For calendar Q2 2026 (April 1 to June 30, 2026), what was net revenue at Visa and at Mastercard, and by how much did Visa's exceed Mastercard's? Use each company's own reported quarter that corresponds to those dates and answer in USD millions.",
+ "grading": "List of three: Visa net revenue USD 11,633M (fiscal Q3 2026), Mastercard net revenue USD 9,277M (Q2 2026), each ±0.5%; difference (Visa minus Mastercard) USD 2,356M ±1% (Visa about 25% larger). Optional: YoY growth Visa 14.4% vs Mastercard 14.1% (±0.3pp). Both quarters end 2026-06-30. Fail if Visa's March quarter or any non-matching Mastercard quarter is used.",
+ "answer": "Visa's fiscal Q3 2026 (quarter ended June 30, 2026) net revenue was USD 11,633 million, up from USD 10,172 million a year earlier (+14.4%). Mastercard's Q2 2026 (quarter ended June 30, 2026) net revenue was USD 9,277 million, up from USD 8,133 million (+14.1%). Visa's net revenue exceeded Mastercard's by USD 2,356 million (about 25% higher). [T20-E1, T20-E2, T20-E3]",
+ "output": {
+  "answer": " For calendar Q2 2026 (April 1 – June 30, 2026), here are the reported net revenue figures:\n\n| Company | Reported Quarter | Net Revenue | Source |\n|---------|-----------------|-------------|--------|\n| **Visa** | Fiscal Q3 2026 (Jan–Sep fiscal year, so Apr 1 – Jun 30) | **$11,600 million** ($11.6B) | [Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/visa-mastercard-stocks-close-record-122852491.html) |\n| **Mastercard** | Q2 2026 (calendar year) | **$9,280 million** ($9.28B) | [Quartz](https://qz.com/mastercard-earnings-revenue-payment-network-digital-services-073026), [Grafa](https://grafa.com/en/news/united-states/mastercard-revenue-rises-to-9-28-billion-in-q2-2026) |\n\n**Visa's net revenue exceeded Mastercard's by $2,320 million.**",
+  "tokens": {
+   "input": 32208,
+   "output": 3433
+  },
+  "tavily_credits": 8,
+  "latency_s": 25.61,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/ba07f46cf8ccaba880fa0a083e0b970b",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Visa Mastercard net revenue Q2 2026 April June earnings results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Visa Inc fiscal Q3 2026 net revenue June 2025 earnings results USD billions",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Mastercard Inc Q2 2026 net revenue earnings results April June 2026 USD billions",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Mastercard Q2 2026 exact revenue $9.28 billion $9.3 billion reported earnings July 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/visa-mastercard-stocks-close-record-122852491.html",
+    "https://grafa.com/en/news/united-states/mastercard-revenue-rises-to-9-28-billion-in-q2-2026",
+    "https://qz.com/mastercard-earnings-revenue-payment-network-digital-services-073026"
+   ],
+   "cited_primary": 0,
+   "retrieved": 37,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.8,
+   "points": [
+    {
+     "point": "Visa net revenue USD 11,633M (fiscal Q3 2026) ±0.5%",
+     "met": true,
+     "note": "Agent reported $11,600M, within ±0.5% tolerance (0.28% off)."
+    },
+    {
+     "point": "Mastercard net revenue USD 9,277M (Q2 2026) ±0.5%",
+     "met": true,
+     "note": "Agent reported $9,280M, within ±0.5% tolerance (0.03% off)."
+    },
+    {
+     "point": "Difference (Visa minus Mastercard) USD 2,356M ±1%",
+     "met": false,
+     "note": "Agent reported $2,320M, off by $36M (1.53%), exceeding ±1% tolerance ($23.56M)."
+    },
+    {
+     "point": "Both quarters end 2026-06-30",
+     "met": true,
+     "note": "Agent used Visa fiscal Q3 2026 and Mastercard Q2 2026, both ending June 30, 2026."
+    },
+    {
+     "point": "Fail if Visa's March quarter or any non-matching Mastercard quarter is used",
+     "met": true,
+     "note": "Agent used correct quarters; no mismatch."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "Visa and Mastercard revenue figures are within tolerance, but the difference exceeds the ±1% tolerance."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Visa's fiscal Q3 2026 net revenue was $11,600 million ($11.6B)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/visa-mastercard-stocks-close-record-122852491.html",
+     "reason": "Retrieved source states: 'The company reported fiscal third-quarter net revenue of $11.6 billion, a 14% increase over the prior year, with payments volume rising 10% on a constant-dollar basis for the three months ended June 30.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mastercard's Q2 2026 net revenue was $9,280 million ($9.28B)",
+     "numeric": true,
+     "cited_url": "https://grafa.com/en/news/united-states/mastercard-revenue-rises-to-9-28-billion-in-q2-2026",
+     "reason": "Retrieved source states: 'Mastercard reported second-quarter 2026 revenue of $9.28 billion, exceeding analyst expectations...'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mastercard's Q2 2026 net revenue was $9,280 million ($9.28B) per Quartz",
+     "numeric": true,
+     "cited_url": "https://qz.com/mastercard-earnings-revenue-payment-network-digital-services-073026",
+     "reason": "This URL does not appear in the retrieved sources; cannot verify.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Visa's net revenue exceeded Mastercard's by $2,320 million",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Derived from the two reported figures: $11,600 million - $9,280 million = $2,320 million. Arithmetic is correct.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Visa's fiscal Q3 2026 corresponds to calendar April 1 – June 30, 2026",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/visa-mastercard-stocks-close-record-122852491.html",
+     "reason": "Retrieved source mentions 'for the three months ended June 30' for fiscal Q3 2026, consistent with April–June.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mastercard's Q2 2026 is calendar year (April 1 – June 30, 2026)",
+     "numeric": false,
+     "cited_url": "https://grafa.com/en/news/united-states/mastercard-revenue-rises-to-9-28-billion-in-q2-2026",
+     "reason": "Retrieved source only says 'second-quarter 2026 revenue'; it does not explicitly state the calendar months. Mastercard's fiscal year is calendar year, but the text does not confirm the exact period.",
+     "supported": null,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 3,
+   "cited": 5,
+   "supported": 3,
+   "not_retrieved": 0
+  }
+ }
+}

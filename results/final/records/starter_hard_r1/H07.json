@@ -1,0 +1,178 @@
+{
+ "id": "H07",
+ "category": "Quantitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "Which customers each contributed 10% or more of Fabrinet's revenues in fiscal 2026 (year ended June 26, 2026), and what percentage of revenue did each represent?",
+ "grading": "Key points: four customers each >=10% of FY2026 revenue: Cisco Systems 19.9%, NVIDIA 16.3%, Nokia 10.7%, Amazon.com 10.5% (together 57.4%). Accept +/-0.1pp. Fail if fewer than all four are named or if FY2025 shares (NVIDIA 27.6%, Cisco 18.2%) are given for FY2026.",
+ "answer": "In fiscal 2026 (ended June 26, 2026) four customers each contributed 10% or more of Fabrinet's revenues: Cisco Systems 19.9%, NVIDIA 16.3%, Nokia 10.7% and Amazon.com 10.5%, together 57.4% of revenue. In fiscal 2025 only NVIDIA (27.6%) and Cisco (18.2%) exceeded 10% [H07-E1].",
+ "output": {
+  "answer": " In fiscal 2026 (ended June 26, 2026), four customers each accounted for 10% or more of Fabrinet's total revenues:\n\n| Customer | % of Revenue (10-K) | Rounded (Earnings Call) |\n|---|---|---|\n| **Cisco Systems, Inc.** | **19.9%** | 20% |\n| **NVIDIA Corporation** | **16.3%** | 16% |\n| **Nokia Corporation** | **10.7%** | 11% |\n| **Amazon.com, Inc.** | **10.5%** | 11% |\n\n**Sources:**\n- Fabrinet 2026 Annual Report (Form 10-K): [stocklight.com report extract](https://stocklight.com/stocks/us/nyse-fn/fabrinet/annual-reports/nyse-fn-2026-10K-261288434.pdf) and [SEC filing](https://www.sec.gov/Archives/edgar/data/1408710/000140871026000028/fn-20260626.htm)\n- Q4 FY2026 Earnings Call Transcript: [finance.yahoo.com transcript](https://finance.yahoo.com/quote/1FN.MI/earnings/1FN.MI-Q4-2026-earnings_call-660294.html)\n\n*(Note: Management rounded the percentages to the nearest whole number during the earnings call, while the 10-K reports the exact figures.)*",
+  "tokens": {
+   "input": 10475,
+   "output": 1066
+  },
+  "tavily_credits": 2,
+  "latency_s": 13.03,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/0ce80fb4dc3a8b376aa11bd628236eb4",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Fabrinet fiscal 2026 major customers revenue concentration 10% or more year ended June 26 2026",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/quote/1FN.MI/earnings/1FN.MI-Q4-2026-earnings_call-660294.html",
+    "https://stocklight.com/stocks/us/nyse-fn/fabrinet/annual-reports/nyse-fn-2026-10K-261288434.pdf",
+    "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000028/fn-20260626.htm"
+   ],
+   "cited_primary": 1,
+   "retrieved": 10,
+   "retrieved_primary": 4
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Identify four customers each contributing >=10% of FY2026 revenue",
+     "met": true,
+     "note": "Agent lists Cisco Systems, NVIDIA, Nokia, Amazon.com – all four."
+    },
+    {
+     "point": "Cisco Systems percentage 19.9% (accept +/-0.1pp)",
+     "met": true,
+     "note": "Agent gives 19.9% (exact match)."
+    },
+    {
+     "point": "NVIDIA percentage 16.3% (accept +/-0.1pp)",
+     "met": true,
+     "note": "Agent gives 16.3% (exact match)."
+    },
+    {
+     "point": "Nokia percentage 10.7% (accept +/-0.1pp)",
+     "met": true,
+     "note": "Agent gives 10.7% (exact match)."
+    },
+    {
+     "point": "Amazon.com percentage 10.5% (accept +/-0.1pp)",
+     "met": true,
+     "note": "Agent gives 10.5% (exact match)."
+    },
+    {
+     "point": "Do not provide FY2025 shares (NVIDIA 27.6%, Cisco 18.2%) for FY2026",
+     "met": true,
+     "note": "Agent only provides FY2026 figures; no FY2025 numbers appear."
+    },
+    {
+     "point": "Do not omit Nokia (10.7%) and Amazon (10.5%)",
+     "met": true,
+     "note": "Both Nokia and Amazon are included with correct percentages."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly identifies all four customers that contributed 10% or more of Fabrinet's revenue in fiscal 2026 and provides the exact percentages from the 10-K (19.9%, 16.3%, 10.7%, 10.5%), matching the reference answer within the allowed tolerance. No FY2025 figures are mistakenly used, and no required customers are omitted."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "In fiscal 2026 (ended June 26, 2026), four customers each accounted for 10% or more of Fabrinet's total revenues",
+     "numeric": false,
+     "cited_url": "https://stocklight.com/stocks/us/nyse-fn/fabrinet/annual-reports/nyse-fn-2026-10K-261288434.pdf",
+     "reason": "The 10-K table shows four customers (Cisco, NVIDIA, Nokia, Amazon) with percentages ≥10% for fiscal year ended June 26, 2026. The earnings call transcript also states four customers represented 10% or more of total revenue.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cisco Systems, Inc. accounted for 19.9% of revenue per 10-K",
+     "numeric": true,
+     "cited_url": "https://stocklight.com/stocks/us/nyse-fn/fabrinet/annual-reports/nyse-fn-2026-10K-261288434.pdf",
+     "reason": "The retrieved 10-K extract shows 'Cisco Systems, Inc. 19.9 %' for the year ended June 26, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cisco Systems, Inc. rounded to 20% on earnings call",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/1FN.MI/earnings/1FN.MI-Q4-2026-earnings_call-660294.html",
+     "reason": "The earnings call transcript states 'Cisco at 20%' of total revenue.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA Corporation accounted for 16.3% of revenue per 10-K",
+     "numeric": true,
+     "cited_url": "https://stocklight.com/stocks/us/nyse-fn/fabrinet/annual-reports/nyse-fn-2026-10K-261288434.pdf",
+     "reason": "The retrieved 10-K extract shows 'NVIDIA Corporation 16.3 %' for the year ended June 26, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA Corporation rounded to 16% on earnings call",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/1FN.MI/earnings/1FN.MI-Q4-2026-earnings_call-660294.html",
+     "reason": "The earnings call transcript states 'NVIDIA at 16%' of total revenue.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Nokia Corporation accounted for 10.7% of revenue per 10-K",
+     "numeric": true,
+     "cited_url": "https://stocklight.com/stocks/us/nyse-fn/fabrinet/annual-reports/nyse-fn-2026-10K-261288434.pdf",
+     "reason": "The retrieved 10-K extract shows 'Nokia Corporation 10.7 %' for the year ended June 26, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Nokia Corporation rounded to 11% on earnings call",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/1FN.MI/earnings/1FN.MI-Q4-2026-earnings_call-660294.html",
+     "reason": "The earnings call transcript states 'Nokia at 11%' of total revenue.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Amazon.com, Inc. accounted for 10.5% of revenue per 10-K",
+     "numeric": true,
+     "cited_url": "https://stocklight.com/stocks/us/nyse-fn/fabrinet/annual-reports/nyse-fn-2026-10K-261288434.pdf",
+     "reason": "The retrieved 10-K extract shows 'Amazon.com, Inc. 10.5 %' for the year ended June 26, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Amazon.com, Inc. rounded to 11% on earnings call",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/1FN.MI/earnings/1FN.MI-Q4-2026-earnings_call-660294.html",
+     "reason": "The earnings call transcript states 'Amazon at 11%' of total revenue.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management rounded the percentages to the nearest whole number during the earnings call, while the 10-K reports the exact figures",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/quote/1FN.MI/earnings/1FN.MI-Q4-2026-earnings_call-660294.html",
+     "reason": "The earnings call transcript shows rounded whole numbers (20%, 16%, 11%, 11%) while the 10-K shows exact figures (19.9%, 16.3%, 10.7%, 10.5%).",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 8,
+   "cited": 10,
+   "supported": 10,
+   "not_retrieved": 0
+  }
+ }
+}

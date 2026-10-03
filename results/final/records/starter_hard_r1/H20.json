@@ -1,0 +1,254 @@
+{
+ "id": "H20",
+ "category": "Qualitative retrieval",
+ "difficulty": "hard",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "What has Cal-Maine Foods reported or announced in the 30 days before October 3, 2026 about its quarterly results, shareholder returns and financing? Give dates and key figures.",
+ "grading": "Snapshot as of 2026-10-03; key points: (1) Sept 30, 2026: fiscal Q1 2027 (13 weeks ended Aug 29, 2026) net sales USD 539.6M (-41.5% y/y) and net loss attributable USD 58.6M or USD 1.26 per diluted share (vs net income USD 199.3M / USD 4.12); conventional shell egg segment loss USD 71.0M on a 59.3% lower average selling price; (2) no dividend for Q1 under the variable dividend policy (cumulative loss to recover USD 94.5M); (3) buybacks: 66,601 shares for USD 5.0M in Q1, USD 315.7M left of the USD 500M authorization, plus 204,888 shares for USD 14.9M after quarter end; (4) Aug 31/Sept 2, 2026: new five-year senior unsecured revolving credit facility up to USD 250M (accordion up to +USD 250M), maturing Aug 31, 2031, undrawn. Any three points with correct dates earn credit; must be dated and sourced; fail if fiscal 2026 Q1 numbers are presented as the latest or if Q1 is described as profitable.",
+ "answer": "Snapshot as of October 3, 2026. (1) September 30, 2026: Cal-Maine reported fiscal Q1 2027 (13 weeks ended August 29, 2026): net sales USD 539.6 million (-41.5% from USD 922.6 million), gross profit USD 0.4 million, operating loss USD 82.2 million and a net loss attributable of USD 58.6 million, or USD 1.26 per diluted share, versus net income of USD 199.3 million (USD 4.12) a year earlier [H20-E1][H20-E3]. Conventional shell egg net sales fell 59.5% on a 59.3% lower average selling price (segment loss USD 71.0 million); Specialty Shell Eggs and Prepared Foods rose to 54.1% of net sales [H20-E1]. (2) Under the variable dividend policy no dividend is payable for the quarter; USD 94.5 million of cumulative loss must be recovered before any future dividend [H20-E1]. (3) Buybacks: 66,601 shares for USD 5.0 million in the quarter (USD 315.7 million left of the USD 500 million program) and 204,888 shares for USD 14.9 million after quarter end [H20-E1]. (4) On August 31, 2026 (8-K filed September 2) the company entered into a Second Amended and Restated Credit Agreement: a five-year senior unsecured revolver of up to USD 250 million (accordion up to another USD 250 million), maturing August 31, 2031, with nothing borrowed at September 1 [H20-E2]. Secondary coverage corroborates the loss and dividend decision [H20-E4].",
+ "output": {
+  "answer": " I should note that October 3, 2026 is beyond my knowledge cutoff, so the following relies on returned search results that you should independently verify.\n\nBased on search results referring to **late September 2026** (within the 30 days prior to October 3, 2026), Cal-Maine Foods made the following disclosures:\n\n**Quarterly Results — Q1 Fiscal 2027**\n- **Announcement date:** Late September 2026  \n- **Period ended:** First quarter of fiscal 2027  \n- **Net Sales:** **$539.6 million**, down **41.5%** year-over-year  \n- **Operating Loss:** **$82.2 million** (versus operating income of $249.2 million in the prior-year period)  \n- **Net Loss Attributable to Cal-Maine:** **$58.6 million** (versus net income of $199.3 million a year earlier)  \n  - **Conventional Shell Eggs:** Sales **$201.7 million** (down 59.5%); operating loss of **$71.0 million** (margin of –35.2%)  \n  - **Specialty Shell Eggs:** Sales **$236.9 million** (down 14%); operating income of **$14.9 million**  \n  - **Prepared Foods:** Operating income of **$7.8 million** (margin of 12.4%)  \n\n**Shareholder Returns**\n- **Dividend:** **Paused/suspended** under the company’s variable dividend policy because of the quarterly loss. The reports note that no dividend was declared for the quarter due to the loss, consistent with the variable payout policy.  \n\n**Financing**\n- **No new financing, credit facility, or debt offering announcements** were identified in this window.  \n- The company reported **net interest income of $8.0 million** (down from $12.9 million in the prior-year period). Cal-Maine has generally carried little to no debt historically (often described as debt-free), and no change to that financing posture was flagged in these reports.\n\n**Sources**\n- Yahoo Finance note on Q1 FY2027 results: https://finance.yahoo.com/markets/stocks/articles/cal-maine-q1-loss-dividend-141306759.html  \n- Yahoo Finance Q1 FY2027 earnings call highlights: https://finance.yahoo.com/markets/stocks/articles/cal-maine-foods-inc-calm-070023367.html  \n- Yahoo Finance CALM quote page referencing an earnings date of September 30, 2026: https://finance.yahoo.com/quote/CALM  ",
+  "tokens": {
+   "input": 31664,
+   "output": 5319
+  },
+  "tavily_credits": 12,
+  "latency_s": 29.41,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/ea08375a42a977c9a6ba2fddd61d11e0",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cal-Maine Foods quarterly results earnings announcement August September 2024",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cal-Maine Foods quarterly earnings results 2024 most recent fiscal quarter",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cal-Maine Foods dividend shareholder return special dividend 2024",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cal-Maine Foods financing debt offering credit facility announcement 2024",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cal-Maine Foods Q4 2024 earnings results revenue net income June 2024",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Cal-Maine Foods\" \"September 2024\" quarterly earnings results announcement",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/cal-maine-foods-inc-calm-070023367.html",
+    "https://finance.yahoo.com/markets/stocks/articles/cal-maine-q1-loss-dividend-141306759.html",
+    "https://finance.yahoo.com/quote/CALM"
+   ],
+   "cited_primary": 0,
+   "retrieved": 38,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.333,
+   "points": [
+    {
+     "point": "Sept 30, 2026: fiscal Q1 2027 (13 weeks ended Aug 29, 2026) net sales USD 539.6M (-41.5% y/y) and net loss attributable USD 58.6M or USD 1.26 per diluted share (vs net income USD 199.3M / USD 4.12); conventional shell egg segment loss USD 71.0M on a 59.3% lower average selling price",
+     "met": false,
+     "note": "Agent states 'Late September 2026' not the specific date Sept 30; omits EPS figures (USD 1.26 and USD 4.12) and the 59.3% lower average selling price for conventional shell eggs."
+    },
+    {
+     "point": "No dividend for Q1 under the variable dividend policy (cumulative loss to recover USD 94.5M)",
+     "met": false,
+     "note": "Agent notes dividend paused/suspended but does not mention the cumulative loss to recover of USD 94.5M."
+    },
+    {
+     "point": "Buybacks: 66,601 shares for USD 5.0M in Q1, USD 315.7M left of the USD 500M authorization, plus 204,888 shares for USD 14.9M after quarter end",
+     "met": false,
+     "note": "Agent does not mention any share buyback activity."
+    },
+    {
+     "point": "Aug 31/Sept 2, 2026: new five-year senior unsecured revolving credit facility up to USD 250M (accordion up to +USD 250M), maturing Aug 31, 2031, undrawn",
+     "met": false,
+     "note": "Agent incorrectly states 'No new financing, credit facility, or debt offering announcements were identified in this window,' directly contradicting the required disclosure."
+    },
+    {
+     "point": "Not presenting fiscal 2026 Q1 numbers as latest",
+     "met": true,
+     "note": "Agent correctly identifies the reported quarter as Q1 fiscal 2027 (ended Aug 29, 2026) and does not confuse it with fiscal 2026 Q1."
+    },
+    {
+     "point": "Not describing Q1 as profitable",
+     "met": true,
+     "note": "Agent clearly reports a net loss of USD 58.6M and operating loss of USD 82.2M."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The agent's answer fails to meet three of the four key dated requirements: the quarterly results lack the exact date (Sept 30) and several key figures (EPS, selling price decline); the dividend point omits the cumulative loss recovery amount; buybacks are entirely absent; and the credit facility is incorrectly denied. Only the two failure-mode checks are satisfied. Since fewer than three key points are met with correct dates and figures, the answer is incorrect."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Net Sales: $539.6 million, down 41.5% year-over-year",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/cal-maine-foods-inc-calm-070023367.html",
+     "reason": "Source 1 (earnings call highlights) explicitly states: 'Net Sales: $539.6 million, down 41.5% year-over-year.' Source 12 also confirms sales of US$539.61 million, down from US$922.60 million a year earlier.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Operating Loss: $82.2 million versus operating income of $249.2 million in the prior-year period",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/cal-maine-foods-inc-calm-070023367.html",
+     "reason": "Source 1 states: 'Operating Loss: $82.2 million, compared to operating income of $249.2 million in the prior year period.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Net Loss Attributable to Cal-Maine: $58.6 million versus net income of $199.3 million a year earlier",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/cal-maine-foods-inc-calm-070023367.html",
+     "reason": "Source 1 states: 'Net Loss Attributable to Cal-Maine: $58.6 million, compared to net income of $199.3 million in the prior year period.' Source 12 also confirms net loss of US$58.62 million versus prior net income.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Conventional Shell Eggs Sales: $201.7 million, down 59.5% year-over-year",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/cal-maine-foods-inc-calm-070023367.html",
+     "reason": "Source 1 states: 'Conventional Shell Eggs Net Sales: $201.7 million, down 59.5% year-over-year.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Conventional Shell Eggs Operating Loss: $71.0 million with an operating margin of –35.2%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/cal-maine-foods-inc-calm-070023367.html",
+     "reason": "Source 1 states: 'Conventional Shell Eggs Operating Loss: $71 million, with an operating margin of negative 35.2%.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Specialty Shell Eggs Sales: $236.9 million, down 14% year-over-year",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/cal-maine-foods-inc-calm-070023367.html",
+     "reason": "Source 1 states: 'Specialty Shell Eggs Net Sales: $236.9 million, down 14% year-over-year.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Specialty Shell Eggs Operating Income: $14.9 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/cal-maine-foods-inc-calm-070023367.html",
+     "reason": "Source 1 states: 'Specialty Shell Eggs Operating Income: $14.9 million, with an operating margin of 6.3%.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Prepared Foods Operating Income: $7.8 million with an operating margin of 12.4%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/cal-maine-foods-inc-calm-070023367.html",
+     "reason": "Source 1 states: 'Prepared Foods Operating Income: $7.8 million, with an operating margin of 12.4%.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Net interest income: $8.0 million, down from $12.9 million in the prior-year period",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/cal-maine-foods-inc-calm-070023367.html",
+     "reason": "Source 1 states: 'Interest Income Net of Expenses: $8 million, compared to $12.9 million in the prior year period.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Dividend paused/suspended under variable dividend policy because of the quarterly loss",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/cal-maine-q1-loss-dividend-141306759.html",
+     "reason": "Source 12 states: '...led to a suspended dividend under its variable policy.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Announcement date: Late September 2026",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/cal-maine-q1-loss-dividend-141306759.html",
+     "reason": "Source 12 states: 'In late September 2026, Cal-Maine Foods reported first-quarter fiscal 2027 results...'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Period ended: First quarter of fiscal 2027",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/cal-maine-q1-loss-dividend-141306759.html",
+     "reason": "Source 12 states: '...reported first-quarter fiscal 2027 results...'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Earnings date: September 30, 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/CALM",
+     "reason": "Source 11 (quote page) shows: 'Earnings Date Sep 30, 2026.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "No new financing, credit facility, or debt offering announcements were identified in this window",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer states this based on search results; no specific URL is cited. The retrieved sources (search results) do not mention any financing announcements.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Cal-Maine has generally carried little to no debt historically (often described as debt-free), and no change to that financing posture was flagged in these reports",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer makes a general historical claim and notes no change was flagged in the cited reports. No specific URL is cited for the historical description; the cited reports do not mention debt changes.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 10,
+   "numeric_cited": 10,
+   "cited": 13,
+   "supported": 13,
+   "not_retrieved": 0
+  }
+ }
+}

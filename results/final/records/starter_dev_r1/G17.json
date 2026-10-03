@@ -1,0 +1,301 @@
+{
+ "id": "G17",
+ "category": "Qualitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "According to Walmart management, what drove the growth in Q2 FY2027 adjusted operating income, and how much of it was one-time?",
+ "grading": "Key points: (1) lists drivers explicitly cited by management (verify against source); (2) quantifies any one-time item if management did; (3) distinguishes reported vs adjusted operating income growth; (4) every causal claim has a citation",
+ "answer": "Management cited strong sales, better business mix from advertising and membership, improving eCommerce economics, and tariff refunds partly reinvested in prices. Gross-profit rate rose 96 basis points; operating-cost deleverage included higher U.S. self-insured liability claims, depreciation and healthcare expenses. [G17-E1, G17-E2] Adjusted operating income rose 17.4% in constant currency, versus 28.8% reported growth. Management quantified the one-time net tariff-refund contribution at approximately 750 basis points (7.5 percentage points) of operating-income growth, leaving underlying growth at the top end of the 7–10% guide. Nearly USD 2.9 billion of refunds received is the gross refund amount, not the net profit benefit. [G17-E3]",
+ "output": {
+  "answer": " Based on publicly reported results for Walmart's Q2 FY2027 (ended July 31, 2026):\n\n**What drove the growth in adjusted operating income:**\nManagement stated that the growth **\"includes the impact of tariff refunds received, partially offset by price investments in the quarter.\"** The company disclosed a **$2.9 billion** tariff refund, and also noted the operating income increase was **\"partly driven by the impact of tariff refunds\"** (which helped the gross profit rate expand by 96 basis points). The refunds were being reinvested into lower prices for consumers.\n\n**How much was one-time:**\nThe **$2.9 billion tariff refund** is the primary one-time/non-recurring item. Its effect is visible in the gap between the reported and adjusted figures:\n- Reported operating income: **+28.8%** ($9.38B)\n- Adjusted constant-currency operating income: **+17.4%**\nCurrency rate fluctuations also added $0.1bn to operating income. The ~11.4 percentage point spread between the reported and adjusted growth rates largely reflects the tariff refund benefit.\n\nSource URLs:\n- Forbes: <https://www.forbes.com/sites/sharonedelson/2026/08/20/walmart-reports-strong-q2-online-sales-but-store-results-disappoint-analysts>\n- Yahoo Finance (Beats, Raises, Falls): <https://finance.yahoo.com/markets/stocks/articles/walmart-beats-raises-falls-7-144400684.html>\n- Yahoo Finance (Tariff Refunds): <https://finance.yahoo.com/economy/policy/articles/walmart-tariff-refunds-customers-reimbursed-124300364.html>\n- Yahoo Finance (Raises FY27 Outlook): <https://finance.yahoo.com/markets/stocks/articles/walmart-raises-fy27-outlook-q2-093856095.html>",
+  "tokens": {
+   "input": 508233,
+   "output": 5125
+  },
+  "tavily_credits": 32,
+  "latency_s": 68.52,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY2027 adjusted operating income growth drivers one-time",
+     "search_depth": "advanced",
+     "time_range": "year",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY2027 earnings results transcript adjusted operating income",
+     "search_depth": "advanced",
+     "time_range": "year",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Walmart\" \"Q2 FY2027\" OR \"second quarter 2027\" OR \"Q2 2027\" earnings call transcript adjusted operating income",
+     "search_depth": "advanced",
+     "time_range": "year",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY27 earnings transcript operating income one-time items drivers",
+     "search_depth": "advanced",
+     "time_range": "year",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Walmart\" \"Q2 FY27\" \"operating income\" \"leaping 28.8%\" earnings drivers",
+     "search_depth": "advanced",
+     "time_range": "year",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY27 earnings call transcript management operating income drivers tariff refunds one time",
+     "search_depth": "advanced",
+     "time_range": "year",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY27 earnings call transcript Doug McMillon John David Rainey gross profit operating income",
+     "search_depth": "advanced",
+     "time_range": "year",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY27 operating income 17.4% adjusted constant currency tariff refunds gross profit rate",
+     "search_depth": "advanced",
+     "time_range": "year",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart gross profit rate 96 basis points operating income gap 28.8% vs 17.4% currency impact",
+     "search_depth": "advanced",
+     "time_range": "year",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Walmart\" \"gross profit rate\" \"96 basis points\" OR \"28.8%\" OR \"17.4%\" Q2 FY27 slightly elevated cycling tariff refund",
+     "search_depth": "advanced",
+     "time_range": "year",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY27 management commentary tariff refunds impact operating income one-time unusual items",
+     "search_depth": "advanced",
+     "time_range": "year",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart \"slightly elevated\" OR \"cycling\" OR \"one-time\" adjusted operating income fiscal 2027 tariff refund",
+     "search_depth": "advanced",
+     "time_range": "year",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY27 earnings transcript \"operating income\" \"includes the impact\" \"tariff\" OR \"refund\" OR \"one-time\"",
+     "search_depth": "advanced",
+     "time_range": "year",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY27 \"John David Rainey\" OR \"Doug McMillon\" tariff refund $2.9 billion operating income",
+     "search_depth": "advanced",
+     "time_range": "year",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY27 \"$2.9 billion\" tariff refund operating income impact amount",
+     "search_depth": "advanced",
+     "time_range": "year",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY27 management said operating income growth \"includes\" tariff refunds \"partially offset\" price investments",
+     "search_depth": "advanced",
+     "time_range": "year",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/economy/policy/articles/walmart-tariff-refunds-customers-reimbursed-124300364.html",
+    "https://finance.yahoo.com/markets/stocks/articles/walmart-beats-raises-falls-7-144400684.html",
+    "https://finance.yahoo.com/markets/stocks/articles/walmart-raises-fy27-outlook-q2-093856095.html",
+    "https://www.forbes.com/sites/sharonedelson/2026/08/20/walmart-reports-strong-q2-online-sales-but-store-results-disappoint-analysts"
+   ],
+   "cited_primary": 0,
+   "retrieved": 65,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.25,
+   "points": [
+    {
+     "point": "Lists drivers explicitly cited by management (verify against source)",
+     "met": false,
+     "note": "Agent only cites tariff refunds and price investments; omits strong sales, advertising/membership mix, and improving eCommerce economics cited by management per reference."
+    },
+    {
+     "point": "Quantifies any one-time item if management did",
+     "met": false,
+     "note": "Agent cites $2.9B gross refund but does not quantify net one-time growth benefit (management said ~750 bps / 7.5 pp); instead attributes 11.4 pp spread to tariff refunds, which overstates management's quantified net benefit."
+    },
+    {
+     "point": "Distinguishes reported vs adjusted operating income growth",
+     "met": true,
+     "note": "Agent correctly reports reported growth +28.8% and adjusted constant-currency growth +17.4%."
+    },
+    {
+     "point": "Every causal claim has a citation",
+     "met": false,
+     "note": "Agent provides general source URLs but no specific citations for causal claims (e.g., 'growth includes impact of tariff refunds', 'refunds reinvested into lower prices')."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "Agent correctly distinguishes reported vs adjusted growth but misses key drivers cited by management, misquantifies the one-time net benefit, and lacks specific citations for causal claims."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Walmart disclosed a $2.9 billion tariff refund in Q2 FY2027",
+     "numeric": true,
+     "cited_url": "https://www.forbes.com/sites/sharonedelson/2026/08/20/walmart-reports-strong-q2-online-sales-but-store-results-disappoint-analysts",
+     "reason": "The Forbes article snippet states: 'a massive $2.9 billion tariff refund'. This directly supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Reported operating income grew 28.8% to $9.38 billion in Q2 FY2027",
+     "numeric": true,
+     "cited_url": "https://www.forbes.com/sites/sharonedelson/2026/08/20/walmart-reports-strong-q2-online-sales-but-store-results-disappoint-analysts",
+     "reason": "The Forbes snippet says 'operating income leaping 28.8%' but does not mention the $9.38B figure. The percentage is supported; the dollar amount is not verified by this source.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Adjusted constant-currency operating income grew 17.4% in Q2 FY2027",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/walmart-beats-raises-falls-7-144400684.html",
+     "reason": "This Yahoo Finance URL is not present in the retrieved sources, so support cannot be evaluated.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management stated that growth includes the impact of tariff refunds received, partially offset by price investments",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/walmart-beats-raises-falls-7-144400684.html",
+     "reason": "The cited Yahoo Finance article is not in the retrieved sources; support cannot be evaluated.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The operating income increase was partly driven by tariff refunds, which helped the gross profit rate expand by 96 basis points",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/economy/policy/articles/walmart-tariff-refunds-customers-reimbursed-124300364.html",
+     "reason": "The cited Yahoo Finance article is not in the retrieved sources; support cannot be evaluated.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The tariff refunds were being reinvested into lower prices for consumers",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/economy/policy/articles/walmart-tariff-refunds-customers-reimbursed-124300364.html",
+     "reason": "The cited Yahoo Finance article is not in the retrieved sources; support cannot be evaluated.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The $2.9 billion tariff refund is the primary one-time/non-recurring item",
+     "numeric": true,
+     "cited_url": "https://www.forbes.com/sites/sharonedelson/2026/08/20/walmart-reports-strong-q2-online-sales-but-store-results-disappoint-analysts",
+     "reason": "The Forbes snippet mentions the $2.9B tariff refund but does not explicitly label it as the primary one-time item. The claim goes beyond the retrieved text.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Currency rate fluctuations added $0.1 billion to operating income in Q2 FY2027",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/walmart-beats-raises-falls-7-144400684.html",
+     "reason": "The cited Yahoo Finance article is not in the retrieved sources; support cannot be evaluated.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The ~11.4 percentage point spread between reported (28.8%) and adjusted (17.4%) operating income growth largely reflects the tariff refund benefit",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/walmart-raises-fy27-outlook-q2-093856095.html",
+     "reason": "This is a derived figure based on the two growth rates. The cited Yahoo Finance article is not in the retrieved sources; support cannot be evaluated.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Walmart's Q2 FY2027 ended July 31, 2026",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "No source is cited for this date in the answer; it is presented as context.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 7,
+   "numeric_cited": 7,
+   "cited": 9,
+   "supported": 1,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,267 @@
+{
+ "id": "G14",
+ "category": "Adjustments",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "NVIDIA's Q2 FY2027 GAAP diluted EPS came in above non-GAAP. What were the two figures, and which reconciling items explain the gap?",
+ "grading": "Key points: (1) both EPS figures exact to the cent; (2) names the largest reconciling line items as shown in the table with sign; (3) explains why the net adjustment is negative; (4) no reasons not present in the filing",
+ "answer": "Q2 FY2027 diluted EPS was $2.46 GAAP and $2.22 non-GAAP. The reconciliation removes USD 7,771 million of equity-security gains, offset by USD 222 million of operating-cost adjustments, USD 298 million of other-income adjustments and USD 1,517 million of tax effects. Net income falls from USD 59,688 million to USD 53,954 million. Stock compensation remains included in non-GAAP starting FY2027. [G14-E1]",
+ "output": {
+  "answer": " Here are the two figures for **NVIDIA's Q2 FY2027** (quarter ended July 26, 2026):\n\n| Metric | Amount |\n|---|---|\n| **GAAP diluted EPS** | **$2.46** |\n| **Non-GAAP diluted EPS** | **$2.22** |\n\nGAAP net income was **$59.7 billion**, while non-GAAP net income was **$53.9 billion** — a net negative adjustment of **$5.7 billion after tax** ($7.3B pre-tax). The reason GAAP came in above non-GAAP was that large investment gains included in GAAP earnings more than offset the usual add-backs (like stock-based compensation) that normally push non-GAAP higher.\n\nThe two main reconciling items behind the gap are:\n\n1. **Gains/losses from equity securities** — Unrealized mark-to-market gains on NVIDIA's portfolio of publicly traded and non-marketable equity securities are recorded in GAAP \"other income\" but are excluded from non-GAAP results. During Q2, these gains were large enough to be the dominant driver pushing GAAP earnings above the non-GAAP figure.\n2. **Stock-based compensation** (and related payroll taxes) — This is a standard GAAP expense that is added back for non-GAAP purposes, which normally makes non-GAAP earnings higher than GAAP. In Q2 FY2027, the equity-securities gains were so substantial that they overwhelmed this usual add-back effect.\n\nOther smaller items in the reconciliation include acquisition-related costs and certain other income/expense items, but the equity-securities gains and stock-based compensation are the two primary items explaining the unusual GAAP-over-non-GAAP outcome.\n\n*Sources:*\n- [NVIDIA Official Press Release – Q2 FY2027 Results](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027)\n- [Capital.com – NVIDIA Q2 FY2027 earnings summary](https://capital.com/en-au/analysis/nvidia-nvda-stock-forecast)",
+  "tokens": {
+   "input": 419056,
+   "output": 8565
+  },
+  "tavily_credits": 28,
+  "latency_s": 91.92,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/ed1e01f6a784476c71f90a0d675a0776",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA GAAP diluted EPS above non-GAAP unusual quarter reconciling items stock-based compensation amortization",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q2 FY2027 GAAP diluted EPS non-GAAP diluted EPS figures reconciliation",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA second quarter fiscal 2027 results GAAP diluted EPS non-GAAP diluted EPS",
+     "search_depth": "advanced",
+     "topic": "news"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q2 FY2027 earnings reconciliation items mark-to-market equity securities gains non-GAAP adjustments",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q2 FY2027 10-Q earnings reconciliation stock-based compensation equity securities gains mark-to-market",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"NVIDIA\" \"Q2 FY2027\" \"non-GAAP adjustments\" \"mark-to-market\" OR \"equity securities\" OR \"gains from equity\" reconciliation",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q2 FY2027 \"gains from equity securities\" \"mark-to-market\" OR \"unrealized gains\" stock-based compensation reconciliation table",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "site:nvidianews.nvidia.com Q2 FY2027 reconciliation stock-based compensation gains equity securities",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"NVIDIA\" \"Q2 FY2027\" \"gains and losses from non-marketable and publicly-held equity securities\" OR \"mark-to-market equity securities\" OR \"unrealized\" reconciliation items",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"NVIDIA\" \"Q2 FY2027\" \"reconciliation of GAAP to non-GAAP\" stock-based compensation \"gains\" OR \"mark-to-market\"",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"NVIDIA\" \"Q2 FY2027\" \"Condensed Consolidated Statements of Income\" reconciliation \"other income (expense)\" OR \"gains from equity securities\"",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"NVIDIA\" \"Q2 FY2027\" \"Other income\" OR \"Other expense\" gains equity securities $ billions reconciliation",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"NVIDIA\" \"Q2 FY2027\" \"10-Q\" OR \"Form 10-Q\" \"Other income\" gains equity securities reconciliation alternative results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"NVIDIA\" \"August 26 2026\" \"Q2 FY2027\" \"reconciliation\" \"stock-based compensation\" OR \"equity securities\" OR \"gains\" OR \"mark-to-market\" detailed breakdown",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://capital.com/en-au/analysis/nvidia-nvda-stock-forecast",
+    "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027"
+   ],
+   "cited_primary": 1,
+   "retrieved": 70,
+   "retrieved_primary": 8
+  },
+  "correctness": {
+   "score": 0.25,
+   "points": [
+    {
+     "point": "Both EPS figures exact to the cent",
+     "met": true,
+     "note": "Agent states GAAP diluted EPS $2.46 and non-GAAP diluted EPS $2.22, matching the reference exactly."
+    },
+    {
+     "point": "Names the largest reconciling line items as shown in the table with sign",
+     "met": false,
+     "note": "Agent mentions equity securities gains and stock-based compensation. Reference shows largest items: equity-security gains (-$7,771M), tax effects (+$1,517M), other-income adjustments (+$298M), operating-cost adjustments (+$222M). Stock-based compensation is not a reconciling item (remains included in non-GAAP). Agent misses tax effects, other-income, operating-cost adjustments and incorrectly includes stock-based compensation."
+    },
+    {
+     "point": "Explains why the net adjustment is negative",
+     "met": false,
+     "note": "Agent attributes negative net adjustment to equity gains overwhelming stock-based compensation add-backs. Reference shows net adjustment negative due to large equity-security gains removal (-$7,771M) partially offset by positive adjustments (tax +$1,517M, other +$298M, operating +$222M). Agent's explanation relies on invented stock-based compensation add-back."
+    },
+    {
+     "point": "No reasons not present in the filing",
+     "met": false,
+     "note": "Agent introduces stock-based compensation add-back as a reconciling item, which is not in the filing (stock compensation remains included in non-GAAP starting FY2027)."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "Only the EPS figures are correct. The reconciling items are misidentified, the explanation for the negative net adjustment is based on an invented reason, and the answer includes a reason not present in the filing."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "NVIDIA's GAAP diluted EPS for Q2 FY2027 (quarter ended July 26, 2026) was $2.46",
+     "numeric": true,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The retrieved NVIDIA press release shows GAAP diluted EPS of $2.46 for Q2 FY2027.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA's non-GAAP diluted EPS for Q2 FY2027 was $2.22",
+     "numeric": true,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The retrieved NVIDIA press release shows non-GAAP diluted EPS of $2.22 for Q2 FY2027.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA's GAAP net income for Q2 FY2027 was $59.7 billion",
+     "numeric": true,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The retrieved press release shows GAAP net income of $59,688 million, which rounds to $59.7 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA's non-GAAP net income for Q2 FY2027 was $53.9 billion",
+     "numeric": true,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The retrieved press release shows non-GAAP net income of $53,954 million, which rounds to $53.9 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The difference between GAAP and non-GAAP net income was a net negative adjustment of $5.7 billion after tax ($7.3 billion pre-tax)",
+     "numeric": true,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The press release shows total pre-tax impact of non-GAAP adjustments of -$7,251 million and income tax impact of $1,517 million, yielding an after-tax adjustment of $5,734 million (~$5.7B). Pre-tax $7,251M ~ $7.3B.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "GAAP earnings exceeded non-GAAP earnings because large investment gains included in GAAP more than offset the usual add-backs like stock-based compensation",
+     "numeric": false,
+     "cited_url": "https://capital.com/en-au/analysis/nvidia-nvda-stock-forecast",
+     "reason": "The retrieved Capital.com article does not contain this narrative; it only states the EPS figures and a generic reconciliation description. The NVIDIA press release retrieved text also does not include this explanation.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The two main reconciling items were gains/losses from equity securities (unrealized mark-to-market gains recorded in GAAP other income but excluded from non-GAAP) and stock-based compensation (added back for non-GAAP)",
+     "numeric": false,
+     "cited_url": "https://capital.com/en-au/analysis/nvidia-nvda-stock-forecast",
+     "reason": "The Capital.com article mentions 'gains/losses from equity securities, net' as an excluded item, but does not mention stock-based compensation. The NVIDIA press release retrieved text does not break down the reconciliation items.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "In Q2 FY2027, the equity-securities gains were so substantial that they overwhelmed the usual add-back effect of stock-based compensation",
+     "numeric": false,
+     "cited_url": "https://capital.com/en-au/analysis/nvidia-nvda-stock-forecast",
+     "reason": "Neither the Capital.com article nor the NVIDIA press release retrieved text contains this specific comparative assessment.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Other smaller reconciling items included acquisition-related costs and certain other income/expense items",
+     "numeric": false,
+     "cited_url": "https://capital.com/en-au/analysis/nvidia-nvda-stock-forecast",
+     "reason": "The Capital.com article explicitly lists 'acquisition-related and other costs' and 'certain other income and expense' as items excluded in the non-GAAP reconciliation.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The quarter ended July 26, 2026",
+     "numeric": true,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The Capital.com article states the period ended 26 July 2026; the NVIDIA press release is for Q2 FY2027 which typically ends late July.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 10,
+   "supported": 7,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,114 @@
+{
+ "id": "H10",
+ "category": "Numerical reasoning",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "What were Ollie's Bargain Outlet's trailing-twelve-month net sales and net income as of the end of its fiscal Q2 2026 (quarter ended August 1, 2026), and what was the implied TTM net margin?",
+ "grading": "Computation: TTM = FY2025 + 26 weeks FY2026 - 26 weeks FY2025. Net sales USD 2,793.1M (2,793,108K); GAAP net income USD 273.6M (273,580K); net margin 9.79% (+/-0.3pp). Accept +/-0.5% on dollar figures. Fail if the TTM window is wrong (not Aug 3, 2025-Aug 1, 2026) or adjusted net income is used.",
+ "answer": "TTM to August 1, 2026 = FY2025 (52 weeks ended Jan 31, 2026) + 26 weeks ended Aug 1, 2026 - 26 weeks ended Aug 2, 2025. Net sales: 2,649,198 + 1,400,233 - 1,256,323 = USD 2,793,108 thousand (USD 2,793.1 million). Net income: 240,596 + 141,854 - 108,870 = USD 273,580 thousand (USD 273.6 million). TTM net margin = 273,580 / 2,793,108 = 9.79% [H10-E1][H10-E2].",
+ "output": {
+  "answer": "",
+  "tokens": {
+   "input": 139768,
+   "output": 11187
+  },
+  "tavily_credits": 16,
+  "latency_s": 79.27,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/39113c1e308a702427789e35bf32d93c",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Ollie's Bargain Outlet fiscal Q2 2026 quarter ended August 1 2026 net sales net income trailing twelve months",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Ollie's Bargain Outlet TTM trailing twelve month net sales revenue net income August 2026 Q2 2026 earnings results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Ollie's Bargain Outlet OLLI TTM revenue net income trailing twelve months 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "OLLO stock key statistics Ollie's Bargain Outlet TTM revenue net income 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Ollie's Bargain Outlet Q2 2026 earnings report TTM trailing twelve months revenue net income August 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Ollie's Bargain Outlet\" \"Q2 2026\" earnings revenue \"net income\" \"trailing twelve months\" August August 1 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Ollie's Bargain Outlet Q2 2026 Aug 1 2026 10-K 10-Q SEC filing annual report TTM revenue",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "OLLI stock Yahoo Finance key statistics TTM revenue net income 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [],
+   "cited_primary": 0,
+   "retrieved": 57,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.0,
+   "verdict": "incorrect",
+   "points": [],
+   "rationale": "No answer produced."
+  },
+  "citations": {
+   "claims": [],
+   "numeric_claims": 0,
+   "numeric_cited": 0,
+   "cited": 0,
+   "supported": 0,
+   "not_retrieved": 0
+  }
+ }
+}

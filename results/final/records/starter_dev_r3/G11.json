@@ -1,0 +1,159 @@
+{
+ "id": "G11",
+ "category": "Quantitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "abstain",
+ "question": "As of October 1, 2026, what were Apple's total revenue and iPhone revenue for the September 2026 quarter?",
+ "grading": "Expected refusal: period not yet reported as of 2026-10-01; may offer management's Q4 outlook clearly labeled as guidance; fail if any number is presented as actual results",
+ "answer": "As of October 1, 2026, Apple had not reported September-quarter FY2026 actual results. Total revenue and iPhone revenue for Q4 FY2026, ended September 26, cannot yet be supplied as actuals. The latest reported quarter was Q3 FY2026, ended June 27. [G11-E1]",
+ "output": {
+  "answer": " Based on the search, **Apple had not yet reported its Q4 FY2026 (September 2026 quarter) results as of October 1, 2026**. Apple's Q4 earnings call for fiscal year 2026 was estimated for **late October 2026** (around October 29).\n\nHere's what we know:\n\n### Apple's Guidance for Q4 FY2026 (provided on July 30, 2026):\n- **Total revenue growth:** 9% to 11% year-over-year, implying approximately **$111.7 billion to $113.7 billion**\n- **iPhone revenue:** Expected to grow at a **\"mid-teens\" rate** (around 15%)\n- **Gross margin:** Expected between 47% and 48%\n- **Wall Street consensus estimates** at the time were around **$114.3 billion** in revenue\n\n### Historical Context (Q3 FY2026):\n- **Total revenue:** $109.4 billion (16% YoY growth)\n- **iPhone revenue:** $54.25 billion (22% YoY growth)\n\nThese are projections and guidance from Apple's July 30, 2026 earnings call, not actual reported results for the September 2026 quarter. The official results would not be available until the earnings release in late October 2026.\n\nSources:\n- [Bybit Wiki - Apple AAPL Earnings Dates 2026 Schedule](https://www.bybit.com/en/wiki/article/apple-aapl-earnings-dates-2026-schedule)\n- [MarketBeat - Apple Earnings Date and Reports 2026](https://www.marketbeat.com/stocks/NASDAQ/AAPL/earnings)\n- [Wall Street Horizon - Apple Earnings Calendar](https://www.wallstreethorizon.com/apple-earnings-calendar)\n- [Reuters - Apple revenue profits beat expectations July 2026](https://www.reuters.com/business/retail-consumer/apple-revenue-profits-beat-expectations-iphone-mac-sales-2026-07-30)\n- [Yahoo Finance - Apple Stock September Surprise](https://finance.yahoo.com/markets/stocks/articles/apple-stock-september-surprise-could-be-bigger-than-a-new-iphone-130002154.html)",
+  "tokens": {
+   "input": 19310,
+   "output": 1880
+  },
+  "tavily_credits": 4,
+  "latency_s": 14.78,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/2f51d35da721a1205d823a470ae3bb6d",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Apple fiscal Q4 2026 revenue iPhone revenue estimates September quarter earnings date",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Q4 2026\" Apple iPhone revenue estimate \"September 2026\" quarter forecast",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/apple-stock-september-surprise-could-be-bigger-than-a-new-iphone-130002154.html",
+    "https://www.bybit.com/en/wiki/article/apple-aapl-earnings-dates-2026-schedule",
+    "https://www.marketbeat.com/stocks/NASDAQ/AAPL/earnings",
+    "https://www.reuters.com/business/retail-consumer/apple-revenue-profits-beat-expectations-iphone-mac-sales-2026-07-30",
+    "https://www.wallstreethorizon.com/apple-earnings-calendar"
+   ],
+   "cited_primary": 0,
+   "retrieved": 20,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Agent must refuse to provide actual results for the September 2026 quarter as of October 1, 2026, because the period is not yet reported.",
+     "met": true,
+     "note": "Agent explicitly states: 'Apple had not yet reported its Q4 FY2026 (September 2026 quarter) results as of October 1, 2026.'"
+    },
+    {
+     "point": "Agent may offer management's Q4 outlook clearly labeled as guidance.",
+     "met": true,
+     "note": "Agent provides Apple's guidance from July 30, 2026, and labels it as 'projections and guidance from Apple's July 30, 2026 earnings call, not actual reported results.'"
+    },
+    {
+     "point": "Agent must not present any number as actual results for the September 2026 quarter.",
+     "met": true,
+     "note": "All numbers provided are either guidance (clearly labeled) or historical Q3 FY2026 results; no number is presented as actual Q4 FY2026 results."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly abstains from providing actual results for the unreported quarter, clearly labels guidance as guidance, and does not present any figure as actual reported results for Q4 FY2026."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Apple had not yet reported its Q4 FY2026 (September 2026 quarter) results as of October 1, 2026",
+     "numeric": false,
+     "cited_url": "https://www.bybit.com/en/wiki/article/apple-aapl-earnings-dates-2026-schedule",
+     "reason": "Bybit Wiki states Apple's Q4 FY2026 earnings report is expected in late October 2026, confirming results were not yet available as of October 1, 2026. MarketBeat and Wall Street Horizon also show the estimated date as October 29, 2026, unconfirmed.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Apple's Q4 earnings call for fiscal year 2026 was estimated for late October 2026 (around October 29)",
+     "numeric": true,
+     "cited_url": "https://www.marketbeat.com/stocks/NASDAQ/AAPL/earnings",
+     "reason": "MarketBeat states the estimated earnings date is Thursday, October 29th, 2026 based on last year's report dates. Wall Street Horizon also shows an unconfirmed forecast for October 29, 2026 date.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Apple's guidance for Q4 FY2026 was provided on July 30, 2026",
+     "numeric": true,
+     "cited_url": "https://www.reuters.com/business/retail-consumer/apple-revenue-profits-beat-expectations-iphone-mac-sales-2026-07-30",
+     "reason": "Reuters article is dated July 30, 2026 and reports that CFO Kevan Parekh gave guidance on the call that day for the September quarter (Q4 FY2026).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total revenue growth guidance for Q4 FY2026: 9% to 11% year-over-year, implying approximately $111.7 billion to $113.7 billion",
+     "numeric": true,
+     "cited_url": "https://www.marketbeat.com/stocks/NASDAQ/AAPL/earnings",
+     "reason": "MarketBeat's table shows Company Revenue Guidance for Q4 2026 as $111.7B - $113.7B. Reuters confirms the 9% to 11% growth rate. The implied dollar range matches the guidance.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "iPhone revenue expected to grow at a 'mid-teens' rate (around 15%) for Q4 FY2026",
+     "numeric": true,
+     "cited_url": "https://www.reuters.com/business/retail-consumer/apple-revenue-profits-beat-expectations-iphone-mac-sales-2026-07-30",
+     "reason": "Reuters quotes CFO Kevan Parekh forecasting iPhone revenue would grow at a 'mid-teens rate'. Yahoo Finance also states management expects iPhone revenue growth in the mid-teens.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Gross margin expected between 47% and 48% for Q4 FY2026",
+     "numeric": true,
+     "cited_url": "https://www.reuters.com/business/retail-consumer/apple-revenue-profits-beat-expectations-iphone-mac-sales-2026-07-30",
+     "reason": "Reuters reports gross profit margins would be between 47% and 48%. Yahoo Finance also cites the company saying gross margin will be between 47% and 48%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Wall Street consensus revenue estimate for Q4 FY2026 was around $114.3 billion",
+     "numeric": true,
+     "cited_url": "https://www.marketbeat.com/stocks/NASDAQ/AAPL/earnings",
+     "reason": "MarketBeat's table shows Revenue Estimate for Q4 2026 as $114.3B. This matches the answer's claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 total revenue was $109.4 billion with 16% year-over-year growth",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/apple-stock-september-surprise-could-130002154.html",
+     "reason": "Yahoo Finance states total revenue increased 16% to $109.4 billion in the June quarter (Q3 FY2026). Reuters and Macrotrends also report $109.4B with ~16% growth.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 iPhone revenue was $54.25 billion with 22% year-over-year growth",
+     "numeric": true,
+     "cited_url": "https://www.reuters.com/business/retail-consumer/apple-revenue-profits-beat-expectations-iphone-mac-sales-2026-07-30",
+     "reason": "Reuters reports a 21.7% increase in iPhone sales to $54.25 billion. Yahoo Finance says iPhone revenue climbed 22% year-over-year to $54.3 billion. The figures are consistent.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 8,
+   "cited": 9,
+   "supported": 9,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,147 @@
+{
+ "id": "T07",
+ "category": "Numerical reasoning",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Autodesk's GAAP operating margin (income from operations as a percentage of total net revenue) in the second quarter of fiscal 2027 (quarter ended July 31, 2026)? Compute it from the reported figures.",
+ "grading": "29.3% ±0.3pp (599 / 2,046). The release's rounded '29%' is also accepted. Must be GAAP, quarterly, Q2 FY2027. Fail if non-GAAP (41%) or six-month margin (28.6%) is given.",
+ "answer": "GAAP income from operations was USD 599 million on total net revenue of USD 2,046 million in Q2 FY2027, a GAAP operating margin of 599 / 2,046 = 29.3% (the release rounds to 29%, up about 4 points from 444 / 1,763 = 25.2% in Q2 FY2026). [T07-E1, T07-E2]",
+ "output": {
+  "answer": " Based on Autodesk's reported financials for the second quarter of fiscal 2027 (ended July 31, 2026):\n\n| Metric | Q2 FY27 |\n|---|---|\n| Income from Operations | **$599 million** |\n| Total Net Revenue | **$2,046 million** |\n\n**GAAP Operating Margin = ($599M ÷ $2,046M) × 100 = ~29.3%**\n\nThis rounds to **29%**, which matches the GAAP operating margin figure Autodesk explicitly reported for the quarter.\n\nSource: Autodesk Q2 FY2027 earnings press release — [investors.autodesk.com](https://investors.autodesk.com/news-releases/news-release-details/autodesk-inc-announces-fiscal-2027-second-quarter-results) / [adsknews.autodesk.com](https://adsknews.autodesk.com/en/pressrelease/autodesk-inc-announces-fiscal-2027-second-quarter-results)",
+  "tokens": {
+   "input": 19779,
+   "output": 1176
+  },
+  "tavily_credits": 4,
+  "latency_s": 19.2,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/30c512f7ccb89ba168cbc4b3fb1010a0",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Autodesk second quarter fiscal 2027 operating margin income from operations percentage total net revenue",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Autodesk Q2 FY2027 GAAP income from operations operating income millions",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://adsknews.autodesk.com/en/pressrelease/autodesk-inc-announces-fiscal-2027-second-quarter-results",
+    "https://investors.autodesk.com/news-releases/news-release-details/autodesk-inc-announces-fiscal-2027-second-quarter-results"
+   ],
+   "cited_primary": 1,
+   "retrieved": 13,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer is GAAP operating margin (not non-GAAP)",
+     "met": true,
+     "note": "Agent explicitly states 'GAAP Operating Margin' and uses GAAP figures (income from operations $599M, total net revenue $2,046M)."
+    },
+    {
+     "point": "Answer is for Q2 FY2027 (quarter ended July 31, 2026)",
+     "met": true,
+     "note": "Agent correctly identifies the quarter as 'second quarter of fiscal 2027 (ended July 31, 2026)'."
+    },
+    {
+     "point": "Computed from reported figures: income from operations $599M and total net revenue $2,046M",
+     "met": true,
+     "note": "Agent presents a table with exactly those figures and computes margin as ($599M ÷ $2,046M) × 100."
+    },
+    {
+     "point": "Margin is 29.3% ±0.3pp (or rounded 29%)",
+     "met": true,
+     "note": "Agent computes ~29.3% and notes it rounds to 29%, within tolerance."
+    },
+    {
+     "point": "Does not give non-GAAP margin (41%) or six-month margin (28.6%)",
+     "met": true,
+     "note": "Agent only provides GAAP quarterly margin; no mention of non-GAAP or six-month figures."
+    },
+    {
+     "point": "Does not use billings (1,854) as denominator",
+     "met": true,
+     "note": "Denominator used is total net revenue $2,046M, not billings."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All requirements are satisfied: the agent correctly computes the GAAP operating margin for Q2 FY2027 from the reported GAAP figures, obtains 29.3% (rounded to 29%), and avoids the common pitfalls (non-GAAP, six-month, billings denominator)."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Autodesk reported financials for the second quarter of fiscal 2027 ended July 31, 2026",
+     "numeric": false,
+     "cited_url": "https://investors.autodesk.com/news-releases/news-release-details/autodesk-inc-announces-fiscal-2027-second-quarter-results",
+     "reason": "The retrieved press release shows 'Second Quarter Fiscal 2027' but does not explicitly state the quarter end date of July 31, 2026.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Income from Operations for Q2 FY27 was $599 million",
+     "numeric": true,
+     "cited_url": "https://investors.autodesk.com/news-releases/news-release-details/autodesk-inc-announces-fiscal-2027-second-quarter-results",
+     "reason": "The retrieved press release table shows 'Income from operations' of 599 (in millions) for Q2 FY27.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total Net Revenue for Q2 FY27 was $2,046 million",
+     "numeric": true,
+     "cited_url": "https://investors.autodesk.com/news-releases/news-release-details/autodesk-inc-announces-fiscal-2027-second-quarter-results",
+     "reason": "The retrieved press release table shows 'Total Net Revenue' of $2,046 million for Q2 FY27.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "GAAP Operating Margin calculated as ($599M ÷ $2,046M) × 100 = ~29.3%",
+     "numeric": true,
+     "cited_url": "https://investors.autodesk.com/news-releases/news-release-details/autodesk-inc-announces-fiscal-2027-second-quarter-results",
+     "reason": "The inputs $599M and $2,046M are supported by the press release; the calculation yields 29.276%, which rounds to 29.3%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The calculated GAAP Operating Margin rounds to 29%, matching the explicitly reported GAAP Operating Margin of 29% for Q2 FY27",
+     "numeric": true,
+     "cited_url": "https://investors.autodesk.com/news-releases/news-release-details/autodesk-inc-announces-fiscal-2027-second-quarter-results",
+     "reason": "The press release explicitly reports 'GAAP Operating Margin' as 29% for Q2 FY27.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The source for the financials is Autodesk's Q2 FY2027 earnings press release at investors.autodesk.com",
+     "numeric": false,
+     "cited_url": "https://investors.autodesk.com/news-releases/news-release-details/autodesk-inc-announces-fiscal-2027-second-quarter-results",
+     "reason": "The retrieved content is from that URL and contains the relevant financial tables.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 6,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}

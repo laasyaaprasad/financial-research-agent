@@ -208,27 +208,33 @@ The superseded code was removed from the working tree; it remains in git history
    - agent v3 on the held-out (×2), hard (×2) and dev (×1) sets
    - baseline runs on those sets reused, since the baseline code is unchanged
 
-**Result (final runs, pooled over three held-out sets × two runs, same model):**
+**Result (final runs):**
+- **Baseline:** the starter as shipped (Kimi K2.6), re-run on held-out sets 1 and 2 (one run each) and re-graded on its three dev runs. It wasn't run on the table set because of the Tavily budget.
+- **Our agent:** v3, on DeepSeek V4.1 Flash.
+- **Architecture-only comparison:** the starter's design on that same model.
 
-| Measure | Baseline | New agent |
-|---|---|---|
-| Fully correct | 79/84 | 81/84 |
-| Table cells correct | 99% | 97% |
-| Verified-correct | 40/84 | 68/84 |
-| Cited claims not supported | 27% | 9% |
-| Primary-source citations | 45% | 87% |
-| Correct refusals | 10/12 | 12/12 |
-| Tavily credits per question | 7.4 | 0.8 |
-| Median latency | 23 s | 48 s |
+| Held-out sets 1 and 2 | Starter (as shipped) | Starter design, our model | Our agent |
+|---|---|---|---|
+| Fully correct | 20/34 (59%) | 64/68 (94%) | 67/68 (99%) |
+| Verified-correct | 11/34 (32%) | 38/68 (56%) | 56/68 (82%) |
+| Cited claims not supported | 23% | 16% | 9% |
+| Primary-source citations | 22% | 41% | 82% |
+| Refusals correct | 4/6 | 10/12 | 12/12 |
+| Tavily credits per question | 9.2 | 4.7 | 0.9 |
+| Median latency | 17 s | 17 s | 40 s |
 
-- **Correctness:** a tie. **Trustworthiness and cost:** clear gains for the new agent. **Latency:** about 2× slower. Details are in `results/final/results.md`.
+- **Table set (same-model comparison):**
+  - cells correct: 171/172 for the starter design vs. 167/172 for ours
+  - unsupported figures: 69% vs. 6%
+  - credits per task: 20.8 vs. 0.2
+- **Dev set:** the starter as shipped got 40/75 fully correct over three runs; our agent got 20/25.
 - **Acceptance criteria:**
   - **Met:**
+    - our agent beats the shipped starter by far more than run-to-run variation on correctness, verified-correct and citations
     - every refusal correct
     - at least 90% of cited claims supported (91%)
-    - within the Tavily budget
-    - verified-correct well beyond run-to-run variation
-  - **Not met as originally framed:** a correctness gain over the baseline. The README and REPORT say so plainly.
+    - Tavily credits stayed within the budget (by Tavily's own count)
+  - **Same-model comparison:** correctness is a tie, so the architecture's own contribution is trust and cost. The README and REPORT say so plainly.
 
 **Acceptance criteria**
 - **Headline:** the README reports quality next to credits, tokens and latency, without picking runs.

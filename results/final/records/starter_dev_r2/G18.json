@@ -1,0 +1,144 @@
+{
+ "id": "G18",
+ "category": "Beat or miss",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "Did Broadcom's Q3 FY2026 AI semiconductor revenue beat the guidance it gave on its Q2 FY2026 call, and by how much in dollars and percent?",
+ "grading": "Beat amount ±$0.1B; beat % ±0.5pp; must benchmark against the company's AI semiconductor revenue guide",
+ "answer": "Broadcom Q3 FY2026 AI semiconductor revenue was $16.7 billion versus its Q2-release guidance of $16.0 billion: a $0.7 billion beat, or 4.375% of guidance. [G18-E1, G18-E2]",
+ "output": {
+  "answer": " **Yes**, Broadcom's Q3 FY2026 AI semiconductor revenue **beat** the guidance given on its Q2 FY2026 earnings call.\n\n| | Amount |\n|---|---|\n| **Q3 FY2026 Guidance (from Q2 call)** | ~**$16.0 billion** |\n| **Q3 FY2026 Actual** | **$16.7 billion** |\n| **Beat in dollars** | **~$0.7 billion** ($700 million) |\n| **Beat in percent** | **~4.4%** |\n\n**Sources:**\n- On the Q2 FY2026 call, management guided for Q3 AI semiconductor revenue of **$16 billion** for the quarter ([247wallst.com](https://247wallst.com/investing/2026/09/02/live-will-broadcom-crush-q3-earnings-tonight-after-the-market-closes)). A separate recap also notes the company expected Q2's $10.8B in AI semiconductor revenue to rise to **~$16B in Q3** ([LinkedIn](https://www.linkedin.com/posts/rafal-plewko-768248216_broadcom-avgo-ai-activity-7501017777378598912-bfs2)).\n- Broadcom reported actual Q3 FY2026 AI semiconductor revenue of **$16.7 billion**, up 221% year-over-year and 54% sequentially ([Broadcom official earnings release](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial) and [Motley Fool transcript](https://www.fool.com/earnings/call-transcripts/2026/09/09/broadcom-avgo-q3-2026-earnings-call-transcript)).",
+  "tokens": {
+   "input": 46351,
+   "output": 2339
+  },
+  "tavily_credits": 8,
+  "latency_s": 27.74,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Broadcom Q3 FY2026 AI semiconductor revenue guidance Q2 FY2026 earnings call",
+     "search_depth": "advanced",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Broadcom\" \"Q2 FY2026\" \"AI semiconductor\" \"guidance\" \"Q3\" \"billion\"",
+     "search_depth": "advanced",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Broadcom\" \"Q2 FY2026 earnings call\" \"AI semiconductor revenue\" \"guidance\" \"Q3\"",
+     "search_depth": "advanced",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Broadcom Q2 FY2026 earnings call transcript \"AI semiconductor\" \"guidance\" \"Q3\" \"$16 billion\"",
+     "search_depth": "advanced",
+     "time_range": "month"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://247wallst.com/investing/2026/09/02/live-will-broadcom-crush-q3-earnings-tonight-after-the-market-closes",
+    "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+    "https://www.fool.com/earnings/call-transcripts/2026/09/09/broadcom-avgo-q3-2026-earnings-call-transcript",
+    "https://www.linkedin.com/posts/rafal-plewko-768248216_broadcom-avgo-ai-activity-7501017777378598912-bfs2"
+   ],
+   "cited_primary": 1,
+   "retrieved": 27,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Beat amount in dollars within ±$0.1B of reference ($0.7B)",
+     "met": true,
+     "note": "Agent reports ~$0.7 billion beat, matching reference $0.7 billion."
+    },
+    {
+     "point": "Beat percent within ±0.5pp of reference (4.375%)",
+     "met": true,
+     "note": "Agent reports ~4.4%, within 0.025pp of reference 4.375%."
+    },
+    {
+     "point": "Benchmarks against company's AI semiconductor revenue guide (not consensus or total semiconductor revenue)",
+     "met": true,
+     "note": "Agent uses company's Q2 call guidance of $16.0B for AI semiconductor revenue."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly states the beat amount and percentage within tolerances, and uses the company's own guidance for AI semiconductor revenue."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Broadcom's Q3 FY2026 AI semiconductor revenue beat the guidance given on its Q2 FY2026 earnings call",
+     "numeric": false,
+     "cited_url": "https://247wallst.com/investing/2026/09/02/live-will-broadcom-crush-q3-earnings-tonight-after-the-market-closes",
+     "reason": "The 247wallst.com article states management guided $16 billion for Q3 AI semiconductor revenue. Broadcom's official earnings release reports actual Q3 AI semiconductor revenue of $16.7 billion. The beat is derived from these two figures.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 Guidance (from Q2 call) was ~$16.0 billion",
+     "numeric": true,
+     "cited_url": "https://247wallst.com/investing/2026/09/02/live-will-broadcom-crush-q3-earnings-tonight-after-the-market-closes",
+     "reason": "The 247wallst.com article explicitly states: 'Management guided $16 billion for Q3 and $56 billion for full-year FY26 AI revenue'. This matches the cited guidance figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 Actual AI semiconductor revenue was $16.7 billion",
+     "numeric": true,
+     "cited_url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+     "reason": "Multiple retrieved sources (Broadcom official earnings release, Motley Fool transcript, Yahoo Finance, etc.) consistently report AI semiconductor revenue of $16.7 billion for Q3 FY2026, up 221% year-over-year and 54% sequentially.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Beat in dollars was ~$0.7 billion ($700 million)",
+     "numeric": true,
+     "cited_url": "https://247wallst.com/investing/2026/09/02/live-will-broadcom-crush-q3-earnings-tonight-after-the-market-closes",
+     "reason": "Derived from actual $16.7 billion minus guidance $16.0 billion = $0.7 billion. Arithmetic is correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Beat in percent was ~4.4%",
+     "numeric": true,
+     "cited_url": "https://247wallst.com/investing/2026/09/02/live-will-broadcom-crush-q3-earnings-tonight-after-the-market-closes",
+     "reason": "Derived from ($0.7 billion / $16.0 billion) * 100% = 4.375%, which rounds to 4.4% (within rounding tolerance of 4.35-4.45%).",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 5,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}

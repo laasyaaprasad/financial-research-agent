@@ -1,0 +1,146 @@
+{
+ "id": "G09",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "number",
+ "question": "What was Nike's revenue in its most recently reported quarter, and which fiscal quarter and date range was that?",
+ "grading": "Reference-free recency: must pick the newest released quarter as of query time, label it in fiscal terms with period-end date, and give revenue ±0.5% USD millions; fail if an older quarter is presented as latest",
+ "answer": "At the October 1, 2026 after-market snapshot, Nike had released Q1 FY2027 results: revenue was USD 11,213 million for June 1–August 31, 2026. The release is dated October 1. [G09-E1]",
+ "output": {
+  "answer": " Based on Nike's most recent earnings report, here are the details:\n\n**Revenue:** $11.21 billion\n**Fiscal Quarter:** Q1 Fiscal Year 2027\n**Date Range:** June 1, 2026 – August 31, 2026\n\nThis represents a 4% reported decline (and 5% currency-neutral decline) compared to the same period a year earlier. The results were reported on October 1, 2026.\n\nSources:\n- [NIKE, Inc. Reports Fiscal 2027 First Quarter Results (Yahoo Finance)](https://au.finance.yahoo.com/news/nike-inc-reports-fiscal-2027-201500119.html)\n- [Nike Q1 FY2027 Earnings Snapshot (Yahoo Finance)](https://finance.yahoo.com/markets/stocks/articles/nike-fiscal-q1-earnings-snapshot-202129073.html)\n- [Stock Titan - Nike Q1 FY2027 Analysis](https://www.stocktitan.net/articles/nike-q1-fy2027-earnings-outlook-dividend)\n- [Nike Fiscal Calendar (SalesMotion)](https://salesmotion.io/insights/nike-2/fiscal-year-end)",
+  "tokens": {
+   "input": 25447,
+   "output": 1540
+  },
+  "tavily_credits": 4,
+  "latency_s": 15.29,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nike revenue most recent quarter fiscal quarter date range earnings",
+     "search_depth": "advanced",
+     "time_range": "month",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nike fiscal year end May 31 quarter dates Q1 2026 2027 date range June August"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nike Q1 FY2025 earnings revenue quarter ending August 31 2024 latest results"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://au.finance.yahoo.com/news/nike-inc-reports-fiscal-2027-201500119.html",
+    "https://finance.yahoo.com/markets/stocks/articles/nike-fiscal-q1-earnings-snapshot-202129073.html",
+    "https://salesmotion.io/insights/nike-2/fiscal-year-end",
+    "https://www.stocktitan.net/articles/nike-q1-fy2027-earnings-outlook-dividend"
+   ],
+   "cited_primary": 0,
+   "retrieved": 27,
+   "retrieved_primary": 7
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Newest released quarter as of query time (2026-10-01 after close) is Q1 FY2027",
+     "met": true,
+     "note": "Agent states Q1 FY2027 (June 1–August 31, 2026) reported October 1, 2026, matching the snapshot's latest release."
+    },
+    {
+     "point": "Fiscal quarter labeled correctly as Q1 FY2027 with period-end date August 31, 2026",
+     "met": true,
+     "note": "Agent provides fiscal quarter (Q1 FY2027) and date range June 1–August 31, 2026, including period-end date."
+    },
+    {
+     "point": "Revenue reported as $11.21 billion (11,210 million) within ±0.5% of 11,213 million",
+     "met": true,
+     "note": "Agent's $11.21 billion equals 11,210 million; snapshot is 11,213 million. Difference is 3 million (0.027%), well within ±0.5% (≈56 million)."
+    },
+    {
+     "point": "No older quarter presented as latest",
+     "met": true,
+     "note": "Agent does not reference any earlier quarter (e.g., FY2026 Q4) as the most recent."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly identifies Q1 FY2027 (June 1–August 31, 2026) as the most recent quarter released on October 1, 2026, with revenue of $11.21 billion, which is within the required tolerance of the snapshot value (11,213 million). All grading requirements are satisfied."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Revenue: $11.21 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/nike-fiscal-q1-earnings-snapshot-202129073.html",
+     "reason": "Retrieved source states: 'The athletic apparel maker posted revenue of $11.21 billion in the period.' This matches the claimed figure exactly.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal Quarter: Q1 Fiscal Year 2027",
+     "numeric": false,
+     "cited_url": "https://www.stocktitan.net/articles/nike-q1-fy2027-earnings-outlook-dividend",
+     "reason": "Retrieved source states: 'Nike reported results for its fiscal first quarter... revenue of $11.21 billion.' This confirms the quarter is Q1 FY2027.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Date Range: June 1, 2026 – August 31, 2026",
+     "numeric": true,
+     "cited_url": "https://salesmotion.io/insights/nike-2/fiscal-year-end",
+     "reason": "Retrieved source states: 'Nike's current fiscal year starts on June 1, 2026, and ends on May 31, 2027. Their current quarter is Q1, which ends on August 31, 2026.' This directly supports the claimed date range.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "4% reported decline year-over-year",
+     "numeric": true,
+     "cited_url": "https://au.finance.yahoo.com/news/nike-inc-reports-fiscal-2027-201500119.html",
+     "reason": "Retrieved source states: 'First quarter revenues were $11.2 billion, down 4 percent on a reported basis.' This matches the claimed 4% reported decline.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "5% currency-neutral decline year-over-year",
+     "numeric": true,
+     "cited_url": "https://au.finance.yahoo.com/news/nike-inc-reports-fiscal-2027-201500119.html",
+     "reason": "Retrieved source states: 'down 5 percent on a currency-neutral basis.' This matches the claimed 5% currency-neutral decline.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Results reported on October 1, 2026",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/articles/nike-q1-fy2027-earnings-outlook-dividend",
+     "reason": "Retrieved source states: 'Nike reported results for its fiscal first quarter, the three months to August 31, after the close on October 1, 2026.' This confirms the reporting date.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 6,
+   "supported": 6,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,259 @@
+{
+ "id": "T11",
+ "category": "Beat or miss",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "Did lululemon's second-quarter fiscal 2026 (quarter ended August 2, 2026) net revenue and diluted EPS land above, within or below the Q2 guidance ranges the company gave in its first-quarter release in June 2026?",
+ "grading": "Key points: (1) revenue USD 2,415.6M vs guidance USD 2,450M-2,475M = BELOW the range; (2) diluted EPS USD 2.92 vs guidance USD 1.76-1.81 = ABOVE the range; (3) notes the guidance did not include IEEPA tariff refunds and that Q2 EPS included USD 0.86/share from refunds and interest, so EPS excluding that (~USD 2.06) is still above the top of the range; (4) benchmark is company guidance, not consensus. Fail if both are called beats or if consensus is used.",
+ "answer": "Against the Q2 guidance in the June 4, 2026 release (net revenue USD 2.450-2.475 billion; diluted EPS USD 1.76-1.81; guidance excluded any IEEPA tariff refunds) [T11-E1], Q2 FY2026 net revenue was USD 2,415.6 million (below the low end by about 1.4%) and diluted EPS was USD 2.92 (above the high end). The EPS includes USD 0.86 per share from IEEPA tariff refunds ($134.5M) and associated interest ($4.1M); excluding that, EPS is about USD 2.06, still above the USD 1.81 top of the range. [T11-E2]",
+ "output": {
+  "answer": " Based on the latest available information, here is the comparison between **Lululemon's Q2 fiscal 2026 actual results** (quarter ended August 2, 2026) and the **Q2 guidance issued in its Q1 fiscal 2026 release in June 2026**:\n\n## Results vs. Guidance\n\n| Metric | Q2 Guidance (from June 2026) | Actual Q2 Results | vs. Guidance |\n|--------|-------------------------------|------------------|--------------|\n| **Net Revenue** | **$2.45 – $2.475 billion** | **~$2.40 – $2.42 billion** *(down 4% YoY)* | **Below** |\n| **Diluted EPS** | **$1.76 – $1.81** | **$2.92** *(includes $0.86/sh. tariff refund)* | **Above** |\n\n## Key Details\n- **Revenue** came in **below** the guided range. Net revenue declined approximately 4% year over year to roughly $2.4 billion, missing the company's prior outlook of $2.45–$2.475 billion and also falling short of analyst consensus estimates around $2.46 billion.  \n- **Diluted EPS** came in **well above** guidance at $2.92. However, this figure included a **$0.86 per share benefit from tariff refunds**. Even on an adjusted basis, EPS still significantly exceeded the guided range of $1.76–$1.81.  \n\n## Sources\n- Lululemon Q2 fiscal 2026 results announcement (actuals): [Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/lululemon-athletica-inc-announces-second-200500621.html)  \n- Q2 guidance from Q1 fiscal 2026 earnings outlook: [Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/lulu-stock-plunges-weak-north-214631479.html)  \n- Additional details on EPS beat vs. revenue miss: [Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/lululemon-nasdaq-lulu-misses-q2-201928957.html)  \n\n*Note: The reported results represent real financial data from the company's Q2 fiscal 2026 reporting. The exact revenue figure varies slightly across sources (~$2.40B to $2.42B) due to rounding, but all sources confirm it fell below the guidance range.*",
+  "tokens": {
+   "input": 81507,
+   "output": 3889
+  },
+  "tavily_credits": 7,
+  "latency_s": 41.16,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/00bd9cce448a17ac4c204031da19f94e",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Lululemon Q2 fiscal 2025 earnings results net revenue diluted EPS guidance",
+     "search_depth": "basic",
+     "time_range": "month",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Lululemon Q2 2025 earnings results actual revenue EPS versus guidance",
+     "search_depth": "basic",
+     "time_range": "year",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Lululemon\" \"Q2 2026\" OR \"second quarter\" \"fiscal 2026\" actual revenue \"EPS\" results \"guidance\" \"beat\" OR \"miss\"",
+     "search_depth": "basic",
+     "topic": "finance",
+     "time_range": "year"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Lululemon\" \"Q2 2026\" \"guidance\" \"net revenue\" \"$2.4\" OR \"2.35\" OR \"2.45\" \"EPS\" \"$1.76\" OR \"$1.81\" first quarter outlook",
+     "search_depth": "basic",
+     "topic": "finance",
+     "time_range": "year"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Lululemon\" \"Q2 2026\" actual results \"earnings\" \"$2.4 billion\" \"revenue\" \"diluted EPS\" reported GAAP",
+     "search_depth": "basic",
+     "topic": "finance",
+     "time_range": "year"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Lululemon\" \"second quarter fiscal 2026\" \"diluted earnings per share\" \"$2.92\" actual results press release August 2026",
+     "search_depth": "basic",
+     "topic": "finance",
+     "time_range": "year"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Lululemon\" \"August 2, 2026\" OR \"August 2 2026\" quarter ended Q2 fiscal 2026 earnings report",
+     "search_depth": "basic",
+     "topic": "finance",
+     "time_range": "year"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/lulu-stock-plunges-weak-north-214631479.html",
+    "https://finance.yahoo.com/markets/stocks/articles/lululemon-athletica-inc-announces-second-200500621.html",
+    "https://finance.yahoo.com/markets/stocks/articles/lululemon-nasdaq-lulu-misses-q2-201928957.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 32,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.75,
+   "points": [
+    {
+     "point": "Revenue actual (USD 2,415.6M) is below guidance range (USD 2,450M-2,475M)",
+     "met": true,
+     "note": "Agent states revenue ~$2.40-$2.42B vs guidance $2.45-$2.475B, below."
+    },
+    {
+     "point": "Diluted EPS actual (USD 2.92) is above guidance range (USD 1.76-1.81)",
+     "met": true,
+     "note": "Agent states EPS $2.92 vs guidance $1.76-$1.81, above."
+    },
+    {
+     "point": "Notes guidance excluded IEEPA tariff refunds, and that Q2 EPS included $0.86/share from refunds, so EPS excluding that (~$2.06) still above top of range",
+     "met": false,
+     "note": "Agent mentions $0.86/share tariff refund benefit and says adjusted EPS significantly exceeds guided range, but does not explicitly state guidance excluded refunds nor calculate adjusted EPS ~$2.06."
+    },
+    {
+     "point": "Benchmark is company guidance, not consensus",
+     "met": true,
+     "note": "Agent uses company guidance as benchmark; mentions consensus only as additional context."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The agent correctly identifies revenue below guidance and EPS above guidance, and uses company guidance as benchmark. However, the agent does not explicitly note that the guidance excluded IEEPA tariff refunds, nor does it calculate the adjusted EPS (~$2.06) to show it remains above the range; it only states adjusted EPS \"significantly exceeded\" the range."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Lululemon's Q2 fiscal 2026 quarter ended August 2, 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-athletica-inc-announces-second-200500621.html",
+     "reason": "The cited article (Q2 results announcement) does not mention the quarter end date in the retrieved text. Another retrieved source ('Lululemon cuts FY26 outlook...') states 'For the quarter ending 2 August 2026', but that is not the cited URL.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 guidance was issued in the Q1 fiscal 2026 release in June 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lulu-stock-plunges-weak-north-214631479.html",
+     "reason": "The retrieved text for this URL shows Q2 guidance ('Lululemon now expects second quarter (Q2) revenue of $2.45–$2.475 billion... and EPS of $1.76–$1.81') but does not explicitly state the release month (June 2026). The article title suggests a guidance cut, but the publication date is not in the retrieved content.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Net Revenue guidance for Q2 fiscal 2026 was $2.45–$2.475 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lulu-stock-plunges-weak-north-214631479.html",
+     "reason": "Retrieved text explicitly states: 'Lululemon now expects second quarter (Q2) revenue of $2.45–$2.475 billion'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual Net Revenue for Q2 fiscal 2026 was approximately $2.40–$2.42 billion, down about 4% year over year",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-athletica-inc-announces-second-200500621.html",
+     "reason": "Retrieved text for the Q2 results announcement states: 'Revenue decreased 4% to $2.4 billion'. Another cited source (third URL) states 'sales falling 4.3% year on year to $2.42 billion'. Both support the approximate range and the ~4% decline.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual Net Revenue came in below the guided range of $2.45–$2.475 billion",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-athletica-inc-announces-second-200500621.html",
+     "reason": "Derived from Claim 3 (guidance $2.45–$2.475B) and Claim 4 (actual ~$2.40–$2.42B). Both cited sources support the respective numbers, so the comparison is valid.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Diluted EPS guidance for Q2 fiscal 2026 was $1.76–$1.81",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lulu-stock-plunges-weak-north-214631479.html",
+     "reason": "Retrieved text explicitly states: 'and EPS of $1.76–$1.81'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual Diluted EPS for Q2 fiscal 2026 was $2.92",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-athletica-inc-announces-second-200500621.html",
+     "reason": "Retrieved text states: 'Diluted EPS of $2.92' and 'Diluted earnings per share were $2.92'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The $2.92 EPS included a $0.86 per share benefit from tariff refunds",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-athletica-inc-announces-second-200500621.html",
+     "reason": "Retrieved text states: 'This includes $0.86 per share related to tariff refunds'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual Diluted EPS came in well above the guided range of $1.76–$1.81",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-athletica-inc-announces-second-200500621.html",
+     "reason": "Derived from Claim 6 (guidance $1.76–$1.81) and Claim 7 (actual $2.92). Both numbers are supported by their respective cited sources.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Even on an adjusted basis (excluding the $0.86 tariff refund), EPS significantly exceeded the guided range",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-athletica-inc-announces-second-200500621.html",
+     "reason": "Adjusted EPS = $2.92 - $0.86 = $2.06, which is above the high end of guidance ($1.81). The cited source provides both the reported EPS and the tariff refund component, enabling the calculation.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue missed analyst consensus estimates of around $2.46 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-nasdaq-lulu-misses-q2-201928957.html",
+     "reason": "Retrieved text states: 'Revenue: $2.42 billion vs analyst estimates of $2.46 billion'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Net revenue declined approximately 4% year over year to roughly $2.4 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-athletica-inc-announces-second-200500621.html",
+     "reason": "Retrieved text states: 'Revenue decreased 4% to $2.4 billion'. The third cited source also states a 4.3% decline to $2.42 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The exact revenue figure varies slightly across sources (~$2.40B to $2.42B) due to rounding",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer notes this variation but does not cite a specific source for the observation. The retrieved sources show $2.4B (first source) and $2.42B (third source), consistent with the claim.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "All cited sources confirm that actual revenue fell below the guidance range",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer asserts this without a specific citation. The first and third cited sources both show actual revenue (~$2.4B) below the guidance range ($2.45–$2.475B) from the second source.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "The reported results represent real financial data from the company's Q2 fiscal 2026 reporting",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "This is a general statement about the nature of the data; no specific citation is provided.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 10,
+   "numeric_cited": 9,
+   "cited": 12,
+   "supported": 10,
+   "not_retrieved": 0
+  }
+ }
+}

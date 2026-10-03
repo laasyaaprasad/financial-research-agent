@@ -1,0 +1,144 @@
+{
+ "id": "G10",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "abstain",
+ "question": "How many iPhone units did Apple sell in fiscal 2025?",
+ "grading": "Expected refusal: Apple does not disclose unit sales. May provide iPhone net sales from the 10-K, and may cite third-party shipment estimates only if clearly labeled as estimates with source.",
+ "answer": "Apple did not disclose FY2025 iPhone unit sales in its 10-K. A reported unit count cannot be supplied. The filing reports iPhone net sales of USD 209,586 million; revenue is not a unit count, and third-party shipment estimates must be labeled as estimates. [G10-E1]",
+ "output": {
+  "answer": " Apple **does not officially report** annual iPhone unit sales; the company stopped disclosing that metric starting in fiscal Q1 2019. The available figures for 2025 come from third-party analyst estimates:\n\n- **IDC estimate**: ~**247 million** iPhones shipped in 2025 (a record annual total, up ~6% year-over-year)  \n  [Source](https://sqmagazine.co.uk/how-many-iphones-sold)\n  \n- **Omdia estimate**: ~**240.6 million** global iPhone shipments in calendar 2025  \n  [Source](https://marketviewinsights.com/statistics/apple-statistics)\n\n- **Statista/Business of Apps estimates**: ~**247–248 million** units for 2025  \n  [Source 1](https://www.statista.com/topics/870/iphone) | [Source 2](https://www.businessofapps.com/data/apple-statistics)\n\n**Important caveats:**\n- These are **analyst shipment estimates** (devices entering sales channels), not Apple-confirmed end-user sales.\n- Estimates may refer to **calendar 2025** rather than Apple’s fiscal 2025 (which ended in late September 2025).\n- Figures vary by research firm; for example, one estimate cited shipments around **220–225 million** as below expectations, though this appears to contrast with the more commonly cited ~247 million figure.\n\n**Bottom line:** Based on widely cited IDC and Statista data, analysts estimate Apple shipped approximately **245–248 million iPhone units** in 2025, which would represent a record annual high if accurate.",
+  "tokens": {
+   "input": 8040,
+   "output": 1138
+  },
+  "tavily_credits": 2,
+  "latency_s": 9.6,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Apple iPhone unit sales fiscal 2025 how many sold",
+     "search_depth": "advanced",
+     "time_range": "year"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://marketviewinsights.com/statistics/apple-statistics",
+    "https://sqmagazine.co.uk/how-many-iphones-sold",
+    "https://www.businessofapps.com/data/apple-statistics",
+    "https://www.statista.com/topics/870/iphone"
+   ],
+   "cited_primary": 0,
+   "retrieved": 10,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Agent states that Apple does not disclose unit sales (refusal).",
+     "met": true,
+     "note": "Agent explicitly says 'Apple does not officially report annual iPhone unit sales; the company stopped disclosing that metric starting in fiscal Q1 2019.'"
+    },
+    {
+     "point": "Agent does not present third-party estimates as reported figures.",
+     "met": true,
+     "note": "Agent clearly labels them as 'analyst shipment estimates' and 'estimates' throughout, and includes caveats about the difference between shipments and sales, and calendar vs fiscal year."
+    },
+    {
+     "point": "Agent cites third-party estimates with sources.",
+     "met": true,
+     "note": "Agent provides sources for IDC, Omdia, and Statista/Business of Apps estimates."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly refuses to provide an official unit sales figure, clearly labels all third-party numbers as estimates with sources, and does not pass them off as Apple-reported data. The optional provision of iPhone net sales from the 10-K was not required. All grading requirements are satisfied."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Apple does not officially report annual iPhone unit sales; the company stopped disclosing that metric starting in fiscal Q1 2019",
+     "numeric": false,
+     "cited_url": "https://sqmagazine.co.uk/how-many-iphones-sold",
+     "reason": "The SQ Magazine article states: 'Apple no longer says. The company stopped reporting iPhone unit sales from fiscal Q1 2019.' MarketView Insights also confirms: 'Apple does not disclose current annual iPhone unit sales in its financial category tables.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "IDC estimate: ~247 million iPhones shipped in 2025 (a record annual total, up ~6% year-over-year)",
+     "numeric": true,
+     "cited_url": "https://sqmagazine.co.uk/how-many-iphones-sold",
+     "reason": "SQ Magazine cites IDC's 'record 247 million-unit estimate for 2025' and notes IDC estimated 232.1 million in 2024 and forecast 247 million in 2025. A Facebook post also references IDC expecting 247.4 million iPhones in 2025, a more than 6% jump.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Omdia estimate: ~240.6 million global iPhone shipments in calendar 2025",
+     "numeric": true,
+     "cited_url": "https://marketviewinsights.com/statistics/apple-statistics",
+     "reason": "MarketView Insights explicitly states: 'Omdia estimates 240.6 million global iPhone shipments in calendar 2025' and 'Omdia estimates that Apple shipped 240.6 million iPhones globally in calendar 2025.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Statista/Business of Apps estimates: ~247–248 million units for 2025",
+     "numeric": true,
+     "cited_url": "https://www.statista.com/topics/870/iphone",
+     "reason": "Statista page says: 'Apple shipped close to 248 million iPhones globally in 2025.' Business of Apps states: 'iPhone sales hit a new record in 2025 with 247 million units sold.' Both support the 247–248 million range.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "These are analyst shipment estimates (devices entering sales channels), not Apple-confirmed end-user sales",
+     "numeric": false,
+     "cited_url": "https://marketviewinsights.com/statistics/apple-statistics",
+     "reason": "MarketView Insights clarifies: 'Shipments are an industry estimate of devices entering channels, not an Apple-reported count of final consumer purchases.' SQ Magazine also describes IDC figures as 'channel-shipment estimates rather than Apple-confirmed sales.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Estimates may refer to calendar 2025 rather than Apple’s fiscal 2025 (which ended in late September 2025)",
+     "numeric": false,
+     "cited_url": "https://marketviewinsights.com/statistics/apple-statistics",
+     "reason": "MarketView Insights notes: 'Calendar 2025 also differs from Apple’s fiscal 2025.' This directly supports the claim about the period difference.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Figures vary by research firm; for example, one estimate cited shipments around 220–225 million as below expectations, though this appears to contrast with the more commonly cited ~247 million figure",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer does not cite a specific source for the 220–225 million figure. Retrieved sources mention 225.7 million shipments in 2024 (Reddit) and an all-time high of 233.9 million in 2021, but no 2025 estimate of 220–225 million. Without a cited source, support cannot be verified.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Analysts estimate Apple shipped approximately 245–248 million iPhone units in 2025, which would represent a record annual high if accurate",
+     "numeric": true,
+     "cited_url": "https://sqmagazine.co.uk/how-many-iphones-sold",
+     "reason": "This is a summary derived from the IDC estimate of 247 million (SQ Magazine) and Statista's close to 248 million. The range 245–248 million reasonably encompasses both. SQ Magazine calls the IDC 247 million a 'record' estimate; Statista also implies a record high.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 4,
+   "cited": 7,
+   "supported": 7,
+   "not_retrieved": 0
+  }
+ }
+}

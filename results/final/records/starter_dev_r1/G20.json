@@ -1,0 +1,191 @@
+{
+ "id": "G20",
+ "category": "Trends",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "Show Apple's Services net sales and Services gross margin percentage for FY2023, FY2024, and FY2025, and the change in Services gross margin over the period.",
+ "grading": "Net sales ±0.5% (USD millions); GM% exact to 0.1pp; change expressed in pp",
+ "answer": "Apple Services net sales / Services gross margin were: FY2023, USD 85,200 million / 70.8%; FY2024, USD 96,169 million / 73.9%; FY2025, USD 109,158 million / 75.4%. Services gross margin increased 4.6 percentage points from FY2023 to FY2025. FY2023 had 53 weeks, versus 52 weeks in FY2024 and FY2025. [G20-E1]",
+ "output": {
+  "answer": " Here are Apple’s Services segment net sales and gross margin figures for fiscal years 2023–2025:\n\n| Fiscal Year | Services Net Sales | Services Gross Margin $ | Services Gross Margin % |\n|-------------|-------------------|------------------------|-------------------------|\n| **FY2023** | **$85.2 billion** | **$60.3 billion** | **70.8%** |\n| **FY2024** | **$96.2 billion** | **$71.1 billion** | **73.9%** |\n| **FY2025** | **$109.2 billion** | **$82.3 billion** | **75.4%** |\n\n**Change over the period**\n- **Gross margin percentage:** increased **4.6 percentage points** (from 70.8% in FY2023 to 75.4% in FY2025).\n- **Gross margin dollars:** grew **$22.0 billion** (from ~$60.3B to ~$82.3B).\n\n**Sources**  \n- Apple FY2025 10-K: [SEC filing](https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm)  \n- Apple FY2025 Q4 Consolidated Financial Statements: [Apple Newsroom PDF](https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf)  \n- Apple FY2024 10-K: [SEC filing](https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm)",
+  "tokens": {
+   "input": 11651,
+   "output": 7442
+  },
+  "tavily_credits": 2,
+  "latency_s": 37.09,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Apple Services net sales and gross margin percentage FY2023 FY2024 FY2025",
+     "search_depth": "advanced",
+     "include_domains": [
+      "apple.com",
+      "sec.gov",
+      "investor.apple.com"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf",
+    "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+    "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 10,
+   "retrieved_primary": 10
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "FY2023 Services net sales within ±0.5% of 85,200 million USD",
+     "met": true,
+     "note": "Agent reports $85.2 billion (85,200 million), matching reference exactly (0% difference)."
+    },
+    {
+     "point": "FY2024 Services net sales within ±0.5% of 96,169 million USD",
+     "met": true,
+     "note": "Agent reports $96.2 billion (96,200 million), difference ~0.032% from reference 96,169 million, well within tolerance."
+    },
+    {
+     "point": "FY2025 Services net sales within ±0.5% of 109,158 million USD",
+     "met": true,
+     "note": "Agent reports $109.2 billion (109,200 million), difference ~0.038% from reference 109,158 million, well within tolerance."
+    },
+    {
+     "point": "FY2023 Services gross margin % exact to 0.1pp (70.8%)",
+     "met": true,
+     "note": "Agent reports 70.8%, matching reference exactly."
+    },
+    {
+     "point": "FY2024 Services gross margin % exact to 0.1pp (73.9%)",
+     "met": true,
+     "note": "Agent reports 73.9%, matching reference exactly."
+    },
+    {
+     "point": "FY2025 Services gross margin % exact to 0.1pp (75.4%)",
+     "met": true,
+     "note": "Agent reports 75.4%, matching reference exactly."
+    },
+    {
+     "point": "Change in Services gross margin expressed in percentage points (4.6 pp)",
+     "met": true,
+     "note": "Agent states increase of 4.6 percentage points from FY2023 to FY2025, matching reference calculation (75.4 - 70.8 = 4.6 pp)."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All required figures are present and accurate: net sales for each fiscal year are within the ±0.5% tolerance, gross margin percentages match exactly to 0.1pp, and the change is correctly expressed as 4.6 percentage points. No confusion with total company gross margin or fiscal year definitions."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "FY2025 Services Net Sales: $109.2 billion",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "reason": "The FY2025 10-K shows Services net sales of $109,158 million for the year ended September 27, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 Services Gross Margin $: $82.3 billion",
+     "numeric": true,
+     "cited_url": "https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf",
+     "reason": "The FY2025 Q4 Consolidated Financial Statements show Services net sales of $109,158M and Services cost of sales of $26,844M for the twelve months ended September 27, 2025. Gross margin = $109,158M - $26,844M = $82,314M ≈ $82.3B.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 Services Gross Margin %: 75.4%",
+     "numeric": true,
+     "cited_url": "https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf",
+     "reason": "Gross margin percentage = $82,314M / $109,158M = 75.41% ≈ 75.4%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2024 Services Net Sales: $96.2 billion",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "reason": "The FY2025 10-K shows Services net sales of $96,169 million for the year ended September 28, 2024.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2024 Services Gross Margin $: $71.1 billion",
+     "numeric": true,
+     "cited_url": "https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf",
+     "reason": "The FY2025 Q4 Consolidated Financial Statements show Services net sales of $96,169M and Services cost of sales of $25,119M for the twelve months ended September 28, 2024. Gross margin = $96,169M - $25,119M = $71,050M ≈ $71.1B.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2024 Services Gross Margin %: 73.9%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+     "reason": "The FY2024 10-K table shows Services gross margin percentage of 73.9% for 2024.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2023 Services Net Sales: $85.2 billion",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "reason": "The FY2025 10-K shows Services net sales of $85,200 million for the year ended September 30, 2023.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2023 Services Gross Margin $: $60.3 billion",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+     "reason": "The FY2024 10-K shows Services gross margin percentage of 70.8% for 2023. Applying to FY2023 net sales of $85,200M yields $85,200M * 70.8% = $60,321.6M ≈ $60.3B.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2023 Services Gross Margin %: 70.8%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+     "reason": "The FY2024 10-K table shows Services gross margin percentage of 70.8% for 2023.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Gross margin percentage increased 4.6 percentage points from FY2023 to FY2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "reason": "75.4% (FY2025) - 70.8% (FY2023) = 4.6 percentage points.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Gross margin dollars grew $22.0 billion from FY2023 to FY2025",
+     "numeric": true,
+     "cited_url": "https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf",
+     "reason": "$82.3B (FY2025) - $60.3B (FY2023) = $22.0B.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 11,
+   "numeric_cited": 11,
+   "cited": 11,
+   "supported": 11,
+   "not_retrieved": 0
+  }
+ }
+}

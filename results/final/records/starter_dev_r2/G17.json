@@ -1,0 +1,165 @@
+{
+ "id": "G17",
+ "category": "Qualitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "According to Walmart management, what drove the growth in Q2 FY2027 adjusted operating income, and how much of it was one-time?",
+ "grading": "Key points: (1) lists drivers explicitly cited by management (verify against source); (2) quantifies any one-time item if management did; (3) distinguishes reported vs adjusted operating income growth; (4) every causal claim has a citation",
+ "answer": "Management cited strong sales, better business mix from advertising and membership, improving eCommerce economics, and tariff refunds partly reinvested in prices. Gross-profit rate rose 96 basis points; operating-cost deleverage included higher U.S. self-insured liability claims, depreciation and healthcare expenses. [G17-E1, G17-E2] Adjusted operating income rose 17.4% in constant currency, versus 28.8% reported growth. Management quantified the one-time net tariff-refund contribution at approximately 750 basis points (7.5 percentage points) of operating-income growth, leaving underlying growth at the top end of the 7–10% guide. Nearly USD 2.9 billion of refunds received is the gross refund amount, not the net profit benefit. [G17-E3]",
+ "output": {
+  "answer": " According to Walmart CFO **John David Rainey**, Q2 FY2027 adjusted operating income growth was driven in large part by **tariff refunds** received during the quarter.\n\n**One-time impact:** The company specifically stated that operating income growth included a **net benefit of approximately 750 basis points** (7.5 percentage points) related to the roughly **$2.9 billion** in tariff refunds received in Q2. Walmart management characterized these refunds as a one-time item and planned to reinvest substantially all of the proceeds into price reductions for shoppers.\n\n**Other drivers:** Excluding the tariff benefit, underlying operating income growth was at the top end of the company's 7%–10% guidance range. The growth was partially offset by strategic price investments and higher fuel costs in distribution and fulfillment operations.\n\n**Sources:**\n- [Yahoo Finance – \"WMT Q2 Earnings Call Puts Price Investment at Center Stage\"](https://finance.yahoo.com/markets/stocks/articles/wmt-q2-earnings-call-puts-140000113.html)\n- [AOL – \"Walmart Beat Earnings and Raised Guidance. So Why Did the Stock Crash?\"](https://www.aol.ca/articles/walmart-beat-earnings-raised-guidance-145701000.html)\n- [Investing.com – \"Walmart Q2 FY27 slides: strong results, raised guidance, tariff boost\"](https://www.investing.com/news/company-news/walmart-q2-fy27-slides-strong-results-raised-guidance-tariff-boost-93CH-4870066)\n- [Investing.com – \"Walmart earnings analysis: questions answered and next catalysts\"](https://www.investing.com/news/stock-market-news/walmart-earnings-analysis-questions-answered-and-next-catalysts-93CH-4870355)",
+  "tokens": {
+   "input": 86317,
+   "output": 1863
+  },
+  "tavily_credits": 12,
+  "latency_s": 25.54,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY2027 adjusted operating income growth drivers one-time management",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Walmart\" \"Q2\" \"2027\" \"adjusted operating income\" earnings results management",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Walmart\" \"Q2 FY27\" \"tariff refunds\" \"750 basis points\" operating income one-time",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Walmart\" \"Q2\" \"fiscal 2027\" adjusted operating income growth drivers management commentary one-time items",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Walmart\" \"750 basis points\" OR \"7.5%\" operating income Q2 FY27 tariff refund",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Walmart\" \"John David Rainey\" OR \"CFO\" \"tariff refund\" \"750 basis points\" \"Q2\" \"operating income\" earnings call transcript",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/wmt-q2-earnings-call-puts-140000113.html",
+    "https://www.aol.ca/articles/walmart-beat-earnings-raised-guidance-145701000.html",
+    "https://www.investing.com/news/company-news/walmart-q2-fy27-slides-strong-results-raised-guidance-tariff-boost-93CH-4870066",
+    "https://www.investing.com/news/stock-market-news/walmart-earnings-analysis-questions-answered-and-next-catalysts-93CH-4870355"
+   ],
+   "cited_primary": 0,
+   "retrieved": 55,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.25,
+   "points": [
+    {
+     "point": "Lists drivers explicitly cited by management (verify against source)",
+     "met": false,
+     "note": "Agent only mentions tariff refunds as driver; omits strong sales, advertising/membership mix, improving eCommerce economics, and cost headwinds (self-insured liability claims, depreciation, healthcare expenses) cited in reference."
+    },
+    {
+     "point": "Quantifies any one-time item if management did",
+     "met": true,
+     "note": "Agent correctly states net benefit of ~750 basis points (7.5 percentage points) and ~$2.9 billion tariff refunds, matching reference."
+    },
+    {
+     "point": "Distinguishes reported vs adjusted operating income growth",
+     "met": false,
+     "note": "Agent does not mention reported operating income growth (28.8%) versus adjusted operating income growth (17.4% constant currency)."
+    },
+    {
+     "point": "Every causal claim has a citation",
+     "met": false,
+     "note": "Agent provides a list of sources but does not attach citations to specific causal claims (drivers, one-time quantification, underlying growth range, offsets)."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The agent correctly quantifies the one-time tariff refund benefit but fails to list the multiple drivers explicitly cited by management, does not distinguish reported vs adjusted operating income growth, and lacks specific citations for each causal claim. The core answer is therefore wrong on the primary question of what drove growth."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Walmart CFO John David Rainey stated Q2 FY2027 adjusted operating income growth was driven in large part by tariff refunds",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/wmt-q2-earnings-call-puts-140000113.html",
+     "reason": "The retrieved Yahoo Finance article includes: 'Rainey said substantially all of roughly $2.9 billion of eligible tariff refunds had been received. The refunds contributed about 750 basis points to Q2 operating income.' This indicates tariff refunds were a major driver.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Operating income growth included a net benefit of approximately 750 basis points (7.5 percentage points) related to roughly $2.9 billion in tariff refunds received in Q2",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/wmt-q2-earnings-call-puts-140000113.html",
+     "reason": "The retrieved text explicitly states: 'The refunds contributed about 750 basis points to Q2 operating income' and 'Rainey said substantially all of roughly $2.9 billion of eligible tariff refunds had been received.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Walmart management characterized the tariff refunds as a one-time item and planned to reinvest substantially all proceeds into price reductions for shoppers",
+     "numeric": false,
+     "cited_url": "https://www.aol.ca/articles/walmart-beat-earnings-raised-guidance-145701000.html",
+     "reason": "The cited AOL article is not among the retrieved sources, so I cannot verify its content.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Excluding the tariff benefit, underlying operating income growth was at the top end of the company's 7%–10% guidance range",
+     "numeric": true,
+     "cited_url": "https://www.investing.com/news/company-news/walmart-q2-fy27-slides-strong-results-raised-guidance-tariff-boost-93CH-4870066",
+     "reason": "The retrieved Investing.com article discusses tariff refunds driving expansion and mentions strategic price investments and higher fuel costs as offsets, but does not explicitly state the underlying growth range or that it was at the top end of a 7%-10% guidance range.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Growth was partially offset by strategic price investments and higher fuel costs in distribution and fulfillment operations",
+     "numeric": false,
+     "cited_url": "https://www.investing.com/news/company-news/walmart-q2-fy27-slides-strong-results-raised-guidance-tariff-boost-93CH-4870066",
+     "reason": "The retrieved Investing.com article states: 'This expansion was primarily driven by tariff refunds received during the quarter, partially offset by strategic price investments and higher fuel costs in distribution and fulfillment operations.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 2,
+   "numeric_cited": 2,
+   "cited": 5,
+   "supported": 3,
+   "not_retrieved": 0
+  }
+ }
+}

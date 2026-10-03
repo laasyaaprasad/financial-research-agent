@@ -1,0 +1,164 @@
+{
+ "id": "G11",
+ "category": "Quantitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "abstain",
+ "question": "As of October 1, 2026, what were Apple's total revenue and iPhone revenue for the September 2026 quarter?",
+ "grading": "Expected refusal: period not yet reported as of 2026-10-01; may offer management's Q4 outlook clearly labeled as guidance; fail if any number is presented as actual results",
+ "answer": "As of October 1, 2026, Apple had not reported September-quarter FY2026 actual results. Total revenue and iPhone revenue for Q4 FY2026, ended September 26, cannot yet be supplied as actuals. The latest reported quarter was Q3 FY2026, ended June 27. [G11-E1]",
+ "output": {
+  "answer": " **Apple's September 2026 quarter results had not been reported as of October 1, 2026.**\n\nApple's Q4 FY2026 earnings (covering July–September 2026) were expected to be announced in **late October 2026**, with estimates around **October 29, 2026**—so they were still several weeks away on the date you asked about.\n\nHere are the **analyst consensus estimates** and **Apple's guidance** that were available at that time:\n\n| Metric | Figure |\n|--------|--------|\n| **Revenue guidance (Apple)** | **$111.7B – $113.7B** |\n| **Revenue consensus (analysts)** | **~$113.6B** (range: $112.1B – $117.2B) |\n| **iPhone revenue** | No specific line-item consensus was shown in the search results |\n\n**Context on the quarter:**\n- Apple guided September-quarter revenue growth of **9–11% year-over-year**, below the ~12% consensus.\n- CFO Kevan Parekh noted significant supply constraints heading into September, expected to hit **iPhone**, Mac, and iPad.\n- Gross margin guidance was **47–48%**, down from the prior quarter's 50.1%.\n\n**Sources:**\n- Yahoo Finance analyst estimates: [finance.yahoo.com/quote/AAPL/analysis](https://finance.yahoo.com/quote/AAPL/analysis)\n- MarketBeat earnings calendar and guidance: [marketbeat.com/stocks/NASDAQ/AAPL/earnings](https://www.marketbeat.com/stocks/NASDAQ/AAPL/earnings)\n- Bybit Wiki earnings schedule: [bybit.com/en/wiki/article/apple-aapl-earnings-dates-2026-schedule](https://www.bybit.com/en/wiki/article/apple-aapl-earnings-dates-2026-schedule)\n\nIf you're looking for **actual reported** revenue and iPhone revenue for that quarter, those numbers would only be available after the late-October earnings release.",
+  "tokens": {
+   "input": 9409,
+   "output": 1345
+  },
+  "tavily_credits": 2,
+  "latency_s": 12.89,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Apple total revenue iPhone revenue September 2026 quarter Q4 FY2026 estimates projections",
+     "search_depth": "advanced",
+     "end_date": "2026-10-02"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/quote/AAPL/analysis",
+    "https://www.bybit.com/en/wiki/article/apple-aapl-earnings-dates-2026-schedule",
+    "https://www.marketbeat.com/stocks/NASDAQ/AAPL/earnings"
+   ],
+   "cited_primary": 0,
+   "retrieved": 10,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Agent refuses to provide actual results for September 2026 quarter as of October 1, 2026, because period not yet reported.",
+     "met": true,
+     "note": "Agent states 'Apple's September 2026 quarter results had not been reported as of October 1, 2026.'"
+    },
+    {
+     "point": "Agent may offer management's Q4 outlook clearly labeled as guidance.",
+     "met": true,
+     "note": "Agent provides 'Revenue guidance (Apple)' and 'Revenue consensus (analysts)' in a table, clearly labeled as guidance and consensus estimates."
+    },
+    {
+     "point": "Agent does not present any number as actual reported results.",
+     "met": true,
+     "note": "Agent explicitly says 'If you're looking for actual reported revenue and iPhone revenue for that quarter, those numbers would only be available after the late-October earnings release.'"
+    },
+    {
+     "point": "Agent avoids traps: substituting Q4 FY2025, calendar/fiscal mix-ups, or presenting guidance as actuals.",
+     "met": true,
+     "note": "Agent correctly identifies quarter as Q4 FY2026 ending September 26, 2026, and does not confuse with prior quarter."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly abstains from providing actual results, clearly labels guidance and estimates, and avoids presenting any numbers as actuals."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Apple's September 2026 quarter results had not been reported as of October 1, 2026",
+     "numeric": false,
+     "cited_url": "https://www.marketbeat.com/stocks/NASDAQ/AAPL/earnings",
+     "reason": "MarketBeat shows estimated earnings date of October 29, 2026, which is after October 1, 2026, confirming results were not yet reported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Apple's Q4 FY2026 earnings (covering July–September 2026) were expected to be announced in late October 2026",
+     "numeric": false,
+     "cited_url": "https://www.bybit.com/en/wiki/article/apple-aapl-earnings-dates-2026-schedule",
+     "reason": "Bybit Wiki lists Q4 FY2026 (July–September 2026) with expected report date ~Late October 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Estimates around October 29, 2026 for the earnings announcement",
+     "numeric": false,
+     "cited_url": "https://www.marketbeat.com/stocks/NASDAQ/AAPL/earnings",
+     "reason": "MarketBeat states: 'the company's estimated earnings date is Thursday, October 29th, 2026'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue guidance (Apple): $111.7B – $113.7B",
+     "numeric": true,
+     "cited_url": "https://www.marketbeat.com/stocks/NASDAQ/AAPL/earnings",
+     "reason": "MarketBeat table for Q4 2026 shows Company Revenue Guidance $111.7B - $113.7B.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue consensus (analysts): ~$113.6B (range: $112.1B – $117.2B)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/AAPL/analysis",
+     "reason": "Yahoo Finance shows Current Qtr (Sep 2026) Avg Estimate 113.56B, Low 112.14B, High 117.22B, matching the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "iPhone revenue: No specific line-item consensus was shown in the search results",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer refers to the search results (the three cited sources). None of the three cited sources (Yahoo Finance, MarketBeat, Bybit) break out iPhone revenue consensus.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Apple guided September-quarter revenue growth of 9–11% year-over-year",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "This claim is not supported by any of the three cited sources. The cited sources do not mention revenue growth guidance percentages.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "The ~12% consensus for revenue growth",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "This claim is not supported by any of the three cited sources. The cited sources do not mention a consensus revenue growth figure.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "CFO Kevan Parekh noted significant supply constraints heading into September, expected to hit iPhone, Mac, and iPad",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "This claim is not supported by any of the three cited sources. The cited sources do not mention CFO Kevan Parekh or supply constraints.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Gross margin guidance was 47–48%, down from the prior quarter's 50.1%",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "This claim is not supported by any of the three cited sources. The cited sources do not mention gross margin guidance.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 2,
+   "cited": 5,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}

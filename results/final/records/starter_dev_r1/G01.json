@@ -1,0 +1,139 @@
+{
+ "id": "G01",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was NVIDIA's total revenue for fiscal 2026, in USD millions, and how much did it grow vs fiscal 2025?",
+ "grading": "±0.5% on revenue, USD millions; period must be FY ended 2026-01-25; growth ±0.5pp; fail if any CY2026 or FY2027 quarter used",
+ "answer": "NVIDIA FY2026 revenue was USD 215,938 million, versus USD 130,497 million in FY2025: growth of 65.4735% (65% as rounded in the filing). [G01-E1]",
+ "output": {
+  "answer": " Based on the search results, here are NVIDIA's fiscal 2026 results:\n\n**Fiscal 2026 Total Revenue:** **$215,930 million** (~$215.93 billion)  \n**Growth vs Fiscal 2025:** **65%**\n\nFor context, NVIDIA's fiscal 2025 revenue was approximately $130,500 million (~$130.5 billion), meaning fiscal 2026 revenue grew by roughly $85.4 billion year-over-year.\n\nSource: Yahoo Finance articles referencing NVIDIA's fiscal 2026 annual results, which ended January 25, 2026.\n- https://finance.yahoo.com/markets/stocks/articles/nvidias-next-earnings-report-may-162944376.html\n- https://finance.yahoo.com/news/nvidia-enjoys-130b-annual-earnings-134000370.html",
+  "tokens": {
+   "input": 30562,
+   "output": 2908
+  },
+  "tavily_credits": 6,
+  "latency_s": 22.67,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA fiscal 2026 total revenue growth vs fiscal 2025 earnings results guidance",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA fiscal 2025 annual revenue 10-K SEC filing exact amount",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"NVIDIA\" \"fiscal 2025\" \"revenue\" billion annual earnings results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/nvidias-next-earnings-report-may-162944376.html",
+    "https://finance.yahoo.com/news/nvidia-enjoys-130b-annual-earnings-134000370.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 24,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Total revenue for fiscal 2026 (FY ended 2026-01-25) in USD millions, within ±0.5% of 215,938 million",
+     "met": true,
+     "note": "Agent reports $215,930 million vs reference 215,938 million; difference 8 million (0.0037%), well within ±0.5% tolerance."
+    },
+    {
+     "point": "Growth vs fiscal 2025 in percentage points, within ±0.5pp of 65.4735%",
+     "met": true,
+     "note": "Agent reports 65% growth vs reference 65.4735%; difference 0.4735pp, within ±0.5pp tolerance."
+    },
+    {
+     "point": "Period must be FY ended 2026-01-25 (not calendar 2026 or FY2027 quarter)",
+     "met": true,
+     "note": "Agent explicitly states fiscal 2026 annual results ended January 25, 2026, matching the required fiscal period."
+    },
+    {
+     "point": "No use of CY2026 or FY2027 quarter data",
+     "met": true,
+     "note": "Agent cites Yahoo Finance articles referencing fiscal 2026 annual results ended Jan 25, 2026; no calendar 2026 or FY2027 quarter data used."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: revenue and growth figures are within specified tolerances, the correct fiscal period (FY ended 2026-01-25) is used, and no prohibited calendar or future-quarter data is referenced."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "NVIDIA's fiscal 2026 total revenue was $215,930 million (~$215.93 billion)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/nvidias-next-earnings-report-may-162944376.html",
+     "reason": "Retrieved source states: 'For the 2026 fiscal year, which ended Jan. 25, Nvidia reported a whopping $215.93 billion in revenue'. This matches the claimed figure (215.93 billion = 215,930 million).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal 2026 revenue growth vs fiscal 2025 was 65%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/nvidias-next-earnings-report-may-162944376.html",
+     "reason": "Retrieved source states: 'up 65% from 2025'. This directly supports the claimed growth rate.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA's fiscal 2025 revenue was approximately $130,500 million (~$130.5 billion)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/nvidia-enjoys-130b-annual-earnings-134000370.html",
+     "reason": "Retrieved source states: 'For the whole year, Nvidia's revenue totaled $130.5 billion'. This matches the claimed figure (130.5 billion = 130,500 million).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal 2026 revenue grew by roughly $85.4 billion year-over-year",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Derived from the two cited revenue figures: $215.93 billion - $130.5 billion = $85.43 billion, which rounds to roughly $85.4 billion. The arithmetic is correct, but the answer does not cite a specific URL for this derived figure.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "NVIDIA's fiscal 2026 ended January 25, 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/nvidias-next-earnings-report-may-162944376.html",
+     "reason": "Retrieved source states: 'For the 2026 fiscal year, which ended Jan. 25...'. This directly supports the claimed fiscal year end date.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 4,
+   "cited": 4,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}

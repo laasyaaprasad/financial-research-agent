@@ -1,0 +1,170 @@
+{
+ "id": "G14",
+ "category": "Adjustments",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "NVIDIA's Q2 FY2027 GAAP diluted EPS came in above non-GAAP. What were the two figures, and which reconciling items explain the gap?",
+ "grading": "Key points: (1) both EPS figures exact to the cent; (2) names the largest reconciling line items as shown in the table with sign; (3) explains why the net adjustment is negative; (4) no reasons not present in the filing",
+ "answer": "Q2 FY2027 diluted EPS was $2.46 GAAP and $2.22 non-GAAP. The reconciliation removes USD 7,771 million of equity-security gains, offset by USD 222 million of operating-cost adjustments, USD 298 million of other-income adjustments and USD 1,517 million of tax effects. Net income falls from USD 59,688 million to USD 53,954 million. Stock compensation remains included in non-GAAP starting FY2027. [G14-E1]",
+ "output": {
+  "answer": " For Q2 FY2027, the figures were:\n\n*   **GAAP diluted EPS:** **$2.46**\n*   **Non-GAAP diluted EPS:** **$2.22**\n\nThe unusual inversion—GAAP EPS coming in *above* non-GAAP—was primarily explained by large investment-related gains that are included in GAAP income but excluded from NVIDIA’s non-GAAP results. The key reconciling items were:\n\n1.  **Net gains on equity securities:** Approximately **$7.8 billion** ($7,771 million) of net gains from equity securities flowed into GAAP net income but were backed out of the non-GAAP figure. This single item was the dominant driver of the gap.[^1^][^5^]\n2.  **Other investment-related items:** Per the reconciliation footnotes, “Other” included net gains/losses on equity derivatives, dividend income on equity securities, the share of net earnings/losses from equity method investments, and interest expense related to acquisition consideration.[^2^]\n3.  **Acquisition-related and other costs:** These costs (along with the associated tax impacts) partially offset the investment gains in the reconciliation, but the equity securities gains were large enough to more than overwhelm those headwinds.[^2^][^7^]\n\n**Sources:**\n[^1^]: StockTitan – “NVIDIA Q2 FY2027 Earnings: Revenue $96.2B … GAAP diluted EPS was $2.46, while non-GAAP diluted EPS was $2.22” – https://www.stocktitan.net/news/NVDA/nvidia-announces-financial-results-for-second-quarter-fiscal-98x41cxh35vk.html\n[^2^]: NVIDIA Newsroom – Official reconciliation table and footnote (B) describing equity derivatives, equity method investments, etc. – https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027\n[^5^]: NextG Comm – “The driver is $7,771m of net gains from equity securities” – https://www.nextgcomm.com/financials-nvidia-q2-earning-results-deep-analysis\n[^7^]: Q4CDNQuarterly Presentation – Reconciliation table showing Non-GAAP to GAAP adjustments for operating income and net income – https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/NVDA-F2Q27-Quarterly-Presentation-final-1.pdf",
+  "tokens": {
+   "input": 36291,
+   "output": 4335
+  },
+  "tavily_credits": 3,
+  "latency_s": 28.79,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q2 FY2027 earnings GAAP non-GAAP diluted EPS",
+     "search_depth": "basic"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q2 FY2027 GAAP non-GAAP reconciliation equity securities gains acquisition-related costs",
+     "search_depth": "basic",
+     "include_domains": [
+      "sec.gov",
+      "nvidianews.nvidia.com",
+      "s201.q4cdn.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q2 FY2027 10-Q reconciliation net income equity securities gains tax impact",
+     "search_depth": "basic",
+     "include_domains": [
+      "sec.gov"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+    "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/NVDA-F2Q27-Quarterly-Presentation-final-1.pdf",
+    "https://www.nextgcomm.com/financials-nvidia-q2-earning-results-deep-analysis",
+    "https://www.stocktitan.net/news/NVDA/nvidia-announces-financial-results-for-second-quarter-fiscal-98x41cxh35vk.html"
+   ],
+   "cited_primary": 2,
+   "retrieved": 27,
+   "retrieved_primary": 21
+  },
+  "correctness": {
+   "score": 0.75,
+   "points": [
+    {
+     "point": "both EPS figures exact to the cent",
+     "met": true,
+     "note": "Agent states GAAP diluted EPS $2.46 and non-GAAP diluted EPS $2.22, matching reference exactly."
+    },
+    {
+     "point": "names the largest reconciling line items as shown in the table with sign",
+     "met": false,
+     "note": "Agent names only the equity securities gains ($7,771 million) but does not list the other reconciling line items (operating-cost adjustments $222M, other-income adjustments $298M, tax effects $1,517M) with their signs as shown in the reconciliation table."
+    },
+    {
+     "point": "explains why the net adjustment is negative",
+     "met": true,
+     "note": "Agent explains that the large equity securities gains are included in GAAP but excluded from non-GAAP, causing GAAP EPS to be higher, which correctly explains the negative net adjustment (GAAP > non-GAAP)."
+    },
+    {
+     "point": "no reasons not present in the filing",
+     "met": true,
+     "note": "Agent's cited reasons (equity securities gains, other investment-related items, acquisition-related costs, tax impacts) are all drawn from the filing's reconciliation table and footnotes; no invented reasons are introduced."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The agent correctly provides both EPS figures and explains the inversion, but fails to name all the largest reconciling line items with their signs as required. Only the equity securities gain is explicitly quantified and signed; the operating, other, and tax adjustments are omitted or only vaguely referenced."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "NVIDIA's GAAP diluted EPS for Q2 FY2027 was $2.46",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/news/NVDA/nvidia-announces-financial-results-for-second-quarter-fiscal-98x41cxh35vk.html",
+     "reason": "The retrieved StockTitan article explicitly states: 'GAAP diluted EPS was $2.46, while non-GAAP diluted EPS was $2.22' and includes a table showing GAAP diluted EPS $2.46 for Q2 fiscal 2027.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA's non-GAAP diluted EPS for Q2 FY2027 was $2.22",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/news/NVDA/nvidia-announces-financial-results-for-second-quarter-fiscal-98x41cxh35vk.html",
+     "reason": "The same StockTitan article states non-GAAP diluted EPS was $2.22 and shows it in the key figures table.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "GAAP diluted EPS exceeded non-GAAP diluted EPS in Q2 FY2027 (an unusual inversion)",
+     "numeric": false,
+     "cited_url": "https://www.nextgcomm.com/financials-nvidia-q2-earning-results-deep-analysis",
+     "reason": "The NextG Comm article explicitly says: 'GAAP EPS of $2.46 exceeded non-GAAP EPS of $2.22 — an unusual inversion.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The inversion was primarily driven by large investment-related gains included in GAAP but excluded from non-GAAP",
+     "numeric": false,
+     "cited_url": "https://www.nextgcomm.com/financials-nvidia-q2-earning-results-deep-analysis",
+     "reason": "The NextG Comm article states: 'The driver is $7,771m of net gains from equity securities,' indicating that investment gains were the primary cause of the inversion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Net gains on equity securities were approximately $7.8 billion ($7,771 million), which flowed into GAAP net income but were excluded from non-GAAP",
+     "numeric": true,
+     "cited_url": "https://www.nextgcomm.com/financials-nvidia-q2-earning-results-deep-analysis",
+     "reason": "The NextG Comm article directly reports: 'The driver is $7,771m of net gains from equity securities,' matching the $7.8 billion figure cited in the answer.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "This equity securities gain was the dominant driver of the gap between GAAP and non-GAAP EPS",
+     "numeric": false,
+     "cited_url": "https://www.nextgcomm.com/financials-nvidia-q2-earning-results-deep-analysis",
+     "reason": "The same article notes the $7,771m gain 'represented 10.9% of pre-tax income in the quarter and 16.8% across the first half,' supporting its dominance in the reconciliation.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Per the reconciliation footnotes, 'Other' included net gains/losses on equity derivatives, dividend income on equity securities, share of net earnings/losses from equity method investments, and interest expense related to acquisition consideration",
+     "numeric": false,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The NVIDIA Newsroom press release includes footnote (B): 'Comprised of net (gains)/losses on equity derivatives, interest expense related to acquisition consideration discount to be paid in the future, share of net (earnings)/losses related to equity method investments, and dividend income on equity securities.' This matches the claim exactly.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Acquisition-related and other costs (with tax impacts) partially offset the investment gains in the reconciliation, but the equity securities gains were large enough to more than overwhelm those headwinds",
+     "numeric": false,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The NVIDIA Newsroom press release shows a reconciliation table that includes 'Acquisition-Related and Other Costs (A)', 'Gain/(loss) on Equity Securities', 'Other (B)', and 'Tax Impact of Adjustments'. The presence of both positive (equity securities gains) and negative (acquisition costs, tax impacts) adjustments supports the qualitative description of partial offset. However, the retrieved snippet does not display the actual magnitude of the equity securities gain, so the claim that it 'more than overwhelm[ed] those headwinds' is an inference not directly verified by the cited source alone. The NextG Comm source (not cited for this claim) provides the $7,771m figure that supports the magnitude comparison.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 8,
+   "supported": 7,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,149 @@
+{
+ "id": "G09",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "number",
+ "question": "What was Nike's revenue in its most recently reported quarter, and which fiscal quarter and date range was that?",
+ "grading": "Reference-free recency: must pick the newest released quarter as of query time, label it in fiscal terms with period-end date, and give revenue ±0.5% USD millions; fail if an older quarter is presented as latest",
+ "answer": "At the October 1, 2026 after-market snapshot, Nike had released Q1 FY2027 results: revenue was USD 11,213 million for June 1–August 31, 2026. The release is dated October 1. [G09-E1]",
+ "output": {
+  "answer": " Based on the most recent earnings reports available, Nike's most recently reported quarter was **Fiscal Q2 2025**, which covered the period ending **November 30, 2024** (reported in December 2024).\n\nFor that quarter, Nike reported **$12.4 billion** in total revenue, which represented an **8% decline** on a reported basis (and 9% on a currency-neutral basis) compared to the prior year.\n\nSources:\n- [Yahoo Finance](https://finance.yahoo.com/news/nike-reports-8-revenue-decline-151716610.html)\n- [Yahoo Finance](https://finance.yahoo.com/news/nike-nke-q2-earnings-revenues-222503940.html)\n- [Yahoo Finance](https://finance.yahoo.com/news/nike-beats-q2-earnings-sales-200000292.html)",
+  "tokens": {
+   "input": 66281,
+   "output": 1518
+  },
+  "tavily_credits": 6,
+  "latency_s": 23.5,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/6764691e8f954d4c8e8a536a412fe6b2",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nike revenue most recent quarter fiscal quarter date range 2024 earnings",
+     "search_depth": "basic",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nike Q2 fiscal 2025 earnings revenue November 2024 reported quarter",
+     "search_depth": "basic",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Nike\" \"Q2\" \"fiscal 2025\" revenue \"November 30\" OR \"Nov 30\" earnings results",
+     "search_depth": "basic",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nike most recent earnings report December 2024 OR January 2025 OR February 2025 latest quarter",
+     "search_depth": "basic",
+     "topic": "finance",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nike Q2 fiscal 2025 total revenue $12 billion November 30 2024 reported December 2024 earnings",
+     "search_depth": "basic",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nike total revenue Q2 FY25 \"$12.4\" OR \"$12.6\" billion second quarter fiscal 2025 November 2024",
+     "search_depth": "basic",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/news/nike-beats-q2-earnings-sales-200000292.html",
+    "https://finance.yahoo.com/news/nike-nke-q2-earnings-revenues-222503940.html",
+    "https://finance.yahoo.com/news/nike-reports-8-revenue-decline-151716610.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 40,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.0,
+   "points": [
+    {
+     "point": "Must pick the newest released quarter as of query time",
+     "met": false,
+     "note": "Agent presents Fiscal Q2 2025 (ended Nov 30, 2024) as most recent, but snapshot shows Q1 FY2027 (Jun–Aug 2026) was released on 2026-10-01, which is the newest quarter as of query time."
+    },
+    {
+     "point": "Label it in fiscal terms with period-end date",
+     "met": false,
+     "note": "Agent labels quarter as Fiscal Q2 2025 ending November 30, 2024; correct label should be Q1 FY2027 ending August 31, 2026."
+    },
+    {
+     "point": "Give revenue ±0.5% USD millions",
+     "met": false,
+     "note": "Agent states $12.4 billion; correct revenue per snapshot is $11,213 million (≈$11.213 billion)."
+    },
+    {
+     "point": "Fail if an older quarter is presented as latest",
+     "met": false,
+     "note": "Agent presents an older quarter (Q2 FY2025) as the most recent, violating the core recency requirement."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The agent's answer is based on outdated information (Q2 FY2025) and does not reflect the Q1 FY2027 results released on 2026-10-01, which is the newest quarter as of the query time. All grading criteria are missed: recency, fiscal labeling, revenue accuracy, and the explicit failure condition for presenting an older quarter as latest."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Nike's most recently reported quarter was Fiscal Q2 2025, period ending November 30, 2024 (reported in December 2024)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/nike-reports-8-revenue-decline-151716610.html",
+     "reason": "The retrieved source states: 'For the second quarter ended 30 November 2024 ... Nike has reported revenues down 8% ... in the second quarter (Q2) of fiscal 2025'. This confirms the quarter, period end date, and fiscal year.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Nike reported $12.4 billion in total revenue for that quarter",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/nike-reports-8-revenue-decline-151716610.html",
+     "reason": "The retrieved source states: 'Nike has reported revenues down 8% on a reported basis and 9% on a currency-neutral basis to $12.4bn in the second quarter (Q2) of fiscal 2025'. This directly supports the $12.4 billion total revenue figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue represented an 8% decline on a reported basis and 9% on a currency-neutral basis compared to the prior year",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/nike-reports-8-revenue-decline-151716610.html",
+     "reason": "The retrieved source states: 'Nike has reported revenues down 8% on a reported basis and 9% on a currency-neutral basis to $12.4bn in the second quarter (Q2) of fiscal 2025'. This matches both percentages exactly.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 3,
+   "supported": 3,
+   "not_retrieved": 0
+  }
+ }
+}

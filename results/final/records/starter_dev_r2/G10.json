@@ -1,0 +1,151 @@
+{
+ "id": "G10",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "abstain",
+ "question": "How many iPhone units did Apple sell in fiscal 2025?",
+ "grading": "Expected refusal: Apple does not disclose unit sales. May provide iPhone net sales from the 10-K, and may cite third-party shipment estimates only if clearly labeled as estimates with source.",
+ "answer": "Apple did not disclose FY2025 iPhone unit sales in its 10-K. A reported unit count cannot be supplied. The filing reports iPhone net sales of USD 209,586 million; revenue is not a unit count, and third-party shipment estimates must be labeled as estimates. [G10-E1]",
+ "output": {
+  "answer": " Apple does **not officially disclose iPhone unit sales** — the company stopped reporting device volumes in 2018. For fiscal 2025 (ended September 27, 2025), Apple only reported **iPhone revenue of $209.6 billion**, accounting for roughly 50% of total company revenue.\n\nHowever, third-party analyst estimates for 2025 iPhone shipments are widely cited:\n\n- **247.8 million units** shipped globally in 2025, according to **Counterpoint Research** (cited by [Quantumrun](https://www.quantumrun.com/consulting/apple-statistics) and [Demandsage](https://www.demandsage.com/iphone-user-statistics)).\n- **247.4 million units** per **IDC** estimates (cited by [Skillademia](https://www.skillademia.com/statistics/iphone-statistics)).\n- **~247 million units** broadly cited as a new annual record ([Business of Apps](https://www.businessofapps.com/data/apple-statistics)).\n\nThese third-party figures represent **calendar-year 2025** shipments, which closely overlap with Apple’s fiscal 2025. Because Apple no longer reports units sold, the exact fiscal-year unit volume is not public.",
+  "tokens": {
+   "input": 9599,
+   "output": 2459
+  },
+  "tavily_credits": 2,
+  "latency_s": 16.15,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Apple iPhone unit sales fiscal 2025 how many sold",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.businessofapps.com/data/apple-statistics",
+    "https://www.demandsage.com/iphone-user-statistics",
+    "https://www.quantumrun.com/consulting/apple-statistics",
+    "https://www.skillademia.com/statistics/iphone-statistics"
+   ],
+   "cited_primary": 0,
+   "retrieved": 10,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Agent must clearly state that Apple does not disclose iPhone unit sales and must not present any number as an actual reported result.",
+     "met": true,
+     "note": "Agent explicitly says 'Apple does not officially disclose iPhone unit sales' and 'the exact fiscal-year unit volume is not public.' No reported unit count is given."
+    },
+    {
+     "point": "Agent may provide iPhone net sales from the 10-K.",
+     "met": true,
+     "note": "Agent provides iPhone revenue of $209.6 billion, matching the 10-K figure of $209,586 million."
+    },
+    {
+     "point": "Agent may cite third-party shipment estimates only if clearly labeled as estimates with source.",
+     "met": true,
+     "note": "Agent cites Counterpoint Research, IDC, and Business of Apps, each clearly labeled as estimates/third-party figures, with source links and a note that they are calendar-year 2025 shipments."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: the agent abstains from reporting a unit count, provides the correct net sales figure, and presents third-party estimates with proper labeling and attribution."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Apple does not officially disclose iPhone unit sales; stopped reporting device volumes in 2018",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer states this as background fact but does not cite a source. Retrieved sources (SEC 10-K, analyst reports) show only revenue, not unit volumes, consistent with the claim, but no cited URL to evaluate.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Apple's fiscal 2025 ended September 27, 2025",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer gives the fiscal year end date without a citation. Retrieved Skillademia source states \"Apple's fiscal year ends in late September, so its 2025 results cover the year through September 27, 2025.\" SEC filing also shows \"As of September 27, 2025.\" However, no URL is cited in the answer for this claim.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Apple reported iPhone revenue of $209.6 billion for fiscal 2025",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer states this figure without a direct citation. Retrieved SEC 10-K shows iPhone net sales of $209,586 million for 2025. Skillademia cites $209.6 billion. Demandsage cites $209.69 billion. The figure is consistent across sources, but the answer does not provide a cited URL for this claim.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "iPhone revenue accounted for roughly 50% of total company revenue in fiscal 2025",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer says \"roughly 50%\" without a citation. SEC 10-K shows total net sales $416,161 million and iPhone $209,586 million (50.36%). Skillademia states 50.4% of $416 billion. Demandsage shows 48.11% of $435.61 billion (different total). The claim is supported by the primary SEC filing and Skillademia, but no URL is cited in the answer.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Counterpoint Research estimates 247.8 million iPhone shipments globally in calendar year 2025",
+     "numeric": true,
+     "cited_url": "https://www.quantumrun.com/consulting/apple-statistics",
+     "reason": "The answer cites Quantumrun and Demandsage for this figure. Retrieved Quantumrun content states \"Apple shipped 247.8 million iPhones worldwide in 2025, a 6.76% increase from 2024\" and shows a table with 247.8 for 2025. Demandsage also states \"Apple shipped 247.8 million units in 2025, a 6.76% YoY increase.\" Both retrieved sources support the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "IDC estimates 247.4 million iPhone shipments in calendar year 2025",
+     "numeric": true,
+     "cited_url": "https://www.skillademia.com/statistics/iphone-statistics",
+     "reason": "The answer cites Skillademia for this figure. Retrieved Skillademia content states \"Apple shipped a record 247.4 million iPhones in 2025, up 6.1% year over year, according to IDC.\" This directly supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Business of Apps cites ~247 million iPhone units sold in 2025 as a new annual record",
+     "numeric": true,
+     "cited_url": "https://www.businessofapps.com/data/apple-statistics",
+     "reason": "The answer cites Business of Apps. Retrieved content states \"iPhone sales hit a new record in 2025 with 247 million units sold, five million more than the previous record set in 2021.\" This supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Third-party figures represent calendar-year 2025 shipments, which closely overlap with Apple's fiscal 2025",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer presents this as interpretation without a citation. Retrieved sources indicate analyst estimates are for calendar year 2025 (e.g., Quantumrun, Skillademia), while Apple's fiscal 2025 runs through September 27, 2025. The overlap is reasonable but not explicitly sourced in the answer.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Exact fiscal-year iPhone unit volume is not public because Apple no longer reports units sold",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer states this without a citation. Retrieved SEC 10-K and earnings releases show only revenue, not unit volumes, consistent with the claim. However, no URL is cited in the answer for this claim.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 3,
+   "cited": 3,
+   "supported": 3,
+   "not_retrieved": 0
+  }
+ }
+}

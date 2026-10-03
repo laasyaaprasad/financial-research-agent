@@ -1,0 +1,140 @@
+{
+ "id": "G05",
+ "category": "Numerical reasoning",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Cisco's fiscal 2026 total revenue growth YoY and its GAAP net margin (net income / revenue)?",
+ "grading": "Growth ±0.2pp; net margin ±0.2pp; inputs must be FY ended 2026-07-25 and FY ended 2025-07-26",
+ "answer": "Cisco FY2026 revenue growth was 11.7750% YoY. GAAP net margin was 20.9507%: USD 13,267 million GAAP net income / USD 63,325 million revenue. FY2025 revenue was USD 56,654 million. [G05-E1]",
+ "output": {
+  "answer": " Based on Cisco’s reported fiscal year 2026 results (ended July 25, 2026):\n\n| Metric | Value |\n|--------|-------|\n| **Total Revenue Growth YoY** | **12%** |\n| **GAAP Net Margin** | **21.0%** |\n\n- **Revenue:** $63.3 billion, up 12% from $56.7 billion in FY2025  \n- **GAAP Net Income:** $13.3 billion  \n- **GAAP Net Margin:** 21.0% (net income ÷ revenue)\n\n**Sources:**\n- Cisco Q4 & FY2026 Earnings Release: [investor.cisco.com](https://investor.cisco.com/news/news-details/2026/CISCO-REPORTS-FOURTH-QUARTER-AND-FISCAL-YEAR-2026-EARNINGS/default.aspx)\n- Q4 FY2026 Earnings Slides: [Q4FY26-Cisco-Earnings-Slides.pdf](https://s21.q4cdn.com/812015656/files/doc_earnings/2026/q4/presentation/Q4FY26-Cisco-Earnings-Slides.pdf)",
+  "tokens": {
+   "input": 18022,
+   "output": 1755
+  },
+  "tavily_credits": 4,
+  "latency_s": 13.92,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cisco fiscal 2026 revenue growth YoY GAAP net margin outlook guidance forecast",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cisco FY2026 financial results revenue net income GAAP",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.cisco.com/news/news-details/2026/CISCO-REPORTS-FOURTH-QUARTER-AND-FISCAL-YEAR-2026-EARNINGS/default.aspx",
+    "https://s21.q4cdn.com/812015656/files/doc_earnings/2026/q4/presentation/Q4FY26-Cisco-Earnings-Slides.pdf"
+   ],
+   "cited_primary": 1,
+   "retrieved": 16,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 0.667,
+   "points": [
+    {
+     "point": "Revenue growth YoY within ±0.2pp of reference (11.775%)",
+     "met": false,
+     "note": "Agent reported 12%, which is 0.225pp above reference 11.775%, exceeding ±0.2pp tolerance."
+    },
+    {
+     "point": "GAAP net margin within ±0.2pp of reference (20.951%)",
+     "met": true,
+     "note": "Agent reported 21.0%, within ±0.2pp of reference 20.951%."
+    },
+    {
+     "point": "Inputs must be FY ended 2026-07-25 and FY ended 2025-07-26",
+     "met": true,
+     "note": "Agent explicitly states fiscal year 2026 ended July 25, 2026 and uses FY2025 revenue."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The agent correctly used the proper fiscal periods and reported GAAP net margin within tolerance, but revenue growth YoY was outside the ±0.2pp tolerance."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Cisco's fiscal year 2026 ended July 25, 2026",
+     "numeric": true,
+     "cited_url": "https://investor.cisco.com/news/news-details/2026/CISCO-REPORTS-FOURTH-QUARTER-AND-FISCAL-YEAR-2026-EARNINGS/default.aspx",
+     "reason": "The investor.cisco.com earnings release shows tables headed 'July 25, 2026' for FY2026 results, confirming the fiscal year end date.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total revenue growth YoY for FY2026 was 12%",
+     "numeric": true,
+     "cited_url": "https://investor.cisco.com/news/news-details/2026/CISCO-REPORTS-FOURTH-QUARTER-AND-FISCAL-YEAR-2026-EARNINGS/default.aspx",
+     "reason": "The FY2026 Highlights section states: 'Revenue -- Total revenue was $63.3 billion, an increase of 12%.' The Q4 slides also show FY2025 revenue $56,654M to FY2026 $63,325M with a 12% year/year change.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "GAAP net margin for FY2026 was 21.0%",
+     "numeric": true,
+     "cited_url": "https://investor.cisco.com/news/news-details/2026/CISCO-REPORTS-FOURTH-QUARTER-AND-FISCAL-YEAR-2026-EARNINGS/default.aspx",
+     "reason": "The GAAP income statement table for FY2026 shows '% of revenue' for Net Income as 21.0%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue for FY2026 was $63.3 billion",
+     "numeric": true,
+     "cited_url": "https://investor.cisco.com/news/news-details/2026/CISCO-REPORTS-FOURTH-QUARTER-AND-FISCAL-YEAR-2026-EARNINGS/default.aspx",
+     "reason": "The FY2026 Highlights explicitly state: 'Revenue -- Total revenue was $63.3 billion'. The Q4 slides show $63,325M.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue for FY2025 was $56.7 billion",
+     "numeric": true,
+     "cited_url": "https://investor.cisco.com/news/news-details/2026/CISCO-REPORTS-FOURTH-QUARTER-AND-FISCAL-YEAR-2026-EARNINGS/default.aspx",
+     "reason": "The Q4 slides show FY2025 revenue as $56,654M ($56.654B), which rounds to $56.7B as stated in the answer.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "GAAP net income for FY2026 was $13.3 billion",
+     "numeric": true,
+     "cited_url": "https://investor.cisco.com/news/news-details/2026/CISCO-REPORTS-FOURTH-QUARTER-AND-FISCAL-YEAR-2026-EARNINGS/default.aspx",
+     "reason": "The FY2026 Highlights state: 'On a GAAP basis, net income was $13.3 billion'. The detailed table shows GAAP net income of $13,267M.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "GAAP net margin calculated as net income ÷ revenue equals 21.0%",
+     "numeric": true,
+     "cited_url": "https://investor.cisco.com/news/news-details/2026/CISCO-REPORTS-FOURTH-QUARTER-AND-FISCAL-YEAR-2026-EARNINGS/default.aspx",
+     "reason": "GAAP net income $13,267M divided by revenue $63,325M = 0.2095 (20.95%), which rounds to 21.0%. The source also directly reports the net margin as 21.0%.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 7,
+   "numeric_cited": 7,
+   "cited": 7,
+   "supported": 7,
+   "not_retrieved": 0
+  }
+ }
+}

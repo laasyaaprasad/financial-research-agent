@@ -11,32 +11,50 @@ An agent for financial analysts researching SEC-reporting companies. It answers 
 - **Checks:** every claim is checked against its source before the answer is shown.
 - **Refusals:** anything it can't support is refused explicitly instead of estimated.
 
-It replaces the starter (a LangChain agent with one Tavily search tool) with a fixed pipeline modeled on production finance agents. It uses SEC filings first and Tavily for what filings can't give.
+It replaces the starter (a LangChain agent with one Tavily search tool on Kimi K2.6) with a fixed pipeline modeled on production finance agents, running on DeepSeek V4.1 Flash. It uses SEC filings first and Tavily for what filings can't give.
 
 ## Results
 
-Three held-out sets, 96 graded items, each set frozen before either agent first ran on it. Two runs per agent, **same model for both** (`deepseek-ai/DeepSeek-V4.1-Flash`), graded by a different-family judge:
+The baseline is the **starter exactly as shipped**: its prompt, Tavily tool and agent loop, on its default model, Kimi K2.6. Our agent includes our model choice, DeepSeek V4.1 Flash, the cheapest Nebius model. A middle column runs the starter's design on our model, to separate what the architecture contributes from what the model contributes. All runs are graded by the same different-family judge. Each held-out set was frozen before its first run.
 
-| Measure | Baseline (starter design) | New agent |
+**Held-out sets 1 and 2:** 40 questions, 38 companies. The second set adds point-in-time questions, figures found only in filings for mid- and small-caps, multi-step fiscal calculations and traps.
+
+| Measure | Starter (as shipped) | Starter design on our model | **Our agent** |
+|---|---|---|---|
+| Fixed answers fully correct | 20/34 (59%) | 64/68 (94%) | **67/68 (99%)** |
+| **Verified-correct**: correct, every cited claim supported by retrieved text, every number cited | 11/34 (32%) | 38/68 (56%) | **56/68 (82%)** |
+| Cited claims not supported by the text the agent retrieved | 23% | 16% | **9%** |
+| Cited sources that are primary (SEC or company) | 22% | 41% | **82%** |
+| Refusals correct (unreported period, undisclosed metric, non-SEC company) | 4/6 | 10/12 | **12/12** |
+| Tavily credits per question | 9.2 | 4.7 | **0.9** |
+| Tokens per question | 82k | 33k | 51k |
+| Median / p95 latency | 17 s / 118 s | 17 s / 116 s | 40 s / 217 s |
+
+Runs per column: one, two and two. The as-shipped starter wasn't run on held-out set 3, the analyst tables (8 tasks, 86 cells): at 9–14 credits per question it risked exhausting the 1,500-credit budget mid-run. On that set, against the starter's design on our model:
+
+| Measure | Starter design on our model | Our agent |
 |---|---|---|
-| Fixed answers fully correct | 79/84 (94%) | 81/84 (96%) |
-| Table cells correct (8 comps/trend tasks, 86 cells × 2 runs) | 171/172 (99%) | 167/172 (97%) |
-| **Verified-correct**: correct, every cited claim supported by retrieved text, every number cited | **40/84 (48%)** | **68/84 (81%)** |
-| Cited claims not supported by the text the agent retrieved | 242/907 (27%) | 62/726 (9%) |
-| Cited sources that are primary (SEC or company) | 45% | 87% |
-| Refusals (unreported period, undisclosed metric, non-SEC company) | 10/12 | 12/12 |
-| Tavily credits per question | 7.4 | **0.8** |
-| Tavily credits per table task | 20.8 | **0.2** |
-| Tokens per question | 58.7k | 61.6k |
-| Median / p95 latency | 23 s / 138 s | 48 s / 245 s |
+| Table cells correct | 171/172 (99%) | 167/172 (97%) |
+| Cited figures not supported by retrieved text | 69% | 6% |
+| Tavily credits per table task | 20.8 | 0.2 |
 
-Baseline credits are counted from its calls (1 per basic, 2 per advanced search), because the starter's LangChain tool doesn't report usage; the new agent's are Tavily's per-call usage. Per-set tables, the dev set and per-question records are in [`results/final/results.md`](results/final/results.md). Regenerate it with `uv run python -m evals.report --final`.
+**Dev set:** 30 questions, inspected during development. The starter as shipped got 40/75 fully correct over three runs (53%); our agent got 20/25 (80%).
+
+Baseline credits are counted from its calls (1 per basic search, 2 per advanced), because the starter's LangChain tool doesn't report usage; our agent's are Tavily's per-call usage. All tables, per-question scorecards and records are in [`results/final/results.md`](results/final/results.md). Regenerate it with `uv run python -m evals.report --final`.
 
 **What this shows**
-- **Correctness is a tie.** With a capable 2026 model, the starter's search-and-answer loop finds the right number about as often as this pipeline. Tavily reliably surfaces the press release or the sec.gov filing. On the starter's original model (Kimi K2.6), the same design scored only 11–13/25 on the dev set, so most of its original weakness was the model.
-- **Trustworthiness is not.** About half of the baseline's correct answers rest on at least one claim its own sources don't support. On table tasks, 69% of its cited figures aren't in what it retrieved. The new agent's figures trace to a filing, and it refuses every request it can't support. For an analyst who must defend every number, that's the difference between a draft and a lead.
-- **Cost scales differently.** The baseline's Tavily spend grows with the size of the task: one table task took 53 advanced searches (106 credits). The new agent answers most questions from free SEC data and uses Tavily only for news, call commentary and non-filers, at about 9× fewer credits overall and about 100× fewer on tables.
-- **The price is latency:** about 2× slower, because of checking, verification and the larger evidence context.
+- **Against what was shipped:**
+  - fully correct rises from 59% to 99%
+  - answers an analyst can use without re-checking rise from 32% to 82%
+  - cited claims not supported by the source fall from 23% to 9%
+  - primary sources rise from 22% to 82%
+  - all refusals are correct
+  - about 10× fewer Tavily credits
+  - the cost is about 2.4× median latency
+- **Where the gain comes from:**
+  - **The model choice** accounts for most of the correctness gain: the starter's own design on DeepSeek Flash reaches 94%.
+  - **The architecture** accounts for most of the trust and cost gains: verified-correct 56% → 82%, primary sources 41% → 82%, every refusal correct, and Tavily credits 4.7 → 0.9 per question. On tables, unsupported figures fall from 69% to 6%, with about 100× fewer credits.
+- **The search-loop design's cost grows with the task:** one table task took 53 advanced searches. Our agent answers most questions from free SEC data and uses Tavily for news, earnings-call commentary and companies that don't file with the SEC.
 
 ## Architecture
 
@@ -129,7 +147,8 @@ uv run python scripts/check_secrets.py       # scan files for key material
 
 ## Limitations and what I didn't do
 
-- **Not more accurate than the baseline.** On these sets, correctness is a tie, and the baseline is slightly ahead on table cells (99% vs. 97%). The gains are verifiability, primary sourcing, refusals and cost.
+- **The architecture alone doesn't raise correctness.** Given the same model, the starter's design is about as accurate as ours and slightly ahead on table cells (99% vs. 97%). The architecture's gains are verifiability, primary sourcing, refusals and cost; the correctness gain over the shipped starter comes mostly from the model choice.
+- **The as-shipped starter has one run per held-out set and none on the table set** (Tavily budget). Our agent and the same-model starter have two runs per set.
 - **A known bug found in held-out runs.** A table calculation can come out in a different unit than its column: inputs in thousands under a "USD millions" column, so 1,000× too large. A unit check per column would catch it. It was not fixed after the held-out runs, so the results still include it.
 - **Slower:** 2× median latency.
 - **Not delivered by the verifier:** its "net sales is not revenue" strictness once withheld a correct cell.

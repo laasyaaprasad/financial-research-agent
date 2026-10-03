@@ -1,0 +1,184 @@
+{
+ "id": "H15",
+ "category": "Qualitative retrieval",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "abstain",
+ "question": "What was Kinsale Capital Group's 2025 combined ratio for its Commercial Property division?",
+ "grading": "Must state that Kinsale does not disclose a combined ratio (or loss/expense ratio) for the Commercial Property division; it reports one segment and only company-wide ratios. May add the consolidated FY2025 combined ratio 75.9% (loss ratio 55.1%, expense ratio 20.8%) clearly labelled consolidated, and the division-level data that is disclosed (Commercial Property gross written premiums USD 374.5M, -17.9% y/y, 18.9% of total). Fail if any division-level combined-ratio number is presented as company-reported, or if 75.9% is presented as the Commercial Property ratio.",
+ "answer": "Kinsale does not disclose a combined ratio for the Commercial Property division. The company has one reportable segment (Excess and Surplus Lines Insurance) and reports loss, expense and combined ratios only on a consolidated basis: FY2025 combined ratio 75.9% (loss ratio 55.1%, expense ratio 20.8%) [H15-E1][H15-E2]. By division it discloses gross written premiums only; Commercial Property GWP was USD 374.5 million in 2025 (18.9% of total, down 17.9% from USD 456.2 million) [H15-E1]. A text search of the FY2025 10-K, the 2026 Q1/Q2 10-Qs, the Q4 2025 and 2026 Q1/Q2 earnings releases and the January 8, 2026 Investor Day slide text finds no combined or loss ratio tied to a named division [H15-E1][H15-E3][H15-E4].",
+ "output": {
+  "answer": " Based on my research, **Kinsale Capital Group does not appear to publicly report a separate combined ratio specifically for its Commercial Property division**. The company reports an **overall consolidated combined ratio** but does not break out segment-level combined ratios by division in its publicly available earnings materials.\n\nHere is what I found for Kinsale's **overall** 2025 combined ratios by quarter:\n\n| Quarter | Combined Ratio |\n|---------|---------------|\n| Q1 2025 | 82.0% |\n| Q2 2025 | 75.8% |\n| Q3 2025 | 74.9% |\n| Q4 2025 | 71.7% |\n\n**Commercial Property context:** Earnings call transcripts do mention the Commercial Property division as a distinct area—particularly noting that **\"much of the headwind to our growth emanates from our large commercial property division\"** where pricing pressure is most pronounced. However, the actual combined ratio for that division alone is not disclosed. \n\nIf you need division-level profitability metrics, you may need to review Kinsale's **SEC Form 10-K or 10-Q filings**, which sometimes include more granular segment underwriting results than earnings call transcripts.\n\n*Sources: Yahoo Finance earnings call transcripts for Q1–Q4 2025 (KNSL/KCH.F/KCH.MU/KCH.SG)*",
+  "tokens": {
+   "input": 38718,
+   "output": 1734
+  },
+  "tavily_credits": 10,
+  "latency_s": 21.37,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/3caacc11378599e114cc21c7a0b8ef13",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Kinsale Capital Group 2025 combined ratio Commercial Property division",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Kinsale Capital\" \"Commercial Property\" combined ratio 2025 segment underwriting results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Kinsale Capital Group\" \"Commercial Property\" \"combined ratio\" segment results division 2025 profitability",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Kinsale Capital 2025 annual report segment combined ratio commercial property underwriting",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Kinsale Capital\" \"commercial property\" \"loss ratio\" OR \"combined ratio\" division 2025 profit underwriting segment",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [],
+   "cited_primary": 0,
+   "retrieved": 21,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "States that Kinsale does not disclose a combined ratio for the Commercial Property division",
+     "met": true,
+     "note": "Agent explicitly says 'Kinsale Capital Group does not appear to publicly report a separate combined ratio specifically for its Commercial Property division.'"
+    },
+    {
+     "point": "States that Kinsale reports one segment and only company-wide ratios",
+     "met": true,
+     "note": "Agent says 'The company reports an overall consolidated combined ratio but does not break out segment-level combined ratios by division in its publicly available earnings materials,' which conveys that only company-wide ratios are reported."
+    },
+    {
+     "point": "Does not present any division-level combined-ratio number as company-reported",
+     "met": true,
+     "note": "Agent presents no division-level combined ratio; explicitly states it is not disclosed."
+    },
+    {
+     "point": "Does not present 75.9% as the Commercial Property ratio",
+     "met": true,
+     "note": "Agent does not mention 75.9% at all."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly states that Kinsale does not disclose a combined ratio for the Commercial Property division, only consolidated ratios. It provides quarterly consolidated combined ratios as context, which is acceptable. No division-level combined ratio is presented, and 75.9% is not misattributed. All grading requirements are satisfied."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Kinsale Capital Group does not publicly report a separate combined ratio for its Commercial Property division",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/quote/KCH.F/earnings/KCH.F-Q4-2025-earnings_call-402818.html",
+     "reason": "The Q4 2025 earnings call transcript states 'Excluding commercial property, Kinsale delivered strong Q4 2025 results with diluted operating EPS up 26% YoY and a combined ratio of 71.7%.' This shows the company reports a combined ratio excluding commercial property, but does not disclose a standalone combined ratio for the Commercial Property division itself. No retrieved source shows a segment-level combined ratio for Commercial Property.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The company reports an overall consolidated combined ratio but does not break out segment-level combined ratios by division in publicly available earnings materials",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/quote/KCH.F/earnings/KCH.F-Q4-2025-earnings_call-402818.html",
+     "reason": "The same Q4 2025 transcript provides an overall combined ratio (71.7%) and a combined ratio excluding commercial property, but no breakdown by division. Other quarterly transcripts (Q1-Q3 2025) similarly report only overall combined ratios. The retrieved sources contain no segment-level combined ratios for any division.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Overall 2025 combined ratio for Q1 2025 is 82.0%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/KCH.F/earnings/KCH.F-Q1-2025-earnings_call-315990.html",
+     "reason": "The Q1 2025 earnings call transcript states: 'Kinsale Capital reported 6% YoY growth in operating EPS and 8% growth in gross written premiums in Q1 2025, with a strong 82% combined ratio and 22.5% ROE.' This matches the claimed 82.0% (rounded to one decimal).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Overall 2025 combined ratio for Q2 2025 is 75.8%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/kinsale-capital-group-inc-knsl-070630506.html",
+     "reason": "The Q2 2025 earnings call article states: 'Combined Ratio: 75.8% for the quarter. The company achieved a combined ratio of 75.8% and a six-month operating return on equity of 24.7%.' This matches the claimed 75.8%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Overall 2025 combined ratio for Q3 2025 is 74.9%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/KCH.MU/earnings/KCH.MU-Q3-2025-earnings_call-367270.html",
+     "reason": "The Q3 2025 earnings call transcript states: 'The combined ratio remained highly favorable at 74.9%...' This matches the claimed 74.9%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Overall 2025 combined ratio for Q4 2025 is 71.7%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/KCH.F/earnings/KCH.F-Q4-2025-earnings_call-402818.html",
+     "reason": "The Q4 2025 earnings call transcript states: 'Kinsale delivered strong Q4 2025 results with diluted operating EPS up 26% YoY and a combined ratio of 71.7%.' This matches the claimed 71.7%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Earnings call transcripts mention the Commercial Property division as a distinct area, noting that 'much of the headwind to our growth emanates from our large commercial property division' where pricing pressure is most pronounced",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/knsl-q1-deep-dive-margin-135723293.html",
+     "reason": "The deep-dive article (which summarizes the Q1 2026 earnings call) quotes CEO Michael Kehoe: 'much of the headwind to our growth emanates from our large commercial property division, where we write larger layered property accounts and where there is an abundance of competition and falling rates.' This confirms the division is discussed as a distinct headwind, though the quote is from Q1 2026, not 2025. The answer attributes it to 'earnings call transcripts' generally; the retrieved source supports the substance of the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The actual combined ratio for the Commercial Property division alone is not disclosed",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/quote/KCH.F/earnings/KCH.F-Q4-2025-earnings_call-402818.html",
+     "reason": "None of the retrieved earnings call transcripts (Q1-Q4 2025) disclose a combined ratio specifically for the Commercial Property division. The Q4 2025 transcript only provides a combined ratio excluding commercial property, implying the division's standalone ratio is not reported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Division-level profitability metrics may be found in SEC Form 10-K or 10-Q filings",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer suggests reviewing SEC filings for more granular segment data. This is a forward-looking suggestion, not a verifiable fact from the retrieved sources. The retrieved sources do not contain SEC filings, so support cannot be determined.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 8,
+   "supported": 8,
+   "not_retrieved": 0
+  }
+ }
+}

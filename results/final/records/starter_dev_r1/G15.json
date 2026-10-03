@@ -1,0 +1,146 @@
+{
+ "id": "G15",
+ "category": "Adjustments",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "Excluding the non-recurring IEEPA tariff refund benefit, what was Costco's Q4 FY2026 diluted EPS, and what was the YoY growth on that basis vs Q4 FY2025?",
+ "grading": "Adjusted EPS ±$0.01; growth ±0.5pp; must use the per-share benefit as disclosed by Costco and 16-week Q4 columns",
+ "answer": "Costco Q4 FY2026 diluted EPS excluding the disclosed net tariff-refund benefit was $6.60 ($6.75 - $0.15), up 12.4361% from Q4 FY2025 EPS of $5.87. Both quarters contained 16 weeks. The $0.15 benefit is already net of partial reinvestment in member values. [G15-E1]",
+ "output": {
+  "answer": " **Excluding the non-recurring IEEPA tariff refund benefit, Costco's Q4 FY2026 diluted EPS was $6.60**, representing **12.4% year-over-year growth** vs. Q4 FY2025's $5.87.\n\n**Calculation:**\n- Reported Q4 FY2026 diluted EPS: $6.75\n- Less IEEPA tariff refund benefit (net of partial reinvestment): $0.15\n- Adjusted Q4 FY2026 diluted EPS: **$6.60**\n- YoY growth vs. Q4 FY2025 ($5.87): **12.4%**\n\n**Sources:**\n- Costco's official investor relations filing confirms the $0.15 per-share IEEPA benefit and that excluding it, EPS grew 12.4% YoY ([StockTitan SEC filing](https://www.stocktitan.net/sec-filings/COST/8-k-costco-wholesale-corp-new-reports-material-event-0c3b3f764315.html))\n- Costco's Q4 FY2026 earnings call transcript also verified the 12.4% adjusted EPS growth ([Yahoo Finance transcript](https://finance.yahoo.com/quote/COST.TO/earnings/COST.TO-Q4-2026-earnings_call-682005.html))",
+  "tokens": {
+   "input": 8197,
+   "output": 969
+  },
+  "tavily_credits": 2,
+  "latency_s": 10.46,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Costco Q4 FY2026 diluted EPS excluding IEEPA tariff refund benefit year over year growth",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/quote/COST.TO/earnings/COST.TO-Q4-2026-earnings_call-682005.html",
+    "https://www.stocktitan.net/sec-filings/COST/8-k-costco-wholesale-corp-new-reports-material-event-0c3b3f764315.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 10,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Adjusted EPS within ±$0.01 of correct value ($6.60)",
+     "met": true,
+     "note": "Agent reports $6.60, matching reference $6.60 exactly."
+    },
+    {
+     "point": "YoY growth within ±0.5 percentage points of correct value (12.4361%)",
+     "met": true,
+     "note": "Agent reports 12.4%, difference 0.0361 pp, well within tolerance."
+    },
+    {
+     "point": "Must use the per-share benefit as disclosed by Costco ($0.15 per share)",
+     "met": true,
+     "note": "Agent explicitly uses $0.15 per-share IEEPA tariff refund benefit, matching disclosed amount."
+    },
+    {
+     "point": "Must use 16-week Q4 columns for both quarters",
+     "met": true,
+     "note": "Agent's EPS figures ($6.75 and $5.87) correspond to the 16-week quarters per reference; calculation implicitly uses correct quarter length."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: adjusted EPS and YoY growth are within specified tolerances, the per-share benefit used matches Costco's disclosed $0.15, and the underlying data aligns with 16-week quarters for both periods."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Excluding the non-recurring IEEPA tariff refund benefit, Costco's Q4 FY2026 diluted EPS was $6.60",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/COST/8-k-costco-wholesale-corp-new-reports-material-event-0c3b3f764315.html",
+     "reason": "The SEC filing states: 'Results included a non-recurring $0.15-per-share benefit from IEEPA tariff refunds, less partial reinvestment in member values; excluding that benefit, net income grew 12.3% and EPS 12.4%.' With Q4 FY2025 EPS of $5.87, a 12.4% increase yields $6.60. The earnings call transcript also confirms the adjusted EPS figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "This represents 12.4% year-over-year growth vs. Q4 FY2025's $5.87",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/COST/8-k-costco-wholesale-corp-new-reports-material-event-0c3b3f764315.html",
+     "reason": "The SEC filing explicitly says 'excluding that benefit, net income grew 12.3% and EPS 12.4%.' The earnings call transcript states 'DPS were up 12.4% respectively from $2.61 billion, or $5.87 per diluted share last year.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Reported Q4 FY2026 diluted EPS: $6.75",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/COST/8-k-costco-wholesale-corp-new-reports-material-event-0c3b3f764315.html",
+     "reason": "Both the SEC filing and the earnings call transcript report fourth-quarter diluted EPS of $6.75.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Less IEEPA tariff refund benefit (net of partial reinvestment): $0.15",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/COST/8-k-costco-wholesale-corp-new-reports-material-event-0c3b3f764315.html",
+     "reason": "The SEC filing describes a 'non-recurring $0.15-per-share benefit from IEEPA tariff refunds, less partial reinvestment in member values.' The earnings call transcript says 'a non-recurring benefit of $0.15 per diluted share from IEEPA tariff refunds received in the quarter, less partial reinvestment of those refunds in increased member values.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Adjusted Q4 FY2026 diluted EPS: $6.60",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/COST/8-k-costco-wholesale-corp-new-reports-material-event-0c3b3f764315.html",
+     "reason": "Simple arithmetic: $6.75 reported EPS minus $0.15 non-recurring benefit = $6.60. The LinkedIn analysis also states 'normalized Q4 EPS would have been approximately $6.60 per share.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "YoY growth vs. Q4 FY2025 ($5.87): 12.4%",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/COST/8-k-costco-wholesale-corp-new-reports-material-event-0c3b3f764315.html",
+     "reason": "Calculation: ($6.60 - $5.87) / $5.87 = 0.12436 ≈ 12.4%. The SEC filing and earnings call transcript both explicitly state 12.4% EPS growth excluding the benefit.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Costco's official investor relations filing confirms the $0.15 per-share IEEPA benefit and that excluding it, EPS grew 12.4% YoY (StockTitan SEC filing)",
+     "numeric": false,
+     "cited_url": "https://www.stocktitan.net/sec-filings/COST/8-k-costco-wholesale-corp-new-reports-material-event-0c3b3f764315.html",
+     "reason": "The retrieved SEC filing content includes the exact statements about the $0.15 per-share benefit and the 12.4% EPS growth excluding it.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Costco's Q4 FY2026 earnings call transcript also verified the 12.4% adjusted EPS growth (Yahoo Finance transcript)",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/quote/COST.TO/earnings/COST.TO-Q4-2026-earnings_call-682005.html",
+     "reason": "The retrieved earnings call transcript states: 'Excluding this non-recurring benefit, net income and DPS were up 12.3% and 12.4% respectively from $2.61 billion, or $5.87 per diluted share last year.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 8,
+   "supported": 8,
+   "not_retrieved": 0
+  }
+ }
+}

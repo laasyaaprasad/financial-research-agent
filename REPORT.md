@@ -17,14 +17,14 @@ Anything it can't support is refused explicitly.
 
 ## 2. Base agent results
 
-The starter's design searches the web for everything, doesn't know today's date, and does arithmetic in its head.
+The starter as shipped (Kimi K2.6) searches the web for everything, doesn't know today's date, and does arithmetic in its head. It was graded by the final judge:
 
-| Starter configuration | Dev set (25 fixed-answer questions) | Primary-source citations | Cited claims supported |
-|---|---|---|---|
-| As shipped (Kimi K2.6), 3 runs | 11–13 fully correct | 20–24% | 51–75% |
-| Same design on DeepSeek V4.1 Flash (the comparison baseline) | 21 fully correct | 39% | 83% |
+| Set | Fully correct | Verified-correct | Primary-source citations | Tavily credits per question |
+|---|---|---|---|---|
+| Held-out sets 1 and 2 (34 fixed-answer questions, 1 run) | 20/34 (59%) | 11/34 (32%) | 22% | 9.2 |
+| Dev set (25 fixed-answer questions, 3 runs) | 40/75 (53%) | 20/75 (27%) | 22% | 8.7 |
 
-Moving the starter to a stronger model fixed most of its correctness. To isolate what the architecture contributes, every comparison below runs the baseline and the new agent on the **same model**.
+It also refused only 4 of 6 requests that should have been refused, and 23% of its cited claims aren't supported by the text it retrieved.
 
 ## 3. Architecture and why each part exists
 
@@ -47,37 +47,46 @@ All production code is generic: a unit test fails if any evaluation-set company 
 
 ## 4. Final results vs. the base agent
 
-**Held-out sets:** three sets, each frozen and hashed before the first run on it:
+**Held-out sets:** all frozen and hashed before their first run:
 - 20 questions
 - 20 hard questions (point-in-time, filing-only, multi-step fiscal, traps)
 - 8 table tasks with 86 cells
 
-That's 96 graded items. Each agent ran each set twice on the same model, graded by a different-family judge (Nemotron Ultra, 8/9 agreement with the user's grades).
+Every run was graded by the same different-family judge (Nemotron Ultra, 8/9 agreement with the user's grades). Our agent includes its model choice, DeepSeek V4.1 Flash. The middle column runs the starter's design on that same model, to separate the architecture's contribution from the model's.
 
-| Measure | Baseline | New agent |
-|---|---|---|
-| Fixed answers fully correct | 79/84 (94%) | 81/84 (96%) |
-| Table cells correct | 171/172 (99%) | 167/172 (97%) |
-| **Verified-correct** (correct, every cited claim supported, every number cited) | **40/84 (48%)** | **68/84 (81%)** |
-| Cited claims not supported by retrieved text | 27% | 9% (on tables: 69% vs. 6%) |
-| Primary-source citations | 45% | 87% |
-| Refusals correct | 10/12 | 12/12 |
-| Tavily credits per question* | 7.4 | 0.8 (per table task: 20.8 vs. 0.2) |
-| Median latency | 23 s | 48 s |
+| Held-out sets 1 and 2 | Starter (as shipped) | Starter design, our model | **Our agent** |
+|---|---|---|---|
+| Fully correct | 20/34 (59%) | 64/68 (94%) | **67/68 (99%)** |
+| **Verified-correct** (correct, every cited claim supported, every number cited) | 11/34 (32%) | 38/68 (56%) | **56/68 (82%)** |
+| Cited claims not supported by retrieved text | 23% | 16% | **9%** |
+| Primary-source citations | 22% | 41% | **82%** |
+| Refusals correct | 4/6 | 10/12 | **12/12** |
+| Tavily credits per question\* | 9.2 | 4.7 | **0.9** |
+| Median latency | 17 s | 17 s | 40 s |
 
-\* The new agent's credits are Tavily's own per-call usage. The baseline's are counted from its calls (1 per basic search, 2 per advanced), because the starter's LangChain tool doesn't report usage.
+**Table set:** the as-shipped starter was not run on it, to protect the credit budget. Against the starter's design on our model, our agent got 167/172 cells correct vs. 171/172. Its cited figures not supported by retrieved text were 6% vs. 69%, and it used 0.2 credits per task vs. 20.8.
+
+\* Our agent's credits are Tavily's own per-call usage. The starter's are counted from its calls (1 per basic search, 2 per advanced), because its LangChain tool doesn't report usage.
 
 **How it compares**
-- **Correctness: a tie.** A capable model plus Tavily finds the right figure as often as the pipeline. Tavily surfaces the right release or sec.gov filing.
-- **Trust: a large gain.** 81% of the new agent's answers can be used as they stand, against 48% for the baseline: every cited claim supported and every number traceable. Its unsupported-claim rate is a third of the baseline's (about a tenth on tables), and every refusal is correct.
-- **Cost: about 9× fewer Tavily credits.** The baseline's spend grows with task size: one table task took 53 advanced searches. The pipeline answers most questions from free SEC data.
-- **Trade-off:** about 2× latency.
+- **Against what was shipped:**
+  - fully correct rises from 59% to 99%
+  - answers usable without re-checking rise from 32% to 82%
+  - unsupported claims fall from 23% to 9%
+  - primary sources rise from 22% to 82%
+  - every refusal is correct
+  - about 10× fewer Tavily credits
+  - about 2.4× slower
+- **Attribution:**
+  - **Correctness** comes mostly from the model choice: the starter's design reaches 94% on DeepSeek Flash.
+  - **Trust and cost** come from the architecture: verified-correct 56% → 82%, primary sources 41% → 82%, refusals 10/12 → 12/12, credits 4.7 → 0.9 per question, and on tables unsupported figures 69% → 6% at about 100× fewer credits.
 
 ## 5. How the result was reached
 
 1. **A first implementation was rebuilt.** It reached 21/25 on the dev set but was overfit: named-company rules and one prompt rule per test question. It was also unstable, ranging from 11 to 21 out of 25 across runs. It was replaced by the generic pipeline above, about 1,400 lines instead of about 5,700.
-2. **Two more held-out sets were added.** The first held-out set couldn't separate the agents because both scored near the ceiling, so I added the harder set and the table set. They were built blind from SEC filings, without seeing either agent's outputs.
-3. **Changes came only from dev failures.** Agent changes were driven by dev-set failures; none were made in response to held-out results. The known held-out issues stay unfixed and are reported: a unit mismatch in one table calculation, and an over-strict verifier rule.
-4. **Within budget.** About 1,170 of the 1,500 Tavily credits were used by per-call accounting, most of them on the baseline. Tavily's dashboard showed 711 at the time; it lags.
+2. **Two more held-out sets were added.** On the first held-out set, the starter's design on our model and our agent both scored near the ceiling, so I added the harder set and the table set to test where the architecture matters. They were built blind from SEC filings, without seeing either agent's outputs.
+3. **The as-shipped starter is the headline baseline.** It was run on the held-out sets once the comparison was framed as "what was shipped vs. what we built". The same-model runs stay as the architecture-only comparison.
+4. **Changes came only from dev failures.** Agent changes were driven by dev-set failures; none were made in response to held-out results. The known held-out issues stay unfixed and are reported: a unit mismatch in one table calculation, and an over-strict verifier rule.
+5. **Budget.** Most of the Tavily credits went to the starter runs. By conservative per-call accounting the total reached about the 1,500 limit, which is why the as-shipped starter has one run per set and none on the table set. Tavily's dashboard lagged and read 711.
 
 Details: [`README.md`](README.md), [`results/final/results.md`](results/final/results.md), [`PLAN.md`](PLAN.md).

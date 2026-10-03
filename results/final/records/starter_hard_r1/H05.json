@@ -1,0 +1,120 @@
+{
+ "id": "H05",
+ "category": "Adjustments",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "As of July 15, 2026, what GAAP diluted EPS range and adjusted diluted EPS range was Hormel Foods guiding to for fiscal 2026?",
+ "grading": "Key points (both required): GAAP diluted EPS guidance USD 1.28-1.37 (updated May 28, 2026, previously 1.37-1.46) AND adjusted diluted EPS guidance USD 1.43-1.51 (reaffirmed). Fail if the Aug 27, 2026 ranges (GAAP 1.06-1.12; adjusted 1.45-1.51) are given as in effect on July 15, 2026, or if only one of the two measures is provided.",
+ "answer": "As of July 15, 2026 the guidance in effect was the one issued with Hormel's Q2 fiscal 2026 results on May 28, 2026: GAAP diluted EPS of USD 1.28-1.37 (lowered from USD 1.37-1.46 to include the loss on the sale of the whole-bird turkey business) and adjusted diluted EPS of USD 1.43-1.51 (reaffirmed; +4% to +10%) for fiscal 2026 (ending October 25, 2026) [H05-E1]. The Q3 update on August 27, 2026 (GAAP USD 1.06-1.12; adjusted USD 1.45-1.51) came after the as_of date [H05-E2]. Between May 28 and July 15 Hormel filed only Item 5.02 officer-change 8-Ks, no guidance changes [H05-E3].",
+ "output": {
+  "answer": " As of July 15, 2026 (between Hormel's Q2 and Q3 reporting dates for fiscal 2026), Hormel Foods was guiding to:\n\n- **GAAP diluted EPS:** **$1.28 to $1.37**\n- **Adjusted diluted EPS:** **$1.43 to $1.51**\n\nThis represented an update to the GAAP range from the prior $1.37–$1.46 after the company completed the sale of its whole-bird turkey business in Q2, while the adjusted range was reaffirmed.\n\n**Source:** [Hormel Foods Q2 Fiscal 2026 Results – Investor Relations](https://investor.hormelfoods.com/news-and-events/news/news-details/2026/HORMEL-FOODS-REPORTS-STRONG-SECOND-QUARTER-FISCAL-2026-RESULTS/default.aspx)",
+  "tokens": {
+   "input": 9423,
+   "output": 1999
+  },
+  "tavily_credits": 2,
+  "latency_s": 19.34,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/fddc31c68448fdab20aebc0c716ee30a",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Hormel Foods fiscal 2026 GAAP diluted EPS adjusted diluted EPS guidance range",
+     "search_depth": "advanced",
+     "time_range": "year"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.hormelfoods.com/news-and-events/news/news-details/2026/HORMEL-FOODS-REPORTS-STRONG-SECOND-QUARTER-FISCAL-2026-RESULTS/default.aspx"
+   ],
+   "cited_primary": 1,
+   "retrieved": 10,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "GAAP diluted EPS guidance USD 1.28-1.37 (updated May 28, 2026, previously 1.37-1.46)",
+     "met": true,
+     "note": "Agent provided GAAP diluted EPS $1.28 to $1.37 and noted it was updated from prior $1.37–$1.46 after whole-bird turkey business sale."
+    },
+    {
+     "point": "Adjusted diluted EPS guidance USD 1.43-1.51 (reaffirmed)",
+     "met": true,
+     "note": "Agent provided adjusted diluted EPS $1.43 to $1.51 and stated it was reaffirmed."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly provided both GAAP and adjusted diluted EPS guidance ranges as of July 15, 2026, matching the May 28, 2026 update, and did not confuse with the later August 27 update."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Hormel Foods was guiding to GAAP diluted EPS of $1.28 to $1.37 for fiscal 2026",
+     "numeric": true,
+     "cited_url": "https://investor.hormelfoods.com/news-and-events/news/news-details/2026/HORMEL-FOODS-REPORTS-STRONG-SECOND-QUARTER-FISCAL-2026-RESULTS/default.aspx",
+     "reason": "The retrieved source shows a guidance table with 'Diluted Earnings per Share' Updated column $1.28 - $1.37 for fiscal 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hormel Foods was guiding to adjusted diluted EPS of $1.43 to $1.51 for fiscal 2026",
+     "numeric": true,
+     "cited_url": "https://investor.hormelfoods.com/news-and-events/news/news-details/2026/HORMEL-FOODS-REPORTS-STRONG-SECOND-QUARTER-FISCAL-2026-RESULTS/default.aspx",
+     "reason": "The retrieved source shows a guidance table with 'Adj. Diluted Earnings per Share1' Updated column $1.43 - $1.51 for fiscal 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The GAAP diluted EPS range was updated from a prior range of $1.37–$1.46",
+     "numeric": true,
+     "cited_url": "https://investor.hormelfoods.com/news-and-events/news/news-details/2026/HORMEL-FOODS-REPORTS-STRONG-SECOND-QUARTER-FISCAL-2026-RESULTS/default.aspx",
+     "reason": "The retrieved source shows a guidance table with 'Diluted Earnings per Share' Previous column $1.37 - $1.46, confirming the prior range.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The update occurred after the company completed the sale of its whole-bird turkey business in Q2",
+     "numeric": false,
+     "cited_url": "https://investor.hormelfoods.com/news-and-events/news/news-details/2026/HORMEL-FOODS-REPORTS-STRONG-SECOND-QUARTER-FISCAL-2026-RESULTS/default.aspx",
+     "reason": "The retrieved source states: 'During the second quarter of fiscal 2026, the Company completed the previously announced sale of its whole-bird turkey business.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The adjusted diluted EPS range was reaffirmed (unchanged)",
+     "numeric": false,
+     "cited_url": "https://investor.hormelfoods.com/news-and-events/news/news-details/2026/HORMEL-FOODS-REPORTS-STRONG-SECOND-QUARTER-FISCAL-2026-RESULTS/default.aspx",
+     "reason": "The retrieved source shows 'Adj. Diluted Earnings per Share1' Updated $1.43 - $1.51 and Previous $1.43 - $1.51, identical ranges.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "As of July 15, 2026 (between Hormel's Q2 and Q3 reporting dates for fiscal 2026), Hormel Foods was guiding to these ranges",
+     "numeric": true,
+     "cited_url": "https://investor.hormelfoods.com/news-and-events/news/news-details/2026/HORMEL-FOODS-REPORTS-STRONG-SECOND-QUARTER-FISCAL-2026-RESULTS/default.aspx",
+     "reason": "The retrieved source is the Q2 results press release, which does not mention July 15, 2026. The guidance ranges are from the Q2 release, but the specific date July 15 is not verified by the source.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 6,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}

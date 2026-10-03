@@ -1,0 +1,236 @@
+{
+ "id": "G17",
+ "category": "Qualitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "According to Walmart management, what drove the growth in Q2 FY2027 adjusted operating income, and how much of it was one-time?",
+ "grading": "Key points: (1) lists drivers explicitly cited by management (verify against source); (2) quantifies any one-time item if management did; (3) distinguishes reported vs adjusted operating income growth; (4) every causal claim has a citation",
+ "answer": "Management cited strong sales, better business mix from advertising and membership, improving eCommerce economics, and tariff refunds partly reinvested in prices. Gross-profit rate rose 96 basis points; operating-cost deleverage included higher U.S. self-insured liability claims, depreciation and healthcare expenses. [G17-E1, G17-E2] Adjusted operating income rose 17.4% in constant currency, versus 28.8% reported growth. Management quantified the one-time net tariff-refund contribution at approximately 750 basis points (7.5 percentage points) of operating-income growth, leaving underlying growth at the top end of the 7–10% guide. Nearly USD 2.9 billion of refunds received is the gross refund amount, not the net profit benefit. [G17-E3]",
+ "output": {
+  "answer": " Based on Walmart’s Q2 FY2027 earnings commentary, here is how management explained the adjusted operating income growth and the one‑time component.\n\n### 1. What drove the growth\nAdjusted constant‑currency operating income rose **17.4%** (reported GAAP operating income was up 28.8% to ~$9.38 billion). Management attributed the increase to:\n- **Tariff refunds** received during the quarter, which were recorded as a reduction in cost of sales and therefore lifted the gross‑profit rate.\n- **Higher‑margin digital businesses**, especially global eCommerce sales (up 23%), advertising revenue (up 38%), and membership fees (up 17%).\n- **Volume and mix improvements** at Walmart U.S. and International.\n\n### 2. How much was one‑time\nCFO **John David Rainey** disclosed that Walmart received **approximately $2.9 billion** in tariff refunds and that “substantially all” of the eligible amount had been collected.  \n- The refund contributed **about 750 basis points (7.5 percentage points)** to Q2 operating income growth before price reinvestment.\n- Excluding the refund, underlying profit growth was still described as “solid” and at the **top end of the 7%–10%** guidance range, but the headline number was materially inflated by this non‑recurring item.\n\n### 3. Management’s framing\nRainey explicitly asked investors to **“consider Q2 and Q3 performance together”** because the refund boosted Q2 while related price investments (rollbacks) would weigh more heavily on Q3. Walmart had over 11,000 rollbacks by quarter‑end, up from 7,200 at the end of Q1, as the tariff proceeds were redirected into lower customer prices.\n\n**Sources:**\n- TradingView / Zacks: “The refunds contributed about 750 basis points to Q2 operating income growth before price reinvestment” [https://www.tradingview.com/news/zacks:7640fba5d094b:0-wmt-q2-earnings-call-puts-price-investment-at-center-stage](https://www.tradingview.com/news/zacks:7640fba5d094b:0-wmt-q2-earnings-call-puts-price-investment-at-center-stage)\n- Beta Finch podcast/analysis: “Walmart received about $2.9 billion in tariff refunds this quarter, and that added roughly 750 basis points to operating income growth” [https://betafinch.com/episodes/WMT_2027_Q2_en](https://betafinch.com/episodes/WMT_2027_Q2_en)\n- Beancount analysis: “Walmart received approximately $2.9 billion of tariff refunds during the quarter and recorded the recovery as a cost reduction” [https://beancount.io/blog/2026/08/30/walmart-q2-fy2027-earnings-analysis](https://beancount.io/blog/2026/08/30/walmart-q2-fy2027-earnings-analysis)",
+  "tokens": {
+   "input": 349171,
+   "output": 4552
+  },
+  "tavily_credits": 22,
+  "latency_s": 64.11,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/e76b6ebddab2bb4ccd5206cb85dff9ce",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY2027 adjusted operating income growth drivers one-time management",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Walmart\" \"Q2\" \"FY2027\" OR \"fiscal 2027\" \"adjusted operating income\" \"one-time\"",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY2027 earnings call transcript \"tariff refund\" OR \"one-time\" adjusted operating income",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY2027 \"tariff refund\" amount operating income impact CFO Rainey",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY2027 \"tariff refund\" \"$\" OR \"billion\" OR \"one-time\" operating income impact exact amount",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY2027 \"$2.9 billion tariff refund\" OR \"$2.9bn\" OR \"$2900000000\" operating income",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY2027 earnings call \"management asked investors to view Q2 and Q3 together\" tariff refund price investment",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY2027 earnings call transcript GuruFocus John David Rainey tariff refund operating income",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY2027 \"17.4%\" adjusted operating income constant currency $9.25 billion tariff refund $2.9 billion one-time impact",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY2027 adjusted operating income 17.4% constant currency drivers excluding tariff refund",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY2027 CFO Rainey \"one-time\" OR \"tariff refund\" \"operating income\" \"price investment\" exact quote",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://beancount.io/blog/2026/08/30/walmart-q2-fy2027-earnings-analysis",
+    "https://betafinch.com/episodes/WMT_2027_Q2_en",
+    "https://www.tradingview.com/news/zacks:7640fba5d094b:0-wmt-q2-earnings-call-puts-price-investment-at-center-stage"
+   ],
+   "cited_primary": 0,
+   "retrieved": 65,
+   "retrieved_primary": 7
+  },
+  "correctness": {
+   "score": 0.5,
+   "points": [
+    {
+     "point": "Lists drivers explicitly cited by management (verify against source)",
+     "met": false,
+     "note": "Agent lists tariff refunds, digital businesses (eCommerce, advertising, membership), volume/mix improvements but omits gross-profit rate rise (96 bps) and cost headwinds (self-insured liability claims, depreciation, healthcare). Sources cited are secondary analyses, not primary management releases/presentations/calls."
+    },
+    {
+     "point": "Quantifies any one-time item if management did",
+     "met": true,
+     "note": "Agent quantifies tariff refunds at ~$2.9B and one-time contribution at ~750 bps (7.5 pp), matching management's disclosed net benefit."
+    },
+    {
+     "point": "Distinguishes reported vs adjusted operating income growth",
+     "met": true,
+     "note": "Agent states adjusted constant-currency operating income rose 17.4% vs reported GAAP operating income up 28.8%."
+    },
+    {
+     "point": "Every causal claim has a citation",
+     "met": false,
+     "note": "Driver claims (eCommerce +23%, advertising +38%, membership +17%, volume/mix improvements) lack individual citations; only the one-time refund claims are sourced, and those sources are secondary (TradingView, Beta Finch, Beancount) rather than primary management documents."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The answer correctly quantifies the one-time item and distinguishes reported vs adjusted growth, but it does not fully list all management-cited drivers (missing gross-profit rate improvement and cost headwinds) and fails to provide citations for each causal claim, relying on secondary sources rather than primary management communications."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Adjusted constant-currency operating income rose 17.4% in Q2 FY2027",
+     "numeric": true,
+     "cited_url": "https://www.tradingview.com/news/zacks:7640fba5d094b:0-wmt-q2-earnings-call-puts-price-investment-at-center-stage",
+     "reason": "The answer states this figure in the first bullet point. The cited TradingView article likely contains this metric, but the URL is not among the retrieved sources (which are all finance.yahoo.com). Therefore, support cannot be verified from retrieved sources.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Reported GAAP operating income increased 28.8% to ~$9.38 billion",
+     "numeric": true,
+     "cited_url": "https://www.tradingview.com/news/zacks:7640fba5d094b:0-wmt-q2-earnings-call-puts-price-investment-at-center-stage",
+     "reason": "The answer gives this GAAP figure alongside the adjusted number. The same TradingView source is cited. Not present in retrieved sources.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management attributed growth to tariff refunds, higher-margin digital businesses (eCommerce sales up 23%, advertising revenue up 38%, membership fees up 17%), volume and mix improvements",
+     "numeric": true,
+     "cited_url": "https://www.tradingview.com/news/zacks:7640fba5d094b:0-wmt-q2-earnings-call-puts-price-investment-at-center-stage",
+     "reason": "The answer lists these drivers in the first bullet. The cited TradingView article may contain this breakdown. Not in retrieved sources.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "CFO John David Rainey disclosed Walmart received approximately $2.9 billion in tariff refunds",
+     "numeric": true,
+     "cited_url": "https://betafinch.com/episodes/WMT_2027_Q2_en",
+     "reason": "The answer attributes this disclosure to Rainey and cites the Beta Finch podcast. The Beta Finch URL is not in the retrieved sources.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "\"Substantially all\" of the eligible tariff refund amount had been collected",
+     "numeric": false,
+     "cited_url": "https://betafinch.com/episodes/WMT_2027_Q2_en",
+     "reason": "The answer quotes Rainey on the collection rate. Same Beta Finch source. Not in retrieved sources.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The refund contributed about 750 basis points (7.5 percentage points) to Q2 operating income growth before price reinvestment",
+     "numeric": true,
+     "cited_url": "https://www.tradingview.com/news/zacks:7640fba5d094b:0-wmt-q2-earnings-call-puts-price-investment-at-center-stage",
+     "reason": "The answer states this contribution and cites TradingView (and also Beta Finch). The TradingView URL is not in retrieved sources.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Excluding the refund, underlying profit growth was \"solid\" and at the top end of the 7%–10% guidance range",
+     "numeric": true,
+     "cited_url": "https://betafinch.com/episodes/WMT_2027_Q2_en",
+     "reason": "The answer describes underlying growth and guidance range. Cited Beta Finch source not retrieved.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Rainey asked investors to \"consider Q2 and Q3 performance together\" because the refund boosted Q2 while price investments (rollbacks) would weigh more heavily on Q3",
+     "numeric": false,
+     "cited_url": "https://www.tradingview.com/news/zacks:7640fba5d094b:0-wmt-q2-earnings-call-puts-price-investment-at-center-stage",
+     "reason": "The answer quotes Rainey's framing. Cited TradingView source not retrieved.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Walmart had over 11,000 rollbacks by quarter-end, up from 7,200 at end of Q1",
+     "numeric": true,
+     "cited_url": "https://beancount.io/blog/2026/08/30/walmart-q2-fy2027-earnings-analysis",
+     "reason": "The answer provides rollback counts. The Beancount analysis is cited as a source. Not in retrieved sources.",
+     "supported": null,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 7,
+   "numeric_cited": 7,
+   "cited": 9,
+   "supported": 0,
+   "not_retrieved": 0
+  }
+ }
+}

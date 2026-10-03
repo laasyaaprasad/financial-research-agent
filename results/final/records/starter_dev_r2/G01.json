@@ -1,0 +1,149 @@
+{
+ "id": "G01",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was NVIDIA's total revenue for fiscal 2026, in USD millions, and how much did it grow vs fiscal 2025?",
+ "grading": "±0.5% on revenue, USD millions; period must be FY ended 2026-01-25; growth ±0.5pp; fail if any CY2026 or FY2027 quarter used",
+ "answer": "NVIDIA FY2026 revenue was USD 215,938 million, versus USD 130,497 million in FY2025: growth of 65.4735% (65% as rounded in the filing). [G01-E1]",
+ "output": {
+  "answer": " Based on the available financial reports:\n\n**NVIDIA Fiscal 2026 Revenue:** **$215,900 million** ($215.9 billion)\n\n**Year-over-Year Growth:** **65%** vs. fiscal 2025\n\nThis implies fiscal 2025 revenue was approximately **$130,900 million** (~$130.9 billion).\n\n**Source(s):**\n- Yahoo Finance: \"Nvidia's valuation just hit a multiyear low — even as revenue sets records\" — fiscal 2026 revenue topped $215.9 billion, up 65% year over year. ([finance.yahoo.com](https://finance.yahoo.com/technology/article/nvidias-valuation-just-hit-a-multiyear-low--even-as-revenue-sets-records-155948933.html))\n\n**Note on timing:** NVIDIA's fiscal year ends in January, so fiscal 2026 ended January 31, 2026. A separate figure of ~$187.1 billion cited in other coverage refers to a trailing twelve-month or calendar period, not the official fiscal year-end total.",
+  "tokens": {
+   "input": 90539,
+   "output": 4898
+  },
+  "tavily_credits": 10,
+  "latency_s": 36.37,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA total revenue fiscal 2026 vs fiscal 2025 growth USD millions",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA fiscal 2026 annual revenue full year results earnings report",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"NVIDIA\" \"fiscal 2026\" \"annual revenue\" \"full year\" OR \"annual results\" billion",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"NVIDIA\" \"fiscal 2025\" annual revenue billion OR \"NVIDIA\" \"FY 2025\" total revenue billion ",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA fiscal year 2025 full year annual revenue ended January 2025",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/technology/article/nvidias-valuation-just-hit-a-multiyear-low--even-as-revenue-sets-records-155948933.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 32,
+   "retrieved_primary": 2
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Revenue for FY2026 (ended 2026-01-25) in USD millions within ±0.5% of 215,938 million",
+     "met": true,
+     "note": "Agent reports $215,900 million; reference is 215,938 million. Difference is 38 million (0.0176%), well within ±0.5% tolerance."
+    },
+    {
+     "point": "Growth vs FY2025 within ±0.5 percentage points of 65.4735%",
+     "met": true,
+     "note": "Agent reports 65% growth; reference is 65.4735%. Difference is 0.4735 percentage points, within ±0.5pp tolerance."
+    },
+    {
+     "point": "No use of CY2026 or FY2027 quarter data",
+     "met": true,
+     "note": "Agent cites Yahoo Finance article referencing fiscal 2026 revenue and year-over-year growth; no calendar 2026 or FY2027 quarter figures are used."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All three requirements are satisfied: revenue and growth figures are within specified tolerances, and the answer relies on fiscal 2026 data without contamination from calendar 2026 or FY2027 quarters. The agent's note about the fiscal year ending January 31, 2026 is slightly inaccurate (actual end is January 25, 2026), but the underlying data corresponds to the correct FY2026 period, so the period requirement is met."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "NVIDIA Fiscal 2026 Revenue: $215,900 million ($215.9 billion)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/technology/article/nvidias-valuation-just-hit-a-multiyear-low--even-as-revenue-sets-records-155948933.html",
+     "reason": "The retrieved Yahoo Finance article states: 'The company's most recent fiscal 2026 revenue topped $215.9 billion, up 65% year over year...'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Year-over-Year Growth: 65% vs. fiscal 2025",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/technology/article/nvidias-valuation-just-hit-a-multiyear-low--even-as-revenue-sets-records-155948933.html",
+     "reason": "The same Yahoo Finance article states fiscal 2026 revenue was 'up 65% year over year'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Implied fiscal 2025 revenue was approximately $130,900 million (~$130.9 billion)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/technology/article/nvidias-valuation-just-hit-a-multiyear-low--even-as-revenue-sets-records-155948933.html",
+     "reason": "Derived from the cited figures: $215.9 billion / 1.65 = $130.848 billion, which rounds to $130.9 billion. The inputs are from the cited source.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA's fiscal year ends in January, so fiscal 2026 ended January 31, 2026",
+     "numeric": false,
+     "cited_url": "https://www.wsj.com/market-data/quotes/NVDA/financials/annual/balance-sheet",
+     "reason": "The WSJ source states 'Fiscal year is February-January,' confirming the fiscal year ends in January.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "A separate figure of ~$187.1 billion cited in other coverage refers to a trailing twelve-month or calendar period, not the official fiscal year-end total",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer mentions this figure but does not cite a source. The retrieved sources do not contain this figure or explanation.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 3,
+   "cited": 4,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}

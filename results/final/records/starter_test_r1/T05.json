@@ -1,0 +1,126 @@
+{
+ "id": "T05",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What were Uber's Gross Bookings in the second quarter of 2026 (three months ended June 30, 2026)? Answer in USD millions.",
+ "grading": "±0.5%, USD millions (accept $58.0B). Fail if revenue, outlook or growth percentage is given as the level.",
+ "answer": "Uber's Gross Bookings were USD 58,022 million in Q2 2026, up 24% (22% in constant currency) from USD 46,756 million in Q2 2025. [T05-E1, T05-E2]",
+ "output": {
+  "answer": " **$58,022 million**\n\nUber's Gross Bookings for the three months ended June 30, 2026 were **$58,022 million** (or approximately $58.0 billion), up 24% year-over-year from $46,756 million in Q2 2025.\n\n**Sources:**\n- [Uber Investor Relations - Q2 2026 Earnings](https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx)\n- [Uber Q2 2026 Prepared Remarks](https://s23.q4cdn.com/407969754/files/doc_earnings/2026/q2/transcript/Uber-Q2-26-Prepared-Remarks.pdf)\n- [Financial Times - Uber Q2 2026 Announcement](https://markets.ft.com/data/announce/detail?dockey=600-202608050655BIZWIRE_USPRX____20260805_BW020613-1)",
+  "tokens": {
+   "input": 9453,
+   "output": 877
+  },
+  "tavily_credits": 2,
+  "latency_s": 7.72,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/aeb10aa21c12c8f9ae0b3dd771154360",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Uber Gross Bookings Q2 2026 earnings results three months ended June 30 2026",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx",
+    "https://markets.ft.com/data/announce/detail?dockey=600-202608050655BIZWIRE_USPRX____20260805_BW020613-1",
+    "https://s23.q4cdn.com/407969754/files/doc_earnings/2026/q2/transcript/Uber-Q2-26-Prepared-Remarks.pdf"
+   ],
+   "cited_primary": 1,
+   "retrieved": 10,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer in USD millions (or billions accepted as $58.0B)",
+     "met": true,
+     "note": "Agent answered $58,022 million, which is in USD millions."
+    },
+    {
+     "point": "Value within ±0.5% of 58,022 million (i.e., 57,732–58,312 million)",
+     "met": true,
+     "note": "Agent's $58,022 million matches the reference exactly (0% deviation)."
+    },
+    {
+     "point": "Not revenue, outlook, or growth percentage given as the level",
+     "met": true,
+     "note": "Agent provided Gross Bookings level ($58,022 million), not revenue ($14,191M), Q3 outlook ($58.25–60.25B), or constant-currency growth figure."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer of $58,022 million exactly matches the verified Gross Bookings figure for Q2 2026, is expressed in USD millions, and does not confuse the metric with revenue, outlook, or growth rates."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Uber's Gross Bookings for the three months ended June 30, 2026 were $58,022 million",
+     "numeric": true,
+     "cited_url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx",
+     "reason": "The press release table shows Gross Bookings for 2026 as $58,022 million (in millions).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Gross Bookings were approximately $58.0 billion",
+     "numeric": true,
+     "cited_url": "https://s23.q4cdn.com/407969754/files/doc_earnings/2026/q2/transcript/Uber-Q2-26-Prepared-Remarks.pdf",
+     "reason": "The Prepared Remarks state 'Gross Bookings grew 22% YoY to a record $58.0 billion' and 'Gross Bookings exceeded $58 billion'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Gross Bookings grew 24% year-over-year",
+     "numeric": true,
+     "cited_url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx",
+     "reason": "The press release table shows a 24% change for Gross Bookings (reported basis).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Prior period (Q2 2025) Gross Bookings were $46,756 million",
+     "numeric": true,
+     "cited_url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx",
+     "reason": "The press release table shows Gross Bookings for 2025 as $46,756 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The period is the three months ended June 30, 2026 (Q2 2026)",
+     "numeric": false,
+     "cited_url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx",
+     "reason": "The press release title and table header indicate 'Three Months Ended June 30, 2026'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The 24% growth is on a reported basis (not constant currency)",
+     "numeric": false,
+     "cited_url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx",
+     "reason": "The press release table shows both 24% (reported) and 22% (constant currency) columns.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 6,
+   "supported": 6,
+   "not_retrieved": 0
+  }
+ }
+}

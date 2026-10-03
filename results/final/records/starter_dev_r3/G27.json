@@ -1,0 +1,222 @@
+{
+ "id": "G27",
+ "category": "Trends",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "For Micron's fiscal 2026, give GAAP gross margin for each quarter, full-year revenue growth, and flag any difference in week count that distorts YoY comparisons.",
+ "grading": "Each GM% ±0.2pp (GAAP, not non-GAAP); FY growth ±0.5pp; must state week count of FY26/Q4 vs prior year as disclosed",
+ "answer": "Micron FY2026 GAAP gross margin: Q1 56.0%, Q2 74.4%, Q3 84.6%, Q4 86.8%. [G27-E1, G27-E2, G27-E3, G27-E4] Full-year revenue was USD 133,188 million versus USD 37,378 million in FY2025, growth of 256.3273%. [G27-E4] FY2026 had 53 weeks and Q4 had 14 weeks, versus 52 weeks / 13 weeks in FY2025. The extra week boosts unadjusted YoY revenue comparisons; the sources do not isolate its revenue contribution, so no week-adjusted growth is supplied. [G27-E5]",
+ "output": {
+  "answer": " I couldn’t locate explicit GAAP gross margin for every quarter in the search results; what follows is the best available data from Micron-related earnings coverage for fiscal 2026.\n\n### GAAP Gross Margin by Quarter\n| Quarter | Approx. GAAP Gross Margin |\n|---------|---------------------------|\n| Q1 FY26 | ~56.0% |\n| Q2 FY26 | ~74.4% |\n| Q3 FY26 | ~84.6% |\n| Q4 FY26 | ~87% (Forbes headline figure) |\n\n*Sources:* Yahoo Finance articles referencing the sequential progression, plus Forbes coverage of the Q4 FY26 report.\n- Sequential progression: [Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/jim-cramer-still-loves-micron-132139227.html)\n- Q4 margin context: [Forbes](https://www.forbes.com/sites/jimosman/2026/09/30/micron-earnings-crushed-estimates-its-gross-margin-is-the-warning)\n\n### Full‑Year Revenue Growth\n- Approximate FY2026 revenue: ~**$133.19 billion** (up ~256% year over year vs. FY2025).\n- This is corroborated by multiple sources showing quarterly revenue increasing more than 4× YoY by Q4 FY26.\n- Source: [StockAnalysis](https://stockanalysis.com/stocks/mu)\n\n### Week‑Count Distortion\n- **No explicit week‑count difference was flagged** in the earnings coverage I retrieved. Micron’s fiscal year ends in September and can periodically include a 53rd week, but the FY2026 transcripts/articles reviewed did not call out a week‑count disparity affecting YoY comparisons. If you need confirmation, Micron’s 10‑K risk/MD&A footnotes typically disclose 52‑ vs. 53‑week fiscal years.",
+  "tokens": {
+   "input": 106707,
+   "output": 3062
+  },
+  "tavily_credits": 12,
+  "latency_s": 38.9,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/a865823400571146ae483a7d864a4dfe",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Micron fiscal 2026 GAAP gross margin quarterly guidance revenue growth week count",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Micron\" \"fiscal 2026\" \"GAAP gross margin\" Q1 Q2 Q3 Q4 results quarterly",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Micron\" \"53 week\" \"52 week\" fiscal year calendar Q4 2025 2026 seasonality",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Micron\" \"first quarter fiscal 2026\" OR \"Q1 FY2026\" OR \"second quarter fiscal 2026\" OR \"Q2 FY2026\" GAAP gross margin revenue results 2025",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Micron fiscal Q1 Q2 Q3 Q4 2026 GAAP gross margin 56% 74% 87% quarterly results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Micron Q4 fiscal 2026 results \"fourth quarter\" GAAP gross margin revenue September 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-still-loves-micron-132139227.html",
+    "https://stockanalysis.com/stocks/mu",
+    "https://www.forbes.com/sites/jimosman/2026/09/30/micron-earnings-crushed-estimates-its-gross-margin-is-the-warning"
+   ],
+   "cited_primary": 0,
+   "retrieved": 53,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 0.833,
+   "points": [
+    {
+     "point": "Q1 GAAP gross margin within ±0.2pp of 56.0%",
+     "met": true,
+     "note": "Agent gave ~56.0%, matches reference 56.0%."
+    },
+    {
+     "point": "Q2 GAAP gross margin within ±0.2pp of 74.4%",
+     "met": true,
+     "note": "Agent gave ~74.4%, matches reference 74.4%."
+    },
+    {
+     "point": "Q3 GAAP gross margin within ±0.2pp of 84.6%",
+     "met": true,
+     "note": "Agent gave ~84.6%, matches reference 84.6%."
+    },
+    {
+     "point": "Q4 GAAP gross margin within ±0.2pp of 86.8%",
+     "met": true,
+     "note": "Agent gave ~87%, within tolerance (86.8% ±0.2pp = 86.6-87.0%)."
+    },
+    {
+     "point": "Full-year revenue growth within ±0.5pp of 256.3273%",
+     "met": true,
+     "note": "Agent gave ~256%, difference 0.3273pp within tolerance."
+    },
+    {
+     "point": "Must state week count of FY26/Q4 vs prior year as disclosed",
+     "met": false,
+     "note": "Agent did not state week counts; said no explicit week-count difference was flagged, but reference discloses FY2026 53 weeks, FY2025 52 weeks, Q4 FY2026 14 weeks, prior Q4 13 weeks."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The agent correctly provided all four quarterly GAAP gross margins and full-year revenue growth within tolerance, but failed to state the week count difference as required."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q1 FY26 GAAP Gross Margin ~56.0%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-still-loves-micron-132139227.html",
+     "reason": "Yahoo Finance article states: 'The sequential progression tells the whole story: 44.7% in Q4 FY25, 56.0% in Q1 FY26, 74.4% in Q2 FY26, and 84.6% in Q3 FY26.' This directly supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY26 GAAP Gross Margin ~74.4%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-still-loves-micron-132139227.html",
+     "reason": "Same Yahoo Finance article states 74.4% in Q2 FY26 as part of the sequential progression.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY26 GAAP Gross Margin ~84.6%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-still-loves-micron-132139227.html",
+     "reason": "Same Yahoo Finance article states 84.6% in Q3 FY26 as part of the sequential progression.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY26 GAAP Gross Margin ~87% (Forbes headline figure)",
+     "numeric": true,
+     "cited_url": "https://www.forbes.com/sites/jimosman/2026/09/30/micron-earnings-crushed-estimates-its-gross-margin-is-the-warning",
+     "reason": "Forbes article title states 'Micron's 87% Margin Signals the Next Phase of the AI Buildout' and content mentions 'its 87% gross margin'. This supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2026 revenue ~$133.19 billion (up ~256% YoY vs FY2025)",
+     "numeric": true,
+     "cited_url": "https://stockanalysis.com/stocks/mu",
+     "reason": "StockAnalysis.com states: 'In fiscal year 2026, Micron Technology's revenue was $133.19 billion, an increase of 256.33% compared to the previous year's $37.38 billion.' This directly supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Quarterly revenue increasing more than 4× YoY by Q4 FY26",
+     "numeric": true,
+     "cited_url": "https://www.reuters.com/business/micron-forecasts-quarterly-revenue-above-estimates-2026-09-30",
+     "reason": "Reuters article states: 'Fourth-quarter revenue more than quadrupled to $54.23 billion'. 'More than quadrupled' means more than 4× year-over-year, supporting the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "No explicit week-count difference was flagged in the earnings coverage I retrieved",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "This is a meta-claim about what the retrieved sources contain. The retrieved sources (Yahoo Finance, Forbes, Reuters, StockAnalysis) do not mention week-count differences. The claim is about the absence of information in the retrieved set, which is accurate.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Micron's fiscal year ends in September",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "This is general knowledge about Micron's fiscal calendar. The Reuters article is dated Sept 30 and discusses Q4 FY26 results, implying fiscal year ends in September. The investor relations page also mentions 'Fiscal Fourth Quarter Results on September 30, 2026'. This supports the claim.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Micron can periodically include a 53rd week",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "This is a general statement about fiscal year week-count practices. The retrieved sources do not confirm or deny this specifically for Micron. The claim is plausible but not directly supported by the retrieved sources.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "FY2026 transcripts/articles reviewed did not call out a week-count disparity affecting YoY comparisons",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "This is a meta-claim about the reviewed materials. The retrieved sources (earnings articles, transcripts) do not mention week-count disparities. This appears accurate based on the retrieved set.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Micron's 10-K risk/MD&A footnotes typically disclose 52- vs. 53-week fiscal years",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "This is a general statement about SEC filing practices. The retrieved sources include the investor relations page with SEC filings link but do not show the actual 10-K content. Not directly supported by retrieved sources.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 6,
+   "supported": 6,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,195 @@
+{
+ "id": "G27",
+ "category": "Trends",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "For Micron's fiscal 2026, give GAAP gross margin for each quarter, full-year revenue growth, and flag any difference in week count that distorts YoY comparisons.",
+ "grading": "Each GM% ±0.2pp (GAAP, not non-GAAP); FY growth ±0.5pp; must state week count of FY26/Q4 vs prior year as disclosed",
+ "answer": "Micron FY2026 GAAP gross margin: Q1 56.0%, Q2 74.4%, Q3 84.6%, Q4 86.8%. [G27-E1, G27-E2, G27-E3, G27-E4] Full-year revenue was USD 133,188 million versus USD 37,378 million in FY2025, growth of 256.3273%. [G27-E4] FY2026 had 53 weeks and Q4 had 14 weeks, versus 52 weeks / 13 weeks in FY2025. The extra week boosts unadjusted YoY revenue comparisons; the sources do not isolate its revenue contribution, so no week-adjusted growth is supplied. [G27-E5]",
+ "output": {
+  "answer": " Here is Micron's fiscal 2026 data compiled from its official earnings releases and SEC filings.\n\n## GAAP Gross Margin by Quarter\n\n| Quarter | GAAP Gross Margin | Source |\n|---------|------------------|--------|\n| **Q1 2026** | **56.0%** | Micron Q2 FY2026 earnings release (comparative Q1 column) |\n| **Q2 2026** | **74.4%** | Micron Q2 FY2026 earnings release |\n| **Q3 2026** | **84.6%** | Micron Q3 FY2026 earnings release |\n| **Q4 2026** | **86.8%** | Micron Q4 FY2026 earnings release |\n\n## Full-Year Revenue Growth\n- **Fiscal 2026 revenue:** $133.19 billion\n- **Fiscal 2025 revenue:** $37.38 billion\n- **Year-over-year growth:** **~256%** (roughly 3.6x)\n\n## ⚠️ Week-Count Distortion Flag\n**Fiscal 2026 is a 53-week year versus 52 weeks in fiscal 2025.** This is disclosed in Micron's SEC filings and earnings commentary:\n- Q4 FY2026 contained **14 weeks** instead of the usual 13 weeks.\n- Micron explicitly noted that the extra week impacted costs, stating that **\"fiscal Q4 operating expenses will reflect an additional workweek.\"**\n- Comparisons of Q4 YoY revenue and expense metrics are therefore slightly inflated by the extra week of operations.\n\nSources:\n- Micron Q2/Q3/Q4 FY2026 earnings releases: [investors.micron.com](https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Fiscal-Fourth-Quarter-and-Full-Year-2026-Results/default.aspx)\n- SEC Form 10-Q for period ended May 28, 2026: [sec.gov](https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm)\n- Tender Alpha Q3 FY2026 analysis confirming week impact: [tenderalpha.com](https://www.tenderalpha.com/micron-q3-2026-earnings-analysis)",
+  "tokens": {
+   "input": 23318,
+   "output": 1596
+  },
+  "tavily_credits": 6,
+  "latency_s": 11.29,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Micron fiscal 2026 GAAP gross margin Q1 Q2 Q3 Q4 guidance earnings",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Micron fiscal 2026 revenue growth full year outlook guidance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Micron 53-week fiscal year 2026 quarter week count YoY comparison distortion",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Fiscal-Fourth-Quarter-and-Full-Year-2026-Results/default.aspx",
+    "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm",
+    "https://www.tenderalpha.com/micron-q3-2026-earnings-analysis"
+   ],
+   "cited_primary": 2,
+   "retrieved": 22,
+   "retrieved_primary": 8
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Q1 GAAP gross margin 56.0% ±0.2pp",
+     "met": true,
+     "note": "Agent reports 56.0%, matches reference exactly."
+    },
+    {
+     "point": "Q2 GAAP gross margin 74.4% ±0.2pp",
+     "met": true,
+     "note": "Agent reports 74.4%, matches reference exactly."
+    },
+    {
+     "point": "Q3 GAAP gross margin 84.6% ±0.2pp",
+     "met": true,
+     "note": "Agent reports 84.6%, matches reference exactly."
+    },
+    {
+     "point": "Q4 GAAP gross margin 86.8% ±0.2pp",
+     "met": true,
+     "note": "Agent reports 86.8%, matches reference exactly."
+    },
+    {
+     "point": "Full-year revenue growth 256.3273% ±0.5pp",
+     "met": true,
+     "note": "Agent reports ~256% (256.0%), within 0.3273pp of reference 256.3273%."
+    },
+    {
+     "point": "Week count disclosure: FY26 53 weeks vs FY25 52 weeks; Q4 FY26 14 weeks vs prior 13 weeks",
+     "met": true,
+     "note": "Agent explicitly states both FY and Q4 week counts as disclosed."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All required metrics are provided within specified tolerances and week-count distortion is correctly flagged with disclosed week counts."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q1 2026 GAAP Gross Margin 56.0%",
+     "numeric": true,
+     "cited_url": "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Results-for-the-Second-Quarter-of-Fiscal-2026-03-18-2026/default.aspx",
+     "reason": "The Q2 FY2026 earnings release shows a comparative column for Q1 2026 with 'Percent of revenue 74.4% 56.0% 36.8%' and Revenue $23,860 $13,643 $8,053 (in millions), confirming Q1 2026 GAAP gross margin of 56.0%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 GAAP Gross Margin 74.4%",
+     "numeric": true,
+     "cited_url": "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Results-for-the-Second-Quarter-of-Fiscal-2026-03-18-2026/default.aspx",
+     "reason": "The Q2 FY2026 earnings release shows 'Percent of revenue 74.4% 56.0% 36.8%' for GAAP, with the first column being Q2 2026, confirming 74.4%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 2026 GAAP Gross Margin 84.6%",
+     "numeric": true,
+     "cited_url": "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Results-for-the-Third-Quarter-of-Fiscal-2026/default.aspx",
+     "reason": "The Q3 FY2026 earnings release shows 'Percent of revenue 84.6% 74.4% 37.7%' for GAAP, with the first column being Q3 2026, confirming 84.6%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 2026 GAAP Gross Margin 86.8%",
+     "numeric": true,
+     "cited_url": "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Fiscal-Fourth-Quarter-and-Full-Year-2026-Results/default.aspx",
+     "reason": "The Q4 FY2026 earnings release shows 'Percent of revenue 86.8% 84.6% 44.7%' for GAAP, with the first column being Q4 2026, confirming 86.8%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal 2026 revenue $133.19 billion",
+     "numeric": true,
+     "cited_url": "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Fiscal-Fourth-Quarter-and-Full-Year-2026-Results/default.aspx",
+     "reason": "The Q4 FY2026 earnings release shows annual Revenue $133,188 (in millions) = $133.188 billion, which rounds to $133.19 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal 2025 revenue $37.38 billion",
+     "numeric": true,
+     "cited_url": "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Fiscal-Fourth-Quarter-and-Full-Year-2026-Results/default.aspx",
+     "reason": "The Q4 FY2026 earnings release shows prior year Revenue $37,378 (in millions) = $37.378 billion, which rounds to $37.38 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Year-over-year growth ~256% (roughly 3.6x)",
+     "numeric": true,
+     "cited_url": "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Fiscal-Fourth-Quarter-and-Full-Year-2026-Results/default.aspx",
+     "reason": "Calculated from FY2026 revenue $133.188B and FY2025 revenue $37.378B: growth = (133.188-37.378)/37.378 = 2.563 = 256.3%; multiple = 133.188/37.378 = 3.563x. The answer's ~256% and roughly 3.6x are consistent.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal 2026 is a 53-week year versus 52 weeks in fiscal 2025",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm",
+     "reason": "The SEC Form 10-Q for period ended May 28, 2026 states: 'Fiscal year 2026 contains 53 weeks and fiscal year 2025 contains 52 weeks.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2026 contained 14 weeks instead of the usual 13 weeks",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm",
+     "reason": "The SEC Form 10-Q states: 'the third quarter of 2026 contains 13 weeks and the fourth quarter of 2026 contains 14 weeks.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Micron explicitly noted that 'fiscal Q4 operating expenses will reflect an additional workweek'",
+     "numeric": false,
+     "cited_url": "https://www.tenderalpha.com/micron-q3-2026-earnings-analysis",
+     "reason": "The Tender Alpha analysis states: 'Micron has said that fiscal Q4 operating expenses will reflect an additional workweek.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Comparisons of Q4 YoY revenue and expense metrics are slightly inflated by the extra week of operations",
+     "numeric": false,
+     "cited_url": "https://www.tenderalpha.com/micron-q3-2026-earnings-analysis",
+     "reason": "The Tender Alpha analysis states: 'The fiscal Q4 comparison should be interpreted with some care because fiscal 2026 is a 53-week year, compared with 52 weeks in fiscal 2025.' This supports the inference that YoY comparisons are inflated by the extra week.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 8,
+   "cited": 11,
+   "supported": 11,
+   "not_retrieved": 0
+  }
+ }
+}

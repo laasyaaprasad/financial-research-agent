@@ -1,0 +1,120 @@
+{
+ "id": "G04",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Oracle's total remaining performance obligations at the end of Q1 FY2027, and what percentage does Oracle expect to recognize as revenue over the next 12 months?",
+ "grading": "RPO ±0.5% in USD billions; next-12-month % exact as disclosed; period must be 2026-08-31",
+ "answer": "Oracle had USD 664 billion of RPO at August 31, 2026 and expected to recognize approximately 13% over the next twelve months. [G04-E1]",
+ "output": {
+  "answer": " At the end of Q1 FY2027, Oracle's total **Remaining Performance Obligations (RPO) stood at $664 billion**.\n\nOracle management expects approximately **12% of that RPO to be recognized as revenue over the next 12 months** (representing roughly $80 billion), with about half converting over the next 36 months total.\n\n**Sources:**\n- [Oracle Investor Relations – Q1 FY2027 Results](https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx)\n- [CNBC – Oracle Q1 FY2027 Earnings Report](https://www.cnbc.com/2026/09/10/oracle-orcl-q1-earnings-report-2027.html)\n- [Yahoo Finance – Oracle Q1 2027 Earnings Call Highlights](https://finance.yahoo.com/markets/stocks/articles/oracle-corp-orcl-q1-2027-090101356.html)\n- [Farstar Capital – Oracle Corporation Analysis](https://farstarcap.com/reports/oracle.html)",
+  "tokens": {
+   "input": 31675,
+   "output": 2469
+  },
+  "tavily_credits": 6,
+  "latency_s": 27.82,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle total remaining performance obligations RPO Q1 FY2027 revenue recognition next 12 months",
+     "search_depth": "advanced",
+     "time_range": "year"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Oracle\" \"Q1 FY2027\" \"remaining performance obligations\" \"12%\" OR \"next 12 months\" OR \"twelve months\" revenue recognition percentage",
+     "search_depth": "advanced",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Oracle\" \"Q1 FY2027\" \"$664 billion\" RPO \"12%\" OR \"next twelve months\" recognition",
+     "search_depth": "advanced",
+     "time_range": "month"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://farstarcap.com/reports/oracle.html",
+    "https://finance.yahoo.com/markets/stocks/articles/oracle-corp-orcl-q1-2027-090101356.html",
+    "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx",
+    "https://www.cnbc.com/2026/09/10/oracle-orcl-q1-earnings-report-2027.html"
+   ],
+   "cited_primary": 1,
+   "retrieved": 21,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 0.667,
+   "points": [
+    {
+     "point": "RPO value within ±0.5% of 664 billion USD (i.e., 660.68–667.32 billion)",
+     "met": true,
+     "note": "Agent states $664 billion, which matches the reference exactly."
+    },
+    {
+     "point": "Next-12-month percentage exact as disclosed (reference: approximately 13%)",
+     "met": false,
+     "note": "Agent states approximately 12%, while the reference discloses approximately 13%."
+    },
+    {
+     "point": "Period must be 2026-08-31 (Q1 FY2027 quarter end)",
+     "met": true,
+     "note": "Agent correctly identifies the period as Q1 FY2027, which ended August 31, 2026."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The RPO value and fiscal period are correct, but the next-12-month revenue recognition percentage (12% vs. ~13%) does not match the disclosed figure exactly, violating the exact-match requirement."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "At the end of Q1 FY2027, Oracle's total Remaining Performance Obligations (RPO) stood at $664 billion",
+     "numeric": true,
+     "cited_url": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx",
+     "reason": "The Oracle Investor Relations press release states: 'Oracle booked more than $30 billion of additional AI cloud contracts in Q1 increasing its RPO to $664 billion.' This directly supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Oracle management expects approximately 12% of that RPO to be recognized as revenue over the next 12 months (representing roughly $80 billion)",
+     "numeric": true,
+     "cited_url": "https://www.cnbc.com/2026/09/10/oracle-orcl-q1-earnings-report-2027.html",
+     "reason": "The CNBC article discusses a 12% conversion expectation for the prior quarter's $638 billion RPO ('Oracle expects to recognize about 12% of that, roughly $77 billion, over the next 12 months'). It does not state that management gave the same 12% guidance for the $664 billion RPO at the end of Q1 FY2027. The other cited sources (Yahoo Finance, Farstar Capital) either do not mention a 12% figure or attribute it to sell‑side estimates, not management. Therefore, the claim that management expects 12% of the $664 billion RPO to convert in 12 months is not supported by the cited sources.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "About half of the RPO is expected to convert over the next 36 months total",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/oracle-corp-orcl-q1-2027-090101356.html",
+     "reason": "The Yahoo Finance article states: 'Remaining Performance Obligations (RPO): Increased $26 billion from Q4; ~half expected to convert to sales over next 36 months.' Farstar Capital also notes: 'roughly half of the backlog converts to revenue within thirty‑six months.' This supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 3,
+   "supported": 2,
+   "not_retrieved": 0
+  }
+ }
+}

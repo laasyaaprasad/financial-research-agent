@@ -1,0 +1,210 @@
+{
+ "id": "G07",
+ "category": "Numerical reasoning",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Salesforce's current RPO at the end of Q2 FY2027, its YoY growth in both nominal and constant currency, and what share of total RPO it represents?",
+ "grading": "cRPO ±0.5%, USD billions; growth rates exact as disclosed (both labeled correctly); share ±1pp",
+ "answer": "Salesforce cRPO at July 31, 2026 was USD 33.5 billion, up 14% YoY in both nominal and constant currency terms. Total RPO was USD 66.3 billion, so cRPO represented 50.5279% of total RPO. [G07-E1]",
+ "output": {
+  "answer": " Based on Salesforce's Q2 FY2027 results (ended July 31, 2026), here are the key RPO figures:\n\n| Metric | Value |\n|--------|-------|\n| **Current RPO (cRPO)** | **$33.5 billion** |\n| **YoY Growth (Nominal)** | **14%** |\n| **YoY Growth (Constant Currency)** | **14%** |\n| **Total RPO** | **$66.3 billion** |\n| **Current RPO as Share of Total RPO** | **~50.5%** |\n\n### Additional Context:\n- cRPO represents contracted revenue expected to be recognized over the next 12 months and is considered Salesforce's most important forward-looking growth indicator.\n- Total RPO grew 11% YoY to $66.3 billion.\n- The 14% cRPO growth accelerated from 13% in Q1 FY2027 and 10% in Q2 FY2026.\n- Note: Informatica's on-premise license sales can introduce some volatility in cRPO movement, and Salesforce's pending acquisitions of Contentful and Fin were **not** included in this Q2 cRPO figure.\n\n**Sources:**\n- Yahoo Finance: https://finance.yahoo.com/markets/stocks/articles/salesforce-delivers-record-second-quarter-200100684.html\n- Salesforce Investor Relations: https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx\n- The Globe and Mail (Earnings Call Transcript): https://www.theglobeandmail.com/investing/markets/stocks/CRM/pressreleases/4355982/salesforce-crm-q2-2027-earnings-call-transcript\n- ORM News: https://orm-tech.com/news/20260903-salesforce-q2-fy27-revenue-hits-11-345b-with-14-crpo-growth",
+  "tokens": {
+   "input": 58119,
+   "output": 2535
+  },
+  "tavily_credits": 5,
+  "latency_s": 23.65,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Salesforce RPO remaining performance obligation Q2 FY2027 fiscal year 2027"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Salesforce total RPO remaining performance obligation Q2 FY2027 $33.5 billion"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Salesforce total RPO $67 billion Q2 FY2027 earnings report"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"total RPO\" OR \"remaining performance obligation\" Salesforce Q2 FY2027 $67 billion"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Salesforce cRPO constant currency 14% CC Q2 FY2027 exact total RPO"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/salesforce-delivers-record-second-quarter-200100684.html",
+    "https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx",
+    "https://orm-tech.com/news/20260903-salesforce-q2-fy27-revenue-hits-11-345b-with-14-crpo-growth",
+    "https://www.theglobeandmail.com/investing/markets/stocks/CRM/pressreleases/4355982/salesforce-crm-q2-2027-earnings-call-transcript"
+   ],
+   "cited_primary": 1,
+   "retrieved": 27,
+   "retrieved_primary": 4
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "cRPO value in USD billions (within ±0.5% of 33.5)",
+     "met": true,
+     "note": "Agent reports $33.5 billion, exactly matching reference 33.5 billion."
+    },
+    {
+     "point": "YoY growth nominal (exact as disclosed)",
+     "met": true,
+     "note": "Agent reports 14%, matching reference 14%."
+    },
+    {
+     "point": "YoY growth constant currency (exact as disclosed)",
+     "met": true,
+     "note": "Agent reports 14%, matching reference 14%."
+    },
+    {
+     "point": "cRPO share of total RPO (within ±1 percentage point)",
+     "met": true,
+     "note": "Agent reports ~50.5%, reference is 50.5279%; difference is 0.0279pp, well within ±1pp."
+    },
+    {
+     "point": "Fiscal period correctly identified (Q2 FY2027 ended July 31, 2026)",
+     "met": true,
+     "note": "Agent explicitly states 'Q2 FY2027 results (ended July 31, 2026)'."
+    },
+    {
+     "point": "cRPO vs total RPO not confused",
+     "met": true,
+     "note": "Agent clearly separates cRPO ($33.5B) and total RPO ($66.3B)."
+    },
+    {
+     "point": "Nominal vs constant-currency growth labeled correctly",
+     "met": true,
+     "note": "Agent labels both growth rates as 'YoY Growth (Nominal)' and 'YoY Growth (Constant Currency)' with correct values."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All requirements are met: cRPO value, both growth rates, share percentage, fiscal period, and correct labeling are all accurate within specified tolerances."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Current RPO (cRPO) was $33.5 billion in Q2 FY2027 (ended July 31, 2026)",
+     "numeric": true,
+     "cited_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx",
+     "reason": "The Salesforce Investor Relations press release states: 'Current remaining performance obligation (\"cRPO\") of $33.5 billion, up 14% year-over-year (\"Y/Y\") and in constant currency (\"CC\")'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "cRPO YoY growth (nominal) was 14%",
+     "numeric": true,
+     "cited_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx",
+     "reason": "The same press release reports cRPO 'up 14% year-over-year (\"Y/Y\")'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "cRPO YoY growth (constant currency) was 14%",
+     "numeric": true,
+     "cited_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx",
+     "reason": "The press release explicitly says cRPO grew 14% 'in constant currency (\"CC\")'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total RPO was $66.3 billion",
+     "numeric": true,
+     "cited_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx",
+     "reason": "The press release states: 'Remaining performance obligation of $66.3 billion, up 11% Y/Y'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Current RPO as a share of Total RPO was approximately 50.5%",
+     "numeric": true,
+     "cited_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx",
+     "reason": "Derived from the two reported figures: $33.5B / $66.3B = 0.5053 (50.5%). Both numbers are in the same press release.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "cRPO represents contracted revenue expected to be recognized over the next 12 months",
+     "numeric": false,
+     "cited_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx",
+     "reason": "The press release defines RPO as 'contracted revenue that has not yet been recognized, which includes unearned revenue and unbilled amounts that will be recognized as revenue in future periods.' cRPO is the current (next‑12‑month) portion of RPO.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "cRPO is considered Salesforce's most important forward‑looking growth indicator",
+     "numeric": false,
+     "cited_url": "https://www.theglobeandmail.com/investing/markets/stocks/CRM/pressreleases/4355982/salesforce-crm-q2-2027-earnings-call-transcript",
+     "reason": "The earnings call transcript highlights the $33.5B CRPO figure as the 'most crucial data point' and notes that CRPO growth outpacing revenue growth 'completely invalidates the fear that their pipeline was drying up.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total RPO grew 11% YoY to $66.3 billion",
+     "numeric": true,
+     "cited_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx",
+     "reason": "The press release explicitly states: 'Remaining performance obligation of $66.3 billion, up 11% Y/Y'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The 14% cRPO growth accelerated from 13% in Q1 FY2027 and 10% in Q2 FY2026",
+     "numeric": true,
+     "cited_url": "https://orm-tech.com/news/20260903-salesforce-q2-fy27-revenue-hits-11-345b-with-14-crpo-growth",
+     "reason": "The ORM News article reports: 'cRPO growth reached 14% in Q2 FY27 after 10% in Q2 FY26 and 13% in Q1 FY27.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Informatica's on‑premise license sales can introduce volatility in cRPO movement",
+     "numeric": false,
+     "cited_url": "https://www.theglobeandmail.com/investing/markets/stocks/CRM/pressreleases/4355982/salesforce-crm-q2-2027-earnings-call-transcript",
+     "reason": "The transcript mentions 'license revenue headwinds and volatility in integration and analytics' but does not specifically attribute cRPO volatility to Informatica's on‑premise license sales.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Salesforce's pending acquisitions of Contentful and Fin were not included in the Q2 cRPO figure",
+     "numeric": false,
+     "cited_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx",
+     "reason": "The press release states that Q3 cRPO guidance 'does not include any contribution from the pending acquisitions of Contentful and Fin,' implying they were also excluded from the reported Q2 figure.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 7,
+   "numeric_cited": 7,
+   "cited": 11,
+   "supported": 10,
+   "not_retrieved": 0
+  }
+ }
+}

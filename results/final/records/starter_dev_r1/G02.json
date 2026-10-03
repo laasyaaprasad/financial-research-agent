@@ -1,0 +1,219 @@
+{
+ "id": "G02",
+ "category": "Qualitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "Who is Apple's CEO right now, when did the change take effect, and what is Tim Cook's current role?",
+ "grading": "Reference-free: identify the CEO at the run timestamp, effective date and Cook role, with dated primary support. The October 1, 2026 snapshot is John Ternus, effective September 1, with Cook executive chairman; do not apply this snapshot blindly to later runs.",
+ "answer": "As of October 1, 2026, John Ternus is Apple CEO. The transition took effect September 1, 2026; Tim Cook became executive chairman of the board. [G02-E1]",
+ "output": {
+  "answer": " Based on my research, **John Ternus** is Apple's current CEO, and **Tim Cook** is now Apple's **Executive Chairman** of the board.\n\n**Timeline:**\n- The change took effect on **September 1, 2026**, according to Apple's official announcement and multiple news sources\n- Tim Cook served as CEO for 15 years, from 2011 to 2026, before transitioning to his current role\n- John Ternus, previously Apple's Senior Vice President of Hardware Engineering, succeeded him as CEO\n\n**Tim Cook's Current Role:**\nTim Cook is now Apple's **Executive Chairman** of the Board, where he focuses on global policy and regulatory matters, including engagement with policymakers around the world.\n\nSources:\n- Apple Newsroom announcement: [Apple Leadership](https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo)\n- Reuters: [Cook hands Apple to Ternus](https://www.reuters.com/legal/transactional/cook-hands-apple-ternus-bigger-richer-catching-up-ai-race-2026-09-01)\n- Wikipedia: [John Ternus](https://en.wikipedia.org/wiki/John_Ternus)\n\n*Note: These sources reference dates in 2026 for the leadership transition. If you're asking from a date prior to September 2026, Tim Cook would still have been CEO at that time.*",
+  "tokens": {
+   "input": 84220,
+   "output": 5343
+  },
+  "tavily_credits": 6,
+  "latency_s": 50.36,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Apple CEO current 2024 Tim Cook role change",
+     "search_depth": "basic",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Tim Cook Apple CEO current September 2024",
+     "search_depth": "basic",
+     "time_range": "week"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Tim Cook\" Apple CEO OR \"John Ternus\" site:apple.com OR site:reuters.com OR site:bloomberg.com OR site:bbc.com",
+     "search_depth": "basic"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Tim Cook Apple CEO 2024 2025 current status Apple.com",
+     "search_depth": "basic",
+     "time_range": "year",
+     "include_domains": [
+      "apple.com",
+      "reuters.com",
+      "bloomberg.com",
+      "cnbc.com",
+      "bbc.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Tim Cook\" Apple CEO 2024 2025 current",
+     "search_depth": "basic",
+     "time_range": "month",
+     "include_domains": [
+      "apple.com",
+      "reuters.com",
+      "bloomberg.com",
+      "cnbc.com",
+      "bbc.com",
+      "cnn.com",
+      "wsj.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Tim Cook Apple CEO 2024 2025 news current",
+     "search_depth": "basic",
+     "time_range": "month",
+     "include_domains": [
+      "apple.com",
+      "reuters.com",
+      "bloomberg.com",
+      "cnbc.com",
+      "bbc.com",
+      "cnn.com"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://en.wikipedia.org/wiki/John_Ternus",
+    "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo",
+    "https://www.reuters.com/legal/transactional/cook-hands-apple-ternus-bigger-richer-catching-up-ai-race-2026-09-01"
+   ],
+   "cited_primary": 1,
+   "retrieved": 50,
+   "retrieved_primary": 2
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Identify the CEO at the run timestamp",
+     "met": true,
+     "note": "Agent states John Ternus is Apple's current CEO, consistent with retrieved sources indicating Ternus became CEO on September 1, 2026."
+    },
+    {
+     "point": "Identify the effective date of the change",
+     "met": true,
+     "note": "Agent states change took effect September 1, 2026, matching multiple retrieved sources (e.g., Fortune Sep 2, 2026; Firstpost Sep 6, 2026; bbntimes)."
+    },
+    {
+     "point": "Identify Tim Cook's current role",
+     "met": true,
+     "note": "Agent states Tim Cook is now Executive Chairman of the Board, supported by retrieved sources (e.g., biographyfocus.us, bbntimes, Fortune)."
+    },
+    {
+     "point": "Provide dated primary support",
+     "met": true,
+     "note": "Agent cites Apple Newsroom announcement (April 2026), Reuters (Sep 1, 2026), and Wikipedia as dated primary sources; retrieved sources also contain dated primary support (Fortune, Firstpost)."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly identifies John Ternus as CEO, the September 1, 2026 effective date, and Tim Cook's role as Executive Chairman, with dated primary support from both cited and retrieved sources."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "John Ternus is Apple's current CEO",
+     "numeric": false,
+     "cited_url": "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo",
+     "reason": "Apple Newsroom announcement states John Ternus, senior vice president of Hardware Engineering, will become Apple's next chief executive officer effective September 1, 2026. Wikipedia confirms he has been CEO since September 1, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tim Cook is now Apple's Executive Chairman of the board",
+     "numeric": false,
+     "cited_url": "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo",
+     "reason": "Apple Newsroom announcement states Tim Cook will become executive chairman of Apple's board of directors effective September 1, 2026. Multiple other sources confirm this transition.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The change took effect on September 1, 2026",
+     "numeric": true,
+     "cited_url": "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo",
+     "reason": "Apple Newsroom announcement explicitly states the transition is effective on September 1, 2026. Wikipedia and multiple news sources confirm this date.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tim Cook served as CEO for 15 years, from 2011 to 2026",
+     "numeric": true,
+     "cited_url": "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo",
+     "reason": "Apple Newsroom states Tim Cook became CEO in 2011. The transition to Executive Chairman in 2026 marks 15 years (2011-2026). Multiple sources confirm 15-year tenure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "John Ternus was previously Apple's Senior Vice President of Hardware Engineering",
+     "numeric": false,
+     "cited_url": "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo",
+     "reason": "Apple Newsroom announcement identifies John Ternus as 'senior vice president of Hardware Engineering' before becoming CEO. Wikipedia and other sources confirm this prior role.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tim Cook's current role focuses on global policy and regulatory matters",
+     "numeric": false,
+     "cited_url": "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo",
+     "reason": "Apple Newsroom states: 'As executive chairman, Cook will assist with certain aspects of the company, including engaging with policymakers around the world.' This matches the claim about global policy and regulatory matters.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Apple Newsroom announcement source exists at the cited URL",
+     "numeric": false,
+     "cited_url": "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo",
+     "reason": "The URL is present in retrieved sources and contains the official Apple announcement with all key details about the leadership transition.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Reuters source exists at the cited URL",
+     "numeric": false,
+     "cited_url": "https://www.reuters.com/legal/transactional/cook-hands-apple-ternus-bigger-richer-catching-up-ai-race-2026-09-01",
+     "reason": "Multiple Reuters URLs appear in retrieved sources covering the leadership transition, though the exact cited URL may be a variant. The content matches Reuters reporting on the topic.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Wikipedia source exists at the cited URL",
+     "numeric": false,
+     "cited_url": "https://en.wikipedia.org/wiki/John_Ternus",
+     "reason": "Wikipedia page for John Ternus is in retrieved sources and confirms he has been CEO since September 1, 2026, with background details matching other sources.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 2,
+   "numeric_cited": 2,
+   "cited": 9,
+   "supported": 9,
+   "not_retrieved": 0
+  }
+ }
+}

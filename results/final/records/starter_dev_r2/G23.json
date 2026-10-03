@@ -1,0 +1,202 @@
+{
+ "id": "G23",
+ "category": "Financial modeling",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "Using NVIDIA's reported Q1 and Q2 FY2027 revenue plus the midpoint of its Q3 FY2027 outlook, what is the implied revenue for the first three quarters of FY2027, and the growth vs the first three quarters of FY2026?",
+ "grading": "Implied 9M revenue ±0.5% (USD millions); growth ±0.5pp; must state which values are actual vs guidance",
+ "answer": "Implied first-three-quarter FY2027 revenue is USD 285,836 million: Q1 actual USD 81,615 million + Q2 actual USD 96,221 million + Q3 guidance midpoint USD 108,000 million. [G23-E1] Against FY2026 nine-month actual revenue of USD 147,811 million, growth is 93.3794%. [G23-E2] This combines two actual quarters and one guided quarter; it is not reported nine-month revenue. The six-month filing total differs from the sum of the displayed quarters by USD 1 million due to rounding. [G23-E3]",
+ "output": {
+  "answer": " Based on my research, here are NVIDIA's implied first three quarters of FY2027 revenue and the year-over-year comparison:\n\n## FY2027 Q1–Q3 Implied Revenue\n\n| Quarter | Revenue |\n|---------|---------|\n| Q1 FY2027 (reported) | **$81.6B** |\n| Q2 FY2027 (reported) | **$96.2B** |\n| Q3 FY2027 (midpoint of guidance) | **$108.0B** |\n| **Total 9 Months FY2027** | **$285.8B** |\n\nSources: [Q1 FY2027](https://finance.yahoo.com/markets/stocks/articles/nvidia-q1-fy2027-earnings-record-214649637.html), [Q2 FY2027](https://finance.yahoo.com/technology/articles/nvidia-96b-quarter-proves-compute-222203690.html), [Q3 FY2027 guidance midpoint](https://finance.yahoo.com/markets/stocks/articles/nvidia-just-doubled-sales-sold-021607724.html)\n\n## Comparison vs. First Three Quarters of FY2026\n\n| Quarter | Revenue |\n|---------|---------|\n| Q1 FY2026 (reported) | **$44.06B** |\n| Q2 FY2026 (reported) | **$46.7B** |\n| Q3 FY2026 (reported) | **$57.0B** |\n| **Total 9 Months FY2026** | **$147.76B** |\n\nSources: [Q1 FY2026](https://finance.yahoo.com/markets/stocks/articles/most-covered-stock-earth-unstoppable-153658420.html), [Q2 FY2026](https://finance.yahoo.com/quote/NVDA/earnings/NVDA-Q2-2026-earnings_call-351238.html), [Q3 FY2026](https://finance.yahoo.com/news/nvidia-posts-31-9bn-net-085459256.html)\n\n## Growth\n\n- **Absolute increase:** $285.8B − $147.76B = **+$138.0B**\n- **Year-over-year growth:** **~93.4%**\n\nIn summary, the first three quarters of FY2027 imply approximately **$285.8 billion in revenue**, representing roughly **93% growth** versus the comparable year-ago period ($147.8 billion).",
+  "tokens": {
+   "input": 93452,
+   "output": 2207
+  },
+  "tavily_credits": 12,
+  "latency_s": 24.8,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q1 FY2027 earnings revenue reported",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q2 FY2027 earnings revenue reported $96.2 billion",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q3 FY2027 guidance outlook $108 billion midpoint",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q1 Q2 Q3 FY2026 revenue historical earnings",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q3 FY2026 revenue quarterly results third quarter",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q1 FY2026 Q2 FY2026 revenue actual results first quarter second quarter",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/most-covered-stock-earth-unstoppable-153658420.html",
+    "https://finance.yahoo.com/markets/stocks/articles/nvidia-just-doubled-sales-sold-021607724.html",
+    "https://finance.yahoo.com/markets/stocks/articles/nvidia-q1-fy2027-earnings-record-214649637.html",
+    "https://finance.yahoo.com/news/nvidia-posts-31-9bn-net-085459256.html",
+    "https://finance.yahoo.com/quote/NVDA/earnings/NVDA-Q2-2026-earnings_call-351238.html",
+    "https://finance.yahoo.com/technology/articles/nvidia-96b-quarter-proves-compute-222203690.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 38,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Implied 9M revenue for FY2027 (Q1 actual + Q2 actual + Q3 guidance midpoint) within ±0.5% of reference (285,836 million USD)",
+     "met": true,
+     "note": "Agent's implied revenue $285.8B (285,800 million) vs reference 285,836 million; difference 36 million (0.0126%) within tolerance."
+    },
+    {
+     "point": "Growth vs first three quarters FY2026 within ±0.5 percentage points of reference (93.3794%)",
+     "met": true,
+     "note": "Agent's growth ~93.4% vs reference 93.3794%; difference 0.0206pp within tolerance."
+    },
+    {
+     "point": "Answer clearly states which values are actual reported vs guidance midpoint",
+     "met": true,
+     "note": "Agent labels Q1 and Q2 FY2027 as 'reported', Q3 as 'midpoint of guidance'; FY2026 quarters as 'reported'."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All three requirements satisfied; numbers within tolerance and actual/guidance distinction made."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q1 FY2027 revenue: $81.6B (reported)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-q1-fy2027-earnings-record-214649637.html",
+     "reason": "Retrieved source states: 'Nvidia reported record revenue of $81.6 billion for the first quarter of fiscal 2027'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2027 revenue: $96.2B (reported)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/technology/articles/nvidia-96b-quarter-proves-compute-222203690.html",
+     "reason": "Retrieved source states: 'NVIDIA's Q2 FY2027 revenue reached $96.2 billion, a 106% increase year-over-year'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2027 revenue: $108.0B (midpoint of guidance)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-just-doubled-sales-sold-021607724.html",
+     "reason": "Retrieved source states: 'guided Q3 to $108.0 billion, plus or minus 2%' and 'guided Q3 to $108B on surging AI demand'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total 9 months FY2027 revenue: $285.8B",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Derived from sum of Q1 ($81.6B) + Q2 ($96.2B) + Q3 ($108.0B) = $285.8B. Arithmetic verified.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Q1 FY2026 revenue: $44.06B (reported)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/most-covered-stock-earth-unstoppable-153658420.html",
+     "reason": "Retrieved source states: 'quarterly revenue has climbed from $44.06 billion in Q1 FY2026 to $46.74 billion in Q2'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 revenue: $46.7B (reported)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/NVDA/earnings/NVDA-Q2-2026-earnings_call-351238.html",
+     "reason": "Retrieved source states: 'NVIDIA delivered record Q2 FY26 revenue of $46.7B'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 revenue: $57.0B (reported)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/nvidia-posts-31-9bn-net-085459256.html",
+     "reason": "Retrieved source states: 'The company posted revenue of $57bn for the three months ended 26 October 2025'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total 9 months FY2026 revenue: $147.76B",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Derived from sum of Q1 ($44.06B) + Q2 ($46.7B) + Q3 ($57.0B) = $147.76B. Arithmetic verified.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Absolute increase: $138.0B",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Derived from $285.8B - $147.76B = $138.04B, rounded to $138.0B. Arithmetic verified.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Year-over-year growth: ~93.4%",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Derived from ($285.8B - $147.76B) / $147.76B = 0.9342 ≈ 93.4%. Arithmetic verified.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 10,
+   "numeric_cited": 6,
+   "cited": 6,
+   "supported": 6,
+   "not_retrieved": 0
+  }
+ }
+}

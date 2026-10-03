@@ -1,0 +1,156 @@
+{
+ "id": "T06",
+ "category": "Numerical reasoning",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "By what percentage did AMD's Data Center segment revenue grow year over year in Q2 2026 (quarter ended June 27, 2026 versus the quarter ended June 28, 2025)? Compute it from the reported segment revenue figures.",
+ "grading": "107.35% ±0.3pp; the company's own rounded 107% is also accepted. Inputs: Data Center segment revenue USD 6,718M (Q2 2026) and USD 3,240M (Q2 2025). Fail if total-company, sequential or six-month growth is given.",
+ "answer": "Data Center segment revenue was USD 6,718 million in Q2 2026 versus USD 3,240 million in Q2 2025, so growth = 6,718 / 3,240 - 1 = 107.35% (AMD's release rounds this to 107%). [T06-E1, T06-E2]",
+ "output": {
+  "answer": " Based on the reported segment figures:\n\n| Quarter Ended | Data Center Segment Revenue |\n|---------------|----------------------------|\n| June 27, 2026 (Q2 2026) | **$6.70 billion** |\n| June 28, 2025 (Q2 2025) | **$3.24 billion** |\n\n**Calculation:**\nYoY growth = ($6.70B − $3.24B) / $3.24B × 100  \nYoY growth = $3.46B / $3.24B × 100  \n**YoY growth ≈ 106.8%**, which rounds to **107%**\n\nAMD’s Data Center segment revenue **grew ~107% year over year in Q2 2026**.\n\n**Sources:**\n- Q2 2026 revenue ($6.70B): [Yahoo Finance – AMD Q2 2026 earnings call](https://finance.yahoo.com/quote/AMD/earnings/AMD-Q2-2026-earnings_call-660937.html)\n- Q2 2025 revenue ($3.24B): [Yahoo Finance – AMD Q2 2025 segment results](https://finance.yahoo.com/news/amd-stock-declines-earnings-drop-113520802.html) and [Yahoo Finance – AMD Data Center growth](https://finance.yahoo.com/news/amd-rides-accelerating-data-center-173100260.html)",
+  "tokens": {
+   "input": 45836,
+   "output": 2535
+  },
+  "tavily_credits": 8,
+  "latency_s": 25.04,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/399572aee5e08f73ed000a76d3f3d1e0",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AMD Data Center segment revenue Q2 2026 June 27 2026 earnings results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AMD Data Center segment revenue Q2 2025 June 28 2025 quarterly earnings $3.2 billion",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AMD Q2 2025 press release data center segment revenue exact amount June 28 2025 10-Q 10K",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"AMD\" \"June 28, 2025\" \"data center\" \"segment revenue\" \"$3.24\" OR \"$3.2 billion\" OR \"$3.21\" OR \"323\" OR \"324\"",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/news/amd-rides-accelerating-data-center-173100260.html",
+    "https://finance.yahoo.com/news/amd-stock-declines-earnings-drop-113520802.html",
+    "https://finance.yahoo.com/quote/AMD/earnings/AMD-Q2-2026-earnings_call-660937.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 35,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "The answer provides the year-over-year growth percentage for Data Center segment revenue in Q2 2026 vs Q2 2025.",
+     "met": true,
+     "note": "The agent explicitly states 'AMD’s Data Center segment revenue grew ~107% year over year in Q2 2026.'"
+    },
+    {
+     "point": "The computed percentage is within 107.35% ±0.3pp or the company's rounded 107% is accepted.",
+     "met": true,
+     "note": "The agent's final answer is 107%, which matches the company's own rounded figure and is explicitly accepted by the grading rule."
+    },
+    {
+     "point": "The answer does not give total-company growth, sequential Q/Q change, or six-month comparison.",
+     "met": true,
+     "note": "The agent only presents the year-over-year segment growth; no other growth metrics are mentioned."
+    },
+    {
+     "point": "The answer is computed from the reported segment revenue figures (6,718M and 3,240M).",
+     "met": true,
+     "note": "The agent uses $6.70B and $3.24B, which are rounded versions of the reported figures (6,718M and 3,240M), and computes the growth from them."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly computed the year-over-year growth for the Data Center segment using the reported revenue figures (rounded to billions), arriving at ~107%, which matches the company's own rounded figure and falls within the accepted tolerance."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "AMD Data Center segment revenue for Q2 2026 (quarter ended June 27, 2026) was $6.70 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/AMD/earnings/AMD-Q2-2026-earnings_call-660937.html",
+     "reason": "The retrieved transcript states: 'data center revenue grew 107% year-over-year to a record $6.7 billion'. This matches the claimed $6.70 billion figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "AMD Data Center segment revenue for Q2 2025 (quarter ended June 28, 2025) was $3.24 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/amd-stock-declines-earnings-drop-113520802.html",
+     "reason": "The retrieved article shows a segment table with 'Data center $3.24 billion' for Q2 2025. A second cited source (https://finance.yahoo.com/news/amd-rides-accelerating-data-center-173100260.html) also states 'Data Center revenues, which reached $3.24 billion'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Year-over-year growth calculation: ($6.70B − $3.24B) / $3.24B × 100 = 106.8%, rounding to 107%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/AMD/earnings/AMD-Q2-2026-earnings_call-660937.html",
+     "reason": "Using the two revenue figures above: (6.70 - 3.24) / 3.24 = 3.46 / 3.24 = 1.0679; ×100 = 106.79%, which rounds to 106.8% and to 107%. The arithmetic is correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "AMD's Data Center segment revenue grew ~107% year over year in Q2 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/AMD/earnings/AMD-Q2-2026-earnings_call-660937.html",
+     "reason": "The transcript explicitly says 'data center revenue grew 107% year-over-year to a record $6.7 billion', directly supporting the ~107% growth claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Quarter ended June 27, 2026 corresponds to Q2 2026",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/quote/AMD/earnings/AMD-Q2-2026-earnings_call-660937.html",
+     "reason": "The retrieved transcript is titled 'AMD Q2 FY2026 earnings call transcript' and discusses second quarter 2026 results, but does not explicitly state the quarter-end date of June 27, 2026. The date is plausible but not directly verified in the retrieved text.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Quarter ended June 28, 2025 corresponds to Q2 2025",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/news/amd-stock-declines-earnings-drop-113520802.html",
+     "reason": "The retrieved article shows a segment table for Q2 2025 but does not explicitly state the quarter-end date of June 28, 2025. The date is plausible but not directly verified in the retrieved text.",
+     "supported": null,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 6,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,189 @@
+{
+ "id": "G13",
+ "category": "Qualitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "What are the latest developments in the past 30 days on U.S. export controls affecting NVIDIA's data center GPU sales to China, and what does NVIDIA's own Q3 FY2027 outlook assume about China?",
+ "grading": "Reference-free. Key points: (1) every development dated and within window; (2) quotes/paraphrases NVIDIA's own stated China assumption from the Q2 FY27 outlook; (3) clearly separates company statements from media/analyst speculation; (4) no uncited causal claims about revenue impact",
+ "answer": "Snapshot: September 2–October 1, 2026. September 9: C4ADS published evidence of restricted NVIDIA chips reaching China through institutional purchases and Southeast Asian trade networks; this is an enforcement-gap report, not a new U.S. rule. [G13-E1] September 28: Ars, citing The Information, reported China considering RTX Pro 5500 purchases by Alibaba and ByteDance; approval was uncertain and this concerns Chinese import policy, not a confirmed U.S. export-rule change. [G13-E2] The reviewed sources do not establish a newly enacted U.S. control in this window. Separately, NVIDIA’s August 26 outlook assumes no Data Center compute revenue from China in Q3 FY2027, within its USD 108 billion ±2% total-revenue guide. That company statement is older context and remains distinct from September reporting. [G13-E3]",
+ "output": {
+  "answer": " Here are the key developments in the past 30 days, along with NVIDIA’s official quarterly stance:\n\n## Latest U.S. Export Control Developments (Past 30 Days)\n\n**Potential Partial Reopening for Lower-Tier Chips**  \nThere are signals that China may approve limited imports of NVIDIA’s **RTX Pro 5500** workstation GPU for domestic hyperscalers like **Alibaba and ByteDance**. This chip is not a top-tier data-center accelerator, but it remains capable of training and running AI models. If approved, it would mark a shift from Beijing’s previous blocking of advanced NVIDIA imports, though it would not affect the restricted data-center product lines (such as Blackwell). (*Sources: [Barchart](https://www.barchart.com/story/news/4863560/bytedance-could-buy-1-million-nvidia-gpus-but-don-t-bank-on-it-yet), [Chosun](https://www.chosun.com/english/industry-en/2026/09/29/LHQPIZVHYJEPXCMXWK2LH4DF4I)*)\n\n**Circumvention and Overseas Compute Deals**  \nChinese firms continue working around direct-export bans by accessing NVIDIA chips through third countries and cloud leases:\n- **Tencent** reportedly leased **100,000 advanced NVIDIA accelerators** through **Oracle Cloud**, routing compute outside mainland China to bypass U.S. restrictions. (*Source: [Mezha](https://mezha.net/eng/news/522240f4_tencent_leases_100-000_ai)*)\n- An investigative report documented how restricted GPUs (A100, H100, Blackwell chips) are being transshipped through **Malaysia, Vietnam, and India**, with one Malaysian buyer accumulating roughly **$2 billion** in restricted GPUs over 12 months and then selling cloud capacity to Chinese customers over the internet. (*Sources: [Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/billions-worth-of-export-restricted-ai-accelerators-sold-to-china-report-details-how-chinese-firms-skirt-trumps-regulations), [Tech Insider](https://tech-insider.org/megaspeed-speedmatrix-malaysia-nvidia-chips-2026)*)\n\n**Market Dynamics Inside China**  \nDespite official restrictions, demand for NVIDIA silicon remains strong because Chinese domestic alternatives (notably Huawei Ascend and Cambricon) have seen price hikes of up to **50%** due to a shortage of high-bandwidth memory (HBM), narrowing the cost gap with NVIDIA’s compliant chips. (*Source: [Yahoo Finance](https://finance.yahoo.com/technology/ai/articles/nvidia-export-ban-backfires-chinese-132055400.html), [Shattered.io](https://shattered.io/china-ai-chip-price-hikes-hbm-shortage-2026)*)\n\n---\n\n## NVIDIA’s Q3 FY2027 Outlook Assumption on China\n\nNVIDIA’s official Q3 FY2027 guidance explicitly **assumes zero China Data Center compute revenue**.\n\n- **Q3 FY2027 Revenue Guidance:** **$108 billion** (± 2%)\n- **China assumption:** The company is **“not assuming any Data Center compute revenue from China in its outlook.”**\n- **Context:** In the prior quarter (Q2 FY2027), China Hopper-class shipments amounted to **less than 1%** of total Data Center revenue. Management has maintained this conservative stance because U.S. export controls continue to block the sale of high-end data-center GPUs to China.\n\n(*Sources: [BigGo Finance](https://finance.biggo.com/news/c40c9fc3-90fb-4176-bd15-db35b8a64b8f), [24/7 Wall St](https://247wallst.com/investing/2026/09/29/price-prediction-in-2-years-nvidia-will-be-worth-this-much), [Yahoo Finance](https://finance.yahoo.com/technology/ai/articles/ai-investment-accelerates-top-stocks-141800879.html)*)",
+  "tokens": {
+   "input": 13581,
+   "output": 2115
+  },
+  "tavily_credits": 4,
+  "latency_s": 13.26,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/52973c0e0443a4cbcc8af7ba11a22d0a",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "U.S. export controls NVIDIA data center GPU China latest developments past 30 days",
+     "time_range": "month",
+     "search_depth": "advanced",
+     "topic": "news"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA quarterly outlook China data center GPU sales Q3 FY2027 or latest earnings guidance",
+     "search_depth": "advanced",
+     "time_range": "month",
+     "topic": "news"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://247wallst.com/investing/2026/09/29/price-prediction-in-2-years-nvidia-will-be-worth-this-much",
+    "https://finance.biggo.com/news/c40c9fc3-90fb-4176-bd15-db35b8a64b8f",
+    "https://finance.yahoo.com/technology/ai/articles/ai-investment-accelerates-top-stocks-141800879.html",
+    "https://finance.yahoo.com/technology/ai/articles/nvidia-export-ban-backfires-chinese-132055400.html",
+    "https://mezha.net/eng/news/522240f4_tencent_leases_100-000_ai",
+    "https://shattered.io/china-ai-chip-price-hikes-hbm-shortage-2026",
+    "https://tech-insider.org/megaspeed-speedmatrix-malaysia-nvidia-chips-2026",
+    "https://www.barchart.com/story/news/4863560/bytedance-could-buy-1-million-nvidia-gpus-but-don-t-bank-on-it-yet",
+    "https://www.chosun.com/english/industry-en/2026/09/29/LHQPIZVHYJEPXCMXWK2LH4DF4I",
+    "https://www.tomshardware.com/tech-industry/artificial-intelligence/billions-worth-of-export-restricted-ai-accelerators-sold-to-china-report-details-how-chinese-firms-skirt-trumps-regulations"
+   ],
+   "cited_primary": 0,
+   "retrieved": 20,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "every development dated and within window",
+     "met": true,
+     "note": "All cited developments (RTX Pro 5500 signals Sep 28-29, Tencent lease Oct 1, transshipment reports Sep 7 and Sep 17, market dynamics Sep 11) are supported by sources with publication dates within the 30-day window ending Oct 1, 2026."
+    },
+    {
+     "point": "quotes/paraphrases NVIDIA's own stated China assumption from the Q2 FY27 outlook",
+     "met": true,
+     "note": "Agent paraphrases NVIDIA's Q3 FY2027 guidance as 'not assuming any Data Center compute revenue from China in its outlook' and cites Yahoo Finance reporting the company's explicit exclusion of China data center compute revenue from the $108B ±2% guide."
+    },
+    {
+     "point": "clearly separates company statements from media/analyst speculation",
+     "met": true,
+     "note": "Answer separates 'Latest U.S. Export Control Developments' (media/analyst reports with 'reportedly', 'signals', 'investigative report documented') from 'NVIDIA's Q3 FY2027 Outlook Assumption' (company guidance stated as 'official' and 'explicitly assumes')."
+    },
+    {
+     "point": "no uncited causal claims about revenue impact",
+     "met": true,
+     "note": "Causal claims (Chinese chip price hikes due to HBM shortage; NVIDIA's zero-China-revenue stance due to export controls) are both cited to retrieved sources (Yahoo Finance, Barchart, etc.)."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer meets all four key points: developments are sourced to recent publications within the 30-day window, NVIDIA's China assumption is accurately paraphrased from its Q2 FY27 outlook, company statements are clearly distinguished from media speculation, and all causal claims about revenue impact are supported by cited sources."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "China may approve limited imports of NVIDIA's RTX Pro 5500 workstation GPU for domestic hyperscalers like Alibaba and ByteDance",
+     "numeric": false,
+     "cited_url": "https://www.chosun.com/english/industry-en/2026/09/29/LHQPIZVHYJEPXCMXWK2LH4DF4I",
+     "reason": "Chosun article states China's Ministry of Industry and Information Technology requested Alibaba and ByteDance to report willingness to purchase RTX Pro 5500 and some companies were informed purchases would be approved. Barchart also reports China may permit Alibaba and ByteDance to buy the chip.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The RTX Pro 5500 is not a top-tier data-center accelerator but remains capable of training and running AI models",
+     "numeric": false,
+     "cited_url": "https://www.chosun.com/english/industry-en/2026/09/29/LHQPIZVHYJEPXCMXWK2LH4DF4I",
+     "reason": "Chosun explicitly says the product is not the top-tier chip for AI data centers but is sufficiently capable of driving and training AI models. Barchart notes it is aimed at AI workloads on professional PCs rather than server farms.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Approval would mark a shift from Beijing's previous blocking of advanced NVIDIA imports, though it would not affect restricted data-center product lines like Blackwell",
+     "numeric": false,
+     "cited_url": "https://www.chosun.com/english/industry-en/2026/09/29/LHQPIZVHYJEPXCMXWK2LH4DF4I",
+     "reason": "Chosun describes subtle changes emerging as China may approve imports of NVIDIA GPUs it had previously blocked. Barchart notes this reopens a slice of the AI hardware market constrained by export rules on data-center products.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tencent reportedly leased 100,000 advanced NVIDIA accelerators through Oracle Cloud, routing compute outside mainland China to bypass U.S. restrictions",
+     "numeric": true,
+     "cited_url": "https://mezha.net/eng/news/522240f4_tencent_leases_100-000_ai",
+     "reason": "Mezha article title states Tencent leases 100,000 AI chips from Oracle. Content confirms the deal involves advanced Nvidia accelerators that cannot be supplied directly to China due to export restrictions, and Oracle's Grace Blackwell supercluster can scale to more than 100,000 GPUs.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Restricted GPUs (A100, H100, Blackwell chips) are being transshipped through Malaysia, Vietnam, and India, with one Malaysian buyer accumulating roughly $2 billion in restricted GPUs over 12 months and selling cloud capacity to Chinese customers",
+     "numeric": true,
+     "cited_url": "https://tech-insider.org/megaspeed-speedmatrix-malaysia-nvidia-chips-2026",
+     "reason": "Tech Insider reports a single Malaysian buyer accumulated roughly $2 billion in restricted GPUs over about twelve months, then stood up data-center capacity sold to Chinese customers. Tom's Hardware corroborates transshipment through Vietnam, India, and Malaysia, citing $13.4 million of A100, H100/GH100, and AD102-series GPUs routed through those countries.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Chinese domestic alternatives (Huawei Ascend and Cambricon) have seen price hikes of up to 50% due to HBM shortage, narrowing the cost gap with NVIDIA's compliant chips",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/technology/ai/articles/nvidia-export-ban-backfires-chinese-132055400.html",
+     "reason": "Yahoo Finance article states Huawei's Ascend and Cambricon's next-gen processor repriced upward by as much as 50% due to HBM shortage. Shattered.io confirms Ascend 950DT price of $37,255 puts it in similar range to some Nvidia China-specific compliant chips, eroding domestic cost advantage.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA's official Q3 FY2027 guidance explicitly assumes zero China Data Center compute revenue",
+     "numeric": false,
+     "cited_url": "https://finance.biggo.com/news/c40c9fc3-90fb-4176-bd15-db35b8a64b8f",
+     "reason": "BigGo Finance states guidance for October quarter is $108 billion explicitly excluding any China data center compute revenue. 24/7 Wall St and Yahoo Finance also confirm zero China data center revenue in guidance.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2027 Revenue Guidance: $108 billion (± 2%)",
+     "numeric": true,
+     "cited_url": "https://finance.biggo.com/news/c40c9fc3-90fb-4176-bd15-db35b8a64b8f",
+     "reason": "BigGo Finance table shows Q3 FY2027 guidance revenue $108.0B. 24/7 Wall St and Yahoo Finance also report $108 billion ± 2%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The company is 'not assuming any Data Center compute revenue from China in its outlook'",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/technology/ai/articles/ai-investment-accelerates-top-stocks-141800879.html",
+     "reason": "Yahoo Finance article directly quotes: 'NVIDIA is not assuming any Data Center compute revenue from China in its outlook.' BigGo Finance and 24/7 Wall St also confirm this assumption.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "In Q2 FY2027, China Hopper-class shipments amounted to less than 1% of total Data Center revenue",
+     "numeric": true,
+     "cited_url": "https://finance.biggo.com/news/c40c9fc3-90fb-4176-bd15-db35b8a64b8f",
+     "reason": "BigGo Finance states China Hopper shipments came in at less than 1% of Data Center revenue last quarter. Barchart also reports H200 shipments to China represented less than 1% of data-center revenue in fiscal Q2.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management maintains this conservative stance because U.S. export controls continue to block the sale of high-end data-center GPUs to China",
+     "numeric": false,
+     "cited_url": "https://finance.biggo.com/news/c40c9fc3-90fb-4176-bd15-db35b8a64b8f",
+     "reason": "BigGo Finance notes NVIDIA is locked out of Chinese data center compute revenue by export rules. The context of export controls blocking high-end GPU sales is consistent across sources.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 11,
+   "supported": 11,
+   "not_retrieved": 0
+  }
+ }
+}

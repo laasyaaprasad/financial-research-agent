@@ -1,0 +1,127 @@
+{
+ "id": "G05",
+ "category": "Numerical reasoning",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Cisco's fiscal 2026 total revenue growth YoY and its GAAP net margin (net income / revenue)?",
+ "grading": "Growth ±0.2pp; net margin ±0.2pp; inputs must be FY ended 2026-07-25 and FY ended 2025-07-26",
+ "answer": "Cisco FY2026 revenue growth was 11.7750% YoY. GAAP net margin was 20.9507%: USD 13,267 million GAAP net income / USD 63,325 million revenue. FY2025 revenue was USD 56,654 million. [G05-E1]",
+ "output": {
+  "answer": " Based on Cisco's reported fiscal 2026 results:\n\n**Total Revenue Growth YoY:** **+12%** (revenue was **$63.3 billion** for fiscal 2026)\n\n**GAAP Net Income:** **$13.3 billion**\n\n**GAAP Net Margin:** **~21.0%**  \n($13.3 billion ÷ $63.3 billion)\n\nCisco reported record full-year results, with the 12% revenue growth and 30% GAAP net income growth up from the prior year.\n\n**Sources:**\n- https://finance.yahoo.com/markets/stocks/articles/cisco-reports-fourth-quarter-fiscal-200500620.html\n- https://finance.yahoo.com/technology/ai/articles/cisco-forecasts-strong-fiscal-2027-204534530.html\n- https://finance.yahoo.com/markets/stocks/articles/cisco-stock-rises-record-63-122905086.html",
+  "tokens": {
+   "input": 30519,
+   "output": 1375
+  },
+  "tavily_credits": 8,
+  "latency_s": 14.01,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cisco fiscal 2026 total revenue growth YoY guidance outlook",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cisco FY2026 GAAP net margin guidance outlook projection",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cisco FY2026 GAAP net income $13.3 billion revenue $63.3 billion annual report earnings",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Cisco\" \"fiscal 2026\" \"net income\" \"$13.3 billion\" OR \"$13.3B\" full year results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/cisco-reports-fourth-quarter-fiscal-200500620.html",
+    "https://finance.yahoo.com/markets/stocks/articles/cisco-stock-rises-record-63-122905086.html",
+    "https://finance.yahoo.com/technology/ai/articles/cisco-forecasts-strong-fiscal-2027-204534530.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 29,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.667,
+   "points": [
+    {
+     "point": "Total revenue growth YoY for fiscal 2026 within ±0.2pp of 11.7750%",
+     "met": false,
+     "note": "Agent reported +12%, which is 0.225pp above the reference 11.775%, exceeding the ±0.2pp tolerance."
+    },
+    {
+     "point": "GAAP net margin for fiscal 2026 within ±0.2pp of 20.9507%",
+     "met": true,
+     "note": "Agent reported ~21.0%, which is 0.049pp above the reference 20.9507%, within the ±0.2pp tolerance."
+    },
+    {
+     "point": "Inputs must be FY ended 2026-07-25 and FY ended 2025-07-26",
+     "met": true,
+     "note": "Agent used fiscal 2026 revenue $63.3B and net income $13.3B, matching the reference facts for the correct fiscal periods."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The agent's revenue growth figure of +12% exceeds the ±0.2pp tolerance (reference 11.775%), while the net margin of ~21.0% is within tolerance. The fiscal year periods are correct."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Cisco's total revenue for fiscal 2026 was $63.3 billion, representing 12% year-over-year growth",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/cisco-reports-fourth-quarter-fiscal-200500620.html",
+     "reason": "The retrieved source states: 'full-year revenue up 12% to $63.3B' and 'For the full fiscal 2026 year, revenue rose 12% to $63.3 billion'. This matches the claim exactly.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cisco's GAAP net income for fiscal 2026 was $13.3 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/technology/ai/articles/cisco-forecasts-strong-fiscal-2027-204534530.html",
+     "reason": "The retrieved source states: 'unadjusted net income increased 30% to $13.3 billion'. Unadjusted net income corresponds to GAAP net income. The claim is directly supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cisco's GAAP net margin for fiscal 2026 was approximately 21.0% (calculated as $13.3 billion ÷ $63.3 billion)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/cisco-reports-fourth-quarter-fiscal-200500620.html",
+     "reason": "The claim is a derived figure using the revenue ($63.3B) and GAAP net income ($13.3B) from the cited sources. Calculation: 13.3 / 63.3 = 0.21011... ≈ 21.0%. The inputs are verified in the previous claims, and the arithmetic is correct. The margin is not explicitly stated in the sources but is correctly derived.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 3,
+   "supported": 3,
+   "not_retrieved": 0
+  }
+ }
+}

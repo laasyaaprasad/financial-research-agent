@@ -1,0 +1,189 @@
+{
+ "id": "G21",
+ "category": "Complex retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "How much did Alphabet spend on share repurchases in Q2 2026, split between Class A (GOOGL) and Class C (GOOG), with share counts for each?",
+ "grading": "Both classes must show USD 0 million and 0 shares for Q2 2026. Zero is an exact expected value, so percentage tolerance is inapplicable; fail for any positive repurchase amount.",
+ "answer": "Alphabet repurchased no Class A or Class C shares in Q2 2026. Class A (GOOGL): USD 0 million and 0 shares. Class C (GOOG): USD 0 million and 0 shares. Total: USD 0 million. An unused authorization is not repurchase spending. [G21-E1]",
+ "output": {
+  "answer": " Q2 2026 is a future quarter (April–June 2026), so Alphabet has not yet reported—and has not actually executed—those repurchases. Some aggregator sites show simulated/hypothetical 2026 data, but there are no official SEC filings for that quarter yet.\n\nIf you meant **Q2 2024**, here are the actual, verifiable figures from Alphabet’s 10-Q filing:\n\n**Alphabet Share Repurchases — Q2 2024**\n\n| Period | Class A Shares Repurchased (thousands) | Class C Shares Repurchased (thousands) | Avg. Price Paid (Class A) | Avg. Price Paid (Class C) | Total Shares (thousands) | Remaining Authorization |\n|--------|----------------------------------------|----------------------------------------|---------------------------|---------------------------|--------------------------|-------------------------|\n| Apr 1–30 | 8,101 | 28,903 | $159.68 | $160.18 | 37,004 | $84,523M |\n| May 1–31 | 6,380 | 23,177 | $172.74 | $174.14 | 29,557 | — |\n| Jun 1–30 | *data shown in full 10-Q* | *data shown in full 10-Q* | — | — | — | — |\n\n*Source: Alphabet Q2 2024 10-Q filing (SEC)* — [PDF link](https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf)\n\nAlphabet reports repurchases for **both Class A (GOOGL) and Class C (GOOG)** in its 10-Q/10-K filings, but it does not always split the dollar-amount spent neatly by class in the summary tables; it provides share counts and average prices paid per class, from which dollar amounts can be derived.\n\nIf you were looking for a different quarter (e.g., **Q2 2025**), the company typically files that 10-Q in late July 2025. If you can clarify the exact quarter you need, I can pull the precise breakdown.",
+  "tokens": {
+   "input": 6991,
+   "output": 1787
+  },
+  "tavily_credits": 1,
+  "latency_s": 11.32,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Alphabet GOOGL GOOG share repurchases Q2 2024 Q2 2025 Class A Class C split share count"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf"
+   ],
+   "cited_primary": 1,
+   "retrieved": 10,
+   "retrieved_primary": 2
+  },
+  "correctness": {
+   "score": 0.0,
+   "points": [
+    {
+     "point": "Class A (GOOGL) repurchase amount USD 0 million for Q2 2026",
+     "met": false,
+     "note": "Agent did not provide Q2 2026 data; gave Q2 2024 data instead."
+    },
+    {
+     "point": "Class A (GOOGL) shares repurchased 0 for Q2 2026",
+     "met": false,
+     "note": "Agent did not provide Q2 2026 data."
+    },
+    {
+     "point": "Class C (GOOG) repurchase amount USD 0 million for Q2 2026",
+     "met": false,
+     "note": "Agent did not provide Q2 2026 data."
+    },
+    {
+     "point": "Class C (GOOG) shares repurchased 0 for Q2 2026",
+     "met": false,
+     "note": "Agent did not provide Q2 2026 data."
+    },
+    {
+     "point": "Zero is exact expected value; any positive repurchase amount fails",
+     "met": false,
+     "note": "Agent provided positive repurchase amounts for Q2 2024, not zero for Q2 2026."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The agent failed to answer the question for Q2 2026, instead providing data for Q2 2024. The correct answer is zero for both classes in Q2 2026."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q2 2026 (April–June 2026) is a future quarter and Alphabet has not yet reported or executed share repurchases for that period",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer states Q2 2026 is future; retrieved source stocktitan.net shows a simulated Q2 2026 report with projected data (e.g., revenue $119.8B, profit $112.2B, and a share repurchase authorization from April 2025 with remaining balance as of June 30, 2026), confirming that aggregator sites show hypothetical 2026 data and no official SEC filing exists yet.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Some aggregator sites show simulated/hypothetical 2026 data for Alphabet",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The stocktitan.net page presents a 'Quarterly Report (10-Q)' for Q2 2026 with detailed financial figures, which appears to be a simulated or forward-looking estimate rather than an actual SEC filing.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Alphabet's Q2 2024 10-Q filing reports share repurchases for April and May 2024 with specific share counts and average prices",
+     "numeric": true,
+     "cited_url": "https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf",
+     "reason": "The PDF content includes a table: 'April 1 - 30 8,101 28,903 $ 159.68 $ 160.18 37,004 $ 84,523 May 1 - 31 6,380 23,177 $ 172.74 $ 174.14', matching the answer's table exactly.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "In April 2024, Alphabet repurchased 8,101 thousand Class A shares at an average price of $159.68",
+     "numeric": true,
+     "cited_url": "https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf",
+     "reason": "PDF shows 'April 1 - 30 8,101 28,903 $ 159.68 $ 160.18 37,004 $ 84,523' where the first number is Class A shares (thousands) and third is average price per Class A share.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "In April 2024, Alphabet repurchased 28,903 thousand Class C shares at an average price of $160.18",
+     "numeric": true,
+     "cited_url": "https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf",
+     "reason": "PDF shows second number 28,903 (Class C shares in thousands) and fourth number $160.18 (average price per Class C share).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "In April 2024, total shares repurchased were 37,004 thousand and remaining authorization was $84,523 million",
+     "numeric": true,
+     "cited_url": "https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf",
+     "reason": "PDF shows fifth column 37,004 (total shares in thousands) and sixth column $84,523 (approximate dollar value in millions).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "In May 2024, Alphabet repurchased 6,380 thousand Class A shares at an average price of $172.74",
+     "numeric": true,
+     "cited_url": "https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf",
+     "reason": "PDF shows 'May 1 - 31 6,380 23,177 $ 172.74 $ 174.14' where first number is Class A shares (thousands) and third is average price per Class A share.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "In May 2024, Alphabet repurchased 23,177 thousand Class C shares at an average price of $174.14",
+     "numeric": true,
+     "cited_url": "https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf",
+     "reason": "PDF shows second number 23,177 (Class C shares in thousands) and fourth number $174.14 (average price per Class C share).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "In May 2024, total shares repurchased were 29,557 thousand",
+     "numeric": true,
+     "cited_url": "https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf",
+     "reason": "The answer states total shares 29,557 thousand for May; this is derived from 6,380 + 23,177 = 29,557, which matches the sum of the two share columns in the PDF.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet reports repurchases for both Class A (GOOGL) and Class C (GOOG) shares in its 10-Q/10-K filings",
+     "numeric": false,
+     "cited_url": "https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf",
+     "reason": "The PDF table explicitly shows separate columns for Class A and Class C shares purchased and average prices paid.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet's summary tables do not always split the dollar amount spent by class; they provide share counts and average prices per class, from which dollar amounts can be derived",
+     "numeric": false,
+     "cited_url": "https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf",
+     "reason": "The PDF table shows share counts and average prices per class, but no separate dollar amount per class; the total dollar value column is for the overall program remaining, not spent per class.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet typically files its Q2 2025 10-Q in late July 2025",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "This is a general statement about filing timing; no retrieved source confirms or contradicts it. The answer does not cite a source for this claim.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "The full 10-Q for Q2 2024 includes June repurchase data",
+     "numeric": false,
+     "cited_url": "https://s206.q4cdn.com/479360582/files/doc_financials/2024/q2/goog-10-q-q2-2024.pdf",
+     "reason": "The PDF snippet only shows April and May; the answer notes June data is shown in the full 10-Q, which is plausible but not verified from the snippet.",
+     "supported": null,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 7,
+   "numeric_cited": 7,
+   "cited": 10,
+   "supported": 9,
+   "not_retrieved": 0
+  }
+ }
+}

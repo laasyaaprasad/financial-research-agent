@@ -1,0 +1,115 @@
+{
+ "id": "G06",
+ "category": "Numerical reasoning",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Facebook's total revenue in Q2 2026, and what was the Reality Labs operating margin (operating loss / segment revenue) in that quarter?",
+ "grading": "Revenue ±0.5%, USD millions; RL margin ±1pp (negative); must state it interpreted 'Facebook' as Meta Platforms",
+ "answer": "Interpreting Facebook as Meta Platforms, rather than the Facebook app, Q2 2026 total revenue was USD 60,801 million. Reality Labs revenue was USD 431 million and its signed operating loss was USD -4,619 million, giving an operating margin of -1071.6937%. [G06-E1]",
+ "output": {
+  "answer": " Meta reported **Q2 2026 total revenue of $60.8 billion** ($60,801 million).\n\nFor the **Reality Labs** segment in Q2 2026:\n- Segment revenue: **$431 million**\n- Operating loss: **$4.619 billion**\n\nUsing your requested formula (operating loss / segment revenue), the ratio is:\n\n**$4.619B / $431M ≈ 10.72** (or about **1,072%**)\n\n*This means Reality Labs' operating loss in Q2 2026 was more than 10 times its segment revenue.*\n\n**Sources:**\n- Meta Q2 2026 official earnings release: https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx\n- CNBC coverage with segment details: https://www.cnbc.com/2026/07/29/meta-q2-earnings-report-2026.html\n- Webull earnings summary: https://www.webull.com/blog/244-META-Q2-2026-Earnings-Revenue-EPS-Guidance-and-Key-Metrics",
+  "tokens": {
+   "input": 11539,
+   "output": 1307
+  },
+  "tavily_credits": 2,
+  "latency_s": 8.94,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": null,
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Meta Facebook Q2 2026 revenue estimate projection analyst forecast"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Meta Reality Labs Q2 2026 operating margin loss estimate projection"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
+    "https://www.cnbc.com/2026/07/29/meta-q2-earnings-report-2026.html",
+    "https://www.webull.com/blog/244-META-Q2-2026-Earnings-Revenue-EPS-Guidance-and-Key-Metrics"
+   ],
+   "cited_primary": 1,
+   "retrieved": 19,
+   "retrieved_primary": 2
+  },
+  "correctness": {
+   "score": 0.333,
+   "points": [
+    {
+     "point": "Revenue ±0.5%, USD millions",
+     "met": true,
+     "note": "Agent reported $60,801 million, matching reference exactly."
+    },
+    {
+     "point": "RL margin ±1pp (negative)",
+     "met": false,
+     "note": "Agent reported 1,072% (positive), but reference margin is -1071.6937%; sign is wrong and not stated as negative."
+    },
+    {
+     "point": "must state it interpreted 'Facebook' as Meta Platforms",
+     "met": false,
+     "note": "Agent did not mention Facebook or explicitly state interpretation."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The agent correctly reported total revenue but failed to report the Reality Labs operating margin as a negative value and did not explicitly state the interpretation of 'Facebook' as Meta Platforms."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Meta reported Q2 2026 total revenue of $60.8 billion ($60,801 million)",
+     "numeric": true,
+     "cited_url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
+     "reason": "The Meta Q2 2026 press release shows 'Total revenue $60,801' for the three months ended June 30, 2026 (in millions), which equals $60.801 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Reality Labs segment revenue in Q2 2026 was $431 million",
+     "numeric": true,
+     "cited_url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
+     "reason": "The same press release shows 'Reality Labs 431' under Revenue for the three months ended June 30, 2026 (in millions).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Reality Labs operating loss in Q2 2026 was $4.619 billion",
+     "numeric": true,
+     "cited_url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
+     "reason": "The press release shows 'Reality Labs (4,619)' under Income (loss) from operations for the three months ended June 30, 2026 (in millions), i.e., a loss of $4,619 million = $4.619 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The ratio of Reality Labs operating loss to segment revenue in Q2 2026 is approximately 10.72 (or 1,072%)",
+     "numeric": true,
+     "cited_url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
+     "reason": "Calculated from the press release figures: operating loss $4,619 million divided by revenue $431 million = 10.716... ≈ 10.72, which is 1,072%.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 4,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}
