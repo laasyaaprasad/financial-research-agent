@@ -249,7 +249,9 @@ def run(
 def rescore(source: str, name: str, workers: int = 4) -> None:
     """Re-judge a saved run's answers without re-running the agent."""
     src = RESULTS / "raw" / source
-    manifest = {**json.loads((src / "manifest.json").read_text()), "rescored_from": source}
+    first = json.loads((src / "manifest.json").read_text()) if (src / "manifest.json").exists() else {
+        "agent": "starter", "set": "dev", "code": "6300b5f (M1 harness)", "model": "moonshotai/Kimi-K2.6"}
+    manifest = {**first, "rescored_from": source}
     rows = {r["id"]: r for s in SETS for r in load_set(s)}
     hosts = primary_hosts(list(rows.values()))
     out_dir = RESULTS / "raw" / name
