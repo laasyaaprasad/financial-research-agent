@@ -1,0 +1,237 @@
+{
+ "id": "X08",
+ "category": "Trends",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "For The Estee Lauder Companies (fiscal year ends June 30), report GAAP gross margin (gross profit / net sales, in %) and GAAP operating margin (operating income (loss) / net sales, in %) for each of its last four reported fiscal quarters as of October 3, 2026. Label each quarter with its fiscal quarter, fiscal year and period-end date. Use GAAP figures as reported (not adjusted/non-GAAP); fourth-quarter results are not separately filed on a 10-Q.",
+ "grading": "Graded cell by cell: each value within tolerance and for the stated period; a missing cell counts as wrong.",
+ "answer": "Estee Lauder GAAP margins (Q4 FY2026 derived as FY2026 minus nine months and matching the Q4 release):\n| Row | Gross margin | Operating margin |\n|---|---|---|\n| Q1 FY2026 (ended 2025-09-30) | 73.37% | 4.85% |\n| Q2 FY2026 (ended 2025-12-31) | 76.50% | 9.48% |\n| Q3 FY2026 (ended 2026-03-31) | 76.40% | 6.71% |\n| Q4 FY2026 (ended 2026-06-30) | 75.46% | -1.08% |",
+ "output": {
+  "answer": "## The Estée Lauder Companies — GAAP Margins, Last Four Reported Fiscal Quarters (as of Oct. 3, 2026)\n\nAll four quarters are from **fiscal 2026** (FY ends June 30). Figures are as-reported (GAAP), per the company's earnings releases/10-Qs.\n\n| Quarter | Period-End | Net Sales | Gross Profit | GAAP Gross Margin | Operating Income (Loss) | GAAP Operating Margin |\n|---|---|---|---|---|---|---|\n| Q1 FY2026 | Sep 30, 2025 | $3,481M | $2,554M | **73.4%** | $169M | **4.9%** |\n| Q2 FY2026 | Dec 31, 2025 | $4,229M | $3,235M | **76.5%** | $401M | **9.5%** |\n| Q3 FY2026 | Mar 31, 2026 | $3,712M | $2,836M | **76.4%** | $249M | **6.7%** |\n| Q4 FY2026 | Jun 30, 2026 | $3,627M | $2,737M | **75.5%** | $(39)M | **(1.1)%** |\n\n**Notes**\n- Gross margin = gross profit ÷ net sales; operating margin = operating income (loss) ÷ net sales. Ratios are computed from the reported dollar figures (the company's stated margins round to the same values).\n- Q4 FY2026 is not separately 10-Q'd; figures come from the full-year earnings release (10-K basis). Q4 GAAP operating income was a **loss of $39M**, driven largely by $306M of restructuring/other charges under the Profit Recovery and Growth Plan — hence the negative GAAP margin versus a positive adjusted margin.\n- Q3 FY2026 GAAP operating income of $249M included $224M of restructuring charges and an $84M securities class-action settlement, so the GAAP operating margin (6.7%) sits well below the ~15% adjusted figure.\n\n**Sources**\n- Q4/FY2026 release: https://www.businesswire.com/news/home/20260819712675/en/The-Este-Lauder-Companies-Reports-Fiscal-2026-Results\n- Q3 FY2026 release: https://www.businesswire.com/news/home/20260501773674/en/The-Este-Lauder-Companies-Reports-Fiscal-2026-Third-Quarter-Results\n- Q2 FY2026 release: https://www.businesswire.com/news/home/20260205919487/en/The-Este-Lauder-Companies-Reports-Fiscal-2026-Second-Quarter-Results\n- Q1 FY2026 release: https://www.businesswire.com/news/home/20251030442112/en/The-Este-Lauder-Companies-Reports-Fiscal-2026-First-Quarter-Results\n- Company quarterly earnings page: https://www.elcompanies.com/en/investors/earnings-and-financials/quarterly-earnings/2026",
+  "tokens": {
+   "input": 145216,
+   "output": 3679
+  },
+  "tavily_credits": 18,
+  "latency_s": 50.44,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/b25ebede775ecff2e8b4aa9ab6a82e79",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Estée Lauder fiscal 2026 fourth quarter results net sales operating income gross margin",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Estée Lauder fiscal 2026 third quarter results GAAP net sales operating income",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Estée Lauder fiscal 2026 first quarter results net sales gross profit operating income October 30 2025",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Estée Lauder fiscal 2026 second quarter results net sales gross profit operating income February 2026",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"The Estée Lauder Companies Reports Fiscal 2026 First Quarter Results\" net sales 3,4 gross margin operating income 169",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Estée Lauder fiscal 2026 third quarter results net sales 3,712 gross margin operating income 249",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Estée Lauder fiscal 2026 first quarter gross profit 2,555 gross margin 73.4% consolidated statement",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Estee Lauder Q1 fiscal 2026 net sales 3,481 gross profit operating income GAAP",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Estée Lauder second quarter fiscal 2026 net sales $4,231 million December 31 2025 operating margin",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.businesswire.com/news/home/20251030442112/en/The-Este-Lauder-Companies-Reports-Fiscal-2026-First-Quarter-Results",
+    "https://www.businesswire.com/news/home/20260205919487/en/The-Este-Lauder-Companies-Reports-Fiscal-2026-Second-Quarter-Results",
+    "https://www.businesswire.com/news/home/20260501773674/en/The-Este-Lauder-Companies-Reports-Fiscal-2026-Third-Quarter-Results",
+    "https://www.businesswire.com/news/home/20260819712675/en/The-Este-Lauder-Companies-Reports-Fiscal-2026-Results",
+    "https://www.elcompanies.com/en/investors/earnings-and-financials/quarterly-earnings/2026"
+   ],
+   "cited_primary": 0,
+   "retrieved": 53,
+   "retrieved_primary": 2
+  },
+  "correctness": {
+   "score": 1.0,
+   "verdict": "correct",
+   "points": [
+    {
+     "point": "The Estee Lauder Companies Inc. Q1 FY2026 Gross margin = 73.37 %",
+     "met": true,
+     "note": "answer: 73.4"
+    },
+    {
+     "point": "The Estee Lauder Companies Inc. Q1 FY2026 Operating margin = 4.85 %",
+     "met": true,
+     "note": "answer: 4.9"
+    },
+    {
+     "point": "The Estee Lauder Companies Inc. Q2 FY2026 Gross margin = 76.5 %",
+     "met": true,
+     "note": "answer: 76.5"
+    },
+    {
+     "point": "The Estee Lauder Companies Inc. Q2 FY2026 Operating margin = 9.48 %",
+     "met": true,
+     "note": "answer: 9.5"
+    },
+    {
+     "point": "The Estee Lauder Companies Inc. Q3 FY2026 Gross margin = 76.4 %",
+     "met": true,
+     "note": "answer: 76.4"
+    },
+    {
+     "point": "The Estee Lauder Companies Inc. Q3 FY2026 Operating margin = 6.71 %",
+     "met": true,
+     "note": "answer: 6.7"
+    },
+    {
+     "point": "The Estee Lauder Companies Inc. Q4 FY2026 Gross margin = 75.46 %",
+     "met": true,
+     "note": "answer: 75.5"
+    },
+    {
+     "point": "The Estee Lauder Companies Inc. Q4 FY2026 Operating margin = -1.08 %",
+     "met": true,
+     "note": "answer: -1.1"
+    }
+   ],
+   "rationale": "8/8 cells correct",
+   "cells_correct": 8,
+   "cells_total": 8
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q1 FY2026 period end Sep 30, 2025; Net Sales $3,481M; Gross Profit $2,554M; GAAP Gross Margin 73.4%; Operating Income $169M; GAAP Operating Margin 4.9%",
+     "numeric": true,
+     "cited_url": "https://www.businesswire.com/news/home/20251030442112/en/The-Este-Lauder-Companies-Reports-Fiscal-2026-First-Quarter-Results",
+     "reason": "The cited Business Wire URL does not appear in the retrieved sources. Therefore, the claim cannot be verified against the retrieved text.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 period end Dec 31, 2025; Net Sales $4,229M; Gross Profit $3,235M; GAAP Gross Margin 76.5%; Operating Income $401M; GAAP Operating Margin 9.5%",
+     "numeric": true,
+     "cited_url": "https://www.businesswire.com/news/home/20260205919487/en/The-Este-Lauder-Companies-Reports-Fiscal-2026-Second-Quarter-Results",
+     "reason": "The cited Business Wire URL does not appear in the retrieved sources. Therefore, the claim cannot be verified against the retrieved text.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 period end Mar 31, 2026; Net Sales $3,712M; Gross Profit $2,836M; GAAP Gross Margin 76.4%; Operating Income $249M; GAAP Operating Margin 6.7%",
+     "numeric": true,
+     "cited_url": "https://www.businesswire.com/news/home/20260501773674/en/The-Este-Lauder-Companies-Reports-Fiscal-2026-Third-Quarter-Results",
+     "reason": "The cited Business Wire URL does not appear in the retrieved sources. Therefore, the claim cannot be verified against the retrieved text.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2026 period end Jun 30, 2026; Net Sales $3,627M; Gross Profit $2,737M; GAAP Gross Margin 75.5%; Operating Income (Loss) $(39)M; GAAP Operating Margin (1.1)%",
+     "numeric": true,
+     "cited_url": "https://www.businesswire.com/news/home/20260819712675/en/The-Este-Lauder-Companies-Reports-Fiscal-2026-Results",
+     "reason": "The cited Business Wire URL does not appear in the retrieved sources. Therefore, the claim cannot be verified against the retrieved text.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Gross margin = gross profit ÷ net sales; operating margin = operating income (loss) ÷ net sales. Ratios are computed from the reported dollar figures.",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "No specific URL cited in the answer for this methodological note. The claim is a definitional statement and does not rely on a cited source.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Q4 FY2026 is not separately 10-Q'd; figures come from the full-year earnings release (10-K basis). Q4 GAAP operating income was a loss of $39M, driven largely by $306M of restructuring/other charges under the Profit Recovery and Growth Plan.",
+     "numeric": true,
+     "cited_url": "https://www.businesswire.com/news/home/20260819712675/en/The-Este-Lauder-Companies-Reports-Fiscal-2026-Results",
+     "reason": "The cited Business Wire URL does not appear in the retrieved sources. Therefore, the claim cannot be verified against the retrieved text.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 GAAP operating income of $249M included $224M of restructuring charges and an $84M securities class-action settlement, so the GAAP operating margin (6.7%) sits well below the ~15% adjusted figure.",
+     "numeric": true,
+     "cited_url": "https://www.businesswire.com/news/home/20260501773674/en/The-Este-Lauder-Companies-Reports-Fiscal-2026-Third-Quarter-Results",
+     "reason": "The cited Business Wire URL does not appear in the retrieved sources. Therefore, the claim cannot be verified against the retrieved text.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "All four quarters are from fiscal 2026 (FY ends June 30). Figures are as-reported (GAAP), per the company's earnings releases/10-Qs.",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "No specific URL cited for this summary statement. It is a general description of the data source.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Company quarterly earnings page: https://www.elcompanies.com/en/investors/earnings-and-financials/quarterly-earnings/2026",
+     "numeric": false,
+     "cited_url": "https://www.elcompanies.com/en/investors/earnings-and-financials/quarterly-earnings/2026",
+     "reason": "The cited company earnings page URL does not appear in the retrieved sources. Therefore, the claim cannot be verified against the retrieved text.",
+     "supported": null,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 7,
+   "supported": 0,
+   "not_retrieved": 0
+  }
+ }
+}

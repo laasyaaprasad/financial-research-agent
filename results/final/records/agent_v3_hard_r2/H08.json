@@ -1,0 +1,139 @@
+{
+ "id": "H08",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was AAON's BASX-branded products backlog at June 30, 2026, in USD millions?",
+ "grading": "USD 1,430.4 million (1,430,379 thousand), +/-0.5%; accept 'about USD 1.43 billion'. Optional context: total backlog USD 1,970.8M; BASX backlog +185.4% vs June 30, 2025 (USD 501.1M). Fail if total backlog or another date is given as the BASX figure.",
+ "answer": "AAON's BASX-branded products backlog at June 30, 2026 was USD 1,430.4 million (1,430,379 thousand), versus USD 501.1 million at June 30, 2025 (+185.4%) and USD 1,302.1 million at December 31, 2025. Total backlog was USD 1,970.8 million (AAON-branded USD 540.5 million) [H08-E1]. The Q2 press release cites only total backlog of about USD 2.0 billion [H08-E2].",
+ "output": {
+  "answer": "**Question:** What was AAON's BASX-branded products backlog at June 30, 2026, in USD millions?\n*As of 2026-10-03*\n\n| | Backlog (USD millions) |\n|---|---|\n| AAON, Inc. — BASX-branded products, June 30, 2026 (Q2 FY2026, quarter ended June 30, 2026) | 1,430.4 [1][2] |\n\n- AAON's BASX-branded products backlog was $1,430.4 million at June 30, 2026 (Q2 FY2026, quarter ended June 30, 2026), as reported in the backlog table in thousands as $1,430,379 thousand. [1][2]\n- BASX-branded backlog increased 185.4% year-over-year, or $929.3 million, versus June 30, 2025, with most of these orders associated with BASX-branded data center liquid cooling solutions. [2]\n- For context, AAON's total backlog at June 30, 2026 was $1,970,844 thousand, of which BASX-branded products were $1,430,379 thousand and AAON-branded products were $540,465 thousand. [1][2]\n\n**Sources**\n[1] AAON, INC. earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-08-10) (www.sec.gov, 2026-08-10, primary) https://www.sec.gov/Archives/edgar/data/824142/000082414226000052/liveaaonpressreleaseexs.htm\n[2] AAON, INC. 10-Q for Q2 FY2026 (filed 2026-08-10) (www.sec.gov, 2026-08-10, primary) https://www.sec.gov/Archives/edgar/data/824142/000082414226000055/aaon-20260630.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 32785,
+   "output": 3366
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 51.89,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/6c9b0223058de79aa3375fb2a3fd01d9",
+  "companies": [
+   {
+    "name": "AAON, INC.",
+    "ticker": "AAON",
+    "cik": "824142",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "AAON total backlog at June 30, 2026 (USD millions)",
+    "BASX-branded products backlog at June 30, 2026 (USD millions)",
+    "Prior-year (June 30, 2025) BASX backlog for comparison, if disclosed"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "AAON",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "AAON",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "AAON",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Backlog is a non-financial-statement operating metric; it is typically disclosed in the earnings release and/or MD&A of the 10-Q, and AAON may report backlog by brand (BASX vs. AAON) or only in total. If BASX is not broken out separately, the brand-level figure may not be disclosed."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/824142/000082414226000052/liveaaonpressreleaseexs.htm",
+    "https://www.sec.gov/Archives/edgar/data/824142/000082414226000055/aaon-20260630.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 3,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer must be USD 1,430.4 million (1,430,379 thousand) with tolerance +/-0.5%",
+     "met": true,
+     "note": "Agent reports 1,430.4 million, exactly matching the required figure."
+    },
+    {
+     "point": "Accept 'about USD 1.43 billion' as alternative",
+     "met": true,
+     "note": "Agent's 1,430.4 million is equivalent to about USD 1.43 billion."
+    },
+    {
+     "point": "Must not give total backlog (~USD 1,970.8M) as the BASX figure",
+     "met": true,
+     "note": "Agent clearly distinguishes BASX-branded backlog (1,430.4M) from total backlog (1,970.8M)."
+    },
+    {
+     "point": "Must not use December 31, 2025 (1,302.1M) or June 30, 2025 (501.1M) columns",
+     "met": true,
+     "note": "Agent uses June 30, 2026 column only for the BASX-branded backlog figure."
+    },
+    {
+     "point": "Must not report in thousands without conversion (must be in millions)",
+     "met": true,
+     "note": "Agent reports in USD millions (1,430.4) and also notes the source is in thousands but converts correctly."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer provides the exact required BASX-branded backlog figure for June 30, 2026 (1,430.4 million USD), within the allowed tolerance, correctly distinguishes it from total backlog, uses the correct date, and reports in the requested unit (millions). All grading requirements are satisfied."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "AAON's BASX-branded products backlog was $1,430.4 million at June 30, 2026 (Q2 FY2026, quarter ended June 30, 2026), as reported in the backlog table in thousands as $1,430,379 thousand.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/824142/000082414226000052/liveaaonpressreleaseexs.htm; https://www.sec.gov/Archives/edgar/data/824142/000082414226000055/aaon-20260630.htm",
+     "reason": "The backlog table in both the 8-K earnings release (source [1]) and the 10-Q (source [2]) shows BASX-branded products at June 30, 2026 as 1,430,379 thousand USD. Converting to millions: 1,430,379 / 1,000 = 1,430.379 million, which rounds to 1,430.4 million (within rounding tolerance of ±0.05 million). The period is Q2 FY2026 quarter ended June 30, 2026. The figure is actual backlog, not guidance.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "BASX-branded backlog increased 185.4% year-over-year, or $929.3 million, versus June 30, 2025, with most of these orders associated with BASX-branded data center liquid cooling solutions.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/824142/000082414226000052/liveaaonpressreleaseexs.htm; https://www.sec.gov/Archives/edgar/data/824142/000082414226000055/aaon-20260630.htm",
+     "reason": "The backlog table shows BASX-branded products at June 30, 2025 as 501,106 thousand and at June 30, 2026 as 1,430,379 thousand. The absolute increase is 1,430,379 - 501,106 = 929,273 thousand = $929.273 million, rounding to $929.3 million (within ±0.05 million). The percentage increase is (929,273 / 501,106) * 100% = 185.44%, rounding to 185.4% (within ±0.05%). Both the 8-K and 10-Q state that BASX-branded backlog increased 185.4% year-over-year, and the 10-Q explicitly notes that most of these orders were associated with BASX-branded data center liquid cooling solutions.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "For context, AAON's total backlog at June 30, 2026 was $1,970,844 thousand, of which BASX-branded products were $1,430,379 thousand and AAON-branded products were $540,465 thousand.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/824142/000082414226000052/liveaaonpressreleaseexs.htm; https://www.sec.gov/Archives/edgar/data/824142/000082414226000055/aaon-20260630.htm",
+     "reason": "The backlog table in both sources shows Total Backlog at June 30, 2026 as $1,970,844 thousand, BASX-branded products as $1,430,379 thousand, and AAON-branded products as $540,465 thousand. The sum of the two segments equals the total (1,430,379 + 540,465 = 1,970,844). The figures are reported in thousands of USD, consistent with the table's unit label '(in thousands)'.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 3,
+   "supported": 0,
+   "not_retrieved": 3
+  }
+ }
+}

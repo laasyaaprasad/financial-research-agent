@@ -1,0 +1,219 @@
+{
+ "id": "H11",
+ "category": "Financial modeling",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "Using Guidewire's fiscal 2026 Form 10-K and its fiscal Q3 2026 Form 10-Q, what were the implied fiscal Q4 2026 (three months ended July 31, 2026) total revenue and GAAP operating margin?",
+ "grading": "Computation: Q4 = FY2026 - nine months ended April 30, 2026. Revenue USD 411.1M (411,087K); GAAP income from operations USD 62.3M (62,318K); GAAP operating margin 15.16% (+/-0.3pp). Accept +/-0.5% on dollar figures. Fail if non-GAAP operating income (USD 111.3M, 27.1%) is used as the GAAP margin.",
+ "answer": "Implied Q4 FY2026 revenue = 1,475,363 (FY2026) - 1,064,276 (nine months to April 30, 2026) = USD 411,087 thousand (USD 411.1 million). Implied GAAP income from operations = 149,874 - 87,556 = USD 62,318 thousand (USD 62.3 million). GAAP operating margin = 62,318 / 411,087 = 15.16% [H11-E1][H11-E2]. This matches the Q4 figures in the earnings release (revenue USD 411.1 million; GAAP income from operations USD 62.3 million) [H11-E3].",
+ "output": {
+  "answer": "**Question:** Using Guidewire's fiscal 2026 Form 10-K and its fiscal Q3 2026 Form 10-Q, what were the implied fiscal Q4 2026 (three months ended July 31, 2026) total revenue and GAAP operating margin?\n*As of 2026-10-03*\n\n| | Total revenue (USD thousands, GAAP, implied) | Income (loss) from operations (USD thousands, GAAP, implied) | GAAP operating margin (%, implied) |\n|---|---|---|---|\n| Q4 FY2026 (three months ended July 31, 2026) | 411,087 [1][2] | 62,318 [1][2] | 15.2 [1][2] |\n\n- Guidewire's FY2026 Form 10-K reports full-year total revenue of $1,475,363 thousand (GAAP, as reported) for the fiscal year ended July 31, 2026. [1]\n- Guidewire's Q3 FY2026 Form 10-Q reports nine-month total revenue of $1,064,276 thousand (GAAP, as reported) for the nine months ended April 30, 2026. [2]\n- Guidewire's FY2026 Form 10-K reports full-year income from operations of $149,874 thousand (GAAP, as reported) for the fiscal year ended July 31, 2026. [1]\n- Guidewire's Q3 FY2026 Form 10-Q reports nine-month income from operations of $87,556 thousand (GAAP, as reported) for the nine months ended April 30, 2026. [2]\n- Guidewire does not report a standalone fiscal Q4 2026 (three months ended July 31, 2026) statement of operations; the quarter's figures are implied by subtracting the nine-month year-to-date amounts from the full-year amounts. [1][2]\n\n**Not available**\n- Reported (as-disclosed) Q4 FY2026 total revenue and GAAP operating margin: Guidewire files only quarterly 10-Qs for its first three fiscal quarters and a 10-K for the full year; no standalone Q4 FY2026 statement of operations or earnings release is in the evidence, so the quarter's figures are only derivable (full year less nine months). [1][2]\n\n**Sources**\n[1] Guidewire Software, Inc. 10-K for FY2026 (filed 2026-09-11) (www.sec.gov, 2026-09-11, primary) https://www.sec.gov/Archives/edgar/data/1528396/000152839626000046/gwre-20260731.htm\n[2] Guidewire Software, Inc. 10-Q for Q3 FY2026 (filed 2026-06-05) (www.sec.gov, 2026-06-05, primary) https://www.sec.gov/Archives/edgar/data/1528396/000152839626000027/gwre-20260430.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 22452,
+   "output": 4619
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 73.62,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/f8fb05e8f68f90256cd2cc967f92ab82",
+  "companies": [
+   {
+    "name": "Guidewire Software, Inc.",
+    "ticker": "GWRE",
+    "cik": "1528396",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "FY2026 (twelve months ended July 31, 2026) total revenue",
+    "FY2026 GAAP operating income (loss)",
+    "Nine months ended April 30, 2026 (Q3 FY2026 YTD) total revenue",
+    "Nine months ended April 30, 2026 GAAP operating income (loss)",
+    "Implied Q4 FY2026 total revenue = FY2026 revenue minus nine-month revenue",
+    "Implied Q4 FY2026 GAAP operating margin = implied Q4 operating income / implied Q4 revenue"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "GWRE",
+     "label": "FY2026"
+    },
+    {
+     "ticker": "GWRE",
+     "label": "Q3 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "GWRE",
+     "period": "FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "GWRE",
+     "period": "Q3 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q4 FY2026 (2026-05-01 to 2026-07-31) has no standalone earnings release or 10-Q in the calendar; the quarter's figures must be derived by subtracting the Q3 FY2026 10-Q nine-month (year-to-date) amounts from the FY2026 10-K full-year amounts.",
+    "The FY2026 10-K itself reports the fourth quarter within the full-year statements, so the implied Q4 figures can be cross-checked against the 10-K's annual totals; no separate Q4 disclosure is planned.",
+    "GAAP operating margin is not a reported line item; it must be computed as GAAP operating income (loss) divided by total revenue for the implied quarter.",
+    "Q1 FY2027 and FY2027 are not yet reported (periods still in progress) and are not needed for this question."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Reported (as-disclosed) Q4 FY2026 total revenue and GAAP operating margin",
+    "kind": "not_disclosed",
+    "reason": "Guidewire files only quarterly 10-Qs for its first three fiscal quarters and a 10-K for the full year; no standalone Q4 FY2026 statement of operations or earnings release is in the evidence, so the quarter's figures are only derivable (full year less nine months).",
+    "evidence_ids": [
+     "E1",
+     "E2"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1528396/000152839626000027/gwre-20260430.htm",
+    "https://www.sec.gov/Archives/edgar/data/1528396/000152839626000046/gwre-20260731.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 4,
+   "retrieved_primary": 4
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Computation: Q4 = FY2026 - nine months ended April 30, 2026",
+     "met": true,
+     "note": "Agent correctly subtracted nine-month YTD figures from full-year figures."
+    },
+    {
+     "point": "Revenue USD 411.1M (411,087K) within +/-0.5%",
+     "met": true,
+     "note": "Agent reports 411,087 thousand USD, matching reference exactly."
+    },
+    {
+     "point": "GAAP income from operations USD 62.3M (62,318K) within +/-0.5%",
+     "met": true,
+     "note": "Agent reports 62,318 thousand USD, matching reference exactly."
+    },
+    {
+     "point": "GAAP operating margin 15.16% within +/-0.3 percentage points",
+     "met": true,
+     "note": "Agent reports 15.2%, which is 15.16% rounded to one decimal; difference 0.04 pp."
+    },
+    {
+     "point": "Did not use non-GAAP operating income (USD 111.3M, 27.1%) as GAAP margin",
+     "met": true,
+     "note": "Agent explicitly uses GAAP income from operations, not non-GAAP."
+    },
+    {
+     "point": "Did not subtract wrong nine-month period (e.g., six-month or Q3-only column)",
+     "met": true,
+     "note": "Agent uses nine months ended April 30, 2026 from Q3 10-Q."
+    },
+    {
+     "point": "No fiscal-label error (Q4 FY2026 = May-July 2026)",
+     "met": true,
+     "note": "Agent correctly labels Q4 FY2026 as three months ended July 31, 2026."
+    },
+    {
+     "point": "Did not use FY2025 comparatives",
+     "met": true,
+     "note": "Agent only uses FY2026 10-K and Q3 FY2026 10-Q."
+    },
+    {
+     "point": "Computed margin on quarterly revenue (not annual revenue)",
+     "met": true,
+     "note": "Agent computes margin as implied Q4 income from operations divided by implied Q4 revenue."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: the agent correctly derived Q4 FY2026 figures by subtracting nine-month YTD from full-year, reported revenue and GAAP operating income within tolerance, computed GAAP operating margin within tolerance, avoided non-GAAP figures, used correct periods, and labeled the quarter correctly."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Guidewire's FY2026 Form 10-K reports full-year total revenue of $1,475,363 thousand (GAAP) for the fiscal year ended July 31, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1528396/000152839626000046/gwre-20260731.htm",
+     "reason": "The 10-K filing shows Total revenue of $1,475,363 thousand for fiscal year ended July 31, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Guidewire's Q3 FY2026 Form 10-Q reports nine-month total revenue of $1,064,276 thousand (GAAP) for the nine months ended April 30, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1528396/000152839626000027/gwre-20260430.htm",
+     "reason": "The 10-Q filing shows Total revenue of $1,064,276 thousand for nine months ended April 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Guidewire's FY2026 Form 10-K reports full-year income from operations of $149,874 thousand (GAAP) for the fiscal year ended July 31, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1528396/000152839626000046/gwre-20260731.htm",
+     "reason": "The 10-K filing shows Income (loss) from operations of $149,874 thousand for fiscal year ended July 31, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Guidewire's Q3 FY2026 Form 10-Q reports nine-month income from operations of $87,556 thousand (GAAP) for the nine months ended April 30, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1528396/000152839626000027/gwre-20260430.htm",
+     "reason": "The 10-Q filing shows Income (loss) from operations of $87,556 thousand for nine months ended April 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Implied Q4 FY2026 total revenue is $411,087 thousand (GAAP).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1528396/000152839626000046/gwre-20260731.htm; https://www.sec.gov/Archives/edgar/data/1528396/000152839626000027/gwre-20260430.htm",
+     "reason": "Calculated as full-year total revenue ($1,475,363 thousand) minus nine-month total revenue ($1,064,276 thousand) = $411,087 thousand.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Implied Q4 FY2026 income from operations is $62,318 thousand (GAAP).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1528396/000152839626000046/gwre-20260731.htm; https://www.sec.gov/Archives/edgar/data/1528396/000152839626000027/gwre-20260430.htm",
+     "reason": "Calculated as full-year income from operations ($149,874 thousand) minus nine-month income from operations ($87,556 thousand) = $62,318 thousand.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Implied Q4 FY2026 GAAP operating margin is 15.2%.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1528396/000152839626000046/gwre-20260731.htm; https://www.sec.gov/Archives/edgar/data/1528396/000152839626000027/gwre-20260430.htm",
+     "reason": "Calculated as implied Q4 income from operations ($62,318 thousand) divided by implied Q4 total revenue ($411,087 thousand) = 15.16%, rounded to 15.2%.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Guidewire does not report a standalone fiscal Q4 2026 statement of operations; the quarter's figures are implied by subtracting the nine-month year-to-date amounts from the full-year amounts.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1528396/000152839626000046/gwre-20260731.htm; https://www.sec.gov/Archives/edgar/data/1528396/000152839626000027/gwre-20260430.htm",
+     "reason": "The evidence consists only of the FY2026 10-K and Q3 FY2026 10-Q; no separate Q4 10-Q or earnings release is present, so Q4 figures are derived by subtraction.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 7,
+   "numeric_cited": 7,
+   "cited": 8,
+   "supported": 4,
+   "not_retrieved": 4
+  }
+ }
+}

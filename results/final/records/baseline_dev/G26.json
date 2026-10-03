@@ -1,0 +1,244 @@
+{
+ "id": "G26",
+ "category": "Complex retrieval",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What were Novo Nordisk's 2025 sales and operating profit, with growth in reported DKK vs constant exchange rates, and the USD equivalent of 2025 sales?",
+ "grading": "DKK figures ±0.5% (DKK millions/billions, labeled); growth rates exact to 1pp for both reported and CER; USD conversion ±3% and must state the rate and its source; fail if DKK figures labeled as USD",
+ "answer": "Novo Nordisk 2025 sales were DKK 309,064 million, up 6% reported / 10% at constant exchange rates. Operating profit was DKK 127,658 million, down 1% reported / up 6% at CER. Using the Federal Reserve 2025 annual-average rate of DKK 6.6137 per USD, sales translate to approximately USD 46.7309 billion. This is an analyst translation of DKK-reported IFRS sales. [G26-E1, G26-E2]",
+ "output": {
+  "answer": "## Novo Nordisk FY2025 Results (announced 3 February 2026)\n\n**Net sales:** DKK 309,064 million\n- **+6%** growth as reported (DKK)\n- **+10%** growth at constant exchange rates (CER)\n\n**Operating profit:** DKK 127,658 million\n- **–1%** growth as reported (DKK)\n- **+6%** growth at CER\n\n**USD equivalent (2025):**\n- Net sales ≈ **$43.27 billion**\n- Operating profit ≈ **$17.88 billion** (at CER)\n\n### Key context\n- Operating profit was dampened by ~DKK 8 billion in one-off restructuring costs tied to a company-wide transformation and by impacts from the three former Catalent manufacturing sites (partly offset by the prior-year ocedurenone impairment). **Excluding restructuring costs**, operating profit would have risen 6% as reported and 13% at CER.\n- By segment: Diabetes & Obesity care sales +7% DKK (10% CER); Obesity care +26% DKK (31% CER); Rare disease +5% DKK (9% CER).\n- Net profit +1% to DKK 102,434 million; diluted EPS +2% to DKK 23.03; free cash flow DKK 28.3 billion.\n\nSources:\n- Novo Nordisk Annual Report 2025: https://annualreport.novonordisk.com/2025/strategic-aspirations/financial-performance.html\n- Full-year company announcement: https://view.news.eu.nasdaq.com/view?id=b355e580b928a809510a7738f28c9c420&lang=en&src=micro\n- PharmExec summary (USD figures): https://www.pharmexec.com/view/novo-nordisk-2025-financial-report-2026-sales-operations-profit-outlook\n\nNote: The USD equivalents come from a secondary source; Novo Nordisk reports primarily in DKK, so exact USD conversions depend on the exchange rate used.",
+  "tokens": {
+   "input": 11981,
+   "output": 739
+  },
+  "tavily_credits": 4,
+  "latency_s": 7.79,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/160c8791b361b98ad59c402c5d78f2e7",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Novo Nordisk 2025 full year sales operating profit reported DKK constant exchange rates",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Novo Nordisk annual report 2025 net sales operating profit DKK billion",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://annualreport.novonordisk.com/2025/strategic-aspirations/financial-performance.html",
+    "https://view.news.eu.nasdaq.com/view?id=b355e580b928a809510a7738f28c9c420&lang=en&src=micro",
+    "https://www.pharmexec.com/view/novo-nordisk-2025-financial-report-2026-sales-operations-profit-outlook"
+   ],
+   "cited_primary": 1,
+   "retrieved": 19,
+   "retrieved_primary": 4
+  },
+  "correctness": {
+   "score": 0.778,
+   "points": [
+    {
+     "point": "Sales DKK figure correct (±0.5%, labeled DKK millions)",
+     "met": true,
+     "note": "Agent states DKK 309,064 million, matching reference exactly and labeled correctly."
+    },
+    {
+     "point": "Operating profit DKK figure correct (±0.5%, labeled DKK millions)",
+     "met": true,
+     "note": "Agent states DKK 127,658 million, matching reference exactly and labeled correctly."
+    },
+    {
+     "point": "Sales growth reported correct (exact to 1pp)",
+     "met": true,
+     "note": "Agent states +6% reported, matching reference 6% exactly."
+    },
+    {
+     "point": "Sales growth CER correct (exact to 1pp)",
+     "met": true,
+     "note": "Agent states +10% CER, matching reference 10% exactly."
+    },
+    {
+     "point": "Operating profit growth reported correct (exact to 1pp)",
+     "met": true,
+     "note": "Agent states –1% reported, matching reference -1% exactly."
+    },
+    {
+     "point": "Operating profit growth CER correct (exact to 1pp)",
+     "met": true,
+     "note": "Agent states +6% CER, matching reference 6% exactly."
+    },
+    {
+     "point": "USD equivalent of sales within ±3% of reference",
+     "met": false,
+     "note": "Agent states $43.27 billion; reference is $46.73 billion. Difference ~7.4%, outside ±3% tolerance."
+    },
+    {
+     "point": "USD conversion states exchange rate and source",
+     "met": false,
+     "note": "Agent notes USD equivalents come from a secondary source but does not state the exchange rate used or its source."
+    },
+    {
+     "point": "DKK figures not labeled as USD",
+     "met": true,
+     "note": "All DKK figures are clearly labeled as DKK."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The agent correctly reports all DKK figures and growth rates, but the USD equivalent of sales is outside the allowed tolerance and the exchange rate with source is not provided, failing two explicit requirements."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Net sales DKK 309,064 million for FY2025",
+     "numeric": true,
+     "cited_url": "https://annualreport.novonordisk.com/2025/strategic-aspirations/financial-performance.html",
+     "reason": "Annual Report 2025 financial performance page states: 'Sales increased by 6% measured in Danish kroner and by 10% at CER to DKK 309,064 million in 2025.' Nasdaq view source also shows Net sales 309,064 for 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Net sales growth +6% as reported (DKK)",
+     "numeric": true,
+     "cited_url": "https://view.news.eu.nasdaq.com/view?id=b355e580b928a809510a7738f28c9c420&lang=en&src=micro",
+     "reason": "Nasdaq view source table shows Net sales growth as reported 6% for 2025 vs 2024 (309,064 vs 290,403). Annual Report also confirms 6% growth in Danish kroner.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Net sales growth +10% at constant exchange rates (CER)",
+     "numeric": true,
+     "cited_url": "https://view.news.eu.nasdaq.com/view?id=b355e580b928a809510a7738f28c9c420&lang=en&src=micro",
+     "reason": "Nasdaq view source table shows Net sales growth at CER 10% for 2025. Annual Report also confirms 10% at CER.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Operating profit DKK 127,658 million for FY2025",
+     "numeric": true,
+     "cited_url": "https://view.news.eu.nasdaq.com/view?id=b355e580b928a809510a7738f28c9c420&lang=en&src=micro",
+     "reason": "Nasdaq view source table shows Operating profit 127,658 for 2025. Annual Report states 'Operating profit decreased by 1% measured in Danish kroner and increased by 6% at CER to DKK 127,658 million'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Operating profit growth -1% as reported (DKK)",
+     "numeric": true,
+     "cited_url": "https://view.news.eu.nasdaq.com/view?id=b355e580b928a809510a7738f28c9c420&lang=en&src=micro",
+     "reason": "Nasdaq view source table shows Operating profit growth as reported (1%) for 2025 vs 2024 (127,658 vs 128,339). Annual Report confirms decrease of 1% in Danish kroner.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Operating profit growth +6% at CER",
+     "numeric": true,
+     "cited_url": "https://view.news.eu.nasdaq.com/view?id=b355e580b928a809510a7738f28c9c420&lang=en&src=micro",
+     "reason": "Nasdaq view source table shows Operating profit growth at CER 6% for 2025. Annual Report confirms increase of 6% at CER.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "USD equivalent net sales ≈ $43.27 billion for FY2025",
+     "numeric": true,
+     "cited_url": "https://www.pharmexec.com/view/novo-nordisk-2025-financial-report-2026-sales-operations-profit-outlook",
+     "reason": "PharmExec summary states 'Net sales reached $43.27 billion' citing Novo Nordisk February 3, 2026 release. This is a secondary source conversion from DKK; the answer notes exact USD conversions depend on exchange rate used.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "USD equivalent operating profit ≈ $17.88 billion at CER for FY2025",
+     "numeric": true,
+     "cited_url": "https://www.pharmexec.com/view/novo-nordisk-2025-financial-report-2026-sales-operations-profit-outlook",
+     "reason": "PharmExec summary states 'operating profit totaled $17.88 billion at CER' citing Novo Nordisk February 3, 2026 release. Secondary source conversion; answer notes dependency on exchange rate.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Operating profit dampened by ~DKK 8 billion in one-off restructuring costs",
+     "numeric": true,
+     "cited_url": "https://annualreport.novonordisk.com/2025/strategic-aspirations/financial-performance.html",
+     "reason": "Annual Report states: 'Had Novo Nordisk not incurred such restructuring cost amounting to around DKK 8 billion, operating profit would have increased by 6% in Danish kroner and 13% at CER.' Nasdaq source also mentions 'costs related to the company-wide transformation of around DKK 8 billion'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Excluding restructuring costs, operating profit would have risen 6% as reported and 13% at CER",
+     "numeric": true,
+     "cited_url": "https://annualreport.novonordisk.com/2025/strategic-aspirations/financial-performance.html",
+     "reason": "Annual Report explicitly states: 'Had Novo Nordisk not incurred such restructuring cost amounting to around DKK 8 billion, operating profit would have increased by 6% in Danish kroner and 13% at CER.' Nasdaq source confirms same figures.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Diabetes & Obesity care sales growth +7% DKK (10% CER)",
+     "numeric": true,
+     "cited_url": "https://view.news.eu.nasdaq.com/view?id=b355e580b928a809510a7738f28c9c420&lang=en&src=micro",
+     "reason": "Nasdaq source states: 'Sales within Obesity and Diabetes care increased by 7% in Danish kroner to DKK 289.5 billion (10% at CER)'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Obesity care sales growth +26% DKK (31% CER)",
+     "numeric": true,
+     "cited_url": "https://view.news.eu.nasdaq.com/view?id=b355e580b928a809510a7738f28c9c420&lang=en&src=micro",
+     "reason": "Nasdaq source states: 'mainly driven by Obesity care growth of 26% in Danish kroner (31% at CER)'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Rare disease sales growth +5% DKK (9% CER)",
+     "numeric": true,
+     "cited_url": "https://view.news.eu.nasdaq.com/view?id=b355e580b928a809510a7738f28c9c420&lang=en&src=micro",
+     "reason": "Nasdaq source states: 'Rare disease sales increased by 5% in Danish kroner (9% at CER)'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Net profit +1% to DKK 102,434 million",
+     "numeric": true,
+     "cited_url": "https://view.news.eu.nasdaq.com/view?id=b355e580b928a809510a7738f28c9c420&lang=en&src=micro",
+     "reason": "Nasdaq view source table shows Net profit 102,434 for 2025 vs 100,988 for 2024, growth 1%. Annual Report confirms: 'Net profit increased by 1% to DKK 102,434 million'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Diluted EPS +2% to DKK 23.03",
+     "numeric": true,
+     "cited_url": "https://view.news.eu.nasdaq.com/view?id=b355e580b928a809510a7738f28c9c420&lang=en&src=micro",
+     "reason": "Nasdaq view source table shows Diluted earnings per share 23.03 for 2025 vs 22.63 for 2024, growth 2%. Annual Report confirms: 'diluted earnings per share increased by 2% to DKK 23.03'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Free cash flow DKK 28.3 billion for FY2025",
+     "numeric": true,
+     "cited_url": "https://annualreport.novonordisk.com/2025/strategic-aspirations/financial-performance.html",
+     "reason": "Annual Report states: 'Free cash flow in 2025 was DKK 28.3 billion compared to DKK (14.7) billion in 2024.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 16,
+   "numeric_cited": 16,
+   "cited": 16,
+   "supported": 16,
+   "not_retrieved": 0
+  }
+ }
+}

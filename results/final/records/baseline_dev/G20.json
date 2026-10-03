@@ -1,0 +1,225 @@
+{
+ "id": "G20",
+ "category": "Trends",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "Show Apple's Services net sales and Services gross margin percentage for FY2023, FY2024, and FY2025, and the change in Services gross margin over the period.",
+ "grading": "Net sales ±0.5% (USD millions); GM% exact to 0.1pp; change expressed in pp",
+ "answer": "Apple Services net sales / Services gross margin were: FY2023, USD 85,200 million / 70.8%; FY2024, USD 96,169 million / 73.9%; FY2025, USD 109,158 million / 75.4%. Services gross margin increased 4.6 percentage points from FY2023 to FY2025. FY2023 had 53 weeks, versus 52 weeks in FY2024 and FY2025. [G20-E1]",
+ "output": {
+  "answer": "## Apple Services Segment — FY2023–FY2025\n\n| Metric | FY2023 | FY2024 | FY2025 |\n|---|---|---|---|\n| Services net sales | $85,200M | $96,169M | $109,158M |\n| Services cost of sales | $24,855M | $25,119M | $26,844M |\n| Services gross margin | $60,345M | $71,050M | $82,314M |\n| **Services gross margin %** | **70.8%** | **73.9%** | **75.4%** |\n\n### Change in Services gross margin percentage\n- **FY2023 → FY2024:** +3.1 pp (70.8% → 73.9%)\n- **FY2024 → FY2025:** +1.5 pp (73.9% → 75.4%)\n- **Cumulative FY2023 → FY2025: +4.6 pp** (70.8% → 75.4%)\n\n### Change in Services net sales\n- FY2024 vs FY2023: +$10,969M (+12.9%)\n- FY2025 vs FY2024: +$12,989M (+13.5%)\n- Cumulative: +$23,958M (+28.1%)\n\n### Drivers cited by Apple\n- **FY2024:** Gross margin dollars rose mainly on higher Services net sales; the *percentage* rose due to a different Services mix (advertising and the App Store noted as growth drivers).\n- **FY2025:** Gross margin rose primarily on higher Services net sales and a different mix of services; the percentage increase was mainly a different mix of services, partly offset by higher costs.\n\n### Context\nServices remains Apple's highest-margin segment by a wide margin — Products gross margin was 36.5% / 37.2% / 36.8% across FY2023–FY2025, so the Services percentage is roughly double. Rising Services mix (about 26.2% of total net sales in FY2025, up from ~24.6% in FY2024) is the main driver of Apple's total company gross margin expansion from 44.1% (FY2023) to 46.9% (FY2025).\n\nSources:\n- Apple 2025 Form 10-K: https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm\n- Apple 2024 Form 10-K: https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm\n- Apple Q4 FY2025 earnings release (8-K Ex-99.1): https://www.sec.gov/Archives/edgar/data/320193/000032019325000077/a8-kex991q4202509272025.htm",
+  "tokens": {
+   "input": 24962,
+   "output": 955
+  },
+  "tavily_credits": 3,
+  "latency_s": 7.94,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/44782825835e4a312f401022001b137d",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Apple Services net sales gross margin percentage FY2023 FY2024 10-K",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Apple fiscal 2025 fourth quarter results Services net sales gross margin",
+     "time_range": "year"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+    "https://www.sec.gov/Archives/edgar/data/320193/000032019325000077/a8-kex991q4202509272025.htm",
+    "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 20,
+   "retrieved_primary": 8
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Net sales FY2023 within ±0.5% of 85,200 million USD",
+     "met": true,
+     "note": "Agent reports $85,200M, exactly matching reference."
+    },
+    {
+     "point": "Net sales FY2024 within ±0.5% of 96,169 million USD",
+     "met": true,
+     "note": "Agent reports $96,169M, exactly matching reference."
+    },
+    {
+     "point": "Net sales FY2025 within ±0.5% of 109,158 million USD",
+     "met": true,
+     "note": "Agent reports $109,158M, exactly matching reference."
+    },
+    {
+     "point": "Services gross margin % FY2023 exact to 0.1pp (70.8%)",
+     "met": true,
+     "note": "Agent reports 70.8%, exactly matching reference."
+    },
+    {
+     "point": "Services gross margin % FY2024 exact to 0.1pp (73.9%)",
+     "met": true,
+     "note": "Agent reports 73.9%, exactly matching reference."
+    },
+    {
+     "point": "Services gross margin % FY2025 exact to 0.1pp (75.4%)",
+     "met": true,
+     "note": "Agent reports 75.4%, exactly matching reference."
+    },
+    {
+     "point": "Change in Services gross margin expressed in percentage points (pp) from FY2023 to FY2025 (4.6 pp)",
+     "met": true,
+     "note": "Agent reports cumulative change +4.6 pp, exactly matching reference."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All required figures match the reference exactly: net sales for each fiscal year, Services gross margin percentages to one decimal place, and the change expressed in percentage points. The agent uses the correct fiscal years (ending September) and does not confuse total company gross margin with Services gross margin."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Services net sales FY2023 = $85,200M",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+     "reason": "The 2024 Form 10-K shows Services net sales for 2023 as $85,200 million in the Gross Margin table (dollars in millions).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Services net sales FY2024 = $96,169M",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+     "reason": "The 2024 Form 10-K shows Services net sales for 2024 as $96,169 million in the Gross Margin table.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Services net sales FY2025 = $109,158M",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "reason": "The 2025 Form 10-K shows Services net sales for 2025 as $109,158 million in the Products and Services Performance table.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Services cost of sales FY2023 = $24,855M",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+     "reason": "The 2024 Form 10-K shows Services cost of sales for 2023 as $24,855 million in the consolidated statements of operations.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Services cost of sales FY2024 = $25,119M",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+     "reason": "The 2024 Form 10-K shows Services cost of sales for 2024 as $25,119 million in the consolidated statements of operations.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Services cost of sales FY2025 = $26,844M",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "reason": "The 2025 Form 10-K shows Services cost of sales for 2025 as $26,844 million in the consolidated statements of operations.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Services gross margin FY2023 = $60,345M",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+     "reason": "The 2024 Form 10-K shows Services gross margin for 2023 as $60,345 million in the Gross Margin table.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Services gross margin FY2024 = $71,050M",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+     "reason": "The 2024 Form 10-K shows Services gross margin for 2024 as $71,050 million in the Gross Margin table.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Services gross margin FY2025 = $82,314M",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "reason": "The 2025 Form 10-K shows Services gross margin for 2025 as $82,314 million in the Gross Margin table.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Services gross margin % FY2023 = 70.8%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+     "reason": "The 2024 Form 10-K shows Services gross margin percentage for 2023 as 70.8% in the Gross Margin table.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Services gross margin % FY2024 = 73.9%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+     "reason": "The 2024 Form 10-K shows Services gross margin percentage for 2024 as 73.9% in the Gross Margin table.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Services gross margin % FY2025 = 75.4%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "reason": "The 2025 Form 10-K shows Services gross margin percentage for 2025 as 75.4% in the Gross Margin table.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Change in Services gross margin percentage FY2023→FY2024 = +3.1 pp",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+     "reason": "Calculated from the reported percentages: 73.9% - 70.8% = 3.1 percentage points. The 2024 10-K provides both percentages.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Change in Services gross margin percentage FY2024→FY2025 = +1.5 pp",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "reason": "Calculated from the reported percentages: 75.4% - 73.9% = 1.5 percentage points. The 2025 10-K provides both percentages.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cumulative change in Services gross margin percentage FY2023→FY2025 = +4.6 pp",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "reason": "Calculated from the reported percentages: 75.4% - 70.8% = 4.6 percentage points. The 2025 10-K provides both percentages.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 15,
+   "numeric_cited": 15,
+   "cited": 15,
+   "supported": 15,
+   "not_retrieved": 0
+  }
+ }
+}

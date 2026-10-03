@@ -1,0 +1,180 @@
+{
+ "id": "H02",
+ "category": "Complex retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "As of March 2, 2026, what was Casey's General Stores' most recently reported quarterly diluted EPS (state the fiscal quarter), and what growth range was the company guiding to for fiscal 2026 EBITDA?",
+ "grading": "Key points (both required): (1) latest reported quarter = fiscal Q2 2026 (three months ended Oct 31, 2025), diluted EPS USD 5.53; (2) fiscal 2026 EBITDA expected to increase 15% to 17% (updated 2025-12-09). Fail if fiscal Q3 2026 (EPS 3.49, released 2026-03-09) or the later 18%-20% EBITDA outlook is presented as the latest/in effect.",
+ "answer": "As of March 2, 2026, Casey's latest reported quarter was fiscal Q2 2026 (three months ended October 31, 2025): diluted EPS of USD 5.53 (net income USD 206.3 million, EBITDA USD 410.1 million) [H02-E1][H02-E2]. The fiscal 2026 (year ending April 30, 2026) outlook in effect, as updated on December 9, 2025, was for EBITDA to increase 15% to 17% (inside same-store sales +3% to +4%) [H02-E1]. Fiscal Q3 results (EPS USD 3.49) and the raised 18%-20% EBITDA outlook came on March 9, 2026 and are after the as_of date [H02-E3]. EDGAR shows no earnings 8-K between 2025-12-09 and 2026-03-09 [H02-E4].",
+ "output": {
+  "answer": "**Question:** As of March 2, 2026, what was Casey's General Stores' most recently reported quarterly diluted EPS (state the fiscal quarter), and what growth range was the company guiding to for fiscal 2026 EBITDA?\n*As of 2026-03-02*\n\n- Casey's most recently reported quarterly diluted EPS as of March 2, 2026 was $5.53 (GAAP, as reported) for Q2 FY2026, the quarter ended October 31, 2025, reported in the earnings release filed December 9, 2025. [1][2][3]\n- In its Q2 FY2026 release (December 9, 2025), Casey's guided fiscal 2026 EBITDA to increase 15% to 17% (forward-looking guidance, updated from prior guidance). [1]\n- The prior fiscal 2026 EBITDA guidance, issued with Q4 FY2025 results on June 9, 2025, was an increase of 10% to 12%. [4]\n\n**Not available**\n- Q3 FY2026 (quarter ended January 31, 2026) diluted EPS: Q3 FY2026 ended January 31, 2026 but had not been reported as of March 2, 2026; the most recent reported quarter is Q2 FY2026 (ended October 31, 2025). [1][2]\n\n**Sources**\n[1] CASEYS GENERAL STORES INC earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2025-12-09) (www.sec.gov, 2025-12-09, primary) https://www.sec.gov/Archives/edgar/data/726958/000072695825000116/q2fy2026earningspressrelea.htm\n[2] CASEYS GENERAL STORES INC 10-Q for Q2 FY2026 (filed 2025-12-09) (www.sec.gov, 2025-12-09, primary) https://www.sec.gov/Archives/edgar/data/726958/000072695825000114/casy-20251031.htm\n[3] CASEYS GENERAL STORES INC XBRL data tagged in 10-Q filed 2025-12-09 (www.sec.gov, 2025-12-09, primary) https://www.sec.gov/Archives/edgar/data/726958/000072695825000114/\n[4] CASEYS GENERAL STORES INC earnings release for Q4 FY2025, 8-K EX-99.1 (filed 2025-06-09) (www.sec.gov, 2025-06-09, primary) https://www.sec.gov/Archives/edgar/data/726958/000072695825000032/ex991q42025pressrelease.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 29377,
+   "output": 2858
+  },
+  "tavily_credits": 1.0,
+  "latency_s": 22.57,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/094a8e7e7c59d47a505c6eef6dcdf6f2",
+  "companies": [
+   {
+    "name": "CASEYS GENERAL STORES INC",
+    "ticker": "CASY",
+    "cik": "726958",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Diluted EPS for Q2 FY2026 (quarter ended 2025-10-31), as reported in the 8-K earnings release filed 2025-12-09",
+    "Fiscal quarter label and period end date for the most recently reported quarter as of 2026-03-02",
+    "Company guidance range for FY2026 EBITDA growth (percent range), as most recently reaffirmed/updated",
+    "Whether FY2026 EBITDA guidance was revised at Q2 FY2026 versus the original FY2026 guidance given with Q4 FY2025 results"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "CASY",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "CASY",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "CASY",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "CASY",
+     "period": "Q4 FY2025",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Management commentary on the Q2 FY2026 earnings call, including any FY2026 EBITDA guidance range or revisions discussed there rather than in the release",
+     "query": "Casey's General Stores Q2 FY2026 earnings call December 2025 fiscal 2026 EBITDA guidance",
+     "topic": "general",
+     "days_back": null
+    }
+   ],
+   "availability_notes": [
+    "Q3 FY2026 (2025-11-01 to 2026-01-31) has ended but is not yet reported as of 2026-03-02, so the most recent reported quarter is Q2 FY2026 (ended 2025-10-31, released 2025-12-09).",
+    "FY2026 is still in progress; FY2026 EBITDA guidance is a forward-looking figure and may be expressed as a growth range rather than a dollar amount, and may only be quantified in the earnings release or call rather than in the 10-Q."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Q3 FY2026 (quarter ended January 31, 2026) diluted EPS",
+    "kind": "not_reported_yet",
+    "reason": "Q3 FY2026 ended January 31, 2026 but had not been reported as of March 2, 2026; the most recent reported quarter is Q2 FY2026 (ended October 31, 2025).",
+    "evidence_ids": [
+     "E1",
+     "E2"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Casey's General Stores Q2 FY2026 earnings call December 2025 fiscal 2026 EBITDA guidance",
+     "topic": "general",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-03-02",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/726958/000072695825000032/ex991q42025pressrelease.htm",
+    "https://www.sec.gov/Archives/edgar/data/726958/000072695825000114/",
+    "https://www.sec.gov/Archives/edgar/data/726958/000072695825000114/casy-20251031.htm",
+    "https://www.sec.gov/Archives/edgar/data/726958/000072695825000116/q2fy2026earningspressrelea.htm"
+   ],
+   "cited_primary": 4,
+   "retrieved": 4,
+   "retrieved_primary": 4
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "latest reported quarter = fiscal Q2 2026 (three months ended Oct 31, 2025), diluted EPS USD 5.53",
+     "met": true,
+     "note": "Agent states: 'Casey's most recently reported quarterly diluted EPS as of March 2, 2026 was $5.53 (GAAP, as reported) for Q2 FY2026, the quarter ended October 31, 2025, reported in the earnings release filed December 9, 2025.' This matches the required quarter and EPS exactly."
+    },
+    {
+     "point": "fiscal 2026 EBITDA expected to increase 15% to 17% (updated 2025-12-09)",
+     "met": true,
+     "note": "Agent states: 'In its Q2 FY2026 release (December 9, 2025), Casey's guided fiscal 2026 EBITDA to increase 15% to 17% (forward-looking guidance, updated from prior guidance).' This matches the required growth range and update date exactly."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "Both required points are fully satisfied. The agent correctly identifies the most recent reported quarter as fiscal Q2 2026 (ended Oct 31, 2025) with diluted EPS of $5.53, and the fiscal 2026 EBITDA growth guidance of 15%-17% as updated on December 9, 2025. The agent explicitly notes that Q3 FY2026 results (released March 9, 2026) were not available as of the as-of date, avoiding the failure mode of using post-date information. No incorrect figures (net income, EBITDA dollars, same-store-sales outlook) are presented."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Casey's most recently reported quarterly diluted EPS as of March 2, 2026 was $5.53 (GAAP) for Q2 FY2026, quarter ended October 31, 2025, reported in earnings release filed December 9, 2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/726958/000072695825000116/q2fy2026earningspressrelea.htm",
+     "reason": "Source [1] explicitly states: 'The Company reported diluted earnings per common share of $5.53 for the second quarter of fiscal 2026' and shows the quarter ended October 31, 2025, filed December 9, 2025. Sources [2] and [3] also confirm the same diluted EPS figure and period.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "In its Q2 FY2026 release (December 9, 2025), Casey's guided fiscal 2026 EBITDA to increase 15% to 17%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/726958/000072695825000116/q2fy2026earningspressrelea.htm",
+     "reason": "Source [1] states: 'As a result of the strong financial performance year-to-date, fiscal 2026 EBITDA is expected to increase 15% to 17%.' This is forward-looking guidance updated in the Q2 release.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The prior fiscal 2026 EBITDA guidance, issued with Q4 FY2025 results on June 9, 2025, was an increase of 10% to 12%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/726958/000072695825000032/ex991q42025pressrelease.htm",
+     "reason": "Source [4] states: 'Casey's expects the following performance during fiscal 2026. The Company expects EBITDA to increase 10% to 12%.' This was released June 9, 2025 with Q4 FY2025 results.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 (quarter ended January 31, 2026) diluted EPS had not been reported as of March 2, 2026; the most recent reported quarter is Q2 FY2026 (ended October 31, 2025)",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/726958/000072695825000116/q2fy2026earningspressrelea.htm",
+     "reason": "Sources [1] and [2] only cover Q2 FY2026 (filed December 9, 2025). They do not mention Q3 FY2026 or its reporting status as of March 2, 2026. The claim about Q3 not being reported is not directly supported by the retrieved text, which only goes up to December 2025.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 4,
+   "supported": 3,
+   "not_retrieved": 0
+  }
+ }
+}

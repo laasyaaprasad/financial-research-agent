@@ -1,0 +1,255 @@
+{
+ "id": "X05",
+ "category": "Trends",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "For AMETEK, build a segment revenue trend: report net sales in USD millions for each of its two reportable segments, Electronic Instruments Group (EIG) and Electromechanical Group (EMG), for each of the company's last four reported fiscal quarters as of October 3, 2026 (AMETEK's fiscal year is the calendar year). Label each quarter (e.g., 'Q2 2026') and give its period-end date. Note that fourth-quarter results are not presented in a 10-Q.",
+ "grading": "Graded cell by cell: each value within tolerance and for the stated period; a missing cell counts as wrong.",
+ "answer": "AMETEK segment net sales (USD millions; Q4 2025 derived as FY2025 minus nine months and matching the Q4 release):\n| Row | Electronic Instruments Group (EIG) | Electromechanical Group (EMG) |\n|---|---|---|\n| Q3 2025 (ended 2025-09-30) | 1,246.3 | 646.3 |\n| Q4 2025 (ended 2025-12-31) | 1,369.5 | 628.9 |\n| Q1 2026 (ended 2026-03-31) | 1,264.5 | 663.9 |\n| Q2 2026 (ended 2026-06-30) | 1,321.2 | 723.2 |",
+ "output": {
+  "answer": "**Question:** For AMETEK, build a segment revenue trend: report net sales in USD millions for each of its two reportable segments, Electronic Instruments Group (EIG) and Electromechanical Group (EMG), for each of the company's last four reported fiscal quarters as of October 3, 2026 (AMETEK's fiscal year is the calendar year). Label each quarter (e.g., 'Q2 2026') and give its period-end date. Note that fourth-quarter results are not presented in a 10-Q.\n*As of 2026-10-03*\n\n| | EIG net sales (USD millions) | EMG net sales (USD millions) |\n|---|---|---|\n| Q3 FY2025 (quarter ended September 30, 2025) | 1,246.3 [1] | 646.3 [1] |\n| Q4 FY2025 (quarter ended December 31, 2025) | 1,369.5 [1][2] | 628.9 [1][2] |\n| Q1 FY2026 (quarter ended March 31, 2026) | 1,264.5 [3] | 663.9 [3] |\n| Q2 FY2026 (quarter ended June 30, 2026) | 1,321.2 [4] | 723.2 [4] |\n\n- AMETEK has two reportable segments, Electronic Instruments Group (EIG) and Electromechanical Group (EMG), and its fiscal year is the calendar year (year ended December 31). [1][2]\n- The last four reported fiscal quarters as of October 3, 2026 are Q3 FY2025, Q4 FY2025, Q1 FY2026 and Q2 FY2026; Q3 FY2026 (quarter ended September 30, 2026) has ended but is not yet reported, and Q4 FY2026 is in progress. [4]\n- Segment net sales are reported on a GAAP, as-reported basis in the reportable segment note; Q4 FY2025 segment net sales are not presented in a 10-Q and are derived as full-year FY2025 less the nine months ended September 30, 2025. [1][2]\n\n**Not available**\n- EIG and EMG net sales for Q3 FY2026 (quarter ended September 30, 2026): The quarter has ended but no 10-Q or earnings release covering it exists as of October 3, 2026; the latest filing is the Q2 FY2026 10-Q filed 2026-08-04. [4]\n- EIG and EMG net sales for Q4 FY2026 (quarter ended December 31, 2026): The quarter is still in progress and not reported as of October 3, 2026. [4]\n\n**Sources**\n[1] AMETEK INC/ 10-Q for Q3 FY2025 (filed 2025-10-30) (www.sec.gov, 2025-10-30, primary) https://www.sec.gov/Archives/edgar/data/1037868/000103786825000077/ame-20250930.htm\n[2] AMETEK INC/ 10-K for Q4 FY2025 (filed 2026-02-17) (www.sec.gov, 2026-02-17, primary) https://www.sec.gov/Archives/edgar/data/1037868/000103786826000016/ame-20251231.htm\n[3] AMETEK INC/ 10-Q for Q1 FY2026 (filed 2026-04-30) (www.sec.gov, 2026-04-30, primary) https://www.sec.gov/Archives/edgar/data/1037868/000103786826000144/ame-20260331.htm\n[4] AMETEK INC/ 10-Q for Q2 FY2026 (filed 2026-08-04) (www.sec.gov, 2026-08-04, primary) https://www.sec.gov/Archives/edgar/data/1037868/000103786826000175/ame-20260630.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 93120,
+   "output": 19735
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 97.59,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/a11c3534e5029a489a00ef175098ef9a",
+  "companies": [
+   {
+    "name": "AMETEK INC/",
+    "ticker": "AME",
+    "cik": "1037868",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Net sales (USD millions) for Electronic Instruments Group (EIG) in Q3 2025",
+    "Net sales (USD millions) for Electromechanical Group (EMG) in Q3 2025",
+    "Net sales (USD millions) for Electronic Instruments Group (EIG) in Q4 2025",
+    "Net sales (USD millions) for Electromechanical Group (EMG) in Q4 2025",
+    "Net sales (USD millions) for Electronic Instruments Group (EIG) in Q1 2026",
+    "Net sales (USD millions) for Electromechanical Group (EMG) in Q1 2026",
+    "Net sales (USD millions) for Electronic Instruments Group (EIG) in Q2 2026",
+    "Net sales (USD millions) for Electromechanical Group (EMG) in Q2 2026",
+    "Total consolidated net sales for each quarter (for cross-checking segment totals)"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "AME",
+     "label": "Q3 FY2025"
+    },
+    {
+     "ticker": "AME",
+     "label": "Q4 FY2025"
+    },
+    {
+     "ticker": "AME",
+     "label": "Q1 FY2026"
+    },
+    {
+     "ticker": "AME",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "AME",
+     "period": "Q3 FY2025",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "AME",
+     "period": "Q4 FY2025",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "AME",
+     "period": "Q1 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "AME",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q3 FY2026 (2026-07-01 to 2026-09-30) has ended but is not yet reported — no 10-Q or earnings release exists, so it cannot be included in the four-quarter trend.",
+    "Q4 FY2026 (2026-10-01 to 2026-12-31) is still in progress and not reported.",
+    "The last four reported quarters as of 2026-10-03 are therefore Q3 FY2025, Q4 FY2025, Q1 FY2026 and Q2 FY2026.",
+    "Q4 FY2025 segment results are not in a 10-Q; they come from the FY2025 10-K (filed 2026-02-17), which presents the fourth quarter and full year.",
+    "Segment net sales are disclosed in the segment note of the periodic reports; if AMETEK reports segment revenue only as operating profit or restates segment structure, the segment sales figures may need to be taken from the segment note tables rather than the income statement."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "EIG and EMG net sales for Q3 FY2026 (quarter ended September 30, 2026)",
+    "kind": "not_reported_yet",
+    "reason": "The quarter has ended but no 10-Q or earnings release covering it exists as of October 3, 2026; the latest filing is the Q2 FY2026 10-Q filed 2026-08-04.",
+    "evidence_ids": [
+     "E4"
+    ]
+   },
+   {
+    "item": "EIG and EMG net sales for Q4 FY2026 (quarter ended December 31, 2026)",
+    "kind": "not_reported_yet",
+    "reason": "The quarter is still in progress and not reported as of October 3, 2026.",
+    "evidence_ids": [
+     "E4"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1037868/000103786825000077/ame-20250930.htm",
+    "https://www.sec.gov/Archives/edgar/data/1037868/000103786826000016/ame-20251231.htm",
+    "https://www.sec.gov/Archives/edgar/data/1037868/000103786826000144/ame-20260331.htm",
+    "https://www.sec.gov/Archives/edgar/data/1037868/000103786826000175/ame-20260630.htm"
+   ],
+   "cited_primary": 4,
+   "retrieved": 8,
+   "retrieved_primary": 8
+  },
+  "correctness": {
+   "score": 1.0,
+   "verdict": "correct",
+   "points": [
+    {
+     "point": "AMETEK, Inc. Q3 2025 Electronic Instruments Group (EIG) net sales = 1246.3 USD millions",
+     "met": true,
+     "note": "answer: 1246.3"
+    },
+    {
+     "point": "AMETEK, Inc. Q3 2025 Electromechanical Group (EMG) net sales = 646.3 USD millions",
+     "met": true,
+     "note": "answer: 646.3"
+    },
+    {
+     "point": "AMETEK, Inc. Q4 2025 Electronic Instruments Group (EIG) net sales = 1369.5 USD millions",
+     "met": true,
+     "note": "answer: 1369.5"
+    },
+    {
+     "point": "AMETEK, Inc. Q4 2025 Electromechanical Group (EMG) net sales = 628.9 USD millions",
+     "met": true,
+     "note": "answer: 628.9"
+    },
+    {
+     "point": "AMETEK, Inc. Q1 2026 Electronic Instruments Group (EIG) net sales = 1264.5 USD millions",
+     "met": true,
+     "note": "answer: 1264.5"
+    },
+    {
+     "point": "AMETEK, Inc. Q1 2026 Electromechanical Group (EMG) net sales = 663.9 USD millions",
+     "met": true,
+     "note": "answer: 663.9"
+    },
+    {
+     "point": "AMETEK, Inc. Q2 2026 Electronic Instruments Group (EIG) net sales = 1321.2 USD millions",
+     "met": true,
+     "note": "answer: 1321.2"
+    },
+    {
+     "point": "AMETEK, Inc. Q2 2026 Electromechanical Group (EMG) net sales = 723.2 USD millions",
+     "met": true,
+     "note": "answer: 723.2"
+    }
+   ],
+   "rationale": "8/8 cells correct",
+   "cells_correct": 8,
+   "cells_total": 8
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "AMETEK has two reportable segments: Electronic Instruments Group (EIG) and Electromechanical Group (EMG); its fiscal year is the calendar year (year ended December 31).",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1037868/000103786825000077/ame-20250930.htm",
+     "reason": "Source [1] states: 'The Company has two reportable segments, Electronic Instruments Group (“EIG”) and Electromechanical Group (“EMG”).' The 10‑K for FY2025 (source [2]) also confirms the fiscal year ends December 31.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "As of October 3, 2026, the last four reported fiscal quarters are Q3 FY2025 (ended Sep 30, 2025), Q4 FY2025 (ended Dec 31, 2025), Q1 FY2026 (ended Mar 31, 2026), and Q2 FY2026 (ended Jun 30, 2026). Q3 FY2026 (ended Sep 30, 2026) has ended but is not yet reported; the latest filing is the Q2 FY2026 10‑Q filed 2026‑08‑04.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1037868/000103786826000175/ame-20260630.htm",
+     "reason": "Source [4] is the Q2 FY2026 10‑Q filed 2026‑08‑04, covering the quarter ended June 30, 2026. As of 2026‑10‑03, a 10‑Q for Q3 FY2026 (quarter ended Sep 30, 2026) would not yet be filed (typically filed early November).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Segment net sales are reported on a GAAP, as‑reported basis in the reportable segment note; Q4 FY2025 segment net sales are not presented in a 10‑Q and are derived as full‑year FY2025 less the nine months ended September 30, 2025.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1037868/000103786825000077/ame-20250930.htm",
+     "reason": "Source [1] (10‑Q for Q3 FY2025) provides nine‑month segment net sales; source [2] (10‑K for FY2025) provides full‑year segment net sales. The 10‑K does not present a standalone Q4 10‑Q, so Q4 figures are derived by subtraction. The arithmetic checks: FY2025 EIG 4,919.1M – 9‑mo 3,549.576M = 1,369.524M ≈ 1,369.5M; EMG 2,482.016M – 1,853.092M = 628.924M ≈ 628.9M.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2025 (quarter ended September 30, 2025): EIG net sales = $1,246.3 million; EMG net sales = $646.3 million.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1037868/000103786825000077/ame-20250930.htm",
+     "reason": "Source [1] shows 'Consolidated net sales' for three months ended Sep 30, 2025: EIG 1,246,332 thousand, EMG 646,309 thousand. Rounded to one decimal: 1,246.3 and 646.3 million USD.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2025 (quarter ended December 31, 2025): EIG net sales = $1,369.5 million; EMG net sales = $628.9 million.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1037868/000103786825000077/ame-20250930.htm",
+     "reason": "Derived from source [1] (nine months ended Sep 30, 2025: EIG 3,549,576 thousand, EMG 1,853,092 thousand) and source [2] (full year FY2025: EIG 4,919,100 thousand, EMG 2,482,016 thousand). Subtraction yields EIG 1,369,524 thousand ≈ 1,369.5M; EMG 628,924 thousand ≈ 628.9M. Rounding is within half the last digit.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY2026 (quarter ended March 31, 2026): EIG net sales = $1,264.5 million; EMG net sales = $663.9 million.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1037868/000103786826000144/ame-20260331.htm",
+     "reason": "Source [3] shows 'Consolidated net sales' for three months ended Mar 31, 2026: EIG 1,264,536 thousand, EMG 663,901 thousand. Rounded to one decimal: 1,264.5 and 663.9 million USD.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 (quarter ended June 30, 2026): EIG net sales = $1,321.2 million; EMG net sales = $723.2 million.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1037868/000103786826000175/ame-20260630.htm",
+     "reason": "Source [4] shows 'Consolidated net sales' for three months ended Jun 30, 2026: EIG 1,321,153 thousand, EMG 723,244 thousand. Rounded to one decimal: 1,321.2 and 723.2 million USD.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "EIG and EMG net sales for Q3 FY2026 (quarter ended September 30, 2026) are not available as of October 3, 2026; the quarter has ended but no 10‑Q or earnings release covering it exists as of that date; the latest filing is the Q2 FY2026 10‑Q filed 2026‑08‑04.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1037868/000103786826000175/ame-20260630.htm",
+     "reason": "Source [4] is the Q2 FY2026 10‑Q filed 2026‑08‑04. A 10‑Q for Q3 FY2026 would typically be filed in early November 2026, so it is not yet available as of 2026‑10‑03.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "EIG and EMG net sales for Q4 FY2026 (quarter ended December 31, 2026) are not available as of October 3, 2026; the quarter is still in progress and not reported.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1037868/000103786826000175/ame-20260630.htm",
+     "reason": "As of 2026‑10‑03, the fourth quarter of FY2026 (Oct–Dec 2026) has not yet ended, so no filing exists.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 9,
+   "supported": 9,
+   "not_retrieved": 0
+  }
+ }
+}

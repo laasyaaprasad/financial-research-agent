@@ -1,0 +1,183 @@
+{
+ "id": "G03",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Costco's membership fee income for fiscal 2026, in USD millions, and the YoY growth?",
+ "grading": "±0.5%, USD millions; must be 52-week FY2026 column not 16-week Q4; fail if FY2025 presented as current",
+ "answer": "Costco FY2026 membership fee income was USD 5,907 million, versus USD 5,323 million in FY2025: 10.9713% YoY growth. These are the 52-week annual columns. [G03-E1]",
+ "output": {
+  "answer": "**Question:** What was Costco's membership fee income for fiscal 2026, in USD millions, and the YoY growth?\n*As of 2026-10-01*\n\n| | Membership fee income (USD millions) | Membership fee income YoY growth (%) |\n|---|---|---|\n| FY2026 (52 weeks ended August 30, 2026) | 5,907 [1] | — |\n| FY2025 (52 weeks ended August 31, 2025) | 5,323 [1][2] | — |\n| FY2026 vs FY2025 | — | 11.0 [1] |\n\n- Costco reported membership fee income of $5,907 million for fiscal 2026 (52 weeks ended August 30, 2026), as reported in its Q4/FY2026 earnings release. [1]\n- Costco reported membership fee income of $5,323 million for fiscal 2025 (52 weeks ended August 31, 2025), the prior-year comparative. [1][2]\n- Membership fee income grew 11.0% year over year in fiscal 2026 versus fiscal 2025. [1]\n\n**Not available**\n- FY2026 full-year membership fee income from audited financial statements (10-K): The FY2026 10-K has not been filed; the figure is taken from the Q4/FY2026 earnings release (8-K filed 2026-09-24). [1]\n- Company-disclosed YoY growth rate for full-year membership fee income: The FY2026 release discloses membership income growth only for Q4 (+7.3%, +7.7% ex-FX), not for the full fiscal year. [3]\n\n**Sources**\n[1] COSTCO WHOLESALE CORP /NEW earnings release for FY2026, 8-K EX-99.1 (filed 2026-09-24) (www.sec.gov, 2026-09-24, primary) https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9918-k92426.htm\n[2] COSTCO WHOLESALE CORP /NEW earnings release for FY2025, 8-K EX-99.1 (filed 2025-09-25) (www.sec.gov, 2025-09-25, primary) https://www.sec.gov/Archives/edgar/data/909832/000090983225000093/costex9918-k92525.htm\n[3] COSTCO WHOLESALE CORP /NEW earnings release for FY2026, 8-K EX-99.2 (filed 2026-09-24) (www.sec.gov, 2026-09-24, primary) https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9928-k92426.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 24079,
+   "output": 2492
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 18.08,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/51404274c7c55e5b429f2e3f8ac2b7a9",
+  "companies": [
+   {
+    "name": "COSTCO WHOLESALE CORP /NEW",
+    "ticker": "COST",
+    "cik": "909832",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Membership fee income for fiscal 2026 (USD millions)",
+    "Membership fee income for fiscal 2025 (USD millions), for YoY comparison",
+    "Year-over-year growth in membership fee income, FY2026 vs FY2025"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "COST",
+     "label": "FY2026"
+    },
+    {
+     "ticker": "COST",
+     "label": "FY2025"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "COST",
+     "period": "FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "COST",
+     "period": "FY2025",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "FY2026 (2025-09-01 to 2026-08-30) is earnings-release only: the FY2026 10-K has not yet been filed, so full-year membership fee income must come from the Q4/FY2026 earnings release (8-K filed 2026-09-24) rather than audited financial statements.",
+    "FY2025 figures are available from the FY2025 earnings release (8-K filed 2025-09-25) and the FY2025 10-K (filed 2025-10-08); the prior-year amount is needed to compute YoY growth."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "FY2026 full-year membership fee income from audited financial statements (10-K)",
+    "kind": "not_reported_yet",
+    "reason": "The FY2026 10-K has not been filed; the figure is taken from the Q4/FY2026 earnings release (8-K filed 2026-09-24).",
+    "evidence_ids": [
+     "E1"
+    ]
+   },
+   {
+    "item": "Company-disclosed YoY growth rate for full-year membership fee income",
+    "kind": "not_disclosed",
+    "reason": "The FY2026 release discloses membership income growth only for Q4 (+7.3%, +7.7% ex-FX), not for the full fiscal year.",
+    "evidence_ids": [
+     "E2"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/909832/000090983225000093/costex9918-k92525.htm",
+    "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9918-k92426.htm",
+    "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9928-k92426.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 5,
+   "retrieved_primary": 5
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Membership fee income for fiscal 2026 in USD millions (within ±0.5% of 5,907)",
+     "met": true,
+     "note": "Agent reports 5,907 million, matching reference exactly."
+    },
+    {
+     "point": "YoY growth percentage (within ±0.5% of 10.9713%)",
+     "met": true,
+     "note": "Agent reports 11.0%, which is 0.0287 percentage points above reference, well within ±0.5% tolerance."
+    },
+    {
+     "point": "Uses 52-week FY2026 column, not 16-week Q4",
+     "met": true,
+     "note": "Agent explicitly labels FY2026 as '52 weeks ended August 30, 2026' and FY2025 as '52 weeks ended August 31, 2025'."
+    },
+    {
+     "point": "Does not present FY2025 as current",
+     "met": true,
+     "note": "Agent clearly identifies FY2026 as the current fiscal year and FY2025 as prior-year comparative."
+    },
+    {
+     "point": "Units in USD millions (not billions)",
+     "met": true,
+     "note": "All figures are presented in USD millions."
+    },
+    {
+     "point": "Sources data from 8-K earnings release (not FY2025 10-K) because FY2026 10-K not yet filed",
+     "met": true,
+     "note": "Agent cites the FY2026 8-K filed 2026-09-24 as primary source and notes the 10-K has not been filed."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: the agent provides the correct FY2026 membership fee income (5,907 million USD) and YoY growth (11.0%, within tolerance), uses the 52-week annual columns, avoids the 16-week Q4 trap, does not misrepresent FY2025 as current, uses proper units, and correctly sources from the 8-K earnings release given the FY2026 10-K was not yet filed as of 2026-10-01."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Costco's membership fee income for fiscal 2026 (52 weeks ended August 30, 2026) was $5,907 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9918-k92426.htm",
+     "reason": "The consolidated statements of income in the FY2026 8-K EX-99.1 show 'Membership fees | 1,850 | 1,724 | 5,907 | 5,323' for 52 weeks ended August 30, 2026 and August 31, 2025. The statement notes '(dollars in millions, except per share data) (unaudited)'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Costco's membership fee income for fiscal 2025 (52 weeks ended August 31, 2025) was $5,323 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9918-k92426.htm",
+     "reason": "Both FY2026 EX-99.1 and FY2025 EX-99.1 show membership fees of 5,323 for 52 weeks ended August 31, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Membership fee income grew 11.0% year over year in fiscal 2026 versus fiscal 2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9918-k92426.htm",
+     "reason": "Calculated as (5,907 - 5,323) / 5,323 = 584 / 5,323 = 10.97%, which rounds to 11.0% (within rounding tolerance of 10.95%-11.05%). The inputs are from the same source.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The FY2026 10-K has not been filed; the fiscal 2026 membership fee income figure is taken from the Q4/FY2026 earnings release (8-K filed 2026-09-24)",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9918-k92426.htm",
+     "reason": "The retrieved source is the 8-K filed 2026-09-24, but it does not contain information about the 10-K filing status. The claim about the 10-K not being filed is not supported by the retrieved text.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The FY2026 earnings release discloses membership income growth only for Q4 (+7.3%, +7.7% ex-FX), not for the full fiscal year",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9928-k92426.htm",
+     "reason": "The FY2026 EX-99.2 shows 'Membership | Q4 Highlights +7.7% Membership Income Growth ex-FX +7.3% Membership Income Growth' indicating Q4 growth rates only. No full-year growth rate is disclosed.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 5,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,245 @@
+{
+ "id": "G27",
+ "category": "Trends",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "For Micron's fiscal 2026, give GAAP gross margin for each quarter, full-year revenue growth, and flag any difference in week count that distorts YoY comparisons.",
+ "grading": "Each GM% ±0.2pp (GAAP, not non-GAAP); FY growth ±0.5pp; must state week count of FY26/Q4 vs prior year as disclosed",
+ "answer": "Micron FY2026 GAAP gross margin: Q1 56.0%, Q2 74.4%, Q3 84.6%, Q4 86.8%. [G27-E1, G27-E2, G27-E3, G27-E4] Full-year revenue was USD 133,188 million versus USD 37,378 million in FY2025, growth of 256.3273%. [G27-E4] FY2026 had 53 weeks and Q4 had 14 weeks, versus 52 weeks / 13 weeks in FY2025. The extra week boosts unadjusted YoY revenue comparisons; the sources do not isolate its revenue contribution, so no week-adjusted growth is supplied. [G27-E5]",
+ "output": {
+  "answer": "# Micron (MU) — Fiscal 2026 GAAP Results\n\n## Quarterly GAAP gross margin\n\n| Quarter | Period ended | Revenue | GAAP gross margin | GAAP GM % |\n|---|---|---|---|---|\n| FQ1 2026 | Nov 27, 2025 | $13,643M | $7,646M | **56.0%** |\n| FQ2 2026 | Feb 26, 2026 | $23,860M | $17,755M | **74.4%** |\n| FQ3 2026 | May 28, 2026 | $41,456M | $35,056M | **84.6%** |\n| FQ4 2026 | Sep 3, 2026 | $54,229M | $47,047M | **86.8%** |\n\nFor reference, the year-ago GAAP GM % was 44.7% (FQ1'25), 36.8% (FQ2'25), 37.7% (FQ3'25), and 44.7% (FQ4'25) — i.e., margin expansion accelerated sharply through FY26.\n\n## Full-year revenue growth\n\n- **FY2026 revenue: $133.19 billion** vs. **$37.38 billion** in FY2025\n- **Growth: ~+256% YoY**\n- FY26 GAAP gross margin: $107,504M = **80.7%** of revenue (vs. 39.8% in FY25)\n\n## ⚠️ Week-count distortion flag\n\nThis is the key caveat for any YoY read:\n\n- Micron's fiscal year is the 52- or 53-week period ending the Thursday closest to Aug 31.\n- **Fiscal 2026 contains 53 weeks; fiscal 2025 contains 52 weeks.** The extra week lands in **FQ4 2026, which is a 14-week quarter** (vs. the normal 13 weeks); FQ3 2026 was 13 weeks.\n- Consequence: Q4 FY26 revenue of $54.2B — and the full-year $133.2B — include roughly **one extra week of sales (~7–8%)** relative to the year-ago periods. The +379% Q4 YoY revenue growth and the +256% full-year growth are therefore inflated by that extra week and are **not purely like-for-like**.\n- This also affects sequential reads: the Q3→Q4 jump (21% headline) overstates underlying per-week momentum, since the quarter is one week longer. Margin *percentages* are less distorted than revenue dollars, but the extra week adds operating leverage that can flatter reported GM%.\n\n**Bottom line:** GAAP GM climbed 56.0% → 74.4% → 84.6% → 86.8% across FY26, full-year revenue rose ~256% to $133.2B, but both the Q4 and full-year YoY comparisons benefit from the 53rd week (14-week Q4), so normalize for the extra week before treating those growth rates as clean.\n\nSources:\n- [Micron Q1 FY26 press release](https://investors.micron.com/news/press-release/2025/Micron-Technology-Inc--Reports-Results-for-the-First-Quarter-of-Fiscal-2026-12-17-2025/default.aspx)\n- [Micron Q2 FY26 press release](https://investors.micron.com/news-releases/news-release-details/micron-technology-inc-reports-results-second-quarter-fiscal-2026)\n- [Micron Q3 FY26 press release](https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Results-for-the-Third-Quarter-of-Fiscal-2026/default.aspx)\n- [Micron Q4/FY26 press release (SEC)](https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/a2026q4ex991-pressrelease.htm)\n- [Micron Q3 FY26 10-Q — 53-week disclosure (SEC)](https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm)",
+  "tokens": {
+   "input": 35136,
+   "output": 1733
+  },
+  "tavily_credits": 4,
+  "latency_s": 16.02,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/092fbd7f84ae009b7d89235b5ceeb058",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Micron fiscal 2026 first quarter GAAP gross margin results",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Micron Technology fiscal Q1 2026 earnings press release GAAP gross margin revenue"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Micron Technology reports results second quarter fiscal 2026 GAAP gross margin press release",
+     "include_domains": [
+      "investors.micron.com",
+      "sec.gov"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Micron fiscal 2026 53-week year extra week fiscal 2025 52 weeks"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investors.micron.com/news-releases/news-release-details/micron-technology-inc-reports-results-second-quarter-fiscal-2026",
+    "https://investors.micron.com/news/press-release/2025/Micron-Technology-Inc--Reports-Results-for-the-First-Quarter-of-Fiscal-2026-12-17-2025/default.aspx",
+    "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Results-for-the-Third-Quarter-of-Fiscal-2026/default.aspx",
+    "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm",
+    "https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/a2026q4ex991-pressrelease.htm"
+   ],
+   "cited_primary": 5,
+   "retrieved": 38,
+   "retrieved_primary": 17
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Q1 FY2026 GAAP gross margin within ±0.2pp of 56.0%",
+     "met": true,
+     "note": "Agent reports 56.0%, matching reference exactly."
+    },
+    {
+     "point": "Q2 FY2026 GAAP gross margin within ±0.2pp of 74.4%",
+     "met": true,
+     "note": "Agent reports 74.4%, matching reference exactly."
+    },
+    {
+     "point": "Q3 FY2026 GAAP gross margin within ±0.2pp of 84.6%",
+     "met": true,
+     "note": "Agent reports 84.6%, matching reference exactly."
+    },
+    {
+     "point": "Q4 FY2026 GAAP gross margin within ±0.2pp of 86.8%",
+     "met": true,
+     "note": "Agent reports 86.8%, matching reference exactly."
+    },
+    {
+     "point": "Full-year revenue growth within ±0.5pp of 256.3273%",
+     "met": true,
+     "note": "Agent reports ~+256% YoY; reference is 256.3273%, difference 0.3273pp within tolerance."
+    },
+    {
+     "point": "States week count of FY26 (53 weeks) vs FY25 (52 weeks) and Q4 FY26 (14 weeks) vs prior Q4 (13 weeks) as disclosed",
+     "met": true,
+     "note": "Agent explicitly states: 'Fiscal 2026 contains 53 weeks; fiscal 2025 contains 52 weeks. The extra week lands in FQ4 2026, which is a 14-week quarter (vs. the normal 13 weeks).'"
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All six grading requirements are satisfied: each quarterly GAAP gross margin matches the reference within ±0.2pp, full-year revenue growth is within ±0.5pp, and the week-count distortion flag is correctly disclosed with the exact week counts for FY26 vs FY25 and Q4 FY26 vs prior Q4."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "FQ1 2026 revenue $13,643M, GAAP gross margin $7,646M, GAAP GM% 56.0%",
+     "numeric": true,
+     "cited_url": "https://investors.micron.com/news/press-release/2025/Micron-Technology-Inc--Reports-Results-for-the-First-Quarter-of-Fiscal-2026-12-17-2025/default.aspx",
+     "reason": "Q1 press release shows Revenue $13,643M, Gross margin $7,646M, Percent of revenue 56.0% for first quarter of fiscal 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FQ2 2026 revenue $23,860M, GAAP gross margin $17,755M, GAAP GM% 74.4%",
+     "numeric": true,
+     "cited_url": "https://investors.micron.com/news-releases/news-release-details/micron-technology-inc-reports-results-second-quarter-fiscal-2026",
+     "reason": "Q2 press release shows Revenue $23,860M, Gross margin $17,755M, Percent of revenue 74.4% for second quarter of fiscal 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FQ3 2026 revenue $41,456M, GAAP gross margin $35,056M, GAAP GM% 84.6%",
+     "numeric": true,
+     "cited_url": "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Results-for-the-Third-Quarter-of-Fiscal-2026/default.aspx",
+     "reason": "Q3 press release shows Revenue $41,456M, Gross margin $35,056M, Percent of revenue 84.6% for third quarter of fiscal 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FQ4 2026 revenue $54,229M, GAAP gross margin $47,047M, GAAP GM% 86.8%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/a2026q4ex991-pressrelease.htm",
+     "reason": "SEC filing for Q4/FY26 shows Revenue $54,229M, Gross margin $47,047M, Percent of revenue 86.8% for fourth quarter ended September 3, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Year-ago GAAP GM%: 44.7% (FQ1'25), 36.8% (FQ2'25), 37.7% (FQ3'25), 44.7% (FQ4'25)",
+     "numeric": true,
+     "cited_url": "https://investors.micron.com/news/press-release/2025/Micron-Technology-Inc--Reports-Results-for-the-First-Quarter-of-Fiscal-2026-12-17-2025/default.aspx",
+     "reason": "Q1 press release shows 44.7% for prior year Q1; Q2 press release shows 36.8% for prior year Q2; Q3 press release shows 37.9% for prior year Q3 (not 37.7%); SEC Q4 filing shows 44.7% for prior year Q4. The 37.7% figure for FQ3'25 appears inconsistent with the 37.9% shown in the Q3 press release.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2026 revenue: $133.19 billion vs. $37.38 billion in FY2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/a2026q4ex991-pressrelease.htm",
+     "reason": "SEC filing shows Revenue $133,188M for FY26 and $37,378M for FY25, which rounds to $133.19B and $37.38B respectively.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Growth: ~+256% YoY",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/a2026q4ex991-pressrelease.htm",
+     "reason": "Calculated from FY26 revenue $133,188M and FY25 revenue $37,378M: (133188-37378)/37378 = 2.563, or 256.3% YoY growth, consistent with ~256%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY26 GAAP gross margin: $107,504M = 80.7% of revenue (vs. 39.8% in FY25)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/a2026q4ex991-pressrelease.htm",
+     "reason": "SEC filing shows Gross margin $107,504M, Percent of revenue 80.7% for FY26, and 39.8% for FY25.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal 2026 contains 53 weeks; fiscal 2025 contains 52 weeks",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm",
+     "reason": "10-Q filing states: 'Fiscal year 2026 contains 53 weeks and fiscal year 2025 contains 52 weeks.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Extra week lands in FQ4 2026, which is a 14-week quarter (vs. normal 13 weeks); FQ3 2026 was 13 weeks",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm",
+     "reason": "10-Q filing states: 'Our fourth quarter of fiscal year 2026 contains 14 weeks.' Implies FQ3 is 13 weeks (since 53 total weeks - 14 = 39 weeks for first three quarters, or 13 each).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY26 revenue of $54.2B — and the full-year $133.2B — include roughly one extra week of sales (~7–8%) relative to the year-ago periods",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm",
+     "reason": "Derived from 14-week Q4 vs 13-week prior year Q4: 1/13 ≈ 7.7% extra week impact. The 10-Q confirms the 14-week quarter.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The +379% Q4 YoY revenue growth and the +256% full-year growth are therefore inflated by that extra week and are not purely like-for-like",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/a2026q4ex991-pressrelease.htm",
+     "reason": "Analytical claim based on the extra week. SEC filing shows Q4 revenue $54,229M vs prior year $11,315M = 379% growth. The inflation due to extra week is a reasonable inference.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Q3→Q4 jump (21% headline) overstates underlying per-week momentum, since the quarter is one week longer",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/a2026q4ex991-pressrelease.htm",
+     "reason": "SEC filing shows Q3 revenue $41,456M, Q4 revenue $54,229M. Sequential growth = (54229-41456)/41456 = 30.8%, not 21%. The claim of '21% headline' appears incorrect; actual headline sequential growth is ~31%.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Margin percentages are less distorted than revenue dollars, but the extra week adds operating leverage that can flatter reported GM%",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Analytical claim about operating leverage; not directly verifiable from cited sources. No specific source cited for this assertion.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "GAAP GM climbed 56.0% → 74.4% → 84.6% → 86.8% across FY26",
+     "numeric": true,
+     "cited_url": "https://investors.micron.com/news/press-release/2025/Micron-Technology-Inc--Reports-Results-for-the-First-Quarter-of-Fiscal-2026-12-17-2025/default.aspx",
+     "reason": "Supported by quarterly press releases and SEC filing showing the progression: 56.0% (Q1), 74.4% (Q2), 84.6% (Q3), 86.8% (Q4).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Full-year revenue rose ~256% to $133.2B",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/a2026q4ex991-pressrelease.htm",
+     "reason": "SEC filing shows FY26 revenue $133,188M ($133.2B) vs FY25 $37,378M, growth 256.3%.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 14,
+   "numeric_cited": 14,
+   "cited": 15,
+   "supported": 13,
+   "not_retrieved": 0
+  }
+ }
+}

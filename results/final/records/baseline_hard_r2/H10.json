@@ -1,0 +1,117 @@
+{
+ "id": "H10",
+ "category": "Numerical reasoning",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "What were Ollie's Bargain Outlet's trailing-twelve-month net sales and net income as of the end of its fiscal Q2 2026 (quarter ended August 1, 2026), and what was the implied TTM net margin?",
+ "grading": "Computation: TTM = FY2025 + 26 weeks FY2026 - 26 weeks FY2025. Net sales USD 2,793.1M (2,793,108K); GAAP net income USD 273.6M (273,580K); net margin 9.79% (+/-0.3pp). Accept +/-0.5% on dollar figures. Fail if the TTM window is wrong (not Aug 3, 2025-Aug 1, 2026) or adjusted net income is used.",
+ "answer": "TTM to August 1, 2026 = FY2025 (52 weeks ended Jan 31, 2026) + 26 weeks ended Aug 1, 2026 - 26 weeks ended Aug 2, 2025. Net sales: 2,649,198 + 1,400,233 - 1,256,323 = USD 2,793,108 thousand (USD 2,793.1 million). Net income: 240,596 + 141,854 - 108,870 = USD 273,580 thousand (USD 273.6 million). TTM net margin = 273,580 / 2,793,108 = 9.79% [H10-E1][H10-E2].",
+ "output": {
+  "answer": "## Ollie's Bargain Outlet (OLLI) — TTM figures as of Q2 FY2026 (quarter ended Aug 1, 2026)\n\n| Period | Net sales | Net income |\n|---|---|---|\n| Q3 FY2025 (13 wks ended Nov 1, 2025) | $613.619M | $46.172M |\n| Q4 FY2025 (13 wks ended Jan 31, 2026) | $779.256M | $85.554M |\n| Q1 FY2026 (13 wks ended May 2, 2026) | $658.928M | $56.400M |\n| Q2 FY2026 (13 wks ended Aug 1, 2026) | $741.305M | $85.454M |\n| **TTM (52 weeks)** | **≈ $2.793B** | **≈ $273.6M** |\n\n**Results:**\n- **TTM net sales: ≈ $2.793 billion** ($2,793.1M)\n- **TTM net income: ≈ $273.6 million**\n- **Implied TTM net margin: ≈ 9.8%** (273.580 / 2,793.108)\n\n**Notes on derivation**\n- Q3 FY2025 and Q4 FY2025 are actual reported quarters; Q1/Q2 FY2026 are actual reported quarters (Q1 derived from the six-month figures: 26-week net sales $1,400.233M − Q2 $741.305M = $658.928M; 26-week net income $141.854M − Q2 $85.454M = $56.400M, matching the reported ~$56.4M).\n- Q2 FY2026 details: net sales +9.1% YoY, comps −1.8%, gross margin 43.5% (helped by a 380 bps benefit from IEEPA tariff refunds), net income +39.4% YoY to $85.5M, adjusted EPS $1.42.\n- The ~$274M TTM net income is consistent with third-party aggregations citing ~$0.274B for the twelve months ended July 31/Aug 1, 2026.\n- Caveat: FY2026 includes a one-time gross-margin benefit from tariff refunds (~380 bps in Q2), so TTM margin is flattered relative to a normalized run-rate.\n\n**Sources**\n- Q2 FY2026 results: https://investors.ollies.com/news-releases/news-release-details/ollies-bargain-outlet-holdings-inc-announces-second-quarter-8\n- Q2 FY2026 8-K/10-Q summary: https://www.stocktitan.net/sec-filings/OLLI/10-q-ollie-s-bargain-outlet-holdings-inc-quarterly-earnings-report-6952d4e17a97.html\n- Q3 FY2025 results: https://investors.ollies.us/news-releases/news-release-details/ollies-bargain-outlet-holdings-inc-announces-third-quarter-7\n- Q4/FY2025 results: https://investors.ollies.us/news-releases/news-release-details/ollies-bargain-outlet-holdings-inc-announces-fourth-quarter\n- Q1 FY2026 figures: https://koalagains.com/stocks/NASDAQ/OLLI/financial-statement-analysis\n- TTM net income cross-check: https://www.macrotrends.net/stocks/charts/OLLI/ollies-bargain-outlet-holdings/net-income",
+  "tokens": {
+   "input": 47692,
+   "output": 3949
+  },
+  "tavily_credits": 8,
+  "latency_s": 146.42,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/2cca1de04adc06b7a5134d7182b3c27d",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Ollie's Bargain Outlet fiscal Q2 2026 net sales net income quarter ended",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Ollie's Bargain Outlet second quarter fiscal 2025 results net sales net income",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Ollie's Bargain Outlet fourth quarter and fiscal year 2025 results net sales net income",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Ollie's Bargain Outlet third quarter fiscal 2025 results net sales net income November 2025",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investors.ollies.com/news-releases/news-release-details/ollies-bargain-outlet-holdings-inc-announces-second-quarter-8",
+    "https://investors.ollies.us/news-releases/news-release-details/ollies-bargain-outlet-holdings-inc-announces-fourth-quarter",
+    "https://investors.ollies.us/news-releases/news-release-details/ollies-bargain-outlet-holdings-inc-announces-third-quarter-7",
+    "https://koalagains.com/stocks/NASDAQ/OLLI/financial-statement-analysis",
+    "https://www.macrotrends.net/stocks/charts/OLLI/ollies-bargain-outlet-holdings/net-income",
+    "https://www.stocktitan.net/sec-filings/OLLI/10-q-ollie-s-bargain-outlet-holdings-inc-quarterly-earnings-report-6952d4e17a97.html"
+   ],
+   "cited_primary": 3,
+   "retrieved": 33,
+   "retrieved_primary": 11
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "TTM net sales = USD 2,793.1M (2,793,108K) within +/-0.5%",
+     "met": true,
+     "note": "Agent reports ≈ $2.793 billion ($2,793.1M), matching reference exactly."
+    },
+    {
+     "point": "TTM net income = USD 273.6M (273,580K) within +/-0.5%",
+     "met": true,
+     "note": "Agent reports ≈ $273.6 million, matching reference exactly."
+    },
+    {
+     "point": "TTM net margin = 9.79% within +/-0.3 percentage points",
+     "met": true,
+     "note": "Agent reports ≈ 9.8%, which is 0.01pp above 9.79%, well within tolerance."
+    },
+    {
+     "point": "TTM window is correct (Aug 3, 2025 to Aug 1, 2026, i.e., Q3 FY2025 through Q2 FY2026)",
+     "met": true,
+     "note": "Agent's table includes Q3 FY2025, Q4 FY2025, Q1 FY2026, Q2 FY2026 — the correct four quarters."
+    },
+    {
+     "point": "Uses GAAP net income, not adjusted net income",
+     "met": true,
+     "note": "Agent's net income figures are from GAAP press releases; adjusted EPS is mentioned only as a side note."
+    },
+    {
+     "point": "Computation method is correct (TTM = FY2025 + 26 weeks FY2026 - 26 weeks FY2025, or equivalent summing of four correct quarters)",
+     "met": true,
+     "note": "Agent sums the four correct quarters, which is equivalent to the reference formula and yields identical results."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All six requirements are satisfied: the dollar figures match the reference within the allowed tolerances, the margin is within 0.3pp, the TTM window is exactly the required period, GAAP net income is used, and the computation method is valid and produces the correct numbers."
+  },
+  "citations": {
+   "claims": [],
+   "numeric_claims": 0,
+   "numeric_cited": 0,
+   "cited": 0,
+   "supported": 0,
+   "not_retrieved": 0,
+   "judge_error": "judge failed after 4 attempts: no structured output"
+  }
+ }
+}

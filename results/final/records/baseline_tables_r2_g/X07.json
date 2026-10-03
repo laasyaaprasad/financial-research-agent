@@ -1,0 +1,305 @@
+{
+ "id": "X07",
+ "category": "Market analysis",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "As of October 3, 2026, for each of five U.S. homebuilders (Lennar, KB Home, Toll Brothers, D.R. Horton and PulteGroup), identify the most recent reported fiscal quarter (the company's own fiscal quarter label, e.g. 'Q3 FY2026', plus the quarter-end date) and compute year-over-year growth in total revenues (%) for that quarter versus the same fiscal quarter a year earlier. Use total consolidated revenues as reported in each company's SEC filings.",
+ "grading": "Graded cell by cell: each value within tolerance and for the stated period; a missing cell counts as wrong.",
+ "answer": "Homebuilders, latest reported quarter as of 2026-10-03:\n| Company | Most recent reported quarter | YoY total revenue growth |\n|---|---|---|\n| Lennar Corporation | Q3 FY2026 (quarter ended Aug 31, 2026) | -8.67% |\n| KB Home | Q3 FY2026 (quarter ended Aug 31, 2026) | -19.96% |\n| Toll Brothers | Q3 FY2026 (quarter ended Jul 31, 2026) | -9.72% |\n| D.R. Horton | Q3 FY2026 (quarter ended Jun 30, 2026) | 0.02% |\n| PulteGroup | Q2 FY2026 (quarter ended Jun 30, 2026) | -9.56% |",
+ "output": {
+  "answer": "# Homebuilder Revenue Tracker — Most Recent Reported Fiscal Quarter (as of Oct 3, 2026)\n\n| Company | Most Recent Reported Quarter | Quarter-End Date | Total Revenues (Current Yr) | Total Revenues (Prior-Yr Same Qtr) | YoY Growth |\n|---|---|---|---|---|---|\n| **Lennar (LEN)** | Q3 FY2026 | Aug 31, 2026 | $8,046.1M | $8,810.3M | **‑8.7%** |\n| **KB Home (KBH)** | Q3 FY2026 | Aug 31, 2026 | $1,297.1M | $1,620.5M | **‑20.0%** |\n| **Toll Brothers (TOL)** | Q3 FY2026 | July 31, 2026 | $2,658.8M | $2,945.1M | **‑9.7%** |\n| **D.R. Horton (DHI)** | Q3 FY2026 | June 30, 2026 | $9,227.1M | $9,225.7M | **+0.0%** |\n| **PulteGroup (PHM)** | Q2 2026 | June 30, 2026 | $3,983.0M | $4,403.8M | **‑9.6%** |\n\n**Calculation notes:**\n- **Lennar:** ($8,046.119M − $8,810.278M) / $8,810.278M = **‑8.67%** (−8.6% as reported by the company).\n- **KB Home:** ($1,297.101M − $1,620.474M) / $1,620.474M = **‑19.96%** (~‑20%).\n- **Toll Brothers:** ($2,658.781M − $2,945.117M) / $2,945.117M = **‑9.72%** (‑9.7%).\n- **D.R. Horton:** ($9,227.1M − $9,225.7M) / $9,225.7M = **+0.02%** (essentially flat; company called revenues \"essentially unchanged\").\n- **PulteGroup:** ($3,982.957M − $4,403.755M) / $4,403.755M = **‑9.55%** (‑9.6%).\n\n**Timing notes:** PulteGroup was the only one of the five whose most recent report was *not* a Q3 — its Q3 FY2026 release is scheduled for Oct 22, 2026, so Q2 2026 (ended June 30) remains the latest. D.R. Horton's fiscal Q3 also ended June 30 (fiscal year ends Sept 30). Lennar and KB Home both have Nov 30 fiscal-year ends; Toll Brothers has an Oct 31 fiscal-year end. All figures are total consolidated revenues per each company's SEC-filed earnings release (Form 8-K, Exhibit 99.1).\n\nSources:\n- Lennar Q3 2026: https://investors.lennar.com/press-releases/2026/09-16-2026-213038087\n- KB Home Q3 2026: https://www.investor.kbhome.com/company-news/news-releases/press-release-details/2026/KB-HOME-REPORTS-2026-THIRD-QUARTER-RESULTS/default.aspx\n- Toll Brothers Q3 FY2026: https://investors.tollbrothers.com/news-and-events/press-releases/2026/08-18-2026-213033738\n- D.R. Horton Q3 FY2026: https://www.sec.gov/Archives/edgar/data/882184/000088218426000092/a6302026exhibit991.htm\n- PulteGroup Q2 2026: https://pultegroupinc.com/investor-relations/news/news-details/2026/PulteGroup-Reports-Second-Quarter-2026-Financial-Results/default.aspx",
+  "tokens": {
+   "input": 61422,
+   "output": 2894
+  },
+  "tavily_credits": 20,
+  "latency_s": 26.48,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/a804dbd8ff51c734be8f92c8757b8bbb",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Lennar fiscal third quarter 2026 results total revenues",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "KB Home third quarter fiscal 2026 results total revenues",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Toll Brothers third quarter fiscal 2026 results revenues",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "D.R. Horton third quarter fiscal 2026 results revenues",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "PulteGroup second quarter 2026 results total revenues",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Lennar \"third quarter\" 2026 \"total revenues\" 8.05 billion August 31 2026 vs 8.81 billion",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "KB Home 2026 third quarter results \"total revenues\" 1.30 billion August 31 2026 prior year",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Toll Brothers third quarter fiscal 2026 \"total revenues\" 2.66 billion July 31 2026",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "D.R. Horton fiscal 2026 third quarter \"total revenues\" 9.2 billion June 30 2026 consolidated",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "PulteGroup second quarter 2026 \"total revenues\" 3.98 billion June 30 2026 fourth",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investors.lennar.com/press-releases/2026/09-16-2026-213038087",
+    "https://investors.tollbrothers.com/news-and-events/press-releases/2026/08-18-2026-213033738",
+    "https://pultegroupinc.com/investor-relations/news/news-details/2026/PulteGroup-Reports-Second-Quarter-2026-Financial-Results/default.aspx",
+    "https://www.investor.kbhome.com/company-news/news-releases/press-release-details/2026/KB-HOME-REPORTS-2026-THIRD-QUARTER-RESULTS/default.aspx",
+    "https://www.sec.gov/Archives/edgar/data/882184/000088218426000092/a6302026exhibit991.htm"
+   ],
+   "cited_primary": 4,
+   "retrieved": 88,
+   "retrieved_primary": 9
+  },
+  "correctness": {
+   "score": 1.0,
+   "verdict": "correct",
+   "points": [
+    {
+     "point": "Lennar Corporation Q3 FY2026 YoY revenue growth = -8.67 %",
+     "met": true,
+     "note": "answer: -8.7"
+    },
+    {
+     "point": "Lennar Corporation Q3 FY2026 Most recent reported fiscal quarter (period label) = Q3 FY2026 (quarter ended Aug 31, 2026) text",
+     "met": true,
+     "note": "answer: Q3 FY2026"
+    },
+    {
+     "point": "KB Home Q3 FY2026 YoY revenue growth = -19.96 %",
+     "met": true,
+     "note": "answer: -20.0"
+    },
+    {
+     "point": "KB Home Q3 FY2026 Most recent reported fiscal quarter (period label) = Q3 FY2026 (quarter ended Aug 31, 2026) text",
+     "met": true,
+     "note": "answer: Q3 FY2026"
+    },
+    {
+     "point": "Toll Brothers Q3 FY2026 YoY revenue growth = -9.72 %",
+     "met": true,
+     "note": "answer: -9.7"
+    },
+    {
+     "point": "Toll Brothers Q3 FY2026 Most recent reported fiscal quarter (period label) = Q3 FY2026 (quarter ended Jul 31, 2026) text",
+     "met": true,
+     "note": "answer: Q3 FY2026"
+    },
+    {
+     "point": "D.R. Horton Q3 FY2026 YoY revenue growth = 0.02 %",
+     "met": true,
+     "note": "answer: 0.0"
+    },
+    {
+     "point": "D.R. Horton Q3 FY2026 Most recent reported fiscal quarter (period label) = Q3 FY2026 (quarter ended Jun 30, 2026) text",
+     "met": true,
+     "note": "answer: Q3 FY2026"
+    },
+    {
+     "point": "PulteGroup Q2 FY2026 YoY revenue growth = -9.56 %",
+     "met": true,
+     "note": "answer: -9.6"
+    },
+    {
+     "point": "PulteGroup Q2 FY2026 Most recent reported fiscal quarter (period label) = Q2 FY2026 (quarter ended Jun 30, 2026) text",
+     "met": true,
+     "note": "answer: Q2 2026"
+    }
+   ],
+   "rationale": "10/10 cells correct",
+   "cells_correct": 10,
+   "cells_total": 10
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Lennar's Q3 FY2026 total revenues were $8,046.119 million",
+     "numeric": true,
+     "cited_url": "https://investors.lennar.com/press-releases/2026/09-16-2026-213038087",
+     "reason": "Claim from answer's calculation notes; need to verify against Lennar's Q3 FY2026 press release (SEC Form 8-K Exhibit 99.1).",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Lennar's Q3 FY2025 total revenues were $8,810.278 million",
+     "numeric": true,
+     "cited_url": "https://investors.lennar.com/press-releases/2026/09-16-2026-213038087",
+     "reason": "Claim from answer's calculation notes; need to verify against Lennar's Q3 FY2026 press release (SEC Form 8-K Exhibit 99.1).",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Lennar's Q3 FY2026 YoY revenue growth was -8.67% (calculated as ($8,046.119M - $8,810.278M) / $8,810.278M)",
+     "numeric": true,
+     "cited_url": "https://investors.lennar.com/press-releases/2026/09-16-2026-213038087",
+     "reason": "Claim from answer's calculation notes; need to verify the arithmetic and the reported YoY growth of -8.6% by the company.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "KB Home's Q3 FY2026 total revenues were $1,297.101 million",
+     "numeric": true,
+     "cited_url": "https://www.investor.kbhome.com/company-news/news-releases/press-release-details/2026/KB-HOME-REPORTS-2026-THIRD-QUARTER-RESULTS/default.aspx",
+     "reason": "Claim from answer's calculation notes; need to verify against KB Home's Q3 FY2026 press release.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "KB Home's Q3 FY2025 total revenues were $1,620.474 million",
+     "numeric": true,
+     "cited_url": "https://www.investor.kbhome.com/company-news/news-releases/press-release-details/2026/KB-HOME-REPORTS-2026-THIRD-QUARTER-RESULTS/default.aspx",
+     "reason": "Claim from answer's calculation notes; need to verify against KB Home's Q3 FY2026 press release.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "KB Home's Q3 FY2026 YoY revenue growth was -19.96% (~ -20%)",
+     "numeric": true,
+     "cited_url": "https://www.investor.kbhome.com/company-news/news-releases/press-release-details/2026/KB-HOME-REPORTS-2026-THIRD-QUARTER-RESULTS/default.aspx",
+     "reason": "Claim from answer's calculation notes; need to verify the arithmetic and the reported ~20% decline.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Toll Brothers' Q3 FY2026 total revenues were $2,658.781 million",
+     "numeric": true,
+     "cited_url": "https://investors.tollbrothers.com/news-and-events/press-releases/2026/08-18-2026-213033738",
+     "reason": "Claim from answer's calculation notes; need to verify against Toll Brothers' Q3 FY2026 press release.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Toll Brothers' Q3 FY2025 total revenues were $2,945.117 million",
+     "numeric": true,
+     "cited_url": "https://investors.tollbrothers.com/news-and-events/press-releases/2026/08-18-2026-213033738",
+     "reason": "Claim from answer's calculation notes; need to verify against Toll Brothers' Q3 FY2026 press release.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Toll Brothers' Q3 FY2026 YoY revenue growth was -9.72% (-9.7%)",
+     "numeric": true,
+     "cited_url": "https://investors.tollbrothers.com/news-and-events/press-releases/2026/08-18-2026-213033738",
+     "reason": "Claim from answer's calculation notes; need to verify the arithmetic.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "D.R. Horton's Q3 FY2026 total revenues were $9,227.1 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/882184/000088218426000092/a6302026exhibit991.htm",
+     "reason": "Claim from answer's calculation notes; need to verify against D.R. Horton's Q3 FY2026 SEC Form 8-K Exhibit 99.1.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "D.R. Horton's Q3 FY2025 total revenues were $9,225.7 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/882184/000088218426000092/a6302026exhibit991.htm",
+     "reason": "Claim from answer's calculation notes; need to verify against D.R. Horton's Q3 FY2026 SEC Form 8-K Exhibit 99.1.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "D.R. Horton's Q3 FY2026 YoY revenue growth was +0.02% (essentially flat)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/882184/000088218426000092/a6302026exhibit991.htm",
+     "reason": "Claim from answer's calculation notes; need to verify the arithmetic and the company's description of revenues as 'essentially unchanged'.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "PulteGroup's Q2 2026 total revenues were $3,982.957 million",
+     "numeric": true,
+     "cited_url": "https://pultegroupinc.com/investor-relations/news/news-details/2026/PulteGroup-Reports-Second-Quarter-2026-Financial-Results/default.aspx",
+     "reason": "Claim from answer's calculation notes; need to verify against PulteGroup's Q2 2026 press release.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "PulteGroup's Q2 2025 total revenues were $4,403.755 million",
+     "numeric": true,
+     "cited_url": "https://pultegroupinc.com/investor-relations/news/news-details/2026/PulteGroup-Reports-Second-Quarter-2026-Financial-Results/default.aspx",
+     "reason": "Claim from answer's calculation notes; need to verify against PulteGroup's Q2 2026 press release.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "PulteGroup's Q2 2026 YoY revenue growth was -9.55% (-9.6%)",
+     "numeric": true,
+     "cited_url": "https://pultegroupinc.com/investor-relations/news/news-details/2026/PulteGroup-Reports-Second-Quarter-2026-Financial-Results/default.aspx",
+     "reason": "Claim from answer's calculation notes; need to verify the arithmetic.",
+     "supported": null,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 15,
+   "numeric_cited": 15,
+   "cited": 15,
+   "supported": 0,
+   "not_retrieved": 0
+  }
+ }
+}

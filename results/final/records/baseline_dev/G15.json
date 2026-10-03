@@ -1,0 +1,156 @@
+{
+ "id": "G15",
+ "category": "Adjustments",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "Excluding the non-recurring IEEPA tariff refund benefit, what was Costco's Q4 FY2026 diluted EPS, and what was the YoY growth on that basis vs Q4 FY2025?",
+ "grading": "Adjusted EPS ±$0.01; growth ±0.5pp; must use the per-share benefit as disclosed by Costco and 16-week Q4 columns",
+ "answer": "Costco Q4 FY2026 diluted EPS excluding the disclosed net tariff-refund benefit was $6.60 ($6.75 - $0.15), up 12.4361% from Q4 FY2025 EPS of $5.87. Both quarters contained 16 weeks. The $0.15 benefit is already net of partial reinvestment in member values. [G15-E1]",
+ "output": {
+  "answer": "**Q4 FY2026 diluted EPS, excluding the IEEPA tariff refund benefit: ~$6.60**\n\n- Reported Q4 FY2026 diluted EPS: **$6.75** (net income $2.998B), which included a one-time benefit of **$0.15/share** from IEEPA tariff refunds (net of partial reinvestment in member value).\n- Excluding that item: **$6.75 − $0.15 = $6.60**.\n- Q4 FY2025 diluted EPS (as reported): **$5.87**.\n\n**YoY growth on that basis:** (6.60 − 5.87) / 5.87 ≈ **+12.4%**\n\nThis matches the characterization in coverage of the print — the headline ~15% EPS gain \"becomes 12.4% without the one-time refund.\"\n\nNote: this uses prior-year reported EPS of $5.87 (the comparison the company/market used). All figures are for the 16-week fourth quarter ended August 30, 2026.\n\nSources:\n- https://finance.yahoo.com/markets/stocks/articles/costco-shares-slip-11-jump-183514381.html (EPS $6.75 vs $5.87; $0.15 IEEPA benefit)\n- https://finance.yahoo.com/markets/stocks/articles/costcos-best-numbers-came-asterisk-132700449.html (15% gain → 12.4% ex-refund)\n- https://au.finance.yahoo.com/news/costco-tops-q4-estimates-revenue-210613585.html (Q4 net sales/EPS detail)",
+  "tokens": {
+   "input": 17965,
+   "output": 878
+  },
+  "tavily_credits": 4,
+  "latency_s": 7.56,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/f65ab05190e29d3f6876dc418874eae2",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Costco Q4 fiscal 2026 diluted EPS excluding IEEPA tariff refund",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Costco fourth quarter fiscal 2025 diluted EPS IEEPA tariff refund benefit",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://au.finance.yahoo.com/news/costco-tops-q4-estimates-revenue-210613585.html",
+    "https://finance.yahoo.com/markets/stocks/articles/costco-shares-slip-11-jump-183514381.html",
+    "https://finance.yahoo.com/markets/stocks/articles/costcos-best-numbers-came-asterisk-132700449.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 13,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Adjusted EPS within ±$0.01 of $6.60",
+     "met": true,
+     "note": "Agent reports adjusted EPS of $6.60 exactly (6.75 - 0.15)."
+    },
+    {
+     "point": "YoY growth within ±0.5 percentage points of 12.4361%",
+     "met": true,
+     "note": "Agent reports +12.4%, which is within 0.0361pp of the reference 12.4361%."
+    },
+    {
+     "point": "Uses the per-share benefit as disclosed by Costco ($0.15/share)",
+     "met": true,
+     "note": "Agent explicitly states the one-time benefit is $0.15/share, matching the disclosed net tariff refund benefit per share."
+    },
+    {
+     "point": "Uses 16-week Q4 columns for both quarters",
+     "met": true,
+     "note": "Agent notes all figures are for the 16-week fourth quarter ended August 30, 2026, and implies the prior year quarter is also 16 weeks."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: adjusted EPS matches exactly, YoY growth is within tolerance, the per-share benefit used is the company-disclosed $0.15, and the 16-week quarter basis is correctly applied."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Reported Q4 FY2026 diluted EPS: $6.75",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/costco-shares-slip-11-jump-183514381.html",
+     "reason": "Retrieved text states: 'diluted earnings per share of $6.75, up from $5.87 a year earlier.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Net income for Q4 FY2026: $2.998 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/costco-shares-slip-11-jump-183514381.html",
+     "reason": "Retrieved text for this URL does not mention net income; it only mentions EPS and sales. The net income figure appears in a different retrieved source (costco-wholesale-q4-earnings-call-230217494.html) but that URL is not cited in the answer.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The reported EPS included a one-time benefit of $0.15/share from IEEPA tariff refunds (net of partial reinvestment in member value)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/costco-shares-slip-11-jump-183514381.html",
+     "reason": "Retrieved text states: 'The 16-week quarter included a one-time benefit of $0.15 a share from IEEPA tariff refunds, net of partial reinvestment in member value.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2025 diluted EPS (as reported): $5.87",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/costco-shares-slip-11-jump-183514381.html",
+     "reason": "Retrieved text states: 'diluted earnings per share of $6.75, up from $5.87 a year earlier.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Excluding the IEEPA benefit: $6.75 − $0.15 = $6.60",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/costco-shares-slip-11-jump-183514381.html",
+     "reason": "Arithmetic derived from the two preceding claims (EPS $6.75 and benefit $0.15). Calculation is correct: 6.75 - 0.15 = 6.60.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "YoY growth on that basis: (6.60 − 5.87) / 5.87 ≈ +12.4%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/costco-shares-slip-11-jump-183514381.html",
+     "reason": "Calculation: (6.60 - 5.87) / 5.87 = 0.73 / 5.87 ≈ 0.12436, which rounds to 12.4%. The inputs are supported by the same source.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The headline ~15% EPS gain 'becomes 12.4% without the one-time refund'",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/costcos-best-numbers-came-asterisk-132700449.html",
+     "reason": "Retrieved text states: 'a 15% EPS gain that becomes 12.4% without a one-time refund'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "All figures are for the 16-week fourth quarter ended August 30, 2026",
+     "numeric": false,
+     "cited_url": "https://au.finance.yahoo.com/news/costco-tops-q4-estimates-revenue-210613585.html",
+     "reason": "Retrieved text states: 'Net sales for the 16-week fourth quarter increased 11.2% ... For the full fiscal year ended August 30, 2026'. The first cited source also mentions 'The 16-week quarter'.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 8,
+   "supported": 7,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,137 @@
+{
+ "id": "G01",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was NVIDIA's total revenue for fiscal 2026, in USD millions, and how much did it grow vs fiscal 2025?",
+ "grading": "±0.5% on revenue, USD millions; period must be FY ended 2026-01-25; growth ±0.5pp; fail if any CY2026 or FY2027 quarter used",
+ "answer": "NVIDIA FY2026 revenue was USD 215,938 million, versus USD 130,497 million in FY2025: growth of 65.4735% (65% as rounded in the filing). [G01-E1]",
+ "output": {
+  "answer": "**NVIDIA fiscal 2026 (ended January 25, 2026):**\n\n- **Total revenue: $215,938 million (~$215.9B)**\n- **Fiscal 2025 revenue: $130,497 million (~$130.5B)**\n- **Growth: +65% year over year** (an increase of ~$85,441 million, or ~$85.4B)\n\nFor context, Q4 FY26 alone was a record $68,127 million, up 73% year over year, with Data Center revenue of $62.3B (+75% Y/Y).\n\nSources:\n- [NVIDIA Newsroom — Q4 and Fiscal 2026 results](http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026)\n- [NVIDIA Q4 FY26 CFO Commentary (SEC)](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26cfocommentary.htm)\n- [CNBC — Nvidia Q4 2026 earnings](https://www.cnbc.com/2026/02/25/nvidia-nvda-earnings-report-q4-2026.html)",
+  "tokens": {
+   "input": 14454,
+   "output": 444
+  },
+  "tavily_credits": 2,
+  "latency_s": 7.72,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/12a24b0da4fe4bd20453ed401cd454cc",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA fiscal 2026 full year revenue results",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA fourth quarter fiscal 2026 earnings revenue fiscal year"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+    "https://www.cnbc.com/2026/02/25/nvidia-nvda-earnings-report-q4-2026.html",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26cfocommentary.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 18,
+   "retrieved_primary": 5
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Total revenue for FY2026 (ended 2026-01-25) in USD millions, within ±0.5% tolerance",
+     "met": true,
+     "note": "Agent states $215,938 million, exactly matching reference 215,938 million; difference 0% < 0.5%."
+    },
+    {
+     "point": "Growth vs FY2025 in percentage points, within ±0.5pp tolerance",
+     "met": true,
+     "note": "Agent states +65% growth; reference is 65.4735%; difference 0.4735pp < 0.5pp."
+    },
+    {
+     "point": "Period must be FY ended 2026-01-25 (not CY2026 or FY2027)",
+     "met": true,
+     "note": "Agent explicitly says 'fiscal 2026 (ended January 25, 2026)'."
+    },
+    {
+     "point": "No use of CY2026 or FY2027 quarter data",
+     "met": true,
+     "note": "Agent references Q4 FY26 (part of FY2026), not CY2026 or FY2027."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All requirements satisfied: revenue figure exact, growth within tolerance, correct fiscal period identified, no prohibited calendar or future fiscal data used."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "NVIDIA fiscal 2026 ended January 25, 2026",
+     "numeric": false,
+     "cited_url": "http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+     "reason": "Press release states 'fourth quarter ended January 25, 2026'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total revenue for fiscal 2026: $215,938 million (~$215.9B)",
+     "numeric": true,
+     "cited_url": "http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+     "reason": "Table in press release shows revenue $215,938 for fiscal 2026 (in millions).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal 2025 revenue: $130,497 million (~$130.5B)",
+     "numeric": true,
+     "cited_url": "http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+     "reason": "Table shows revenue $130,497 for fiscal 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Growth: +65% year over year (increase of ~$85,441 million, or ~$85.4B)",
+     "numeric": true,
+     "cited_url": "http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+     "reason": "Calculated from fiscal 2026 revenue $215,938M minus fiscal 2025 revenue $130,497M = $85,441M increase; 85,441/130,497 = 65.47%, press release states 'up 65% from a year ago'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY26 revenue: $68,127 million, up 73% year over year",
+     "numeric": true,
+     "cited_url": "http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+     "reason": "Table shows Q4 FY26 revenue $68,127M; press release states 'up 73% from a year ago'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Data Center revenue for Q4 FY26: $62.3B (+75% Y/Y)",
+     "numeric": true,
+     "cited_url": "http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+     "reason": "Press release states 'Data Center revenue of $62.3B (+75% Y/Y)' or similar; retrieved text says 'Fourth-quarter revenue was a record $62.3 billion, up 22% from the previous quarter and up 75% from a year ago' referring to Data Center.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 6,
+   "supported": 6,
+   "not_retrieved": 0
+  }
+ }
+}

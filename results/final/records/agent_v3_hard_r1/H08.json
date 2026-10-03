@@ -1,0 +1,137 @@
+{
+ "id": "H08",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was AAON's BASX-branded products backlog at June 30, 2026, in USD millions?",
+ "grading": "USD 1,430.4 million (1,430,379 thousand), +/-0.5%; accept 'about USD 1.43 billion'. Optional context: total backlog USD 1,970.8M; BASX backlog +185.4% vs June 30, 2025 (USD 501.1M). Fail if total backlog or another date is given as the BASX figure.",
+ "answer": "AAON's BASX-branded products backlog at June 30, 2026 was USD 1,430.4 million (1,430,379 thousand), versus USD 501.1 million at June 30, 2025 (+185.4%) and USD 1,302.1 million at December 31, 2025. Total backlog was USD 1,970.8 million (AAON-branded USD 540.5 million) [H08-E1]. The Q2 press release cites only total backlog of about USD 2.0 billion [H08-E2].",
+ "output": {
+  "answer": "**Question:** What was AAON's BASX-branded products backlog at June 30, 2026, in USD millions?\n*As of 2026-10-03*\n\n| | Backlog (USD millions) |\n|---|---|\n| BASX-branded products, June 30, 2026 (Q2 FY2026, quarter ended June 30, 2026) | 1,430.4 [1][2] |\n\n- AAON reported BASX-branded products backlog of $1,430,379 thousand as of June 30, 2026, which equals 1,430.4 million. [1][2]\n- BASX-branded backlog increased 185.4% year-over-year as of June 30, 2026, reflecting continued customer investment activity in data center infrastructure. [1]\n\n**Sources**\n[1] AAON, INC. earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-08-10) (www.sec.gov, 2026-08-10, primary) https://www.sec.gov/Archives/edgar/data/824142/000082414226000052/liveaaonpressreleaseexs.htm\n[2] AAON, INC. 10-Q for Q2 FY2026 (filed 2026-08-10) (www.sec.gov, 2026-08-10, primary) https://www.sec.gov/Archives/edgar/data/824142/000082414226000055/aaon-20260630.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 16936,
+   "output": 1648
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 38.81,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/7742097acd618e5f02a03ca043be2b94",
+  "companies": [
+   {
+    "name": "AAON, INC.",
+    "ticker": "AAON",
+    "cik": "824142",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "AAON total backlog at June 30, 2026 (USD millions)",
+    "BASX-branded products backlog at June 30, 2026 (USD millions)",
+    "Backlog breakdown by brand/segment (BASX vs AAON branded) as disclosed"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "AAON",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "AAON",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "AAON",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Backlog is a non-financial-statement operating metric; brand-level (BASX) backlog is typically disclosed in the earnings release or MD&A rather than in tagged financial statements, so it may not appear in the 10-Q's financial statements.",
+    "Q3 FY2026 and later periods are not yet reported, so no backlog data exists for them as of 2026-10-03."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/824142/000082414226000052/liveaaonpressreleaseexs.htm",
+    "https://www.sec.gov/Archives/edgar/data/824142/000082414226000055/aaon-20260630.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 3,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Provides BASX-branded products backlog at June 30, 2026",
+     "met": true,
+     "note": "Agent states 1,430.4 million for BASX-branded products backlog at June 30, 2026."
+    },
+    {
+     "point": "Value in USD millions",
+     "met": true,
+     "note": "Agent reports 1,430.4 million."
+    },
+    {
+     "point": "Value matches 1,430.4 million within +/-0.5%",
+     "met": true,
+     "note": "Agent's figure 1,430.4 million matches reference 1,430.4 million exactly."
+    },
+    {
+     "point": "Does not give total backlog as BASX figure",
+     "met": true,
+     "note": "Agent does not mention total backlog (1,970.8M) as BASX figure."
+    },
+    {
+     "point": "Does not use December 31, 2025 or June 30, 2025 columns",
+     "met": true,
+     "note": "Agent uses June 30, 2026 column only."
+    },
+    {
+     "point": "Does not report in thousands without conversion",
+     "met": true,
+     "note": "Agent converts 1,430,379 thousand to 1,430.4 million."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly reports AAON's BASX-branded products backlog at June 30, 2026 as USD 1,430.4 million, matching the reference value exactly, with proper unit conversion and no confusion with total backlog or other dates."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "AAON's BASX-branded products backlog at June 30, 2026 was $1,430.4 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/824142/000082414226000052/liveaaonpressreleaseexs.htm",
+     "reason": "The earnings release shows a backlog table with BASX-branded products at 1,430,379 (in thousands) as of June 30, 2026. 1,430,379 thousand = 1,430.379 million, which rounds to 1,430.4 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "BASX-branded backlog increased 185.4% year-over-year as of June 30, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/824142/000082414226000052/liveaaonpressreleaseexs.htm",
+     "reason": "The earnings release explicitly states: 'BASX-branded backlog increased 185.4% year-over-year, reflecting continued customer investment activity in data center infrastructure.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 2,
+   "numeric_cited": 2,
+   "cited": 2,
+   "supported": 2,
+   "not_retrieved": 0
+  }
+ }
+}

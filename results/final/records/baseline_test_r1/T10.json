@@ -1,0 +1,203 @@
+{
+ "id": "T10",
+ "category": "Complex retrieval",
+ "difficulty": "hard",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "What is Paychex's current fiscal 2027 outlook (as of today) for PEO and Insurance Solutions revenue growth and for interest on funds held for clients?",
+ "grading": "Key points: (1) PEO and Insurance Solutions revenue growth 7% to 8% (previously 6% to 7%); (2) interest on funds held for clients $200 million to $210 million (previously $195 million to $205 million); (3) identifies the 2026-09-23 release as the latest update. Optional: total revenue growth 5%-6% and adjusted EPS growth 7%-9% unchanged. Fail if the superseded June ranges are presented as current. Snapshot as of 2026-10-03; later releases supersede.",
+ "answer": "As of 2026-10-03 the latest Paychex fiscal 2027 outlook is from the Q1 FY2027 release dated September 23, 2026: PEO and Insurance Solutions revenue growth of 7% to 8% (raised from 6% to 7%) and interest on funds held for clients of $200 million to $210 million (raised from $195 million to $205 million). Unchanged in that update: total revenue growth 5% to 6%, Management Solutions growth 5% to 6%, adjusted operating margin about 44% and adjusted diluted EPS growth 7% to 9%. [T10-E1] The June 24, 2026 release had the lower ranges. [T10-E2]",
+ "output": {
+  "answer": "## Paychex (PAYX) — Fiscal 2027 Outlook (latest, as of the Q1 FY27 report dated Sept 23, 2026)\n\n**The two items you asked about — both were raised:**\n\n| Metric | FY2027 Guidance | Update |\n|---|---|---|\n| **PEO and Insurance Solutions revenue growth** | **7% to 8%** | Raised from 6%–7% |\n| **Interest on funds held for clients** | **$200 million to $210 million** | Raised from $195M–$205M |\n\n**Context / rest of the FY27 guide (unchanged):**\n- Total revenue growth: 5%–6%\n- Management Solutions revenue growth: 5%–6%\n- Adjusted operating margin: ~44%\n- Effective tax rate: ~24%\n- Adjusted diluted EPS growth: 7%–9%\n\n**Why the changes:** The PEO raise reflects continued strength in PEO — Q1 FY27 PEO & Insurance revenue grew 12% to $367.6M, driven by higher average worksite employees and greater insurance volumes, plus ASO-to-PEO conversions running at roughly twice plan. The client-funds interest raise incorporates the latest 25-basis-point increase in the federal funds rate (Q1 interest on funds held for clients was $49.8M, +5%). Management noted comparisons get tougher in later quarters as it laps the prior-year PEO/MPP enrollment acceleration.\n\n**Sources:**\n- Paychex Q1 FY27 earnings release (investor.paychex.com): https://investor.paychex.com/sec-filings/all-sec-filings/content/0000723531-26-000004/payx-ex99_1.htm\n- Business Insider / Markets Insider: https://markets.businessinsider.com/news/stocks/paychex-reports-first-quarter-fiscal-2027-results-1036567246\n- Yahoo Finance: https://finance.yahoo.com/markets/stocks/articles/paychex-q1-revenue-rises-6-134038401.html\n- TradingKey earnings call summary: https://www.tradingkey.com/news/transcripts/262183489-tradingkey\n\n*Note: This reflects the most recent guidance update I could find (Q1 FY27, Sept 2026). If a more recent quarterly report has since been issued, the figures may have changed.*",
+  "tokens": {
+   "input": 16644,
+   "output": 905
+  },
+  "tavily_credits": 3,
+  "latency_s": 10.12,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/8403909f7078bbf31f586c6aac3846bb",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Paychex fiscal 2027 outlook PEO and Insurance Solutions revenue growth interest on funds held for clients",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Paychex guidance fiscal 2027 PEO Insurance Solutions revenue",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/paychex-q1-revenue-rises-6-134038401.html",
+    "https://investor.paychex.com/sec-filings/all-sec-filings/content/0000723531-26-000004/payx-ex99_1.htm",
+    "https://markets.businessinsider.com/news/stocks/paychex-reports-first-quarter-fiscal-2027-results-1036567246",
+    "https://www.tradingkey.com/news/transcripts/262183489-tradingkey"
+   ],
+   "cited_primary": 1,
+   "retrieved": 19,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "PEO and Insurance Solutions revenue growth 7% to 8% (previously 6% to 7%)",
+     "met": true,
+     "note": "Agent states 'PEO and Insurance Solutions revenue growth: 7% to 8% | Raised from 6%–7%' in the table and text."
+    },
+    {
+     "point": "Interest on funds held for clients $200 million to $210 million (previously $195 million to $205 million)",
+     "met": true,
+     "note": "Agent states 'Interest on funds held for clients: $200 million to $210 million | Raised from $195M–$205M' in the table and text."
+    },
+    {
+     "point": "Identifies the 2026-09-23 release as the latest update",
+     "met": true,
+     "note": "Agent explicitly references 'Q1 FY27 report dated Sept 23, 2026' and notes 'most recent guidance update I could find (Q1 FY27, Sept 2026)'."
+    },
+    {
+     "point": "Does not present superseded June ranges as current",
+     "met": true,
+     "note": "Agent presents the updated ranges and notes the previous ranges only as 'raised from' context, not as current guidance."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All required grading points are satisfied: the agent provides the correct updated ranges for both metrics, identifies the September 23, 2026 Q1 release as the latest update, and does not present the outdated June ranges as current. Optional context (total revenue growth 5%-6%, adjusted EPS growth 7%-9% unchanged) is also included."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "PEO and Insurance Solutions revenue growth guidance for FY2027 is 7% to 8%, raised from 6%–7%",
+     "numeric": true,
+     "cited_url": "https://investor.paychex.com/sec-filings/all-sec-filings/content/0000723531-26-000004/payx-ex99_1.htm",
+     "reason": "The SEC filing (EX-99.1) shows a table with 'PEO and Insurance Solutions revenue growth' 7% to 8% and 'Previously 6% to 7%'. This matches the claim exactly.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Interest on funds held for clients guidance for FY2027 is $200 million to $210 million, raised from $195M–$205M",
+     "numeric": true,
+     "cited_url": "https://investor.paychex.com/sec-filings/all-sec-filings/content/0000723531-26-000004/payx-ex99_1.htm",
+     "reason": "The same SEC filing table shows 'Interest on funds held for clients' $200 million to $210 million, previously $195 million to $205 million. The claim is directly supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total revenue growth guidance for FY2027 is 5%–6% (unchanged)",
+     "numeric": true,
+     "cited_url": "https://investor.paychex.com/sec-filings/all-sec-filings/content/0000723531-26-000004/payx-ex99_1.htm",
+     "reason": "The SEC filing table lists 'Total revenue growth' 5% to 6% with 'No change'. This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management Solutions revenue growth guidance for FY2027 is 5%–6% (unchanged)",
+     "numeric": true,
+     "cited_url": "https://investor.paychex.com/sec-filings/all-sec-filings/content/0000723531-26-000004/payx-ex99_1.htm",
+     "reason": "The SEC filing table shows 'Management Solutions revenue growth' 5% to 6% with 'No change'. Supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Adjusted operating margin guidance for FY2027 is ~44% (unchanged)",
+     "numeric": true,
+     "cited_url": "https://investor.paychex.com/sec-filings/all-sec-filings/content/0000723531-26-000004/payx-ex99_1.htm",
+     "reason": "The SEC filing table lists 'Adjusted operating margin' ~44% with 'No change'. Supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Effective tax rate guidance for FY2027 is ~24% (unchanged)",
+     "numeric": true,
+     "cited_url": "https://investor.paychex.com/sec-filings/all-sec-filings/content/0000723531-26-000004/payx-ex99_1.htm",
+     "reason": "The SEC filing table shows 'Effective income tax rate' ~24% with 'No change'. Supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Adjusted diluted EPS growth guidance for FY2027 is 7%–9% (unchanged)",
+     "numeric": true,
+     "cited_url": "https://investor.paychex.com/sec-filings/all-sec-filings/content/0000723531-26-000004/payx-ex99_1.htm",
+     "reason": "The SEC filing table lists 'Adjusted diluted earnings per share growth' 7% to 9% with 'No change'. Supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY27 PEO & Insurance revenue grew 12% to $367.6M",
+     "numeric": true,
+     "cited_url": "https://markets.businessinsider.com/news/stocks/paychex-reports-first-quarter-fiscal-2027-results-1036567246",
+     "reason": "The Business Insider source includes a table showing 'PEO and Insurance Solutions' revenue of $367.6M vs $329.1M, a 12% increase. This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY27 interest on funds held for clients was $49.8M, +5%",
+     "numeric": true,
+     "cited_url": "https://markets.businessinsider.com/news/stocks/paychex-reports-first-quarter-fiscal-2027-results-1036567246",
+     "reason": "The same Business Insider table shows 'Interest on funds held for clients' $49.8M vs $47.6M, a 5% increase. Supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "ASO-to-PEO conversions running at roughly twice plan",
+     "numeric": false,
+     "cited_url": "https://www.tradingkey.com/news/transcripts/262183489-tradingkey",
+     "reason": "The TradingKey earnings call summary states: 'CEO John Gibson said execution of the One Paychex go-to-market strategy exceeded internal expectations, with ASO-to-PEO conversions running at about twice the company’s plan.' This directly supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Client-funds interest raise incorporates latest 25-basis-point increase in federal funds rate",
+     "numeric": true,
+     "cited_url": "https://www.tradingkey.com/news/transcripts/262183489-tradingkey",
+     "reason": "The TradingKey summary table shows for 'Interest on funds held for clients' the update: 'Updated to include the latest 25-basis-point increase in the federal funds rate'. This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management noted comparisons get tougher in later quarters as it laps prior-year PEO/MPP enrollment acceleration",
+     "numeric": false,
+     "cited_url": "https://www.tradingkey.com/news/transcripts/262183489-tradingkey",
+     "reason": "The TradingKey summary includes CFO commentary: 'comparisons become more challenging over the remainder of the year as we lapped the prior year acceleration in PEO stronger MPP enrollment.' This supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal 2027 Outlook as of Q1 FY27 report dated Sept 23, 2026",
+     "numeric": false,
+     "cited_url": "https://investor.paychex.com/sec-filings/all-sec-filings/content/0000723531-26-000004/payx-ex99_1.htm",
+     "reason": "The SEC filing is a news release dated 'September 23, 2026' and states 'Paychex Reports First Quarter Fiscal 2027 Results' for the quarter ended August 31, 2026. This confirms the report date.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Company is Paychex (PAYX)",
+     "numeric": false,
+     "cited_url": "https://investor.paychex.com/sec-filings/all-sec-filings/content/0000723531-26-000004/payx-ex99_1.htm",
+     "reason": "The SEC filing is from 'investor.paychex.com' and the news release begins 'Paychex (Nasdaq: PAYX)'. All sources refer to Paychex with ticker PAYX. Supported.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 10,
+   "numeric_cited": 10,
+   "cited": 14,
+   "supported": 14,
+   "not_retrieved": 0
+  }
+ }
+}

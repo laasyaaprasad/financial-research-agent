@@ -1,0 +1,250 @@
+{
+ "id": "H17",
+ "category": "Beat or miss",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "Did Plexus's fiscal Q3 2026 (quarter ended July 4, 2026) revenue, GAAP diluted EPS and non-GAAP (adjusted) operating margin land above, within or below the ranges the company guided to in its fiscal Q2 earnings release on April 29, 2026?",
+ "grading": "Key points: (1) revenue USD 1.305B (1,304.8M) vs guidance USD 1.200-1.250B = ABOVE; (2) GAAP diluted EPS USD 1.58 vs USD 1.25-1.41 = ABOVE; (3) adjusted (non-GAAP) operating margin 6.3% vs 5.9%-6.3% = WITHIN (at the high end, which management described as 'met the high end'); optional: adjusted EPS USD 2.32 vs 2.02-2.18 = ABOVE, GAAP operating margin 4.7% vs 4.1%-4.5% = ABOVE. Benchmark must be company guidance (April 29, 2026), not consensus. Fail if the margin is called above range, or any metric is called below range.",
+ "answer": "Against the Q3 FY2026 guidance in the April 29, 2026 release [H17-E1], Plexus's results for the quarter ended July 4, 2026 [H17-E2][H17-E3] were: revenue USD 1.305 billion (net sales USD 1,304.8 million) vs USD 1.200-1.250 billion = above (about 4.4% over the top end); GAAP diluted EPS USD 1.58 vs USD 1.25-1.41 = above; non-GAAP (adjusted) operating margin 6.3% vs 5.9%-6.3% = within, at the high end. Also above: adjusted EPS USD 2.32 vs USD 2.02-2.18 and GAAP operating margin 4.7% vs 4.1%-4.5%.",
+ "output": {
+  "answer": "**Question:** Did Plexus's fiscal Q3 2026 (quarter ended July 4, 2026) revenue, GAAP diluted EPS and non-GAAP (adjusted) operating margin land above, within or below the ranges the company guided to in its fiscal Q2 earnings release on April 29, 2026?\n*As of 2026-10-03*\n\n| | Revenue, actual (USD billions) | Revenue, guidance from Q2 FY2026 release (USD billions) | Revenue vs guidance | GAAP diluted EPS, actual (USD) | GAAP diluted EPS, guidance from Q2 FY2026 release (USD) | GAAP diluted EPS vs guidance | Non-GAAP adjusted operating margin, actual (%) | Non-GAAP adjusted operating margin, guidance from Q2 FY2026 release (%) | Non-GAAP adjusted operating margin vs guidance |\n|---|---|---|---|---|---|---|---|---|---|\n| Plexus — Q3 FY2026 (quarter ended July 4, 2026) | $1.305 [1] | $1.200 to $1.250 [2] | Above [1][2] | $1.58 [1] | $1.25 to $1.41 [2] | Above [1][2] | 6.3 [1] | 5.9% to 6.3% [2] | Within (at the high end) [1][2] |\n\n- Plexus reported fiscal Q3 2026 (quarter ended July 4, 2026) revenue of $1.305 billion, above the $1.200 billion to $1.250 billion range it guided to in its fiscal Q2 2026 earnings release dated April 29, 2026. [1][2]\n- Plexus reported fiscal Q3 2026 (quarter ended July 4, 2026) GAAP diluted EPS of $1.58, above the $1.25 to $1.41 range it guided to in its fiscal Q2 2026 earnings release dated April 29, 2026. [1][2]\n- Plexus reported fiscal Q3 2026 (quarter ended July 4, 2026) non-GAAP adjusted operating margin of 6.3%, within the 5.9% to 6.3% range it guided to in its fiscal Q2 2026 earnings release dated April 29, 2026, landing at the high end of that range. [1][2]\n- The fiscal Q3 2026 guidance ranges were published in Plexus's fiscal Q2 2026 earnings release (8-K EX-99.1 filed April 29, 2026), which guided revenue of $1.200 billion to $1.250 billion, GAAP diluted EPS of $1.25 to $1.41 and non-GAAP adjusted operating margin of 5.9% to 6.3%. [2]\n\n**Sources**\n[1] PLEXUS CORP earnings release for Q3 FY2026, 8-K EX-99.1 (filed 2026-07-29) (www.sec.gov, 2026-07-29, primary) https://www.sec.gov/Archives/edgar/data/785786/000078578626000049/plxsf26q3er-ex991.htm\n[2] PLEXUS CORP earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-04-29) (www.sec.gov, 2026-04-29, primary) https://www.sec.gov/Archives/edgar/data/785786/000078578626000028/plxsf26q2er-ex991.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 34625,
+   "output": 4891
+  },
+  "tavily_credits": 1.0,
+  "latency_s": 25.44,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/a1f53b32afdb6177fec4b0ef0b01ee90",
+  "companies": [
+   {
+    "name": "PLEXUS CORP",
+    "ticker": "PLXS",
+    "cik": "785786",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Q3 FY2026 guidance ranges issued in the Q2 FY2026 earnings release (April 29, 2026): revenue range, GAAP diluted EPS range, non-GAAP operating margin range",
+    "Q3 FY2026 actual revenue and whether it is above, within, or below the guided revenue range",
+    "Q3 FY2026 actual GAAP diluted EPS and whether it is above, within, or below the guided EPS range",
+    "Q3 FY2026 actual non-GAAP (adjusted) operating margin and whether it is above, within, or below the guided margin range",
+    "Reconciliation of Q3 FY2026 GAAP operating margin to non-GAAP operating margin (adjustments excluded)"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "PLXS",
+     "label": "Q3 FY2026"
+    },
+    {
+     "ticker": "PLXS",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "PLXS",
+     "period": "Q3 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "PLXS",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "PLXS",
+     "period": "Q3 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Capture any guidance detail or management commentary on the Q2 FY2026 earnings call (April 29, 2026) that quantifies the Q3 FY2026 outlook beyond the release",
+     "query": "Plexus PLXS Q2 fiscal 2026 earnings call April 29 2026 Q3 guidance revenue EPS operating margin",
+     "topic": "general",
+     "days_back": null
+    }
+   ],
+   "availability_notes": [
+    "Q3 FY2026 (ended 2026-07-04) is filed/reported, so actuals are available; no estimation needed.",
+    "Guidance for Q3 FY2026 was published in the Q2 FY2026 earnings release (8-K filed 2026-04-29); the exact guided ranges must come from that release (or the related call), not from the Q3 documents.",
+    "Non-GAAP operating margin is a non-GAAP measure; it is disclosed in the earnings release reconciliation rather than as a tagged financial-statement line, so the Q3 FY2026 earnings release is required for that figure."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Plexus PLXS Q2 fiscal 2026 earnings call April 29 2026 Q3 guidance revenue EPS operating margin",
+     "topic": "general",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.marketbeat.com/stocks/NASDAQ/PLXS/earnings",
+      "https://investor.plexus.com/news/news-details/2026/Plexus-Announces-Fiscal-Third-Quarter-Financial-Results/default.aspx",
+      "https://stockstory.org/us/stocks/nasdaq/plxs/news/earnings/plexus-nasdaqplxs-posts-better-than-expected-sales-in-q1-cy2026"
+     ],
+     "query": "Did Plexus's fiscal Q3 2026 (quarter ended July 4, 2026) revenue, GAAP diluted EPS and non-GAAP (adjusted) operating margin land above, within or below the ranges the company guided to in its fiscal Q2 earnings release on April 29, 2026?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/785786/000078578626000028/plxsf26q2er-ex991.htm",
+    "https://www.sec.gov/Archives/edgar/data/785786/000078578626000049/plxsf26q3er-ex991.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 11,
+   "retrieved_primary": 7
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Revenue USD 1.305B vs guidance USD 1.200-1.250B = ABOVE",
+     "met": true,
+     "note": "Agent states revenue $1.305B vs guidance $1.200-1.250B = Above, matching reference."
+    },
+    {
+     "point": "GAAP diluted EPS USD 1.58 vs USD 1.25-1.41 = ABOVE",
+     "met": true,
+     "note": "Agent states GAAP diluted EPS $1.58 vs guidance $1.25-1.41 = Above, matching reference."
+    },
+    {
+     "point": "Non-GAAP adjusted operating margin 6.3% vs 5.9%-6.3% = WITHIN (at high end)",
+     "met": true,
+     "note": "Agent states non-GAAP adjusted operating margin 6.3% vs guidance 5.9%-6.3% = Within (at the high end), matching reference."
+    },
+    {
+     "point": "Benchmark is company guidance from April 29, 2026 earnings release",
+     "met": true,
+     "note": "Agent explicitly cites Q2 FY2026 earnings release dated April 29, 2026 as source for guidance ranges."
+    },
+    {
+     "point": "No failure mode: margin not called above range, no metric called below range, no consensus benchmark, no Q4 guidance used, no GAAP/non-GAAP EPS mixing",
+     "met": true,
+     "note": "Agent's answer avoids all listed failure modes."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly identifies all three key metrics relative to the company's April 29, 2026 guidance: revenue and GAAP diluted EPS above the guided ranges, and non-GAAP adjusted operating margin within the range at the high end. The answer uses the correct benchmark (company guidance) and does not commit any of the specified failure modes."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Plexus reported fiscal Q3 2026 (quarter ended July 4, 2026) revenue of $1.305 billion",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000049/plxsf26q3er-ex991.htm",
+     "reason": "The Q3 FY2026 earnings release (source [1]) shows a table with 'Revenue (in billions) | $1.305' for the quarter ended July 4, 2026, and the press release text states 'Reports record fiscal third quarter 2026 revenue of $1.305 billion'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Plexus guided fiscal Q3 2026 revenue of $1.200 billion to $1.250 billion in its fiscal Q2 2026 earnings release dated April 29, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000028/plxsf26q2er-ex991.htm",
+     "reason": "The Q2 FY2026 earnings release (source [2]) includes a table column 'Q3F26 Guidance' showing 'Revenue (in billions) | $1.200 to $1.250' and the text states 'Initiates fiscal third quarter 2026 revenue guidance of $1.200 billion to $1.250 billion'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual revenue of $1.305 billion was above the guidance range of $1.200 billion to $1.250 billion",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000049/plxsf26q3er-ex991.htm",
+     "reason": "The Q3 release shows actual revenue $1.305B and guidance range $1.200B to $1.250B; $1.305B > $1.250B, so it is above. The release also states 'Fiscal third quarter revenue of $1.305 billion exceeded guidance'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Plexus reported fiscal Q3 2026 GAAP diluted EPS of $1.58",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000049/plxsf26q3er-ex991.htm",
+     "reason": "The Q3 release table shows 'Diluted EPS | $1.58' for Q3F26 Results, and the press release text states 'GAAP diluted EPS of $1.58'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Plexus guided fiscal Q3 2026 GAAP diluted EPS of $1.25 to $1.41 in its fiscal Q2 2026 earnings release",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000028/plxsf26q2er-ex991.htm",
+     "reason": "The Q2 release table column 'Q3F26 Guidance' shows 'Diluted EPS | $1.25 to $1.41' and the text states 'with GAAP diluted EPS of $1.25 to $1.41'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual GAAP diluted EPS of $1.58 was above the guidance range of $1.25 to $1.41",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000049/plxsf26q3er-ex991.htm",
+     "reason": "The Q3 release shows actual diluted EPS $1.58 and guidance range $1.25 to $1.41; $1.58 > $1.41, so it is above.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Plexus reported fiscal Q3 2026 non-GAAP adjusted operating margin of 6.3%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000049/plxsf26q3er-ex991.htm",
+     "reason": "The Q3 release table shows 'Adjusted operating margin (2) | 6.3 | %' for Q3F26 Results, and the press release text states 'non-GAAP operating margin of 6.3%'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Plexus guided fiscal Q3 2026 non-GAAP adjusted operating margin of 5.9% to 6.3% in its fiscal Q2 2026 earnings release",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000028/plxsf26q2er-ex991.htm",
+     "reason": "The Q2 release table column 'Q3F26 Guidance' shows 'Adjusted operating margin (2) | 5.9% to 6.3%' and the text states 'non-GAAP operating margin of 5.9% to 6.3%'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual non-GAAP adjusted operating margin of 6.3% was within the guidance range of 5.9% to 6.3%, landing at the high end",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000049/plxsf26q3er-ex991.htm",
+     "reason": "The Q3 release shows actual adjusted operating margin 6.3% and guidance range 5.9% to 6.3%; 6.3% is within the inclusive range and equals the upper bound. The release states 'non-GAAP operating margin of 6.3% met the high end of guidance'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The fiscal Q3 2026 guidance ranges were published in Plexus's fiscal Q2 2026 earnings release (8-K EX-99.1 filed April 29, 2026)",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000028/plxsf26q2er-ex991.htm",
+     "reason": "Source [2] is the 8-K EX-99.1 filed April 29, 2026, titled 'Plexus Announces Fiscal Second Quarter Financial Results' and contains the Q3F26 guidance ranges for revenue, GAAP diluted EPS, and non-GAAP adjusted operating margin.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 9,
+   "numeric_cited": 9,
+   "cited": 10,
+   "supported": 10,
+   "not_retrieved": 0
+  }
+ }
+}

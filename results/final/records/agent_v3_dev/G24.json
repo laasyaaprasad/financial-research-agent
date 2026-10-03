@@ -1,0 +1,176 @@
+{
+ "id": "G24",
+ "category": "Financial modeling",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "Oracle says roughly X% of its RPO at Aug 31, 2026 will be recognized in the next 12 months. What dollar amount does that imply, and how does it compare (as a ratio) to Oracle's trailing-twelve-month total revenue through Q1 FY2027?",
+ "grading": "Implied 12-month RPO ±1% (USD billions); TTM revenue ±0.5%; ratio ±0.02x; must show TTM build",
+ "answer": "Approximately 13% of Oracle’s USD 664 billion RPO implies USD 86.32 billion recognized over the next twelve months. TTM total revenue through Q1 FY2027 is USD 71,776 million: FY2026 USD 67,357 million + Q1 FY2027 USD 19,345 million − Q1 FY2026 USD 14,926 million. The implied RPO amount / TTM revenue ratio is 1.2026x. The 13% is approximate and RPO recognition is not total-revenue guidance. [G24-E1, G24-E2]",
+ "output": {
+  "answer": "**Question:** Oracle says roughly X% of its RPO at Aug 31, 2026 will be recognized in the next 12 months. What dollar amount does that imply, and how does it compare (as a ratio) to Oracle's trailing-twelve-month total revenue through Q1 FY2027?\n*As of 2026-10-01*\n\n| | RPO (USD billions) | Share of RPO expected to be recognized in next 12 months (%) | Implied RPO to be recognized in next 12 months (USD billions) | Total revenue (USD millions) | Implied next-12-month RPO recognition / TTM revenue (ratio, x) |\n|---|---|---|---|---|---|\n| Oracle (RPO as of August 31, 2026, Q1 FY2027) | 664 [1] | 13% [1] | 86.32 [1] | — | — |\n| Oracle (TTM through Q1 FY2027, quarter ended August 31, 2026) | — | — | — | 71,776 [2][3] | 1.20 [1][2][3] |\n\n- Oracle's remaining performance obligations (RPO) were $664 billion as of August 31, 2026 (Q1 FY2027, quarter ended August 31, 2026), of which the company expects to recognize approximately 13% as revenues over the next twelve months. [1]\n- Applying the disclosed 13% to the $664 billion RPO implies approximately $86.32 billion of RPO expected to be recognized as revenue over the next twelve months. [1]\n- Oracle's trailing-twelve-month total revenue through Q1 FY2027 (quarter ended August 31, 2026) was $71,776 million, calculated as FY2026 total revenues plus Q1 FY2027 total revenues less Q1 FY2026 total revenues. [2][3]\n- The implied next-twelve-month RPO recognition amount of $86.32 billion is 1.20x Oracle's trailing-twelve-month total revenue of $71,776 million through Q1 FY2027. [1][2][3]\n\n**Sources**\n[1] ORACLE CORP 10-Q for Q1 FY2027 (filed 2026-09-11) (www.sec.gov, 2026-09-11, primary) https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm\n[2] ORACLE CORP XBRL data tagged in 10-K filed 2026-06-22 (www.sec.gov, 2026-06-22, primary) https://www.sec.gov/Archives/edgar/data/1341439/000119312526277521/\n[3] ORACLE CORP earnings release for Q1 FY2027, 8-K EX-99.1 (filed 2026-09-10) (www.sec.gov, 2026-09-10, primary) https://www.sec.gov/Archives/edgar/data/1341439/000119312526387905/orcl-ex99_1.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 25087,
+   "output": 4919
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 16.4,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/caca67d935bcb0409b205f27f73fa9a8",
+  "companies": [
+   {
+    "name": "ORACLE CORP",
+    "ticker": "ORCL",
+    "cik": "1341439",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Oracle remaining performance obligations (RPO) balance as of Aug 31, 2026 (Q1 FY2027)",
+    "Percentage of RPO that Oracle states will be recognized as revenue in the next 12 months",
+    "Implied dollar amount of RPO to be recognized in the next 12 months (RPO x stated percentage)",
+    "Oracle total revenue for Q1 FY2027 (quarter ended 2026-08-31)",
+    "Oracle total revenue for Q1 FY2026 (quarter ended 2025-08-31)",
+    "Oracle total revenue for FY2026 (year ended 2026-05-31)",
+    "Trailing-twelve-month total revenue through Q1 FY2027 (FY2026 revenue + Q1 FY2027 revenue - Q1 FY2026 revenue)",
+    "Ratio of implied next-12-month RPO recognition amount to TTM total revenue through Q1 FY2027"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "ORCL",
+     "label": "Q1 FY2027"
+    },
+    {
+     "ticker": "ORCL",
+     "label": "Q1 FY2026"
+    },
+    {
+     "ticker": "ORCL",
+     "label": "FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "ORCL",
+     "period": "Q1 FY2027",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "ORCL",
+     "period": "Q1 FY2027",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "ORCL",
+     "period": "FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "ORCL",
+     "period": "Q1 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q2 FY2027 (2026-09-01 to 2026-11-30) is not yet reported, so no data for that period is planned.",
+    "The RPO percentage expected to be recognized within 12 months is a disclosure Oracle makes in its earnings release/10-Q; if the exact percentage is not stated in the filings, the implied dollar amount cannot be derived and would need to be flagged rather than estimated.",
+    "TTM revenue through Q1 FY2027 requires Q1 FY2026 and FY2026 revenue, both of which are filed and available."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1341439/000119312526277521/",
+    "https://www.sec.gov/Archives/edgar/data/1341439/000119312526387905/orcl-ex99_1.htm",
+    "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 7,
+   "retrieved_primary": 7
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Implied 12-month RPO ±1% (USD billions)",
+     "met": true,
+     "note": "Agent's 86.32 billion matches reference 86.32 billion exactly (664 * 0.13)."
+    },
+    {
+     "point": "TTM revenue ±0.5%",
+     "met": true,
+     "note": "Agent's 71,776 million matches reference exactly (67,357 + 19,345 - 14,926)."
+    },
+    {
+     "point": "Ratio ±0.02x",
+     "met": true,
+     "note": "Agent's 1.20x vs reference 1.2026x, difference 0.0026x within tolerance."
+    },
+    {
+     "point": "Must show TTM build",
+     "met": true,
+     "note": "Agent explicitly shows FY2026 + Q1 FY2027 - Q1 FY2026 construction."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All numerical values match the reference within the specified tolerances, the TTM revenue build is correctly shown, and units are consistent (billions for RPO, millions for revenue)."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Oracle's remaining performance obligations (RPO) were $664 billion as of August 31, 2026 (Q1 FY2027).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm",
+     "reason": "The 10-Q for Q1 FY2027 (filed 2026-09-11) states: 'Remaining performance obligations were $664 billion as of August 31, 2026, of which we expect to recognize approximately 13% as revenues over the next twelve months.' This directly supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Oracle expects to recognize approximately 13% of RPO as revenues over the next twelve months.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm",
+     "reason": "Same 10-Q source as above includes the 13% expectation. The retrieved text confirms this percentage.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Applying the disclosed 13% to the $664 billion RPO implies approximately $86.32 billion of RPO expected to be recognized as revenue over the next twelve months.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm",
+     "reason": "Derived calculation: 664 billion * 0.13 = 86.32 billion. The inputs (664 billion and 13%) are both from the cited 10-Q. The arithmetic is correct and rounding is within half the last digit (86.32).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Oracle's trailing-twelve-month total revenue through Q1 FY2027 (quarter ended August 31, 2026) was $71,776 million, calculated as FY2026 total revenues ($67,357 million) plus Q1 FY2027 total revenues ($19,345 million) less Q1 FY2026 total revenues ($14,926 million).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526277521/",
+     "reason": "FY2026 total revenue of 2026 total revenue from 10-K XBRL (source 2): $67,357 million. Q1 FY2027 total revenue from 8-K earnings release (source 3): $19,345 million. Q1 FY2026 total revenue from same 8-K: $14,926 million. Calculation: 67,357 + 19,345 - 14,926 = 71,776 million. All inputs are present in the retrieved sources and the arithmetic is correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The implied next-twelve-month RPO recognition amount of $86.32 billion is 1.20x Oracle's trailing-twelve-month total revenue of $71,776 million through Q1 FY2027.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm",
+     "reason": "Ratio = 86.32 / 71.776 = 1.2026, which rounds to 1.20 (within half the last digit). The numerator comes from claim 3 (sourced from 10-Q), the denominator from claim 4 (sourced from 10-K XBRL and 8-K). The calculation is correct.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 5,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}

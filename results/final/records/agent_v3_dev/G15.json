@@ -1,0 +1,242 @@
+{
+ "id": "G15",
+ "category": "Adjustments",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "Excluding the non-recurring IEEPA tariff refund benefit, what was Costco's Q4 FY2026 diluted EPS, and what was the YoY growth on that basis vs Q4 FY2025?",
+ "grading": "Adjusted EPS ±$0.01; growth ±0.5pp; must use the per-share benefit as disclosed by Costco and 16-week Q4 columns",
+ "answer": "Costco Q4 FY2026 diluted EPS excluding the disclosed net tariff-refund benefit was $6.60 ($6.75 - $0.15), up 12.4361% from Q4 FY2025 EPS of $5.87. Both quarters contained 16 weeks. The $0.15 benefit is already net of partial reinvestment in member values. [G15-E1]",
+ "output": {
+  "answer": "**Question:** Excluding the non-recurring IEEPA tariff refund benefit, what was Costco's Q4 FY2026 diluted EPS, and what was the YoY growth on that basis vs Q4 FY2025?\n*As of 2026-10-01*\n\n| | Diluted EPS excluding IEEPA tariff refund benefit (USD) | YoY diluted EPS growth excluding IEEPA benefit (%) |\n|---|---|---|\n| Q4 FY2026 (16 weeks ended August 30, 2026) | 6.60 [1][2] | — |\n| Q4 FY2026 vs Q4 FY2025 (16 weeks ended August 30, 2026 vs August 31, 2025) | — | 12.4 [1][2][3] |\n\n- Costco reported Q4 FY2026 (16 weeks ended August 30, 2026) net income of $2.998 billion and diluted EPS of $6.75, on a GAAP as-reported basis. [1][4]\n- Costco stated that Q4 FY2026 was positively impacted by a non-recurring benefit of $0.15 per diluted share from IEEPA tariff refunds received in the quarter, less partial reinvestment of those refunds in increased member values. [1][2]\n- Excluding the non-recurring IEEPA tariff refund benefit, Q4 FY2026 diluted EPS was 6.60 (GAAP as-reported $6.75 less the $0.15 per-share benefit). [1][2]\n- Costco disclosed that, excluding the non-recurring IEEPA tariff refund benefit, Q4 FY2026 EPS grew 12.4% (and net income grew 12.3%) versus Q4 FY2025. [2][5]\n- Q4 FY2025 (16 weeks ended August 31, 2025) diluted EPS was $5.87, the prior-year comparison base for the ex-benefit growth rate. [3]\n- Calculated on the same ex-benefit basis, Q4 FY2026 diluted EPS of $6.60 versus Q4 FY2025 diluted EPS of $5.87 implies YoY growth of 12.4%, consistent with the 12.4% the company disclosed. [1][2][3]\n\n**Not available**\n- An explicitly labeled 'adjusted/ex-benefit diluted EPS' line item in Costco's Q4 FY2026 financial statements: The release and supplemental deck disclose the $0.15 per-share benefit and the resulting 12.4% EPS growth rate, but do not present a separate ex-benefit EPS line in the income statement; the $6.60 figure is derived by subtracting the disclosed $0.15 benefit from reported $6.75. [1][2]\n- Q4 FY2026 10-K note-level detail (segment/note disclosures, full financial statements): Only the Q4 FY2026 earnings release (8-K EX-99.1/99.2, filed 2026-09-24) is available; the FY2026 10-K has not been filed as of 2026-10-01. [1][2]\n\n**Sources**\n[1] COSTCO WHOLESALE CORP /NEW earnings release for Q4 FY2026, 8-K EX-99.1 (filed 2026-09-24) (www.sec.gov, 2026-09-24, primary) https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9918-k92426.htm\n[2] COSTCO WHOLESALE CORP /NEW earnings release for Q4 FY2026, 8-K EX-99.2 (filed 2026-09-24) (www.sec.gov, 2026-09-24, primary) https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9928-k92426.htm\n[3] COSTCO WHOLESALE CORP /NEW earnings release for Q4 FY2025, 8-K EX-99.1 (filed 2025-09-25) (www.sec.gov, 2025-09-25, primary) https://www.sec.gov/Archives/edgar/data/909832/000090983225000093/costex9918-k92525.htm\n[4] Costco Wholesale Corporation - Costco Wholesale Corporation Reports Fourth Quarter and Fiscal Year 2026 Operating Results (investor.costco.com, 2026-09-24, primary) https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Operating-Results/default.aspx\n[5] Costco (COST) Q4 2026 Earnings Call Transcript | The Motley Fool (www.fool.com, 2026-09-29, secondary) https://www.fool.com/earnings/call-transcripts/2026/09/29/costco-cost-q4-2026-earnings-call-transcript\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 35435,
+   "output": 4692
+  },
+  "tavily_credits": 1.0,
+  "latency_s": 34.02,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/1a318e7a61183ec23d4ee6f535255ab7",
+  "companies": [
+   {
+    "name": "COSTCO WHOLESALE CORP /NEW",
+    "ticker": "COST",
+    "cik": "909832",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Q4 FY2026 diluted EPS as reported (GAAP)",
+    "Q4 FY2026 non-recurring IEEPA tariff refund benefit, per-share impact (and pre-tax amount)",
+    "Q4 FY2026 diluted EPS excluding the IEEPA tariff refund benefit",
+    "Q4 FY2025 diluted EPS (prior-year comparative)",
+    "Year-over-year growth in diluted EPS on the ex-IEEPA-tariff-refund basis (Q4 FY2026 vs Q4 FY2025)",
+    "Any management commentary/quantification of the IEEPA tariff refund benefit and its non-recurring nature"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "COST",
+     "label": "Q4 FY2026"
+    },
+    {
+     "ticker": "COST",
+     "label": "Q4 FY2025"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "COST",
+     "period": "Q4 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "COST",
+     "period": "Q4 FY2025",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Quantify the IEEPA tariff refund benefit and management's explanation of it as a non-recurring item, which may only be detailed on the Q4 FY2026 earnings call rather than in the release",
+     "query": "Costco Q4 fiscal 2026 earnings call IEEPA tariff refund benefit diluted EPS excluding",
+     "topic": "news",
+     "days_back": 30
+    }
+   ],
+   "availability_notes": [
+    "Q4 FY2026 (period ended 2026-08-30) has an earnings release only; the 10-K is not yet filed, so segment/note-level detail and full financial statements for the quarter are unavailable — the earnings release is the only source.",
+    "The IEEPA tariff refund benefit is a non-recurring item; if Costco does not present an explicit ex-benefit EPS figure or per-share impact in the release, the adjusted EPS cannot be derived from filings alone and would depend on management's call commentary.",
+    "Q4 FY2025 figures are available from its earnings release (8-K filed 2025-09-25) and the FY2025 10-K (filed 2025-10-08)."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "An explicitly labeled 'adjusted/ex-benefit diluted EPS' line item in Costco's Q4 FY2026 financial statements",
+    "kind": "not_disclosed",
+    "reason": "The release and supplemental deck disclose the $0.15 per-share benefit and the resulting 12.4% EPS growth rate, but do not present a separate ex-benefit EPS line in the income statement; the $6.60 figure is derived by subtracting the disclosed $0.15 benefit from reported $6.75.",
+    "evidence_ids": [
+     "E1",
+     "E2"
+    ]
+   },
+   {
+    "item": "Q4 FY2026 10-K note-level detail (segment/note disclosures, full financial statements)",
+    "kind": "not_reported_yet",
+    "reason": "Only the Q4 FY2026 earnings release (8-K EX-99.1/99.2, filed 2026-09-24) is available; the FY2026 10-K has not been filed as of 2026-10-01.",
+    "evidence_ids": [
+     "E1",
+     "E2"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Costco Q4 fiscal 2026 earnings call IEEPA tariff refund benefit diluted EPS excluding",
+     "topic": "news",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-01",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "start_date": "2026-09-01"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://finance.biggo.com/news/US_COST_2026-09-24",
+      "https://www.tradingkey.com/news/presentation/262186601-tradingkey",
+      "https://www.fool.com/earnings/call-transcripts/2026/09/29/costco-cost-q4-2026-earnings-call-transcript"
+     ],
+     "query": "Excluding the non-recurring IEEPA tariff refund benefit, what was Costco's Q4 FY2026 diluted EPS, and what was the YoY growth on that basis vs Q4 FY2025?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Operating-Results/default.aspx",
+    "https://www.fool.com/earnings/call-transcripts/2026/09/29/costco-cost-q4-2026-earnings-call-transcript",
+    "https://www.sec.gov/Archives/edgar/data/909832/000090983225000093/costex9918-k92525.htm",
+    "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9918-k92426.htm",
+    "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9928-k92426.htm"
+   ],
+   "cited_primary": 4,
+   "retrieved": 12,
+   "retrieved_primary": 8
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Adjusted EPS within ±$0.01 of reference ($6.60)",
+     "met": true,
+     "note": "Agent reports $6.60, matching reference $6.60 exactly."
+    },
+    {
+     "point": "YoY growth within ±0.5 percentage points of reference (12.4361%)",
+     "met": true,
+     "note": "Agent reports 12.4%, difference 0.0361 pp, well within tolerance."
+    },
+    {
+     "point": "Uses the per-share benefit as disclosed by Costco ($0.15 per diluted share)",
+     "met": true,
+     "note": "Agent explicitly cites the $0.15 per-share benefit from the earnings release."
+    },
+    {
+     "point": "Uses 16-week Q4 columns for both quarters",
+     "met": true,
+     "note": "Agent notes both Q4 FY2026 and Q4 FY2025 are 16-week periods ended August 30, 2026 and August 31, 2025 respectively."
+    },
+    {
+     "point": "Correctly calculates adjusted EPS by subtracting disclosed per-share benefit from reported EPS",
+     "met": true,
+     "note": "Agent shows $6.75 - $0.15 = $6.60, consistent with reference calculation."
+    },
+    {
+     "point": "Correctly calculates YoY growth on ex-benefit basis",
+     "met": true,
+     "note": "Agent computes $6.60 vs $5.87 yielding 12.4%, matching disclosed growth rate."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: adjusted EPS and YoY growth are within specified tolerances, the per-share benefit is taken directly from Costco's disclosure, both quarters are 16-week periods, and the calculations are correctly derived from the disclosed figures."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Costco reported Q4 FY2026 net income of $2.998 billion and diluted EPS of $6.75 on a GAAP as-reported basis",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9918-k92426.htm",
+     "reason": "The SEC filing (8-K EX-99.1) states: 'Net income for the fourth quarter was $2.998 billion, $6.75 per diluted share, compared to $2.610 billion, $5.87 per diluted share, last year.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Costco stated that Q4 FY2026 was positively impacted by a non-recurring benefit of $0.15 per diluted share from IEEPA tariff refunds received in the quarter, less partial reinvestment of those refunds in increased member values",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9918-k92426.htm",
+     "reason": "The same press release states: 'This year's fourth quarter was positively impacted by a non-recurring benefit of $0.15 per diluted share from IEEPA tariff refunds received in the quarter, less partial reinvestment of those refunds in increased member values.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Excluding the non-recurring IEEPA tariff refund benefit, Q4 FY2026 diluted EPS was $6.60 (derived as GAAP as-reported $6.75 less $0.15 per-share benefit)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9918-k92426.htm",
+     "reason": "The reported diluted EPS is $6.75 per share (source [1]) and the non-recurring benefit is $0.15 per share (source [1]). Subtracting yields $6.60. The arithmetic is correct and the basis is appropriate (the benefit is included in reported EPS).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Costco disclosed that, excluding the non-recurring IEEPA tariff refund benefit, Q4 FY2026 EPS grew 12.4% (and net income grew 12.3%) versus Q4 FY2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9928-k92426.htm",
+     "reason": "The supplemental deck (EX-99.2) states: 'Excluding this benefit, net income grew 12.3%, and EPS 12.4%.' and 'Excluding this nonrecurring benefit, net income and EPS were up 12.3% and 12.4%, respectively, from $2.61 billion or $5.87 per diluted share last year.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2025 (16 weeks ended August 31, 2025) diluted EPS was $5.87, the prior-year comparison base for the ex-benefit growth rate",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000093/costex9918-k92525.htm",
+     "reason": "The Q4 FY2025 earnings release (8-K EX-99.1) states: 'Net income for the fourth quarter was $2.610 billion, $5.87 per diluted share, compared to $2.354 billion, $5.29 per diluted share, last year.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Calculated on the same ex-benefit basis, Q4 FY2026 diluted EPS of $6.60 versus Q4 FY2025 diluted EPS of $5.87 implies YoY growth of 12.4%, consistent with the 12.4% the company disclosed",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9918-k92426.htm",
+     "reason": "($6.60 - $5.87) / $5.87 = 0.12436 = 12.436%, which rounds to 12.4% (within rounding tolerance of half the last digit). The company disclosed 12.4% growth in the same sources.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 6,
+   "supported": 6,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,177 @@
+{
+ "id": "G21",
+ "category": "Complex retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "How much did Alphabet spend on share repurchases in Q2 2026, split between Class A (GOOGL) and Class C (GOOG), with share counts for each?",
+ "grading": "Both classes must show USD 0 million and 0 shares for Q2 2026. Zero is an exact expected value, so percentage tolerance is inapplicable; fail for any positive repurchase amount.",
+ "answer": "Alphabet repurchased no Class A or Class C shares in Q2 2026. Class A (GOOGL): USD 0 million and 0 shares. Class C (GOOG): USD 0 million and 0 shares. Total: USD 0 million. An unused authorization is not repurchase spending. [G21-E1]",
+ "output": {
+  "answer": "**Question:** How much did Alphabet spend on share repurchases in Q2 2026, split between Class A (GOOGL) and Class C (GOOG), with share counts for each?\n*As of 2026-10-01*\n\n| | Shares repurchased (count) |\n|---|---|\n| Alphabet Class A (GOOGL) — Q2 FY2026, quarter ended June 30, 2026 | 0 [1][2] |\n| Alphabet Class C (GOOG) — Q2 FY2026, quarter ended June 30, 2026 | 0 [1][2] |\n\n- Alphabet's Q2 FY2026 Form 10-Q (quarterly period ended June 30, 2026) states that in the three and six months ended June 30, 2026 there were no repurchases of the company's Class A or Class C shares. [1]\n- Alphabet's cash flow statement reports payments for repurchase of common stock of 0 USD for the six months ended June 30, 2026 (2026-01-01 to 2026-06-30), consistent with the 10-Q statement that there were no repurchases in that period. [2]\n- As of June 30, 2026, $69.5 billion remained available for Class A and Class C share repurchases under the $70.0 billion share repurchase program authorized by Alphabet's Board of Directors in April 2025. [1]\n\n**Not available**\n- Separate dollar amounts and share counts for Class A versus Class C repurchases in Q2 FY2026: Alphabet reports Class A and Class C repurchases together and states there were no repurchases of either class in the three and six months ended June 30, 2026, so no per-class dollar or share breakdown is disclosed beyond the reported zero for each class. [1][2]\n\n_2 draft statement(s) were withheld because they could not be verified against the sources (details in the run record)._\n\n**Sources**\n[1] Alphabet Inc. 10-Q for Q2 FY2026 (filed 2026-07-23) (www.sec.gov, 2026-07-23, primary) https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm\n[2] Alphabet Inc. XBRL data tagged in 10-Q filed 2026-07-23 (www.sec.gov, 2026-07-23, primary) https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 27399,
+   "output": 8576
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 34.68,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/bd5132b4ec14e0f2115333c71217397f",
+  "companies": [
+   {
+    "name": "Alphabet Inc.",
+    "ticker": "GOOGL",
+    "cik": "1652044",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Total cash paid for share repurchases in Q2 FY2026",
+    "Class A (GOOGL) shares repurchased in Q2 FY2026 (count)",
+    "Class A (GOOGL) repurchase amount in Q2 FY2026",
+    "Class C (GOOG) shares repurchased in Q2 FY2026 (count)",
+    "Class C (GOOG) repurchase amount in Q2 FY2026",
+    "Any quarter-to-date vs. year-to-date split of repurchases by class"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "GOOGL",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "GOOGL",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q2 FY2026 (2026-04-01 to 2026-06-30) is filed, so the 10-Q is available; the per-class repurchase detail (shares and amounts for Class A and Class C) appears in the stockholders' equity note, not in the headline financial statements.",
+    "Alphabet does not break out repurchase amounts by class in its earnings release; the class-level split is only in the 10-Q notes, so no earnings release is requested.",
+    "Q3 FY2026 is not yet reported, so no later-period repurchase data is available."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Separate dollar amounts and share counts for Class A versus Class C repurchases in Q2 FY2026",
+    "kind": "not_disclosed",
+    "reason": "Alphabet reports Class A and Class C repurchases together and states there were no repurchases of either class in the three and six months ended June 30, 2026, so no per-class dollar or share breakdown is disclosed beyond the reported zero for each class.",
+    "evidence_ids": [
+     "E1",
+     "E2"
+    ]
+   }
+  ],
+  "removed": [
+   {
+    "text": "Alphabet Class A (GOOGL) — Q2 FY2026, quarter ended June 30, 2026 | Share repurchase amount (USD): $0",
+    "problem": "calculation result placeholder {result} missing from claim text"
+   },
+   {
+    "text": "Alphabet Class C (GOOG) — Q2 FY2026, quarter ended June 30, 2026 | Share repurchase amount (USD): $0",
+    "problem": "calculation result placeholder {result} missing from claim text"
+   }
+  ],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/",
+    "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 2,
+   "retrieved_primary": 2
+  },
+  "correctness": {
+   "score": 0.5,
+   "points": [
+    {
+     "point": "Class A (GOOGL) shows USD 0 million for Q2 2026",
+     "met": false,
+     "note": "Agent states separate dollar amounts are not disclosed and does not explicitly report USD 0 million for Class A."
+    },
+    {
+     "point": "Class A (GOOGL) shows 0 shares for Q2 2026",
+     "met": true,
+     "note": "Agent's table reports 0 shares repurchased for Class A in Q2 FY2026."
+    },
+    {
+     "point": "Class C (GOOG) shows USD 0 million for Q2 2026",
+     "met": false,
+     "note": "Agent states separate dollar amounts are not disclosed and does not explicitly report USD 0 million for Class C."
+    },
+    {
+     "point": "Class C (GOOG) shows 0 shares for Q2 2026",
+     "met": true,
+     "note": "Agent's table reports 0 shares repurchased for Class C in Q2 FY2026."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The agent correctly reports zero shares for both share classes but fails to report the required USD 0 million spend for each class, instead claiming per-class dollar amounts are not disclosed. The reference answer confirms the spend is zero for each class. Since the core answer (the spend split) is wrong, the verdict is incorrect."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Alphabet Class A (GOOGL) shares repurchased in Q2 FY2026 (quarter ended June 30, 2026) = 0 shares",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+     "reason": "The 10-Q states: 'In the three and six months ended June 30, 2026, there were no repurchases of the company's Class A or Class C shares.' This directly supports zero repurchases for Class A shares.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet Class C (GOOG) shares repurchased in Q2 FY2026 (quarter ended June 30, 2026) = 0 shares",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+     "reason": "The same 10-Q statement confirms no repurchases of Class C shares in the three and six months ended June 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet's Q2 FY2026 Form 10-Q states that in the three and six months ended June 30, 2026 there were no repurchases of the company's Class A or Class C shares",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+     "reason": "The retrieved 10-Q text includes this exact sentence multiple times.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet's cash flow statement reports payments for repurchase of common stock of 0 USD for the six months ended June 30, 2026 (2026-01-01 to 2026-06-30)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/",
+     "reason": "The XBRL data shows 'Payments for Repurchase of Common Stock (PaymentsForRepurchaseOfCommonStock): 0 USD, 2026-01-01 to 2026-06-30' repeated several times.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "As of June 30, 2026, $69.5 billion remained available for Class A and Class C share repurchases under the $70.0 billion share repurchase program authorized by Alphabet's Board of Directors in April 2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+     "reason": "The 10-Q states: 'In April 2025, the company's Board of Directors authorized a $70.0 billion share repurchase program for its Class A and Class C shares. As of June 30, 2026, $69.5 billion remained available for Class A and Class C share repurchases.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet reports Class A and Class C repurchases together and states there were no repurchases of either class in the three and six months ended June 30, 2026, so no per-class dollar or share breakdown is disclosed beyond the reported zero for each class",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+     "reason": "The 10-Q only provides an aggregate statement of no repurchases for both classes and the cash flow statement shows a single line item for repurchases (0 USD). No separate per-class dollar amounts or share counts are disclosed.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 6,
+   "supported": 6,
+   "not_retrieved": 0
+  }
+ }
+}

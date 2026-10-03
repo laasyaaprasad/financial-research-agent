@@ -1,0 +1,197 @@
+{
+ "id": "G08",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "number",
+ "question": "What is Microsoft's most recent guidance for Azure revenue growth for the upcoming quarter, and is it in constant currency?",
+ "grading": "Reference-free: use the latest guidance before the run timestamp, quote the disclosed point estimate or range accurately, state currency basis and fiscal quarter. October 1 snapshot: approximately 45% CC for Q1 FY2027; no range should be invented.",
+ "answer": "The July 29, 2026 FY2026 Q4 call guided Azure revenue growth of approximately 45% in constant currency for Q1 FY2027, July 1–September 30, 2026. This was a point estimate, not a disclosed growth range. It is the latest earnings-call guide before the October 1 snapshot. [G08-E1]",
+ "output": {
+  "answer": "## Bottom line\n\n**Microsoft's most recent Azure guidance is ~45% year-over-year revenue growth for the current quarter (fiscal Q1 2027, ending Sept. 30, 2026), and yes — it is given in constant currency.**\n\n## Details\n\n- **Source:** Microsoft's FY26 Q4 earnings call and press release, published July 29, 2026 (quarter ended June 30, 2026).\n- **Exact language from CFO Amy Hood on the call:** \"In Azure, we expect revenue growth of approximately 45% in constant currency,\" adding that H1 growth is still expected to accelerate and that year-over-year growth rates \"can vary quarter-to-quarter based on capacity timing and contract mix.\"\n- **Context:** Azure grew 43% (43% in constant currency) in FY26 Q4, with full-year Azure revenue exceeding $100 billion, up 41%.\n- **Nuance — restated basis:** Alongside this guidance, Microsoft filed to reorganize into two segments in FY27 (\"Agents and Infra\" and \"Devices and Consumer\") and restated prior results. On that adjusted/restated basis, the FY27 Q1 Azure outlook was disclosed as **44%–45% in constant currency**, rather than the single ~45% figure cited on the call.\n- **Why constant currency matters:** Microsoft guides Azure (and most cloud metrics) in constant currency because FX swings (notably in Intelligent Cloud) have been material — e.g., in FY26 Q3, reported Azure growth of 40% was 39% in constant currency. Guidance is stated CC precisely to strip out those currency effects.\n\n## Sources\n\n- Microsoft FY26 Q4 earnings call transcript: https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4\n- Microsoft FY26 Q4 press release: https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast\n- Microsoft news release, Q4 FY26 results: https://news.microsoft.com/source/2026/07/29/microsoft-cloud-and-ai-strength-fuels-fourth-quarter-results-4\n- Reuters via Stockopedia brief on adjusted FY27 Q1 outlook (44%–45% CC): https://www.stockopedia.com/share-prices/microsoft-NSQ:MSFT/news/brief-microsoft-expects-adjusted-fy27-q1-outlook-azure-revenue-growth-44-45-in-constant-currency-01a063ec-6a0b-779a-84a8-b7c7c04cc0bd\n- Prior-quarter guidance for comparison (39%–40% CC for Q4 FY26): https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3\n\nOne caveat: the 44%–45% figure comes from a Reuters summary of Microsoft's SEC filing/presentation, which I could not open directly — treat the ~45% CC figure from the earnings call as the primary, best-confirmed number.",
+  "tokens": {
+   "input": 31993,
+   "output": 1268
+  },
+  "tavily_credits": 4,
+  "latency_s": 14.85,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/ff5a91481ff2733bc8eb080dacee2739",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Microsoft Azure revenue growth guidance upcoming quarter constant currency",
+     "time_range": "month",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Microsoft earnings Azure growth guidance constant currency latest quarter",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Microsoft FY27 Q1 outlook Azure revenue growth 44% to 45% constant currency",
+     "include_domains": [
+      "microsoft.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Microsoft Q4 FY2026 earnings press release guidance Azure constant currency",
+     "include_domains": [
+      "microsoft.com",
+      "reuters.com"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://news.microsoft.com/source/2026/07/29/microsoft-cloud-and-ai-strength-fuels-fourth-quarter-results-4",
+    "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+    "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3",
+    "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
+    "https://www.stockopedia.com/share-prices/microsoft-NSQ:MSFT/news/brief-microsoft-expects-adjusted-fy27-q1-outlook-azure-revenue-growth-44-45-in-constant-currency-01a063ec-6a0b-779a-84a8-b7c7c04cc0bd"
+   ],
+   "cited_primary": 3,
+   "retrieved": 33,
+   "retrieved_primary": 15
+  },
+  "correctness": {
+   "score": 0.8,
+   "points": [
+    {
+     "point": "Use latest guidance before run timestamp (2026-10-01)",
+     "met": true,
+     "note": "Agent cites July 29, 2026 FY26 Q4 earnings call, which is the latest before snapshot."
+    },
+    {
+     "point": "Quote disclosed point estimate accurately",
+     "met": true,
+     "note": "Agent quotes ~45% and CFO language 'approximately 45% in constant currency'."
+    },
+    {
+     "point": "State currency basis",
+     "met": true,
+     "note": "Agent explicitly states guidance is in constant currency."
+    },
+    {
+     "point": "State fiscal quarter",
+     "met": true,
+     "note": "Agent identifies fiscal Q1 2027 (ending Sept 30, 2026)."
+    },
+    {
+     "point": "No range should be invented (guidance is a point estimate)",
+     "met": false,
+     "note": "Agent mentions a 44%-45% range from restated basis, which goes beyond the point estimate guidance; the rule says no range should be invented."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The agent correctly identifies the point estimate (~45% CC), currency basis (constant currency), and fiscal quarter (Q1 FY2027) from the latest earnings call. However, the agent also introduces a 44%-45% range attributed to a restated basis, which is not the disclosed point estimate and violates the rule that no range should be invented for this guidance."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Microsoft's most recent Azure guidance is ~45% year-over-year revenue growth for the current quarter (fiscal Q1 2027, ending Sept. 30, 2026), and yes — it is given in constant currency.",
+     "numeric": true,
+     "cited_url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
+     "reason": "The earnings call transcript states: 'In Azure, we expect revenue growth of approximately 45% in constant currency' for the upcoming quarter (FY27 Q1).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Source: Microsoft's FY26 Q4 earnings call and press release, published July 29, 2026 (quarter ended June 30, 2026).",
+     "numeric": false,
+     "cited_url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+     "reason": "The press release is dated July 29, 2026 and covers the quarter ended June 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Exact language from CFO Amy Hood on the call: 'In Azure, we expect revenue growth of approximately 45% in constant currency,' adding that H1 growth is still expected to accelerate and that year-over-year growth rates 'can vary quarter-to-quarter based on capacity timing and contract mix.'",
+     "numeric": false,
+     "cited_url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
+     "reason": "The transcript includes the exact quote and the additional commentary.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Azure grew 43% (43% in constant currency) in FY26 Q4.",
+     "numeric": true,
+     "cited_url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+     "reason": "The press release shows 'Azure and other cloud services revenue increased 43%' and 'Percentage Change Y/Y Constant Currency 43%'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Full-year Azure revenue exceeded $100 billion, up 41%.",
+     "numeric": true,
+     "cited_url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+     "reason": "The press release snippet does not contain this figure; it mentions Microsoft Cloud revenue exceeded $214 billion. The claim may be from a secondary source.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft filed to reorganize into two segments in FY27 ('Agents and Infra' and 'Devices and Consumer') and restated prior results.",
+     "numeric": false,
+     "cited_url": "https://www.stockopedia.com/share-prices/microsoft-NSQ:MSFT/news/brief-microsoft-expects-adjusted-fy27-q1-outlook-azure-revenue-growth-44-45-in-constant-currency-01a063ec-6a0b-779a-84a8-b7c7c04cc0bd",
+     "reason": "The Stockopedia brief mentions 'MICROSOFT - TO REORGANIZE INTO TWO SEGMENTS IN FY27' but the retrieved snippet does not include the segment names.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "On that adjusted/restated basis, the FY27 Q1 Azure outlook was disclosed as 44%–45% in constant currency, rather than the single ~45% figure cited on the call.",
+     "numeric": true,
+     "cited_url": "https://www.stockopedia.com/share-prices/microsoft-NSQ:MSFT/news/brief-microsoft-expects-adjusted-fy27-q1-outlook-azure-revenue-growth-44-45-in-constant-currency-01a063ec-6a0b-779a-84a8-b7c7c04cc0bd",
+     "reason": "The brief explicitly states 'MICROSOFT - ADJUSTED FY27 Q1 OUTLOOK AZURE REVENUE GROWTH 44% TO 45% IN CONSTANT CURRENCY'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft guides Azure (and most cloud metrics) in constant currency because FX swings (notably in Intelligent Cloud) have been material.",
+     "numeric": false,
+     "cited_url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3",
+     "reason": "The prior-quarter guidance shows guidance given in constant currency, but the retrieved snippet does not explicitly discuss FX swings.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "In FY26 Q3, reported Azure growth of 40% was 39% in constant currency.",
+     "numeric": true,
+     "cited_url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3",
+     "reason": "The retrieved snippet for the Q3 earnings call does not contain this figure; it only shows Q4 guidance of 39-40% constant currency.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Guidance is stated CC precisely to strip out those currency effects.",
+     "numeric": false,
+     "cited_url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3",
+     "reason": "This is an inference; the retrieved snippet does not explicitly state this.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 10,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}

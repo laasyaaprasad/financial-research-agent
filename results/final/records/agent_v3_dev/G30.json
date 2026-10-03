@@ -1,0 +1,293 @@
+{
+ "id": "G30",
+ "category": "Market analysis",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "Compare U.S. comparable sales growth (ex-fuel where reported) for Walmart U.S. (Q2 FY2027), Costco U.S. (Q4 FY2026), and Target (Q2 2026), and explain why the periods aren't directly comparable.",
+ "grading": "Key points: (1) each comp figure exact as disclosed with its adjustment basis stated; (2) states each period's end date and length (16 weeks for COST); (3) explains the misalignment and definitional differences; (4) no ranking conclusion that ignores the mismatch",
+ "answer": "Walmart U.S. Q2 FY2027 comp sales grew 2.6% excluding fuel, for 13 weeks ended July 31, 2026. [G30-E1] Costco U.S. Q4 FY2026 comps grew 7.2% excluding gasoline-price and FX effects, for 16 weeks ended August 30, 2026 (headline U.S. comp growth was 10.7%). [G30-E2] Target Q2 2026 comparable sales grew 3.8% for 13 weeks ended August 1, 2026, under Target’s own store-and-digital definition; the release does not present a matching gas/FX-adjusted figure. [G30-E3] The quarters differ in length, end dates and adjustment definitions: Costco’s period is three weeks longer and includes more August trading. These figures therefore do not support a directly comparable market-share ranking.",
+ "output": {
+  "answer": "**Question:** Compare U.S. comparable sales growth (ex-fuel where reported) for Walmart U.S. (Q2 FY2027), Costco U.S. (Q4 FY2026), and Target (Q2 2026), and explain why the periods aren't directly comparable.\n*As of 2026-10-01*\n\n| | U.S. comparable sales growth, ex-fuel (%) | U.S. comparable sales growth, with fuel (%) | U.S. comparable sales growth, as reported (%) | U.S. comparable sales growth, adjusted (ex gasoline price changes and FX) (%) | U.S. comparable sales growth (%) |\n|---|---|---|---|---|---|\n| Walmart U.S. — Q2 FY2027, 13 weeks ended July 31, 2026 | 2.6% [1][2] | 3.1% [1] | — | — | — |\n| Costco U.S. — Q4 FY2026, 16 weeks ended August 30, 2026 | — | — | 10.7% [3][4] | 7.2% [3][4] | — |\n| Target — Q2 2026, three months ended August 1, 2026 | — | — | — | — | 3.8% [5][6] |\n\n- Walmart U.S. comparable sales excluding fuel grew 2.6% for the 13 weeks ended July 31, 2026 (Q2 FY2027), as reported in the company's earnings release. [1][2]\n- Walmart U.S. comparable sales including fuel grew 3.1% for the 13 weeks ended July 31, 2026, with a disclosed fuel impact of 0.5%. [1]\n- Walmart's 10-Q reports Walmart U.S. calendar comparable sales of 3.3% for the three months ended July 31, 2026, a different basis from the 2.6% retail-calendar figure in the earnings release. [7][1]\n- Costco U.S. comparable sales were 10.7% for the 16 weeks ended August 30, 2026 (Q4 FY2026), as reported. [3][4]\n- Costco U.S. adjusted comparable sales were 7.2% for the 16 weeks ended August 30, 2026, excluding the impacts from changes in gasoline prices and foreign exchange. [3][4]\n- The gap between Costco's reported and adjusted U.S. comparable sales for Q4 FY2026 was 3.5 percentage points, reflecting gasoline price and FX impacts. [3]\n- Target's comparable sales definition covers all Merchandise Sales except sales from stores open less than 13 months or that have been closed, and includes digitally originated sales, with no fuel adjustment disclosed. [5]\n- The three periods cover different calendar windows and lengths: Walmart's quarter is 13 weeks ended July 31, 2026, Target's is three months ended August 1, 2026, and Costco's is a 16-week quarter ended August 30, 2026. [1][3][5]\n- The comparable-sales definitions are not identical: Walmart U.S. is reported ex-fuel, Costco U.S. is reported both as reported and adjusted to exclude gasoline price changes and foreign exchange, and Target reports U.S. comparable sales without a fuel adjustment. [2][3][5]\n\n**Not available**\n- Walmart U.S. comparable sales for Q3 FY2027: The quarter is still in progress as of 2026-10-01; only Q3 FY2027 guidance (net sales growth 3.0% to 3.75% cc) is provided, not actual comparable sales. [1]\n- Target comparable sales for Q3 2026: The quarter is still in progress as of 2026-10-01; the evidence contains only Q2 2026 results and full-year 2026 EPS guidance. [5]\n- Costco FY2026 Form 10-K segment and footnote detail: The FY2026 10-K has not been filed; only the Q4 FY2026 earnings release and supplemental exhibit are available. [3][4]\n- Target U.S. comparable sales on an ex-fuel basis: Target reports comparable sales without a fuel adjustment; no ex-fuel comparable sales figure is disclosed in the evidence. [5]\n- A like-for-like comparable-sales figure for the three companies on identical definitions and identical calendar windows: Each company reports comparable sales on its own definition and fiscal calendar (Walmart ex-fuel retail calendar, Costco adjusted for gasoline prices and FX, Target merchandise-sales based), and the periods differ in length and end dates, so no directly comparable figure is disclosed. [1][3][5]\n\n_2 draft statement(s) were withheld because they could not be verified against the sources (details in the run record)._\n\n**Sources**\n[1] Walmart Inc. earnings release for Q2 FY2027, 8-K EX-99.1 (filed 2026-08-20) (www.sec.gov, 2026-08-20, primary) https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm\n[2] Walmart Inc. earnings release for Q2 FY2027, 8-K EX-99.2 (filed 2026-08-20) (www.sec.gov, 2026-08-20, primary) https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningspresentationfy27.htm\n[3] COSTCO WHOLESALE CORP /NEW earnings release for Q4 FY2026, 8-K EX-99.1 (filed 2026-09-24) (www.sec.gov, 2026-09-24, primary) https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9918-k92426.htm\n[4] COSTCO WHOLESALE CORP /NEW earnings release for Q4 FY2026, 8-K EX-99.2 (filed 2026-09-24) (www.sec.gov, 2026-09-24, primary) https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9928-k92426.htm\n[5] TARGET CORP earnings release for Q2 FY2026, 8-K EX-99 (filed 2026-08-19) (www.sec.gov, 2026-08-19, primary) https://www.sec.gov/Archives/edgar/data/27419/000002741926000034/a2026q2ex-99.htm\n[6] TARGET CORP 10-Q for Q2 FY2026 (filed 2026-08-28) (www.sec.gov, 2026-08-28, primary) https://www.sec.gov/Archives/edgar/data/27419/000002741926000042/tgt-20260801.htm\n[7] Walmart Inc. 10-Q for Q2 FY2027 (filed 2026-08-28) (www.sec.gov, 2026-08-28, primary) https://www.sec.gov/Archives/edgar/data/104169/000010416926000154/wmt-20260731.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 137855,
+   "output": 22121
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 88.67,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/e8fe93a9869f781f6ab65d0b0eefd86e",
+  "companies": [
+   {
+    "name": "Walmart Inc.",
+    "ticker": "WMT",
+    "cik": "104169",
+    "resolved": true
+   },
+   {
+    "name": "COSTCO WHOLESALE CORP /NEW",
+    "ticker": "COST",
+    "cik": "909832",
+    "resolved": true
+   },
+   {
+    "name": "TARGET CORP",
+    "ticker": "TGT",
+    "cik": "27419",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Walmart U.S. comparable sales growth (ex-fuel) for Q2 FY2027, as reported",
+    "Walmart U.S. comparable sales growth (ex-fuel) for the prior-year period (Q2 FY2026) for context",
+    "Costco U.S. comparable sales growth (ex-fuel, adjusted) for Q4 FY2026, as reported",
+    "Costco U.S. comparable sales growth for the prior-year period (Q4 FY2025) for context",
+    "Target comparable sales growth for Q2 FY2026, as reported (and prior-year Q2 FY2025 comparison)",
+    "Each company's exact fiscal period start/end dates for the reported quarter (WMT 2026-05-01 to 2026-07-31; COST 2026-05-11 to 2026-08-30; TGT 2026-05-03 to 2026-08-01)",
+    "Each company's definition of the comparable-sales metric (ex-fuel treatment, e-commerce/digital inclusion, store-age and remodel rules, FX/gasoline-deflation adjustments)",
+    "Number of weeks/days in each reported period and any calendar-shift or extra-week effects",
+    "Any management commentary on traffic vs. ticket, e-commerce contribution, and macro/consumer environment in each release"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "WMT",
+     "label": "Q2 FY2027"
+    },
+    {
+     "ticker": "COST",
+     "label": "Q4 FY2026"
+    },
+    {
+     "ticker": "TGT",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "WMT",
+     "period": "Q2 FY2027",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "WMT",
+     "period": "Q2 FY2027",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "COST",
+     "period": "Q4 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "TGT",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "TGT",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Costco Q4 FY2026 (2026-05-11 to 2026-08-30) is earnings-release only: the 10-K for FY2026 has not yet been filed, so segment/footnote detail beyond the release is unavailable.",
+    "Walmart Q3 FY2027 and Target Q3 FY2026 are not yet reported (periods still in progress), so no subsequent-quarter data exists for either.",
+    "The three periods cover different calendar windows and different lengths: WMT Q2 FY2027 ends 2026-07-31 (13 weeks), COST Q4 FY2026 ends 2026-08-30 (16 weeks), TGT Q2 FY2026 ends 2026-08-01 (13 weeks) — Costco's quarter is materially longer and includes a later back-to-school window.",
+    "Comparable-sales definitions are not identical across the three: Walmart U.S. is reported ex-fuel; Costco U.S. is reported ex-fuel and adjusted for gasoline price deflation and FX; Target reports U.S. comparable sales without a fuel adjustment (fuel is immaterial) but with its own digital/store criteria. Directly comparable figures may not be disclosed on a like-for-like basis.",
+    "If any company quantifies one-time items or gives forward guidance only on its earnings call rather than in the 8-K release, that detail would not be in the filings listed."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Walmart U.S. comparable sales for Q3 FY2027",
+    "kind": "not_reported_yet",
+    "reason": "The quarter is still in progress as of 2026-10-01; only Q3 FY2027 guidance (net sales growth 3.0% to 3.75% cc) is provided, not actual comparable sales.",
+    "evidence_ids": [
+     "E1"
+    ]
+   },
+   {
+    "item": "Target comparable sales for Q3 2026",
+    "kind": "not_reported_yet",
+    "reason": "The quarter is still in progress as of 2026-10-01; the evidence contains only Q2 2026 results and full-year 2026 EPS guidance.",
+    "evidence_ids": [
+     "E6"
+    ]
+   },
+   {
+    "item": "Costco FY2026 Form 10-K segment and footnote detail",
+    "kind": "not_reported_yet",
+    "reason": "The FY2026 10-K has not been filed; only the Q4 FY2026 earnings release and supplemental exhibit are available.",
+    "evidence_ids": [
+     "E4",
+     "E5"
+    ]
+   },
+   {
+    "item": "Target U.S. comparable sales on an ex-fuel basis",
+    "kind": "not_disclosed",
+    "reason": "Target reports comparable sales without a fuel adjustment; no ex-fuel comparable sales figure is disclosed in the evidence.",
+    "evidence_ids": [
+     "E6"
+    ]
+   },
+   {
+    "item": "A like-for-like comparable-sales figure for the three companies on identical definitions and identical calendar windows",
+    "kind": "not_disclosed",
+    "reason": "Each company reports comparable sales on its own definition and fiscal calendar (Walmart ex-fuel retail calendar, Costco adjusted for gasoline prices and FX, Target merchandise-sales based), and the periods differ in length and end dates, so no directly comparable figure is disclosed.",
+    "evidence_ids": [
+     "E1",
+     "E4",
+     "E6"
+    ]
+   }
+  ],
+  "removed": [
+   {
+    "text": "Target comparable sales grew 3.8% for the three months ended August 1, 2026 (Q2 2026), driven by a 3.6% increase in comparable traffic and a 0.2% increase in average transaction amount.",
+    "problem": "number 0.2 is not in the quotes and not calculated"
+   },
+   {
+    "text": "Costco's Q4 FY2026 results are available only in its earnings release and supplemental exhibit, as the FY2026 Form 10-K has not yet been filed.",
+    "problem": "The cited evidence (E4, E5) only shows that a Q4 FY2026 earnings release and supplemental exhibit exist; it does not establish that these are the 'only' sources or that the FY2026 Form 10-K 'has not yet been filed.' The assertion about the 10-K's filing status is not supported by the quoted evidence."
+   }
+  ],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningspresentationfy27.htm",
+    "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm",
+    "https://www.sec.gov/Archives/edgar/data/104169/000010416926000154/wmt-20260731.htm",
+    "https://www.sec.gov/Archives/edgar/data/27419/000002741926000034/a2026q2ex-99.htm",
+    "https://www.sec.gov/Archives/edgar/data/27419/000002741926000042/tgt-20260801.htm",
+    "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9918-k92426.htm",
+    "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9928-k92426.htm"
+   ],
+   "cited_primary": 7,
+   "retrieved": 10,
+   "retrieved_primary": 10
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "each comp figure exact as disclosed with its adjustment basis stated",
+     "met": true,
+     "note": "Walmart ex-fuel 2.6%, Costco adjusted 7.2% (headline 10.7%), Target 3.8% all match reference with correct adjustment bases."
+    },
+    {
+     "point": "states each period's end date and length (16 weeks for COST)",
+     "met": true,
+     "note": "Walmart 13 weeks ended July 31, 2026; Costco 16 weeks ended August 30, 2026; Target three months ended August 1, 2026 (13 weeks)."
+    },
+    {
+     "point": "explains the misalignment and definitional differences",
+     "met": true,
+     "note": "Agent explicitly states periods differ in calendar windows and lengths, and definitions differ (ex-fuel, ex-gas/FX, no fuel adjustment)."
+    },
+    {
+     "point": "no ranking conclusion that ignores the mismatch",
+     "met": true,
+     "note": "Agent concludes no directly comparable figure exists and avoids ranking."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent accurately reports each company's comparable sales growth with correct adjustment bases, states period end dates and lengths, explains the period and definitional mismatches, and refrains from making a ranking conclusion."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Walmart U.S. comparable sales growth excluding fuel was 2.6% for the 13-week period ended July 31, 2026 (Q2 FY2027)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm",
+     "reason": "Source [1] states: 'Walmart U.S. comp sales2 grew 2.6% ... Comp sales for the 13-week period ended July 31, 2026 compared to the 13-week period ended August 1, 2025, and excludes fuel.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Walmart U.S. comparable sales growth including fuel was 3.1% for the 13-week period ended July 31, 2026, with a fuel impact of 0.5%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm",
+     "reason": "Source [1] shows a table with Walmart U.S. 3.1% and 0.5% fuel impact, consistent with comparable sales including fuel.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Costco U.S. comparable sales growth as reported was 10.7% for the 16-week period ended August 30, 2026 (Q4 FY2026)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9918-k92426.htm",
+     "reason": "Source [3] presents a table: 'U.S. | 10.7% | 7.2% | 8.2% | 6.6%' for 16 weeks, with footnote that adjusted excludes gasoline price and FX changes, implying 10.7% is as-reported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Costco U.S. adjusted comparable sales growth (excluding gasoline price changes and FX) was 7.2% for the 16-week period ended August 30, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9918-k92426.htm",
+     "reason": "Source [3] shows adjusted comparable sales of 7.2% for U.S. 16 weeks, with footnote '*Excluding the impacts from changes in gasoline prices and foreign exchange.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Target comparable sales growth was 3.8% for the three-month period ended August 1, 2026 (Q2 2026)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/27419/000002741926000034/a2026q2ex-99.htm",
+     "reason": "Source [5] states: 'Second quarter net sales grew 5.3 percent over last year, with comparable sales growth of 3.8 percent driven by a 3.6 percent increase in comparable traffic.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Walmart's 10-Q reports Walmart U.S. calendar comparable sales of 3.3% for the three months ended July 31, 2026, on a different basis (fiscal calendar) than the 2.6% retail-calendar figure in the earnings release",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000154/wmt-20260731.htm",
+     "reason": "Source [7] states: 'The increases were due to comparable sales of 3.3% and 3.8% for the three and six months ended July 31, 2026... Our discussion of our comparable sales below refers to our calendar comparable sales calculated using our fiscal calendar, which may result in differences when compared to comparable sales using the retail calendar (also known as the 4-5-4 calendar) as provided in our quarterly earnings releases.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The gap between Costco's reported (10.7%) and adjusted (7.2%) U.S. comparable sales for Q4 FY2026 was 3.5 percentage points, reflecting gasoline price and FX impacts",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000084/costex9918-k92426.htm",
+     "reason": "Source [3] shows reported 10.7% and adjusted 7.2%; the difference is 3.5 percentage points. The footnote indicates adjusted excludes gasoline price and FX changes, so the gap reflects those impacts.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Target's comparable sales definition covers all Merchandise Sales except sales from stores open less than 13 months or that have been closed, and includes digitally originated sales, with no fuel adjustment disclosed",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/27419/000002741926000034/a2026q2ex-99.htm",
+     "reason": "Source [5] states: 'Comparable sales include all Merchandise Sales, except sales from stores open less than 13 months or that have been closed. Digitally originated sales include all Merchandise Sales initiated through mobile applications and the Company's websites.' No fuel adjustment is mentioned.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The three companies' reporting periods differ: Walmart 13 weeks ended July 31, 2026; Target three months ended August 1, 2026; Costco 16 weeks ended August 30, 2026",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm",
+     "reason": "Source [1] shows Walmart 13 weeks ended July 31, 2026; Source [3] shows Costco 16 weeks ended August 30, 2026; Source [5] shows Target three months ended August 1, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The comparable-sales definitions are not identical: Walmart reports ex-fuel, Costco reports both as-reported and adjusted for gasoline price changes and FX, Target reports without fuel adjustment",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningspresentationfy27.htm",
+     "reason": "Source [2] shows Walmart ex-fuel; Source [3] shows Costco reported and adjusted; Source [5] shows Target no fuel adjustment.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 7,
+   "numeric_cited": 7,
+   "cited": 10,
+   "supported": 10,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,413 @@
+{
+ "id": "X01",
+ "category": "Market analysis",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "Build a peer comp table for four analog and mixed-signal semiconductor companies: Texas Instruments, Analog Devices, Microchip Technology and NXP Semiconductors. Alignment rule: for each company use its own fiscal quarter that ended between April 1, 2026 and July 31, 2026 (inclusive); do not calendarize or move any company to a different quarter. Each company has exactly one such quarter. For that quarter report, using GAAP figures from the company's SEC filings as of October 3, 2026: (1) revenue in USD millions; (2) year-over-year revenue growth in % versus the same fiscal quarter a year earlier; (3) gross margin in % = gross profit / revenue; (4) operating margin in % = GAAP operating income / revenue. Also state the fiscal quarter label and quarter-end date used for each company.",
+ "grading": "Graded cell by cell: each value within tolerance and for the stated period; a missing cell counts as wrong.",
+ "answer": "Peer comp, each company's own fiscal quarter ending Apr 1-Jul 31, 2026 (GAAP):\n| Row | Revenue | YoY revenue growth | Gross margin | Operating margin |\n|---|---|---|---|---|\n| Texas Instruments (Q2 FY2026, ended 2026-06-30) | 5,463.0 | 22.82% | 61.36% | 42.28% |\n| Analog Devices (Q2 FY2026, ended 2026-05-02) | 3,623.5 | 37.25% | 67.33% | 38.08% |\n| Microchip Technology (Q1 FY2027, ended 2026-06-30) | 1,484.7 | 38.05% | 63.24% | 22.68% |\n| NXP Semiconductors (Q2 FY2026, ended 2026-06-28) | 3,496.0 | 19.48% | 57.27% | 30.64% |",
+ "output": {
+  "answer": "**Question:** Build a peer comp table for four analog and mixed-signal semiconductor companies: Texas Instruments, Analog Devices, Microchip Technology and NXP Semiconductors. Alignment rule: for each company use its own fiscal quarter that ended between April 1, 2026 and July 31, 2026 (inclusive); do not calendarize or move any company to a different quarter. Each company has exactly one such quarter. For that quarter report, using GAAP figures from the company's SEC filings as of October 3, 2026: (1) revenue in USD millions; (2) year-over-year revenue growth in % versus the same fiscal quarter a year earlier; (3) gross margin in % = gross profit / revenue; (4) operating margin in % = GAAP operating income / revenue. Also state the fiscal quarter label and quarter-end date used for each company.\n*As of 2026-10-03*\n\n| | Revenue (USD millions, GAAP) | Revenue, prior-year quarter (USD millions, GAAP) | Revenue growth YoY (%) | Gross margin (%) | Operating margin (%) |\n|---|---|---|---|---|---|\n| Texas Instruments (TXN) — Q2 FY2026, quarter ended June 30, 2026 | 5,463 [1][2] | 4,448 [1][2] | 22.8 [1][2] | 61.4 [1][2] | 42.3 [1][2] |\n| Analog Devices (ADI) — Q2 FY2026, quarter ended May 2, 2026 | 3,623.465 [3][4] | 2,640.068 [3][4] | 37 (as disclosed); 37.2 calculated [3][4] | 67.3 (as disclosed); 67.3 calculated [3][4] | 38.1 [3][4] |\n| Microchip Technology (MCHP) — Q1 FY2027, quarter ended June 30, 2026 | — | 1,075.5 [5][6] | 38.0 [5][6] | 63.2 (as disclosed); 63.2 calculated [5][6] | 22.7 (as disclosed); 22.7 calculated [5][6] |\n| NXP Semiconductors (NXPI) — Q2 FY2026, quarter ended June 28, 2026 | 3,496 [7] | 2,926 [7] | 19.5 (as disclosed, nominal); 19.5 calculated [7] | 57.3 (as disclosed, GAAP); 57.3 calculated [7] | 30.6 (as disclosed, GAAP) [7] |\n\n- Texas Instruments' aligned quarter is Q2 FY2026, the quarter ended June 30, 2026, per its 10-Q filed 2026-07-24. [1]\n- Analog Devices' aligned quarter is Q2 FY2026, the quarter ended May 2, 2026, per its 10-Q filed 2026-05-20. [3]\n- Microchip Technology's aligned quarter is Q1 FY2027, the quarter ended June 30, 2026, per its 10-Q filed 2026-08-06. [5]\n- NXP Semiconductors' aligned quarter is Q2 FY2026, the quarter ended June 28, 2026, per its 10-Q filed 2026-07-28. [7]\n\n**Not available**\n- NXP Q2 FY2026 GAAP operating income dollar amount (to compute operating margin from inputs): The evidence gives NXP's Q2 FY2026 revenue ($3,496 million) and gross profit ($2,002 million) but not its GAAP operating income dollar amount for the quarter; only the disclosed GAAP operating margin of 30.6% is available, so the margin is reported as disclosed rather than calculated. [7]\n- NXP Q3 FY2026 (quarter ended 2026-09-27) results: The cited 10-Q covers only the fiscal quarter ended June 28, 2026; the evidence contains no Q3 FY2026 figures, and that quarter falls outside the April 1 - July 31, 2026 alignment window in any case. [7]\n\n_2 draft statement(s) were withheld because they could not be verified against the sources (details in the run record)._\n\n**Sources**\n[1] TEXAS INSTRUMENTS INC 10-Q for Q2 FY2026 (filed 2026-07-24) (www.sec.gov, 2026-07-24, primary) https://www.sec.gov/Archives/edgar/data/97476/000009747626000152/txn-20260630.htm\n[2] TEXAS INSTRUMENTS INC XBRL data tagged in 10-Q filed 2026-07-24 (www.sec.gov, 2026-07-24, primary) https://www.sec.gov/Archives/edgar/data/97476/000009747626000152/\n[3] ANALOG DEVICES INC 10-Q for Q2 FY2026 (filed 2026-05-20) (www.sec.gov, 2026-05-20, primary) https://www.sec.gov/Archives/edgar/data/6281/000000628126000052/adi-20260502.htm\n[4] ANALOG DEVICES INC XBRL data tagged in 10-Q filed 2026-05-20 (www.sec.gov, 2026-05-20, primary) https://www.sec.gov/Archives/edgar/data/6281/000000628126000052/\n[5] MICROCHIP TECHNOLOGY INC 10-Q for Q1 FY2027 (filed 2026-08-06) (www.sec.gov, 2026-08-06, primary) https://www.sec.gov/Archives/edgar/data/827054/000082705426000038/mchp-20260630.htm\n[6] MICROCHIP TECHNOLOGY INC XBRL data tagged in 10-Q filed 2026-08-06 (www.sec.gov, 2026-08-06, primary) https://www.sec.gov/Archives/edgar/data/827054/000082705426000038/\n[7] NXP Semiconductors N.V. 10-Q for Q2 FY2026 (filed 2026-07-28) (www.sec.gov, 2026-07-28, primary) https://www.sec.gov/Archives/edgar/data/1413447/000141344726000045/nxpi-20260628.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 225284,
+   "output": 63378
+  },
+  "tavily_credits": 2.0,
+  "latency_s": 402.9,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/8dc13000c67459d0347ccb1a2ff19751",
+  "companies": [
+   {
+    "name": "TEXAS INSTRUMENTS INC",
+    "ticker": "TXN",
+    "cik": "97476",
+    "resolved": true
+   },
+   {
+    "name": "ANALOG DEVICES INC",
+    "ticker": "ADI",
+    "cik": "6281",
+    "resolved": true
+   },
+   {
+    "name": "MICROCHIP TECHNOLOGY INC",
+    "ticker": "MCHP",
+    "cik": "827054",
+    "resolved": true
+   },
+   {
+    "name": "NXP Semiconductors N.V.",
+    "ticker": "NXPI",
+    "cik": "1413447",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Revenue (GAAP, USD millions) for each company's aligned quarter",
+    "Year-over-year revenue growth (%) vs. the same fiscal quarter a year earlier",
+    "Gross profit (GAAP) and gross margin (%) = gross profit / revenue",
+    "GAAP operating income and operating margin (%) = operating income / revenue",
+    "Fiscal quarter label and exact quarter-end date used for each company"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "TXN",
+     "label": "Q2 FY2026"
+    },
+    {
+     "ticker": "ADI",
+     "label": "Q2 FY2026"
+    },
+    {
+     "ticker": "MCHP",
+     "label": "Q1 FY2027"
+    },
+    {
+     "ticker": "NXPI",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "TXN",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "ADI",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "MCHP",
+     "period": "Q1 FY2027",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "NXPI",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Alignment: TXN Q2 FY2026 (2026-04-01 to 2026-06-30) is the only TXN quarter ending in the Apr 1 - Jul 31, 2026 window; it is filed (10-Q 2026-07-24).",
+    "Alignment: ADI Q2 FY2026 (2026-02-01 to 2026-05-02) is the only ADI quarter ending in the window. ADI's more recent Q3 FY2026 ended 2026-08-01, which is outside the window, so it is excluded per the no-calendarization rule.",
+    "Alignment: MCHP Q1 FY2027 (2026-04-01 to 2026-06-30) is the only MCHP quarter ending in the window; it is filed (10-Q 2026-08-06).",
+    "Alignment: NXPI Q2 FY2026 (2026-03-30 to 2026-06-28) is the only NXPI quarter ending in the window; it is filed (10-Q 2026-07-28). NXPI Q3 FY2026 (ended 2026-09-27) is not yet reported and is not used.",
+    "Prior-year comparatives (TXN Q2 FY2025, ADI Q2 FY2025, MCHP Q1 FY2026, NXPI Q2 FY2025) are all filed and appear as comparative columns in the respective 10-Qs, so no separate prior-year filings are requested.",
+    "All four companies are SEC registrants and all four aligned quarters are reported as of 2026-10-03, so no metric is expected to be missing; if any company reports gross profit or operating income only in a non-GAAP form in the release, the GAAP income statement in the 10-Q governs."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "NXP Q2 FY2026 GAAP operating income dollar amount (to compute operating margin from inputs)",
+    "kind": "not_in_evidence",
+    "reason": "The evidence gives NXP's Q2 FY2026 revenue ($3,496 million) and gross profit ($2,002 million) but not its GAAP operating income dollar amount for the quarter; only the disclosed GAAP operating margin of 30.6% is available, so the margin is reported as disclosed rather than calculated.",
+    "evidence_ids": [
+     "E4"
+    ]
+   },
+   {
+    "item": "NXP Q3 FY2026 (quarter ended 2026-09-27) results",
+    "kind": "not_in_evidence",
+    "reason": "The cited 10-Q covers only the fiscal quarter ended June 28, 2026; the evidence contains no Q3 FY2026 figures, and that quarter falls outside the April 1 - July 31, 2026 alignment window in any case.",
+    "evidence_ids": [
+     "E4"
+    ]
+   }
+  ],
+  "removed": [
+   {
+    "text": "All four companies are SEC registrants and all four aligned quarters are reported as of 2026-10-03, so no metric is missing.",
+    "problem": "The claim asserts all four aligned quarters are 'reported as of 2026-10-03' and that no metric is missing, but the draft itself marks NXP's GAAP operating income dollar amount as unavailable, and the evidence only shows filer status, not that every metric is available. Also, the claim's supporting quotes (filer checkboxes) do not establish that all metrics are reported."
+   },
+   {
+    "text": "Microchip Technology (MCHP) — Q1 FY2027, quarter ended June 30, 2026 | Revenue (USD millions, GAAP): 1,484.7",
+    "problem": "The question asks for 'revenue'; Microchip's income statement line is 'Net sales' ($1,484.7M), and the XBRL tag is RevenueFromContractWithCustomerExcludingAssessedTax. The metric label 'Revenue' is arguably acceptable as the same figure, but strictly the company reports 'net sales' — the value is correct and matches the requested revenue figure, so this is a labeling nuance rather than a data error. Value and period are correct."
+   }
+  ],
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "TEXAS INSTRUMENTS INC ANALOG DEVICES INC MICROCHIP TECHNOLOGY INC NXP Semiconductors N.V. NXP Q3 FY2026 (quarter ended 2026-09-27) results",
+     "topic": "general",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "TEXAS INSTRUMENTS INC ANALOG DEVICES INC MICROCHIP TECHNOLOGY INC NXP Semiconductors N.V. NXP Q2 FY2026 GAAP operating income dollar amount (to compute operating margin from inputs)",
+     "topic": "general",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1413447/000141344726000045/nxpi-20260628.htm",
+    "https://www.sec.gov/Archives/edgar/data/6281/000000628126000052/",
+    "https://www.sec.gov/Archives/edgar/data/6281/000000628126000052/adi-20260502.htm",
+    "https://www.sec.gov/Archives/edgar/data/827054/000082705426000038/",
+    "https://www.sec.gov/Archives/edgar/data/827054/000082705426000038/mchp-20260630.htm",
+    "https://www.sec.gov/Archives/edgar/data/97476/000009747626000152/",
+    "https://www.sec.gov/Archives/edgar/data/97476/000009747626000152/txn-20260630.htm"
+   ],
+   "cited_primary": 7,
+   "retrieved": 7,
+   "retrieved_primary": 7
+  },
+  "correctness": {
+   "score": 0.938,
+   "verdict": "partial",
+   "points": [
+    {
+     "point": "Texas Instruments Q2 FY2026 Revenue = 5463.0 USD millions",
+     "met": true,
+     "note": "answer: 5463.0"
+    },
+    {
+     "point": "Texas Instruments Q2 FY2026 YoY revenue growth = 22.82 %",
+     "met": true,
+     "note": "answer: 22.8"
+    },
+    {
+     "point": "Texas Instruments Q2 FY2026 Gross margin = 61.36 %",
+     "met": true,
+     "note": "answer: 61.4"
+    },
+    {
+     "point": "Texas Instruments Q2 FY2026 Operating margin = 42.28 %",
+     "met": true,
+     "note": "answer: 42.3"
+    },
+    {
+     "point": "Analog Devices Q2 FY2026 Revenue = 3623.5 USD millions",
+     "met": true,
+     "note": "answer: 3623.465"
+    },
+    {
+     "point": "Analog Devices Q2 FY2026 YoY revenue growth = 37.25 %",
+     "met": true,
+     "note": "answer: 37.2"
+    },
+    {
+     "point": "Analog Devices Q2 FY2026 Gross margin = 67.33 %",
+     "met": true,
+     "note": "answer: 67.3"
+    },
+    {
+     "point": "Analog Devices Q2 FY2026 Operating margin = 38.08 %",
+     "met": true,
+     "note": "answer: 38.1"
+    },
+    {
+     "point": "Microchip Technology Q1 FY2027 Revenue = 1484.7 USD millions",
+     "met": false,
+     "note": "answer: missing"
+    },
+    {
+     "point": "Microchip Technology Q1 FY2027 YoY revenue growth = 38.05 %",
+     "met": true,
+     "note": "answer: 38.0"
+    },
+    {
+     "point": "Microchip Technology Q1 FY2027 Gross margin = 63.24 %",
+     "met": true,
+     "note": "answer: 63.2"
+    },
+    {
+     "point": "Microchip Technology Q1 FY2027 Operating margin = 22.68 %",
+     "met": true,
+     "note": "answer: 22.7"
+    },
+    {
+     "point": "NXP Semiconductors Q2 FY2026 Revenue = 3496.0 USD millions",
+     "met": true,
+     "note": "answer: 3496.0"
+    },
+    {
+     "point": "NXP Semiconductors Q2 FY2026 YoY revenue growth = 19.48 %",
+     "met": true,
+     "note": "answer: 19.5"
+    },
+    {
+     "point": "NXP Semiconductors Q2 FY2026 Gross margin = 57.27 %",
+     "met": true,
+     "note": "answer: 57.3"
+    },
+    {
+     "point": "NXP Semiconductors Q2 FY2026 Operating margin = 30.64 %",
+     "met": true,
+     "note": "answer: 30.6"
+    }
+   ],
+   "rationale": "15/16 cells correct",
+   "cells_correct": 15,
+   "cells_total": 16
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Texas Instruments fiscal quarter is Q2 FY2026, quarter ended June 30, 2026, per 10-Q filed 2026-07-24",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000152/txn-20260630.htm",
+     "reason": "Source shows 'For the quarterly period ended June 30, 2026' and filing date 2026-07-24.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Texas Instruments revenue for Q2 FY2026 is $5,463 million GAAP",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000152/txn-20260630.htm",
+     "reason": "Source shows Revenue from Contract with Customer: 5,463,000,000 USD for 2026-04-01 to 2026-06-30; table shows $5,463 million for three months ended June 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Texas Instruments prior-year quarter revenue (Q2 FY2025) is $4,448 million GAAP",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000152/txn-20260630.htm",
+     "reason": "Source shows Revenue from Contract with Customer: 4,448,000,000 USD for 2025-04-01 to 2025-06-30; table shows $4,448 million for three months ended June 30, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Texas Instruments YoY revenue growth 22.8% (calculated)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000152/txn-20260630.htm",
+     "reason": "Calculated as (5463 - 4448) / 4448 = 22.82%, rounds to 22.8%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Texas Instruments gross margin 61.4% (calculated as gross profit/revenue)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000152/txn-20260630.htm",
+     "reason": "Gross profit 3,352,000,000 USD for 2026-04-01 to 2026-06-30; revenue 5,463,000,000 USD; margin = 3352/5463 = 61.36% ~ 61.4%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Texas Instruments operating margin 42.3% (calculated as GAAP operating income/revenue)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000152/txn-20260630.htm",
+     "reason": "Operating income 2,310,000,000 USD for 2026-04-01 to 2026-06-30; revenue 5,463,000,000 USD; margin = 2310/5463 = 42.28% ~ 42.3%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Analog Devices fiscal quarter is Q2 FY2026, quarter ended May 2, 2026, per 10-Q filed 2026-05-20",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000052/adi-20260502.htm",
+     "reason": "Source shows 'For the quarterly period ended May 2, 2026' and filing date 2026-05-20.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Analog Devices revenue for Q2 FY2026 is $3,623.465 million GAAP",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000052/adi-20260502.htm",
+     "reason": "Source shows Revenue from Contract with Customer: 3,623,465,000 USD for 2026-02-01 to 2026-05-02; table shows $3,623,465 thousand for three months ended May 2, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Analog Devices prior-year quarter revenue (Q2 FY2025) is $2,640.068 million GAAP",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000052/adi-20260502.htm",
+     "reason": "Source shows Revenue from Contract with Customer: 2,640,068,000 USD for 2025-02-02 to 2025-05-03; table shows $2,640,068 thousand for three months ended May 3, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Analog Devices YoY revenue growth 37% disclosed, 37.2% calculated",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000052/adi-20260502.htm",
+     "reason": "Disclosed 37% in table; calculated (3623.465 - 2640.068) / 2640.068 = 37.25% ~ 37.2%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Analog Devices gross margin 67.3% disclosed and calculated",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000052/adi-20260502.htm",
+     "reason": "Disclosed 67.3% in table; calculated gross profit 2,439,798,000 USD / revenue 3,623,465,000 USD = 67.33% ~ 67.3%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Analog Devices operating margin 38.1% (GAAP operating income/revenue)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000052/adi-20260502.htm",
+     "reason": "Operating income 1,379,680,000 USD for 2026-02-01 to 2026-05-02; revenue 3,623,465,000 USD; margin = 1379.68/3623.465 = 38.08% ~ 38.1%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microchip Technology fiscal quarter is Q1 FY2027, quarter ended June 30, 2026, per 10-Q filed 2026-08-06",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000038/mchp-20260630.htm",
+     "reason": "Source shows 'Three Months Ended June 30, 2026' and filing date 2026-08-06.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microchip Technology prior-year quarter revenue (Q1 FY2026) is $1,075.5 million GAAP",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000038/mchp-20260630.htm",
+     "reason": "Source shows Revenue from Contract with Customer: 1,075,500,000 USD for 2025-04-01 to 2025-06-30; table shows Net sales $1,075.5 for 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microchip Technology YoY revenue growth 38.0% calculated",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000038/mchp-20260630.htm",
+     "reason": "Current quarter revenue $1,484.7 million; prior year $1,075.5 million; growth = (1484.7 - 1075.5) / 1075.5 = 38.05% ~ 38.0%.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 12,
+   "numeric_cited": 12,
+   "cited": 15,
+   "supported": 15,
+   "not_retrieved": 0
+  }
+ }
+}

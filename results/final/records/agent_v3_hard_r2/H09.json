@@ -1,0 +1,206 @@
+{
+ "id": "H09",
+ "category": "Quantitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "How many shares did Casey's General Stores repurchase in its fiscal first quarter of 2027 (three months ended July 31, 2026), at what total cost and average price per share, and how much repurchase authorization remained at quarter end?",
+ "grading": "Key points: 54,647 shares repurchased in the quarter; total cost about USD 45.6M (45,642 thousand per the equity statement; accept USD 44.9M-45.7M if cash-flow basis is explained); average price USD 835.19; maximum dollar value remaining under the program USD 972.6M (972,601,128), after the Board expanded the program to USD 1.0B on June 4, 2026. Tolerance +/-0.5%. Fail if a prior-year quarter is used.",
+ "answer": "In fiscal Q1 2027 (May 1-July 31, 2026) Casey's repurchased 54,647 shares at an average price of USD 835.19 (monthly: 18,696 at USD 842.06; 17,386 at USD 814.82; 18,565 at USD 847.35), a total cost of about USD 45.6 million (USD 45,642 thousand in the statement of shareholders' equity; cash paid incl. excise taxes USD 44.9 million). USD 972.6 million (972,601,128) remained under the repurchase program at July 31, 2026, after the Board expanded the program from USD 400 million to USD 1.0 billion on June 4, 2026 [H09-E1].",
+ "output": {
+  "answer": "**Question:** How many shares did Casey's General Stores repurchase in its fiscal first quarter of 2027 (three months ended July 31, 2026), at what total cost and average price per share, and how much repurchase authorization remained at quarter end?\n*As of 2026-10-03*\n\n| | Shares repurchased (count) | Total cost of repurchases (USD) | Average price paid per share (USD) | Remaining repurchase authorization at quarter end (USD) |\n|---|---|---|---|---|\n| Q1 FY2027 (quarter ended July 31, 2026) | 54,647 [1] | $45.6 million as reported (excluding fees, commissions, excise taxes, and other costs); $45,642 thousand in the equity statement [1] | $835.19 [1] | $972.6 million as reported; $972,601,128 in the repurchase table [1] |\n\n- Casey's repurchased and retired 54,647 shares of its common stock under its share repurchase programs during Q1 FY2027 (three months ended July 31, 2026), and all 54,647 of those shares were purchased as part of publicly announced plans or programs. [1]\n- The total cost of the Q1 FY2027 (three months ended July 31, 2026) repurchases was $45.6 million, excluding fees, commissions, excise taxes, and other costs, and the condensed consolidated statement of shareholders' equity records the repurchase of common stock at $45,642 thousand for the quarter. [1]\n- As of July 31, 2026, $972.6 million remained available under the share repurchase authorization, which the 10-Q's repurchase table prints as $972,601,128. [1]\n- The repurchase authorization was expanded on, and effective as of, June 4, 2026, when the Board of Directors authorized an increase of the Original Repurchase Program to a total aggregate amount of up to $1.0 billion, exclusive of fees, commissions, excise taxes, or other costs, with no set expiration date. [1]\n- Casey's Q1 FY2027 earnings release (three months ended July 31, 2026) states that the Company repurchased approximately $45.6 million of shares during the quarter and had approximately $973 million remaining under its existing share repurchase authorization. [2]\n- Within Q1 FY2027, the monthly repurchase detail was 18,696 shares at an average price of $842.06 in May 1 - May 31, 2026, 17,386 shares at an average price of $814.82 in June 1 - June 30, 2026, and 18,565 shares at an average price of $847.35 in July 1 - July 31, 2026. [1]\n\n_2 draft statement(s) were withheld because they could not be verified against the sources (details in the run record)._\n\n**Sources**\n[1] CASEYS GENERAL STORES INC 10-Q for Q1 FY2027 (filed 2026-09-08) (www.sec.gov, 2026-09-08, primary) https://www.sec.gov/Archives/edgar/data/726958/000072695826000085/casy-20260731.htm\n[2] CASEYS GENERAL STORES INC earnings release for Q1 FY2027, 8-K EX-99.1 (filed 2026-09-08) (www.sec.gov, 2026-09-08, primary) https://www.sec.gov/Archives/edgar/data/726958/000072695826000084/q1fy2027earningspressrelea.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 60676,
+   "output": 22555
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 156.79,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/48b14a97f09a0d98a4f2009841e8187f",
+  "companies": [
+   {
+    "name": "CASEYS GENERAL STORES INC",
+    "ticker": "CASY",
+    "cik": "726958",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Number of shares repurchased during Q1 FY2027 (three months ended 2026-07-31)",
+    "Total cost of shares repurchased in Q1 FY2027",
+    "Average price paid per share repurchased in Q1 FY2027",
+    "Dollar amount of share repurchase authorization remaining at 2026-07-31"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "CASY",
+     "label": "Q1 FY2027"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "CASY",
+     "period": "Q1 FY2027",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "CASY",
+     "period": "Q1 FY2027",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q1 FY2027 (2026-05-01 to 2026-07-31) is filed, so the 10-Q's share repurchase note (Part II, Item 2 / equity note) should disclose shares repurchased, total cost, and remaining authorization; the average price per share may need to be derived as total cost divided by shares repurchased if not stated directly.",
+    "Remaining authorization at quarter end is typically disclosed in the 10-Q's share repurchase note or MD&A; if the 10-Q only gives the authorization as of the filing date, the quarter-end balance may need to be inferred from the prior authorization amount less Q1 purchases."
+   ]
+  },
+  "unavailable": [],
+  "removed": [
+   {
+    "text": "The average price paid per share for the Q1 FY2027 (three months ended July 31, 2026) repurchases was $835.19, as reported in the 10-Q's Item 2 repurchase table.",
+    "problem": "number 2 is not in the quotes and not calculated"
+   },
+   {
+    "text": "Cash used in financing activities for repurchase of common stock and payment of related excise taxes in Q1 FY2027 (three months ended July 31, 2026) was $44,856 thousand, versus $31,251 thousand in the comparable prior-year period, a figure that includes excise taxes and therefore differs from the $45.6 million repurchase cost reported excluding such costs.",
+    "problem": "number 45.6 is not in the quotes and not calculated"
+   }
+  ],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/726958/000072695826000084/q1fy2027earningspressrelea.htm",
+    "https://www.sec.gov/Archives/edgar/data/726958/000072695826000085/casy-20260731.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 3,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "54,647 shares repurchased in the quarter",
+     "met": true,
+     "note": "Agent reports 54,647 shares repurchased, matching the reference."
+    },
+    {
+     "point": "Total cost about USD 45.6M (45,642 thousand per equity statement; tolerance +/-0.5%)",
+     "met": true,
+     "note": "Agent reports $45.6 million and $45,642 thousand, within tolerance."
+    },
+    {
+     "point": "Average price USD 835.19",
+     "met": true,
+     "note": "Agent reports $835.19, matching the reference."
+    },
+    {
+     "point": "Remaining authorization USD 972.6M (972,601,128) after expansion to USD 1.0B on June 4, 2026",
+     "met": true,
+     "note": "Agent reports $972.6 million and $972,601,128, and notes the expansion on June 4, 2026 to $1.0 billion."
+    },
+    {
+     "point": "Correct fiscal period (Q1 FY2027 = May-Jul 2026) and no prior-year quarter used",
+     "met": true,
+     "note": "Agent correctly identifies the quarter as Q1 FY2027 (three months ended July 31, 2026) and does not confuse with prior-year quarter."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All key requirements are met: shares repurchased, total cost, average price, remaining authorization with expansion detail, and correct fiscal period. The agent's figures match the reference within tolerance and the explanation of cost basis is appropriate."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Shares repurchased in Q1 FY2027 (three months ended July 31, 2026): 54,647 shares",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/726958/000072695826000085/casy-20260731.htm",
+     "reason": "The 10-Q states: 'During the first quarter, we repurchased and retired 54,647 shares of our common stock under the share repurchase programs' and the repurchase table shows Total 54,647 shares.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total cost of repurchases: $45.6 million as reported (excluding fees, commissions, excise taxes, and other costs); $45,642 thousand in the condensed consolidated statement of shareholders' equity",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/726958/000072695826000085/casy-20260731.htm",
+     "reason": "The 10-Q text: 'for a total of $45.6 million, excluding fees, commissions, excise taxes, and other costs'. The equity statement shows 'Repurchase of common stock | (54,647) | — | (45,642) | (45,642)' (in thousands), i.e., $45,642,000.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Average price paid per share: $835.19",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/726958/000072695826000085/casy-20260731.htm",
+     "reason": "The repurchase table in the 10-Q shows 'Total | 54,647 | $ | 835.19'. This matches the derived figure: $45,642,000 / 54,647 = $835.19 (rounded).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Remaining repurchase authorization at quarter end: $972.6 million as reported; $972,601,128 in the repurchase table",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/726958/000072695826000085/casy-20260731.htm",
+     "reason": "The 10-Q states: 'As of July 31, 2026, $972.6 million remained available thereunder.' The monthly repurchase table prints the remaining authorization as $972,601,128 for each month-end.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Casey's repurchased and retired 54,647 shares under its share repurchase programs during Q1 FY2027, and all 54,647 shares were purchased as part of publicly announced plans or programs",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/726958/000072695826000085/casy-20260731.htm",
+     "reason": "The 10-Q confirms the share count and that repurchases were made 'under the share repurchase programs'. However, the retrieved snippet does not explicitly state that the programs were 'publicly announced plans or programs'. The evidence for that specific phrasing is inadequate.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The total cost of the Q1 FY2027 repurchases was $45.6 million, excluding fees, commissions, excise taxes, and other costs, and the condensed consolidated statement of shareholders' equity records the repurchase of common stock at $45,642 thousand for the quarter",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/726958/000072695826000085/casy-20260731.htm",
+     "reason": "Same as claim 2; the 10-Q provides both the narrative total ($45.6 million excluding fees) and the equity statement line item ($45,642 thousand).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "As of July 31, 2026, $972.6 million remained available under the share repurchase authorization, which the 10-Q's repurchase table prints as $972,601,128",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/726958/000072695826000085/casy-20260731.htm",
+     "reason": "The 10-Q narrative states '$972.6 million remained available thereunder' and the monthly detail table shows the remaining authorization as $972,601,128 at each month-end.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The repurchase authorization was expanded on, and effective as of, June 4, 2026, when the Board of Directors authorized an increase of the Original Repurchase Program to a total aggregate amount of up to $1.0 billion, exclusive of fees, commissions, excise taxes, or other costs, with no set expiration date",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/726958/000072695826000085/casy-20260731.htm",
+     "reason": "The 10-Q states: 'On, and effective as of, June 4, 2026, the Board of Directors authorized an expansion of the Original Repurchase Program to a total aggregate amount of up to $1.0 billion exclusive of fees, commissions, excise taxes, or other costs (the \"Expanded Repurchase Program\"). The Expanded Repurchase Program has no set expiration date.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Casey's Q1 FY2027 earnings release states that the Company repurchased approximately $45.6 million of shares during the quarter and had approximately $973 million remaining under its existing share repurchase authorization",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/726958/000072695826000084/q1fy2027earningspressrelea.htm",
+     "reason": "The 8-K earnings release includes: 'During the quarter, the Company repurchased approximately $45.6 million of shares. The Company has approximately $973 million remaining under its existing share repurchase authorization.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Within Q1 FY2027, the monthly repurchase detail was: May 1–31, 2026: 18,696 shares at an average price of $842.06; June 1–30, 2026: 17,386 shares at an average price of $814.82; July 1–31, 2026: 18,565 shares at an average price of $847.35",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/726958/000072695826000085/casy-20260731.htm",
+     "reason": "The 10-Q's monthly repurchase table shows exactly those figures: 'May 1 - May 31, 2026 | 18,696 | $ | 842.06', 'June 1 - June 30, 2026 | 17,386 | 814.82', 'July 1 - July 31, 2026 | 18,565 | $ | 847.35'.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 10,
+   "numeric_cited": 10,
+   "cited": 10,
+   "supported": 9,
+   "not_retrieved": 0
+  }
+ }
+}

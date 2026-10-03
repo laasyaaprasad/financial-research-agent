@@ -1,0 +1,242 @@
+{
+ "id": "G29",
+ "category": "Market analysis",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "For the April–June 2026 quarter, compare YoY revenue growth and operating margin for AWS, Google Cloud, and Microsoft Azure.",
+ "grading": "Key points: (1) AWS and Google Cloud growth ±0.5pp and margin ±0.5pp from segment data; (2) Azure growth as disclosed (note cc basis if any); (3) explicitly states Azure margin is not disclosed; (4) labels MSFT's quarter as fiscal Q4 FY26",
+ "answer": "For April–June 2026: AWS revenue grew 36.7927% YoY (USD 42,232 million / USD 30,873 million) and operating margin was 39.3564% (USD 16,621 million operating income / USD 42,232 million revenue). [G29-E1] Google Cloud revenue grew 81.7968% (USD 24,768 million / USD 13,624 million) and margin was 35.5862% (USD 8,814 million / USD 24,768 million). [G29-E2] Microsoft Azure and other cloud services grew 43% in fiscal Q4 FY2026; the call’s convention indicates the same rate in constant currency. Azure quarterly revenue dollars and Azure operating margin are not separately disclosed, so Azure margin cannot be calculated. Intelligent Cloud margin is a broader segment metric and must not be substituted. [G29-E3]",
+ "output": {
+  "answer": "## Q2 2026 (April–June) Cloud Comparison\n\nAll three hyperscalers reported calendar Q2 2026 (Microsoft's fiscal Q4 FY2026 also ended June 30).\n\n| Metric | AWS (Amazon) | Microsoft Azure | Google Cloud |\n|---|---|---|---|\n| Reported segment | AWS | Azure & other cloud services (no standalone $ figure); Intelligent Cloud segment = proxy | Google Cloud (incl. Workspace) |\n| Revenue | $42.23B | Not disclosed; Intelligent Cloud $39.31B | $24.8B |\n| YoY revenue growth | **+37%** (fastest in 18 quarters) | **+43%** (segment proxy Intelligent Cloud +32%) | **+82%** |\n| Operating income | $16.62B | $15.96B (Intelligent Cloud) | $8.81B |\n| Operating margin | **~39.4%** | **~40.6%** (Intelligent Cloud) | **~35.6%** |\n| Prior-yr segment margin | ~33% (computed: $10.2B / ~$30.9B) | ~40.6% ($12.14B / $29.88B) → ~40.6%; FY25 Q4 = 40.6% | 20.7% |\n| Margin YoY change | ~+6 pts | roughly flat | ~+15 pts |\n\n### Key takeaways\n- **Growth:** Google Cloud is by far the fastest (+82%, vs +63% in Q1), then Azure (+43% for Azure & other cloud services, up from 40%), then AWS (+37%, accelerating for a fifth straight quarter). Google also has a smaller base — AWS is still ~1.7x its revenue.\n- **Margin:** Microsoft's Intelligent Cloud segment has the highest margin (~40.6%), AWS close behind (~39.4%), Google Cloud lowest (~35.6%) — but Google is closing the gap fast, expanding ~15 points YoY while Azure's margin was roughly flat and AWS's rose ~6 points.\n- **Caveats:** (1) Azure revenue/margin are not reported standalone — Intelligent Cloud includes non-Azure server products, and Azure's disclosed figure is only a growth rate (43%), so cross-company margin comparisons are imperfect. (2) Google Cloud's growth is flattered partly by the Wiz acquisition (closed March 2026) and by newly recognized TPU system sales; Google says growth accelerated \"meaningfully\" even excluding TPU sales. (3) AWS's margin expansion was helped by a derivative-accounting gain (~520 bps of the ~650 bps expansion is underlying per management commentary). (4) Some outlets (e.g., CNBC) cite AWS margin as 36.8%, which doesn't reconcile with Amazon's own segment data of $16.62B/$42.23B = 39.4%.\n\nSources: [CRN face-off](https://www.crn.com/news/cloud/2026/aws-vs-microsoft-vs-google-cloud-earnings-q2-2026-face-off), [Alphabet Q2 2026 results](https://s206.q4cdn.com/479360582/files/doc_financials/2026/q2/2026q2-alphabet-earnings-release.pdf), [Microsoft FY26 Q4 press release](https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast), [Amazon Q2 2026 10-Q](https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm), [CNBC AWS Q2](https://www.cnbc.com/2026/07/30/aws-earnings-q2-2026.html), [Midgard Finance cloud tracker](https://www.midgardfinance.com/research/cloud).",
+  "tokens": {
+   "input": 37888,
+   "output": 2137
+  },
+  "tavily_credits": 8,
+  "latency_s": 24.95,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/e2db9bb82f9f1880c52581d059a9eeca",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AWS Google Cloud Microsoft Azure Q2 2026 revenue growth operating margin",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AWS revenue Q2 2026 year over year growth",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Microsoft Q4 FY2026 Intelligent Cloud revenue operating income Azure growth June 2026",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Alphabet Q2 2026 Google Cloud revenue operating income margin $24.8 billion",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://s206.q4cdn.com/479360582/files/doc_financials/2026/q2/2026q2-alphabet-earnings-release.pdf",
+    "https://www.cnbc.com/2026/07/30/aws-earnings-q2-2026.html",
+    "https://www.crn.com/news/cloud/2026/aws-vs-microsoft-vs-google-cloud-earnings-q2-2026-face-off",
+    "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+    "https://www.midgardfinance.com/research/cloud",
+    "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 39,
+   "retrieved_primary": 5
+  },
+  "correctness": {
+   "score": 0.857,
+   "points": [
+    {
+     "point": "AWS YoY revenue growth within ±0.5pp of segment data (36.79%)",
+     "met": true,
+     "note": "Agent reports +37%, reference 36.79% — difference 0.21pp, within tolerance."
+    },
+    {
+     "point": "AWS operating margin within ±0.5pp of segment data (39.36%)",
+     "met": true,
+     "note": "Agent reports ~39.4%, reference 39.36% — difference 0.04pp, within tolerance."
+    },
+    {
+     "point": "Google Cloud YoY revenue growth within ±0.5pp of segment data (81.80%)",
+     "met": true,
+     "note": "Agent reports +82%, reference 81.80% — difference 0.20pp, within tolerance."
+    },
+    {
+     "point": "Google Cloud operating margin within ±0.5pp of segment data (35.59%)",
+     "met": true,
+     "note": "Agent reports ~35.6%, reference 35.59% — difference 0.01pp, within tolerance."
+    },
+    {
+     "point": "Azure growth as disclosed (43%) and note constant‑currency basis if any",
+     "met": false,
+     "note": "Agent states +43% for Azure & other cloud services but does not mention the constant‑currency convention noted in the reference (call indicates same rate in CC)."
+    },
+    {
+     "point": "Explicitly states Azure margin is not disclosed",
+     "met": true,
+     "note": "Agent clearly says “Azure revenue/margin are not reported standalone” and labels the margin shown as Intelligent Cloud, not Azure."
+    },
+    {
+     "point": "Labels Microsoft’s quarter as fiscal Q4 FY26",
+     "met": true,
+     "note": "Agent writes “Microsoft's fiscal Q4 FY2026 also ended June 30.”"
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The agent correctly reports AWS and Google Cloud growth and margin within the required tolerances, explicitly states that Azure margin is not disclosed, and correctly labels Microsoft’s quarter as fiscal Q4 FY26. However, the agent fails to note the constant‑currency basis for Azure’s 43% growth rate as required by the grading rule. Because not all requirements are met, the verdict is partial."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "AWS Q2 2026 revenue was $42.23B, up 37% YoY, fastest growth in 18 quarters",
+     "numeric": true,
+     "cited_url": "https://www.crn.com/news/cloud/2026/aws-vs-microsoft-vs-google-cloud-earnings-q2-2026-face-off",
+     "reason": "CRN face-off article states: 'AWS’ $42.2 billion in revenue during Q2 2026 represented a year-over-year growth rate of 37 percent. This marked AWS’ highest growth rate in 18 quarters.' Retrieved source contains this exact text.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft Intelligent Cloud Q2 2026 (FY26 Q4) revenue was $39.31B, up 32% YoY",
+     "numeric": true,
+     "cited_url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+     "reason": "Microsoft press release states: 'Revenue in Intelligent Cloud was $39.3 billion and increased 32%'. Retrieved source includes this text.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Azure and other cloud services revenue grew 43% YoY in Q2 2026, with no standalone dollar figure disclosed",
+     "numeric": true,
+     "cited_url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+     "reason": "Microsoft press release states: 'Azure and other cloud services revenue increased 43%'. Retrieved source includes this. The answer correctly notes no standalone dollar figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Google Cloud Q2 2026 revenue was $24.8B, up 82% YoY",
+     "numeric": true,
+     "cited_url": "https://www.crn.com/news/cloud/2026/aws-vs-microsoft-vs-google-cloud-earnings-q2-2026-face-off",
+     "reason": "CRN face-off article states: 'Google Cloud reported $24.8 billion in total cloud revenue for the second quarter of 2026... Google Cloud: 82 Percent'. Retrieved source contains this.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "AWS Q2 2026 operating income was $16.62B",
+     "numeric": true,
+     "cited_url": "https://www.crn.com/news/cloud/2026/aws-vs-microsoft-vs-google-cloud-earnings-q2-2026-face-off",
+     "reason": "CRN face-off article states: 'AWS segment operating income was $16.6 billion'. Retrieved source contains this.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft Intelligent Cloud Q2 2026 operating income was $15.96B",
+     "numeric": true,
+     "cited_url": "https://www.crn.com/news/cloud/2026/aws-vs-microsoft-vs-google-cloud-earnings-q2-2026-face-off",
+     "reason": "CRN face-off article states: 'Microsoft Intelligent Cloud segment generated $15.9 billion in operating income during the quarter'. Retrieved source contains this.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Google Cloud Q2 2026 operating income was $8.81B",
+     "numeric": true,
+     "cited_url": "https://www.crn.com/news/cloud/2026/aws-vs-microsoft-vs-google-cloud-earnings-q2-2026-face-off",
+     "reason": "CRN face-off article states: 'Google Cloud: $8.8 billion'. Retrieved source contains this.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "AWS Q2 2026 operating margin was ~39.4% (computed as $16.62B/$42.23B)",
+     "numeric": true,
+     "cited_url": "https://www.midgardfinance.com/research/cloud",
+     "reason": "Midgard Finance cloud tracker states: 'Operating margin in Q2 2026 was AWS 39.4%'. Retrieved source supports this. The answer's computed margin matches.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft Intelligent Cloud Q2 2026 operating margin was ~40.6% (computed as $15.96B/$39.31B)",
+     "numeric": true,
+     "cited_url": "https://www.midgardfinance.com/research/cloud",
+     "reason": "Midgard Finance cloud tracker states: 'Operating margin in Q2 2026 was ... Intelligent Cloud 40.6%'. Retrieved source supports this.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Google Cloud Q2 2026 operating margin was ~35.6% (computed as $8.81B/$24.8B)",
+     "numeric": true,
+     "cited_url": "https://www.midgardfinance.com/research/cloud",
+     "reason": "Midgard Finance cloud tracker states: 'Operating margin in Q2 2026 was ... Google Cloud 35.6%'. Retrieved source supports this.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Prior-year AWS segment margin (Q2 2025) was ~33% (computed as $10.2B operating income / ~$30.9B revenue)",
+     "numeric": true,
+     "cited_url": "https://www.crn.com/news/cloud/2026/aws-vs-microsoft-vs-google-cloud-earnings-q2-2026-face-off",
+     "reason": "CRN face-off article states: 'AWS segment operating income was $16.6 billion, compared with $10.2 billion in second quarter 2025.' AWS Q2 2025 revenue implied by 37% growth: $42.23B/1.37 ≈ $30.8B. Margin ≈ 10.2/30.8 = 33.1%. Retrieved source supports the operating income figure; revenue derived from growth rate.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Prior-year Microsoft Intelligent Cloud margin (Q2 2025) was ~40.6% ($12.14B operating income / $29.88B revenue)",
+     "numeric": true,
+     "cited_url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+     "reason": "Microsoft press release table shows Intelligent Cloud revenue $29,878 million and operating income $12,140 million for three months ended June 30, 2025. Margin = 12,140/29,878 = 40.6%. Retrieved source contains this table.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Prior-year Google Cloud margin (Q2 2025) was 20.7%",
+     "numeric": true,
+     "cited_url": "https://www.crn.com/news/cloud/2026/aws-vs-microsoft-vs-google-cloud-earnings-q2-2026-face-off",
+     "reason": "CRN face-off article states: 'Google Cloud reported $8.8 billion in operating income for Q2 2026, a whopping 212 percent higher compared to $2.8 billion in Q2 2025.' Q2 2025 revenue implied by 82% growth: $24.8B/1.82 ≈ $13.63B. Margin = 2.8/13.63 = 20.5%. The answer's 20.7% is within rounding. Retrieved source supports the operating income figure; revenue derived from growth rate.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Margin YoY change: AWS +6 percentage points, Azure roughly flat, Google Cloud +15 percentage points",
+     "numeric": true,
+     "cited_url": "https://www.midgardfinance.com/research/cloud",
+     "reason": "Midgard Finance provides current margins (AWS 39.4%, Intelligent Cloud 40.6%, Google Cloud 35.6%). Prior margins from above: AWS ~33%, Intelligent Cloud ~40.6%, Google Cloud ~20.7%. Changes: AWS +6.4 pts, Intelligent Cloud ~0 pts, Google Cloud +14.9 pts. Answer's characterization matches. Retrieved source supports current margins; prior margins derived from other retrieved sources.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "CNBC cites AWS Q2 2026 operating margin as 36.8%, which doesn't reconcile with Amazon's segment data of $16.62B/$42.23B = 39.4%",
+     "numeric": true,
+     "cited_url": "https://www.cnbc.com/2026/07/30/aws-earnings-q2-2026.html",
+     "reason": "CNBC article states: 'AWS boasted a 36.8% operating margin for the second quarter'. Amazon's 10-Q and CRN face-off show operating income $16.62B and revenue $42.23B, yielding 39.4%. The discrepancy is noted in the answer. Retrieved CNBC source contains the 36.8% figure; retrieved CRN and Midgard sources support 39.4%.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 15,
+   "numeric_cited": 15,
+   "cited": 15,
+   "supported": 15,
+   "not_retrieved": 0
+  }
+ }
+}

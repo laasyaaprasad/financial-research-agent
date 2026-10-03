@@ -1,0 +1,371 @@
+{
+ "id": "T16",
+ "category": "Qualitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "Has Workday announced any restructuring recently? What are the details and expected costs?",
+ "grading": "Reference-free (no fixed answer), graded for recency and support. Expect: announced 2026-09-29; reorganizations including a reduction of approximately 2.5% of the workforce, primarily in Product and Technology, plus select leased office space reductions; estimated charges USD 65M-80M (about USD 55M-70M in Q3 FY2027 and about USD 10M in Q4 FY2027); fiscal 2027 Q3 and full-year guidance reiterated except GAAP operating margin. Snapshot as of 2026-10-03.",
+ "answer": "On September 29, 2026 Workday disclosed in an 8-K (Items 2.02 and 2.05) that certain functions announced reorganizations including a reduction of approximately 2.5% of its workforce, primarily within the Product and Technology team, and select leased office space reductions, while continuing to hire in strategic areas. It estimates charges of about USD 65-80 million, of which about USD 55-70 million in Q3 FY2027 and about USD 10 million in Q4 FY2027 (roughly USD 40-55 million future cash for severance and benefits, about USD 10 million non-cash stock-based compensation and about USD 15 million non-cash lease impairment). Workday reiterated its Q3 and full-year FY2027 guidance from August 27 except GAAP operating margin (now about 20-21 points below non-GAAP in Q3 and about 19 points below for the full year). [T16-E1, T16-E2] Separately, on October 1, 2026 Workday entered into a new USD 1.5 billion revolving credit agreement replacing its USD 1.0 billion 2022 facility; this is not part of the restructuring. [T16-E3]",
+ "output": {
+  "answer": "**Question:** Has Workday announced any restructuring recently? What are the details and expected costs?\n*As of 2026-10-03*\n\n| | Estimated charges (USD) |\n|---|---|\n| Total estimated charges (fiscal 2027) | $65 million to $80 million [1] |\n| Q3 FY2027 (quarter ending October 31, 2026) | $55 million to $70 million [1] |\n| Q4 FY2027 (quarter ending January 31, 2027) | $10 million [1] |\n| Cash severance, employee benefits and related costs | $40 million to $55 million [1] |\n| Non-cash stock-based compensation | approximately $10 million [1] |\n| Non-cash impairment of certain leased office space | approximately $15 million [1] |\n\n- Workday announced a new reorganization on September 29, 2026, disclosed in a Form 8-K under Item 2.05 (Costs Associated with Exit or Disposal Activities). [1]\n- The reorganization includes a reduction of approximately 2.5% of Workday's current workforce, primarily within Workday's Product and Technology team, and select leased office space reductions. [1]\n- Workday said it plans to continue to hire in key strategic areas and locations throughout its fiscal 2027. [1]\n- Workday estimates it will incur approximately $65 million to $80 million in charges in connection with the reorganization. [1]\n- Of the total, approximately $55 million to $70 million is expected to be recognized in the third quarter of fiscal 2027 and $10 million in the fourth quarter of fiscal 2027. [1]\n- The charges consist of approximately $40 million to $55 million of future cash expenditures related to severance payments, employee benefits, and related costs, approximately $10 million in non-cash charges for stock-based compensation, and approximately $15 million in non-cash charges related to the impairment of certain leased office space. [1]\n- The employee-related actions are expected to be substantially completed by the first quarter of fiscal 2028, subject to local law and consultation requirements, and the leased office space actions are expected to be substantially completed by the fourth quarter of fiscal 2027. [1]\n- Workday reiterated its fiscal 2027 third quarter and full-year guidance except GAAP operating margin, and now expects its fiscal 2027 third quarter GAAP operating margin to be approximately 20 to 21 percentage points lower than its third quarter non-GAAP operating margin and its fiscal 2027 full-year GAAP operating margin to be approximately 19 percentage points lower than its full-year non-GAAP operating margin. [1]\n- Workday intends to exclude the charges associated with the reorganization from its non-GAAP financial measures. [1]\n- Secondary news reports said the cuts affect about 525 employees, or roughly 2.5% of the workforce, primarily in the Product and Technology team, and that Workday had 20,896 employees worldwide as of July 31, 2026. [2][3]\n- This is Workday's second workforce reduction of 2026, following the Fiscal 2027 Restructuring Plan announced in February 2026, which reduced approximately 2% of the workforce and incurred total charges of $135 million in fiscal 2026. [4][5]\n- Workday recorded no material restructuring charges under the Fiscal 2027 Restructuring Plan during the three and six months ended July 31, 2026 (Q2 FY2027 and first half FY2027), and the plan's activities were substantially completed in the first quarter of fiscal 2027 with no material remaining liability as of July 31, 2026. [4]\n- The earlier Fiscal 2026 Restructuring Plan, announced in February 2025, reduced approximately 7.5% of the workforce and incurred total charges of $233 million. [4]\n\n**Not available**\n- Actual charges recognized for the September 2026 reorganization: The reorganization was announced September 29, 2026; the charges are expected to be recognized in Q3 and Q4 FY2027, and Q3 FY2027 (quarter ending October 31, 2026) is still in progress and not yet reported. [1]\n- Number of employees affected by the September 2026 reorganization as disclosed by Workday: Workday's 8-K discloses only a percentage (approximately 2.5% of current workforce), not an employee count; the ~525 figure comes from secondary news reports, not the company. [1][2]\n- Expected cost savings from the September 2026 reorganization: The 8-K discloses expected charges and timing but no forward-looking savings figures. [1]\n\n**Sources**\n[1] Workday, Inc. 8-K current report, items 2.02,2.05 (filed 2026-09-29) 8-K (www.sec.gov, 2026-09-29, primary) https://www.sec.gov/Archives/edgar/data/1327811/000132781126000048/wday-20260929.htm\n[2] Workday to Cut 2.5% of Workforce, Affecting About 525 Employees (ground.news, 2026-09-29, secondary) https://ground.news/article/pleasanton-ca-job-cuts-workday-laying-off-about-25-of-staff\n[3] Workday lays off 500 employees in fresh cuts, product and tech teams hit hardest - India Today (www.indiatoday.in, 2026-09-30, secondary) https://www.indiatoday.in/jobs/story/workday-lays-off-500-employees-in-fresh-cuts-product-and-tech-teams-hit-hardest-tchc-3006549-2026-09-30\n[4] Workday, Inc. 10-Q for Q2 FY2027 (filed 2026-08-27) (www.sec.gov, 2026-08-27, primary) https://www.sec.gov/Archives/edgar/data/1327811/000132781126000044/wday-20260731.htm\n[5] Workday, Inc. 10-Q for Q1 FY2027 (filed 2026-05-22) (www.sec.gov, 2026-05-22, primary) https://www.sec.gov/Archives/edgar/data/1327811/000132781126000026/wday-20260430.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 30748,
+   "output": 7013
+  },
+  "tavily_credits": 2.0,
+  "latency_s": 45.14,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/07b5718adf8a18f4f486cdcc54a529cd",
+  "companies": [
+   {
+    "name": "Workday, Inc.",
+    "ticker": "WDAY",
+    "cik": "1327811",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Whether Workday has announced a restructuring (e.g., workforce reduction / cost-reduction plan) and when it was announced",
+    "Size and scope of the restructuring (headcount affected, % of workforce, functions/geographies)",
+    "Expected total restructuring costs and their components (severance, employee benefits, stock-based compensation, facility/office space exit costs)",
+    "Timing of when charges are expected to be incurred/recognized and cash vs non-cash split",
+    "Restructuring charges actually recognized in the most recent reported quarter and year-to-date, and remaining liability/accrual balance",
+    "Management commentary on rationale, expected savings, and any impact on guidance for the next period"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "WDAY",
+     "label": "Q2 FY2027"
+    },
+    {
+     "ticker": "WDAY",
+     "label": "Q1 FY2027"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "WDAY",
+     "period": "Q2 FY2027",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "WDAY",
+     "period": "Q2 FY2027",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "WDAY",
+     "period": "Q1 FY2027",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": 45,
+   "searches": [
+    {
+     "purpose": "Find recent news/announcements of a Workday restructuring, layoffs, or cost-reduction plan and its expected costs",
+     "query": "Workday restructuring layoffs announcement expected costs",
+     "topic": "news",
+     "days_back": 90
+    },
+    {
+     "purpose": "Capture management remarks on the earnings call about restructuring, one-time charges, and guidance impact",
+     "query": "Workday Q2 FY2027 earnings call restructuring charges guidance",
+     "topic": "general",
+     "days_back": null
+    }
+   ],
+   "availability_notes": [
+    "Q3 FY2027 (2026-08-01 to 2026-10-31) is still in progress and not yet reported, so no Q3 FY2027 filings or results are available; any restructuring announced after the Q2 FY2027 report would appear only in 8-K current reports or news.",
+    "If the restructuring was announced via an 8-K or press release rather than in the quarterly report, the specific cost estimates may be disclosed only in that 8-K exhibit or on the earnings call, not in the financial statements.",
+    "Segment-level or headcount details and forward-looking savings figures may not be quantified in SEC filings."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Actual charges recognized for the September 2026 reorganization",
+    "kind": "not_reported_yet",
+    "reason": "The reorganization was announced September 29, 2026; the charges are expected to be recognized in Q3 and Q4 FY2027, and Q3 FY2027 (quarter ending October 31, 2026) is still in progress and not yet reported.",
+    "evidence_ids": [
+     "E5"
+    ]
+   },
+   {
+    "item": "Number of employees affected by the September 2026 reorganization as disclosed by Workday",
+    "kind": "not_disclosed",
+    "reason": "Workday's 8-K discloses only a percentage (approximately 2.5% of current workforce), not an employee count; the ~525 figure comes from secondary news reports, not the company.",
+    "evidence_ids": [
+     "E5",
+     "E9"
+    ]
+   },
+   {
+    "item": "Expected cost savings from the September 2026 reorganization",
+    "kind": "not_disclosed",
+    "reason": "The 8-K discloses expected charges and timing but no forward-looking savings figures.",
+    "evidence_ids": [
+     "E5"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Workday Q2 FY2027 earnings call restructuring charges guidance",
+     "topic": "general",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Workday restructuring layoffs announcement expected costs",
+     "topic": "news",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "start_date": "2026-07-05"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://investor.workday.com/news-and-events/press-releases/news-details/2026/Workday-Announces-Fiscal-2027-Second-Quarter-Financial-Results/default.aspx",
+      "https://ground.news/article/pleasanton-ca-job-cuts-workday-laying-off-about-25-of-staff",
+      "https://www.indiatoday.in/jobs/story/workday-lays-off-500-employees-in-fresh-cuts-product-and-tech-teams-hit-hardest-tchc-3006549-2026-09-30"
+     ],
+     "query": "Has Workday announced any restructuring recently? What are the details and expected costs?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://ground.news/article/pleasanton-ca-job-cuts-workday-laying-off-about-25-of-staff",
+    "https://www.indiatoday.in/jobs/story/workday-lays-off-500-employees-in-fresh-cuts-product-and-tech-teams-hit-hardest-tchc-3006549-2026-09-30",
+    "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000026/wday-20260430.htm",
+    "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000044/wday-20260731.htm",
+    "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000048/wday-20260929.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 13,
+   "retrieved_primary": 8
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Announced on 2026-09-29",
+     "met": true,
+     "note": "Agent states 'Workday announced a new reorganization on September 29, 2026, disclosed in a Form 8-K under Item 2.05' and cites the 8-K filed 2026-09-29."
+    },
+    {
+     "point": "Reorganization includes reduction of approximately 2.5% of workforce, primarily in Product and Technology",
+     "met": true,
+     "note": "Agent states 'reduction of approximately 2.5% of Workday's current workforce, primarily within Workday's Product and Technology team' and notes secondary reports confirm ~525 employees."
+    },
+    {
+     "point": "Select leased office space reductions",
+     "met": true,
+     "note": "Agent includes 'select leased office space reductions' and details non-cash impairment of leased office space (~$15M)."
+    },
+    {
+     "point": "Estimated charges USD 65M-80M total",
+     "met": true,
+     "note": "Agent's table shows 'Total estimated charges (fiscal 2027) $65 million to $80 million' and text repeats this."
+    },
+    {
+     "point": "About USD 55M-70M in Q3 FY2027 and about USD 10M in Q4 FY2027",
+     "met": true,
+     "note": "Agent's table and text break down: Q3 FY2027 $55M-$70M, Q4 FY2027 $10M."
+    },
+    {
+     "point": "Fiscal 2027 Q3 and full-year guidance reiterated except GAAP operating margin",
+     "met": true,
+     "note": "Agent explicitly states 'Workday reiterated its fiscal 2027 third quarter and full-year guidance except GAAP operating margin' and provides the GAAP vs non-GAAP margin differentials."
+    },
+    {
+     "point": "No confusion with earlier layoffs or Q2 FY2027 results",
+     "met": true,
+     "note": "Agent clearly separates the September 2026 reorganization from the Fiscal 2027 Restructuring Plan (Feb 2026) and Fiscal 2026 Restructuring Plan (Feb 2025), noting the earlier plans' details and that no material charges were recorded in Q2 FY2027."
+    },
+    {
+     "point": "Charges not mis-stated as annual savings",
+     "met": true,
+     "note": "Agent correctly presents charges as expected costs, not savings, and notes 'Expected cost savings from the September 2026 reorganization: The 8-K discloses expected charges and timing but no forward-looking savings figures.'"
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer accurately reflects the September 29, 2026 8-K disclosure, including all key details (workforce reduction percentage, primary teams, 2.5% cut in Product and Technology, leased office space reductions), expected charges ($65-80M total, $55-70M in Q3 FY2027, $10M in Q4 FY2027), and the guidance reiteration except GAAP operating margin. It correctly distinguishes this reorganization from prior plans and does not misstate charges as savings. Sources are recent and primary (the 8-K filed 2026-09-29)."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Workday announced a new reorganization on September 29, 2026, disclosed in a Form 8-K under Item 2.05.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000048/wday-20260929.htm",
+     "reason": "The retrieved 8-K filing dated September 29, 2026, shows Item 2.05 'Costs Associated with Exit or Disposal Activities' and states 'On September 29, 2026, certain functions within Workday announced reorganizations...'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The reorganization includes a reduction of approximately 2.5% of Workday's current workforce, primarily within Workday's Product and Technology team, and select leased office space reductions.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000048/wday-20260929.htm",
+     "reason": "The 8-K text explicitly states: 'These actions include a reduction of approximately 2.5% of Workday's current workforce, primarily within Workday's Product and Technology team, and select leased office space reductions.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Workday plans to continue to hire in key strategic areas and locations throughout its fiscal 2027.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000048/wday-20260929.htm",
+     "reason": "The 8-K states: 'Workday plans to continue to hire in key strategic areas and locations throughout its fiscal 2027.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Workday estimates it will incur approximately $65 million to $80 million in charges in connection with the reorganization.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000048/wday-20260929.htm",
+     "reason": "The 8-K states: 'Workday estimates that it will incur approximately $65 million to $80 million in charges.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Of the total, approximately $55 million to $70 million is expected to be recognized in the third quarter of fiscal 2027 and $10 million in the fourth quarter of fiscal 2027.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000048/wday-20260929.htm",
+     "reason": "The 8-K states: 'of which approximately $55 million to $70 million is expected to be recognized in the third quarter of fiscal 2027 and $10 million in the fourth quarter of fiscal 2027.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The charges consist of approximately $40 million to $55 million of future cash expenditures related to severance payments, employee benefits, and related costs, approximately $10 million in non-cash charges for stock-based compensation, and approximately $15 million in non-cash charges related to the impairment of certain leased office space.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000048/wday-20260929.htm",
+     "reason": "The 8-K breaks down the charges: cash severance/benefits $40M-$55M, non-cash stock-based compensation ~$10M, non-cash lease impairment ~$15M.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The employee-related actions are expected to be substantially completed by the first quarter of fiscal 2028, subject to local law and consultation requirements, and the leased office space actions are expected to be substantially completed by the fourth quarter of fiscal 2027.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000048/wday-20260929.htm",
+     "reason": "The 8-K states: 'The employee-related actions described above are expected to be substantially completed by the first quarter of fiscal 2028, subject to local law and consultation requirements. The actions associated with the leased office space are expected to be substantially completed by the fourth quarter of fiscal 2027.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Workday reiterated its fiscal 2027 third quarter and full-year guidance except GAAP operating margin, and now expects its fiscal 2027 third quarter GAAP operating margin to be approximately 20 to 21 percentage points lower than its third quarter non-GAAP operating margin and its fiscal 2027 full-year GAAP operating margin to be approximately 19 percentage points lower than its full-year non-GAAP operating margin.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000048/wday-20260929.htm",
+     "reason": "The 8-K states: 'Workday now expects its fiscal 2027 third quarter GAAP operating margin to be approximately 20 to 21 percentage points lower than its third quarter non-GAAP operating margin and its fiscal 2027 full-year GAAP operating margin to be approximately 19 percentage points lower than its full-year non-GAAP operating margin.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Workday intends to exclude the charges associated with the reorganization from its non-GAAP financial measures.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000048/wday-20260929.htm",
+     "reason": "The 8-K states: 'Workday intends to exclude the charges associated with the activities discussed in Item 2.05 below from its non-GAAP financial measures.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Secondary news reports said the cuts affect about 525 employees, or roughly 2.5% of the workforce, primarily in the Product and Technology team, and that Workday had 20,896 employees worldwide as of July 31, 2026.",
+     "numeric": true,
+     "cited_url": "https://ground.news/article/pleasanton-ca-job-cuts-workday-laying-off-about-25-of-staff",
+     "reason": "The ground.news article states: 'Workday plans to cut about 525 jobs, or 2.5% of its workforce, primarily in its Product, Technology team... Workday had 20,896 employees worldwide as of July 31, 2026.' The indiatoday.in article corroborates.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "This is Workday's second workforce reduction of 2026, following the Fiscal 2027 Restructuring Plan announced in February 2026, which reduced approximately 2% of the workforce and incurred total charges of $135 million in fiscal 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000044/wday-20260731.htm",
+     "reason": "The 10-Q for Q2 FY2027 (filed 2026-08-27) states: 'In February 2026, we announced a restructuring plan... The plan resulted in the reduction of approximately 2% of our workforce... We incurred total charges of $135 million in connection with this plan in fiscal 2026.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Workday recorded no material restructuring charges under the Fiscal 2027 Restructuring Plan during the three and six months ended July 31, 2026 (Q2 FY2027 and first half FY2027), and the plan's activities were substantially completed in the first quarter of fiscal 2027 with no material remaining liability as of July 31, 2026.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000044/wday-20260731.htm",
+     "reason": "The 10-Q states: 'During the three and six months ended July 31, 2026, we did not record any material charges under this plan. The activities associated with this plan were substantially completed in the first quarter of fiscal 2027, with no material remaining liability as of July 31, 2026.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The earlier Fiscal 2026 Restructuring Plan, announced in February 2025, reduced approximately 7.5% of the workforce and incurred total charges of $233 million.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000044/wday-20260731.htm",
+     "reason": "The 10-Q states: 'In February 2025, we announced a restructuring plan... This plan resulted in the reduction of approximately 7.5% of our workforce... We incurred total charges of $233 million in connection with this plan.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual charges recognized for the September 2026 reorganization are not yet available because the reorganization was announced September 29, 2026; charges are expected to be recognized in Q3 and Q4 FY2027, and Q3 FY2027 (quarter ending October 31, 2026) is still in progress and not yet reported.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000048/wday-20260929.htm",
+     "reason": "The 8-K only provides forward-looking estimates for Q3 and Q4 FY2027; no actual charges have been reported as of the filing date. The quarter ending October 31, 2026, had not yet concluded.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Workday's 8-K discloses only a percentage (approximately 2.5% of current workforce) for the September 2026 reorganization, not an employee count; the ~525 figure comes from secondary news reports, not the company.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000048/wday-20260929.htm",
+     "reason": "The 8-K text mentions only 'approximately 2.5% of Workday's current workforce' and does not provide an absolute headcount. The ~525 figure appears in secondary sources (ground.news, indiatoday.in).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The 8-K discloses expected charges and timing for the September 2026 reorganization but no forward-looking cost savings figures.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000048/wday-20260929.htm",
+     "reason": "The 8-K details estimated charges ($65M-$80M) and their timing (Q3/Q4 FY2027) but does not mention any expected cost savings or synergy targets.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 8,
+   "cited": 16,
+   "supported": 16,
+   "not_retrieved": 0
+  }
+ }
+}

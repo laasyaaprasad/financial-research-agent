@@ -1,0 +1,142 @@
+{
+ "id": "T09",
+ "category": "Numerical reasoning",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "Lam Research's fiscal 2026 ended June 28, 2026. Using its filed fiscal-year revenue and the revenue for the nine months ended March 29, 2026, what was the implied revenue for the fourth quarter of fiscal 2026 (the June 2026 quarter)? Answer in USD millions.",
+ "grading": "±0.5% of 6,722.2, USD millions (accept $6.72B). Derivation: FY2026 23,232.7 less nine months 16,510.5. Fail if a different quarter or YTD figure is given.",
+ "answer": "Implied fiscal Q4 2026 revenue was USD 6,722.2 million = FY2026 revenue 23,232.690 (USD thousands: 23,232,690) less nine-month revenue 16,510.452 (16,510,452). This matches the 6,722,238 thousand revenue reported in the June 2026 quarter earnings release. [T09-E1, T09-E2, T09-E3]",
+ "output": {
+  "answer": "**Implied Q4 FY2026 (June 2026 quarter) revenue ≈ $6,722 million**\n\nCalculation:\n- Fiscal 2026 full-year revenue: **$23,232.7 million** ($23.233B)\n- Less nine months ended March 29, 2026: **$16,510.5 million**\n- Implied June 2026 quarter: **$6,722.2 million**\n\nThis matches Lam's reported June 2026 quarter revenue of $6,722.238 million (+15.1% Q/Q), confirming the figures.\n\nSources:\n- Q4/FY2026 release (June 28, 2026): https://newsroom.lamresearch.com/2026-07-29-Lam-Research-Corporation-Reports-Financial-Results-for-the-Quarter-Ended-June-28,-2026\n- Q3 release with nine-month figure (March 29, 2026): https://investor.lamresearch.com/2026-04-22-Lam-Research-Corporation-Reports-Financial-Results-for-the-Quarter-Ended-March-29,-2026\n- Annual revenue data: https://www.macrotrends.net/stocks/charts/LRCX/lam-research/revenue",
+  "tokens": {
+   "input": 14611,
+   "output": 715
+  },
+  "tavily_credits": 3,
+  "latency_s": 13.46,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/76263e1b5dc110bcc717e575c3f6fe2b",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Lam Research fiscal 2026 revenue nine months ended March 29, 2026",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Lam Research fiscal year 2026 full year revenue June 28 2026"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.lamresearch.com/2026-04-22-Lam-Research-Corporation-Reports-Financial-Results-for-the-Quarter-Ended-March-29",
+    "https://newsroom.lamresearch.com/2026-07-29-Lam-Research-Corporation-Reports-Financial-Results-for-the-Quarter-Ended-June-28",
+    "https://www.macrotrends.net/stocks/charts/LRCX/lam-research/revenue"
+   ],
+   "cited_primary": 1,
+   "retrieved": 15,
+   "retrieved_primary": 5
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Used FY2026 revenue (23,232.7 million) and nine-month revenue (16,510.5 million) to compute implied Q4 revenue",
+     "met": true,
+     "note": "Agent explicitly shows FY2026 full-year revenue $23,232.7 million and nine months ended March 29, 2026 $16,510.5 million, then subtracts to get implied June 2026 quarter $6,722.2 million."
+    },
+    {
+     "point": "Implied Q4 revenue is approximately 6,722.2 million USD (within ±0.5% tolerance)",
+     "met": true,
+     "note": "Agent's result $6,722.2 million matches the reference 6,722.2 million exactly, well within ±0.5%."
+    },
+    {
+     "point": "Answer is in USD millions",
+     "met": true,
+     "note": "Agent states '$6,722 million' and '$6,722.2 million', clearly in USD millions."
+    },
+    {
+     "point": "Did not use a different quarter or YTD figure (e.g., six-month instead of nine-month, or Q3 quarter as Q4)",
+     "met": true,
+     "note": "Agent correctly uses nine-month YTD figure (16,510.5 million) and does not confuse with six-month or Q3 quarter revenue."
+    },
+    {
+     "point": "No unit slip (filings are in thousands, but answer correctly converted to millions)",
+     "met": true,
+     "note": "Agent's figures are in millions (23,232.7, 16,510.5, 6,722.2), consistent with the reference conversion from thousands to millions."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: the agent uses the correct FY2026 and nine-month revenue figures, computes the implied Q4 revenue as $6,722.2 million, presents the answer in USD millions, avoids wrong period or unit errors, and the result matches the verified reference within the allowed tolerance."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Fiscal 2026 full-year revenue was $23,232.7 million",
+     "numeric": true,
+     "cited_url": "https://www.macrotrends.net/stocks/charts/LRCX/lam-research/revenue",
+     "reason": "The cited Macrotrends page shows annual revenue for 2026 as $23,233 million (rounded to nearest million). The claim uses $23,232.7 million, which is 0.3 million lower. Rounding allowance for one decimal place is ±0.05 million; the difference exceeds this tolerance. The exact figure likely comes from summing the nine-month and Q4 figures from the press releases, but the cited source does not support the precise value.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Nine months ended March 29, 2026 revenue was $16,510.5 million",
+     "numeric": true,
+     "cited_url": "https://investor.lamresearch.com/2026-04-22-Lam-Research-Corporation-Reports-Financial-Results-for-the-Quarter-Ended-March-29,-2026",
+     "reason": "The retrieved Q3 press release (PDF) shows nine-month revenue as $16,510,452 thousand, i.e., $16,510.452 million. Rounded to one decimal place, this is $16,510.5 million, matching the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Implied June 2026 quarter revenue is $6,722.2 million",
+     "numeric": true,
+     "cited_url": "https://newsroom.lamresearch.com/2026-07-29-Lam-Research-Corporation-Reports-Financial-Results-for-the-Quarter-Ended-June-28,-2026",
+     "reason": "This is a derived figure: $23,232.7 million (full-year) minus $16,510.5 million (nine months) = $6,722.2 million. The arithmetic is correct given the inputs, but the full-year input is not precisely supported by the cited Macrotrends source (see claim 1). The Q4 press release cited here does not explicitly state the full-year revenue; it only provides the June quarter revenue.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Lam's reported June 2026 quarter revenue was $6,722.238 million",
+     "numeric": true,
+     "cited_url": "https://newsroom.lamresearch.com/2026-07-29-Lam-Research-Corporation-Reports-Financial-Results-for-the-Quarter-Ended-June-28,-2026",
+     "reason": "The retrieved Q4 press release shows a table with June 2026 revenue of $6,722,238 (in thousands), which equals $6,722.238 million. This matches the claim exactly.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The reported June 2026 quarter revenue increased 15.1% quarter-over-quarter",
+     "numeric": true,
+     "cited_url": "https://newsroom.lamresearch.com/2026-07-29-Lam-Research-Corporation-Reports-Financial-Results-for-the-Quarter-Ended-June-28,-2026",
+     "reason": "The same Q4 press release table shows a Q/Q change of +15.1% for revenue (June 2026 $6,722,238 vs March 2026 $5,841,488). The claim is directly supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The implied revenue matches the reported revenue, confirming the figures",
+     "numeric": false,
+     "cited_url": "https://newsroom.lamresearch.com/2026-07-29-Lam-Research-Corporation-Reports-Financial-Results-for-the-Quarter-Ended-June-28,-2026",
+     "reason": "The implied revenue ($6,722.2 million) and reported revenue ($6,722.238 million) differ by only $0.038 million, which is negligible. The match is effectively exact, confirming the consistency of the nine-month and full-year figures. However, the full-year figure used in the implication is not precisely supported by the cited Macrotrends source (claim 1).",
+     "supported": null,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 6,
+   "supported": 3,
+   "not_retrieved": 0
+  }
+ }
+}

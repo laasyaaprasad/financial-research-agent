@@ -1,0 +1,311 @@
+{
+ "id": "G13",
+ "category": "Qualitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "What are the latest developments in the past 30 days on U.S. export controls affecting NVIDIA's data center GPU sales to China, and what does NVIDIA's own Q3 FY2027 outlook assume about China?",
+ "grading": "Reference-free. Key points: (1) every development dated and within window; (2) quotes/paraphrases NVIDIA's own stated China assumption from the Q2 FY27 outlook; (3) clearly separates company statements from media/analyst speculation; (4) no uncited causal claims about revenue impact",
+ "answer": "Snapshot: September 2–October 1, 2026. September 9: C4ADS published evidence of restricted NVIDIA chips reaching China through institutional purchases and Southeast Asian trade networks; this is an enforcement-gap report, not a new U.S. rule. [G13-E1] September 28: Ars, citing The Information, reported China considering RTX Pro 5500 purchases by Alibaba and ByteDance; approval was uncertain and this concerns Chinese import policy, not a confirmed U.S. export-rule change. [G13-E2] The reviewed sources do not establish a newly enacted U.S. control in this window. Separately, NVIDIA’s August 26 outlook assumes no Data Center compute revenue from China in Q3 FY2027, within its USD 108 billion ±2% total-revenue guide. That company statement is older context and remains distinct from September reporting. [G13-E3]",
+ "output": {
+  "answer": "**Question:** What are the latest developments in the past 30 days on U.S. export controls affecting NVIDIA's data center GPU sales to China, and what does NVIDIA's own Q3 FY2027 outlook assume about China?\n*As of 2026-10-01*\n\n| | Revenue (USD) | GAAP and non-GAAP gross margin (%) | Data Center Hopper shipments to China (% of Data Center revenue) |\n|---|---|---|---|\n| NVIDIA Q3 FY2027 outlook (quarter ending October 25, 2026) | $108.0 billion, plus or minus 2% [1][2] | 74.0%, plus or minus 50 basis points [1][2] | — |\n| NVIDIA Q2 FY2027 actual (quarter ended July 26, 2026) | — | — | less than 1% [2] |\n\n- NVIDIA's Q3 FY2027 outlook (quarter ending October 25, 2026) expects revenue of $108.0 billion, plus or minus 2%, and states the company is not assuming any Data Center compute revenue from China in that outlook. [1][2]\n- NVIDIA's Q3 FY2027 outlook (quarter ending October 25, 2026) expects GAAP and non-GAAP gross margins of 74.0%, plus or minus 50 basis points. [1][2]\n- In Q2 FY2027 (quarter ended July 26, 2026), NVIDIA's shipments of Data Center Hopper products to China were less than 1% of Data Center revenue. [2]\n- The Information reported on Sunday, September 27, 2026, that China's government has signalled it may let firms such as Alibaba and ByteDance buy Nvidia's new RTX Pro 5500 chip, with China's tech ministry asking some firms how many chips they plan to buy and telling some it intends to approve the purchases. [3]\n- The same report noted that earlier in 2026 the U.S. cleared sales of Nvidia's H200 chips to Chinese firms, but ByteDance and Tencent were told to keep the first shipments in Hong Kong rather than bring them into mainland China. [3]\n- Politico reported on September 29, 2026, that U.S. chipmakers Nvidia and AMD are lobbying the Trump administration to stop lawmakers from curbing their exports to China, and that Nvidia CEO Jensen Huang will attend an artificial intelligence meeting with the president at the White House on Tuesday. [4]\n- CNBC reported on September 11, 2026, that Chinese chipmaker Enflame, which is developing domestic alternatives to U.S. rivals like Nvidia, saw its stock soar 206% after debuting in Shanghai, and that international chipmakers led by Nvidia accounted for nearly 60% of China's AI accelerator market in 2025 according to IDC data cited in Enflame's prospectus. [5]\n- As background, NVIDIA's Q2 FY2027 10-Q (filed August 26, 2026) states that in April 2025 the U.S. government required a license for export to China of its H20 integrated circuits, that NVIDIA incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20, and that licenses granted beginning in August 2025 that would have allowed certain H20 shipments to China-based customers were restricted by the PRC government so NVIDIA was unable to sell its H20 inventory. [6]\n\n**Not available**\n- New U.S. export-control rule changes affecting NVIDIA's data center GPU sales to China announced in the past 30 days (September 1 - October 1, 2026): The evidence contains no report of a new U.S. export-control rule or licensing change in the past 30 days; the September 2026 items are China-side approval signals (E9), industry lobbying (E10), and a Chinese competitor's IPO (E11). The most recent U.S. rule changes described in the evidence (April 2025 H20 license requirement, August 2025 licenses) predate the 30-day window.\n- NVIDIA's precise quantified China revenue assumptions or any one-time export-control charge for Q3 FY2027: The Q3 FY2027 outlook in the Q2 FY2027 release and CFO commentary only states that no Data Center compute revenue from China is assumed; no dollar amount or charge is disclosed in the provided evidence.\n\n**Sources**\n[1] NVIDIA CORP earnings release for Q2 FY2027, 8-K EX-99.1 (filed 2026-08-26) (www.sec.gov, 2026-08-26, primary) https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm\n[2] NVIDIA CORP earnings release for Q2 FY2027, 8-K EX-99.2 (filed 2026-08-26) (www.sec.gov, 2026-08-26, primary) https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm\n[3] China may let Alibaba, ByteDance buy Nvidia’s RTX Pro 5500 - The Next Web (thenextweb.com, 2026-09-27, secondary) https://thenextweb.com/news/china-alibaba-bytedance-nvidia-rtx-pro-5500\n[4] Nvidia, AMD want Trump to keep their chips flowing to China - Politico (www.politico.com, 2026-09-29, secondary) https://www.politico.com/news/2026/09/29/nvidia-amd-trump-chips-china-ai-01096445\n[5] Chinese Nvidia rival Enflame soars 206% on stock market debut as AI demand stays hot - CNBC (www.cnbc.com, 2026-09-11, secondary) https://www.cnbc.com/2026/09/11/chinese-nvidia-rival-enflame-stock-market-debut-ai.html\n[6] NVIDIA CORP 10-Q for Q2 FY2027 (filed 2026-08-26) (www.sec.gov, 2026-08-26, primary) https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 30376,
+   "output": 12472
+  },
+  "tavily_credits": 4.0,
+  "latency_s": 84.54,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/bfbf969fafe6c9ae5c410c84d608fdb7",
+  "companies": [
+   {
+    "name": "NVIDIA CORP",
+    "ticker": "NVDA",
+    "cik": "1045810",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Recent U.S. export-control developments (past 30 days) affecting NVIDIA data center GPU sales to China: new rules, license requirements, entity-list actions, policy statements",
+    "NVIDIA's Q3 FY2027 revenue outlook (total revenue guidance range) and the assumptions behind it",
+    "Whether NVIDIA's Q3 FY2027 outlook includes or excludes China data center revenue, and any stated China revenue assumption (e.g. zero China H20/data-center revenue assumed)",
+    "Any quantified impact of export controls on NVIDIA's China data center revenue or inventory/charges discussed in the Q2 FY2027 release or 10-Q",
+    "Management commentary on China policy uncertainty, licensing status, and whether China revenue is excluded from guidance"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "NVDA",
+     "label": "Q3 FY2027"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "NVDA",
+     "period": "Q2 FY2027",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "NVDA",
+     "period": "Q2 FY2027",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": 30,
+   "searches": [
+    {
+     "purpose": "Recent news on U.S. export controls affecting NVIDIA's China data center GPU sales (past 30 days)",
+     "query": "NVIDIA China export controls data center GPU restrictions news",
+     "topic": "news",
+     "days_back": 30
+    },
+    {
+     "purpose": "Management remarks on the Q2 FY2027 earnings call about China assumptions in the Q3 FY2027 outlook",
+     "query": "NVIDIA Q2 FY2027 earnings call China guidance assumptions commentary",
+     "topic": "general",
+     "days_back": 30
+    }
+   ],
+   "availability_notes": [
+    "Q3 FY2027 (2026-07-27 to 2026-10-25) is still in progress and not yet reported, so no Q3 FY2027 earnings release or 10-Q exists; the Q3 FY2027 outlook is only available from the Q2 FY2027 earnings release (8-K filed 2026-08-26).",
+    "NVIDIA's precise China revenue assumptions and any one-time export-control charges may be quantified only on the earnings call rather than in the release, so call coverage is included as a search.",
+    "Export-control policy developments are regulatory/news events, not SEC filing facts, so they are covered by news search rather than filings."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "New U.S. export-control rule changes affecting NVIDIA's data center GPU sales to China announced in the past 30 days (September 1 - October 1, 2026)",
+    "kind": "not_in_evidence",
+    "reason": "The evidence contains no report of a new U.S. export-control rule or licensing change in the past 30 days; the September 2026 items are China-side approval signals (E9), industry lobbying (E10), and a Chinese competitor's IPO (E11). The most recent U.S. rule changes described in the evidence (April 2025 H20 license requirement, August 2025 licenses) predate the 30-day window.",
+    "evidence_ids": []
+   },
+   {
+    "item": "NVIDIA's precise quantified China revenue assumptions or any one-time export-control charge for Q3 FY2027",
+    "kind": "not_disclosed",
+    "reason": "The Q3 FY2027 outlook in the Q2 FY2027 release and CFO commentary only states that no Data Center compute revenue from China is assumed; no dollar amount or charge is disclosed in the provided evidence.",
+    "evidence_ids": []
+   }
+  ],
+  "removed": [],
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q2 FY2027 earnings call China guidance assumptions commentary",
+     "topic": "general",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-01",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "start_date": "2026-09-01"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA China export controls data center GPU restrictions news",
+     "topic": "news",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-01",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "start_date": "2026-09-01"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://news.alphastreet.com/nvidia-nvda-ai-leadership-faces-a-yield-and-valuation-reality-check",
+      "https://www.mexc.com/learn/article/nvidia-stock-price-prediction-is-the-ai-boom-now-eating-nvidias-own-profit-/1",
+      "https://swotstock.com/category/quarterly-earnings-swots"
+     ],
+     "query": "What are the latest developments in the past 30 days on U.S. export controls affecting NVIDIA's data center GPU sales to China, and what does NVIDIA's own Q3 FY2027 outlook assume about China?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA CORP New U.S. export-control rule changes affecting NVIDIA's data center GPU sales to China announced in the past 30 days (September 1 - October 1, 2026)",
+     "topic": "general",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-01",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://thenextweb.com/news/china-alibaba-bytedance-nvidia-rtx-pro-5500",
+    "https://www.cnbc.com/2026/09/11/chinese-nvidia-rival-enflame-stock-market-debut-ai.html",
+    "https://www.politico.com/news/2026/09/29/nvidia-amd-trump-chips-china-ai-01096445",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 11,
+   "retrieved_primary": 5
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Every development dated and within window",
+     "met": true,
+     "note": "The answer dates each development (Sep 27, Sep 29, Sep 11) within the 30-day window (Sep 1–Oct 1, 2026) and explicitly notes that no new U.S. export-control rule changes occurred in this period."
+    },
+    {
+     "point": "Quotes/paraphrases NVIDIA's own stated China assumption from the Q2 FY27 outlook",
+     "met": true,
+     "note": "The answer directly quotes NVIDIA's Q3 FY2027 outlook: 'NVIDIA is not assuming any Data Center compute revenue from China in its outlook,' sourced from the August 26, 2026 8-K filings."
+    },
+    {
+     "point": "Clearly separates company statements from media/analyst speculation",
+     "met": true,
+     "note": "Company statements (outlook, shipment data) are presented separately from media reports (The Information, Politico, CNBC), each attributed to its source."
+    },
+    {
+     "point": "No uncited causal claims about revenue impact",
+     "met": true,
+     "note": "The answer states NVIDIA's assumption of zero China Data Center compute revenue without attributing it to a specific cause or making uncited causal claims."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer meets all four grading criteria: it dates all mentioned developments within the 30-day window, accurately quotes NVIDIA's own China assumption from the Q2 FY2027 outlook, cleanly separates company statements from media speculation, and makes no uncited causal claims about revenue impact."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "NVIDIA Q3 FY2027 outlook (quarter ending October 25, 2026) expects revenue of $108.0 billion, plus or minus 2%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm",
+     "reason": "The SEC filing q2fy27pr.htm (source [1]) explicitly states: 'Revenue is expected to be $108.0 billion, plus or minus 2%.' The same figure appears in the CFO commentary (source [2]). The claim matches the primary source verbatim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA Q3 FY2027 outlook expects GAAP and non-GAAP gross margins of 74.0%, plus or minus 50 basis points",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm",
+     "reason": "Source [1] states: 'GAAP and non-GAAP gross margins are expected to be 74.0%, plus or minus 50 basis points.' Source [2] repeats the same guidance. The claim is directly supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA Q3 FY2027 outlook states the company is not assuming any Data Center compute revenue from China in that outlook",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm",
+     "reason": "Source [1] includes the sentence: 'NVIDIA is not assuming any Data Center compute revenue from China in its outlook.' Source [2] quotes the CFO: 'We are not assuming any Data Center compute revenue from China in our outlook.' The claim is accurate.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "In Q2 FY2027 (quarter ended July 26, 2026), NVIDIA's shipments of Data Center Hopper products to China were less than 1% of Data Center revenue",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm",
+     "reason": "Source [2] (CFO commentary) states: 'Shipments of Data Center Hopper products to China during the quarter were less than 1% of Data Center revenue.' The claim matches the source exactly.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Information reported on Sunday, September 27, 2026, that China's government has signalled it may let firms such as Alibaba and ByteDance buy Nvidia's new RTX Pro 5500 chip, with China's tech ministry asking some firms how many chips they plan to buy and telling some it intends to approve the purchases",
+     "numeric": false,
+     "cited_url": "https://thenextweb.com/news/china-alibaba-bytedance-nvidia-rtx-pro-5500",
+     "reason": "Source [3] (thenextweb.com, published 2026-09-27) reports: 'China’s government has signalled it may let firms such as Alibaba and ByteDance buy Nvidia’s new RTX Pro 5500 chip... China’s tech ministry recently asked some firms how many of the chips they plan to buy, and what for... The ministry told some of the companies it intends to approve the purchases.' The claim is fully supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The same report noted that earlier in 2026 the U.S. cleared sales of Nvidia's H200 chips to Chinese firms, but ByteDance and Tencent were told to keep the first shipments in Hong Kong rather than bring them into mainland China",
+     "numeric": false,
+     "cited_url": "https://thenextweb.com/news/china-alibaba-bytedance-nvidia-rtx-pro-5500",
+     "reason": "Source [3] states: 'Earlier this year, the US cleared sales of Nvidia’s H200 chips to Chinese firms. However, ByteDance and Tencent were told to keep the first shipments in Hong Kong, TNW reported in August, rather than bring them into mainland China.' The claim matches the source.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Politico reported on September 29, 2026, that U.S. chipmakers Nvidia and AMD are lobbying the Trump administration to stop lawmakers from curbing their exports to China, and that Nvidia CEO Jensen Huang will attend an artificial intelligence meeting with the president at the White House on Tuesday",
+     "numeric": false,
+     "cited_url": "https://www.politico.com/news/2026/09/29/nvidia-amd-trump-chips-china-ai-01096445",
+     "reason": "Source [4] (Politico, published 2026-09-29) reports: 'U.S. chipmakers Nvidia and AMD are lobbying the Trump administration to stop lawmakers from curbing their exports to China... Nvidia CEO Jensen Huang is close with Trump and will attend a meeting on artificial intelligence with the president, alongside Speaker Mike Johnson and other tech CEOs at the White House on Tuesday.' The claim is accurate.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "CNBC reported on September 11, 2026, that Chinese chipmaker Enflame, which is developing domestic alternatives to U.S. rivals like Nvidia, saw its stock soar 206% after debuting in Shanghai, and that international chipmakers led by Nvidia accounted for nearly 60% of China's AI accelerator market in 2025 according to IDC data cited in Enflame's prospectus",
+     "numeric": true,
+     "cited_url": "https://www.cnbc.com/2026/09/11/chinese-nvidia-rival-enflame-stock-market-debut-ai.html",
+     "reason": "Source [5] (CNBC, published 2026-09-11) states: 'Chinese chipmaker Enflame... has seen its stock soar 206% after debuting in Shanghai. International chipmakers led by Nvidia accounted for nearly 60% of China's AI accelerator market in 2025, according to IDC data cited in Enflame's prospectus, translated by CNBC.' The claim matches the source.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA's Q2 FY2027 10-Q (filed August 26, 2026) states that in April 2025 the U.S. government required a license for export to China of its H20 integrated circuits, that NVIDIA incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20, and that licenses granted beginning in August 2025 that would have allowed certain H20 shipments to China-based customers were restricted by the PRC government so NVIDIA was unable to sell its H20 inventory",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+     "reason": "Source [6] (10-Q filed 2026-08-26) contains the exact statements: 'In April 2025, the USG informed us that it requires a license for export to China... of our H20 integrated circuits | we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purchase obligations | Beginning in August 2025, the USG granted licenses that would have allowed us to ship certain H20 products to certain China-based customers, but such sales were restricted by the PRC government, and we were unable to sell our H20 inventory.' The claim is fully supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "No new U.S. export-control rule or licensing change affecting NVIDIA's data center GPU sales to China was announced in the past 30 days (September 1 – October 1, 2026); the September 2026 items are China-side approval signals, industry lobbying, and a Chinese competitor's IPO; the most recent U.S. rule changes described are the April 2025 H20 license requirement and August 2025 licenses",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The retrieved sources include SEC filings up to September 3 (an 8-K about a Hugging Face acquisition) and news articles from September 11, 27, and 29. None of these sources mention a new U.S. export-control rule or licensing change in the September 1 – October 1 window. The only U.S. rule changes referenced are the April 2025 H20 license requirement and August 2025 licenses (from the 10-Q). The claim is a correct summary of the evidence.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "NVIDIA's Q3 FY2027 outlook does not disclose a precise quantified China revenue assumption or any one-time export-control charge for Q3 FY2027; it only states that no Data Center compute revenue from China is assumed",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Sources [1] and [2] only state that NVIDIA is 'not assuming any Data Center compute revenue from China' and provide no dollar amount or charge for Q3 FY2027. The $4.5 billion charge mentioned in source [6] relates to Q1 FY2026, not Q3 FY2027. The claim accurately reflects the available evidence.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 9,
+   "supported": 9,
+   "not_retrieved": 0
+  }
+ }
+}

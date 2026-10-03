@@ -1,0 +1,176 @@
+{
+ "id": "H07",
+ "category": "Quantitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "Which customers each contributed 10% or more of Fabrinet's revenues in fiscal 2026 (year ended June 26, 2026), and what percentage of revenue did each represent?",
+ "grading": "Key points: four customers each >=10% of FY2026 revenue: Cisco Systems 19.9%, NVIDIA 16.3%, Nokia 10.7%, Amazon.com 10.5% (together 57.4%). Accept +/-0.1pp. Fail if fewer than all four are named or if FY2025 shares (NVIDIA 27.6%, Cisco 18.2%) are given for FY2026.",
+ "answer": "In fiscal 2026 (ended June 26, 2026) four customers each contributed 10% or more of Fabrinet's revenues: Cisco Systems 19.9%, NVIDIA 16.3%, Nokia 10.7% and Amazon.com 10.5%, together 57.4% of revenue. In fiscal 2025 only NVIDIA (27.6%) and Cisco (18.2%) exceeded 10% [H07-E1].",
+ "output": {
+  "answer": "In fiscal 2026 (year ended June 26, 2026), Fabrinet had **four customers** that each contributed 10% or more of its revenues, together accounting for **57.4%** of total revenues:\n\n| Customer | % of FY2026 Revenue |\n|---|---|\n| Cisco Systems, Inc. | 19.9% |\n| NVIDIA Corporation | 16.3% |\n| Nokia Corporation | 10.7% |\n| Amazon.com, Inc. | 10.5% |\n| **Total** | **57.4%** |\n\nNotes:\n- These precise figures come from Fabrinet's Form 10-K for fiscal 2026 (the \"Customers, Sales and Marketing\" discussion).\n- On the Q4 FY2026 earnings call, management rounded these to Cisco 20%, NVIDIA 16%, Nokia 11%, and Amazon 11%.\n- By comparison, in fiscal 2025 only two customers exceeded 10%: NVIDIA at 27.6% and Cisco at 18.2%.\n\nSources:\n- SEC 10-K (fn-20260626): https://www.sec.gov/Archives/edgar/data/1408710/000140871026000028/fn-20260626.htm\n- Fabrinet Q4 FY2026 earnings call coverage: https://www.investing.com/news/transcripts/earnings-call-transcript-fabrinet-beats-q4-2026-estimates-shares-fall-after-hours-93CH-4864059",
+  "tokens": {
+   "input": 17028,
+   "output": 573
+  },
+  "tavily_credits": 4,
+  "latency_s": 13.1,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/8a8eab71f55160291c28912b8d5b2202",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Fabrinet fiscal 2026 customer concentration 10% or more of revenue",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Fabrinet 10-K fiscal 2026 ended June 26 2026 customers accounted for more than 10% of revenue",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.investing.com/news/transcripts/earnings-call-transcript-fabrinet-beats-q4-2026-estimates-shares-fall-after-hours-93CH-4864059",
+    "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000028/fn-20260626.htm"
+   ],
+   "cited_primary": 1,
+   "retrieved": 15,
+   "retrieved_primary": 5
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Cisco Systems named with ~19.9% of FY2026 revenue (within +/-0.1pp)",
+     "met": true,
+     "note": "Agent lists Cisco Systems, Inc. at 19.9%, matching reference exactly."
+    },
+    {
+     "point": "NVIDIA named with ~16.3% of FY2026 revenue (within +/-0.1pp)",
+     "met": true,
+     "note": "Agent lists NVIDIA Corporation at 16.3%, matching reference exactly."
+    },
+    {
+     "point": "Nokia named with ~10.7% of FY2026 revenue (within +/-0.1pp)",
+     "met": true,
+     "note": "Agent lists Nokia Corporation at 10.7%, matching reference exactly."
+    },
+    {
+     "point": "Amazon.com named with ~10.5% of FY2026 revenue (within +/-0.1pp)",
+     "met": true,
+     "note": "Agent lists Amazon.com, Inc. at 10.5%, matching reference exactly."
+    },
+    {
+     "point": "All four customers are named (no fewer than four)",
+     "met": true,
+     "note": "Agent provides a table with exactly four customers, each >=10%."
+    },
+    {
+     "point": "FY2025 shares (NVIDIA 27.6%, Cisco 18.2%) are not given for FY2026",
+     "met": true,
+     "note": "Agent correctly uses FY2026 figures; FY2025 figures are only mentioned as a comparison note, not as FY2026 data."
+    },
+    {
+     "point": "Combined percentage of the four customers is 57.4% (within tolerance)",
+     "met": true,
+     "note": "Agent states total 57.4%, which matches the reference sum of 19.9+16.3+10.7+10.5 = 57.4%."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer fully satisfies all grading requirements: it identifies all four customers that contributed 10% or more of Fabrinet's FY2026 revenue, provides each customer's percentage within the allowed tolerance, and does not confuse FY2025 figures with FY2026. The total combined percentage is also correctly stated."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Fiscal 2026 ended June 26, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000028/fn-20260626.htm",
+     "reason": "The SEC 10-K filing shows 'Years Ended June 26, 2026' in the consolidated financial statements.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fabrinet had four customers each contributing 10% or more of revenues in FY2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000028/fn-20260626.htm",
+     "reason": "The 10-K states: 'During fiscal years 2026, 2025 and 2024, we had four, two and two customers, respectively, that each contributed 10% or more of our revenues.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Those four customers together accounted for 57.4% of total revenues in FY2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000028/fn-20260626.htm",
+     "reason": "The 10-K states: 'Such customers together accounted for 57.4%, 45.8% and 48.5% of our revenues during the respective periods.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cisco Systems, Inc. contributed 19.9% of FY2026 revenue",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000028/fn-20260626.htm",
+     "reason": "The 10-K states: 'During fiscal year 2026, Cisco Systems, Inc., NVIDIA Corporation, Nokia Corporation and Amazon.com, Inc. contributed 19.9%, 16.3%, 10.7% and 10.5%, respectively, of our revenues.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA Corporation contributed 16.3% of FY2026 revenue",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000028/fn-20260626.htm",
+     "reason": "Same 10-K sentence as above lists NVIDIA at 16.3%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Nokia Corporation contributed 10.7% of FY2026 revenue",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000028/fn-20260626.htm",
+     "reason": "Same 10-K sentence lists Nokia at 10.7%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Amazon.com, Inc. contributed 10.5% of FY2026 revenue",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000028/fn-20260626.htm",
+     "reason": "Same 10-K sentence lists Amazon at 10.5%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "On the Q4 FY2026 earnings call, management rounded these to Cisco 20%, NVIDIA 16%, Nokia 11%, and Amazon 11%",
+     "numeric": true,
+     "cited_url": "https://www.investing.com/news/transcripts/earnings-call-transcript-fabrinet-beats-q4-2026-estimates-shares-fall-after-hours-93CH-4864059",
+     "reason": "The Investing.com transcript quotes management: 'These were Cisco at 20%, Nvidia at 16%, Nokia at 11%, and Amazon at 11% of total revenue.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "In fiscal 2025, only two customers exceeded 10%: NVIDIA at 27.6% and Cisco at 18.2%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000028/fn-20260626.htm",
+     "reason": "The 10-K states: 'During fiscal year 2025, NVIDIA Corporation and Cisco Systems, Inc. contributed 27.6% and 18.2%, respectively, of our revenues.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 9,
+   "numeric_cited": 9,
+   "cited": 9,
+   "supported": 9,
+   "not_retrieved": 0
+  }
+ }
+}

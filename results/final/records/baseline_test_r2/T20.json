@@ -1,0 +1,193 @@
+{
+ "id": "T20",
+ "category": "Market analysis",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "For calendar Q2 2026 (April 1 to June 30, 2026), what was net revenue at Visa and at Mastercard, and by how much did Visa's exceed Mastercard's? Use each company's own reported quarter that corresponds to those dates and answer in USD millions.",
+ "grading": "List of three: Visa net revenue USD 11,633M (fiscal Q3 2026), Mastercard net revenue USD 9,277M (Q2 2026), each ±0.5%; difference (Visa minus Mastercard) USD 2,356M ±1% (Visa about 25% larger). Optional: YoY growth Visa 14.4% vs Mastercard 14.1% (±0.3pp). Both quarters end 2026-06-30. Fail if Visa's March quarter or any non-matching Mastercard quarter is used.",
+ "answer": "Visa's fiscal Q3 2026 (quarter ended June 30, 2026) net revenue was USD 11,633 million, up from USD 10,172 million a year earlier (+14.4%). Mastercard's Q2 2026 (quarter ended June 30, 2026) net revenue was USD 9,277 million, up from USD 8,133 million (+14.1%). Visa's net revenue exceeded Mastercard's by USD 2,356 million (about 25% higher). [T20-E1, T20-E2, T20-E3]",
+ "output": {
+  "answer": "**Calendar Q2 2026 (April 1 – June 30, 2026)**\n\nBoth companies' reported quarters align exactly with calendar Q2:\n\n| Company | Reported quarter | Net revenue |\n|---|---|---|\n| Visa | Fiscal Q3 2026 (quarter ended June 30, 2026) | **$11,633M** ($11.6B) |\n| Mastercard | Q2 2026 (quarter ended June 30, 2026) | **$9,277M** ($9.3B) |\n\n**Difference:** Visa's net revenue exceeded Mastercard's by **$2,356 million** (~$2.36B), i.e., Visa was about 25% larger on a net-revenue basis.\n\nSources:\n- Visa Q3 FY2026 earnings release: https://s1.q4cdn.com/050606653/files/doc_financials/2026/q3/Q3-2026-Earnings-Release_vF.pdf (revenue components total $11,633M: service $4,922M + data processing $6,042M + international transaction $3,853M + other $1,496M − client incentives $4,680M)\n- Mastercard Q2 2026 earnings release: https://s25.q4cdn.com/479285134/files/doc_financials/2026/q2/2Q26-Mastercard-Earnings-Release.pdf (net revenue $9,277M; payment network $5,451M + value-added services $3,826M). Corroborated by the Q2 2026 10-Q: https://s25.q4cdn.com/479285134/files/doc_financials/2026/q2/Mastercard-10-Q.pdf\n\nNote: this compares GAAP \"net revenue\" as each company reports it; both figures are net of client incentives/rebates, consistent with each company's headline net revenue.",
+  "tokens": {
+   "input": 47571,
+   "output": 1121
+  },
+  "tavily_credits": 5,
+  "latency_s": 18.42,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/6d2dd45d59ffeceb25064e1c1f4c1d20",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Visa fiscal third quarter 2026 net revenue",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Mastercard second quarter 2026 net revenue",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Visa fiscal third quarter 2026 results net revenue June 30 2026"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Visa\" \"third quarter\" fiscal 2026 earnings press release net revenue billion",
+     "include_domains": [
+      "usa.visa.com",
+      "investor.visa.com",
+      "s1.q4cdn.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Mastercard Q2 2026 results net revenue \"9,2\" million quarter ended June 30 2026 press release",
+     "include_domains": [
+      "mastercard.com",
+      "s25.q4cdn.com",
+      "investor.mastercard.com"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://s1.q4cdn.com/050606653/files/doc_financials/2026/q3/Q3-2026-Earnings-Release_vF.pdf",
+    "https://s25.q4cdn.com/479285134/files/doc_financials/2026/q2/2Q26-Mastercard-Earnings-Release.pdf",
+    "https://s25.q4cdn.com/479285134/files/doc_financials/2026/q2/Mastercard-10-Q.pdf"
+   ],
+   "cited_primary": 0,
+   "retrieved": 43,
+   "retrieved_primary": 7
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Visa net revenue USD 11,633M (fiscal Q3 2026) ±0.5%",
+     "met": true,
+     "note": "Agent reports Visa fiscal Q3 2026 net revenue $11,633M, matching reference exactly."
+    },
+    {
+     "point": "Mastercard net revenue USD 9,277M (Q2 2026) ±0.5%",
+     "met": true,
+     "note": "Agent reports Mastercard Q2 2026 net revenue $9,277M, matching reference exactly."
+    },
+    {
+     "point": "Difference (Visa minus Mastercard) USD 2,356M ±1% (Visa about 25% larger)",
+     "met": true,
+     "note": "Agent calculates difference as $2,356 million, matching reference exactly; also notes Visa about 25% larger."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All three required numerical points are met with exact matches to the reference values. The agent correctly identifies Visa's fiscal Q3 2026 and Mastercard's Q2 2026, both ending June 30, 2026, avoiding the fiscal-calendar mismatch failure mode. Optional YoY growth percentages are not required for correctness."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Both companies' reported quarters align exactly with calendar Q2 (April 1 – June 30, 2026)",
+     "numeric": false,
+     "cited_url": "https://s1.q4cdn.com/050606653/files/doc_financials/2026/q3/Q3-2026-Earnings-Release_vF.pdf",
+     "reason": "Visa's earnings release is titled 'Fiscal Third Quarter 2026 Results' and states quarter ended June 30, 2026. Mastercard's earnings release is titled 'Second Quarter 2026 Financial Results' and states quarter ended June 30, 2026. Both quarters cover April–June 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Visa's reported quarter: Fiscal Q3 2026 (quarter ended June 30, 2026)",
+     "numeric": false,
+     "cited_url": "https://s1.q4cdn.com/050606653/files/doc_financials/2026/q3/Q3-2026-Earnings-Release_vF.pdf",
+     "reason": "The Visa PDF explicitly says 'Fiscal Third Quarter 2026 Results' and 'Three Months Ended June 30, 2026'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Visa's net revenue: $11,633M ($11.6B)",
+     "numeric": true,
+     "cited_url": "https://s1.q4cdn.com/050606653/files/doc_financials/2026/q3/Q3-2026-Earnings-Release_vF.pdf",
+     "reason": "The PDF shows 'Net revenue $11.6B' and a breakdown table: Service $4,922M + Data Processing $6,042M + International Transaction $3,853M + Other $1,496M − Client Incentives $4,680M = $11,633M.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mastercard's reported quarter: Q2 2026 (quarter ended June 30, 2026)",
+     "numeric": false,
+     "cited_url": "https://s25.q4cdn.com/479285134/files/doc_financials/2026/q2/2Q26-Mastercard-Earnings-Release.pdf",
+     "reason": "The Mastercard PDF is titled '2Q26-Mastercard-Earnings-Release' and states 'Second quarter 2026' and 'quarter ended June 30, 2026'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mastercard's net revenue: $9,277M ($9.3B)",
+     "numeric": true,
+     "cited_url": "https://s25.q4cdn.com/479285134/files/doc_financials/2026/q2/2Q26-Mastercard-Earnings-Release.pdf",
+     "reason": "The PDF shows 'Net revenue $9,277' (in millions) in the selected financial performance table, and the earnings release text says 'Second quarter net revenue of $9.3 billion'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Difference: Visa's net revenue exceeded Mastercard's by $2,356 million (~$2.36B)",
+     "numeric": true,
+     "cited_url": "https://s1.q4cdn.com/050606653/files/doc_financials/2026/q3/Q3-2026-Earnings-Release_vF.pdf",
+     "reason": "Calculated from the two net revenue figures: $11,633M − $9,277M = $2,356M. The arithmetic is correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Visa was about 25% larger on a net-revenue basis",
+     "numeric": true,
+     "cited_url": "https://s1.q4cdn.com/050606653/files/doc_financials/2026/q3/Q3-2026-Earnings-Release_vF.pdf",
+     "reason": "Percentage difference = ($11,633M − $9,277M) / $9,277M = 2,356 / 9,277 ≈ 25.4%. 'About 25%' is a reasonable rounding.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Visa's revenue components total $11,633M: service $4,922M + data processing $6,042M + international transaction $3,853M + other $1,496M − client incentives $4,680M",
+     "numeric": true,
+     "cited_url": "https://s1.q4cdn.com/050606653/files/doc_financials/2026/q3/Q3-2026-Earnings-Release_vF.pdf",
+     "reason": "The PDF includes a table 'Reported Nominal USD (in millions)' with exactly those line items summing to Net Revenue $11,633M.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mastercard's net revenue $9,277M; payment network $5,451M + value-added services $3,826M",
+     "numeric": true,
+     "cited_url": "https://s25.q4cdn.com/479285134/files/doc_financials/2026/q2/2Q26-Mastercard-Earnings-Release.pdf",
+     "reason": "The Mastercard presentation shows 'Payment Network' $5,451M and 'Value-added Services and Solutions' $3,826M, which sum to $9,277M total net revenue.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Comparison uses GAAP 'net revenue' as each company reports it; both figures are net of client incentives/rebates",
+     "numeric": false,
+     "cited_url": "https://s1.q4cdn.com/050606653/files/doc_financials/2026/q3/Q3-2026-Earnings-Release_vF.pdf",
+     "reason": "Visa's net revenue is shown after deducting client incentives. Mastercard's presentation states 'Payment Network is presented net of rebates and incentives'. Both companies' headline net revenue figures are after such deductions.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 10,
+   "supported": 10,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,264 @@
+{
+ "id": "H12",
+ "category": "Numerical reasoning",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "What were Toro's trailing-twelve-month Professional segment net sales and segment profit (EBIT) as of the end of its fiscal Q3 2026 (quarter ended July 31, 2026), and what was the implied TTM segment margin?",
+ "grading": "Computation: TTM = FY2025 + nine months FY2026 - nine months FY2025. TTM Professional net sales USD 3,853.5M and segment profit USD 748.5M (each +/-0.5%); margin 19.42% (+/-0.3pp; accept 19.4%). Fail if the dollar figures are nine-month, fiscal-2025 or quarterly values, or a different segment is used.",
+ "answer": "TTM Professional net sales = 3,624.0 (FY2025) + 2,943.2 (nine months FY2026) - 2,713.7 (nine months FY2025) = USD 3,853.5 million. TTM Professional segment profit (EBIT) = 702.5 + 573.8 - 527.8 = USD 748.5 million. TTM segment margin = 748.5 / 3,853.5 = 19.42% [H12-E1][H12-E2].",
+ "output": {
+  "answer": "**Question:** What were Toro's trailing-twelve-month Professional segment net sales and segment profit (EBIT) as of the end of its fiscal Q3 2026 (quarter ended July 31, 2026), and what was the implied TTM segment margin?\n*As of 2026-10-03*\n\n| | Professional segment net sales (USD millions) | Professional segment profit / EBIT (USD millions) | Implied Professional segment margin (%) |\n|---|---|---|---|\n| Q4 FY2025 (three months ended October 31, 2025) | 910.3 [1] | 174.7 [1] | — |\n| Nine months ended July 31, 2026 (FY2026 YTD) | 2,943.2 [2][3] | 573.8 [2][3] | — |\n| TTM ended July 31, 2026 (Q4 FY2025 + 9M FY2026) | 3,853.5 [1][2] | 748.5 [1][2] | 19.4 [1][2] |\n\n- Toro's TTM window ending with fiscal Q3 2026 (quarter ended July 31, 2026) is built from Q4 FY2025 plus the nine months ended July 31, 2026, because Q4 FY2026 (2026-08-01 to 2026-10-30) has not yet been reported. [1][2]\n- Professional segment net sales for Q4 FY2025 (three months ended October 31, 2025) were $910.3 million, as reported in the segment data table. [1]\n- Professional segment net sales for the nine months ended July 31, 2026 (fiscal 2026 year-to-date) were $2,943.2 million, as reported in the segment data table. [2][3]\n- Professional segment profit (EBIT) for Q4 FY2025 (three months ended October 31, 2025) was $174.7 million, as reported in the segment earnings table. [1]\n- Professional segment profit (EBIT) for the nine months ended July 31, 2026 (fiscal 2026 year-to-date) was $573.8 million, as reported in the segment profit table. [2][3]\n- Toro's trailing-twelve-month Professional segment net sales as of the end of fiscal Q3 2026 (quarter ended July 31, 2026) were 3,853.5 million, calculated as Q4 FY2025 net sales of $910.3 million plus nine-month FY2026 net sales of $2,943.2 million. [1][2]\n- Toro's trailing-twelve-month Professional segment profit (EBIT) as of the end of fiscal Q3 2026 (quarter ended July 31, 2026) was 748.5 million, calculated as Q4 FY2025 segment profit of $174.7 million plus nine-month FY2026 segment profit of $573.8 million. [1][2]\n- The implied TTM Professional segment margin as of the end of fiscal Q3 2026 (quarter ended July 31, 2026) was 19.4%, calculated as TTM segment profit of $748.5 million divided by TTM segment net sales of $3,853.5 million. [1][2]\n\n**Not available**\n- Q4 FY2026 (quarter ending October 30, 2026) Professional segment net sales and segment profit: Toro's fiscal Q4 FY2026 has not been reported as of today (2026-10-03), so the TTM window must end at Q3 FY2026 (July 31, 2026). [2][3]\n- A company-disclosed TTM Professional segment net sales, segment profit and segment margin: Toro reports segment net sales and segment profit only for the quarter and year-to-date periods; no trailing-twelve-month segment figures or margin are disclosed, so the TTM values are derived from Q4 FY2025 plus the nine months ended July 31, 2026. [1][2][3]\n\n**Sources**\n[1] TORO CO earnings release for Q4 FY2025, 8-K EX-99.1 (filed 2025-12-17) (www.sec.gov, 2025-12-17, primary) https://www.sec.gov/Archives/edgar/data/737758/000073775825000105/ttc12172025exhibit991.htm\n[2] TORO CO 10-Q for Q3 FY2026 (filed 2026-09-03) (www.sec.gov, 2026-09-03, primary) https://www.sec.gov/Archives/edgar/data/737758/000073775826000043/ttc-20260731.htm\n[3] TORO CO earnings release for Q3 FY2026, 8-K EX-99.1 (filed 2026-09-03) (www.sec.gov, 2026-09-03, primary) https://www.sec.gov/Archives/edgar/data/737758/000073775826000041/ttc09032026exhibit991.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 90463,
+   "output": 23664
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 113.67,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/c7ea5c06adcd72ea86edf0dc51174ee7",
+  "companies": [
+   {
+    "name": "TORO CO",
+    "ticker": "TTC",
+    "cik": "737758",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Professional segment net sales for Q4 FY2025 (2025-08-02 to 2025-10-31)",
+    "Professional segment net sales for Q1 FY2026 (2025-11-01 to 2026-01-30)",
+    "Professional segment net sales for Q2 FY2026 (2026-01-31 to 2026-05-01)",
+    "Professional segment net sales for Q3 FY2026 (2026-05-02 to 2026-07-31)",
+    "Professional segment profit (EBIT) for Q4 FY2025",
+    "Professional segment profit (EBIT) for Q1 FY2026",
+    "Professional segment profit (EBIT) for Q2 FY2026",
+    "Professional segment profit (EBIT) for Q3 FY2026",
+    "Sum of the four quarters = TTM Professional net sales as of 2026-07-31",
+    "Sum of the four quarters = TTM Professional segment profit (EBIT)",
+    "Implied TTM Professional segment margin = TTM segment profit / TTM net sales",
+    "Definition of segment profit used by Toro (earnings/loss before interest and taxes) and any segment realignment or reclassification affecting comparability across the four quarters"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "TTC",
+     "label": "Q3 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "TTC",
+     "period": "Q4 FY2025",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "TTC",
+     "period": "Q1 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "TTC",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "TTC",
+     "period": "Q3 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "TTC",
+     "period": "Q3 FY2026",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q4 FY2026 (2026-08-01 to 2026-10-30) is not yet reported, so the TTM window must end at Q3 FY2026 (2026-07-31) and is built from Q4 FY2025 + Q1-Q3 FY2026.",
+    "Toro's 10-K reports segment results for the full fiscal year, not Q4 standalone; the Q4 FY2025 Professional segment figures must come from the Q4 FY2025 earnings release (or be derived as FY2025 less the nine months ended 2025-08-01).",
+    "Segment net sales and segment profit are note-level (segment) disclosures, not tagged face-of-statement lines, so the 10-Q segment notes are required for each quarter.",
+    "If Toro redefined or realigned segments (e.g., a Professional/Residential reclassification) during FY2026, prior-period segment figures may be recast; comparability across the four quarters should be confirmed in the notes.",
+    "No guidance or management commentary is needed for this question, so no earnings-call search is planned."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Q4 FY2026 (quarter ending October 30, 2026) Professional segment net sales and segment profit",
+    "kind": "not_reported_yet",
+    "reason": "Toro's fiscal Q4 FY2026 has not been reported as of today (2026-10-03), so the TTM window must end at Q3 FY2026 (July 31, 2026).",
+    "evidence_ids": [
+     "E4",
+     "E5"
+    ]
+   },
+   {
+    "item": "A company-disclosed TTM Professional segment net sales, segment profit and segment margin",
+    "kind": "not_disclosed",
+    "reason": "Toro reports segment net sales and segment profit only for the quarter and year-to-date periods; no trailing-twelve-month segment figures or margin are disclosed, so the TTM values are derived from Q4 FY2025 plus the nine months ended July 31, 2026.",
+    "evidence_ids": [
+     "E1",
+     "E4",
+     "E5"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/737758/000073775825000105/ttc12172025exhibit991.htm",
+    "https://www.sec.gov/Archives/edgar/data/737758/000073775826000041/ttc09032026exhibit991.htm",
+    "https://www.sec.gov/Archives/edgar/data/737758/000073775826000043/ttc-20260731.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 8,
+   "retrieved_primary": 8
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "TTM Professional net sales = USD 3,853.5M (+/-0.5%)",
+     "met": true,
+     "note": "Agent reports 3,853.5 million, matching reference exactly."
+    },
+    {
+     "point": "TTM Professional segment profit (EBIT) = USD 748.5M (+/-0.5%)",
+     "met": true,
+     "note": "Agent reports 748.5 million, matching reference exactly."
+    },
+    {
+     "point": "TTM segment margin = 19.42% (+/-0.3pp; accept 19.4%)",
+     "met": true,
+     "note": "Agent reports 19.4%, within tolerance of reference 19.42%."
+    },
+    {
+     "point": "Does not report nine-month FY2026 figures (net sales USD 2,943.2M; profit USD 573.8M) as final answer",
+     "met": true,
+     "note": "Agent shows nine-month figures in table but clearly labels them as nine-month and computes TTM separately."
+    },
+    {
+     "point": "Does not report fiscal 2025 figures (USD 3,624.0M; USD 702.5M) as final answer",
+     "met": true,
+     "note": "Agent does not present fiscal 2025 figures as the TTM answer."
+    },
+    {
+     "point": "Does not use Q3-only margin (20.9%)",
+     "met": true,
+     "note": "Agent computes TTM margin from TTM totals, not Q3-only."
+    },
+    {
+     "point": "Does not confuse segment net sales with external-customer net sales (2,882.2 vs 2,943.2 for nine months)",
+     "met": true,
+     "note": "Agent uses Professional segment net sales (2,943.2 for nine months) consistently."
+    },
+    {
+     "point": "Does not use adjusted/total-company figures",
+     "met": true,
+     "note": "Agent explicitly uses Professional segment figures from segment tables."
+    },
+    {
+     "point": "Uses correct TTM window (Aug 2, 2025-Jul 31, 2026) i.e., Q4 FY2025 + 9M FY2026",
+     "met": true,
+     "note": "Agent states TTM window ends at Q3 FY2026 (July 31, 2026) and builds from Q4 FY2025 plus nine months ended July 31, 2026."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: the agent provides the correct TTM Professional segment net sales (3,853.5M), segment profit (748.5M), and margin (19.4%), computed using the proper trailing-twelve-month window (Q4 FY2025 + 9M FY2026) and the correct segment figures. No failure modes are present."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Professional segment net sales for Q4 FY2025 (three months ended October 31, 2025) were $910.3 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775825000105/ttc12172025exhibit991.htm",
+     "reason": "Source [1] (Q4 FY2025 earnings release filed 2025-12-17) explicitly states: 'Professional segment net sales for the fourth quarter were $910.3 million' and shows a table with Professional $910.3.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Professional segment profit (EBIT) for Q4 FY2025 (three months ended October 31, 2025) was $174.7 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775825000105/ttc12172025exhibit991.htm",
+     "reason": "Source [1] states: 'Professional segment earnings for the fourth quarter were $174.7 million' and shows a table with Professional $174.7.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Professional segment net sales for the nine months ended July 31, 2026 (fiscal 2026 year-to-date) were $2,943.2 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775826000043/ttc-20260731.htm",
+     "reason": "Source [2] (10-Q for Q3 FY2026 filed 2026-09-03) contains a table showing 'Professional | $ | 2,943.2' for nine months ended July 31, 2026. Source [3] (earnings release for Q3 FY2026) shows the same figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Professional segment profit (EBIT) for the nine months ended July 31, 2026 (fiscal 2026 year-to-date) was $573.8 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775826000043/ttc-20260731.htm",
+     "reason": "Source [2] shows 'Professional | $ | 573.8' for nine months ended July 31, 2026. Source [3] confirms the same figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Toro's trailing-twelve-month Professional segment net sales as of the end of fiscal Q3 2026 (quarter ended July 31, 2026) were 3,853.5 million, calculated as Q4 FY2025 net sales of $910.3 million plus nine-month FY2026 net sales of $2,943.2 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775825000105/ttc12172025exhibit991.htm",
+     "reason": "Sum of the two verified inputs: 910.3 + 2,943.2 = 3,853.5. The arithmetic is correct and the inputs are sourced from [1] and [2].",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Toro's trailing-twelve-month Professional segment profit (EBIT) as of the end of fiscal Q3 2026 (quarter ended July 31, 2026) was 748.5 million, calculated as Q4 FY2025 segment profit of $174.7 million plus nine-month FY2026 segment profit of $573.8 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775825000105/ttc12172025exhibit991.htm",
+     "reason": "Sum of the two verified inputs: 174.7 + 573.8 = 748.5. The arithmetic is correct and the inputs are sourced from [1] and [2].",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The implied TTM Professional segment margin as of the end of fiscal Q3 2026 (quarter ended July 31, 2026) was 19.4%, calculated as TTM segment profit of $748.5 million divided by TTM segment net sales of $3,853.5 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775825000105/ttc12172025exhibit991.htm",
+     "reason": "748.5 / 3,853.5 = 0.19424 → 19.424%, which rounds to 19.4% (one decimal). The calculation uses the verified TTM profit and sales figures.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Toro's TTM window ending with fiscal Q3 2026 (quarter ended July 31, 2026) is built from Q4 FY2025 plus the nine months ended July 31, 2026, because Q4 FY2026 (2026-08-01 to 2026-10-30) has not yet been reported",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775825000105/ttc12172025exhibit991.htm",
+     "reason": "The latest available filing is the Q3 FY2026 10-Q (filed 2026-09-03) and earnings release (filed 2026-09-03). Q4 FY2026 would end October 30, 2026, and has not been reported as of the answer date (2026-10-03). The methodology is consistent with the available sources.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2026 (quarter ending October 30, 2026) Professional segment net sales and segment profit are not available as of 2026-10-03",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775826000043/ttc-20260731.htm",
+     "reason": "The most recent SEC filings are for Q3 FY2026 (filed 2026-09-03). No filing for Q4 FY2026 exists as of 2026-10-03.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Toro does not disclose trailing-twelve-month Professional segment net sales, segment profit, or segment margin; the TTM values are derived from Q4 FY2025 plus the nine months ended July 31, 2026",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775825000105/ttc12172025exhibit991.htm",
+     "reason": "Sources [1], [2], and [3] only present segment data for quarter and year-to-date periods. No TTM segment figures are disclosed in any of the retrieved filings.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 7,
+   "numeric_cited": 7,
+   "cited": 10,
+   "supported": 10,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,189 @@
+{
+ "id": "T08",
+ "category": "Financial modeling",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What were Applied Materials' trailing-twelve-month net revenues as of the end of fiscal Q3 2026 (quarter ended July 26, 2026)? Build it from filed figures and answer in USD millions.",
+ "grading": "±0.5% of 30,837, USD millions (accept $30.8B). The TTM window is 2025-07-28 to 2026-07-26. Equivalent routes: FY2025 + 9M FY2026 - 9M FY2025, or Q4 FY2025 + Q1 + Q2 + Q3 FY2026 (6,800 + 7,012 + 7,910 + 9,115).",
+ "answer": "TTM net revenue for the four quarters ended July 26, 2026 was USD 30,837 million = FY2025 net revenue 28,368 + nine months FY2026 24,037 - nine months FY2025 21,568. Quarter-by-quarter: Q4 FY2025 6,800 (28,368 - 21,568) + Q1 FY2026 7,012 + Q2 FY2026 7,910 + Q3 FY2026 9,115 = 30,837. [T08-E1, T08-E2]",
+ "output": {
+  "answer": "**Question:** What were Applied Materials' trailing-twelve-month net revenues as of the end of fiscal Q3 2026 (quarter ended July 26, 2026)? Build it from filed figures and answer in USD millions.\n*As of 2026-10-03*\n\n| | Net revenue (USD millions) |\n|---|---|\n| FY2025 (fiscal year ended October 26, 2025) | $28,368 [1][2] |\n| First nine months of FY2025 (nine months ended July 27, 2025) | $21,568 [3][4] |\n| First nine months of FY2026 (nine months ended July 26, 2026) | $24,037 [3][4] |\n| Trailing twelve months ended July 26, 2026 | 30,837 [1][3] |\n\n- Applied Materials' trailing-twelve-month net revenue as of the end of fiscal Q3 2026 (quarter ended July 26, 2026) was 30,837 USD millions, built as FY2025 full-year net revenue less the first nine months of FY2025 plus the first nine months of FY2026. [1][3][4]\n\n**Not available**\n- Q4 FY2026 and FY2026 full-year net revenue: Fiscal Q4 2026 and fiscal year 2026 are still in progress as of today (2026-10-03); the latest filing is the Q3 FY2026 10-Q for the quarter ended July 26, 2026, so the TTM window is built from filed figures instead.\n\n**Sources**\n[1] APPLIED MATERIALS INC /DE 10-K for FY2025 (filed 2025-12-12) (www.sec.gov, 2025-12-12, primary) https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm\n[2] APPLIED MATERIALS INC /DE XBRL data tagged in 10-K filed 2025-12-12 (www.sec.gov, 2025-12-12, primary) https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/\n[3] APPLIED MATERIALS INC /DE 10-Q for Q3 FY2026 (filed 2026-08-20) (www.sec.gov, 2026-08-20, primary) https://www.sec.gov/Archives/edgar/data/6951/000162828026058235/amat-20260726.htm\n[4] APPLIED MATERIALS INC /DE XBRL data tagged in 10-Q filed 2026-08-20 (www.sec.gov, 2026-08-20, primary) https://www.sec.gov/Archives/edgar/data/6951/000162828026058235/\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 25239,
+   "output": 3443
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 46.42,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/32c6dd88885ffc9bdd3a1de76991d5cf",
+  "companies": [
+   {
+    "name": "APPLIED MATERIALS INC /DE",
+    "ticker": "AMAT",
+    "cik": "6951",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Net revenues for the nine months ended July 26, 2026 (Q1–Q3 FY2026, from the Q3 FY2026 10-Q)",
+    "Net revenues for the nine months ended July 27, 2025 (Q1–Q3 FY2025, prior-year comparative in the Q3 FY2026 10-Q)",
+    "Total net revenues for fiscal year 2025 (from the FY2025 10-K)",
+    "Trailing-twelve-month net revenues as of the end of fiscal Q3 2026 = FY2025 net revenues − 9M FY2025 net revenues + 9M FY2026 net revenues (equivalently Q4 FY2025 + Q1–Q3 FY2026), in USD millions"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "AMAT",
+     "label": "Q3 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "AMAT",
+     "period": "Q3 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "AMAT",
+     "period": "FY2025",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q4 FY2026 and FY2026 are still in progress (not yet reported), so the TTM window must be built from filed figures: FY2025 full-year revenues less the first nine months of FY2025, plus the first nine months of FY2026.",
+    "The Q3 FY2026 10-Q (filed 2026-08-20) supplies both the nine-month FY2026 and nine-month FY2025 net revenue figures; the FY2025 10-K (filed 2025-12-12) supplies full-year FY2025 net revenues. No estimates are needed."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Q4 FY2026 and FY2026 full-year net revenue",
+    "kind": "not_reported_yet",
+    "reason": "Fiscal Q4 2026 and fiscal year 2026 are still in progress as of today (2026-10-03); the latest filing is the Q3 FY2026 10-Q for the quarter ended July 26, 2026, so the TTM window is built from filed figures instead.",
+    "evidence_ids": []
+   }
+  ],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/",
+    "https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm",
+    "https://www.sec.gov/Archives/edgar/data/6951/000162828026058235/",
+    "https://www.sec.gov/Archives/edgar/data/6951/000162828026058235/amat-20260726.htm"
+   ],
+   "cited_primary": 4,
+   "retrieved": 4,
+   "retrieved_primary": 4
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "TTM net revenue is 30,837 USD millions (within ±0.5% tolerance)",
+     "met": true,
+     "note": "Agent reports 30,837 USD millions, exactly matching the reference value."
+    },
+    {
+     "point": "TTM window correctly identified as twelve months ended July 26, 2026",
+     "met": true,
+     "note": "Agent explicitly states 'Trailing twelve months ended July 26, 2026'."
+    },
+    {
+     "point": "Calculation uses correct filed figures: FY2025 net revenue, first nine months FY2025, first nine months FY2026",
+     "met": true,
+     "note": "Agent uses FY2025 net revenue $28,368, first nine months FY2025 $21,568, first nine months FY2026 $24,037, and computes TTM as FY2025 - 9M FY2025 + 9M FY2026."
+    },
+    {
+     "point": "Answer expressed in USD millions",
+     "met": true,
+     "note": "Agent answers '30,837 USD millions'."
+    },
+    {
+     "point": "Does not use fiscal year 2025 alone as TTM",
+     "met": true,
+     "note": "Agent does not present FY2025 net revenue ($28,368) as the TTM figure."
+    },
+    {
+     "point": "Does not use nine-month figure alone as TTM",
+     "met": true,
+     "note": "Agent does not present nine-month FY2026 revenue ($24,037) as the TTM figure."
+    },
+    {
+     "point": "Does not add wrong quarter (e.g., Q3 FY2025 instead of Q4 FY2025)",
+     "met": true,
+     "note": "Agent's formula correctly excludes Q3 FY2025 and includes Q4 FY2025 via the subtraction of nine-month FY2025 from full-year FY2025."
+    },
+    {
+     "point": "Does not mix fiscal and calendar labels",
+     "met": true,
+     "note": "Agent consistently uses fiscal year labels (FY2025, FY2026) and quarter labels (fiscal Q3 2026)."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly computes trailing-twelve-month net revenue as 30,837 USD millions using the proper filed figures (FY2025 net revenue, first nine months FY2025, first nine months FY2026) and the correct formula. The answer is within the ±0.5% tolerance, the TTM window is correctly identified, and all failure modes are avoided."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Applied Materials' FY2025 net revenue (fiscal year ended October 26, 2025) was $28,368 million.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm",
+     "reason": "The 10-K for FY2025 shows net revenue of $28,368 million for the fiscal year ended October 26, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Applied Materials' net revenue for the first nine months of FY2025 (nine months ended July 27, 2025) was $21,568 million.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026058235/amat-20260726.htm",
+     "reason": "The 10-Q for Q3 FY2026 shows revenue from contract with customer for the nine months ended July 27, 2025 as $21,568 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Applied Materials' net revenue for the first nine months of FY2026 (nine months ended July 26, 2026) was $24,037 million.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026058235/amat-20260726.htm",
+     "reason": "The 10-Q for Q3 FY2026 shows revenue from contract with customer for the nine months ended July 26, 2026 as $24,037 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Applied Materials' trailing-twelve-month net revenue as of July 26, 2026 was $30,837 million.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm",
+     "reason": "Calculated as FY2025 full-year net revenue ($28,368M) minus first nine months FY2025 ($21,568M) plus first nine months FY2026 ($24,037M) = $30,837M. The arithmetic is correct and the inputs are supported by the cited sources.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The trailing-twelve-month net revenue as of the end of fiscal Q3 2026 (quarter ended July 26, 2026) was built from filed figures: FY2025 full-year net revenue less first nine months of FY2025 plus first nine months of FY2026.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm",
+     "reason": "The answer explains the methodology using the three filed figures, which are all present in the retrieved sources.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "As of 2026-10-03, Q4 FY2026 and FY2026 full-year net revenue are not available because fiscal Q4 2026 and fiscal year 2026 are still in progress; the latest filing is the Q3 FY2026 10-Q for the quarter ended July 26, 2026.",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The retrieved sources show the latest filing is the 10-Q filed 2026-08-20 for quarter ended July 26, 2026, and no 10-K for FY2026 has been filed. The answer's 'Not available' statement is consistent with the filing dates.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 5,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}

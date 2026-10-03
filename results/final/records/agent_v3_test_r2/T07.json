@@ -1,0 +1,157 @@
+{
+ "id": "T07",
+ "category": "Numerical reasoning",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Autodesk's GAAP operating margin (income from operations as a percentage of total net revenue) in the second quarter of fiscal 2027 (quarter ended July 31, 2026)? Compute it from the reported figures.",
+ "grading": "29.3% ±0.3pp (599 / 2,046). The release's rounded '29%' is also accepted. Must be GAAP, quarterly, Q2 FY2027. Fail if non-GAAP (41%) or six-month margin (28.6%) is given.",
+ "answer": "GAAP income from operations was USD 599 million on total net revenue of USD 2,046 million in Q2 FY2027, a GAAP operating margin of 599 / 2,046 = 29.3% (the release rounds to 29%, up about 4 points from 444 / 1,763 = 25.2% in Q2 FY2026). [T07-E1, T07-E2]",
+ "output": {
+  "answer": "**Question:** What was Autodesk's GAAP operating margin (income from operations as a percentage of total net revenue) in the second quarter of fiscal 2027 (quarter ended July 31, 2026)? Compute it from the reported figures.\n*As of 2026-10-03*\n\n- Autodesk reported GAAP income from operations of $599 million for Q2 FY2027 (three months ended July 31, 2026). [1][2]\n- Autodesk reported total net revenue of $2,046 million for Q2 FY2027 (three months ended July 31, 2026). [1][2]\n- Autodesk's GAAP operating margin for Q2 FY2027 (three months ended July 31, 2026), computed as income from operations divided by total net revenue, was 29.3%. [1][2]\n- The company separately disclosed its Q2 FY2027 GAAP operating margin as 29%, up 4 percentage points year over year, consistent with the computed figure. [1]\n\n**Sources**\n[1] Autodesk, Inc. earnings release for Q2 FY2027, 8-K EX-99.1 (filed 2026-08-27) (www.sec.gov, 2026-08-27, primary) https://www.sec.gov/Archives/edgar/data/769397/000076939726000059/q227pressrelease.htm\n[2] Autodesk, Inc. XBRL data tagged in 10-Q filed 2026-08-28 (www.sec.gov, 2026-08-28, primary) https://www.sec.gov/Archives/edgar/data/769397/000076939726000061/\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 19797,
+   "output": 1530
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 14.06,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/2fb1d968facabed0d1f33f9d4abe9dc5",
+  "companies": [
+   {
+    "name": "Autodesk, Inc.",
+    "ticker": "ADSK",
+    "cik": "769397",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Income from operations (GAAP) for Q2 FY2027",
+    "Total net revenue (GAAP) for Q2 FY2027",
+    "GAAP operating margin = income from operations / total net revenue"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "ADSK",
+     "label": "Q2 FY2027"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "ADSK",
+     "period": "Q2 FY2027",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "ADSK",
+     "period": "Q2 FY2027",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q2 FY2027 (2026-05-01 to 2026-07-31) is filed, so both the earnings release and the 10-Q are available; no estimation needed."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/769397/000076939726000059/q227pressrelease.htm",
+    "https://www.sec.gov/Archives/edgar/data/769397/000076939726000061/"
+   ],
+   "cited_primary": 2,
+   "retrieved": 3,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "GAAP operating margin (income from operations as percentage of total net revenue) for Q2 FY2027 (quarter ended July 31, 2026)",
+     "met": true,
+     "note": "Agent explicitly states GAAP income from operations $599M and total net revenue $2,046M for Q2 FY2027 (three months ended July 31, 2026)."
+    },
+    {
+     "point": "Compute from reported figures: income from operations $599 million, total net revenue $2,046 million",
+     "met": true,
+     "note": "Agent quotes the exact figures from the earnings release and 10-Q."
+    },
+    {
+     "point": "Result: 29.3% ±0.3pp (i.e., 29.0% to 29.6%)",
+     "met": true,
+     "note": "Agent computes 29.3%, which is within tolerance."
+    },
+    {
+     "point": "Accept rounded '29%' as per release",
+     "met": true,
+     "note": "Agent notes the company disclosed GAAP operating margin as 29%, consistent with computed figure."
+    },
+    {
+     "point": "Must be GAAP, not non-GAAP (41%)",
+     "met": true,
+     "note": "Agent clearly labels as GAAP and does not mention non-GAAP 41%."
+    },
+    {
+     "point": "Must be quarterly, not six-month margin (28.6%)",
+     "met": true,
+     "note": "Agent specifies three months ended July 31, 2026, i.e., quarterly."
+    },
+    {
+     "point": "Must be Q2 FY2027 (May-Jul 2026), not other period",
+     "met": true,
+     "note": "Agent correctly identifies quarter ended July 31, 2026 as Q2 FY2027."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer matches all requirements: it provides the correct GAAP operating margin for Q2 FY2027, computed from the reported GAAP income from operations ($599M) and total net revenue ($2,046M), yielding 29.3% (within ±0.3pp tolerance). It also notes the release's rounded 29% figure. No failure modes (non-GAAP, six-month, wrong period) are present."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Autodesk reported GAAP income from operations of $599 million for Q2 FY2027 (three months ended July 31, 2026).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000059/q227pressrelease.htm",
+     "reason": "The press release shows 'Income from operations | 599 | 444 | 1,140 | 677' and 'Operating Income (Loss) (OperatingIncomeLoss): 599,000,000 USD, 2026-05-01 to 2026-07-31'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Autodesk reported total net revenue of $2,046 million for Q2 FY2027 (three months ended July 31, 2026).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000059/q227pressrelease.htm",
+     "reason": "The press release shows 'Total net revenue | 2,046 | 1,763 | 3,980 | 3,396' and 'Revenue from Contract with Customer, Excluding Assessed Tax: 2,046,000,000 USD, 2026-05-01 to 2026-07-31'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Autodesk's GAAP operating margin for Q2 FY2027 (three months ended July 31, 2026), computed as income from operations divided by total net revenue, was 29.3%.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000059/q227pressrelease.htm",
+     "reason": "Computed as 599 / 2046 = 0.292766 = 29.2766%, which rounds to 29.3% (to one decimal place). The press release also shows GAAP Operating Margin as 29% (rounded to nearest integer).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The company separately disclosed its Q2 FY2027 GAAP operating margin as 29%, up 4 percentage points year over year, consistent with the computed figure.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000059/q227pressrelease.htm",
+     "reason": "Press release table shows 'GAAP Operating Margin | 29 | % | 4 ppt'.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 4,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}

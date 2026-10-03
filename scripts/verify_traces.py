@@ -1,6 +1,6 @@
 """Check a traced eval run in Langfuse: one complete trace per question, no key material.
 
-    uv run scripts/verify_traces.py baseline_r3_traced
+    uv run python scripts/verify_traces.py agent_v3_test_r1
 
 Uses Langfuse's v2 observations API (the legacy trace endpoints are unavailable to new orgs).
 Key values are compared in memory only and never printed.

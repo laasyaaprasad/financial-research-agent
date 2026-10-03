@@ -1,0 +1,295 @@
+{
+ "id": "H16",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "abstain",
+ "question": "Pull Skechers' latest 10-Q and give me net sales and earnings from operations for its quarter ended June 30, 2026, in USD millions.",
+ "grading": "Must state that no Skechers 10-Q exists for the quarter ended June 30, 2026 because Skechers was taken private (merger closed Sept 12, 2025; Form 15 deregistration filed Sept 23, 2025), so SEC-filed net sales and earnings from operations are unavailable. May cite the last filed quarter (June 30, 2025: net sales USD 2,440.0M; earnings from operations USD 173.1M) clearly labelled as 2025. Fail if any 2026 net sales or operating earnings figure is presented as filed.",
+ "answer": "There is no such filing. Skechers was acquired by 3G Capital (merger completed September 12, 2025; NYSE delisting) and filed a Form 15 on September 23, 2025 terminating its SEC reporting duties, with one holder of record [H16-E1][H16-E2]. Its last periodic reports on EDGAR are the 10-Q for the quarter ended June 30, 2025 (filed August 8, 2025: net sales USD 2,440.0 million; earnings from operations USD 173.1 million) and the FY2024 10-K (filed February 28, 2025); there is no 10-K for 2025 and no 10-Q for 2026 [H16-E3][H16-E4].",
+ "output": {
+  "answer": "**Question:** Pull Skechers' latest 10-Q and give me net sales and earnings from operations for its quarter ended June 30, 2026, in USD millions.\n*As of 2026-10-03*\n\n- Skechers U.S.A., Inc. is no longer an SEC registrant: the company announced the completion of its go-private acquisition by 3G Capital, so it does not file a 10-Q for the quarter ended June 30, 2026. [1]\n- The most recent Skechers results in the evidence are for the second quarter of fiscal 2025 (quarter ended June 30, 2025), not the quarter ended June 30, 2026: net sales of $2.44 billion and earnings from operations of $173.1 million. [1][2][3]\n\n**Not available**\n- Skechers 10-Q for the quarter ended June 30, 2026: Skechers U.S.A., Inc. is not an SEC registrant — it was taken private by 3G Capital — so no 10-Q or other SEC filing exists for the quarter ended June 30, 2026. [1]\n- Skechers net sales for the quarter ended June 30, 2026 (USD millions): No Skechers earnings release, 10-Q or other disclosure for the quarter ended June 30, 2026 appears in the evidence; the only Skechers financials provided are for the second quarter of fiscal 2025. [1][2]\n- Skechers earnings from operations for the quarter ended June 30, 2026 (USD millions): No Skechers earnings release, 10-Q or other disclosure for the quarter ended June 30, 2026 appears in the evidence; the only Skechers operating-earnings figure provided is $173.1 million for the second quarter of fiscal 2025. [1][2]\n\n**Sources**\n[1] Skechers Is Officially a Private Company After $9 Billion Deal With 3G Capital Closes (finance.yahoo.com, undated, secondary) https://finance.yahoo.com/news/skechers-officially-private-company-9-162728419.html\n[2] Skechers Announces Second Quarter 2025 Financial Results | Skechers (about.skechers.com) (about.skechers.com, undated, primary) https://about.skechers.com/press-release/skechers-announces-second-quarter-2025-financial-results\n[3] Skechers Reports Record Q2 Sales of $2.44 Billion, Up 13.1% (www.globaltextiletimes.com, undated, secondary) https://www.globaltextiletimes.com/news/skechers-reports-record-q2-sales-of-2-44-billion-up-13-1\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 25834,
+   "output": 6083
+  },
+  "tavily_credits": 5.0,
+  "latency_s": 40.23,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/6b362a83146fa78662e7f36f561c25e5",
+  "companies": [
+   {
+    "name": "Skechers U.S.A., Inc.",
+    "ticker": null,
+    "cik": null,
+    "resolved": false
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Net sales for the quarter ended June 30, 2026 (USD millions)",
+    "Earnings (income) from operations for the quarter ended June 30, 2026 (USD millions)"
+   ],
+   "answer_periods": [],
+   "documents": [],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Locate any public disclosure of Skechers' Q2 2026 (quarter ended June 30, 2026) results, since the company no longer files with the SEC",
+     "query": "Skechers second quarter 2026 results net sales operating earnings",
+     "topic": "news",
+     "days_back": 120
+    }
+   ],
+   "availability_notes": [
+    "Skechers U.S.A., Inc. is NOT an SEC registrant per the provided calendar, so no 10-Q (or any SEC filing) exists for the quarter ended June 30, 2026 — the requested periodic_report cannot be requested.",
+    "No earnings release is listed for this period in the calendar, so no filing-based source is available for net sales or earnings from operations.",
+    "The company was taken private (3G Capital acquisition, completed 2025), so post-close financials are not in SEC EDGAR; any figures would come from a private-company press release or parent-company reporting, which may not disclose 'earnings from operations' on a US GAAP basis.",
+    "Do not estimate or infer these figures; if no public disclosure exists, the answer must state the data is unavailable.",
+    "SKX Quarter ended June 30, 2026 is not in the company's reporting calendar"
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Skechers 10-Q for the quarter ended June 30, 2026",
+    "kind": "not_sec_filer",
+    "reason": "Skechers U.S.A., Inc. is not an SEC registrant — it was taken private by 3G Capital — so no 10-Q or other SEC filing exists for the quarter ended June 30, 2026.",
+    "evidence_ids": [
+     "E7"
+    ]
+   },
+   {
+    "item": "Skechers net sales for the quarter ended June 30, 2026 (USD millions)",
+    "kind": "not_disclosed",
+    "reason": "No Skechers earnings release, 10-Q or other disclosure for the quarter ended June 30, 2026 appears in the evidence; the only Skechers financials provided are for the second quarter of fiscal 2025.",
+    "evidence_ids": [
+     "E7",
+     "E9"
+    ]
+   },
+   {
+    "item": "Skechers earnings from operations for the quarter ended June 30, 2026 (USD millions)",
+    "kind": "not_disclosed",
+    "reason": "No Skechers earnings release, 10-Q or other disclosure for the quarter ended June 30, 2026 appears in the evidence; the only Skechers operating-earnings figure provided is $173.1 million for the second quarter of fiscal 2025.",
+    "evidence_ids": [
+     "E7",
+     "E9"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Skechers second quarter 2026 results net sales operating earnings",
+     "topic": "news",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "start_date": "2026-06-05"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.globenewswire.com/news-release/2026/08/12/3344099/7982/en/fossil-group-inc-reports-second-quarter-2026-financial-results.html",
+      "https://www.fool.com/earnings/call-transcripts/2026/09/09/caleres-cal-q2-2026-earnings-call-transcript",
+      "https://investors.bigcommerce.com/news-releases/news-release-details/commerce-announces-second-quarter-2026-financial-results"
+     ],
+     "query": "Pull Skechers' latest 10-Q and give me net sales and earnings from operations for its quarter ended June 30, 2026, in USD millions.",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Skechers U.S.A., Inc. Skechers earnings from operations for the quarter ended June 30, 2026 (USD millions)",
+     "topic": "general",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Skechers U.S.A., Inc. Skechers net sales for the quarter ended June 30, 2026 (USD millions)",
+     "topic": "general",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.globaltextiletimes.com/news/skechers-reports-record-q2-sales-of-2-44-billion-up-13-1",
+      "https://finance.yahoo.com/news/skechers-officially-private-company-9-162728419.html",
+      "https://about.skechers.com/press-releases"
+     ],
+     "query": "Pull Skechers' latest 10-Q and give me net sales and earnings from operations for its quarter ended June 30, 2026, in USD millions.",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://about.skechers.com/press-release/skechers-announces-second-quarter-2025-financial-results",
+    "https://finance.yahoo.com/news/skechers-officially-private-company-9-162728419.html",
+    "https://www.globaltextiletimes.com/news/skechers-reports-record-q2-sales-of-2-44-billion-up-13-1"
+   ],
+   "cited_primary": 0,
+   "retrieved": 10,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Must state that no Skechers 10-Q exists for the quarter ended June 30, 2026 because Skechers was taken private (merger closed Sept 12, 2025; Form 15 deregistration filed Sept 23, 2025).",
+     "met": true,
+     "note": "Agent states: 'Skechers U.S.A., Inc. is no longer an SEC registrant: the company announced the completion of its go-private acquisition by 3G Capital, so it does not file a 10-Q for the quarter ended June 30, 2026.'"
+    },
+    {
+     "point": "Must state that SEC-filed net sales and earnings from operations are unavailable for that quarter.",
+     "met": true,
+     "note": "Agent explicitly says 'Not available' for both net sales and earnings from operations for the quarter ended June 30, 2026, and notes no SEC filing exists."
+    },
+    {
+     "point": "May cite the last filed quarter (June 30, 2025: net sales USD 2,440.0M; earnings from operations USD 173.1M) clearly labelled as 2025.",
+     "met": true,
+     "note": "Agent provides the Q2 2025 figures ($2.44B net sales, $173.1M earnings from operations) and clearly labels them as 'second quarter of fiscal 2025 (quarter ended June 30, 2025)'."
+    },
+    {
+     "point": "Fail if any 2026 net sales or operating earnings figure is presented as filed.",
+     "met": true,
+     "note": "Agent presents no 2026 figures; it only provides 2025 figures and states 2026 figures are not available."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly identifies that Skechers was taken private in September 2025 and no longer files SEC reports, so no 10-Q exists for the quarter ended June 30, 2026. It provides the last available quarter (June 30, 2025) with accurate figures and clear labeling, and does not present any 2026 figures as filed. All grading requirements are satisfied."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Skechers U.S.A., Inc. is no longer an SEC registrant due to completion of go-private acquisition by 3G Capital",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/news/skechers-officially-private-company-9-162728419.html",
+     "reason": "The Yahoo Finance article states: 'Skechers USA Inc. is now a private company... announced the completion of the go-private acquisition by 3G Capital.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Skechers does not file a 10-Q for the quarter ended June 30, 2026",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/news/skechers-officially-private-company-9-162728419.html",
+     "reason": "Because Skechers is now a private company after the 3G Capital acquisition, it is no longer an SEC registrant and therefore does not file 10-Qs.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The most recent Skechers results available are for the second quarter of fiscal 2025 (quarter ended June 30, 2025)",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/news/skechers-officially-private-company-9-162728419.html",
+     "reason": "All three cited sources (Yahoo Finance, Skechers press release, Global Textile Times) report results for Q2 fiscal 2025 ended June 30, 2025, and no later filing is referenced.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Net sales for Q2 fiscal 2025 were $2.44 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/skechers-officially-private-company-9-162728419.html",
+     "reason": "Yahoo Finance article: 'net sales in the second quarter of fiscal 2025 of $2.44 billion'. Skechers press release and Global Textile Times also report $2.44 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Earnings from operations for Q2 fiscal 2025 were $173.1 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/skechers-officially-private-company-9-162728419.html",
+     "reason": "Yahoo Finance article shows earnings from operations of 173,082 (thousands) i.e., $173.1 million. Skechers press release and Global Textile Times confirm $173.1 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "No Skechers 10-Q or other SEC filing exists for the quarter ended June 30, 2026",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/news/skechers-officially-private-company-9-162728419.html",
+     "reason": "The go-private acquisition means Skechers is no longer an SEC registrant; the retrieved sources contain no 10-Q or SEC filing for June 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "No Skechers earnings release, 10-Q or other disclosure for the quarter ended June 30, 2026 appears in the evidence",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/news/skechers-officially-private-company-9-162728419.html",
+     "reason": "The retrieved sources (including the Skechers press release page) only show Q2 2025 results; no 2026 quarterly disclosure is present.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The only Skechers financials provided are for the second quarter of fiscal 2025",
+     "numeric": false,
+     "cited_url": "https://about.skechers.com/press-release/skechers-announces-second-quarter-2025-financial-results",
+     "reason": "The Skechers press release page and the other cited sources only contain Q2 fiscal 2025 financials.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The only Skechers operating-earnings figure provided is $173.1 million for the second quarter of fiscal 2025",
+     "numeric": false,
+     "cited_url": "https://about.skechers.com/press-release/skechers-announces-second-quarter-2025-financial-results",
+     "reason": "All cited sources report earnings from operations of $173.1 million for Q2 fiscal 2025; no other operating-earnings figure appears.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 2,
+   "numeric_cited": 2,
+   "cited": 9,
+   "supported": 9,
+   "not_retrieved": 0
+  }
+ }
+}

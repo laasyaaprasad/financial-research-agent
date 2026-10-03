@@ -1,0 +1,151 @@
+{
+ "id": "T10",
+ "category": "Complex retrieval",
+ "difficulty": "hard",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "What is Paychex's current fiscal 2027 outlook (as of today) for PEO and Insurance Solutions revenue growth and for interest on funds held for clients?",
+ "grading": "Key points: (1) PEO and Insurance Solutions revenue growth 7% to 8% (previously 6% to 7%); (2) interest on funds held for clients $200 million to $210 million (previously $195 million to $205 million); (3) identifies the 2026-09-23 release as the latest update. Optional: total revenue growth 5%-6% and adjusted EPS growth 7%-9% unchanged. Fail if the superseded June ranges are presented as current. Snapshot as of 2026-10-03; later releases supersede.",
+ "answer": "As of 2026-10-03 the latest Paychex fiscal 2027 outlook is from the Q1 FY2027 release dated September 23, 2026: PEO and Insurance Solutions revenue growth of 7% to 8% (raised from 6% to 7%) and interest on funds held for clients of $200 million to $210 million (raised from $195 million to $205 million). Unchanged in that update: total revenue growth 5% to 6%, Management Solutions growth 5% to 6%, adjusted operating margin about 44% and adjusted diluted EPS growth 7% to 9%. [T10-E1] The June 24, 2026 release had the lower ranges. [T10-E2]",
+ "output": {
+  "answer": "## Paychex (PAYX) — Current Fiscal 2027 Outlook\n\nAs of the most recent update (Q1 FY2027 results, reported **September 23, 2026**, for the quarter ended August 31, 2026), Paychex's fiscal 2027 guidance is:\n\n**PEO and Insurance Solutions revenue growth:** **7% to 8%**\n- *Raised* from the prior guidance of 6% to 7%, reflecting continued PEO strength (record worksite-employee retention and strong PEO insurance volumes).\n\n**Interest on funds held for clients:** **$200 million to $210 million**\n- *Raised* from the prior guidance of $195 million to $205 million.\n\n**For context, the rest of the FY2027 outlook was maintained:**\n- Total revenue growth: 5% to 6%\n- Management Solutions revenue growth: 5% to 6%\n- Adjusted operating margin: ~44%\n- Adjusted diluted EPS growth: 7% to 9%\n\n**Note:** These figures reflect the guidance as updated with Q1 FY2027 results. Paychex released initial FY2027 guidance with its FY2026 Q4 report in late June 2026 (PEO 6%–7%; interest $195M–$205M), then raised both metrics. Paychex generally updates its outlook quarterly, so the figures could change at the next earnings report.\n\n**Sources:**\n- StockTitan – Paychex Q1 2027 8-K: https://www.stocktitan.net/sec-filings/PAYX/8-k-paychex-inc-reports-material-event-929f53b94863.html\n- Yahoo Finance – \"Paychex Q1 Revenue Rises 6% as PEO and Insurance Outlook Is Raised\": https://finance.yahoo.com/markets/stocks/articles/paychex-q1-rises-6-134038401.html\n- MarketChameleon – FQ1 2027 results: https://marketchameleon.com/articles/b/2026/9/23/payx-fq1-2027-results-42-percent-adjusted-operating-margin-peo-insurance-growth\n- Market Inference – FY2027 outlook summary: https://marketinference.com/analysis/r/2026/09/23/PAYX",
+  "tokens": {
+   "input": 14759,
+   "output": 812
+  },
+  "tavily_credits": 3,
+  "latency_s": 8.94,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/b45d83749486933d4c09308cd2edfa58",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Paychex fiscal 2027 outlook PEO and Insurance Solutions revenue growth interest on funds held for clients",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Paychex fiscal 2027 guidance PEO Insurance Solutions revenue growth",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/paychex-q1-rises-6-134038401.html",
+    "https://marketchameleon.com/articles/b/2026/9/23/payx-fq1-2027-results-42-percent-adjusted-operating-margin-peo-insurance-growth",
+    "https://marketinference.com/analysis/r/2026/09/23/PAYX",
+    "https://www.stocktitan.net/sec-filings/PAYX/8-k-paychex-inc-reports-material-event-929f53b94863.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 19,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "PEO and Insurance Solutions revenue growth 7% to 8% (previously 6% to 7%)",
+     "met": true,
+     "note": "Agent states 'PEO and Insurance Solutions revenue growth: 7% to 8% — Raised from the prior guidance of 6% to 7%'."
+    },
+    {
+     "point": "Interest on funds held for clients $200 million to $210 million (previously $195 million to $205 million)",
+     "met": true,
+     "note": "Agent states 'Interest on funds held for clients: $200 million to $210 million — Raised from the prior guidance of $195 million to $205 million'."
+    },
+    {
+     "point": "Identifies the 2026-09-23 release as the latest update",
+     "met": true,
+     "note": "Agent explicitly notes 'As of the most recent update (Q1 FY2027 results, reported September 23, 2026)' and references multiple September 23 sources."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer correctly provides the current fiscal 2027 outlook as of the September 23, 2026 Q1 release, including the raised PEO and Insurance Solutions revenue growth (7%-8%) and raised interest on funds held for clients ($200M-$210M), and identifies the September 23 release as the latest update. It does not present the superseded June ranges as current."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "PEO and Insurance Solutions revenue growth guidance for FY2027 is 7% to 8%, raised from 6% to 7%",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/PAYX/8-k-paychex-inc-reports-material-event-929f53b94863.html",
+     "reason": "The StockTitan 8-K filing states: 'Paychex raised its fiscal 2027 PEO and Insurance Solutions revenue growth outlook to 7% to 8%, from 6% to 7%.' This is corroborated by MarketChameleon, Market Inference, and Yahoo Finance articles.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Interest on funds held for clients guidance for FY2027 is $200 million to $210 million, raised from $195 million to $205 million",
+     "numeric": true,
+     "cited_url": "https://marketchameleon.com/articles/b/2026/9/23/payx-fq1-2027-results-42-percent-adjusted-operating-margin-peo-insurance-growth",
+     "reason": "MarketChameleon article states: 'interest on funds held for clients was increased to $200 million to $210 million (from $195 million to $205 million).' Market Inference and Yahoo Finance also confirm this raise.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total revenue growth guidance for FY2027 is 5% to 6% (maintained)",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/PAYX/8-k-paychex-inc-reports-material-event-929f53b94863.html",
+     "reason": "StockTitan 8-K states: 'keeps total revenue growth at 5% to 6%.' MarketChameleon, Market Inference, and Yahoo Finance also note the guidance was unchanged.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management Solutions revenue growth guidance for FY2027 is 5% to 6% (maintained)",
+     "numeric": true,
+     "cited_url": "https://marketchameleon.com/articles/b/2026/9/23/payx-fq1-2027-results-42-percent-adjusted-operating-margin-peo-insurance-growth",
+     "reason": "MarketChameleon article states: 'Management Solutions revenue is still forecast to rise 5% to 6%.' Market Inference and Yahoo Finance also confirm this guidance.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Adjusted operating margin guidance for FY2027 is ~44% (maintained)",
+     "numeric": true,
+     "cited_url": "https://marketinference.com/analysis/r/2026/09/23/PAYX",
+     "reason": "Market Inference article states: 'adjusted operating margin at about 44%.' Yahoo Finance article also mentions 'an adjusted operating margin of approximately 44%.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Adjusted diluted EPS growth guidance for FY2027 is 7% to 9% (maintained)",
+     "numeric": true,
+     "cited_url": "https://marketchameleon.com/articles/b/2026/9/23/payx-fq1-2027-results-42-percent-adjusted-operating-margin-peo-insurance-growth",
+     "reason": "MarketChameleon article states: 'maintained its adjusted diluted EPS growth outlook of 7% to 9%.' Market Inference and Yahoo Finance also confirm this guidance.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY2027 results were reported September 23, 2026 for the quarter ended August 31, 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/paychex-q1-revenue-rises-6-134038401.html",
+     "reason": "The cited Yahoo Finance article does not include a publication date in the retrieved text. The StockTitan 8-K mentions the quarter ended August 31, 2026 but not the report date. The Investing.com source (not cited) shows 'Published Sep 23, 2026.' Since the cited URL's retrieved content does not support the report date, this claim is not supported by the cited source.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Initial FY2027 guidance (late June 2026) had PEO 6%–7% and interest $195M–$205M",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer does not cite a specific source for the initial guidance. Retrieved sources (scanx.trade and Yahoo Finance June 2026) confirm the initial guidance, but they are not among the cited URLs. Therefore, cited_url is null and supported is null.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 7,
+   "cited": 7,
+   "supported": 6,
+   "not_retrieved": 0
+  }
+ }
+}

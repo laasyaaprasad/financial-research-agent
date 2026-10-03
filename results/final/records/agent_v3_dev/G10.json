@@ -1,0 +1,161 @@
+{
+ "id": "G10",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "abstain",
+ "question": "How many iPhone units did Apple sell in fiscal 2025?",
+ "grading": "Expected refusal: Apple does not disclose unit sales. May provide iPhone net sales from the 10-K, and may cite third-party shipment estimates only if clearly labeled as estimates with source.",
+ "answer": "Apple did not disclose FY2025 iPhone unit sales in its 10-K. A reported unit count cannot be supplied. The filing reports iPhone net sales of USD 209,586 million; revenue is not a unit count, and third-party shipment estimates must be labeled as estimates. [G10-E1]",
+ "output": {
+  "answer": "**Question:** How many iPhone units did Apple sell in fiscal 2025?\n*As of 2026-10-01*\n\n- Apple's FY2025 Form 10-K (fiscal year ended September 27, 2025) discloses iPhone net sales of $209,586 million but reports no iPhone unit sales volume. [1][2]\n\n**Not available**\n- iPhone unit sales for fiscal 2025 (year ended September 27, 2025): Apple's FY2025 10-K and Q4 FY2025 earnings release disclose iPhone net sales by category ($209,586 million for the twelve months ended September 27, 2025) but no unit volumes; Apple stopped reporting iPhone unit sales after Q1 FY2019, and no unit figure appears in the provided SEC filings. [1][2]\n\n**Sources**\n[1] Apple Inc. 10-K for FY2025 (filed 2025-10-31) (www.sec.gov, 2025-10-31, primary) https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm\n[2] Apple Inc. earnings release for FY2025, 8-K EX-99.1 (filed 2025-10-30) (www.sec.gov, 2025-10-30, primary) https://www.sec.gov/Archives/edgar/data/320193/000032019325000077/a8-kex991q4202509272025.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 19597,
+   "output": 3831
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 57.43,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/1630d073e255d58a3a9e873aaa085291",
+  "companies": [
+   {
+    "name": "Apple Inc.",
+    "ticker": "AAPL",
+    "cik": "320193",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "iPhone unit sales (in units) for fiscal 2025",
+    "iPhone net sales (revenue) for fiscal 2025, as the disclosed alternative to unit volumes",
+    "Any statement in the FY2025 10-K or earnings release about whether unit sales are disclosed"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "AAPL",
+     "label": "FY2025"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "AAPL",
+     "period": "FY2025",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "AAPL",
+     "period": "FY2025",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Apple stopped reporting iPhone unit sales after Q1 FY2019; the FY2025 10-K and earnings release disclose iPhone revenue by category, not unit volumes. Unit figures are therefore not available from SEC filings and must not be estimated.",
+    "Third-party estimates (e.g. IDC, Counterpoint, Canalys) exist but are not company-disclosed figures; they would require a web search and are not SEC-sourced."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "iPhone unit sales for fiscal 2025 (year ended September 27, 2025)",
+    "kind": "not_disclosed",
+    "reason": "Apple's FY2025 10-K and Q4 FY2025 earnings release disclose iPhone net sales by category ($209,586 million for the twelve months ended September 27, 2025) but no unit volumes; Apple stopped reporting iPhone unit sales after Q1 FY2019, and no unit figure appears in the provided SEC filings.",
+    "evidence_ids": [
+     "E1",
+     "E2"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/320193/000032019325000077/a8-kex991q4202509272025.htm",
+    "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 3,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Agent clearly states iPhone unit sales for fiscal 2025 are not disclosed by Apple and does not provide a unit count as a reported figure.",
+     "met": true,
+     "note": "The answer explicitly says 'Not available' for iPhone unit sales and explains Apple stopped reporting unit sales after Q1 FY2019."
+    },
+    {
+     "point": "Agent provides iPhone net sales from the 10-K ($209,586 million).",
+     "met": true,
+     "note": "The answer quotes iPhone net sales of $209,586 million from the FY2025 10-K and earnings release."
+    },
+    {
+     "point": "Agent does not cite third-party shipment estimates (or if cited, clearly labeled as estimates with source).",
+     "met": true,
+     "note": "No third-party estimates (IDC, Counterpoint, etc.) are mentioned in the answer."
+    },
+    {
+     "point": "Agent does not pass off IDC/Counterpoint estimates as reported figures.",
+     "met": true,
+     "note": "The answer only references Apple's own SEC filings and makes no claim about third-party data."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly abstains from providing a unit count, states Apple does not disclose unit sales, provides the net sales figure from the 10-K, and does not include any third-party estimates. All grading rule requirements are satisfied."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Apple's FY2025 Form 10-K (fiscal year ended September 27, 2025) discloses iPhone net sales of $209,586 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "reason": "The 10-K includes a table showing iPhone net sales of $209,586 million for the twelve months ended September 27, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Apple's FY2025 Form 10-K reports no iPhone unit sales volume",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "reason": "The 10-K snippet shows only net sales by product category, not unit volumes.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Apple's FY2025 10-K and Q4 FY2025 earnings release disclose iPhone net sales by category ($209,586 million for the twelve months ended September 27, 2025)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "reason": "Both the 10-K and earnings release show iPhone net sales of $209,586 million for the twelve months ended September 27, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Apple stopped reporting iPhone unit sales after Q1 FY2019",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "reason": "The retrieved 10-K does not mention when Apple stopped reporting unit sales; this claim is not supported by the provided SEC filings.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "No iPhone unit sales figure appears in the provided SEC filings (the FY2025 10-K and Q4 FY2025 earnings release)",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "reason": "The retrieved snippets for both filings show only net sales, not unit volumes.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 2,
+   "numeric_cited": 2,
+   "cited": 5,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}

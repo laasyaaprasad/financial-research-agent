@@ -1,0 +1,155 @@
+{
+ "id": "G05",
+ "category": "Numerical reasoning",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Cisco's fiscal 2026 total revenue growth YoY and its GAAP net margin (net income / revenue)?",
+ "grading": "Growth ±0.2pp; net margin ±0.2pp; inputs must be FY ended 2026-07-25 and FY ended 2025-07-26",
+ "answer": "Cisco FY2026 revenue growth was 11.7750% YoY. GAAP net margin was 20.9507%: USD 13,267 million GAAP net income / USD 63,325 million revenue. FY2025 revenue was USD 56,654 million. [G05-E1]",
+ "output": {
+  "answer": "**Question:** What was Cisco's fiscal 2026 total revenue growth YoY and its GAAP net margin (net income / revenue)?\n*As of 2026-10-01*\n\n- Cisco's total revenue for FY2026 (fiscal year ended July 25, 2026) was $63,325 million, an increase of 12% compared with fiscal 2025, as reported on a GAAP basis. [1][2][3]\n- Calculated from the reported figures, FY2026 total revenue growth over FY2025 was 11.8%. [1][2]\n- Cisco's GAAP net income for FY2026 (fiscal year ended July 25, 2026) was $13,267 million, an increase of 30% year over year. [1][2][3]\n- Cisco reported FY2026 GAAP net income as a percentage of revenue of 21.0%, up 3.0 percentage points from 18.0% in fiscal 2025. [1]\n- Calculated as GAAP net income divided by total revenue, Cisco's FY2026 GAAP net margin was 21.0%. [1][2]\n\n**Sources**\n[1] CISCO SYSTEMS, INC. 10-K for FY2026 (filed 2026-09-02) (www.sec.gov, 2026-09-02, primary) https://www.sec.gov/Archives/edgar/data/858877/000085887726000132/csco-20260725.htm\n[2] CISCO SYSTEMS, INC. XBRL data tagged in 10-K filed 2026-09-02 (www.sec.gov, 2026-09-02, primary) https://www.sec.gov/Archives/edgar/data/858877/000085887726000132/\n[3] CISCO SYSTEMS, INC. earnings release for FY2026, 8-K EX-99.1 (filed 2026-08-12) (www.sec.gov, 2026-08-12, primary) https://www.sec.gov/Archives/edgar/data/858877/000085887726000106/exhibit991pressrelease-q4f.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 28519,
+   "output": 2342
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 20.27,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/e4f017c8d396c2ec84bedafa50afe7b5",
+  "companies": [
+   {
+    "name": "CISCO SYSTEMS, INC.",
+    "ticker": "CSCO",
+    "cik": "858877",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "FY2026 total revenue (GAAP, as reported)",
+    "FY2025 total revenue (prior-year comparative)",
+    "FY2026 total revenue growth YoY (%)",
+    "FY2026 GAAP net income",
+    "FY2026 GAAP net margin (net income / revenue, %)"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "CSCO",
+     "label": "FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "CSCO",
+     "period": "FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "CSCO",
+     "period": "FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "CSCO",
+     "period": "FY2025",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "FY2026 (2025-07-27 to 2026-07-25) is fully reported: 10-K filed 2026-09-02 and Q4 FY2026 earnings release 8-K filed 2026-08-12, so both the full-year revenue and GAAP net income are available.",
+    "Prior-year comparatives for FY2025 are included in the FY2026 10-K income statement; the FY2025 10-K is requested only as a cross-check of the FY2025 revenue and net income figures.",
+    "Net margin is a derived ratio (net income / revenue) computed from reported GAAP figures; no estimate is needed."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/858877/000085887726000106/exhibit991pressrelease-q4f.htm",
+    "https://www.sec.gov/Archives/edgar/data/858877/000085887726000132/",
+    "https://www.sec.gov/Archives/edgar/data/858877/000085887726000132/csco-20260725.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 5,
+   "retrieved_primary": 5
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Fiscal 2026 total revenue growth YoY within ±0.2pp of reference (11.7750%)",
+     "met": true,
+     "note": "Agent reports 11.8% growth; reference is 11.7750%; difference 0.025pp, within tolerance."
+    },
+    {
+     "point": "GAAP net margin (net income / revenue) within ±0.2pp of reference (20.9507%)",
+     "met": true,
+     "note": "Agent reports 21.0% net margin; reference is 20.9507%; difference 0.0493pp, within tolerance."
+    },
+    {
+     "point": "Inputs must be FY ended 2026-07-25 and FY ended 2025-07-26",
+     "met": true,
+     "note": "Agent explicitly states fiscal year ended July 25, 2026 and fiscal 2025 (ended July 26, 2025), matching required periods."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All three requirements are satisfied: revenue growth and net margin are within the specified tolerances, and the correct fiscal year endpoints are used."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Cisco's total revenue for FY2026 (fiscal year ended July 25, 2026) was $63,325 million, an increase of 12% compared with fiscal 2025, as reported on a GAAP basis.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/858877/000085887726000132/csco-20260725.htm",
+     "reason": "10-K FY2026 shows Total revenue 63,325 (in millions) for FY2026 and 56,654 for FY2025, with text stating 'Total revenue was $63.3 billion, an increase of 12% compared with fiscal 2025.' Earnings release also confirms $63.3B revenue, 12% increase. Calculation: (63,325-56,654)/56,654 = 11.78% ≈ 12%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Calculated from the reported figures, FY2026 total revenue growth over FY2025 was 11.8%.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/858877/000085887726000132/csco-20260725.htm",
+     "reason": "Using exact figures from 10-K: FY2026 revenue 63,325 million, FY2025 revenue 56,654 million. Growth = (63,325-56,654)/56,654 = 11.775% ≈ 11.8% (rounded to one decimal).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cisco's GAAP net income for FY2026 (fiscal year ended July 25, 2026) was $13,267 million, an increase of 30% year over year.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/858877/000085887726000132/csco-20260725.htm",
+     "reason": "10-K FY2026 shows NET INCOME $13,267 million for FY2026 and $10,180 million for FY2025. Increase = (13,267-10,180)/10,180 = 30.32% ≈ 30%. Earnings release also states $13.3B vs $10.2B, 30% increase.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cisco reported FY2026 GAAP net income as a percentage of revenue of 21.0%, up 3.0 percentage points from 18.0% in fiscal 2025.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/858877/000085887726000132/csco-20260725.htm",
+     "reason": "10-K FY2026 explicitly states 'Net income as a percentage of revenue | 21.0 | % | 18.0 | % | 3.0 | pts' for FY2026 vs FY2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Calculated as GAAP net income divided by total revenue, Cisco's FY2026 GAAP net margin was 21.0%.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/858877/000085887726000132/csco-20260725.htm",
+     "reason": "Calculation: 13,267 / 63,325 = 0.2095 = 20.95% ≈ 21.0%. Matches reported net income as percentage of revenue of 21.0%.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 5,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}

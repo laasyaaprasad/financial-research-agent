@@ -1,0 +1,143 @@
+{
+ "id": "H05",
+ "category": "Adjustments",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "As of July 15, 2026, what GAAP diluted EPS range and adjusted diluted EPS range was Hormel Foods guiding to for fiscal 2026?",
+ "grading": "Key points (both required): GAAP diluted EPS guidance USD 1.28-1.37 (updated May 28, 2026, previously 1.37-1.46) AND adjusted diluted EPS guidance USD 1.43-1.51 (reaffirmed). Fail if the Aug 27, 2026 ranges (GAAP 1.06-1.12; adjusted 1.45-1.51) are given as in effect on July 15, 2026, or if only one of the two measures is provided.",
+ "answer": "As of July 15, 2026 the guidance in effect was the one issued with Hormel's Q2 fiscal 2026 results on May 28, 2026: GAAP diluted EPS of USD 1.28-1.37 (lowered from USD 1.37-1.46 to include the loss on the sale of the whole-bird turkey business) and adjusted diluted EPS of USD 1.43-1.51 (reaffirmed; +4% to +10%) for fiscal 2026 (ending October 25, 2026) [H05-E1]. The Q3 update on August 27, 2026 (GAAP USD 1.06-1.12; adjusted USD 1.45-1.51) came after the as_of date [H05-E2]. Between May 28 and July 15 Hormel filed only Item 5.02 officer-change 8-Ks, no guidance changes [H05-E3].",
+ "output": {
+  "answer": "**As of July 15, 2026**, Hormel Foods' most recent full-year fiscal 2026 guidance came from its second-quarter fiscal 2026 earnings release (Q2 ended April 26, 2026):\n\n| Metric | Fiscal 2026 Guidance |\n|---|---|\n| Diluted EPS (GAAP) | **$1.28 – $1.37** |\n| Adjusted diluted EPS (non-GAAP) | **$1.43 – $1.51** (growth of 4%–10%) |\n\nNotes:\n- The adjusted range excludes items impacting comparability: T&M initiative costs ($0.06–$0.07), corporate restructuring charges ($0.01), the Consulting Agreement ($0.01), a gain on the Justin's® divestiture (–$0.03), and a loss on the whole-bird turkey business sale ($0.09).\n- The GAAP range was revised downward from the prior $1.37–$1.46 to reflect the loss on the whole-bird turkey divestiture, while the adjusted range was reaffirmed.\n- This guidance remained in effect until Q3 (quarter ended July 26, 2026) results were reported in early September 2026, when Hormel raised/narrowed adjusted EPS to $1.45–$1.51 and lowered GAAP EPS to $1.06–$1.12.\n\nSources:\n- https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-reports-strong-second-quarter-fiscal-2026-results\n- https://investor.hormelfoods.com/news-and-events/news/news-details/2026/HORMEL-FOODS-REPORTS-STRONG-SECOND-QUARTER-FISCAL-2026-RESULTS/default.aspx\n- https://www.stocktitan.net/sec-filings/HRL/8-k-hormel-foods-corp-de-reports-material-event-82426d96c2f5.html (subsequent Q3 update)",
+  "tokens": {
+   "input": 10893,
+   "output": 885
+  },
+  "tavily_credits": 2,
+  "latency_s": 22.36,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/aac6bafc22c62fd98b9f268e58eaca3a",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Hormel Foods fiscal 2026 guidance diluted EPS adjusted diluted EPS range",
+     "time_range": "year"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Hormel Foods fiscal 2026 outlook GAAP diluted EPS adjusted diluted EPS"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.hormelfoods.com/news-and-events/news/news-details/2026/HORMEL-FOODS-REPORTS-STRONG-SECOND-QUARTER-FISCAL-2026-RESULTS/default.aspx",
+    "https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-reports-strong-second-quarter-fiscal-2026-results",
+    "https://www.stocktitan.net/sec-filings/HRL/8-k-hormel-foods-corp-de-reports-material-event-82426d96c2f5.html"
+   ],
+   "cited_primary": 1,
+   "retrieved": 16,
+   "retrieved_primary": 4
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "GAAP diluted EPS guidance USD 1.28-1.37 (updated May 28, 2026, previously 1.37-1.46)",
+     "met": true,
+     "note": "Agent states GAAP diluted EPS $1.28–$1.37, notes it was revised downward from prior $1.37–$1.46 to reflect the loss on the whole-bird turkey divestiture, matching the required guidance and context."
+    },
+    {
+     "point": "Adjusted diluted EPS guidance USD 1.43-1.51 (reaffirmed)",
+     "met": true,
+     "note": "Agent states adjusted diluted EPS $1.43–$1.51 (growth of 4%–10%) and notes the adjusted range was reaffirmed, matching the required guidance."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent provides both required EPS ranges exactly as they stood on July 15, 2026: GAAP $1.28–$1.37 (updated May 28) and adjusted $1.43–$1.51 (reaffirmed). The answer correctly avoids the later August 27 update and the pre-May GAAP range, and includes appropriate context about the whole-bird turkey sale loss and the reaffirmation of adjusted EPS."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "As of July 15, 2026, Hormel Foods' most recent full-year fiscal 2026 guidance came from its second-quarter fiscal 2026 earnings release (Q2 ended April 26, 2026)",
+     "numeric": false,
+     "cited_url": "https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-reports-strong-second-quarter-fiscal-2026-results",
+     "reason": "The answer cites the Hormel Foods Q2 press release and investor site as sources. The retrieved sources confirm the Q2 earnings release exists and contains the guidance. However, the specific date 'July 15, 2026' is not explicitly mentioned in any retrieved source. The Q2 quarter end date of April 26, 2026 is not explicitly stated in the retrieved Q2 sources (though Q1 source shows Jan 25, 2026 end). The claim about the guidance coming from Q2 release is supported, but the 'As of July 15, 2026' reference date and exact Q2 end date lack direct evidence in retrieved sources.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Diluted EPS (GAAP) guidance: $1.28 – $1.37",
+     "numeric": true,
+     "cited_url": "https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-reports-strong-second-quarter-fiscal-2026-results",
+     "reason": "Multiple retrieved sources confirm this range: prnewswire.com states 'Diluted earnings per share (GAAP) in the range of $1.28 to $1.37'; investor.hormelfoods.com Q2 shows table with 'Diluted Earnings per Share | $1.28 - $1.37'; hormelfoods.com press release shows same table. The guidance is explicitly stated in the cited sources.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Adjusted diluted EPS (non-GAAP) guidance: $1.43 – $1.51 (growth of 4%–10%)",
+     "numeric": true,
+     "cited_url": "https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-reports-strong-second-quarter-fiscal-2026-results",
+     "reason": "Multiple sources confirm: prnewswire.com states 'Reaffirms adjusted diluted earnings per share1 to be in the range of $1.43 to $1.51, reflecting growth of 4% to 10%'; investor.hormelfoods.com Q2 shows 'Adj. Diluted Earnings per Share1 | $1.43 - $1.51'; hormelfoods.com press release shows same. The growth percentage is explicitly mentioned in prnewswire source.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The adjusted range excludes items impacting comparability: T&M initiative costs ($0.06–$0.07), corporate restructuring charges ($0.01), the Consulting Agreement ($0.01), a gain on the Justin's® divestiture (–$0.03), and a loss on the whole-bird turkey business sale ($0.09)",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/hormel-foods-reports-strong-second-quarter-fiscal-2026-results-302783787.html",
+     "reason": "The prnewswire.com source explicitly lists all these adjustments: 'Adjustments for the T&M initiative of $0.06 to $0.07', 'Adjustments for corporate restructuring plan-related charges of $0.01', 'Adjustment for the Consulting Agreement of $0.01', 'Adjustment for a gain related to the sale of the Justin's® branded business of $(0.03)', 'Adjustment for a loss related to the sale of the whole-bird turkey business of $0.09'. All values match exactly.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The GAAP range was revised downward from the prior $1.37–$1.46 to reflect the loss on the whole-bird turkey divestiture",
+     "numeric": true,
+     "cited_url": "https://investor.hormelfoods.com/news-and-events/news/news-details/2026/HORMEL-FOODS-REPORTS-STRONG-SECOND-QUARTER-FISCAL-2026-RESULTS/default.aspx",
+     "reason": "The investor.hormelfoods.com Q2 source shows a comparison table: 'Diluted Earnings per Share | $1.28 - $1.37 | $1.37 - $1.46' with columns 'Updated' and 'Previous'. The hormelfoods.com press release shows the same table. The prnewswire source mentions the loss on whole-bird turkey business. The downward revision and the reason (whole-bird turkey divestiture loss) are supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The adjusted range was reaffirmed",
+     "numeric": false,
+     "cited_url": "https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-reports-strong-second-quarter-fiscal-2026-results",
+     "reason": "Multiple sources state 'Reaffirms adjusted diluted earnings per share1 to be in the range of $1.43 to $1.51' (prnewswire, hormelfoods.com). The comparison table shows 'Adj. Diluted Earnings per Share1 | $1.43 - $1.51 | $1.43 - $1.51' (same for updated and previous). This is directly supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "This guidance remained in effect until Q3 (quarter ended July 26, 2026) results were reported in early September 2026",
+     "numeric": false,
+     "cited_url": "https://www.stocktitan.net/sec-filings/HRL/8-k-hormel-foods-corp-de-reports-material-event-82426d96c2f5.html",
+     "reason": "The stocktitan.net source (cited for Q3 update) shows Q3 guidance updates but does not explicitly state the quarter end date (July 26, 2026) or the reporting date (early September 2026). Other retrieved sources (webwire.com, finance.yahoo.com, earningswhispers.com) confirm Q3 results and guidance updates but lack specific dates. The claim about guidance remaining in effect until Q3 is plausible but the specific dates are not verified in retrieved sources.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "When Hormel raised/narrowed adjusted EPS to $1.45–$1.51 and lowered GAAP EPS to $1.06–$1.12",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/HRL/8-k-hormel-foods-corp-de-reports-material-event-82426d96c2f5.html",
+     "reason": "The stocktitan.net source explicitly states: 'GAAP EPS of $1.06–$1.12, adjusted diluted EPS of $1.45–$1.51'. The finance.yahoo.com source confirms: 'Updates diluted earnings per share guidance to be in the range of $1.06 to $1.12. Raises adjusted diluted earnings per share1 guidance to be in the range of'. The earningswhispers.com source also confirms GAAP $1.06-$1.12. The Q3 guidance update is well-supported.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 8,
+   "supported": 6,
+   "not_retrieved": 0
+  }
+ }
+}

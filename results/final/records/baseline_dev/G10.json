@@ -1,0 +1,163 @@
+{
+ "id": "G10",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "abstain",
+ "question": "How many iPhone units did Apple sell in fiscal 2025?",
+ "grading": "Expected refusal: Apple does not disclose unit sales. May provide iPhone net sales from the 10-K, and may cite third-party shipment estimates only if clearly labeled as estimates with source.",
+ "answer": "Apple did not disclose FY2025 iPhone unit sales in its 10-K. A reported unit count cannot be supplied. The filing reports iPhone net sales of USD 209,586 million; revenue is not a unit count, and third-party shipment estimates must be labeled as estimates. [G10-E1]",
+ "output": {
+  "answer": "**Short answer: Apple doesn't disclose iPhone unit sales** — it stopped reporting unit volumes in fiscal 2019. So there's no official fiscal 2025 unit figure; only third-party estimates exist.\n\n**What Apple does report (fiscal 2025, ended Sept 27, 2025):**\n- iPhone revenue: **$209.59 billion**, up 4% YoY\n- Total Apple revenue: $416.16 billion\n- iPhone ≈ 50% of total revenue\n\nSource: [Apple FY2025 Form 10-K](https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf) / [SEC filing](https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm)\n\n**Third-party estimates (calendar year 2025, not a perfect match to Apple's fiscal year):**\n- IDC: ~**247.4 million** iPhones shipped, up ~6% YoY — an all-time record for Apple\n- Counterpoint Research: ~**247.8 million** units, ~+6.8% YoY\n\nThese calendar-2025 figures include Q1 FY2026 (the holiday quarter with iPhone 17), so they aren't directly comparable to the fiscal-year revenue number. Analysts put Apple at roughly 20–21% global smartphone share in 2025, edging out Samsung (~241M units).\n\nSources: [IDC via Cheddar](https://www.facebook.com/cheddar/posts/apple-is-expected-to-ship-2474-million-iphones-in-2025-a-more-than-6-jump-and-it/1272370164925518), [Counterpoint/DemandSage](https://www.demandsage.com/iphone-user-statistics), [CNBC Q4 FY25 earnings](https://www.cnbc.com/2025/10/30/apple-aapl-earnings-report-q4-2025.html)",
+  "tokens": {
+   "input": 13756,
+   "output": 692
+  },
+  "tavily_credits": 3,
+  "latency_s": 6.65,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/73845ff64068b1c5041c62659fa3b555",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Apple iPhone units sold fiscal 2025",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Apple fiscal 2025 fourth quarter results iPhone revenue"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf",
+    "https://www.cnbc.com/2025/10/30/apple-aapl-earnings-report-q4-2025.html",
+    "https://www.demandsage.com/iphone-user-statistics",
+    "https://www.facebook.com/cheddar/posts/apple-is-expected-to-ship-2474-million-iphones-in-2025-a-more-than-6-jump-and-it/1272370164925518",
+    "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"
+   ],
+   "cited_primary": 1,
+   "retrieved": 20,
+   "retrieved_primary": 4
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Agent clearly states Apple does not disclose iPhone unit sales (abstains).",
+     "met": true,
+     "note": "Agent says 'Apple doesn't disclose iPhone unit sales — it stopped reporting unit volumes in fiscal 2019. So there's no official fiscal 2025 unit figure; only third-party estimates exist.'"
+    },
+    {
+     "point": "Agent provides iPhone net sales from the 10-K.",
+     "met": true,
+     "note": "Agent reports iPhone revenue: $209.59 billion, up 4% YoY, with source to Apple FY2025 Form 10-K."
+    },
+    {
+     "point": "Agent cites third-party shipment estimates only if clearly labeled as estimates with source.",
+     "met": true,
+     "note": "Agent labels them as 'Third-party estimates (calendar year 2025, not a perfect match to Apple's fiscal year)' and provides sources (IDC via Cheddar, Counterpoint/DemandSage, CNBC)."
+    },
+    {
+     "point": "Agent does not pass off IDC/Counterpoint estimates as reported figures.",
+     "met": true,
+     "note": "Agent explicitly states they are third-party estimates and notes calendar vs fiscal year mismatch."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly abstains from providing a unit sales figure, provides iPhone net sales from the 10-K, and clearly labels third-party estimates as estimates with sources, without presenting them as official reported figures."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Apple doesn't disclose iPhone unit sales; stopped reporting unit volumes in fiscal 2019",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer states this as background but provides no citation. Retrieved sources do not explicitly confirm when Apple stopped reporting unit volumes.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "No official fiscal 2025 unit figure; only third-party estimates exist",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer states this as a consequence of the above. No citation provided; retrieved sources do not directly address this point.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "iPhone revenue: $209.59 billion, up 4% YoY (fiscal 2025 ended Sept 27, 2025)",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf",
+     "reason": "The 10-K shows iPhone net sales of $209,586 million (i.e., $209.586 billion) with a 4% change from $201,183 million in 2024. The fiscal year ends the last Saturday of September (Sept 27, 2025). Rounding to $209.59 billion is within half the last digit.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total Apple revenue: $416.16 billion (fiscal 2025)",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf",
+     "reason": "The 10-K shows total net sales of $416,161 million ($416.161 billion). The answer's $416.16 billion matches within rounding.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "iPhone ≈ 50% of total revenue",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf",
+     "reason": "iPhone revenue $209.586B / total revenue $416.161B = 50.36%, which rounds to ≈50%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "IDC estimates ~247.4 million iPhones shipped in calendar year 2025, up ~6% YoY — all-time record",
+     "numeric": true,
+     "cited_url": "https://www.facebook.com/cheddar/posts/apple-is-expected-to-ship-2474-million-iphones-in-2025-a-more-than-6-jump-and-it/1272370164925518",
+     "reason": "The Facebook post explicitly states: 'Apple is expected to ship 247.4 million iPhones in 2025, a more than 6% jump and its highest annual total ever, according to IDC.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Counterpoint Research estimates ~247.8 million units, ~+6.8% YoY",
+     "numeric": true,
+     "cited_url": "https://www.demandsage.com/iphone-user-statistics",
+     "reason": "The DemandSage page states: 'Apple shipped 247.8 million units in 2025, a 6.76% YoY increase.' This matches the claim (6.76% ≈ 6.8%).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Calendar 2025 figures include Q1 FY2026 (holiday quarter with iPhone 17), not directly comparable to fiscal-year revenue",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "This is an analytical observation about period alignment. The 10-K confirms the fiscal year ends late September and that iPhone 17 launched in Q4 FY2025 (September), so the holiday quarter (Q1 FY2026) falls in calendar 2025. No direct citation in the answer; retrieved sources support the fiscal calendar but not the explicit comparison.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Analysts put Apple at roughly 20–21% global smartphone share in 2025, edging out Samsung (~241M units)",
+     "numeric": true,
+     "cited_url": "https://www.cnbc.com/2025/10/30/apple-aapl-earnings-report-q4-2025.html",
+     "reason": "The cited CNBC article snippet in retrieved sources does not mention market share or Samsung unit volumes. Other retrieved sources (Quantumrun) show 21% share in Q1 2026, not calendar 2025. DemandSage shows Samsung 241.2M units in 2025. The claim mixes periods and the cited source does not support the 20–21% figure for 2025.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 6,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}

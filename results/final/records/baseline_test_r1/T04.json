@@ -1,0 +1,168 @@
+{
+ "id": "T04",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Netflix's GAAP operating income in the second quarter of 2026 (quarter ended June 30, 2026)? Answer in USD millions.",
+ "grading": "±0.5%, USD millions (4,192.6 in the 10-Q; 4,193 in the letter; accept $4.19B). Fail if the Q3 forecast, revenue or net income is given.",
+ "answer": "Netflix reported GAAP operating income of USD 4,192.6 million in Q2 2026 (USD 4,193 million as rounded in the shareholder letter), up 11% from USD 3,774.7 million in Q2 2025, on revenue of USD 12,559.9 million (33.4% operating margin). [T04-E1, T04-E2]",
+ "output": {
+  "answer": "**Netflix's GAAP operating income for Q2 2026 (quarter ended June 30, 2026) was approximately $4.2 billion (~$4,200 million), with an operating margin of 33.4%.**\n\nDetails from Netflix's Q2 2026 shareholder letter (reported July 16, 2026):\n- Operating income: **$4.2B, up 11% year over year** (vs. $3,775M in Q2'25)\n- Operating margin: **33.4%**, down from 34.1% in Q2'25\n- Revenue: $12.56B (+13% YoY)\n- Netflix noted Q2 operating income and margin were \"slightly ahead of forecast due to the timing of expenses\" (its prior guidance had been $4,105M at 32.6%).\n\nNote: The shareholder letter reports the figure rounded to \"$4.2B\"; the exact dollar figure (roughly $4,200M) appears in the full financial statements. Netflix reports these as GAAP figures.\n\nSources:\n- [Netflix Q2 2026 Shareholder Letter (PDF)](https://s22.q4cdn.com/959853165/files/doc_financials/2026/q2/FINAL-Q2-26-Shareholder-Letter.pdf)\n- [CNBC — Netflix (NFLX) earnings Q2 2026](https://www.cnbc.com/2026/07/16/netflix-nflx-earnings-q2-2026.html)\n- [Netflix Q1 2026 Shareholder Letter (forecast table)](https://s22.q4cdn.com/959853165/files/doc_financials/2026/q1/FINAL-Q1-26-Shareholder-Letter.pdf)",
+  "tokens": {
+   "input": 24261,
+   "output": 871
+  },
+  "tavily_credits": 3,
+  "latency_s": 15.68,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/aaff7dd23a6546221ae29f235d117f4f",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Netflix second quarter 2026 operating income GAAP",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Netflix Q2 2026 earnings results quarterly report"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Netflix Q2 2026 operating income $4.1 billion 33% margin shareholder letter",
+     "include_domains": [
+      "ir.netflix.net",
+      "s22.q4cdn.com",
+      "cnbc.com",
+      "deadline.com"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://s22.q4cdn.com/959853165/files/doc_financials/2026/q1/FINAL-Q1-26-Shareholder-Letter.pdf",
+    "https://s22.q4cdn.com/959853165/files/doc_financials/2026/q2/FINAL-Q2-26-Shareholder-Letter.pdf",
+    "https://www.cnbc.com/2026/07/16/netflix-nflx-earnings-q2-2026.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 26,
+   "retrieved_primary": 6
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer provides Netflix's GAAP operating income for Q2 2026 in USD millions",
+     "met": true,
+     "note": "Agent states 'approximately $4.2 billion (~$4,200 million)' which is a figure in USD millions."
+    },
+    {
+     "point": "Value is within ±0.5% of the verified reference (4,192.6 million)",
+     "met": true,
+     "note": "Agent's ~4,200 million is within 0.176% of 4,192.6 million, well inside the ±0.5% tolerance."
+    },
+    {
+     "point": "Answer does not give Q3 forecast, revenue, or net income instead of Q2 operating income",
+     "met": true,
+     "note": "Agent provides Q2 operating income as the primary figure; additional context (margin, revenue) is supplementary, not a substitution."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: the agent reports the correct metric (Q2 2026 GAAP operating income), in the correct units (USD millions), with a value within the allowed tolerance, and does not confuse it with revenue, net income, or a forecast."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Netflix's GAAP operating income for Q2 2026 (quarter ended June 30, 2026) was approximately $4.2 billion (~$4,200 million)",
+     "numeric": true,
+     "cited_url": "https://s22.q4cdn.com/959853165/files/doc_financials/2026/q2/FINAL-Q2-26-Shareholder-Letter.pdf",
+     "reason": "The Q2 2026 shareholder letter states: 'Operating income in Q2 was $4.2B, up 11% year over year'. This matches the claimed figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Operating margin for Q2 2026 was 33.4%",
+     "numeric": true,
+     "cited_url": "https://s22.q4cdn.com/959853165/files/doc_financials/2026/q2/FINAL-Q2-26-Shareholder-Letter.pdf",
+     "reason": "The same shareholder letter states: 'operating margin was 33.4% versus 34.1% in Q2'25'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Operating income increased 11% year over year, from $3,775 million in Q2 2025",
+     "numeric": true,
+     "cited_url": "https://s22.q4cdn.com/959853165/files/doc_financials/2026/q2/FINAL-Q2-26-Shareholder-Letter.pdf",
+     "reason": "The shareholder letter says operating income was up 11% YoY. The Q1 2026 shareholder letter (forecast table) shows Q2 2025 operating income as $3,775M, confirming the base.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Operating margin decreased from 34.1% in Q2 2025 to 33.4% in Q2 2026",
+     "numeric": true,
+     "cited_url": "https://s22.q4cdn.com/959853165/files/doc_financials/2026/q2/FINAL-Q2-26-Shareholder-Letter.pdf",
+     "reason": "The shareholder letter explicitly states: 'operating margin was 33.4% versus 34.1% in Q2'25'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue for Q2 2026 was $12.56 billion, up 13% year over year",
+     "numeric": true,
+     "cited_url": "https://www.cnbc.com/2026/07/16/netflix-nflx-earnings-q2-2026.html",
+     "reason": "The CNBC article reports: 'Netflix reported $12.56 billion in revenue, up 13% year over year'. The shareholder letter rounds this to $12.6B but confirms 13% YoY growth.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Netflix noted Q2 operating income and margin were 'slightly ahead of forecast due to the timing of expenses'",
+     "numeric": false,
+     "cited_url": "https://s22.q4cdn.com/959853165/files/doc_financials/2026/q2/FINAL-Q2-26-Shareholder-Letter.pdf",
+     "reason": "The shareholder letter includes the exact phrase: 'Q2 operating income and margin were slightly ahead of forecast due to the timing of expenses.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Prior guidance for Q2 2026 was $4,105 million operating income at a 32.6% operating margin",
+     "numeric": true,
+     "cited_url": "https://s22.q4cdn.com/959853165/files/doc_financials/2026/q1/FINAL-Q1-26-Shareholder-Letter.pdf",
+     "reason": "The Q1 2026 shareholder letter's forecast table shows Q2 2026 forecast operating income of $4,105M and revenue of $12,574M, implying a 32.6% margin (4,105/12,574 ≈ 32.6%).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The shareholder letter reports operating income rounded to '$4.2B'; the exact dollar figure (~$4,200M) appears in the full financial statements",
+     "numeric": true,
+     "cited_url": "https://s22.q4cdn.com/959853165/files/doc_financials/2026/q2/FINAL-Q2-26-Shareholder-Letter.pdf",
+     "reason": "The shareholder letter indeed reports '$4.2B'. The full financial statements (not retrieved) would contain the exact figure; the claim about rounding is supported by the letter.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Netflix reports these figures as GAAP results",
+     "numeric": false,
+     "cited_url": "https://s22.q4cdn.com/959853165/files/doc_financials/2026/q2/FINAL-Q2-26-Shareholder-Letter.pdf",
+     "reason": "The shareholder letter is Netflix's primary GAAP financial communication. While the retrieved text does not explicitly label the figures 'GAAP', the context (shareholder letter with GAAP EPS, net income) supports that these are GAAP operating income and margin.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 7,
+   "numeric_cited": 7,
+   "cited": 9,
+   "supported": 9,
+   "not_retrieved": 0
+  }
+ }
+}

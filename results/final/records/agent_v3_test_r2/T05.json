@@ -1,0 +1,135 @@
+{
+ "id": "T05",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What were Uber's Gross Bookings in the second quarter of 2026 (three months ended June 30, 2026)? Answer in USD millions.",
+ "grading": "±0.5%, USD millions (accept $58.0B). Fail if revenue, outlook or growth percentage is given as the level.",
+ "answer": "Uber's Gross Bookings were USD 58,022 million in Q2 2026, up 24% (22% in constant currency) from USD 46,756 million in Q2 2025. [T05-E1, T05-E2]",
+ "output": {
+  "answer": "**Question:** What were Uber's Gross Bookings in the second quarter of 2026 (three months ended June 30, 2026)? Answer in USD millions.\n*As of 2026-10-03*\n\n| | Gross Bookings (USD millions) |\n|---|---|\n| Q2 FY2026 (three months ended June 30, 2026) | 58,022 [1][2] |\n\n- Uber's Gross Bookings were $58,022 million in Q2 FY2026 (three months ended June 30, 2026), as reported in the earnings release filed August 5, 2026. [1][2]\n- Gross Bookings grew 24% year-over-year on a reported basis and 22% on a constant currency basis in Q2 FY2026 (three months ended June 30, 2026). [1]\n- Gross Bookings is a company-defined operating metric, not a GAAP financial-statement line item, defined as the total dollar value, including any applicable taxes, tolls, and fees, of Mobility rides, Delivery orders and Freight revenue. [1]\n\n**Sources**\n[1] Uber Technologies, Inc earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-08-05) (www.sec.gov, 2026-08-05, primary) https://www.sec.gov/Archives/edgar/data/1543151/000154315126000027/uberq226earningspressrelea.htm\n[2] Uber Technologies, Inc 10-Q for Q2 FY2026 (filed 2026-08-05) (www.sec.gov, 2026-08-05, primary) https://www.sec.gov/Archives/edgar/data/1543151/000154315126000032/uber-20260630.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 20029,
+   "output": 1663
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 27.03,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/2960240549e52e51f19915c9ecebc68e",
+  "companies": [
+   {
+    "name": "Uber Technologies, Inc",
+    "ticker": "UBER",
+    "cik": "1543151",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Uber Gross Bookings for the three months ended June 30, 2026 (Q2 FY2026), in USD millions",
+    "Prior-year comparative Gross Bookings for the three months ended June 30, 2025 (Q2 FY2025), in USD millions",
+    "Any segment/line-of-business breakdown of Gross Bookings (Mobility, Delivery, Freight) for Q2 FY2026"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "UBER",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "UBER",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "UBER",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "UBER",
+     "period": "Q2 FY2025",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q2 FY2026 (2026-04-01 to 2026-06-30) is reported: 10-Q filed 2026-08-05 and earnings release 8-K filed 2026-08-05, so the figure is available.",
+    "Gross Bookings is a company-defined operating metric, not a GAAP financial-statement line item; it appears in the earnings release tables and MD&A rather than in the audited/reviewed financial statements, so the earnings release is the primary source."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000027/uberq226earningspressrelea.htm",
+    "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000032/uber-20260630.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 4,
+   "retrieved_primary": 4
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer in USD millions (correct unit)",
+     "met": true,
+     "note": "Agent's answer states '$58,022 million' and table shows 'Gross Bookings (USD millions)' with value 58,022."
+    },
+    {
+     "point": "Value within ±0.5% of reference 58,022 million (i.e., 57,731.89 to 58,312.11 million)",
+     "met": true,
+     "note": "Agent's value 58,022 million exactly matches reference; well within tolerance."
+    },
+    {
+     "point": "Answer is Gross Bookings level, not revenue, outlook, or growth percentage",
+     "met": true,
+     "note": "Agent explicitly provides Gross Bookings figure ($58,022 million) and separately mentions growth percentages, but the level given is Gross Bookings."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: the agent provides the correct Gross Bookings figure in USD millions, within the allowed tolerance, and does not substitute revenue, outlook, or growth percentage for the level."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Uber's Gross Bookings were $58,022 million in Q2 FY2026 (three months ended June 30, 2026), as reported in the earnings release filed August 5, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000027/uberq226earningspressrelea.htm",
+     "reason": "The earnings release (8-K EX-99.1) filed 2026-08-05 contains a table showing Gross Bookings for Q2 2026 as $58,022 million (in millions). The 10-Q filed the same day also shows the same figure. Both sources confirm the amount, period, and units.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Gross Bookings grew 24% year-over-year on a reported basis and 22% on a constant currency basis in Q2 FY2026 (three months ended June 30, 2026).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000027/uberq226earningspressrelea.htm",
+     "reason": "The earnings release table shows Gross Bookings for Q2 2025 as $46,756 million and Q2 2026 as $58,022 million, with a reported YoY change of 24% and constant currency change of 22%. The accompanying text states: 'Gross Bookings grew 24% YoY to $58.0 billion, and 22% on a constant currency basis.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Gross Bookings is a company-defined operating metric, not a GAAP financial-statement line item, defined as the total dollar value, including any applicable taxes, tolls, and fees, of Mobility rides, Delivery orders and Freight revenue.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000027/uberq226earningspressrelea.htm",
+     "reason": "The earnings release includes a definition: 'Gross Bookings. We define Gross Bookings as the total dollar value, including any applicable taxes, tolls, and fees, of: Mobility rides, Delivery orders (in each case without any adjustment for consumer discounts and refunds, Driver and Merchant earnings, and Driver incentives) and Freight revenue.' The metric is presented as a non-GAAP operating measure in the release, supporting the claim that it is company-defined and not a GAAP line item.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 2,
+   "numeric_cited": 2,
+   "cited": 3,
+   "supported": 3,
+   "not_retrieved": 0
+  }
+ }
+}

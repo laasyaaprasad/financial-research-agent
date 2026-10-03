@@ -1,0 +1,139 @@
+{
+ "id": "G04",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Oracle's total remaining performance obligations at the end of Q1 FY2027, and what percentage does Oracle expect to recognize as revenue over the next 12 months?",
+ "grading": "RPO ±0.5% in USD billions; next-12-month % exact as disclosed; period must be 2026-08-31",
+ "answer": "Oracle had USD 664 billion of RPO at August 31, 2026 and expected to recognize approximately 13% over the next twelve months. [G04-E1]",
+ "output": {
+  "answer": "**Question:** What was Oracle's total remaining performance obligations at the end of Q1 FY2027, and what percentage does Oracle expect to recognize as revenue over the next 12 months?\n*As of 2026-10-01*\n\n| | Total remaining performance obligations (USD billions) | Share of RPO expected to be recognized as revenue over the next 12 months (%) |\n|---|---|---|\n| Oracle — Q1 FY2027 (quarter ended August 31, 2026) | $664 billion [1][2] | approximately 13% [1] |\n\n- Oracle's total remaining performance obligations (RPO) were $664 billion as of August 31, 2026, the end of Q1 FY2027 (quarter ended August 31, 2026), as reported in the company's 10-Q. [1][2]\n- Oracle expects to recognize approximately 13% of its RPO as revenues over the next twelve months, per the remaining performance obligations note in the Q1 FY2027 10-Q. [1]\n- Oracle's Q1 FY2027 earnings release (8-K EX-99.1, filed September 10, 2026) reported RPO up $209 billion year-over-year to $664 billion. [3]\n- The 10-Q also reported RPO of $664 billion as of August 31, 2026 versus $455 billion as of August 31, 2025, with the increase primarily attributable to certain significant cloud contracts entered into during the period. [1]\n\n**Sources**\n[1] ORACLE CORP 10-Q for Q1 FY2027 (filed 2026-09-11) (www.sec.gov, 2026-09-11, primary) https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm\n[2] ORACLE CORP XBRL data tagged in 10-Q filed 2026-09-11 (www.sec.gov, 2026-09-11, primary) https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/\n[3] ORACLE CORP earnings release for Q1 FY2027, 8-K EX-99.1 (filed 2026-09-10) (www.sec.gov, 2026-09-10, primary) https://www.sec.gov/Archives/edgar/data/1341439/000119312526387905/orcl-ex99_1.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 18008,
+   "output": 1810
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 15.75,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/fe6e652900617e963ecda9d62a10299c",
+  "companies": [
+   {
+    "name": "ORACLE CORP",
+    "ticker": "ORCL",
+    "cik": "1341439",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Total remaining performance obligations (RPO) at the end of Q1 FY2027 (as of 2026-08-31)",
+    "Percentage of total RPO that Oracle expects to recognize as revenue over the next 12 months",
+    "Context: prior-period RPO balance (Q4 FY2026 / year-ago Q1 FY2026) for comparison"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "ORCL",
+     "label": "Q1 FY2027"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "ORCL",
+     "period": "Q1 FY2027",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "ORCL",
+     "period": "Q1 FY2027",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q1 FY2027 (2026-06-01 to 2026-08-31) is reported: 10-Q filed 2026-09-11 and earnings release 8-K filed 2026-09-10, so both the RPO balance and the expected recognition percentage should be available.",
+    "The percentage of RPO expected to be recognized as revenue within the next 12 months is typically disclosed in the remaining performance obligations note of the 10-Q and/or the earnings release; if Oracle only gives the split qualitatively, the exact percentage may not be disclosed."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1341439/000119312526387905/orcl-ex99_1.htm",
+    "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/",
+    "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 3,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "RPO ±0.5% in USD billions",
+     "met": true,
+     "note": "Agent reports $664 billion, reference is 664 billion, exact match within tolerance."
+    },
+    {
+     "point": "next-12-month % exact as disclosed",
+     "met": true,
+     "note": "Agent reports approximately 13%, reference says approximately 13%, exact match."
+    },
+    {
+     "point": "period must be 2026-08-31",
+     "met": true,
+     "note": "Agent explicitly states August 31, 2026 as the end of Q1 FY2027."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All three grading requirements are satisfied: RPO value matches exactly, next-12-month percentage matches exactly, and the period is correctly identified as August 31, 2026."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Oracle's total remaining performance obligations (RPO) were $664 billion as of August 31, 2026, the end of Q1 FY2027 (quarter ended August 31, 2026), as reported in the company's 10-Q.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm",
+     "reason": "The 10-Q for Q1 FY2027 states: 'Remaining performance obligations were $664 billion as of August 31, 2026' and the XBRL data shows RevenueRemainingPerformanceObligation: 664,000,000,000 USD as of 2026-08-31.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Oracle expects to recognize approximately 13% of its RPO as revenues over the next twelve months, per the remaining performance obligations note in the Q1 FY2027 10-Q.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm",
+     "reason": "The 10-Q states: 'Remaining performance obligations were $664 billion as of August 31, 2026, of which we expect to recognize approximately 13% as revenues over the next twelve months.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Oracle's Q1 FY2027 earnings release (8-K EX-99.1, filed September 10, 2026) reported RPO up $209 billion year-over-year to $664 billion.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526387905/orcl-ex99_1.htm",
+     "reason": "The earnings release (8-K EX-99.1) states: 'Remaining Performance Obligations or RPO up $209 billion year-over-year to $664 billion.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The 10-Q also reported RPO of $664 billion as of August 31, 2026 versus $455 billion as of August 31, 2025, with the increase primarily attributable to certain significant cloud contracts entered into during the period.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm",
+     "reason": "The 10-Q states: 'Remaining performance obligations were $664 billion and $455 billion as of August 31, 2026 and 2025, respectively. The increase in remaining performance obligations as of August 31, 2026 in comparison to August 31, 2025 was primarily attributable to certain significant cloud contracts that were entered into during the period.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 4,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}

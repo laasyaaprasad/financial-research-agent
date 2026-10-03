@@ -1,0 +1,220 @@
+{
+ "id": "G23",
+ "category": "Financial modeling",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "Using NVIDIA's reported Q1 and Q2 FY2027 revenue plus the midpoint of its Q3 FY2027 outlook, what is the implied revenue for the first three quarters of FY2027, and the growth vs the first three quarters of FY2026?",
+ "grading": "Implied 9M revenue ±0.5% (USD millions); growth ±0.5pp; must state which values are actual vs guidance",
+ "answer": "Implied first-three-quarter FY2027 revenue is USD 285,836 million: Q1 actual USD 81,615 million + Q2 actual USD 96,221 million + Q3 guidance midpoint USD 108,000 million. [G23-E1] Against FY2026 nine-month actual revenue of USD 147,811 million, growth is 93.3794%. [G23-E2] This combines two actual quarters and one guided quarter; it is not reported nine-month revenue. The six-month filing total differs from the sum of the displayed quarters by USD 1 million due to rounding. [G23-E3]",
+ "output": {
+  "answer": "**Question:** Using NVIDIA's reported Q1 and Q2 FY2027 revenue plus the midpoint of its Q3 FY2027 outlook, what is the implied revenue for the first three quarters of FY2027, and the growth vs the first three quarters of FY2026?\n*As of 2026-10-01*\n\n| | Revenue (USD millions) | Growth (%) |\n|---|---|---|\n| Q1 FY2027 (quarter ended April 26, 2026) | 81,615 [1][2] | — |\n| Q2 FY2027 (quarter ended July 26, 2026) | 96,221 [3][4] | — |\n| First three quarters FY2027 (implied: Q1 + Q2 actual + Q3 guidance midpoint) | Q1 + Q2 actual + Q3 guidance midpoint) | Revenue (USD millions): 285,836 [3][1] | — |\n| First three quarters FY2026 (nine months ended October 26, 2025) | 147,811 [5] | — |\n| First three quarters FY2027 (implied) vs first three quarters FY2026 | — | 93.4 [3][1][5] |\n\n- NVIDIA reported Q1 FY2027 revenue of $81,615 million for the quarter ended April 26, 2026, and Q2 FY2027 revenue of $96,221 million for the quarter ended July 26, 2026, both as reported (GAAP and non-GAAP revenue are the same). [1][3]\n- Q3 FY2027 (quarter ending October 25, 2026) has not been reported; the only Q3 FY2027 revenue figure available is the outlook in the Q2 FY2027 earnings release, which guides revenue of $108.0 billion, plus or minus 2%, so the midpoint used here is $108.0 billion of guidance, not an actual result. [3][6]\n- The implied first-three-quarters FY2027 revenue is therefore a mix of two reported quarters plus the Q3 FY2027 guidance midpoint, totaling 285,836 million. [3][1]\n- The prior-year comparative, the first three quarters of FY2026 (nine months ended October 26, 2025), was reported revenue of $147,811 million. [5]\n\n**Not available**\n- Actual Q3 FY2027 revenue (quarter ending October 25, 2026): Q3 FY2027 is still in progress as of 2026-10-01; only the $108.0 billion plus or minus 2% outlook from the Q2 FY2027 release exists, so the implied total uses the guidance midpoint rather than a reported figure. [3][6]\n\n_2 draft statement(s) were withheld because they could not be verified against the sources (details in the run record)._\n\n**Sources**\n[1] NVIDIA CORP earnings release for Q1 FY2027, 8-K EX-99.1 (filed 2026-05-20) (www.sec.gov, 2026-05-20, primary) https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm\n[2] NVIDIA CORP XBRL data tagged in 10-Q filed 2026-05-20 (www.sec.gov, 2026-05-20, primary) https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/\n[3] NVIDIA CORP earnings release for Q2 FY2027, 8-K EX-99.1 (filed 2026-08-26) (www.sec.gov, 2026-08-26, primary) https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm\n[4] NVIDIA CORP XBRL data tagged in 10-Q filed 2026-08-26 (www.sec.gov, 2026-08-26, primary) https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/\n[5] NVIDIA CORP XBRL data tagged in 10-Q filed 2025-11-19 (www.sec.gov, 2025-11-19, primary) https://www.sec.gov/Archives/edgar/data/1045810/000104581025000230/\n[6] NVIDIA CORP earnings release for Q2 FY2027, 8-K EX-99.2 (filed 2026-08-26) (www.sec.gov, 2026-08-26, primary) https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 82885,
+   "output": 12949
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 41.29,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/a18e2019cc26d48d049b947311645c2d",
+  "companies": [
+   {
+    "name": "NVIDIA CORP",
+    "ticker": "NVDA",
+    "cik": "1045810",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "NVIDIA Q1 FY2027 revenue (actual, reported)",
+    "NVIDIA Q2 FY2027 revenue (actual, reported)",
+    "NVIDIA Q3 FY2027 revenue outlook midpoint (guidance issued with Q2 FY2027 results)",
+    "Implied first-three-quarters FY2027 revenue = Q1 FY2027 + Q2 FY2027 + Q3 FY2027 guidance midpoint",
+    "NVIDIA Q1 FY2026 revenue (prior-year comparative)",
+    "NVIDIA Q2 FY2026 revenue (prior-year comparative)",
+    "NVIDIA Q3 FY2026 revenue (prior-year comparative)",
+    "First-three-quarters FY2026 revenue = Q1 FY2026 + Q2 FY2026 + Q3 FY2026",
+    "Growth of implied first-three-quarters FY2027 revenue vs first-three-quarters FY2026 revenue (absolute and % change)"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "NVDA",
+     "label": "Q1 FY2027"
+    },
+    {
+     "ticker": "NVDA",
+     "label": "Q2 FY2027"
+    },
+    {
+     "ticker": "NVDA",
+     "label": "Q3 FY2027"
+    },
+    {
+     "ticker": "NVDA",
+     "label": "Q1 FY2026"
+    },
+    {
+     "ticker": "NVDA",
+     "label": "Q2 FY2026"
+    },
+    {
+     "ticker": "NVDA",
+     "label": "Q3 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "NVDA",
+     "period": "Q2 FY2027",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "NVDA",
+     "period": "Q1 FY2027",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q3 FY2027 (2026-07-27 to 2026-10-25) is still in progress and not yet reported, so no actual Q3 FY2027 revenue exists; only the Q3 FY2027 revenue outlook (guidance) published in the Q2 FY2027 earnings release can be used, and its midpoint is the basis for the implied figure.",
+    "The implied first-three-quarters FY2027 total is therefore a mix of two reported quarters plus a guidance midpoint, not a fully reported figure.",
+    "Q1 FY2026, Q2 FY2026 and Q3 FY2026 are all filed, so prior-year comparatives are available from their respective filings."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Actual Q3 FY2027 revenue (quarter ending October 25, 2026)",
+    "kind": "not_reported_yet",
+    "reason": "Q3 FY2027 is still in progress as of 2026-10-01; only the $108.0 billion plus or minus 2% outlook from the Q2 FY2027 release exists, so the implied total uses the guidance midpoint rather than a reported figure.",
+    "evidence_ids": [
+     "E1",
+     "E2"
+    ]
+   }
+  ],
+  "removed": [
+   {
+    "text": "The implied first-three-quarters FY2027 revenue of 93.4 million is 93.4% above the reported first-three-quarters FY2026 revenue of $147,811 million.",
+    "problem": "Misstates the implied revenue: the implied first-three-quarters FY2027 revenue is $285,836 million, not '93.4 million.' The 93.4% is the growth rate, not the revenue level, so the claim as written is wrong (the growth figure itself is correct)."
+   },
+   {
+    "text": "Q3 FY2027 (quarter ending October 25, 2026) — outlook midpoint, guidance not actual | Revenue (USD millions): 108,000",
+    "problem": "calculation result placeholder {result} missing from claim text"
+   }
+  ],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000230/",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/"
+   ],
+   "cited_primary": 6,
+   "retrieved": 9,
+   "retrieved_primary": 9
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Implied 9M revenue (first three quarters FY2027) within ±0.5% of reference 285,836 million USD",
+     "met": true,
+     "note": "Agent reports 285,836 million USD, exactly matching reference."
+    },
+    {
+     "point": "Growth vs first three quarters FY2026 within ±0.5 percentage points of reference 93.3794%",
+     "met": true,
+     "note": "Agent reports 93.4%, difference 0.0206 pp, well within tolerance."
+    },
+    {
+     "point": "Must state which values are actual vs guidance",
+     "met": true,
+     "note": "Agent clearly identifies Q1 and Q2 as actual reported revenue, Q3 as guidance midpoint ($108.0 billion)."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All three requirements are satisfied: implied revenue matches exactly, growth is within tolerance, and the answer explicitly distinguishes actuals from guidance."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "NVIDIA reported Q1 FY2027 revenue of $81,615 million for the quarter ended April 26, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm",
+     "reason": "Source [1] (Q1 FY2027 earnings release) shows 'Revenue | $ | 81,615 | $ | 68,127 | $ | 44,062 | 20 | % | 85 | %' and 'Revenues (Revenues): 81,615,000,000 USD, 2026-01-26 to 2026-04-26'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA reported Q2 FY2027 revenue of $96,221 million for the quarter ended July 26, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm",
+     "reason": "Source [3] (Q2 FY2027 earnings release) shows 'Revenue | $96,221 | $81,615 | $46,743 | 18 | % | 106 | %' and 'Revenues (Revenues): 96,221,000,000 USD, 2026-04-27 to 2026-07-26'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "GAAP and non-GAAP revenue are the same for both Q1 and Q2 FY2027",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm",
+     "reason": "Source [1] and [3] both present a single revenue line in the GAAP and non-GAAP summary tables, indicating no difference between GAAP and non-GAAP revenue.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2027 outlook: revenue expected to be $108.0 billion, plus or minus 2%, midpoint $108.0 billion",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm",
+     "reason": "Source [3] states 'Revenue is expected to be $108.0 billion, plus or minus 2%.' Source [6] (CFO commentary) repeats the same outlook.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Implied first three quarters FY2027 revenue = 285,836 million (sum of Q1 actual, Q2 actual, and Q3 guidance midpoint)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm",
+     "reason": "Calculation: Q1 $81,615M + Q2 $96,221M + Q3 midpoint $108,000M = $285,836M. The arithmetic is correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "First three quarters FY2026 (nine months ended October 26, 2025) revenue = $147,811 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000230/",
+     "reason": "Source [5] (XBRL for 10-Q filed 2025-11-19) shows 'Revenues (Revenues): 147,811,000,000 USD, 2025-01-27 to 2025-10-26'. Source [3] also shows the same figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Growth of implied first three quarters FY2027 vs first three quarters FY2026 = 93.4%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm",
+     "reason": "Calculation: (285,836 - 147,811) / 147,811 = 138,025 / 147,811 = 0.9338 ≈ 93.4%. The percentage is correctly rounded.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual Q3 FY2027 revenue is not available as of 2026-10-01; only the $108.0 billion ±2% outlook exists",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm",
+     "reason": "The Q2 FY2027 earnings release (source [3]) provides only an outlook for Q3 FY2027, and the answer's context date is 2026-10-01, which is before the end of Q3 (October 25, 2026).",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 8,
+   "supported": 8,
+   "not_retrieved": 0
+  }
+ }
+}

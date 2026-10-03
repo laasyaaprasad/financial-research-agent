@@ -1,0 +1,254 @@
+{
+ "id": "X05",
+ "category": "Trends",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "For AMETEK, build a segment revenue trend: report net sales in USD millions for each of its two reportable segments, Electronic Instruments Group (EIG) and Electromechanical Group (EMG), for each of the company's last four reported fiscal quarters as of October 3, 2026 (AMETEK's fiscal year is the calendar year). Label each quarter (e.g., 'Q2 2026') and give its period-end date. Note that fourth-quarter results are not presented in a 10-Q.",
+ "grading": "Graded cell by cell: each value within tolerance and for the stated period; a missing cell counts as wrong.",
+ "answer": "AMETEK segment net sales (USD millions; Q4 2025 derived as FY2025 minus nine months and matching the Q4 release):\n| Row | Electronic Instruments Group (EIG) | Electromechanical Group (EMG) |\n|---|---|---|\n| Q3 2025 (ended 2025-09-30) | 1,246.3 | 646.3 |\n| Q4 2025 (ended 2025-12-31) | 1,369.5 | 628.9 |\n| Q1 2026 (ended 2026-03-31) | 1,264.5 | 663.9 |\n| Q2 2026 (ended 2026-06-30) | 1,321.2 | 723.2 |",
+ "output": {
+  "answer": "## AMETEK Segment Revenue Trend\n\n**As of October 3, 2026, the last four *reported* fiscal quarters are Q3 2025 through Q2 2026.** AMETEK's Q3 2026 (which ended September 30, 2026) had not yet been reported as of that date — its earnings release came ~Oct 30, 2026 — so Q3 2026 is excluded. (This is also why Q4 2025 appears here: fourth-quarter figures come from the annual 10-K/earnings release, not a 10-Q.)\n\n| Quarter | Period-End Date | EIG Net Sales ($M) | EMG Net Sales ($M) | Consolidated ($M) |\n|---|---|---|---|---|\n| Q3 2025 | Sep 30, 2025 | 1,246.3 | 646.3 | 1,892.6 |\n| Q4 2025 | Dec 31, 2025 | 1,369.5 | 628.9 | 1,998.4 |\n| Q1 2026 | Mar 31, 2026 | 1,264.5 | 663.9 | 1,928.4 |\n| Q2 2026 | Jun 30, 2026 | 1,321.2 | 723.2 | 2,044.4 |\n\nNotes:\n- Values shown in USD millions (rounded from thousands as reported in AMETEK's financial tables).\n- EIG = Electronic Instruments Group; EMG = Electromechanical Group. Consolidated totals include only these two reportable segments.\n- Q3 2025 is below Q4 2025 in both EIG and EMG partly due to year-end seasonality/timing; EMG dipped in Q4 2025 before rebounding sharply in Q2 2026 (record $723.2M, +17% YoY).\n\nSources:\n- Q3 2025: SEC 10-Q (ame-20250930) / AMETEK Q3 2025 release — https://www.sec.gov/Archives/edgar/data/1037868/000103786825000077/ame-20250930.htm\n- Q4/FY2025: AMETEK Q4 & FY2025 results — https://investors.ametek.com/news-releases/news-release-details/ametek-announces-record-fourth-quarter-and-full-year-results-6\n- Q1 2026: AMETEK Q1 2026 release — https://www.prnewswire.com/news-releases/ametek-announces-record-first-quarter-2026-results-and-raises-full-year-guidance-302757938.html\n- Q2 2026: SEC 10-Q (ame-20260630) / Q2 2026 release — https://www.sec.gov/Archives/edgar/data/1037868/000103786826000175/ame-20260630.htm",
+  "tokens": {
+   "input": 44567,
+   "output": 3059
+  },
+  "tavily_credits": 10,
+  "latency_s": 60.67,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/38f1cc94af5a7cd68d21acd20b0c51d4",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AMETEK Q2 2026 results Electronic Instruments Group Electromechanical Group segment sales",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AMETEK 10-Q second quarter 2026 segment net sales EIG EMG",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AMETEK first quarter 2026 results Electronic Instruments Electromechanical net sales segment",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AMETEK fourth quarter full year 2025 results Electronic Instruments Electromechanical net sales segment",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AMETEK third quarter 2025 results Electronic Instruments Electromechanical net sales segment",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investors.ametek.com/news-releases/news-release-details/ametek-announces-record-fourth-quarter-and-full-year-results-6",
+    "https://www.prnewswire.com/news-releases/ametek-announces-record-first-quarter-2026-results-and-raises-full-year-guidance-302757938.html",
+    "https://www.sec.gov/Archives/edgar/data/1037868/000103786825000077/ame-20250930.htm",
+    "https://www.sec.gov/Archives/edgar/data/1037868/000103786826000175/ame-20260630.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 41,
+   "retrieved_primary": 12
+  },
+  "correctness": {
+   "score": 1.0,
+   "verdict": "correct",
+   "points": [
+    {
+     "point": "AMETEK, Inc. Q3 2025 Electronic Instruments Group (EIG) net sales = 1246.3 USD millions",
+     "met": true,
+     "note": "answer: 1246.3"
+    },
+    {
+     "point": "AMETEK, Inc. Q3 2025 Electromechanical Group (EMG) net sales = 646.3 USD millions",
+     "met": true,
+     "note": "answer: 646.3"
+    },
+    {
+     "point": "AMETEK, Inc. Q4 2025 Electronic Instruments Group (EIG) net sales = 1369.5 USD millions",
+     "met": true,
+     "note": "answer: 1369.5"
+    },
+    {
+     "point": "AMETEK, Inc. Q4 2025 Electromechanical Group (EMG) net sales = 628.9 USD millions",
+     "met": true,
+     "note": "answer: 628.9"
+    },
+    {
+     "point": "AMETEK, Inc. Q1 2026 Electronic Instruments Group (EIG) net sales = 1264.5 USD millions",
+     "met": true,
+     "note": "answer: 1264.5"
+    },
+    {
+     "point": "AMETEK, Inc. Q1 2026 Electromechanical Group (EMG) net sales = 663.9 USD millions",
+     "met": true,
+     "note": "answer: 663.9"
+    },
+    {
+     "point": "AMETEK, Inc. Q2 2026 Electronic Instruments Group (EIG) net sales = 1321.2 USD millions",
+     "met": true,
+     "note": "answer: 1321.2"
+    },
+    {
+     "point": "AMETEK, Inc. Q2 2026 Electromechanical Group (EMG) net sales = 723.2 USD millions",
+     "met": true,
+     "note": "answer: 723.2"
+    }
+   ],
+   "rationale": "8/8 cells correct",
+   "cells_correct": 8,
+   "cells_total": 8
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q2 2026 (period end Jun 30, 2026) EIG Net Sales = $1,321.2 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1037868/000103786826000175/ame-20260630.htm",
+     "reason": "The SEC 10-Q for Q2 2026 states: \"EIG's net sales totaled $1,321.2 million for the second quarter of 2026\" (in thousands: $1,321,153 thousand). This matches the claimed $1,321.2 million when rounded to one decimal place.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 EMG Net Sales = $723.2 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1037868/000103786826000175/ame-20260630.htm",
+     "reason": "The same SEC filing states: \"EMG's net sales totaled a record $723.2 million for the second quarter of 2026\" (in thousands: $723,244 thousand). This matches the claimed $723.2 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 Consolidated Net Sales = $2,044.4 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1037868/000103786826000175/ame-20260630.htm",
+     "reason": "The filing states: \"Net sales for the second quarter of 2026 were a record $2,044.4 million\" (in thousands: $2,044,397 thousand). This matches the claimed consolidated total.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 2026 (period end Mar 31, 2026) EIG Net Sales = $1,264.5 million",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/ametek-announces-record-first-quarter-2026-results-and-raises-full-year-guidance-302757938.html",
+     "reason": "The cited Q1 2026 press release (prnewswire.com) is not among the retrieved sources. A similar press release on investors.ametek.com was retrieved but its snippet does not show segment-level sales. Therefore, the claim cannot be verified from the retrieved sources.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 2026 EMG Net Sales = $663.9 million",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/ametek-announces-record-first-quarter-2026-results-and-raises-full-year-guidance-302757938.html",
+     "reason": "Same as above; the cited source is not in the retrieved set, and the retrieved investor press release snippet does not contain segment sales figures.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 2026 Consolidated Net Sales = $1,928.4 million",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/ametek-announces-record-first-quarter-2026-results-and-raises-full-year-guidance-302757938.html",
+     "reason": "Cited source not retrieved; cannot verify.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 2025 (period end Dec 31, 2025) EIG Net Sales = $1,369.5 million",
+     "numeric": true,
+     "cited_url": "https://investors.ametek.com/news-releases/news-release-details/ametek-announces-record-fourth-quarter-and-full-year-results-6",
+     "reason": "The cited Q4 2025 earnings release URL is not among the retrieved sources. No retrieved source contains Q4 2025 segment sales.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 2025 EMG Net Sales = $628.9 million",
+     "numeric": true,
+     "cited_url": "https://investors.ametek.com/news-releases/news-release-details/ametek-announces-record-fourth-quarter-and-full-year-results-6",
+     "reason": "Cited source not retrieved; cannot verify.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 2025 Consolidated Net Sales = $1,998.4 million",
+     "numeric": true,
+     "cited_url": "https://investors.ametek.com/news-releases/news-release-details/ametek-announces-record-fourth-quarter-and-full-year-results-6",
+     "reason": "Cited source not retrieved; cannot verify.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 2025 (period end Sep 30, 2025) EIG Net Sales = $1,246.3 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1037868/000103786825000077/ame-20250930.htm",
+     "reason": "The cited Q3 2025 10-Q URL is not in the retrieved sources. No retrieved source contains Q3 2025 segment sales.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 2025 EMG Net Sales = $646.3 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1037868/000103786825000077/ame-20250930.htm",
+     "reason": "Cited source not retrieved; cannot verify.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 2025 Consolidated Net Sales = $1,892.6 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1037868/000103786825000077/ame-20250930.htm",
+     "reason": "Cited source not retrieved; cannot verify.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Values shown in USD millions, rounded from thousands as reported in AMETEK's financial tables",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1037868/000103786826000175/ame-20260630.htm",
+     "reason": "The Q2 2026 10-Q presents segment net sales in thousands (e.g., Electronic Instruments $1,321,153; Electromechanical $723,244; Consolidated $2,044,397). The answer's figures ($1,321.2M, $723.2M, $2,044.4M) are these values divided by 1,000 and rounded to one decimal place, consistent with the note.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "EMG Q2 2026 sales were a record $723.2M, up 17% YoY",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1037868/000103786826000175/ame-20260630.htm",
+     "reason": "The filing states EMG net sales were a record $723.2 million for Q2 2026, an increase of $104.7 million or 16.9% compared with $618.5 million for Q2 2025. This rounds to 17% YoY growth, matching the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "As of October 3, 2026, the last four reported fiscal quarters are Q3 2025 through Q2 2026; Q3 2026 (ended Sep 30, 2026) had not yet been reported — its earnings release came ~Oct 30, 2026",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer does not cite a specific source for this reporting-timeline claim. The retrieved sources are from August 2026 (Q2 earnings) and do not contain information about October 2026 reporting dates. Therefore, the claim cannot be verified from the retrieved sources.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 13,
+   "numeric_cited": 13,
+   "cited": 14,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}

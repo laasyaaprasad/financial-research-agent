@@ -1,0 +1,210 @@
+{
+ "id": "G21",
+ "category": "Complex retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "How much did Alphabet spend on share repurchases in Q2 2026, split between Class A (GOOGL) and Class C (GOOG), with share counts for each?",
+ "grading": "Both classes must show USD 0 million and 0 shares for Q2 2026. Zero is an exact expected value, so percentage tolerance is inapplicable; fail for any positive repurchase amount.",
+ "answer": "Alphabet repurchased no Class A or Class C shares in Q2 2026. Class A (GOOGL): USD 0 million and 0 shares. Class C (GOOG): USD 0 million and 0 shares. Total: USD 0 million. An unused authorization is not repurchase spending. [G21-E1]",
+ "output": {
+  "answer": "**Short answer: Alphabet spent $0 on share repurchases in Q2 2026 — zero Class A and zero Class C shares.** There's no A/C split because there were no buybacks at all.\n\nWhat happened:\n- Alphabet ended a 33-quarter buyback streak (dating to Q4 2017). It reported **no share repurchases in Q1 2026**, and Q2 2026 was likewise zero — with the buyback program **suspended/paused**.\n- The halt wasn't due to an exhausted authorization; management redirected cash to AI infrastructure (2026 capex guidance raised to ~$195–205B). Q2 free cash flow was **negative ~$5.9B** (capex ~$44.9B).\n- Instead of buying back stock, Alphabet *issued* equity: a June 2026 offering of Class A and Class C shares raised ~$20.5B publicly plus a $10B private placement to Berkshire Hathaway ($5B Class A at $351.81/share, $5B Class C), part of a broader ~$70–80B debt/equity raise.\n\nFor context, the last period with actual repurchases was calendar 2025: Alphabet bought back roughly $170B of stock across Class A and Class C between 2023 and 2025, and ~$348B cumulatively from 2015–2025.\n\nCaveat: Class A vs. Class C repurchase splits are only itemized in Alphabet's 10-Q/10-K filings; I couldn't retrieve the Q2 2026 10-Q table directly, but multiple reports confirm the total was $0 for the quarter. If you need the exact filing line items, check Alphabet's Q2 2026 Form 10-Q (\"Stock Repurchases\" note) on SEC EDGAR.\n\nSources:\n- https://www.benzinga.com/trading-ideas/movers/26/07/60651811/alphabets-200-billion-ai-binge-has-killed-its-stock-buyback-machine\n- https://247wallst.com/investing/2026/07/28/apple-just-became-the-worlds-most-valuable-company-should-you-buy-before-july-30-earnings\n- https://247wallst.com/investing/2026/07/22/alphabet-just-cut-share-buybacks-to-0-while-acquiring-a-40-billion-stake-in-a-rival-ai-company\n- https://finance.yahoo.com/technology/ai/articles/alphabet-shares-correction-territory-investors-142945499.html\n- https://finance.yahoo.com/markets/stocks/articles/alphabet-paying-dividend-while-selling-073201488.html",
+  "tokens": {
+   "input": 28112,
+   "output": 1202
+  },
+  "tavily_credits": 4,
+  "latency_s": 11.53,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/2aec53c7da45218c603f2e1fe30d8ecf",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Alphabet Q2 2026 share repurchases Class A Class C",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Alphabet quarterly share repurchase Class A Class C shares 2025",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Alphabet 10-Q second quarter 2026 \"no shares\" repurchased buyback suspended",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Alphabet Q2 2026 earnings buyback paused repurchase program",
+     "topic": "news"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://247wallst.com/investing/2026/07/22/alphabet-just-cut-share-buybacks-to-0-while-acquiring-a-40-billion-stake-in-a-rival-ai-company",
+    "https://247wallst.com/investing/2026/07/28/apple-just-became-the-worlds-most-valuable-company-should-you-buy-before-july-30-earnings",
+    "https://finance.yahoo.com/markets/stocks/articles/alphabet-paying-dividend-while-selling-073201488.html",
+    "https://finance.yahoo.com/technology/ai/articles/alphabet-shares-correction-territory-investors-142945499.html",
+    "https://www.benzinga.com/trading-ideas/movers/26/07/60651811/alphabets-200-billion-ai-binge-has-killed-its-stock-buyback-machine"
+   ],
+   "cited_primary": 0,
+   "retrieved": 34,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Class A repurchase USD millions = 0 for Q2 2026",
+     "met": true,
+     "note": "Agent states 'Alphabet spent $0 on share repurchases in Q2 2026 — zero Class A and zero Class C shares.' This implies USD 0 million for Class A."
+    },
+    {
+     "point": "Class A shares repurchased = 0 for Q2 2026",
+     "met": true,
+     "note": "Agent explicitly says 'zero Class A ... shares'."
+    },
+    {
+     "point": "Class C repurchase USD millions = 0 for Q2 2026",
+     "met": true,
+     "note": "Agent states 'Alphabet spent $0 on share repurchases in Q2 2026 — zero Class A and zero Class C shares.' This implies USD 0 million for Class C."
+    },
+    {
+     "point": "Class C shares repurchased = 0 for Q2 2026",
+     "met": true,
+     "note": "Agent explicitly says 'zero ... Class C shares'."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer clearly states that Alphabet spent $0 on share repurchases in Q2 2026, with zero Class A and zero Class C shares repurchased. This matches the reference answer exactly: both classes show USD 0 million and 0 shares for Q2 2026. The agent does not confuse with prior-year data or authorization amounts, and correctly identifies the quarter as having no repurchase activity."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Alphabet spent $0 on share repurchases in Q2 2026 — zero Class A and zero Class C shares.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/technology/ai/articles/alphabet-shares-correction-territory-investors-142945499.html",
+     "reason": "The Yahoo Finance article states: 'The company raised roughly $70 billion … for up to $40 billion of Class A and Class C stock, and suspended its share repurchase program.' This confirms the buyback was suspended and no repurchases occurred in Q2 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet ended a 33-quarter buyback streak dating to Q4 2017.",
+     "numeric": true,
+     "cited_url": "https://www.benzinga.com/trading-ideas/movers/26/07/60651811/alphabets-200-billion-ai-binge-has-killed-its-stock-buyback-machine",
+     "reason": "The Benzinga article explicitly says: 'For more than eight years, Alphabet repurchased shares every quarter, a streak dating to Q4 2017. Then 2026 arrived, and the checks stopped.' This supports the 33-quarter streak (8 years × 4 quarters = 32 quarters, plus one more = 33).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet reported no share repurchases in Q1 2026.",
+     "numeric": false,
+     "cited_url": "https://247wallst.com/investing/2026/07/22/alphabet-just-cut-share-buybacks-to-0-while-acquiring-a-40-billion-stake-in-a-rival-ai-company",
+     "reason": "The 24/7 Wall St. article states: 'The company’s own filings back that up. Alphabet listed no share repurchases in Q1 2026...' This directly supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 share repurchases were likewise zero, with the buyback program suspended/paused.",
+     "numeric": true,
+     "cited_url": "https://247wallst.com/investing/2026/07/22/alphabet-just-cut-share-buybacks-to-0-while-acquiring-a-40-billion-stake-in-a-rival-ai-company",
+     "reason": "The same article’s headline and content confirm Alphabet cut share buybacks to $0 in Q2 2026 and the program was suspended.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The halt wasn't due to an exhausted authorization; management redirected cash to AI infrastructure.",
+     "numeric": false,
+     "cited_url": "https://www.benzinga.com/trading-ideas/movers/26/07/60651811/alphabets-200-billion-ai-binge-has-killed-its-stock-buyback-machine",
+     "reason": "The Benzinga article states: 'The buyback halt was not caused by an exhausted authorization. A sizable balance remained available when 2026 began... Instead, Alphabet redirected cash toward the escalating infrastructure demands of AI.' This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "2026 capex guidance was raised to ~$195–205 billion.",
+     "numeric": true,
+     "cited_url": "https://www.benzinga.com/trading-ideas/movers/26/07/60651811/alphabets-200-billion-ai-binge-has-killed-its-stock-buyback-machine",
+     "reason": "The Benzinga article says: 'Alphabet raised its 2026 capex outlook to $195 billion to $205 billion, up from $180 billion to $190 billion.' This supports the claimed range.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 free cash flow was negative ~$5.9B (capex ~$44.9B).",
+     "numeric": true,
+     "cited_url": "https://247wallst.com/investing/2026/07/28/apple-just-became-the-worlds-most-valuable-company-should-you-buy-before-july-30-earnings",
+     "reason": "The 24/7 Wall St. article (July 28) states: 'Alphabet’s Q2 2026 free cash flow was negative $5.86 billion after capital expenditures hit $44.92 billion.' The claimed ~$5.9B and ~$44.9B are consistent with these figures (rounding within half the last digit).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet issued equity in June 2026: a public offering of Class A and Class C shares raised ~$20.5B.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-paying-dividend-while-selling-073201488.html",
+     "reason": "The Yahoo Finance article states: 'On June 4, Alphabet completed a public offering of Class A and Class C shares that raised $20.5 billion...' This directly supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "A $10B private placement to Berkshire Hathaway ($5B Class A at $351.81/share, $5B Class C).",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-paying-dividend-while-selling-073201488.html",
+     "reason": "The same Yahoo Finance article mentions the $10 billion private placement to an affiliate of Berkshire Hathaway but does not specify the per-share price of $351.81 or the exact Class A/Class C split. The Forbes article (not cited in the answer) provides the split and price. Since the cited URL lacks the price and split details, the claim is only partially supported.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The equity and debt raises were part of a broader ~$70–80B debt/equity raise.",
+     "numeric": true,
+     "cited_url": "https://247wallst.com/investing/2026/07/28/apple-just-became-the-worlds-most-valuable-company-should-you-buy-before-july-30-earnings",
+     "reason": "The 24/7 Wall St. article says: 'Alphabet raised roughly $70 billion in combined debt and equity to fund its AI compute.' The Yahoo Finance paying-dividend article notes $56.2B debt in H1 plus $25B in August, totaling ~$81B. The ~$70–80B range is consistent.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet bought back roughly $170B of stock across Class A and Class C between 2023 and 2025.",
+     "numeric": true,
+     "cited_url": "https://sg.finance.yahoo.com/news/alphabet-buyback-vs-singtel-payout-060000740.html",
+     "reason": "The Yahoo Finance Singapore article states: 'Between 2023 and 2025, Alphabet spent nearly US$170 billion to repurchase over 1.1 billion shares (spread across its Class A and C shares).' This supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet repurchased ~$348B cumulatively from 2015–2025.",
+     "numeric": true,
+     "cited_url": "https://sg.finance.yahoo.com/news/alphabet-stock-buybacks-history-investor-232734329.html",
+     "reason": "The Yahoo Finance article 'Alphabet’s stock buybacks: History & investor impact explained' says: 'Between 2015 — the first year of its authorized stock buyback program — and 2025, Alphabet repurchased $348 billion worth of shares.' This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Class A vs. Class C repurchase splits are only itemized in Alphabet's 10-Q/10-K filings; the Q2 2026 10-Q table was not retrieved but multiple reports confirm total was $0 for the quarter.",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "This is a caveat about data availability, not a verifiable factual claim about Alphabet's financials. No URL is cited in the answer for this statement.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 10,
+   "numeric_cited": 10,
+   "cited": 12,
+   "supported": 11,
+   "not_retrieved": 0
+  }
+ }
+}

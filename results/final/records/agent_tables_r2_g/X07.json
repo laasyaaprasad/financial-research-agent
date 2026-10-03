@@ -1,0 +1,267 @@
+{
+ "id": "X07",
+ "category": "Market analysis",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "As of October 3, 2026, for each of five U.S. homebuilders (Lennar, KB Home, Toll Brothers, D.R. Horton and PulteGroup), identify the most recent reported fiscal quarter (the company's own fiscal quarter label, e.g. 'Q3 FY2026', plus the quarter-end date) and compute year-over-year growth in total revenues (%) for that quarter versus the same fiscal quarter a year earlier. Use total consolidated revenues as reported in each company's SEC filings.",
+ "grading": "Graded cell by cell: each value within tolerance and for the stated period; a missing cell counts as wrong.",
+ "answer": "Homebuilders, latest reported quarter as of 2026-10-03:\n| Company | Most recent reported quarter | YoY total revenue growth |\n|---|---|---|\n| Lennar Corporation | Q3 FY2026 (quarter ended Aug 31, 2026) | -8.67% |\n| KB Home | Q3 FY2026 (quarter ended Aug 31, 2026) | -19.96% |\n| Toll Brothers | Q3 FY2026 (quarter ended Jul 31, 2026) | -9.72% |\n| D.R. Horton | Q3 FY2026 (quarter ended Jun 30, 2026) | 0.02% |\n| PulteGroup | Q2 FY2026 (quarter ended Jun 30, 2026) | -9.56% |",
+ "output": {
+  "answer": "**Question:** As of October 3, 2026, for each of five U.S. homebuilders (Lennar, KB Home, Toll Brothers, D.R. Horton and PulteGroup), identify the most recent reported fiscal quarter (the company's own fiscal quarter label, e.g. 'Q3 FY2026', plus the quarter-end date) and compute year-over-year growth in total revenues (%) for that quarter versus the same fiscal quarter a year earlier. Use total consolidated revenues as reported in each company's SEC filings.\n*As of 2026-10-03*\n\n| | Total revenues, current quarter (USD) | Total revenues, prior-year quarter (Q3 FY2025, ended August 31, 2025) (USD) | Total revenue YoY growth (%) | Total revenues, current quarter (USD thousands) | Total revenues, prior-year quarter (Q3 FY2025, ended August 31, 2025) (USD thousands) | Total revenues, prior-year quarter (Q3 FY2025, ended July 31, 2025) (USD) | Total revenues, prior-year quarter (Q3 FY2025, ended June 30, 2025) (USD) | Total consolidated revenues, current quarter (USD) | Total consolidated revenues, prior-year quarter (Q2 FY2025, ended June 30, 2025) (USD) |\n|---|---|---|---|---|---|---|---|---|---|\n| Lennar — Q3 FY2026, quarter ended August 31, 2026 | $8,046,119,000 [1] | $8,810,278,000 [1] | -8.7 [1] | — | — | — | — | — | — |\n| KB Home — Q3 FY2026, quarter ended August 31, 2026 | — | — | -20.0 [2] | $1,297,101 [2] | $1,620,474 [2] | — | — | — | — |\n| Toll Brothers — Q3 FY2026, quarter ended July 31, 2026 | $2,658,781,000 [3] | — | -9.7 [3] | — | — | $2,945,117,000 [3] | — | — | — |\n| D.R. Horton — Q3 FY2026, quarter ended June 30, 2026 | $9,227,100,000 [4] | — | 0.0 [4] | — | — | — | $9,225,700,000 [4] | — | — |\n| PulteGroup — Q2 FY2026, quarter ended June 30, 2026 | — | — | -9.6 [5][6] | — | — | — | — | $3,982,957,000 [5][6] | $4,403,755,000 [5][6] |\n\n- Lennar's most recent reported fiscal quarter as of October 3, 2026 is Q3 FY2026, the quarter ended August 31, 2026, reported in its Form 10-Q filed October 2, 2026. [7][1]\n- KB Home's most recent reported fiscal quarter as of October 3, 2026 is Q3 FY2026, the quarter ended August 31, 2026, reported in its earnings release furnished on Form 8-K filed September 22, 2026; its Form 10-Q for that quarter is not yet filed. [2]\n- Toll Brothers' most recent reported fiscal quarter as of October 3, 2026 is Q3 FY2026, the quarter ended July 31, 2026, reported in its Form 10-Q filed August 28, 2026. [8][3]\n- D.R. Horton's most recent reported fiscal quarter as of October 3, 2026 is Q3 FY2026, the quarter ended June 30, 2026, reported in its Form 10-Q filed July 23, 2026; its Q4 FY2026 (quarter ended September 30, 2026) results are not yet released. [9][4]\n- PulteGroup's most recent reported fiscal quarter as of October 3, 2026 is Q2 FY2026, the quarter ended June 30, 2026, reported in its Form 10-Q filed July 22, 2026; its Q3 FY2026 (quarter ended September 30, 2026) results are not yet released. [5][6]\n- KB Home disclosed that its Q3 FY2026 (quarter ended August 31, 2026) revenues were down 20% year over year to $1.30 billion. [2]\n- D.R. Horton disclosed that its home sales revenues increased 1% in its Q3 FY2026 (quarter ended June 30, 2026) compared to the prior-year quarter. [9]\n- Lennar disclosed that its revenues from home sales decreased 6% in its Q3 FY2026 (quarter ended August 31, 2026) to $7.7 billion from $8.2 billion in the third quarter of 2025. [7]\n\n**Not available**\n- D.R. Horton Q4 FY2026 (quarter ended September 30, 2026) total revenues and YoY growth: The quarter has ended but results are not yet released; the most recent reported quarter is Q3 FY2026 (ended June 30, 2026). [9][4]\n- PulteGroup Q3 FY2026 (quarter ended September 30, 2026) total revenues and YoY growth: The quarter has ended but results are not yet released; the most recent reported quarter is Q2 FY2026 (ended June 30, 2026). [5][6]\n- Lennar Q4 FY2026 and Toll Brothers Q4 FY2026 total revenues and YoY growth: Those fiscal quarters are still in progress and not yet reported; the most recent reported quarters are Q3 FY2026 for both. [7][8]\n- KB Home Q3 FY2026 figures from a Form 10-Q: KB Home's Q3 FY2026 Form 10-Q is not yet filed; revenue figures are taken from the earnings release furnished on Form 8-K filed September 22, 2026. [2]\n\n**Sources**\n[1] LENNAR CORP /NEW/ XBRL data tagged in 10-Q filed 2026-10-02 (www.sec.gov, 2026-10-02, primary) https://www.sec.gov/Archives/edgar/data/920760/000162828026064557/\n[2] KB HOME earnings release for Q3 FY2026, 8-K EX-99.1 (filed 2026-09-22) (www.sec.gov, 2026-09-22, primary) https://www.sec.gov/Archives/edgar/data/795266/000079526626000068/exh991kbh-earningsrelease0.htm\n[3] Toll Brothers, Inc. XBRL data tagged in 10-Q filed 2026-08-28 (www.sec.gov, 2026-08-28, primary) https://www.sec.gov/Archives/edgar/data/794170/000079417026000102/\n[4] HORTON D R INC /DE/ XBRL data tagged in 10-Q filed 2026-07-23 (www.sec.gov, 2026-07-23, primary) https://www.sec.gov/Archives/edgar/data/882184/000088218426000096/\n[5] PULTEGROUP INC/MI/ 10-Q for Q2 FY2026 (filed 2026-07-22) (www.sec.gov, 2026-07-22, primary) https://www.sec.gov/Archives/edgar/data/822416/000082241626000036/phm-20260630.htm\n[6] PULTEGROUP INC/MI/ XBRL data tagged in 10-Q filed 2026-07-22 (www.sec.gov, 2026-07-22, primary) https://www.sec.gov/Archives/edgar/data/822416/000082241626000036/\n[7] LENNAR CORP /NEW/ 10-Q for Q3 FY2026 (filed 2026-10-02) (www.sec.gov, 2026-10-02, primary) https://www.sec.gov/Archives/edgar/data/920760/000162828026064557/len-20260831.htm\n[8] Toll Brothers, Inc. 10-Q for Q3 FY2026 (filed 2026-08-28) (www.sec.gov, 2026-08-28, primary) https://www.sec.gov/Archives/edgar/data/794170/000079417026000102/tol-20260731.htm\n[9] HORTON D R INC /DE/ 10-Q for Q3 FY2026 (filed 2026-07-23) (www.sec.gov, 2026-07-23, primary) https://www.sec.gov/Archives/edgar/data/882184/000088218426000096/dhi-20260630.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 138354,
+   "output": 28580
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 243.73,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/43bb74d2f476292dccaeb987f44371cd",
+  "companies": [
+   {
+    "name": "LENNAR CORP /NEW/",
+    "ticker": "LEN",
+    "cik": "920760",
+    "resolved": true
+   },
+   {
+    "name": "KB HOME",
+    "ticker": "KBH",
+    "cik": "795266",
+    "resolved": true
+   },
+   {
+    "name": "Toll Brothers, Inc.",
+    "ticker": "TOL",
+    "cik": "794170",
+    "resolved": true
+   },
+   {
+    "name": "HORTON D R INC /DE/",
+    "ticker": "DHI",
+    "cik": "882184",
+    "resolved": true
+   },
+   {
+    "name": "PULTEGROUP INC/MI/",
+    "ticker": "PHM",
+    "cik": "822416",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Lennar (LEN): total consolidated revenues for Q3 FY2026 (quarter ended 2026-08-31) and for Q3 FY2025 (quarter ended 2025-08-31), and the resulting year-over-year growth in total revenues (%)",
+    "KB Home (KBH): total consolidated revenues for Q3 FY2026 (quarter ended 2026-08-31) and for Q3 FY2025 (quarter ended 2025-08-31), and the resulting year-over-year growth in total revenues (%)",
+    "Toll Brothers (TOL): total consolidated revenues for Q3 FY2026 (quarter ended 2026-07-31) and for Q3 FY2025 (quarter ended 2025-07-31), and the resulting year-over-year growth in total revenues (%)",
+    "D.R. Horton (DHI): total consolidated revenues for Q3 FY2026 (quarter ended 2026-06-30) and for Q3 FY2025 (quarter ended 2025-06-30), and the resulting year-over-year growth in total revenues (%)",
+    "PulteGroup (PHM): total consolidated revenues for Q2 FY2026 (quarter ended 2026-06-30) and for Q2 FY2025 (quarter ended 2025-06-30), and the resulting year-over-year growth in total revenues (%)",
+    "Confirmation of each company's most recent reported fiscal quarter label and quarter-end date as of 2026-10-03"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "LEN",
+     "label": "Q3 FY2026"
+    },
+    {
+     "ticker": "LEN",
+     "label": "Q3 FY2025"
+    },
+    {
+     "ticker": "KBH",
+     "label": "Q3 FY2026"
+    },
+    {
+     "ticker": "KBH",
+     "label": "Q3 FY2025"
+    },
+    {
+     "ticker": "TOL",
+     "label": "Q3 FY2026"
+    },
+    {
+     "ticker": "TOL",
+     "label": "Q3 FY2025"
+    },
+    {
+     "ticker": "DHI",
+     "label": "Q3 FY2026"
+    },
+    {
+     "ticker": "DHI",
+     "label": "Q3 FY2025"
+    },
+    {
+     "ticker": "PHM",
+     "label": "Q2 FY2026"
+    },
+    {
+     "ticker": "PHM",
+     "label": "Q2 FY2025"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "LEN",
+     "period": "Q3 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "KBH",
+     "period": "Q3 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "TOL",
+     "period": "Q3 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "DHI",
+     "period": "Q3 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "PHM",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "KB Home's Q3 FY2026 (quarter ended 2026-08-31) has an earnings release only (8-K filed 2026-09-22); its 10-Q is not yet filed, so revenue figures must come from the earnings release.",
+    "D.R. Horton's Q4 FY2026 (quarter ended 2026-09-30) has ended but results are not yet released, so the most recent reported quarter is Q3 FY2026 (ended 2026-06-30).",
+    "PulteGroup's Q3 FY2026 (quarter ended 2026-09-30) has ended but results are not yet released, so the most recent reported quarter is Q2 FY2026 (ended 2026-06-30).",
+    "Lennar's Q4 FY2026 and Toll Brothers' Q4 FY2026 are still in progress and not yet reported; their most recent reported quarters are Q3 FY2026.",
+    "Each company's current-quarter filing includes prior-year comparative income statements, so prior-year revenue is available from the same document; no separate prior-year filing is requested."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "D.R. Horton Q4 FY2026 (quarter ended September 30, 2026) total revenues and YoY growth",
+    "kind": "not_reported_yet",
+    "reason": "The quarter has ended but results are not yet released; the most recent reported quarter is Q3 FY2026 (ended June 30, 2026).",
+    "evidence_ids": [
+     "E4",
+     "E12"
+    ]
+   },
+   {
+    "item": "PulteGroup Q3 FY2026 (quarter ended September 30, 2026) total revenues and YoY growth",
+    "kind": "not_reported_yet",
+    "reason": "The quarter has ended but results are not yet released; the most recent reported quarter is Q2 FY2026 (ended June 30, 2026).",
+    "evidence_ids": [
+     "E5",
+     "E14"
+    ]
+   },
+   {
+    "item": "Lennar Q4 FY2026 and Toll Brothers Q4 FY2026 total revenues and YoY growth",
+    "kind": "not_reported_yet",
+    "reason": "Those fiscal quarters are still in progress and not yet reported; the most recent reported quarters are Q3 FY2026 for both.",
+    "evidence_ids": [
+     "E1",
+     "E3"
+    ]
+   },
+   {
+    "item": "KB Home Q3 FY2026 figures from a Form 10-Q",
+    "kind": "not_disclosed",
+    "reason": "KB Home's Q3 FY2026 Form 10-Q is not yet filed; revenue figures are taken from the earnings release furnished on Form 8-K filed September 22, 2026.",
+    "evidence_ids": [
+     "E2"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/794170/000079417026000102/",
+    "https://www.sec.gov/Archives/edgar/data/794170/000079417026000102/tol-20260731.htm",
+    "https://www.sec.gov/Archives/edgar/data/795266/000079526626000068/exh991kbh-earningsrelease0.htm",
+    "https://www.sec.gov/Archives/edgar/data/822416/000082241626000036/",
+    "https://www.sec.gov/Archives/edgar/data/822416/000082241626000036/phm-20260630.htm",
+    "https://www.sec.gov/Archives/edgar/data/882184/000088218426000096/",
+    "https://www.sec.gov/Archives/edgar/data/882184/000088218426000096/dhi-20260630.htm",
+    "https://www.sec.gov/Archives/edgar/data/920760/000162828026064557/",
+    "https://www.sec.gov/Archives/edgar/data/920760/000162828026064557/len-20260831.htm"
+   ],
+   "cited_primary": 9,
+   "retrieved": 14,
+   "retrieved_primary": 14
+  },
+  "correctness": {
+   "score": 1.0,
+   "verdict": "correct",
+   "points": [
+    {
+     "point": "Lennar Corporation Q3 FY2026 YoY revenue growth = -8.67 %",
+     "met": true,
+     "note": "answer: -8.7"
+    },
+    {
+     "point": "Lennar Corporation Q3 FY2026 Most recent reported fiscal quarter (period label) = Q3 FY2026 (quarter ended Aug 31, 2026) text",
+     "met": true,
+     "note": "answer: Q3 FY2026, quarter ended August 31, 2026"
+    },
+    {
+     "point": "KB Home Q3 FY2026 YoY revenue growth = -19.96 %",
+     "met": true,
+     "note": "answer: -20.0"
+    },
+    {
+     "point": "KB Home Q3 FY2026 Most recent reported fiscal quarter (period label) = Q3 FY2026 (quarter ended Aug 31, 2026) text",
+     "met": true,
+     "note": "answer: Q3 FY2026, quarter ended August 31, 2026"
+    },
+    {
+     "point": "Toll Brothers Q3 FY2026 YoY revenue growth = -9.72 %",
+     "met": true,
+     "note": "answer: -9.7"
+    },
+    {
+     "point": "Toll Brothers Q3 FY2026 Most recent reported fiscal quarter (period label) = Q3 FY2026 (quarter ended Jul 31, 2026) text",
+     "met": true,
+     "note": "answer: Q3 FY2026, quarter ended July 31, 2026"
+    },
+    {
+     "point": "D.R. Horton Q3 FY2026 YoY revenue growth = 0.02 %",
+     "met": true,
+     "note": "answer: 0.0"
+    },
+    {
+     "point": "D.R. Horton Q3 FY2026 Most recent reported fiscal quarter (period label) = Q3 FY2026 (quarter ended Jun 30, 2026) text",
+     "met": true,
+     "note": "answer: Q3 FY2026, quarter ended June 30, 2026"
+    },
+    {
+     "point": "PulteGroup Q2 FY2026 YoY revenue growth = -9.56 %",
+     "met": true,
+     "note": "answer: -9.6"
+    },
+    {
+     "point": "PulteGroup Q2 FY2026 Most recent reported fiscal quarter (period label) = Q2 FY2026 (quarter ended Jun 30, 2026) text",
+     "met": true,
+     "note": "answer: Q2 FY2026, quarter ended June 30, 2026"
+    }
+   ],
+   "rationale": "10/10 cells correct",
+   "cells_correct": 10,
+   "cells_total": 10
+  },
+  "citations": {
+   "claims": [],
+   "numeric_claims": 0,
+   "numeric_cited": 0,
+   "cited": 0,
+   "supported": 0,
+   "not_retrieved": 0,
+   "judge_error": "judge failed after 4 attempts: no structured output"
+  }
+ }
+}

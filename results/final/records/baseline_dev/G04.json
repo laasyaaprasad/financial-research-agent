@@ -1,0 +1,184 @@
+{
+ "id": "G04",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Oracle's total remaining performance obligations at the end of Q1 FY2027, and what percentage does Oracle expect to recognize as revenue over the next 12 months?",
+ "grading": "RPO ±0.5% in USD billions; next-12-month % exact as disclosed; period must be 2026-08-31",
+ "answer": "Oracle had USD 664 billion of RPO at August 31, 2026 and expected to recognize approximately 13% over the next twelve months. [G04-E1]",
+ "output": {
+  "answer": "## Oracle Q1 FY2027 (quarter ended Aug 31, 2026)\n\n**Total RPO: $664 billion**\n\n- Up $209 billion (46%) year-over-year from $455 billion\n- Up $26 billion sequentially from $638 billion in Q4 FY2026\n- Oracle booked more than $30 billion in new AI cloud contracts during the quarter\n\n**Expected recognition over the next 12 months: approximately 13%**\n\nThat implies roughly $86 billion of the $664 billion backlog converting to revenue within the next twelve months — a notably lower near-term conversion rate than in prior quarters (it was ~12% as of Q3 FY2026 and ~33% in Q1 FY2026), because the recent AI contract surge is heavily weighted toward multi-year deals.\n\nThe full recognition schedule Oracle discloses in its 10-Q:\n| Period | Share of RPO |\n|---|---|\n| Next 12 months | ~13% |\n| Months 13–36 | ~37% |\n| Months 37–60 | ~34% |\n| Thereafter | ~16% |\n\nSo about 84% is expected to be recognized within five years, and roughly half within 36 months.\n\nSources:\n- Oracle Q1 FY27 press release: https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10\n- Oracle Investor Relations release: https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx\n- StockTitan summary of Oracle's Q1 FY27 10-Q (13% in next 12 months): https://www.stocktitan.net/sec-filings/ORCL/10-q-oracle-corp-quarterly-earnings-report-08f884fc439e.html\n- CNBC earnings coverage: https://www.cnbc.com/2026/09/10/oracle-orcl-q1-earnings-report-2027.html",
+  "tokens": {
+   "input": 43205,
+   "output": 1002
+  },
+  "tavily_credits": 6,
+  "latency_s": 14.4,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/26bf412135a9afc3e6e516bba8b1b154",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle Q1 FY2027 remaining performance obligations"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle first quarter fiscal 2027 results RPO revenue 12 months"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle Q1 FY27 press release RPO \"next twelve months\" percentage recognized as revenue",
+     "include_domains": [
+      "oracle.com",
+      "s23.q4cdn.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Oracle\" RPO \"approximately\" \"12 months\" revenue recognized $664 billion"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle 10-Q August 31 2026 RPO \"next twelve months\" percent"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle Q1 FY27 10-Q remaining performance obligation \"12 months\" 13%"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx",
+    "https://www.cnbc.com/2026/09/10/oracle-orcl-q1-earnings-report-2027.html",
+    "https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10",
+    "https://www.stocktitan.net/sec-filings/ORCL/10-q-oracle-corp-quarterly-earnings-report-08f884fc439e.html"
+   ],
+   "cited_primary": 1,
+   "retrieved": 44,
+   "retrieved_primary": 6
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "RPO value is 664 billion USD (±0.5% tolerance)",
+     "met": true,
+     "note": "Agent states $664 billion, matches reference exactly within tolerance."
+    },
+    {
+     "point": "Next-12-month recognition percentage is exactly as disclosed (approximately 13%)",
+     "met": true,
+     "note": "Agent states approximately 13%, matches reference."
+    },
+    {
+     "point": "Period is quarter ended August 31, 2026 (2026-08-31)",
+     "met": true,
+     "note": "Agent explicitly states quarter ended Aug 31, 2026."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All three grading requirements are satisfied: RPO value matches within tolerance, next-12-month percentage matches exactly, and the fiscal period is correctly identified as Q1 FY2027 ending August 31, 2026."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Total RPO: $664 billion as of Q1 FY2027 (quarter ended Aug 31, 2026)",
+     "numeric": true,
+     "cited_url": "https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10",
+     "reason": "The press release states 'Remaining Performance Obligations or RPO up $209 billion year-over-year to $664 billion'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "RPO increased $209 billion (46%) year-over-year from $455 billion",
+     "numeric": true,
+     "cited_url": "https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10",
+     "reason": "Press release says up $209 billion year-over-year to $664 billion; Yahoo Finance historical data shows Aug 31, 2025: 455.30B, Aug 31, 2026: 664.00B, change 45.84% (~46%).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "RPO increased $26 billion sequentially from $638 billion in Q4 FY2026",
+     "numeric": true,
+     "cited_url": "https://www.cnbc.com/2026/09/10/oracle-orcl-q1-earnings-report-2027.html",
+     "reason": "CNBC article states RPO stood at $664 billion; Yahoo Finance shows May 31, 2026: 638.00B, Aug 31, 2026: 664.00B, change $26B (4.08%).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Oracle booked more than $30 billion in new AI cloud contracts during the quarter",
+     "numeric": true,
+     "cited_url": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx",
+     "reason": "Investor Relations release states 'Oracle booked more than $30 billion of additional AI cloud contracts in Q1 increasing its RPO to $664 billion.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Expected recognition over the next 12 months: approximately 13%",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/ORCL/10-q-oracle-corp-quarterly-earnings-report-08f884fc439e.html",
+     "reason": "The cited StockTitan summary is for Q3 FY2026 (as of Feb 28, 2026) and shows 12% recognition over next 12 months, not 13% for Q1 FY2027. The retrieved text does not support 13% for Q1 FY2027.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Roughly $86 billion of the $664 billion backlog converting to revenue within the next twelve months",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/ORCL/10-q-oracle-corp-quarterly-earnings-report-08f884fc439e.html",
+     "reason": "Calculation: 13% of $664B = $86.32B ≈ $86B. However the 13% figure is not supported by the cited source (see claim 5). Thus the derived figure lacks adequate evidence.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Near-term conversion rate was ~12% as of Q3 FY2026 and ~33% in Q1 FY2026",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Retrieved sources: StockTitan for Q3 FY2026 shows 12%; LinkedIn post states 'Only 33% of the $455 billion RPO converts to revenue within 12 months' for Q1 FY2026. However the answer does not cite a URL for these figures.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Full recognition schedule per 10-Q: next 12 months ~13%, months 13–36 ~37%, months 37–60 ~34%, thereafter ~16%",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/ORCL/10-q-oracle-corp-quarterly-earnings-report-08f884fc439e.html",
+     "reason": "The cited StockTitan source shows a different schedule (12%, 31%, 35%, remainder) for Q3 FY2026, not the Q1 FY2027 schedule. The retrieved text does not support the claimed percentages.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "About 84% expected to be recognized within five years, and roughly half within 36 months",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/ORCL/10-q-oracle-corp-quarterly-earnings-report-08f884fc439e.html",
+     "reason": "Arithmetic: 13%+37%+34%=84% within 60 months; 13%+37%=50% within 36 months. However the underlying schedule percentages are not supported by the cited source (see claim 8).",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 9,
+   "numeric_cited": 8,
+   "cited": 8,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}

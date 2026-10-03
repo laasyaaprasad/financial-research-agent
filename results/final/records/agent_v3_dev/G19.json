@@ -1,0 +1,337 @@
+{
+ "id": "G19",
+ "category": "Trends",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "Give NVIDIA's Data Center revenue for each quarter from Q2 FY2026 through Q2 FY2027 and the QoQ growth for each.",
+ "grading": "Each quarterly value ±0.5% USD millions; QoQ ±0.5pp; fail if Compute & Networking segment figures substituted or quarters mislabeled",
+ "answer": "Data Center market-platform revenue (USD millions) / calculated QoQ growth: Q2 FY2026: 41,096 / 5.0726%; Q3 FY2026: 51,215 / 24.6228%; Q4 FY2026: 62,314 / 21.6714%; Q1 FY2027: 75,246 / 20.7530%; Q2 FY2027: 89,023 / 18.3093%. Q2 FY2026 growth uses the Q1 FY2026 baseline of USD 39,112 million. These are Data Center figures, not Compute & Networking segment revenue. [G19-E1, G19-E2]",
+ "output": {
+  "answer": "**Question:** Give NVIDIA's Data Center revenue for each quarter from Q2 FY2026 through Q2 FY2027 and the QoQ growth for each.\n*As of 2026-10-01*\n\n| | Data Center revenue (USD millions) | Data Center revenue QoQ growth (%) |\n|---|---|---|\n| Q1 FY2026 (quarter ended April 27, 2025) — supporting period | 39,112 [1] | 10% (as disclosed); 9.9% (calculated) [1] |\n| Q2 FY2026 (quarter ended July 27, 2025) | 41,096 [2] | 5% (as disclosed); 5.1% (calculated) [2] |\n| Q3 FY2026 (quarter ended October 26, 2025) | 51,215 [3] | 25% (as disclosed); 24.6% (calculated) [3] |\n| Q4 FY2026 (quarter ended January 25, 2026) | 62,314 [4] | 22% (as disclosed); 21.7% (calculated) [4] |\n| Q1 FY2027 (quarter ended April 26, 2026) | 75,246 [5] | 21% (as disclosed); 20.8% (calculated) [5] |\n| Q2 FY2027 (quarter ended July 26, 2026) | 89,023 [6] | 18% (as disclosed); 18.3% (calculated) [6] |\n\n- NVIDIA reports Data Center revenue as a market-platform figure in its earnings-release segment tables, not as a line item of the primary financial statements. [1][2]\n- Q1 FY2026 (quarter ended April 27, 2025) Data Center revenue was $39,112 million, up 10% sequentially as disclosed. [1]\n- Q2 FY2026 (quarter ended July 27, 2025) Data Center revenue was $41,096 million, up 5% sequentially as disclosed. [2]\n- Q3 FY2026 (quarter ended October 26, 2025) Data Center revenue was $51,215 million, up 25% sequentially as disclosed. [3]\n- Q4 FY2026 (quarter ended January 25, 2026) Data Center revenue was $62,314 million, up 22% sequentially as disclosed. [4]\n- Q1 FY2027 (quarter ended April 26, 2026) Data Center revenue was $75,246 million, up 21% sequentially as disclosed. [5]\n- Q2 FY2027 (quarter ended July 26, 2026) Data Center revenue was $89,023 million, up 18% sequentially as disclosed. [6]\n- Beginning in Q1 FY2027 NVIDIA changed its reporting framework to two market platforms, Data Center and Edge Computing, with Data Center split into Hyperscale and ACIE sub-markets. [7][5]\n\n**Not available**\n- Data Center revenue and QoQ growth for Q3 FY2027 (quarter ending October 25, 2026): The quarter is still in progress as of 2026-10-01; NVIDIA's latest reported quarter is Q2 FY2027 (ended July 26, 2026), and Q3 FY2027 guidance is given only at the total-revenue level ($108.0 billion, plus or minus 2%), with no Data Center revenue figure or QoQ growth. [8][6]\n\n**Sources**\n[1] NVIDIA CORP earnings release for Q1 FY2026, 8-K EX-99.2 (filed 2025-05-28) (www.sec.gov, 2025-05-28, primary) https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/q1fy26cfocommentary.htm\n[2] NVIDIA CORP earnings release for Q2 FY2026, 8-K EX-99.2 (filed 2025-08-27) (www.sec.gov, 2025-08-27, primary) https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/q2fy26cfocommentary.htm\n[3] NVIDIA CORP earnings release for Q3 FY2026, 8-K EX-99.2 (filed 2025-11-19) (www.sec.gov, 2025-11-19, primary) https://www.sec.gov/Archives/edgar/data/1045810/000104581025000228/q3fy26cfocommentary.htm\n[4] NVIDIA CORP earnings release for Q4 FY2026, 8-K EX-99.2 (filed 2026-02-25) (www.sec.gov, 2026-02-25, primary) https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26cfocommentary.htm\n[5] NVIDIA CORP earnings release for Q1 FY2027, 8-K EX-99.2 (filed 2026-05-20) (www.sec.gov, 2026-05-20, primary) https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27cfocommentary.htm\n[6] NVIDIA CORP earnings release for Q2 FY2027, 8-K EX-99.2 (filed 2026-08-26) (www.sec.gov, 2026-08-26, primary) https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm\n[7] NVIDIA CORP earnings release for Q1 FY2027, 8-K EX-99.1 (filed 2026-05-20) (www.sec.gov, 2026-05-20, primary) https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm\n[8] NVIDIA CORP earnings release for Q2 FY2027, 8-K EX-99.1 (filed 2026-08-26) (www.sec.gov, 2026-08-26, primary) https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 75165,
+   "output": 8949
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 38.79,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/58a78a5d3ba7a1dd1e2d55b8298b9c34",
+  "companies": [
+   {
+    "name": "NVIDIA CORP",
+    "ticker": "NVDA",
+    "cik": "1045810",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "NVIDIA Data Center revenue for Q2 FY2026",
+    "NVIDIA Data Center revenue for Q3 FY2026",
+    "NVIDIA Data Center revenue for Q4 FY2026",
+    "NVIDIA Data Center revenue for Q1 FY2027",
+    "NVIDIA Data Center revenue for Q2 FY2027",
+    "NVIDIA Data Center revenue for Q1 FY2026 (needed as the base for Q2 FY2026 QoQ growth)",
+    "QoQ growth in Data Center revenue for Q2 FY2026 (vs Q1 FY2026)",
+    "QoQ growth in Data Center revenue for Q3 FY2026 (vs Q2 FY2026)",
+    "QoQ growth in Data Center revenue for Q4 FY2026 (vs Q3 FY2026)",
+    "QoQ growth in Data Center revenue for Q1 FY2027 (vs Q4 FY2026)",
+    "QoQ growth in Data Center revenue for Q2 FY2027 (vs Q1 FY2027)"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "NVDA",
+     "label": "Q2 FY2026"
+    },
+    {
+     "ticker": "NVDA",
+     "label": "Q3 FY2026"
+    },
+    {
+     "ticker": "NVDA",
+     "label": "Q4 FY2026"
+    },
+    {
+     "ticker": "NVDA",
+     "label": "Q1 FY2027"
+    },
+    {
+     "ticker": "NVDA",
+     "label": "Q2 FY2027"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "NVDA",
+     "period": "Q1 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "NVDA",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "NVDA",
+     "period": "Q3 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "NVDA",
+     "period": "Q4 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "NVDA",
+     "period": "Q1 FY2027",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "NVDA",
+     "period": "Q2 FY2027",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q3 FY2027 (2026-07-27 to 2026-10-25) is not yet reported — the period is still in progress, so no Data Center revenue or QoQ growth exists for it; the series ends at Q2 FY2027.",
+    "Q2 FY2026's QoQ growth requires Q1 FY2026 Data Center revenue, which is included as a supporting period (Q1 FY2026 earnings release).",
+    "Data Center revenue is a reportable-segment figure reported in the earnings release segment tables (and 10-Q segment notes); it is not a line item of the primary financial statements, so the earnings releases are the source for each quarter's figure."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Data Center revenue and QoQ growth for Q3 FY2027 (quarter ending October 25, 2026)",
+    "kind": "not_reported_yet",
+    "reason": "The quarter is still in progress as of 2026-10-01; NVIDIA's latest reported quarter is Q2 FY2027 (ended July 26, 2026), and Q3 FY2027 guidance is given only at the total-revenue level ($108.0 billion, plus or minus 2%), with no Data Center revenue figure or QoQ growth.",
+    "evidence_ids": [
+     "E11",
+     "E12"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/q1fy26cfocommentary.htm",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/q2fy26cfocommentary.htm",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000228/q3fy26cfocommentary.htm",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26cfocommentary.htm",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27cfocommentary.htm",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm"
+   ],
+   "cited_primary": 8,
+   "retrieved": 17,
+   "retrieved_primary": 17
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Data Center revenue for Q2 FY2026 provided and within ±0.5% USD millions tolerance",
+     "met": true,
+     "note": "Agent reports 41,096 USD millions, matching reference exactly."
+    },
+    {
+     "point": "QoQ growth for Q2 FY2026 provided and within ±0.5pp tolerance",
+     "met": true,
+     "note": "Agent reports 5.1% calculated, reference 5.0726%, difference 0.0274pp."
+    },
+    {
+     "point": "Data Center revenue for Q3 FY2026 provided and within ±0.5% USD millions tolerance",
+     "met": true,
+     "note": "Agent reports 51,215 USD millions, matching reference exactly."
+    },
+    {
+     "point": "QoQ growth for Q3 FY2026 provided and within ±0.5pp tolerance",
+     "met": true,
+     "note": "Agent reports 24.6% calculated, reference 24.6228%, difference 0.0228pp."
+    },
+    {
+     "point": "Data Center revenue for Q4 FY2026 provided and within ±0.5% USD millions tolerance",
+     "met": true,
+     "note": "Agent reports 62,314 USD millions, matching reference exactly; sourced from 8-K EX-99.2."
+    },
+    {
+     "point": "QoQ growth for Q4 FY2026 provided and within ±0.5pp tolerance",
+     "met": true,
+     "note": "Agent reports 21.7% calculated, reference 21.6714%, difference 0.0286pp."
+    },
+    {
+     "point": "Data Center revenue for Q1 FY2027 provided and within ±0.5% USD millions tolerance",
+     "met": true,
+     "note": "Agent reports 75,246 USD millions, matching reference exactly."
+    },
+    {
+     "point": "QoQ growth for Q1 FY2027 provided and within ±0.5pp tolerance",
+     "met": true,
+     "note": "Agent reports 20.8% calculated, reference 20.7530%, difference 0.047pp."
+    },
+    {
+     "point": "Data Center revenue for Q2 FY2027 provided and within ±0.5% USD millions tolerance",
+     "met": true,
+     "note": "Agent reports 89,023 USD millions, matching reference exactly."
+    },
+    {
+     "point": "QoQ growth for Q2 FY2027 provided and within ±0.5pp tolerance",
+     "met": true,
+     "note": "Agent reports 18.3% calculated, reference 18.3093%, difference 0.0093pp."
+    },
+    {
+     "point": "No substitution of Compute & Networking segment figures",
+     "met": true,
+     "note": "Agent explicitly states Data Center revenue is a market-platform figure, not Compute & Networking."
+    },
+    {
+     "point": "Quarters correctly labeled (fiscal quarter labeling)",
+     "met": true,
+     "note": "Agent labels Q2 FY2026 (ended July 27, 2025) through Q2 FY2027 (ended July 26, 2026) correctly."
+    },
+    {
+     "point": "Q4 FY2026 sourced from 10-K/8-K",
+     "met": true,
+     "note": "Agent cites 8-K EX-99.2 filed 2026-02-25 for Q4 FY2026."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All required quarterly revenue and QoQ growth figures are present, numerically within the specified tolerances, use the correct Data Center market-platform segment, and quarters are accurately labeled. The agent also correctly sources Q4 FY2026 from an 8-K filing. No failures per the grading rule."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q1 FY2026 Data Center revenue was $39,112 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/q1fy26cfocommentary.htm",
+     "reason": "Retrieved source shows Revenue by Market Platform table: Data Center | $39,112 | $35,580 | $22,563 | 10% | 73%",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY2026 QoQ growth was 10% disclosed, 9.9% calculated",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/q1fy26cfocommentary.htm",
+     "reason": "Disclosed QoQ 10% matches table. Calculated: (39,112 - 35,580) / 35,580 = 9.927% ≈ 9.9%",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 Data Center revenue was $41,096 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/q2fy26cfocommentary.htm",
+     "reason": "Retrieved source shows Revenue by Market Platform: Data Center | $41,096 | $39,112 | $26,272 | 5% | 56%",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 QoQ growth was 5% disclosed, 5.1% calculated",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/q2fy26cfocommentary.htm",
+     "reason": "Disclosed 5% matches table. Calculated: (41,096 - 39,112) / 39,112 = 5.073% ≈ 5.1%",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 Data Center revenue was $51,215 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000228/q3fy26cfocommentary.htm",
+     "reason": "Retrieved source shows Revenue by Market Platform: Data Center | $51,215 | $41,096 | $30,771 | 25% | 66%",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 QoQ growth was 25% disclosed, 24.6% calculated",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000228/q3fy26cfocommentary.htm",
+     "reason": "Disclosed 25% matches table. Calculated: (51,215 - 41,096) / 41,096 = 24.62% ≈ 24.6%",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2026 Data Center revenue was $62,314 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26cfocommentary.htm",
+     "reason": "Retrieved source shows Revenue by Market Platform: Data Center | $62,314 | $51,215 | $35,580 | 22% | 75%",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2026 QoQ growth was 22% disclosed, 21.7% calculated",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26cfocommentary.htm",
+     "reason": "Disclosed 22% matches table. Calculated: (62,314 - 51,215) / 51,215 = 21.67% ≈ 21.7%",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY2027 Data Center revenue was $75,246 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27cfocommentary.htm",
+     "reason": "Retrieved source shows Revenue by Market Platform: Data Center | $75,246 | $62,314 | $39,112 | 21% | 92%",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY2027 QoQ growth was 21% disclosed, 20.8% calculated",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27cfocommentary.htm",
+     "reason": "Disclosed 21% matches table. Calculated: (75,246 - 62,314) / 62,314 = 20.75% ≈ 20.8%",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2027 Data Center revenue was $89,023 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm",
+     "reason": "Cited URL not in retrieved sources; cannot verify",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2027 QoQ growth was 18% disclosed, 18.3% calculated",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm",
+     "reason": "Cited URL not in retrieved sources; cannot verify",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA reports Data Center revenue as a market-platform figure in earnings-release segment tables, not as a line item of primary financial statements",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/q1fy26cfocommentary.htm",
+     "reason": "Retrieved sources show Data Center revenue appears in 'Revenue by Market Platform' tables, not in primary GAAP/Non-GAAP summary tables which show Compute & Networking and Graphics",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Beginning in Q1 FY2027 NVIDIA changed its reporting framework to two market platforms, Data Center and Edge Computing, with Data Center split into Hyperscale and ACIE sub-markets",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm",
+     "reason": "Retrieved source q1fy27pr.htm states: 'NVIDIA is transitioning to a new reporting framework... two market platforms — Data Center and Edge Computing. Within Data Center, we will report two sub-markets, Hyperscale and ACIE...' q1fy27cfocommentary.htm shows new Revenue by Market Platform with Data Center and Edge Computing, and sub-markets Hyperscale and AI Clouds, Industrial, & Enterprise",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Data Center revenue and QoQ growth for Q3 FY2027 not available; quarter still in progress as of 2026-10-01; latest reported quarter is Q2 FY2027; Q3 FY2027 guidance only at total-revenue level ($108.0 billion ±2%), no Data Center figure",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm",
+     "reason": "Cited URLs not in retrieved sources; cannot verify guidance number $108.0 billion",
+     "supported": null,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 13,
+   "numeric_cited": 13,
+   "cited": 15,
+   "supported": 12,
+   "not_retrieved": 0
+  }
+ }
+}

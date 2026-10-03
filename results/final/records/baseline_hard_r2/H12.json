@@ -1,0 +1,244 @@
+{
+ "id": "H12",
+ "category": "Numerical reasoning",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "What were Toro's trailing-twelve-month Professional segment net sales and segment profit (EBIT) as of the end of its fiscal Q3 2026 (quarter ended July 31, 2026), and what was the implied TTM segment margin?",
+ "grading": "Computation: TTM = FY2025 + nine months FY2026 - nine months FY2025. TTM Professional net sales USD 3,853.5M and segment profit USD 748.5M (each +/-0.5%); margin 19.42% (+/-0.3pp; accept 19.4%). Fail if the dollar figures are nine-month, fiscal-2025 or quarterly values, or a different segment is used.",
+ "answer": "TTM Professional net sales = 3,624.0 (FY2025) + 2,943.2 (nine months FY2026) - 2,713.7 (nine months FY2025) = USD 3,853.5 million. TTM Professional segment profit (EBIT) = 702.5 + 573.8 - 527.8 = USD 748.5 million. TTM segment margin = 748.5 / 3,853.5 = 19.42% [H12-E1][H12-E2].",
+ "output": {
+  "answer": "## Toro (TTC) — Professional Segment TTM (as of fiscal Q3 2026, ended July 31, 2026)\n\nTTM figures are built as: **FY2025 (ended Oct 31, 2025) − 9M FY2025 + 9M FY2026**.\n\n| Component | Professional Net Sales | Professional Segment Profit (EBIT) |\n|---|---|---|\n| FY2025 full year (ended 10/31/25) | $3,624.0M | $702.5M |\n| Less: 9M FY2025 (ended 8/1/25) | −$2,713.7M | −$527.8M |\n| = Q4 FY2025 | $910.3M | $174.7M |\n| Plus: 9M FY2026 (ended 7/31/26) | +$2,943.2M | +$573.8M |\n| **TTM (ended 7/31/26)** | **$3,853.5M** | **$748.5M** |\n\n### Implied TTM segment margin\n**$748.5M ÷ $3,853.5M ≈ 19.4%**\n\n### Context\n- Q3 FY2026 Professional net sales were $1,012.6M, up 8.8% YoY (6.1% organic; acquisition contribution from the Tornado Infrastructure business).\n- Q3 FY2026 Professional segment profit was $211.8M, a 20.9% margin, down ~40 bps YoY on product mix and higher manufacturing costs, partly offset by pricing, productivity and volume leverage.\n- The TTM margin (~19.4%) is essentially flat versus FY2025's full-year Professional EBIT margin of 19.4% ($702.5M / $3,624.0M).\n\n**Caveats:** Segment profit here is Toro's reported GAAP segment profit (EBIT); it is not adjusted for the $43M non-cash impairment in Q3 FY2026 (booked outside segment profit / in \"Other\"). TTM is a calculated roll-forward, not a figure Toro itself reports. Note also that Toro conformed the prior-year Q3 segment profit presentation to the current-year basis.\n\n**Sources:**\n- Toro Q3 FY2026 results (Nasdaq/Business Wire): https://www.nasdaq.com/press-release/toro-company-reports-record-third-quarter-results-2026-09-03\n- Toro Q4/FY2025 results: https://www.thetorocompany.com/news-releases/news-release-details/toro-company-reports-fourth-quarter-and-full-year-fiscal-2025\n- Toro FY2025 Form 10-K (segment EBIT/margin): https://www.thetorocompany.com/static-files/8d6d91d0-43f6-4f0b-b306-59d274e3aa3c\n- Toro Q3 FY2025 results (9M FY2025 comparatives): https://www.thetorocompany.com/news-releases/news-release-details/toro-company-reports-fiscal-2025-third-quarter-results",
+  "tokens": {
+   "input": 14901,
+   "output": 1476
+  },
+  "tavily_credits": 4,
+  "latency_s": 20.65,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/7afc67e52993e74c3397436b8d52ef9f",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Toro fiscal Q3 2026 Professional segment net sales segment profit earnings",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Toro fiscal third quarter 2025 results Professional segment net sales profit",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.nasdaq.com/press-release/toro-company-reports-record-third-quarter-results-2026-09-03",
+    "https://www.thetorocompany.com/news-releases/news-release-details/toro-company-reports-fiscal-2025-third-quarter-results",
+    "https://www.thetorocompany.com/news-releases/news-release-details/toro-company-reports-fourth-quarter-and-full-year-fiscal-2025",
+    "https://www.thetorocompany.com/static-files/8d6d91d0-43f6-4f0b-b306-59d274e3aa3c"
+   ],
+   "cited_primary": 0,
+   "retrieved": 15,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "TTM Professional net sales = USD 3,853.5M (+/-0.5%)",
+     "met": true,
+     "note": "Agent reports $3,853.5M, matching reference exactly."
+    },
+    {
+     "point": "TTM Professional segment profit (EBIT) = USD 748.5M (+/-0.5%)",
+     "met": true,
+     "note": "Agent reports $748.5M, matching reference exactly."
+    },
+    {
+     "point": "Implied TTM segment margin = 19.42% (+/-0.3pp; accept 19.4%)",
+     "met": true,
+     "note": "Agent reports 19.4%, within tolerance."
+    },
+    {
+     "point": "Must not use nine-month FY2026 figures (net sales USD 2,943.2M; profit USD 573.8M)",
+     "met": true,
+     "note": "Agent uses nine-month FY2026 only as component in TTM calculation, not as final answer."
+    },
+    {
+     "point": "Must not use fiscal 2025 figures (USD 3,624.0M; USD 702.5M)",
+     "met": true,
+     "note": "Agent uses fiscal 2025 only as component in TTM calculation, not as final answer."
+    },
+    {
+     "point": "Must not use Q3-only margin (20.9%)",
+     "met": true,
+     "note": "Agent mentions Q3 margin 20.9% as context but does not present it as TTM margin."
+    },
+    {
+     "point": "Must not confuse segment net sales with external-customer net sales (2,882.2 vs 2,943.2 for nine months)",
+     "met": true,
+     "note": "Agent uses Professional segment net sales (2,943.2 for nine months) correctly."
+    },
+    {
+     "point": "Must not use adjusted/total-company figures",
+     "met": true,
+     "note": "Agent uses GAAP segment profit (EBIT) for Professional segment only."
+    },
+    {
+     "point": "Must use correct TTM window (Aug 2, 2025-Jul 31, 2026)",
+     "met": true,
+     "note": "Agent explicitly states TTM ended 7/31/26 and uses FY2025 + 9M FY2026 - 9M FY2025, which corresponds to that window."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All requirements are met: the agent provides the correct TTM Professional net sales ($3,853.5M), segment profit ($748.5M), and margin (19.4%), computed using the proper rolling-twelve-month formula and window, without substituting nine-month, full-year, or quarterly figures, and without segment confusion or adjusted figures."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "TTM Professional Net Sales (ended July 31, 2026) = $3,853.5M, derived as FY2025 full year ($3,624.0M) minus 9M FY2025 ($2,713.7M) plus 9M FY2026 ($2,943.2M).",
+     "numeric": true,
+     "cited_url": "https://www.nasdaq.com/press-release/toro-company-reports-record-third-quarter-results-2026-09-03",
+     "reason": "FY2025 full-year Professional Net Sales $3,624.0M from Toro Q4/FY2025 press release (source 2) and 10-K (source 3). 9M FY2025 Professional Net Sales $2,713.7M from Q3 FY2025 press release (source 4) and Q3 FY2026 press release nine-month comparative (source 1). 9M FY2026 Professional Net Sales $2,943.2M from Q3 FY2026 press release nine-month column (source 1). Calculation: 3,624.0 - 2,713.7 = 910.3 (Q4 FY2025); 910.3 + 2,943.2 = 3,853.5. All inputs match retrieved sources; arithmetic correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TTM Professional Segment Profit (EBIT) (ended July 31, 2026) = $748.5M, derived as FY2025 full year ($702.5M) minus 9M FY2025 ($527.8M) plus 9M FY2026 ($573.8M).",
+     "numeric": true,
+     "cited_url": "https://www.nasdaq.com/press-release/toro-company-reports-record-third-quarter-results-2026-09-03",
+     "reason": "FY2025 full-year Professional Segment Profit $702.5M from Toro Q4/FY2025 press release (source 2) and 10-K (source 3). 9M FY2025 Professional Segment Profit $527.8M from Q3 FY2025 press release (source 4) and Q3 FY2026 press release nine-month comparative (source 1). 9M FY2026 Professional Segment Profit $573.8M from Q3 FY2026 press release nine-month column (source 1). Calculation: 702.5 - 527.8 = 174.7 (Q4 FY2025); 174.7 + 573.8 = 748.5. All inputs match retrieved sources; arithmetic correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Implied TTM segment margin = $748.5M / $3,853.5M ≈ 19.4%.",
+     "numeric": true,
+     "cited_url": "https://www.nasdaq.com/press-release/toro-company-reports-record-third-quarter-results-2026-09-03",
+     "reason": "Derived from the two TTM figures above. 748.5 / 3,853.5 = 0.1942 (19.42%), rounds to 19.4%. Calculation verified.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 full-year (ended Oct 31, 2025) Professional Net Sales = $3,624.0M.",
+     "numeric": true,
+     "cited_url": "https://www.thetorocompany.com/news-releases/news-release-details/toro-company-reports-fourth-quarter-and-full-year-fiscal-2025",
+     "reason": "Toro Q4/FY2025 press release (source 2) shows twelve months ended Oct 31, 2025 Professional net sales $3,624.0M. 10-K (source 3) confirms $3,624.0M. Retrieved sources support.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 full-year Professional Segment Profit (EBIT) = $702.5M.",
+     "numeric": true,
+     "cited_url": "https://www.thetorocompany.com/news-releases/news-release-details/toro-company-reports-fourth-quarter-and-full-year-fiscal-2025",
+     "reason": "Toro Q4/FY2025 press release (source 2) shows twelve months ended Oct 31, 2025 Professional segment earnings $702.5M. 10-K (source 3) confirms EBIT $702.5M. Retrieved sources support.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "9M FY2025 (ended Aug 1, 2025) Professional Net Sales = $2,713.7M.",
+     "numeric": true,
+     "cited_url": "https://www.thetorocompany.com/news-releases/news-release-details/toro-company-reports-fiscal-2025-third-quarter-results",
+     "reason": "Toro Q3 FY2025 press release (source 4) shows nine months ended Aug 1, 2025 Professional net sales $2,713.7M. Q3 FY2026 press release (source 1) nine-month comparative column also shows $2,713.7M. Retrieved sources support.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "9M FY2025 Professional Segment Profit = $527.8M.",
+     "numeric": true,
+     "cited_url": "https://www.nasdaq.com/press-release/toro-company-reports-record-third-quarter-results-2026-09-03",
+     "reason": "Q3 FY2026 press release (source 1) nine-month comparative column shows Professional segment profit for nine months ended Aug 1, 2025 as $527.8M. Q3 FY2025 press release (source 4) does not show segment profit for nine months in the excerpt, but source 1 is authoritative. Retrieved source supports.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2025 Professional Net Sales = $910.3M (derived as FY2025 full year minus 9M FY2025).",
+     "numeric": true,
+     "cited_url": "https://www.thetorocompany.com/news-releases/news-release-details/toro-company-reports-fourth-quarter-and-full-year-fiscal-2025",
+     "reason": "Q4 FY2025 Professional net sales directly reported in Toro Q4/FY2025 press release (source 2) as three months ended Oct 31, 2025: $910.3M. Also matches derived calculation: 3,624.0 - 2,713.7 = 910.3. Retrieved source supports.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2025 Professional Segment Profit = $174.7M (derived as FY2025 full year minus 9M FY2025).",
+     "numeric": true,
+     "cited_url": "https://www.thetorocompany.com/news-releases/news-release-details/toro-company-reports-fourth-quarter-and-full-year-fiscal-2025",
+     "reason": "Q4 FY2025 Professional segment earnings directly reported in Toro Q4/FY2025 press release (source 2) as three months ended Oct 31, 2025: $174.7M. Derived calculation: 702.5 - 527.8 = 174.7. Retrieved source supports.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "9M FY2026 (ended July 31, 2026) Professional Net Sales = $2,943.2M.",
+     "numeric": true,
+     "cited_url": "https://www.nasdaq.com/press-release/toro-company-reports-record-third-quarter-results-2026-09-03",
+     "reason": "Q3 FY2026 press release (source 1) nine months ended July 31, 2026 Professional net sales column shows $2,943.2M. Retrieved source supports.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "9M FY2026 Professional Segment Profit = $573.8M.",
+     "numeric": true,
+     "cited_url": "https://www.nasdaq.com/press-release/toro-company-reports-record-third-quarter-results-2026-09-03",
+     "reason": "Q3 FY2026 press release (source 1) nine months ended July 31, 2026 Professional segment profit column shows $573.8M. Retrieved source supports.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 Professional net sales = $1,012.6M, up 8.8% YoY (6.1% organic; acquisition contribution from Tornado Infrastructure business).",
+     "numeric": true,
+     "cited_url": "https://www.nasdaq.com/press-release/toro-company-reports-record-third-quarter-results-2026-09-03",
+     "reason": "Q3 FY2026 press release (source 1) three months ended July 31, 2026 Professional net sales $1,012.6M; prior year three months ended Aug 1, 2025 $930.8M. Growth = (1012.6-930.8)/930.8 = 8.79% ≈ 8.8%. Percentage change table shows reported GAAP net sales growth 8.8%, acquisitions & divestitures 1.2%, foreign exchange impact (0.1)%, organic sales growth 6.1%. Acquisition contribution attributed to Tornado Infrastructure business per earnings transcript (source 0). Retrieved sources support.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 Professional segment profit = $211.8M, margin 20.9%, down ~40 bps YoY due to product mix and higher manufacturing costs, partly offset by pricing, productivity and volume leverage.",
+     "numeric": true,
+     "cited_url": "https://www.nasdaq.com/press-release/toro-company-reports-record-third-quarter-results-2026-09-03",
+     "reason": "Q3 FY2026 press release (source 1) three months ended July 31, 2026 Professional segment profit $211.8M; net sales $1,012.6M → margin 20.92% ≈ 20.9%. Prior year Q3 segment profit $198.5M on $930.8M sales → margin 21.33%. Difference ~43 bps, consistent with ~40 bps decline. Earnings transcript (source 0) states adjusted operating margin 20.9%, down 40 bps YoY due to product mix and higher manufacturing costs, partially offset by pricing, productivity improvements and volume leverage. Retrieved sources support.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 full-year Professional EBIT margin = 19.4% ($702.5M / $3,624.0M).",
+     "numeric": true,
+     "cited_url": "https://www.thetorocompany.com/static-files/8d6d91d0-43f6-4f0b-b306-59d274e3aa3c",
+     "reason": "10-K (source 3) shows Professional segment EBIT margin 19.4% for FY2025. Calculation: 702.5 / 3,624.0 = 0.1938 ≈ 19.4%. Retrieved source supports.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TTM margin (~19.4%) is essentially flat versus FY2025 full-year Professional EBIT margin of 19.4%.",
+     "numeric": true,
+     "cited_url": "https://www.nasdaq.com/press-release/toro-company-reports-record-third-quarter-results-2026-09-03",
+     "reason": "TTM margin calculated as 19.4% (claim 3). FY2025 margin 19.4% (claim 13). Both round to 19.4%; difference is negligible. Supported by derived figures.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Segment profit presented is Toro's reported GAAP segment profit (EBIT), not adjusted for the $43M non-cash impairment in Q3 FY2026 booked outside segment profit in 'Other'.",
+     "numeric": false,
+     "cited_url": "https://www.nasdaq.com/press-release/toro-company-reports-record-third-quarter-results-2026-09-03",
+     "reason": "Q3 FY2026 press release (source 1) shows 'Other' segment profit for three months ended July 31, 2026 as ($103.5M), which likely includes the $43M impairment. Earnings transcript (source 0) states adjusted earnings exclude a non-cash impairment charge of $43 million. The Professional segment profit line is separate from 'Other', consistent with GAAP segment profit. Retrieved sources support the caveat.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 15,
+   "numeric_cited": 15,
+   "cited": 16,
+   "supported": 16,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,218 @@
+{
+ "id": "H13",
+ "category": "Financial modeling",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "What were Texas Roadhouse's trailing-twelve-month total revenue and income-from-operations margin as of the end of its fiscal Q2 2026 (quarter ended June 30, 2026)?",
+ "grading": "Computation: TTM = FY2025 + 26 weeks 2026 - 26 weeks 2025. TTM total revenue USD 6,231.5M (6,231,515K); TTM income from operations USD 482.8M (482,795K); margin 7.75% (+/-0.2pp). Accept +/-0.5% on dollar figures. Fail if the window is not the 52 weeks ended June 30, 2026 or if net income is substituted.",
+ "answer": "TTM total revenue = 5,878,075 (FY2025) + 3,313,142 (26 weeks to June 30, 2026) - 2,959,702 (26 weeks to July 1, 2025) = USD 6,231,515 thousand (USD 6,231.5 million). TTM income from operations = 474,740 + 289,129 - 281,074 = USD 482,795 thousand (USD 482.8 million). TTM operating margin = 482,795 / 6,231,515 = 7.75% [H13-E1][H13-E2].",
+ "output": {
+  "answer": "## Texas Roadhouse (TXRH) — TTM as of fiscal Q2 2026 (quarter ended June 30, 2026)\n\n**Trailing-twelve-month total revenue: ~$6.23 billion**\n**TTM income-from-operations margin: ~7.7%** (income from operations ≈ $482.8M)\n\n### How I derived it (TTM = FY2025 + H1 2026 − H1 2025)\n\n| Component | Total revenue | Income from operations |\n|---|---|---|\n| FY2025 (ended Dec 30, 2025) | $5,878.1M | $474.7M |\n| H1 2026 (26 wks ended Jun 30, 2026) | $3,313.1M | $289.1M |\n| Less H1 2025 (26 wks ended Jul 1, 2025) | −$2,959.7M | −$281.1M |\n| **TTM ending Jun 30, 2026** | **≈ $6,231.5M** | **≈ $482.8M** |\n\n**Margin = $482.8M ÷ $6,231.5M ≈ 7.75%**\n\n### Supporting quarterly figures\n- **Q2 2026** (13 wks ended Jun 30, 2026): total revenue $1,679.976M; income from operations $142.788M (~8.5% margin)\n- **Q1 2026** (13 wks ended Mar 31, 2026): total revenue $1,633.166M; income from operations $146.341M\n- Q2 2026 revenue grew 11.1% YoY; H1 revenue grew 11.9%\n\n**Note:** The revenue figure ($6.232B) corroborates independent data aggregators. The ~7.7% TTM margin is my calculation using GAAP \"income from operations\" over total revenue. Some data providers report a slightly higher TTM operating margin (e.g., ~8.5%), which typically reflects a different operating-income definition or a single-quarter (not TTM) basis, so treat the margin as definition-dependent.\n\n**Sources:**\n- Texas Roadhouse Q2 2026 earnings release: https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx\n- Texas Roadhouse Q1 2026 earnings release: https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-First-Quarter-2026-Results/default.aspx\n- Texas Roadhouse Q4/FY2025 earnings release: https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Fourth-Quarter-2025-Results/default.aspx",
+  "tokens": {
+   "input": 13312,
+   "output": 1338
+  },
+  "tavily_credits": 2,
+  "latency_s": 19.67,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/a9daad542c262d2349b04ee86079de28",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Texas Roadhouse fiscal Q2 2026 results quarter ended June 30 2026 revenue"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Texas Roadhouse latest quarterly results trailing twelve month revenue income from operations"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-First-Quarter-2026-Results/default.aspx",
+    "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Fourth-Quarter-2025-Results/default.aspx",
+    "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx"
+   ],
+   "cited_primary": 3,
+   "retrieved": 16,
+   "retrieved_primary": 6
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "TTM total revenue computed correctly (FY2025 + 26 weeks 2026 - 26 weeks 2025) and matches reference within +/-0.5%",
+     "met": true,
+     "note": "Agent reports ~$6.23B (6,230M) vs reference 6,231.5M; difference 0.024% well within tolerance."
+    },
+    {
+     "point": "TTM income from operations computed correctly and matches reference within +/-0.5%",
+     "met": true,
+     "note": "Agent reports ≈$482.8M, exactly matching reference 482.8M."
+    },
+    {
+     "point": "TTM operating margin computed correctly (income from operations / total revenue) and matches reference within +/-0.2pp",
+     "met": true,
+     "note": "Agent calculates 7.75%, exactly matching reference 7.75%."
+    },
+    {
+     "point": "Trailing twelve-month window is the 52 weeks ended June 30, 2026 (fiscal Q2 2026)",
+     "met": true,
+     "note": "Agent explicitly uses FY2025, H1 2026 (26 weeks ended Jun 30, 2026), and subtracts H1 2025 (26 weeks ended Jul 1, 2025), yielding the correct 52-week window."
+    },
+    {
+     "point": "Uses income from operations (not net income or restaurant margin)",
+     "met": true,
+     "note": "Agent consistently uses 'income from operations' throughout the calculation and labels the margin accordingly."
+    },
+    {
+     "point": "Uses correct units (millions or thousands consistently) without confusion",
+     "met": true,
+     "note": "Agent reports figures in millions (M) consistently; no thousands/millions confusion."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: the TTM revenue, income from operations, and operating margin match the reference values within the allowed tolerances; the computation uses the correct 52-week window ending June 30, 2026; the correct metric (income from operations) is used; and units are handled consistently."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Trailing-twelve-month total revenue as of fiscal Q2 2026 (ended June 30, 2026) is approximately $6.23 billion",
+     "numeric": true,
+     "cited_url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+     "reason": "Derived from FY2025 revenue ($5,878.075M) + H1 2026 revenue ($3,313.142M) - H1 2025 revenue ($2,959.702M) = $6,231.515M ≈ $6.23B. The Q2 2026 release provides the 26-week figures for H1 2026 and H1 2025; the Q4/FY2025 release provides FY2025 revenue. Independent aggregator Macrotrends reports $6.232B for the twelve months ending June 30, 2026, corroborating the figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TTM income-from-operations margin is approximately 7.7% (income from operations ≈ $482.8M)",
+     "numeric": true,
+     "cited_url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+     "reason": "TTM income from operations = FY2025 ($474.740M) + H1 2026 ($289.129M) - H1 2025 ($281.074M) = $482.795M ≈ $482.8M. Margin = $482.795M / $6,231.515M = 7.748% ≈ 7.7%. All components sourced from the Q2 2026 and Q4/FY2025 releases.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 (ended Dec 30, 2025) total revenue was $5,878.1M",
+     "numeric": true,
+     "cited_url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Fourth-Quarter-2025-Results/default.aspx",
+     "reason": "The Q4/FY2025 release shows fiscal year total revenue of $5,878,075 thousand ($5,878.075M), matching the claimed $5,878.1M when rounded.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 income from operations was $474.7M",
+     "numeric": true,
+     "cited_url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Fourth-Quarter-2025-Results/default.aspx",
+     "reason": "The same release shows fiscal year income from operations of $474,740 thousand ($474.740M), matching the claimed $474.7M.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "H1 2026 (26 weeks ended Jun 30, 2026) total revenue was $3,313.1M",
+     "numeric": true,
+     "cited_url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+     "reason": "The Q2 2026 release shows 26-week total revenue of $3,313,142 thousand ($3,313.142M), matching the claimed $3,313.1M.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "H1 2026 income from operations was $289.1M",
+     "numeric": true,
+     "cited_url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+     "reason": "The Q2 2026 release shows 26-week income from operations of $289,129 thousand ($289.129M), matching the claimed $289.1M.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "H1 2025 (26 weeks ended Jul 1, 2025) total revenue was $2,959.7M",
+     "numeric": true,
+     "cited_url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+     "reason": "The Q2 2026 release shows prior-year 26-week total revenue of $2,959,702 thousand ($2,959.702M), matching the claimed $2,959.7M.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "H1 2025 income from operations was $281.1M",
+     "numeric": true,
+     "cited_url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+     "reason": "The Q2 2026 release shows prior-year 26-week income from operations of $281,074 thousand ($281.074M), matching the claimed $281.1M.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 (13 weeks ended Jun 30, 2026) total revenue was $1,679.976M",
+     "numeric": true,
+     "cited_url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+     "reason": "The Q2 2026 release shows 13-week total revenue of $1,679,976 thousand ($1,679.976M), exactly matching the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 income from operations was $142.788M",
+     "numeric": true,
+     "cited_url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+     "reason": "The Q2 2026 release shows 13-week income from operations of $142,788 thousand ($142.788M), exactly matching the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 operating margin was approximately 8.5%",
+     "numeric": true,
+     "cited_url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+     "reason": "Calculated as $142.788M / $1,679.976M = 8.50%, matching the claimed ~8.5%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 2026 (13 weeks ended Mar 31, 2026) total revenue was $1,633.166M",
+     "numeric": true,
+     "cited_url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-First-Quarter-2026-Results/default.aspx",
+     "reason": "The Q1 2026 release shows 13-week total revenue of $1,633,166 thousand ($1,633.166M), exactly matching the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 2026 income from operations was $146.341M",
+     "numeric": true,
+     "cited_url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-First-Quarter-2026-Results/default.aspx",
+     "reason": "The Q1 2026 release shows 13-week income from operations of $146,341 thousand ($146.341M), exactly matching the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 revenue grew 11.1% year-over-year",
+     "numeric": true,
+     "cited_url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+     "reason": "The Q2 2026 release explicitly states 11.1% YoY growth for total revenue (13-week). The prior-year quarter revenue was $1,512,054 thousand; growth = ($1,679,976 - $1,512,054) / $1,512,054 = 11.1%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "H1 2026 revenue grew 11.9% year-over-year",
+     "numeric": true,
+     "cited_url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+     "reason": "The Q2 2026 release explicitly states 11.9% YoY growth for 26-week total revenue. Prior-year 26-week revenue was $2,959,702 thousand; growth = ($3,313,142 - $2,959,702) / $2,959,702 = 11.9%.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 15,
+   "numeric_cited": 15,
+   "cited": 15,
+   "supported": 15,
+   "not_retrieved": 0
+  }
+ }
+}

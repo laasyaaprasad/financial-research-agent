@@ -1,0 +1,285 @@
+{
+ "id": "G26",
+ "category": "Complex retrieval",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What were Novo Nordisk's 2025 sales and operating profit, with growth in reported DKK vs constant exchange rates, and the USD equivalent of 2025 sales?",
+ "grading": "DKK figures ±0.5% (DKK millions/billions, labeled); growth rates exact to 1pp for both reported and CER; USD conversion ±3% and must state the rate and its source; fail if DKK figures labeled as USD",
+ "answer": "Novo Nordisk 2025 sales were DKK 309,064 million, up 6% reported / 10% at constant exchange rates. Operating profit was DKK 127,658 million, down 1% reported / up 6% at CER. Using the Federal Reserve 2025 annual-average rate of DKK 6.6137 per USD, sales translate to approximately USD 46.7309 billion. This is an analyst translation of DKK-reported IFRS sales. [G26-E1, G26-E2]",
+ "output": {
+  "answer": "**Question:** What were Novo Nordisk's 2025 sales and operating profit, with growth in reported DKK vs constant exchange rates, and the USD equivalent of 2025 sales?\n*As of 2026-10-01*\n\n| | Net sales (DKK million) | Sales growth, reported DKK (%) | Sales growth, constant exchange rates (%) | Operating profit (DKK million) | Operating profit growth, reported DKK (%) | Operating profit growth, constant exchange rates (%) | Net sales (USD) |\n|---|---|---|---|---|---|---|---|\n| FY2025 (year ended December 31, 2025) | 309,064 [1][2] | 6.4% [1] | 10.3% [1] | 127,658 [1][2] | (0.5%) [1] | 6.0% [1] | $43.27 billion [3] |\n\n- Novo Nordisk's FY2025 (year ended December 31, 2025) net sales were DKK 309,064 million, up 6.4% as reported in Danish kroner and up 10.3% at constant exchange rates. [1]\n- Novo Nordisk's FY2025 (year ended December 31, 2025) operating profit was DKK 127,658 million, down 0.5% as reported in Danish kroner and up 6.0% at constant exchange rates. [1]\n- On a constant-exchange-rate basis (non-IFRS), Novo Nordisk's FY2025 (year ended December 31, 2025) net sales were DKK 320,283 million and operating profit was DKK 136,077 million. [1]\n- PharmExec reported that Novo Nordisk's FY2025 net sales reached $43.27 billion, with operating profit of $17.88 billion at constant exchange rates; the article does not state the DKK/USD translation convention used. [3]\n\n**Not available**\n- USD equivalent of FY2025 sales at a company-disclosed translation rate (e.g. 20-F selected financial data or exchange-rate note): The provided evidence does not include the 20-F's selected financial data or exchange-rate note giving a USD sales figure and the exact DKK/USD rate/convention used; the only USD sales figure in the evidence is from a secondary source (PharmExec, $43.27 billion) that does not state the translation convention. [3]\n\n_1 draft statement(s) were withheld because they could not be verified against the sources (details in the run record)._\n\n**Sources**\n[1] Novo Nordisk Annual Report 2025 (PDF) (annualreport.novonordisk.com, undated, primary) https://annualreport.novonordisk.com/2025/_assets/downloads/novo-nordisk-annual-report-2025.pdf?h=9UdfHgQ-\n[2] NOVO NORDISK A S XBRL data tagged in 20-F filed 2026-02-04 (www.sec.gov, 2026-02-04, primary) https://www.sec.gov/Archives/edgar/data/353278/000035327826000012/\n[3] Novo Nordisk Releases 2025 Financial Report and 2026 Sales and Operations Profit Outlook | PharmExec (www.pharmexec.com, undated, secondary) https://www.pharmexec.com/view/novo-nordisk-2025-financial-report-2026-sales-operations-profit-outlook\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 69804,
+   "output": 23735
+  },
+  "tavily_credits": 3.0,
+  "latency_s": 94.64,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/d0329ef90546b0a1d2f7bf9a42448b38",
+  "companies": [
+   {
+    "name": "NOVO NORDISK A S",
+    "ticker": "NVO",
+    "cik": "353278",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Novo Nordisk FY2025 net sales (DKK million)",
+    "Novo Nordisk FY2025 operating profit (DKK million)",
+    "FY2025 vs FY2024 growth in reported DKK (%) for net sales and operating profit",
+    "FY2025 growth at constant exchange rates (CER, %) for net sales and operating profit",
+    "USD equivalent of FY2025 net sales (convenience translation / average or year-end rate used)"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "NVO",
+     "label": "FY2025"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "NVO",
+     "period": "FY2025",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "NVO",
+     "period": "FY2024",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "No earnings release is listed in NVO's calendar; the FY2025 20-F (filed 2026-02-04) is the source for full-year 2025 figures.",
+    "Constant-exchange-rate (CER) growth is a non-IFRS measure; it is disclosed in the 20-F/annual report narrative rather than in the primary IFRS statements.",
+    "The USD equivalent of 2025 sales depends on the translation convention used (convenience translation at a specified rate vs. average rate); the 20-F's selected financial data / exchange-rate note should be checked for the exact rate and figure."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "USD equivalent of FY2025 sales at a company-disclosed translation rate (e.g. 20-F selected financial data or exchange-rate note)",
+    "kind": "not_in_evidence",
+    "reason": "The provided evidence does not include the 20-F's selected financial data or exchange-rate note giving a USD sales figure and the exact DKK/USD rate/convention used; the only USD sales figure in the evidence is from a secondary source (PharmExec, $43.27 billion) that does not state the translation convention.",
+    "evidence_ids": [
+     "E5"
+    ]
+   }
+  ],
+  "removed": [
+   {
+    "text": "In its 3 February 2026 press release, Novo Nordisk stated that FY2025 sales increased by 10% and operating profit increased by 6% at constant exchange rates, within previously issued guidance of 8 to 11% sales growth and 4 to 7% operating profit growth.",
+    "problem": "number 3 is not in the quotes and not calculated"
+   }
+  ],
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NOVO NORDISK A S 2025 sales growth at constant exchange rates (CER)",
+     "topic": "general",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-01",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NOVO NORDISK A S 2025 operating profit growth at constant exchange rates (CER)",
+     "topic": "general",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-01",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.pharmexec.com/view/novo-nordisk-2025-financial-report-2026-sales-operations-profit-outlook",
+      "https://via.ritzau.dk/pressemeddelelse/14780475/novo-nordisk-as?publisherId=90446&lang=en",
+      "https://annualreport.novonordisk.com/2025/_assets/downloads/novo-nordisk-annual-report-2025.pdf?h=9UdfHgQ-"
+     ],
+     "query": "What were Novo Nordisk's 2025 sales and operating profit, with growth in reported DKK vs constant exchange rates, and the USD equivalent of 2025 sales?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://annualreport.novonordisk.com/2025/_assets/downloads/novo-nordisk-annual-report-2025.pdf?h=9UdfHgQ-",
+    "https://www.pharmexec.com/view/novo-nordisk-2025-financial-report-2026-sales-operations-profit-outlook",
+    "https://www.sec.gov/Archives/edgar/data/353278/000035327826000012/"
+   ],
+   "cited_primary": 2,
+   "retrieved": 10,
+   "retrieved_primary": 6
+  },
+  "correctness": {
+   "score": 0.875,
+   "points": [
+    {
+     "point": "Sales DKK figure within ±0.5% and labeled as DKK millions",
+     "met": true,
+     "note": "Agent reports DKK 309,064 million, matching reference exactly."
+    },
+    {
+     "point": "Operating profit DKK figure within ±0.5% and labeled as DKK millions",
+     "met": true,
+     "note": "Agent reports DKK 127,658 million, matching reference exactly."
+    },
+    {
+     "point": "Sales growth reported within 1 percentage point of reference (6%)",
+     "met": true,
+     "note": "Agent reports 6.4%, difference 0.4pp."
+    },
+    {
+     "point": "Sales growth CER within 1 percentage point of reference (10%)",
+     "met": true,
+     "note": "Agent reports 10.3%, difference 0.3pp."
+    },
+    {
+     "point": "Operating profit growth reported within 1 percentage point of reference (-1%)",
+     "met": true,
+     "note": "Agent reports -0.5%, difference 0.5pp."
+    },
+    {
+     "point": "Operating profit growth CER within 1 percentage point of reference (6%)",
+     "met": true,
+     "note": "Agent reports 6.0%, exact match."
+    },
+    {
+     "point": "USD equivalent of sales within ±3% of reference (USD 46.73 billion) and states conversion rate and source",
+     "met": false,
+     "note": "Agent reports USD 43.27 billion (7.4% below reference), does not state the DKK/USD rate used, and cites a secondary source (PharmExec) that does not disclose the conversion convention."
+    },
+    {
+     "point": "DKK figures not labeled as USD",
+     "met": true,
+     "note": "All DKK figures are clearly labeled as DKK million."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The agent correctly provides the DKK sales and operating profit figures and the reported/CER growth rates within the required tolerances. However, the USD equivalent of sales is outside the ±3% tolerance (43.27 vs 46.73 billion) and the agent fails to state the conversion rate and its source, instead relying on an unattributed secondary source. This misses a core requirement of the question."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "FY2025 net sales were DKK 309,064 million",
+     "numeric": true,
+     "cited_url": "https://annualreport.novonordisk.com/2025/_assets/downloads/novo-nordisk-annual-report-2025.pdf?h=9UdfHgQ-",
+     "reason": "Annual Report 2025 shows 'Net sales ... 309,064' in the five-year overview table and 'Revenue (Revenue): 309,064,000,000 DKK' in the XBRL data.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 sales growth reported in DKK was 6.4%",
+     "numeric": true,
+     "cited_url": "https://annualreport.novonordisk.com/2025/_assets/downloads/novo-nordisk-annual-report-2025.pdf?h=9UdfHgQ-",
+     "reason": "Annual Report 2025 states 'Sales growth as reported ... 6.4%' for 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 sales growth at constant exchange rates was 10.3%",
+     "numeric": true,
+     "cited_url": "https://annualreport.novonordisk.com/2025/_assets/downloads/novo-nordisk-annual-report-2025.pdf?h=9UdfHgQ-",
+     "reason": "Annual Report 2025 shows 'Sales growth in constant exchange rates ... 10.3%' for 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 operating profit was DKK 127,658 million",
+     "numeric": true,
+     "cited_url": "https://annualreport.novonordisk.com/2025/_assets/downloads/novo-nordisk-annual-report-2025.pdf?h=9UdfHgQ-",
+     "reason": "Annual Report 2025 shows 'Operating profit ... 127,658' and XBRL data shows 'ProfitLossFromOperatingActivities: 127,658,000,000 DKK'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 operating profit growth reported in DKK was -0.5%",
+     "numeric": true,
+     "cited_url": "https://annualreport.novonordisk.com/2025/_assets/downloads/novo-nordisk-annual-report-2025.pdf?h=9UdfHgQ-",
+     "reason": "Annual Report 2025 shows 'Operating profit growth as reported ... (0.5%)' for 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 operating profit growth at constant exchange rates was 6.0%",
+     "numeric": true,
+     "cited_url": "https://annualreport.novonordisk.com/2025/_assets/downloads/novo-nordisk-annual-report-2025.pdf?h=9UdfHgQ-",
+     "reason": "Annual Report 2025 shows 'Operating profit growth in constant exchange rates ... 6.0%' for 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 net sales in USD were $43.27 billion (per PharmExec)",
+     "numeric": true,
+     "cited_url": "https://www.pharmexec.com/view/novo-nordisk-2025-financial-report-2026-sales-operations-profit-outlook",
+     "reason": "PharmExec article states 'Net sales reached $43.27 billion'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 net sales at constant exchange rates (non-IFRS) were DKK 320,283 million and operating profit at constant exchange rates was DKK 136,077 million",
+     "numeric": true,
+     "cited_url": "https://annualreport.novonordisk.com/2025/_assets/downloads/novo-nordisk-annual-report-2025.pdf?h=9UdfHgQ-",
+     "reason": "Annual Report 2025 shows 'Net sales in constant exchange rates 320,283' and 'Operating profit in constant exchange rates 136,077' for 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "PharmExec reported FY2025 net sales of $43.27 billion and operating profit of $17.88 billion at constant exchange rates, but did not state the DKK/USD translation convention used",
+     "numeric": false,
+     "cited_url": "https://www.pharmexec.com/view/novo-nordisk-2025-financial-report-2026-sales-operations-profit-outlook",
+     "reason": "PharmExec article states 'Net sales reached $43.27 billion, while operating profit totaled $17.88 billion at CER' and does not mention the translation convention.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The company-disclosed USD equivalent of FY2025 sales (e.g., from 20-F selected financial data or exchange-rate note) is not available in the provided evidence; the only USD figure is from PharmExec",
+     "numeric": false,
+     "cited_url": "https://www.pharmexec.com/view/novo-nordisk-2025-financial-report-2026-sales-operations-profit-outlook",
+     "reason": "The SEC 20-F filing retrieved does not contain a selected financial data section or exchange-rate note with a USD sales figure; the PharmExec article is a secondary source that does not disclose its translation convention.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 8,
+   "cited": 10,
+   "supported": 10,
+   "not_retrieved": 0
+  }
+ }
+}

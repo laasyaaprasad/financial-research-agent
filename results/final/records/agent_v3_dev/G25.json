@@ -1,0 +1,257 @@
+{
+ "id": "G25",
+ "category": "Adjustments",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "Honeywell reported Q2 2026 a few weeks after spinning off Aerospace. What were consolidated sales vs sales excluding Aerospace, and why is GAAP EPS from continuing operations so far above adjusted EPS?",
+ "grading": "Use HON, CIK 773840. Consolidated sales USD 9,719M; ex-Aerospace sales USD 5,187M. Identify the Quantinuum gain removal (-$15.87/share) as the main EPS adjustment. State actual Q2 close June 27, spin June 29 in Q3, and Aerospace consolidated in Q2 with discontinued-operations presentation beginning Q3. Keep consolidated and ex-Aerospace EPS bases distinct.",
+ "answer": "HON consolidated Q2 2026 sales were USD 9,719 million; sales excluding Aerospace were USD 5,187 million. Consolidated GAAP continuing-operations EPS of $17.83 reconciles to adjusted EPS of $4.52, principally by removing $15.87 per share of Quantinuum deconsolidation gains; other net adjustments add $2.56. Ex-Aerospace EPS was $16.65 GAAP / $1.95 adjusted. The Q2 actual close was June 27, although presented as June 30: the June 29 Aerospace spin occurred in Q3. Aerospace remains consolidated in this Q2 presentation and becomes discontinued operations beginning Q3. [G25-E1, G25-E2]",
+ "output": {
+  "answer": "**Question:** Honeywell reported Q2 2026 a few weeks after spinning off Aerospace. What were consolidated sales vs sales excluding Aerospace, and why is GAAP EPS from continuing operations so far above adjusted EPS?\n*As of 2026-10-01*\n\n| | Sales (USD millions, GAAP as reported) | GAAP diluted EPS from continuing operations (USD) | Adjusted EPS (USD, non-GAAP) | Sales (USD millions, non-GAAP basis) | GAAP EPS from continuing operations (USD) |\n|---|---|---|---|---|---|\n| Consolidated (including Aerospace Technologies) — Q2 FY2026, quarter ended June 30, 2026 | $9,719 [1][2] | $17.83 [1][2] | $4.52 [1] | — | — |\n| Honeywell Technologies (excluding Aerospace Technologies) — Q2 FY2026, quarter ended June 30, 2026 | — | — | $1.95 [1] | $5,187 [1] | $16.65 [1] |\n\n- Honeywell Technologies reported Q2 FY2026 (quarter ended June 30, 2026) consolidated sales of $9,719 million on a GAAP as-reported basis, and those consolidated results include the operations of Honeywell Aerospace, which separated in a spin-off on June 29, 2026. [1][2]\n- Sales excluding Aerospace Technologies (the Honeywell Technologies non-GAAP basis, which adjusts reported net sales from continuing operations for separation impacts and removes sales attributable to the Aerospace Technologies business) were $5,187 million in Q2 FY2026, up 3% reported and up 4% organic. [1]\n- Consolidated GAAP diluted earnings per share from continuing operations were $17.83 in Q2 FY2026, versus adjusted EPS of $4.52, a gap of 13.31 per share. [1][2]\n- On the Honeywell Technologies basis (excluding Aerospace), GAAP EPS from continuing operations were $16.65 in Q2 FY2026 versus adjusted EPS of $1.95, a gap of 14.70 per share. [1]\n- The gap between GAAP and adjusted EPS is driven by the one-time gain on deconsolidation of Quantinuum, which added $15.78 after tax per share in Q2 FY2026, partially offset by higher divestiture-related costs of $1.54 after tax per share. [3]\n- The Q2 FY2026 per-share amounts have been retrospectively adjusted for the one-for-two reverse stock split that took effect June 29, 2026, and adjusted EPS for the quarter used weighted average shares of 318.6 million. [1][3]\n- The Aerospace business's results are expected to be reflected as discontinued operations beginning in Q3 FY2026, so the Q2 FY2026 consolidated figures that still include Aerospace are not directly comparable to the recast presentation. [1][3]\n\n**Not available**\n- Q3 FY2026 (quarter ending September 30, 2026) consolidated or ex-Aerospace sales and EPS: Q3 FY2026 has not been reported as of 2026-10-01; the evidence contains no Q3 FY2026 actuals. [1]\n- A dollar amount of the Quantinuum deconsolidation gain (only a per-share after-tax amount is disclosed): The evidence quantifies the gain only as $15.78 after tax per share; no total dollar gain is printed in the provided evidence. [3]\n\n**Sources**\n[1] HONEYWELL INTERNATIONAL INC earnings release for Q2 FY2026, 8-K EX-99 (filed 2026-07-23) (www.sec.gov, 2026-07-23, primary) https://www.sec.gov/Archives/edgar/data/773840/000077384026000120/exhibit99-q22026earningsre.htm\n[2] HONEYWELL INTERNATIONAL INC XBRL data tagged in 10-Q filed 2026-07-23 (www.sec.gov, 2026-07-23, primary) https://www.sec.gov/Archives/edgar/data/773840/000077384026000124/\n[3] HONEYWELL INTERNATIONAL INC 10-Q for Q2 FY2026 (filed 2026-07-23) (www.sec.gov, 2026-07-23, primary) https://www.sec.gov/Archives/edgar/data/773840/000077384026000124/hon-20260630.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 28944,
+   "output": 12033
+  },
+  "tavily_credits": 1.0,
+  "latency_s": 45.03,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/1f1f231ed575b45a625d7b844a6a7b7d",
+  "companies": [
+   {
+    "name": "HONEYWELL INTERNATIONAL INC",
+    "ticker": "HON",
+    "cik": "773840",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Honeywell Q2 FY2026 consolidated net sales (total, as reported)",
+    "Honeywell Q2 FY2026 sales excluding Aerospace (pro forma / ex-spin-off basis) and how the two figures reconcile",
+    "Honeywell Q2 FY2026 GAAP EPS (or earnings) from continuing operations",
+    "Honeywell Q2 FY2026 adjusted EPS and the full GAAP-to-adjusted reconciliation bridge",
+    "The specific items driving GAAP EPS above adjusted EPS (e.g. gain on the Aerospace separation/spin-off, separation and spin-off transaction costs, amortization of acquisition-related intangibles, tax items)",
+    "How the Aerospace spin-off is presented in the Q2 FY2026 statements (discontinued operations vs. deconsolidation) and whether prior-period sales were recast",
+    "Management's explanation of the GAAP vs. adjusted EPS gap and any commentary on the separation's effect on continuing operations"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "HON",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "HON",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "HON",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "HON",
+     "period": "Q1 FY2026",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": 90,
+   "searches": [
+    {
+     "purpose": "Management's explanation on the Q2 2026 earnings call of the GAAP vs. adjusted EPS gap and the Aerospace separation's impact on continuing operations, which is often only quantified in call remarks rather than the release",
+     "query": "Honeywell Q2 2026 earnings call Aerospace spin-off GAAP EPS adjusted EPS separation gain commentary",
+     "topic": "news",
+     "days_back": 90
+    }
+   ],
+   "availability_notes": [
+    "Q3 FY2026 (2026-07-01 to 2026-09-30) is not yet reported, so no Q3 figures or guidance-actual comparisons are available; the Q2 FY2026 earnings release's outlook for Q3 FY2026 is the only forward guidance on record.",
+    "The 'sales excluding Aerospace' figure is a non-GAAP/pro forma measure; it is disclosed in the Q2 FY2026 earnings release and separation-related 8-Ks rather than as a tagged financial-statement line, so it must be read from the release tables.",
+    "The GAAP-vs-adjusted EPS bridge depends on one-time separation items (e.g. gain on separation, transaction costs) that may be quantified only in the release's non-GAAP reconciliation or on the earnings call; if not disclosed, the gap cannot be estimated.",
+    "Aerospace's historical results may be presented as discontinued operations in the Q2 FY2026 10-Q, which would mean prior-period consolidated sales are recast and not directly comparable to previously reported figures."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Q3 FY2026 (quarter ending September 30, 2026) consolidated or ex-Aerospace sales and EPS",
+    "kind": "not_reported_yet",
+    "reason": "Q3 FY2026 has not been reported as of 2026-10-01; the evidence contains no Q3 FY2026 actuals.",
+    "evidence_ids": [
+     "E1"
+    ]
+   },
+   {
+    "item": "A dollar amount of the Quantinuum deconsolidation gain (only a per-share after-tax amount is disclosed)",
+    "kind": "not_disclosed",
+    "reason": "The evidence quantifies the gain only as $15.78 after tax per share; no total dollar gain is printed in the provided evidence.",
+    "evidence_ids": [
+     "E2"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Honeywell Q2 2026 earnings call Aerospace spin-off GAAP EPS adjusted EPS separation gain commentary",
+     "topic": "news",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-01",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "start_date": "2026-07-03"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/773840/000077384026000120/exhibit99-q22026earningsre.htm",
+    "https://www.sec.gov/Archives/edgar/data/773840/000077384026000124/",
+    "https://www.sec.gov/Archives/edgar/data/773840/000077384026000124/hon-20260630.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 5,
+   "retrieved_primary": 5
+  },
+  "correctness": {
+   "score": 0.571,
+   "points": [
+    {
+     "point": "Consolidated sales USD 9,719M",
+     "met": true,
+     "note": "Agent reports consolidated sales of $9,719 million, matching reference."
+    },
+    {
+     "point": "Ex-Aerospace sales USD 5,187M",
+     "met": true,
+     "note": "Agent reports sales excluding Aerospace of $5,187 million, matching reference."
+    },
+    {
+     "point": "Identify Quantinuum gain removal (-$15.87/share) as the main EPS adjustment",
+     "met": false,
+     "note": "Agent states Quantinuum gain as $15.78 after tax per share, not the required $15.87/share."
+    },
+    {
+     "point": "State actual Q2 close June 27",
+     "met": false,
+     "note": "Agent reports quarter ended June 30, 2026, and does not mention the actual June 27 close."
+    },
+    {
+     "point": "State spin June 29 in Q3",
+     "met": false,
+     "note": "Agent notes spin-off on June 29, 2026, and discontinued operations beginning Q3, but does not explicitly state the spin occurred in Q3."
+    },
+    {
+     "point": "State Aerospace consolidated in Q2 with discontinued-operations presentation beginning Q3",
+     "met": true,
+     "note": "Agent states Aerospace results are reflected as discontinued operations beginning Q3, and Q2 consolidated figures still include Aerospace."
+    },
+    {
+     "point": "Keep consolidated and ex-Aerospace EPS bases distinct",
+     "met": true,
+     "note": "Agent provides separate tables for consolidated (GAAP EPS $17.83, adjusted $4.52) and ex-Aerospace (GAAP EPS $16.65, adjusted $1.95)."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The agent correctly reports consolidated and ex-Aerospace sales figures and keeps the two EPS bases distinct. However, it misstates the Quantinuum gain per share ($15.78 vs. required $15.87), fails to mention the actual Q2 close date of June 27 (reporting June 30 instead), and does not explicitly state that the June 29 spin-off is a Q3 event."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Honeywell Technologies reported Q2 FY2026 consolidated sales of $9,719 million on a GAAP as-reported basis, and those consolidated results include the operations of Honeywell Aerospace, which separated in a spin-off on June 29, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/773840/000077384026000120/exhibit99-q22026earningsre.htm",
+     "reason": "Source [1] shows 'Net sales | 9,719' and states 'The consolidated results include the operations of Honeywell Aerospace... separated in a spin-off on June 29, 2026.' Source [2] also shows revenue of 9,719,000,000 USD for the quarter.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Sales excluding Aerospace Technologies (the Honeywell Technologies non-GAAP basis) were $5,187 million in Q2 FY2026, up 3% reported and up 4% organic.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/773840/000077384026000120/exhibit99-q22026earningsre.htm",
+     "reason": "Source [1] shows 'Sales | $5,187 | $5,018 | 3% | Sales of $5.2 billion, up 3% reported and up 4% organic'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Consolidated GAAP diluted EPS from continuing operations were $17.83 in Q2 FY2026, versus adjusted EPS of $4.52, a gap of 13.31 per share.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/773840/000077384026000120/exhibit99-q22026earningsre.htm",
+     "reason": "Source [1] states 'Earnings per share (EPS) of $17.83... and adjusted EPS1 of $4.52'. The gap of 13.31 is correctly computed as 17.83 - 4.52 = 13.31.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "On the Honeywell Technologies basis (excluding Aerospace), GAAP EPS from continuing operations were $16.65 in Q2 FY2026 versus adjusted EPS of $1.95, a gap of 14.70 per share.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/773840/000077384026000120/exhibit99-q22026earningsre.htm",
+     "reason": "Source [1] shows 'EPS of $16.65 and adjusted EPS1 of $1.95'. The gap of 14.70 is correctly computed as 16.65 - 1.95 = 14.70.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The gap between GAAP and adjusted EPS is driven by the one-time gain on deconsolidation of Quantinuum, which added $15.78 after tax per share in Q2 FY2026, partially offset by higher divestiture-related costs of $1.54 after tax per share.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/773840/000077384026000124/hon-20260630.htm",
+     "reason": "Source [3] states 'Gain on deconsolidation of Quantinuum ($15.78 after tax) | Partially offset by higher divestiture-related costs ($1.54 after tax).'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Q2 FY2026 per-share amounts have been retrospectively adjusted for the one-for-two reverse stock split that took effect June 29, 2026, and adjusted EPS for the quarter used weighted average shares of 318.6 million.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/773840/000077384026000120/exhibit99-q22026earningsre.htm",
+     "reason": "Source [1] states 'Per share amounts have been adjusted to reflect the reverse stock split, which took effect June 29, 2026.' and 'For the three months ended June 30, 2026... adjusted earnings per share utilizes weighted average shares of 318.6 million'. Source [3] confirms the reverse stock split and weighted average shares.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Aerospace business's results are expected to be reflected as discontinued operations beginning in Q3 FY2026, so the Q2 FY2026 consolidated figures that still include Aerospace are not directly comparable to the recast presentation.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/773840/000077384026000120/exhibit99-q22026earningsre.htm",
+     "reason": "Source [1] states 'Includes the financial results of the Honeywell Aerospace business which will be reflected as discontinued operations in the third quarter.' Source [3] similarly notes the Aerospace spin-off and that results will be reflected as discontinued operations.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 consolidated or ex-Aerospace sales and EPS: Q3 FY2026 has not been reported as of 2026-10-01; the evidence contains no Q3 FY2026 actuals.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/773840/000077384026000120/exhibit99-q22026earningsre.htm",
+     "reason": "The cited source [1] is the Q2 earnings release dated 2026-07-23, which does not contain Q3 FY2026 results. The retrieved evidence provided to the agent includes no Q3 FY2026 actuals.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "A dollar amount of the Quantinuum deconsolidation gain (only a per-share after-tax amount is disclosed): The evidence quantifies the gain only as $15.78 after tax per share; no total dollar gain is printed in the provided evidence.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/773840/000077384026000124/hon-20260630.htm",
+     "reason": "Source [3] only provides per-share after-tax amounts for the gain ($15.78) and offset ($1.54), with no total dollar amount disclosed.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 7,
+   "numeric_cited": 7,
+   "cited": 9,
+   "supported": 9,
+   "not_retrieved": 0
+  }
+ }
+}

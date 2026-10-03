@@ -1,0 +1,195 @@
+{
+ "id": "H03",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "As of January 20, 2026, what were Wingstop's most recently reported quarterly domestic same store sales growth and system-wide sales (state the fiscal quarter)?",
+ "grading": "Key points (both required): fiscal Q3 2025 (13 weeks ended Sep 27, 2025): domestic same store sales growth -5.6%; system-wide sales USD 1,356M (accept USD 1.36B, +10.0% y/y). Fail if fiscal Q4 2025 (-5.8%) or a year-to-date figure is presented as the latest.",
+ "answer": "As of January 20, 2026 the latest reported quarter was Wingstop's fiscal Q3 2025 (13 weeks ended September 27, 2025): domestic same store sales decreased 5.6% and system-wide sales were USD 1,356.4 million (USD 1.4 billion rounded; +10.0% y/y) [H03-E1][H03-E2]. Fiscal Q4 2025 results (domestic same store sales -5.8%) were published on February 18, 2026, after the as_of date [H03-E3].",
+ "output": {
+  "answer": "**Question:** As of January 20, 2026, what were Wingstop's most recently reported quarterly domestic same store sales growth and system-wide sales (state the fiscal quarter)?\n*As of 2026-01-20*\n\n| | Domestic same store sales growth (%) | System-wide sales (USD millions) |\n|---|---|---|\n| Wingstop — Q3 FY2025 (thirteen weeks ended September 27, 2025) | (5.6) [1] | $1,356 [1] |\n\n- Wingstop's most recently reported quarter as of January 20, 2026 is the fiscal third quarter of 2025 (thirteen weeks ended September 27, 2025), reported on November 4, 2025. [1][2]\n- Domestic same store sales for the fiscal third quarter 2025 (thirteen weeks ended September 27, 2025) decreased 5.6%, as reported (GAAP-based comparable metric, not a non-GAAP measure). [1][2]\n- System-wide sales for the fiscal third quarter 2025 (thirteen weeks ended September 27, 2025) were $1,356 million, up 10.0% from $1,233 million in the fiscal third quarter 2024. [1][2]\n\n**Not available**\n- Q4 FY2025 (quarter ended December 27, 2025) domestic same store sales growth and system-wide sales: Q4 FY2025 ended December 27, 2025 but results had not been reported as of January 20, 2026; the most recent reported quarter is Q3 FY2025. [1]\n\n**Sources**\n[1] Wingstop Inc. earnings release for Q3 FY2025, 8-K EX-99.1 (filed 2025-11-04) (www.sec.gov, 2025-11-04, primary) https://www.sec.gov/Archives/edgar/data/1636222/000163622225000107/a991wingq32025earningsrele.htm\n[2] Wingstop Inc. 10-Q for Q3 FY2025 (filed 2025-11-04) (www.sec.gov, 2025-11-04, primary) https://www.sec.gov/Archives/edgar/data/1636222/000163622225000110/wing-20250927.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 16678,
+   "output": 2684
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 20.03,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/ec056a9c8606e3e05ea76a14db142d4c",
+  "companies": [
+   {
+    "name": "Wingstop Inc.",
+    "ticker": "WING",
+    "cik": "1636222",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Domestic same store sales growth for the most recently reported quarter (Q3 FY2025)",
+    "System-wide sales for the most recently reported quarter (Q3 FY2025)",
+    "Fiscal quarter label and period end date for the most recent reported quarter"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "WING",
+     "label": "Q3 FY2025"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "WING",
+     "period": "Q3 FY2025",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "WING",
+     "period": "Q3 FY2025",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q4 FY2025 (2025-09-28 to 2025-12-27) has ended but results are not yet reported as of 2026-01-20, so the most recent reported quarter is Q3 FY2025 (ended 2025-09-27, reported 2025-11-04).",
+    "Domestic same store sales growth and system-wide sales are disclosed in the earnings release (and referenced in the 10-Q MD&A); no estimate is needed."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Q4 FY2025 (quarter ended December 27, 2025) domestic same store sales growth and system-wide sales",
+    "kind": "not_reported_yet",
+    "reason": "Q4 FY2025 ended December 27, 2025 but results had not been reported as of January 20, 2026; the most recent reported quarter is Q3 FY2025.",
+    "evidence_ids": [
+     "E1"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1636222/000163622225000107/a991wingq32025earningsrele.htm",
+    "https://www.sec.gov/Archives/edgar/data/1636222/000163622225000110/wing-20250927.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 3,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Fiscal quarter: Q3 2025 (13 weeks ended Sep 27, 2025)",
+     "met": true,
+     "note": "Agent states 'Q3 FY2025 (thirteen weeks ended September 27, 2025)' which matches the required fiscal quarter."
+    },
+    {
+     "point": "Domestic same store sales growth: -5.6%",
+     "met": true,
+     "note": "Agent reports domestic same store sales growth as (5.6)% which is -5.6%."
+    },
+    {
+     "point": "System-wide sales: USD 1,356M (accept USD 1.36B, +10.0% y/y)",
+     "met": true,
+     "note": "Agent reports system-wide sales as $1,356 million, up 10.0% from $1,233 million in prior year quarter."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All three required elements are present and accurate: the correct fiscal quarter (Q3 FY2025 ended Sep 27, 2025), domestic same store sales growth of -5.6%, and system-wide sales of $1,356 million with +10.0% year-over-year growth. The agent also correctly notes that Q4 FY2025 results were not yet reported as of the as-of date."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Domestic same store sales for fiscal Q3 2025 (thirteen weeks ended September 27, 2025) decreased 5.6%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1636222/000163622225000107/a991wingq32025earningsrele.htm",
+     "reason": "The earnings release shows a table with 'Domestic same store sales growth | (5.6) | %' for the thirteen weeks ended September 27, 2025. The 10‑Q confirms the same figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "System-wide sales for fiscal Q3 2025 (thirteen weeks ended September 27, 2025) were $1,356 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1636222/000163622225000107/a991wingq32025earningsrele.htm",
+     "reason": "The earnings release and 10‑Q both show 'System-wide sales (in millions) | $ | 1,356' for the thirteen weeks ended September 27, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "System-wide sales increased 10.0% from $1,233 million in fiscal Q3 2024 to $1,356 million in fiscal Q3 2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1636222/000163622225000107/a991wingq32025earningsrele.htm",
+     "reason": "The earnings release states 'System-wide sales increased 10.0% to $1.4 billion' and shows the prior-year figure of $1,233 million. The calculated increase is (1356‑1233)/1233 = 9.976%, which rounds to 10.0%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The fiscal third quarter 2025 consists of thirteen weeks ended September 27, 2025",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1636222/000163622225000107/a991wingq32025earningsrele.htm",
+     "reason": "Both the earnings release and the 10‑Q label the period as 'Thirteen Weeks Ended September 27, 2025'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The earnings release for Q3 FY2025 was published on November 4, 2025",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1636222/000163622225000107/a991wingq32025earningsrele.htm",
+     "reason": "The SEC filing date and the retrieved source's published_date are both 2025‑11‑04.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The 10‑Q for Q3 FY2025 was filed on November 4, 2025",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1636222/000163622225000110/wing-20250927.htm",
+     "reason": "The retrieved source's published_date is 2025‑11‑04.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Domestic same store sales growth is a GAAP‑based comparable metric, not a non‑GAAP measure",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1636222/000163622225000107/a991wingq32025earningsrele.htm",
+     "reason": "The earnings release does not classify domestic same store sales as GAAP or non‑GAAP; it only labels adjusted EBITDA, adjusted net income, and adjusted EPS as non‑GAAP. Same store sales is typically considered a non‑GAAP metric. The retrieved text does not support the claim that it is GAAP‑based.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Wingstop's most recently reported quarter as of January 20, 2026 is the fiscal third quarter of 2025",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1636222/000163622225000107/a991wingq32025earningsrele.htm",
+     "reason": "The sources show that Q3 FY2025 was reported on November 4, 2025, but they do not contain any information about what quarters had been reported by January 20, 2026. The claim about the reporting status as of a later date is not supported by the retrieved documents.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2025 ended December 27, 2025",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1636222/000163622225000107/a991wingq32025earningsrele.htm",
+     "reason": "The retrieved sources do not mention the end date of Q4 FY2025. The date December 27, 2025 is inferred from the 13‑week quarter pattern but is not explicitly stated in the documents.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2025 results had not been reported as of January 20, 2026",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1636222/000163622225000107/a991wingq32025earningsrele.htm",
+     "reason": "The sources are from November 4, 2025 and do not provide any information about the reporting status of Q4 FY2025 as of January 20, 2026.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 10,
+   "supported": 6,
+   "not_retrieved": 0
+  }
+ }
+}

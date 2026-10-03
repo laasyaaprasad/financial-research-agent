@@ -1,0 +1,286 @@
+{
+ "id": "G13",
+ "category": "Qualitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "What are the latest developments in the past 30 days on U.S. export controls affecting NVIDIA's data center GPU sales to China, and what does NVIDIA's own Q3 FY2027 outlook assume about China?",
+ "grading": "Reference-free. Key points: (1) every development dated and within window; (2) quotes/paraphrases NVIDIA's own stated China assumption from the Q2 FY27 outlook; (3) clearly separates company statements from media/analyst speculation; (4) no uncited causal claims about revenue impact",
+ "answer": "Snapshot: September 2–October 1, 2026. September 9: C4ADS published evidence of restricted NVIDIA chips reaching China through institutional purchases and Southeast Asian trade networks; this is an enforcement-gap report, not a new U.S. rule. [G13-E1] September 28: Ars, citing The Information, reported China considering RTX Pro 5500 purchases by Alibaba and ByteDance; approval was uncertain and this concerns Chinese import policy, not a confirmed U.S. export-rule change. [G13-E2] The reviewed sources do not establish a newly enacted U.S. control in this window. Separately, NVIDIA’s August 26 outlook assumes no Data Center compute revenue from China in Q3 FY2027, within its USD 108 billion ±2% total-revenue guide. That company statement is older context and remains distinct from September reporting. [G13-E3]",
+ "output": {
+  "answer": "## What's changed in the past ~30 days (early Sept – early Oct 2026)\n\n**The big one — Beijing may greenlight a new channel.** On Sept. 27–28, The Information (picked up by Reuters/CNBC) reported that China's MIIT asked ByteDance, Alibaba and others to submit purchase plans for NVIDIA's new **RTX PRO 5500** (Blackwell-generation workstation GPU, 84 GB GDDR7, 21,760 CUDA cores, ~$6,000+), and told some firms it *intends* to approve. ByteDance is reportedly weighing ~1 million units — roughly two quarters of NVIDIA's planned China output (~500K/quarter), with shipments targeted for late December. The workaround logic: the 5500 sits **outside the data-center accelerator category** (ECCN 3A090) that U.S. controls have targeted since Oct. 2022, so it may not require a BIS license. Unconfirmed — Beijing's approval is described as intent, not a final decision.\n- [CNBC](https://www.cnbc.com/2026/09/27/china-bytedance-alibaba-nvidia-chips.html) · [Quartz](https://qz.com/china-bytedance-alibaba-nvidia-rtx-pro-5500-chips-092826) · [Benzinga/TradingView (includes NVIDIA statement)](https://www.tradingview.com/news/benzinga:477a9d93a094b:0-nvidia-chips-for-alibaba-bytedance-china-reportedly-green-lights-rtx-pro-5500-amid-us-curbs-updated/)\n\n**Policy status quo, extended.** The Nov. 2025 **U.S.–China Busan Agreement was extended ~two months, to Jan. 10, 2027** (Treasury Sec. Bessent, Sept. 23). That is expected to extend the suspension of BIS's **Affiliates Rule**, though BIS had not yet published a Federal Register notice — so the rule still formally lapses Nov. 10, 2026. Notably, **export controls were absent from the official readouts of the Trump–Xi White House summit (Sept. 24)**.\n- [National Law Review](https://natlawreview.com/article/bis-affiliates-rule-suspension-extended-uncertainty-remains?amp=) · [Reuters: latest on semiconductor export controls](https://www.reuters.com/legal/legalindustry/whats-latest-with-semiconductor-export-controls--pracin-2026-09-23)\n\n**H200 channel technically open, practically thin.** BIS handles H200 China exports **case-by-case** (post-Jan. 2026 policy), with reported U.S. revenue shares of 15–25%; Blackwell remains banned. But **Beijing has discouraged domestic purchases**, so licensed volumes have been minimal. NVIDIA shipped H200s worth **less than 1% of Q2 Data Center revenue** to China-based customers. BIS has also floated restricting **cloud/remote access** to H200-backed data centers abroad (e.g., Indonesia).\n- [GLOBSEC](https://www.globsec.org/what-we-do/commentaries/xi-coming-mineral-and-chips-export-controls-loom) · [Demócrata policy summary](https://www.democrata.es/en/digital-ai/huawei-presents-the-mate-90-with-harmonyos-7-and-new-proprietary-chip-in-the-face-of-restrictions)\n\n**Enforcement escalating.**\n- **Oct. 1–2:** DOJ arrested California businessman **Greg Lui (Earthmade Computer)**, charged with smuggling ~$300M of NVIDIA hardware — A100, H100, RTX 4090, RTX 5090 — to China via Malaysian transshipment. ([The Register](https://www.theregister.com/security/2026/10/02/californian-accused-of-shipping-300m-worth-of-nvidia-chips-to-china-without-uncle-sams-approval/5300856), [Cryptopolitan](https://www.cryptopolitan.com/us-charges-california-man-over-300m-gpu-server-smuggling-to-china-via-malaysia))\n- **Sept. 9:** C4ADS \"**Covert Compute**\" report documented 56 restricted NVIDIA chips (~$1.7M) bought by Chinese universities tied to the defense base, and 50 diverted shipments (~$13.4M) via Vietnam, India and Malaysia. ([C4ADS](https://c4ads.org/reports/covert-compute))\n- **Sept. 8:** BIS reportedly scrutinizing **47 Apex Logistics shipments** of Supermicro/NVIDIA servers routed through Taiwan and SE Asia to Hong Kong/China. ([tech-insider](https://tech-insider.org/apex-logistics-nvidia-chip-shipments-probe-2026))\n- Also: BIS's **May 31, 2026 guidance** requiring licenses for Chinese-headquartered entities *anywhere*, and NVIDIA's own April 2025 H20 disclosure controversy.\n\n**Geopolitical reframing.** Analyses in early September argue Washington is now using **GPU access as a diplomatic carrot** (Armenia–Azerbaijan, UAE's $1.4T pledge, Saudi's Humain at 18,000 GPUs) rather than purely a sanction. ([Chosun](https://www.chosun.com/english/industry-en/2026/09/06/GGCHQYM63JBHFJB3P4MRPTAJ4E))\n\n**Competitive pressure.** Huawei announced accelerated in-house chip development (Sept. 17); Alibaba's Zhenwu V900 and Huawei's Atlas line are being positioned as domestic substitutes. ([Motley Fool](https://www.fool.com/investing/2026/09/17/chinas-homegrown-ai-chip-push-just-got-faster-is-this-a-real-threat-to-nvidia))\n\n## What NVIDIA's own Q3 FY2027 outlook assumes about China\n\nReported **Aug. 26, 2026** (Q2 FY2027 results), and stated verbatim in the press release:\n\n> **\"NVIDIA is not assuming any Data Center compute revenue from China\"** in its Q3 FY2027 outlook.\n\n- **Q3 FY2027 guidance: $108.0B revenue, ±2%** — above the ~$104.2B consensus, and built on **zero China data-center compute**. This is the **second consecutive quarter** with that assumption (Q2 FY26 guidance said the same).\n- Non-GAAP gross margin guided to **74.0% ±50 bps**.\n- Growth drivers: sequential growth led by **AI cloud/enterprise (ACIE)**; hyperscale growth expected to reaccelerate in Q4 and into FY2028 as **Vera Rubin** supply ramps (**~20% of Q3 data center revenue**).\n- Preliminary **FY2028: ~70% YoY revenue growth**; management expects **supply, not demand, to be the binding constraint** through end of FY2028.\n- Context: **Q2 FY27 actuals** — $96.2B revenue (+106% YoY), $89.0B Data Center (+117%); China/HK-headquartered customers were ~8% of revenue last quarter but **almost none of it was data center compute** (China revenue fell to $4.55B in Q1 FY27 from $9.66B a year earlier).\n- Sources: [NVIDIA Q2 FY27 press release](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027) · [Q2 FY27 earnings call transcript](https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf) · [24/7 Wall St.](https://247wallst.com/investing/2026/09/07/nvidia-is-no-longer-just-a-chip-company-its-the-infrastructure-platform-for-all-of-ai)\n\n**The takeaway:** NVIDIA is telling investors to underwrite record growth with China data-center compute at zero, which makes any reopening (the RTX PRO 5500 channel, a Busan-type truce extension, or renewed H200 licensing) **upside to guidance rather than something already baked in**. Conversely, the 5500 path is genuinely untested — Beijing's approval is only reported intent, and whether BIS agrees the chip falls outside the data-center controls has not been confirmed by any regulator.\n\n*Caveats: several items above are single-source media reports (The Information's 5500 story; the reported $12.9B Hugging Face acquisition mentioned in one search result) that remain unconfirmed. The Affiliates Rule's formal status as of this writing is unresolved pending a BIS Federal Register notice.*",
+  "tokens": {
+   "input": 55294,
+   "output": 3953
+  },
+  "tavily_credits": 9,
+  "latency_s": 30.55,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/e2afe3cfff9f0335f598ccf34634d10b",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q3 FY2027 outlook China data center GPU export controls",
+     "time_range": "month",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "US export controls NVIDIA China GPU latest developments",
+     "time_range": "month",
+     "topic": "news",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nvidia RTX Pro 5500 China ByteDance Alibaba approval export license",
+     "search_depth": "advanced",
+     "time_range": "week",
+     "topic": "news"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "H200 China export license BIS rule October 2026",
+     "search_depth": "advanced",
+     "time_range": "month",
+     "topic": "news"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA third quarter fiscal 2027 financial results revenue outlook",
+     "include_domains": [
+      "nvidia.com",
+      "investor.nvidia.com"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://247wallst.com/investing/2026/09/07/nvidia-is-no-longer-just-a-chip-company-its-the-infrastructure-platform-for-all-of-ai",
+    "https://c4ads.org/reports/covert-compute",
+    "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+    "https://natlawreview.com/article/bis-affiliates-rule-suspension-extended-uncertainty-remains?amp=",
+    "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+    "https://qz.com/china-bytedance-alibaba-nvidia-rtx-pro-5500-chips-092826",
+    "https://tech-insider.org/apex-logistics-nvidia-chip-shipments-probe-2026",
+    "https://www.chosun.com/english/industry-en/2026/09/06/GGCHQYM63JBHFJB3P4MRPTAJ4E",
+    "https://www.cnbc.com/2026/09/27/china-bytedance-alibaba-nvidia-chips.html",
+    "https://www.cryptopolitan.com/us-charges-california-man-over-300m-gpu-server-smuggling-to-china-via-malaysia",
+    "https://www.democrata.es/en/digital-ai/huawei-presents-the-mate-90-with-harmonyos-7-and-new-proprietary-chip-in-the-face-of-restrictions",
+    "https://www.fool.com/investing/2026/09/17/chinas-homegrown-ai-chip-push-just-got-faster-is-this-a-real-threat-to-nvidia",
+    "https://www.globsec.org/what-we-do/commentaries/xi-coming-mineral-and-chips-export-controls-loom",
+    "https://www.reuters.com/legal/legalindustry/whats-latest-with-semiconductor-export-controls--pracin-2026-09-23",
+    "https://www.theregister.com/security/2026/10/02/californian-accused-of-shipping-300m-worth-of-nvidia-chips-to-china-without-uncle-sams-approval/5300856",
+    "https://www.tradingview.com/news/benzinga:477a9d93a094b:0-nvidia-chips-for-alibaba-bytedance-china-reportedly-green-lights-rtx-pro-5500-amid-us-curbs-updated/"
+   ],
+   "cited_primary": 2,
+   "retrieved": 48,
+   "retrieved_primary": 10
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "every development dated and within window",
+     "met": true,
+     "note": "All cited developments (RTX PRO 5500 report Sept 27–28, Busan Agreement extension Sept 23, Trump–Xi summit readout Sept 24, C4ADS report Sept 9, Apex Logistics scrutiny Sept 8, DOJ arrest Oct 1–2, Huawei announcement Sept 17, geopolitical analyses early Sept) fall within the Sept 2–Oct 1, 2026 window and are explicitly dated."
+    },
+    {
+     "point": "quotes/paraphrases NVIDIA's own stated China assumption from the Q2 FY27 outlook",
+     "met": true,
+     "note": "The answer directly quotes the press release: \"NVIDIA is not assuming any Data Center compute revenue from China\" and cites the Q2 FY27 press release and earnings call transcript (Aug 26, 2026)."
+    },
+    {
+     "point": "clearly separates company statements from media/analyst speculation",
+     "met": true,
+     "note": "A dedicated section for NVIDIA's own outlook uses verbatim company language and official sources; the developments section attributes each item to media reports (The Information, Reuters, CNBC), research orgs (C4ADS), government actions (DOJ, BIS), or analyst pieces (Chosun, Motley Fool) with qualifiers like \"reportedly,\" \"unconfirmed,\" \"analyses argue.\""
+    },
+    {
+     "point": "no uncited causal claims about revenue impact",
+     "met": true,
+     "note": "The answer frames any China reopening as \"upside to guidance rather than something already baked in\" — an inference from the zero-China assumption, not an uncited quantitative causal claim. No unsourced revenue-impact assertions appear."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer satisfies all four grading criteria: every development is dated and within the 30-day window; NVIDIA's own China assumption is quoted verbatim from the Q2 FY27 press release; company statements are cleanly separated from media/analyst speculation with clear attribution; and there are no uncited causal claims about revenue impact."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "On Sept. 27–28, The Information (picked up by Reuters/CNBC) reported that China's MIIT asked ByteDance, Alibaba and others to submit purchase plans for NVIDIA's new RTX PRO 5500 (Blackwell-generation workstation GPU, 84 GB GDDR7, 21,760 CUDA cores, ~$6,000+), and told some firms it intends to approve.",
+     "numeric": false,
+     "cited_url": "https://www.cnbc.com/2026/09/27/china-bytedance-alibaba-nvidia-chips.html",
+     "reason": "The CNBC article is cited as a source for the report about MIIT asking ByteDance and Alibaba to submit purchase plans for RTX PRO 5500 and indicating intent to approve.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "ByteDance is reportedly weighing ~1 million units — roughly two quarters of NVIDIA's planned China output (~500K/quarter), with shipments targeted for late December.",
+     "numeric": true,
+     "cited_url": "https://www.cnbc.com/2026/09/27/china-bytedance-alibaba-nvidia-chips.html",
+     "reason": "The CNBC article is cited for the claim about ByteDance weighing ~1 million units and NVIDIA's planned China output of ~500K/quarter.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The RTX PRO 5500 sits outside the data-center accelerator category (ECCN 3A090) that U.S. controls have targeted since Oct. 2022, so it may not require a BIS license.",
+     "numeric": false,
+     "cited_url": "https://www.cnbc.com/2026/09/27/china-bytedance-alibaba-nvidia-chips.html",
+     "reason": "The CNBC article is cited for the claim about the RTX PRO 5500 falling outside ECCN 3A090 and potentially not requiring a BIS license.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Nov. 2025 U.S.–China Busan Agreement was extended ~two months, to Jan. 10, 2027 (Treasury Sec. Bessent, Sept. 23).",
+     "numeric": true,
+     "cited_url": "https://natlawreview.com/article/bis-affiliates-rule-suspension-extended-uncertainty-remains?amp=",
+     "reason": "The National Law Review article is cited for the claim about the Busan Agreement extension to Jan. 10, 2027, announced by Treasury Sec. Bessent on Sept. 23.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The extension is expected to extend the suspension of BIS's Affiliates Rule, though BIS had not yet published a Federal Register notice — so the rule still formally lapses Nov. 10, 2026.",
+     "numeric": false,
+     "cited_url": "https://natlawreview.com/article/bis-affiliates-rule-suspension-extended-uncertainty-remains?amp=",
+     "reason": "The National Law Review article is cited for the claim about the Affiliates Rule suspension extension and the lack of Federal Register notice.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Export controls were absent from the official readouts of the Trump–Xi White House summit (Sept. 24).",
+     "numeric": false,
+     "cited_url": "https://www.reuters.com/legal/legalindustry/whats-latest-with-semiconductor-export-controls--pracin-2026-09-23",
+     "reason": "The Reuters article is cited for the claim that export controls were absent from the official readouts of the Trump-Xi summit on Sept. 24.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "BIS handles H200 China exports case-by-case (post-Jan. 2026 policy), with reported U.S. revenue shares of 15–25%; Blackwell remains banned.",
+     "numeric": true,
+     "cited_url": "https://www.globsec.org/what-we-do/commentaries/xi-coming-mineral-and-chips-export-controls-loom",
+     "reason": "The GLOBSEC article is cited for the claim about H200 case-by-case exports, U.S. revenue shares of 15-25%, and Blackwell remaining banned.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Beijing has discouraged domestic purchases, so licensed volumes have been minimal. NVIDIA shipped H200s worth less than 1% of Q2 Data Center revenue to China-based customers.",
+     "numeric": true,
+     "cited_url": "https://www.globsec.org/what-we-do/commentaries/xi-coming-mineral-and-chips-export-controls-loom",
+     "reason": "The GLOBSEC article is cited for the claim about Beijing discouraging purchases and NVIDIA shipping H200s worth less than 1% of Q2 Data Center revenue to China-based customers.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "BIS has also floated restricting cloud/remote access to H200-backed data centers abroad (e.g., Indonesia).",
+     "numeric": false,
+     "cited_url": "https://www.democrata.es/en/digital-ai/huawei-presents-the-mate-90-with-harmonyos-7-and-new-proprietary-chip-in-the-face-of-restrictions",
+     "reason": "The Demócrata policy summary is cited for the claim about BIS floating restrictions on cloud/remote access to H200-backed data centers abroad.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "On Oct. 1–2, DOJ arrested California businessman Greg Lui (Earthmade Computer), charged with smuggling ~$300M of NVIDIA hardware — A100, H100, RTX 4090, RTX 5090 — to China via Malaysian transshipment.",
+     "numeric": true,
+     "cited_url": "https://www.theregister.com/security/2026/10/02/californian-accused-of-shipping-300m-worth-of-nvidia-chips-to-china-without-uncle-sams-approval/5300856",
+     "reason": "The Register article is cited for the claim about the DOJ arrest of Greg Lui and the alleged smuggling of ~$300M of NVIDIA hardware.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "On Sept. 9, C4ADS 'Covert Compute' report documented 56 restricted NVIDIA chips (~$1.7M) bought by Chinese universities tied to the defense base, and 50 diverted shipments (~$13.4M) via Vietnam, India and Malaysia.",
+     "numeric": true,
+     "cited_url": "https://c4ads.org/reports/covert-compute",
+     "reason": "The C4ADS report is cited for the claim about 56 restricted NVIDIA chips worth ~$1.7M and 50 diverted shipments worth ~$13.4M.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "On Sept. 8, BIS reportedly scrutinizing 47 Apex Logistics shipments of Supermicro/NVIDIA servers routed through Taiwan and SE Asia to Hong Kong/China.",
+     "numeric": true,
+     "cited_url": "https://tech-insider.org/apex-logistics-nvidia-chip-shipments-probe-2026",
+     "reason": "The tech-insider article is cited for the claim about BIS scrutinizing 47 Apex Logistics shipments.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Analyses in early September argue Washington is now using GPU access as a diplomatic carrot (Armenia–Azerbaijan, UAE's $1.4T pledge, Saudi's Humain at 18,000 GPUs) rather than purely a sanction.",
+     "numeric": true,
+     "cited_url": "https://www.chosun.com/english/industry-en/2026/09/06/GGCHQYM63JBHFJB3P4MRPTAJ4E",
+     "reason": "The Chosun article is cited for the claim about GPU access being used as a diplomatic carrot with examples of Armenia-Azerbaijan, UAE's $1.4T pledge, and Saudi's Humain at 18,000 GPUs.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Huawei announced accelerated in-house chip development (Sept. 17); Alibaba's Zhenwu V900 and Huawei's Atlas line are being positioned as domestic substitutes.",
+     "numeric": false,
+     "cited_url": "https://www.fool.com/investing/2026/09/17/chinas-homegrown-ai-chip-push-just-got-faster-is-this-a-real-threat-to-nvidia",
+     "reason": "The Motley Fool article is cited for the claim about Huawei's accelerated in-house chip development and Alibaba's Zhenwu V900 and Huawei's Atlas line as domestic substitutes.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NVIDIA's Q3 FY2027 guidance: $108.0B revenue, ±2% — above the ~$104.2B consensus, and built on zero China data-center compute. This is the second consecutive quarter with that assumption (Q2 FY26 guidance said the same).",
+     "numeric": true,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The NVIDIA Q2 FY27 press release is cited for the Q3 FY2027 guidance of $108.0B ±2%, above $104.2B consensus, with zero China data-center compute assumption, and that this is the second consecutive quarter with that assumption.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Non-GAAP gross margin guided to 74.0% ±50 bps.",
+     "numeric": true,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The NVIDIA press release is cited for the non-GAAP gross margin guidance of 74.0% ±50 bps.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Growth drivers: sequential growth led by AI cloud/enterprise (ACIE); hyperscale growth expected to reaccelerate in Q4 and into FY2028 as Vera Rubin supply ramps (~20% of Q3 data center revenue).",
+     "numeric": true,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The NVIDIA press release is cited for the growth drivers including ACIE and Vera Rubin supply ramping to ~20% of Q3 data center revenue.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Preliminary FY2028: ~70% YoY revenue growth; management expects supply, not demand, to be the binding constraint through end of FY2028.",
+     "numeric": true,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The NVIDIA press release is cited for the preliminary FY2028 outlook of ~70% YoY revenue growth and supply being the binding constraint.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY27 actuals: $96.2B revenue (+106% YoY), $89.0B Data Center (+117%); China/HK-headquartered customers were ~8% of revenue last quarter but almost none of it was data center compute (China revenue fell to $4.55B in Q1 FY27 from $9.66B a year earlier).",
+     "numeric": true,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The NVIDIA press release is cited for the Q2 FY27 actuals: $96.2B revenue (+106% YoY), $89.0B Data Center (+117%), China/HK ~8% of revenue, China revenue fell to $4.55B in Q1 FY27 from $9.66B a year earlier.",
+     "supported": null,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 13,
+   "numeric_cited": 13,
+   "cited": 19,
+   "supported": 0,
+   "not_retrieved": 0
+  }
+ }
+}

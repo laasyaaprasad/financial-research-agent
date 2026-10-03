@@ -1,0 +1,121 @@
+{
+ "id": "H08",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was AAON's BASX-branded products backlog at June 30, 2026, in USD millions?",
+ "grading": "USD 1,430.4 million (1,430,379 thousand), +/-0.5%; accept 'about USD 1.43 billion'. Optional context: total backlog USD 1,970.8M; BASX backlog +185.4% vs June 30, 2025 (USD 501.1M). Fail if total backlog or another date is given as the BASX figure.",
+ "answer": "AAON's BASX-branded products backlog at June 30, 2026 was USD 1,430.4 million (1,430,379 thousand), versus USD 501.1 million at June 30, 2025 (+185.4%) and USD 1,302.1 million at December 31, 2025. Total backlog was USD 1,970.8 million (AAON-branded USD 540.5 million) [H08-E1]. The Q2 press release cites only total backlog of about USD 2.0 billion [H08-E2].",
+ "output": {
+  "answer": "**$1,430.4 million** (≈$1.43 billion).\n\nPer AAON's Q2 2026 financial statements (quarter ended June 30, 2026), BASX-branded product backlog was **$1,430,379 thousand**, up 185.4% (or +$929.3 million) from $501.1 million at June 30, 2025. Total consolidated backlog was $1,970.8 million. Most of the BASX increase was tied to data center liquid cooling orders.\n\nSources:\n- [AAON SEC filing, aaon-20260630](https://www.sec.gov/Archives/edgar/data/824142/000082414226000055/aaon-20260630.htm)\n- [AAON Q2 2026 press release (investors.aaon.com)](https://investors.aaon.com/investor-news/aaon-reports-record-second-quarter-2026-results-driven-by-strong-demand-accelerating-throughput-and-improved-operating-execution)\n- [PR Newswire release](https://www.prnewswire.com/news-releases/aaon-reports-record-second-quarter-2026-results-driven-by-strong-demand-accelerating-throughput-and-improved-operating-execution-302846687.html)",
+  "tokens": {
+   "input": 12062,
+   "output": 463
+  },
+  "tavily_credits": 3,
+  "latency_s": 8.97,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/382a19164e4651c541121e206fdb533a",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AAON BASX backlog June 30 2026",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AAON BASX-branded products backlog million"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investors.aaon.com/investor-news/aaon-reports-record-second-quarter-2026-results-driven-by-strong-demand-accelerating-throughput-and-improved-operating-execution",
+    "https://www.prnewswire.com/news-releases/aaon-reports-record-second-quarter-2026-results-driven-by-strong-demand-accelerating-throughput-and-improved-operating-execution-302846687.html",
+    "https://www.sec.gov/Archives/edgar/data/824142/000082414226000055/aaon-20260630.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 18,
+   "retrieved_primary": 6
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer provides BASX-branded products backlog at June 30, 2026 as USD 1,430.4 million (or 1,430,379 thousand) within +/-0.5% tolerance.",
+     "met": true,
+     "note": "Agent states $1,430.4 million (≈$1.43 billion) and $1,430,379 thousand."
+    },
+    {
+     "point": "Answer does not mistakenly give total backlog (~USD 1,970.8M) or another date's figure (Dec 31, 2025 or June 30, 2025) as the BASX figure.",
+     "met": true,
+     "note": "Agent correctly distinguishes BASX backlog ($1,430.4M) from total backlog ($1,970.8M) and references June 30, 2026."
+    },
+    {
+     "point": "Answer optionally includes context: total backlog USD 1,970.8M and BASX backlog growth +185.4% vs June 30, 2025 (USD 501.1M).",
+     "met": true,
+     "note": "Agent includes total consolidated backlog $1,970.8 million and growth 185.4% from $501.1 million at June 30, 2025."
+    },
+    {
+     "point": "Answer reports in millions (converted from thousands) not just thousands without conversion.",
+     "met": true,
+     "note": "Agent gives both $1,430.4 million and $1,430,379 thousand, showing conversion."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer precisely matches the required figure, includes correct context, avoids failure modes, and uses proper units."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "BASX-branded product backlog was $1,430,379 thousand at June 30, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/824142/000082414226000055/aaon-20260630.htm",
+     "reason": "SEC filing table shows BASX-branded Products at June 30, 2026 (in thousands) = 1,430,379.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "BASX-branded backlog increased 185.4% (or +$929.3 million) from $501.1 million at June 30, 2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/824142/000082414226000055/aaon-20260630.htm",
+     "reason": "SEC filing states BASX-branded products increasing 185.4%, or $929.3 million, vs June 30, 2025. Table shows June 30, 2025 BASX-branded Products = 501,106 thousand. Calculation: (1,430,379 - 501,106) = 929,273 thousand ≈ $929.3 million. Percentage: 929,273 / 501,106 = 1.8544 ≈ 185.4%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total consolidated backlog was $1,970.8 million at June 30, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/824142/000082414226000055/aaon-20260630.htm",
+     "reason": "SEC filing states consolidated backlog is $1,970.8 million. Table shows Total Backlog at June 30, 2026 = 1,970,844 thousand ≈ $1,970.8 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Most of the BASX increase was tied to data center liquid cooling orders",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/824142/000082414226000055/aaon-20260630.htm",
+     "reason": "SEC filing states: 'Most of these orders were associated with the BASX-branded data center liquid cooling solutions.' Press release also mentions 'reflecting continued customer investment activity in data center infrastructure.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 4,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}

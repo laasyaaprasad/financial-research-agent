@@ -1,0 +1,189 @@
+{
+ "id": "G07",
+ "category": "Numerical reasoning",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Salesforce's current RPO at the end of Q2 FY2027, its YoY growth in both nominal and constant currency, and what share of total RPO it represents?",
+ "grading": "cRPO ±0.5%, USD billions; growth rates exact as disclosed (both labeled correctly); share ±1pp",
+ "answer": "Salesforce cRPO at July 31, 2026 was USD 33.5 billion, up 14% YoY in both nominal and constant currency terms. Total RPO was USD 66.3 billion, so cRPO represented 50.5279% of total RPO. [G07-E1]",
+ "output": {
+  "answer": "## Salesforce Q2 FY2027 (quarter ended July 31, 2026)\n\n**Current RPO (cRPO):** **$33.5 billion**\n\n- **YoY growth:** **up 14%** in nominal (U.S. GAAP, as-reported terms)\n- **Constant-currency growth:** **up 14% CC** — i.e., identical to the nominal rate this quarter (no material FX impact on cRPO growth)\n- Notably, this represented an **acceleration** from 13% Y/Y CC in Q1 FY27.\n\n**Total RPO:** **$66.3 billion**, up **11% Y/Y**\n\n**cRPO as a share of total RPO:** $33.5B ÷ $66.3B ≈ **50.5%** — so roughly half of Salesforce's total remaining performance obligation is billable/recognizable within the next 12 months.\n\n### Source\n- Salesforce Q2 FY27 press release, \"Salesforce Delivers Record Second Quarter Fiscal 2027 Results\" (Aug 26, 2026): https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings\n- Salesforce Investor Relations: https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx\n- 24/7 Wall St. Q2 FY27 summary (notes cRPO +14% Y/Y CC, up from 13% in Q1): https://247wallst.com/companies/crm/earnings\n\n**Note on the constant-currency caveat:** Because the reported and CC growth rates are both 14%, there was essentially no meaningful FX drag/benefit on cRPO this quarter. This can differ from other metrics — e.g., subscription & support revenue was up 12% Y/Y but only 11% CC, and total revenue was up ~11% in both.",
+  "tokens": {
+   "input": 11086,
+   "output": 799
+  },
+  "tavily_credits": 2,
+  "latency_s": 9.51,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/29b7b18e9e031441eb37f6b452da5bee",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Salesforce Q2 FY2027 current remaining performance obligation RPO",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Salesforce second quarter fiscal 2027 results current RPO year-over-year constant currency"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://247wallst.com/companies/crm/earnings",
+    "https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx",
+    "https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings"
+   ],
+   "cited_primary": 1,
+   "retrieved": 19,
+   "retrieved_primary": 2
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "cRPO value: USD 33.5 billion ±0.5%",
+     "met": true,
+     "note": "Agent reports $33.5 billion, matches reference exactly within ±0.5%."
+    },
+    {
+     "point": "YoY growth nominal: exact as disclosed (14%)",
+     "met": true,
+     "note": "Agent reports up 14% nominal, matches reference exactly."
+    },
+    {
+     "point": "YoY growth constant currency: exact as disclosed (14%)",
+     "met": true,
+     "note": "Agent reports up 14% CC, matches reference exactly."
+    },
+    {
+     "point": "Growth rates labeled correctly (nominal vs constant currency)",
+     "met": true,
+     "note": "Agent clearly labels nominal and constant-currency growth rates."
+    },
+    {
+     "point": "cRPO share of total RPO: ±1 percentage point",
+     "met": true,
+     "note": "Agent reports ≈50.5%, within ±1pp of reference 50.53%."
+    },
+    {
+     "point": "Fiscal period correct (Q2 FY2027 ended July 31, 2026)",
+     "met": true,
+     "note": "Agent correctly identifies Q2 FY2027 ended July 31, 2026."
+    },
+    {
+     "point": "cRPO vs total RPO distinction",
+     "met": true,
+     "note": "Agent correctly distinguishes cRPO ($33.5B) and total RPO ($66.3B)."
+    },
+    {
+     "point": "Nominal vs constant-currency growth distinction",
+     "met": true,
+     "note": "Agent correctly reports both growth rates and notes they are identical."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All requirements satisfied; agent's answer matches verified reference exactly."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Current RPO (cRPO) of $33.5 billion",
+     "numeric": true,
+     "cited_url": "https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings",
+     "reason": "Press release states 'Current remaining performance obligation (\"cRPO\") of $33.5 billion'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "cRPO YoY growth up 14% in nominal (U.S. GAAP, as-reported terms)",
+     "numeric": true,
+     "cited_url": "https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings",
+     "reason": "Press release states 'up 14% year-over-year (\"Y/Y\")'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "cRPO constant-currency growth up 14% CC",
+     "numeric": true,
+     "cited_url": "https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings",
+     "reason": "Press release states 'and in constant currency (\"CC\")'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "cRPO growth accelerated from 13% Y/Y CC in Q1 FY27",
+     "numeric": true,
+     "cited_url": "https://247wallst.com/companies/crm/earnings",
+     "reason": "24/7 Wall St. summary states 'cRPO growth accelerated to 14% Y/Y in constant currency, up from 13% in Q1'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total RPO of $66.3 billion, up 11% Y/Y",
+     "numeric": true,
+     "cited_url": "https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings",
+     "reason": "Press release states 'Remaining performance obligation of $66.3 billion, up 11% Y/Y'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "cRPO as share of total RPO ≈ 50.5% (roughly half)",
+     "numeric": true,
+     "cited_url": "https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings",
+     "reason": "Calculation: $33.5B / $66.3B = 0.5053 ≈ 50.5%",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Press release dated August 26, 2026",
+     "numeric": false,
+     "cited_url": "https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings",
+     "reason": "Press release header shows 'August 26, 2026'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Quarter ended July 31, 2026",
+     "numeric": false,
+     "cited_url": "https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings",
+     "reason": "Press release states 'second quarter fiscal 2027 ended July 31, 2026'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Subscription & support revenue up 12% Y/Y but only 11% CC",
+     "numeric": true,
+     "cited_url": "https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings",
+     "reason": "Press release states 'Subscription and support revenue of $10.8 billion, up 12% Y/Y and 11% in CC'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total revenue up ~11% in both nominal and CC",
+     "numeric": true,
+     "cited_url": "https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings",
+     "reason": "Press release states 'Salesforce raises full year FY27 revenue guidance to $46.1 billion to $46.4 billion, up 11% - 12% Y/Y and 11% Y/Y in CC'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 8,
+   "cited": 10,
+   "supported": 10,
+   "not_retrieved": 0
+  }
+ }
+}

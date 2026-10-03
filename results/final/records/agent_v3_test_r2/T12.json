@@ -1,0 +1,177 @@
+{
+ "id": "T12",
+ "category": "Beat or miss",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "Did Qualcomm's fiscal Q3 2026 (quarter ended June 28, 2026) total revenues and non-GAAP diluted EPS come in above, within or below the guidance ranges it gave with its fiscal Q2 2026 results in April 2026?",
+ "grading": "Key points: (1) revenues USD 9,947M vs guided USD 9.2B-10.0B = WITHIN the range (upper end); (2) non-GAAP diluted EPS USD 2.21 vs guided USD 2.10-2.30 = WITHIN the range; (3) benchmark is the company's own guidance. Optional: GAAP EPS 1.87 vs GAAP guide 1.26-1.46 is above the range. Fail if either is called above or below the range or consensus is used.",
+ "answer": "Guidance from the April 29, 2026 release for Q3 FY26: revenues USD 9.2-10.0 billion and non-GAAP diluted EPS USD 2.10-2.30. [T12-E1] Actual Q3 FY2026: revenues USD 9,947 million (within the range, near the high end) and non-GAAP diluted EPS USD 2.21 (within the range). GAAP EPS was USD 1.87 against GAAP guidance of USD 1.26-1.46 (above). [T12-E2]",
+ "output": {
+  "answer": "**Question:** Did Qualcomm's fiscal Q3 2026 (quarter ended June 28, 2026) total revenues and non-GAAP diluted EPS come in above, within or below the guidance ranges it gave with its fiscal Q2 2026 results in April 2026?\n*As of 2026-10-03*\n\n| | Total revenues — actual, as reported (USD millions) | Total revenues — guidance given with Q2 FY2026 results (April 29, 2026) | Total revenues — position vs guidance | Non-GAAP diluted EPS — actual, as reported (USD per share) | Non-GAAP diluted EPS — guidance given with Q2 FY2026 results (April 29, 2026) | Non-GAAP diluted EPS — position vs guidance |\n|---|---|---|---|---|---|---|\n| Q3 FY2026 (quarter ended June 28, 2026) | $9,947 [1] | $9.2B - $10.0B [2] | Within (at the high end) [1][2] | $2.21 [1] | $2.10 - $2.30 [2] | Within [1][2] |\n\n- With its fiscal Q2 2026 results released April 29, 2026, Qualcomm guided fiscal Q3 2026 (quarter ending June 28, 2026) revenues to $9.2B - $10.0B and non-GAAP diluted EPS to $2.10 - $2.30. [2]\n- Qualcomm's fiscal Q3 2026 (quarter ended June 28, 2026) total revenues of $9,947 million came in within the $9.2B - $10.0B guidance range given with its fiscal Q2 2026 results, at the high end of that range. [1][2]\n- Qualcomm's fiscal Q3 2026 (quarter ended June 28, 2026) non-GAAP diluted EPS of $2.21 came in within the $2.10 - $2.30 guidance range given with its fiscal Q2 2026 results. [1][2]\n\n**Sources**\n[1] QUALCOMM INC/DE earnings release for Q3 FY2026, 8-K EX-99.1 (filed 2026-07-29) (www.sec.gov, 2026-07-29, primary) https://www.sec.gov/Archives/edgar/data/804328/000080432826000085/qcom062826erex991.htm\n[2] QUALCOMM INC/DE earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-04-29) (www.sec.gov, 2026-04-29, primary) https://www.sec.gov/Archives/edgar/data/804328/000080432826000060/qcom032926erex991.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 55518,
+   "output": 6145
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 34.35,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/c574a7bbc6b34e7793df58258a377882",
+  "companies": [
+   {
+    "name": "QUALCOMM INC/DE",
+    "ticker": "QCOM",
+    "cik": "804328",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Q3 FY2026 total revenues (actual, quarter ended 2026-06-28)",
+    "Q3 FY2026 non-GAAP diluted EPS (actual)",
+    "Guidance range for Q3 FY2026 total revenues as issued with Q2 FY2026 results (April 2026)",
+    "Guidance range for Q3 FY2026 non-GAAP diluted EPS as issued with Q2 FY2026 results (April 2026)",
+    "Whether Q3 FY2026 revenues fell above / within / below the guided range",
+    "Whether Q3 FY2026 non-GAAP diluted EPS fell above / within / below the guided range"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "QCOM",
+     "label": "Q3 FY2026"
+    },
+    {
+     "ticker": "QCOM",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "QCOM",
+     "period": "Q3 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "QCOM",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "QCOM",
+     "period": "Q3 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Both periods needed are reported: Q3 FY2026 (ended 2026-06-28) has a filed 10-Q and an 8-K earnings release dated 2026-07-29; Q2 FY2026 (ended 2026-03-29) has a filed 10-Q and an 8-K earnings release dated 2026-04-29.",
+    "The Q3 FY2026 guidance ranges were published in the Q2 FY2026 earnings release (8-K, 2026-04-29), not in the Q3 release; the Q3 release is used for the actual results and the comparison commentary.",
+    "Non-GAAP diluted EPS is a non-GAAP measure; the reconciliation and the exact guided range (including any mid-point/one-time items) come from the Q2 FY2026 earnings release tables."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/804328/000080432826000060/qcom032926erex991.htm",
+    "https://www.sec.gov/Archives/edgar/data/804328/000080432826000085/qcom062826erex991.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 5,
+   "retrieved_primary": 5
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Revenues actual $9,947M vs guidance $9.2B-$10.0B correctly identified as within range (upper end)",
+     "met": true,
+     "note": "Agent states revenue $9,947M within $9.2B-$10.0B guidance range, at high end."
+    },
+    {
+     "point": "Non-GAAP diluted EPS actual $2.21 vs guidance $2.10-$2.30 correctly identified as within range",
+     "met": true,
+     "note": "Agent states non-GAAP diluted EPS $2.21 within $2.10-$2.30 guidance range."
+    },
+    {
+     "point": "Benchmark used is company's own guidance from Q2 FY2026 release (April 29, 2026)",
+     "met": true,
+     "note": "Agent cites Q2 FY2026 earnings release (April 29, 2026) as source for guidance ranges."
+    },
+    {
+     "point": "Agent does not incorrectly label revenue as 'beat' or above/below guidance",
+     "met": true,
+     "note": "Agent uses 'Within (at the high end)' not 'beat' or 'above'."
+    },
+    {
+     "point": "Agent does not compare GAAP EPS against non-GAAP guidance or consensus",
+     "met": true,
+     "note": "Agent does not mention GAAP EPS at all, avoiding the failure mode."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly identifies both total revenues and non-GAAP diluted EPS as within the company's own guidance ranges from the Q2 FY2026 release, uses the proper guidance benchmark, and avoids all specified failure modes."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Qualcomm guided fiscal Q3 2026 revenues to $9.2B - $10.0B with its fiscal Q2 2026 results released April 29, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000060/qcom032926erex991.htm",
+     "reason": "Retrieved source 2 (Q2 FY2026 earnings release) shows a guidance table labeled 'Q3 FY26 Estimates' with 'Revenues | $9.2B - $10.0B'. The release is dated April 29, 2026, matching the cited publication date.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Qualcomm guided fiscal Q3 2026 non-GAAP diluted EPS to $2.10 - $2.30 with its fiscal Q2 2026 results released April 29, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000060/qcom032926erex991.htm",
+     "reason": "The same guidance table in retrieved source 2 shows 'Non-GAAP diluted EPS | $2.10 - $2.30'. The release date is April 29, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Qualcomm's fiscal Q3 2026 total revenues were $9,947 million (as reported in the Q3 earnings release).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000085/qcom062826erex991.htm",
+     "reason": "Retrieved source 1 (Q3 FY2026 earnings release) presents a GAAP/Non-GAAP comparison table with 'Revenues | $9,947' for Q3 Fiscal 2026 (in millions, per the table header). The release is dated July 29, 2026, covering the quarter ended June 28, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Qualcomm's fiscal Q3 2026 non-GAAP diluted EPS was $2.21 (as reported in the Q3 earnings release).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000085/qcom062826erex991.htm",
+     "reason": "The same table in retrieved source 1 shows 'Non-GAAP diluted EPS | $2.21' for Q3 Fiscal 2026. The figure is explicitly labeled as non-GAAP and matches the cited value.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The actual total revenues of $9,947 million fell within the guidance range of $9.2B - $10.0B, at the high end of that range.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000085/qcom062826erex991.htm; https://www.sec.gov/Archives/edgar/data/804328/000080432826000060/qcom032926erex991.htm",
+     "reason": "$9,947 million equals $9.947 billion. This is greater than $9.2B and less than $10.0B, so it lies within the guidance range. It is close to the upper bound ($10.0B), justifying 'at the high end'. Both sources are retrieved and support the respective actual and guidance figures.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "The actual non-GAAP diluted EPS of $2.21 fell within the guidance range of $2.10 - $2.30.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000085/qcom062826erex991.htm; https://www.sec.gov/Archives/edgar/data/804328/000080432826000060/qcom032926erex991.htm",
+     "reason": "$2.21 is between $2.10 and $2.30, so it is within the guidance range. Both actual (source 1) and guidance (source 2) figures are confirmed in the retrieved sources.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 6,
+   "supported": 4,
+   "not_retrieved": 2
+  }
+ }
+}

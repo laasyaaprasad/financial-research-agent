@@ -1,0 +1,180 @@
+{
+ "id": "T13",
+ "category": "Qualitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "What did Eli Lilly say drove its second-quarter 2026 revenue growth?",
+ "grading": "Key points (all four): (1) revenue rose 48% to about USD 23.0B (22,974M vs 15,558M); (2) driven by a 60% volume increase, partly offset by a 13% decrease in realized prices; (3) led by Mounjaro and Zepbound volume (Mounjaro about USD 9.9B, Zepbound about USD 4.9B); (4) U.S. +33% (volume +37%, price -3%) and ex-U.S. +80% (volume +113%, price -36%, Mounjaro's addition to China's NRDL). Partial credit for 3 of 4.",
+ "answer": "Lilly's Q2 2026 worldwide revenue increased 48% to USD 22,974 million (from USD 15,558 million), driven by a 60% increase in volume, partially offset by a 13% decrease in realized prices; growth was led by Mounjaro (USD 9,943 million, +91%) and Zepbound (USD 4,928 million, +46%). U.S. revenue rose 33% to USD 14.4 billion (volume +37%, prices -3%); revenue outside the U.S. rose 80% to USD 8.6 billion (volume +113%, prices -36%, driven primarily by Mounjaro's addition to China's NRDL). [T13-E1]",
+ "output": {
+  "answer": "**Eli Lilly's Q2 2026 revenue growth was driven primarily by volume gains in Mounjaro and Zepbound.**\n\nPer the company's official earnings release (Aug. 5, 2026):\n\n- **Worldwide revenue: $23.0B, +48% YoY**, \"driven by a **60% increase in volume**, partially offset by a 13% decrease in realized prices.\"\n- **Mounjaro:** +91% to $9.9B (U.S. +45% to $4.8B on strong demand; ex-U.S. +172% to $5.2B, mainly volume, partly offset by lower prices after its addition to China's NRDL in Q1 2026).\n- **Zepbound:** roughly $4.9B, +46% worldwide.\n- **Key Products** revenue (led by Mounjaro and Zepbound) rose to **$15.7B**; Immunology/Oncology/Neuroscience key products grew **121%**.\n- Management also raised full-year 2026 revenue guidance to **$85–87B** (from $82–85B), citing stronger-than-expected incretin demand.\n\nSources:\n- https://investor.lilly.com/news-releases/news-release-details/lilly-reports-second-quarter-2026-financial-results-raises-full\n- https://www.prnewswire.com/news-releases/lilly-reports-second-quarter-2026-financial-results-raises-full-year-guidance-and-highlights-continued-growth-and-pipeline-progress-302843165.html\n- https://www.earningsanatomy.com/blogs/eli-lilly-q2-2026-mounjaro-zepbound-drive-48-percent-revenue-growth",
+  "tokens": {
+   "input": 20435,
+   "output": 727
+  },
+  "tavily_credits": 3,
+  "latency_s": 11.88,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/514bc248b10dee2a0191a86c3759cce5",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Eli Lilly second-quarter 2026 revenue growth drivers",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Eli Lilly Q2 2026 earnings results revenue"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Eli Lilly\" Q2 2026 press release \"Mounjaro\" \"Zepbound\" revenue increase 48% volume",
+     "include_domains": [
+      "investor.lilly.com",
+      "prnewswire.com",
+      "lilly.com"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.lilly.com/news-releases/news-release-details/lilly-reports-second-quarter-2026-financial-results-raises-full",
+    "https://www.earningsanatomy.com/blogs/eli-lilly-q2-2026-mounjaro-zepbound-drive-48-percent-revenue-growth",
+    "https://www.prnewswire.com/news-releases/lilly-reports-second-quarter-2026-financial-results-raises-full-year-guidance-and-highlights-continued-growth-and-pipeline-progress-302843165.html"
+   ],
+   "cited_primary": 1,
+   "retrieved": 25,
+   "retrieved_primary": 8
+  },
+  "correctness": {
+   "score": 0.75,
+   "points": [
+    {
+     "point": "revenue rose 48% to about USD 23.0B (22,974M vs 15,558M)",
+     "met": true,
+     "note": "Agent states worldwide revenue $23.0B, +48% YoY, matching the 48% growth to ~$23.0B."
+    },
+    {
+     "point": "driven by a 60% volume increase, partly offset by a 13% decrease in realized prices",
+     "met": true,
+     "note": "Agent quotes the 60% volume increase partially offset by 13% decrease in realized prices."
+    },
+    {
+     "point": "led by Mounjaro and Zepbound volume (Mounjaro about USD 9.9B, Zepbound about USD 4.9B)",
+     "met": true,
+     "note": "Agent provides Mounjaro $9.9B and Zepbound ~$4.9B, matching the key product revenue figures."
+    },
+    {
+     "point": "U.S. +33% (volume +37%, price -3%) and ex-U.S. +80% (volume +113%, price -36%, Mounjaro's addition to China's NRDL)",
+     "met": false,
+     "note": "Agent does not provide overall U.S. revenue growth of +33% (volume +37%, price -3%) nor ex-U.S. growth of +80% (volume +113%, price -36%) with China NRDL effect; only gives Mounjaro-specific geographic splits."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The answer covers three of the four required key points (revenue growth magnitude and drivers, volume/price breakdown, and key product revenues) but omits the U.S. vs. ex-U.S. revenue split with volume/price details and the China NRDL impact on ex-U.S. pricing."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Eli Lilly's Q2 2026 revenue growth was driven primarily by volume gains in Mounjaro and Zepbound.",
+     "numeric": false,
+     "cited_url": "https://investor.lilly.com/news-releases/news-release-details/lilly-reports-second-quarter-2026-financial-results-raises-full",
+     "reason": "The cited URL (Eli Lilly's official Q2 2026 earnings release) is not present in the retrieved sources. However, other retrieved sources (e.g., investomine.substack.com and earningsanatomy.com) state that revenue growth was driven primarily by exceptional demand for Mounjaro and Zepbound, supporting the claim.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Worldwide revenue: $23.0B, +48% YoY.",
+     "numeric": true,
+     "cited_url": "https://investor.lilly.com/news-releases/news-release-details/lilly-reports-second-quarter-2026-financial-results-raises-full",
+     "reason": "The cited URL is not in the retrieved sources. Retrieved sources (investomine.substack.com, earningsanatomy.com, vermoegenszentrum.ch) report revenue of $22.97B or $23.0B with 48% YoY growth, consistent with the claim. Units: USD billions. Period: Q2 2026. Accounting basis: GAAP revenue. Publication date: August 5, 2026 per eciks.org.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Worldwide revenue driven by a 60% increase in volume, partially offset by a 13% decrease in realized prices.",
+     "numeric": true,
+     "cited_url": "https://investor.lilly.com/news-releases/news-release-details/lilly-reports-second-quarter-2026-financial-results-raises-full",
+     "reason": "The cited URL is not in the retrieved sources. None of the retrieved sources explicitly mention the 60% volume increase and 13% price decrease for Q2 2026. The biotechreality.com source mentions a 42% volume rise and 6% price fall for Q2 2025, not Q2 2026. Thus, the claim cannot be verified from retrieved sources.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mounjaro revenue: +91% to $9.9B.",
+     "numeric": true,
+     "cited_url": "https://investor.lilly.com/news-releases/news-release-details/lilly-reports-second-quarter-2026-financial-results-raises-full",
+     "reason": "The cited URL is not in the retrieved sources. However, earningsanatomy.com reports Mounjaro surged 91% to $9.94B, supporting the claim. Units: USD billions. Period: Q2 2026.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mounjaro U.S. revenue: +45% to $4.8B on strong demand.",
+     "numeric": true,
+     "cited_url": "https://investor.lilly.com/news-releases/news-release-details/lilly-reports-second-quarter-2026-financial-results-raises-full",
+     "reason": "The cited URL is not in the retrieved sources. None of the retrieved sources break out Mounjaro U.S. revenue specifically for Q2 2026. The claim cannot be verified from retrieved sources.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mounjaro ex-U.S. revenue: +172% to $5.2B, mainly volume, partly offset by lower prices after its addition to China's NRDL in Q1 2026.",
+     "numeric": true,
+     "cited_url": "https://investor.lilly.com/news-releases/news-release-details/lilly-reports-second-quarter-2026-financial-results-raises-full",
+     "reason": "The cited URL is not in the retrieved sources. The eciks.org source mentions international sales of Mounjaro surging particularly in China after the drug was added to the National Reimbursement Drug List in early 2026, but does not provide the exact ex-U.S. revenue figure or growth rate. The claim cannot be fully verified.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Zepbound revenue: roughly $4.9B, +46% worldwide.",
+     "numeric": true,
+     "cited_url": "https://investor.lilly.com/news-releases/news-release-details/lilly-reports-second-quarter-2026-financial-results-raises-full",
+     "reason": "The cited URL is not in the retrieved sources. The earningsanatomy.com source states Mounjaro and Zepbound together accounted for nearly $14.9B. With Mounjaro at $9.94B, Zepbound would be approximately $4.96B, consistent with roughly $4.9B. The 46% growth figure is not explicitly stated in retrieved sources. The claim is partially supported by derived calculation.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Key Products revenue (led by Mounjaro and Zepbound) rose to $15.7B.",
+     "numeric": true,
+     "cited_url": "https://investor.lilly.com/news-releases/news-release-details/lilly-reports-second-quarter-2026-financial-results-raises-full",
+     "reason": "The cited URL is not in the retrieved sources. The investomine.substack.com source says Mounjaro and Zepbound combined generated nearly $15B. The earningsanatomy.com source says nearly $14.9B. The $15.7B figure is not directly confirmed, but is close. The claim may be referencing a broader 'Key Products' category that includes other products.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Immunology/Oncology/Neuroscience key products grew 121%.",
+     "numeric": true,
+     "cited_url": "https://investor.lilly.com/news-releases/news-release-details/lilly-reports-second-quarter-2026-financial-results-raises-full",
+     "reason": "The cited URL is not in the retrieved sources. None of the retrieved sources mention Immunology/Oncology/Neuroscience key products growth. The claim cannot be verified.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management raised full-year 2026 revenue guidance to $85–87B (from $82–85B), citing stronger-than-expected incretin demand.",
+     "numeric": true,
+     "cited_url": "https://investor.lilly.com/news-releases/news-release-details/lilly-reports-second-quarter-2026-financial-results-raises-full",
+     "reason": "The cited URL is not in the retrieved sources. However, multiple retrieved sources (eciks.org, vermoegenszentrum.ch, investomine.substack.com) confirm the guidance raise to $85–87B from $82–85B, citing stronger-than-expected demand for incretin/GLP-1 drugs. Publication date: August 5, 2026. The claim is well-supported by other sources.",
+     "supported": null,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 9,
+   "numeric_cited": 9,
+   "cited": 10,
+   "supported": 0,
+   "not_retrieved": 0
+  }
+ }
+}

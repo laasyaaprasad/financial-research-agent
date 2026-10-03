@@ -1,0 +1,201 @@
+{
+ "id": "H19",
+ "category": "Qualitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "What is the most significant news for Hormel Foods in the past 30 days (as of October 3, 2026)? Give the date, deal terms and expected timing.",
+ "grading": "Snapshot as of 2026-10-03; key points: (1) Hormel announced on Sept 30, 2026 (agreement dated Sept 29) a definitive agreement to acquire Brakebush Brothers, LLC, a value-added chicken company; (2) price about USD 1.055 billion in cash, subject to customary adjustments; (3) expected to close in Hormel's fiscal Q1 2027 subject to customary conditions including HSR/regulatory approval (outside date March 29, 2027, with an automatic 3-month extension in specified circumstances); (4) any two of: Brakebush ~USD 1.2B LTM net sales, results primarily in Foodservice, expected accretive to adjusted EPS from fiscal 2028, ~USD 20M run-rate cost synergies by end of fiscal 2028, implied 10.7x adjusted EBITDA. Must carry the date and cite a primary or dated news source; fail if the deal is described as closed or if the price/timing is wrong.",
+ "answer": "Snapshot as of October 3, 2026: on September 29-30, 2026 Hormel Foods entered into (and announced) a definitive agreement to acquire Brakebush Brothers, LLC, a Wisconsin-based value-added chicken company, from the Brakebush family for a base purchase price of about USD 1.055 billion in cash, subject to customary adjustments [H19-E1][H19-E2]. Closing is expected in Hormel's fiscal Q1 2027 (roughly late October 2026 to late January 2027), subject to customary conditions including HSR waiting-period expiry; the agreement's outside date is March 29, 2027 with an automatic three-month extension in specified circumstances [H19-E1]. Brakebush had about USD 1.2 billion of net sales over the last twelve months, five production facilities and two R&D labs; results will be reported primarily in Foodservice; Hormel expects the deal to be accretive to adjusted EPS beginning in fiscal 2028, with about USD 20 million of run-rate cost synergies by the end of fiscal 2028 and an implied adjusted EBITDA multiple of 10.7x (8.9x after synergies) [H19-E2][H19-E3]. Secondary coverage corroborates the terms [H19-E4].",
+ "output": {
+  "answer": "## Most Significant Hormel Foods News (Past 30 Days)\n\n**Hormel Foods to acquire Brakebush Brothers, LLC** — announced **Sept. 30, 2026**.\n\n**Deal terms:**\n- **Purchase price:** Approximately **$1.055 billion** (reported ~$1.06B), paid to the Brakebush family\n- **Target:** Brakebush Brothers, a family-owned, value-added chicken company founded in 1925 and headquartered in Westfield, Wisconsin\n- **Scale:** ~$1.2 billion in net sales over the trailing 12 months; five production facilities and two R&D labs; serves national and regional foodservice operators\n- **Financing:** Combination of cash on hand and newly issued debt; expected to preserve investment-grade credit profile (pro forma net debt/EBITDA slightly above long-term target range)\n- **Advisors:** Wells Fargo (financial) and Faegre Drinker Biddle & Reath (legal) for Hormel; William Blair and Michael Best & Friedrich LLP for Brakebush\n- **Tax treatment:** Asset purchase treatment expected, with an ongoing cash tax benefit from stepped-up asset basis\n\n**Expected timing:**\n- **Close:** During the **first quarter of Hormel's fiscal 2027**, subject to customary closing conditions including regulatory approval\n- **EPS accretion:** Accretive to adjusted EPS **beginning in fiscal 2028**\n- **Reporting:** Brakebush results reported primarily within Hormel's **Foodservice segment**\n\n**Strategic rationale:** Advances Hormel's push into growing protein categories, meaningfully expands its value-added chicken position, and strengthens its Foodservice platform (operator relationships, category expertise, expanded direct sales). Noted as Hormel's fourth portfolio-shaping action in a year, following divestitures of Justin's, whole-bird turkey, and Brazil operations.\n\nSources:\n- [Hormel Foods press release (PR Newswire, Sept. 30, 2026)](https://www.prnewswire.com/news-releases/hormel-foods-announces-definitive-agreement-to-acquire-brakebush-a-leading-value-added-chicken-company-302893854.html)\n- [Hormel Foods newsroom](https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-announces-definitive-agreement-to-acquire-brakebush-a-leading-value-added-chicken-company)\n- [Reuters](https://www.reuters.com/business/retail-consumer/hormel-foods-acquire-brakebush-106-billion-2026-09-30)\n- [Quartz](https://qz.com/hormel-foods-acquiring-brakebush-brothers-chicken-093026)",
+  "tokens": {
+   "input": 12667,
+   "output": 869
+  },
+  "tavily_credits": 4,
+  "latency_s": 88.83,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/d5ebbd3866816ed349a7a0eb027217a5",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Hormel Foods news deal acquisition",
+     "time_range": "month",
+     "topic": "news",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Hormel Foods announcement September 2026",
+     "start_date": "2026-09-03",
+     "end_date": "2026-10-03",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://qz.com/hormel-foods-acquiring-brakebush-brothers-chicken-093026",
+    "https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-announces-definitive-agreement-to-acquire-brakebush-a-leading-value-added-chicken-company",
+    "https://www.prnewswire.com/news-releases/hormel-foods-announces-definitive-agreement-to-acquire-brakebush-a-leading-value-added-chicken-company-302893854.html",
+    "https://www.reuters.com/business/retail-consumer/hormel-foods-acquire-brakebush-106-billion-2026-09-30"
+   ],
+   "cited_primary": 0,
+   "retrieved": 19,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.667,
+   "points": [
+    {
+     "point": "Announced on Sept 30, 2026 (agreement dated Sept 29) a definitive agreement to acquire Brakebush Brothers, LLC, a value-added chicken company",
+     "met": true,
+     "note": "Agent states announced Sept. 30, 2026, definitive agreement to acquire Brakebush Brothers, a value-added chicken company, citing PR Newswire Sept 30 source."
+    },
+    {
+     "point": "Price about USD 1.055 billion in cash, subject to customary adjustments",
+     "met": false,
+     "note": "Agent mentions purchase price ~$1.055B paid to Brakebush family but omits 'in cash' and 'subject to customary adjustments'."
+    },
+    {
+     "point": "Expected to close in Hormel's fiscal Q1 2027 subject to customary conditions including HSR/regulatory approval (outside date March 29, 2027, with an automatic 3-month extension in specified circumstances)",
+     "met": false,
+     "note": "Agent states close in fiscal Q1 2027 subject to customary closing conditions including regulatory approval, but omits HSR, outside date March 29, 2027, and automatic 3-month extension."
+    },
+    {
+     "point": "Any two of: Brakebush ~USD 1.2B LTM net sales, results primarily in Foodservice, expected accretive to adjusted EPS from fiscal 2028, ~USD 20M run-rate cost synergies by end of fiscal 2028, implied 10.7x adjusted EBITDA",
+     "met": true,
+     "note": "Agent includes at least three: ~$1.2B LTM net sales, results primarily in Foodservice, accretive to adjusted EPS from fiscal 2028."
+    },
+    {
+     "point": "Carries the date and cites a primary or dated news source",
+     "met": true,
+     "note": "Agent provides date and cites primary source (PR Newswire press release) and other dated sources."
+    },
+    {
+     "point": "Deal not described as closed; price and timing not wrong",
+     "met": true,
+     "note": "Deal described as expected to close, not closed; price and timing are correct."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The answer correctly identifies the most significant news, provides the date, price, and expected closing quarter, and includes multiple supporting details. However, it omits key specifics from the grading rule: the purchase price is not explicitly described as cash consideration subject to customary adjustments, and the closing timeline lacks mention of HSR clearance, the March 29, 2027 outside date, and the automatic three-month extension. These omissions mean the answer does not fully satisfy the grading rule's key points 2 and 3."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Hormel Foods announced agreement to acquire Brakebush Brothers, LLC on Sept. 30, 2026",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/hormel-foods-announces-definitive-agreement-to-acquire-brakebush-a-leading-value-added-chicken-company-302893854.html",
+     "reason": "PR Newswire press release published Sep 30, 2026 states: 'Hormel Foods Corporation ... today announced it has entered into a definitive agreement to acquire Brakebush Brothers, LLC'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Purchase price approximately $1.055 billion (~$1.06B)",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/hormel-foods-announces-definitive-agreement-to-acquire-brakebush-a-leading-value-added-chicken-company-302893854.html",
+     "reason": "PR Newswire press release states: 'The purchase price is approximately $1.055 billion'; Reuters reports '$1.06 billion'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Brakebush Brothers is a family-owned, value-added chicken company founded in 1925, headquartered in Westfield, Wisconsin",
+     "numeric": true,
+     "cited_url": "https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-announces-definitive-agreement-to-acquire-brakebush-a-leading-value-added-chicken-company",
+     "reason": "Hormel Foods newsroom press release states: 'Founded in 1925 and headquartered in Westfield, Wisconsin, Brakebush has established itself as a leading, value-added, non-vertically integrated chicken provider'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Brakebush generated ~$1.2 billion in net sales over trailing 12 months, operates five production facilities and two R&D labs, serves national and regional foodservice operators",
+     "numeric": true,
+     "cited_url": "https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-announces-definitive-agreement-to-acquire-brakebush-a-leading-value-added-chicken-company",
+     "reason": "Hormel Foods newsroom states: 'Brakebush generated approximately $1.2 billion in net sales over the last 12 months and operates five production facilities and two research and development labs' and 'serves a diverse foodservice customer base across national and regional operators'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Financing: combination of cash on hand and newly issued debt; expected to preserve investment-grade credit profile (pro forma net debt/EBITDA slightly above long-term target range)",
+     "numeric": true,
+     "cited_url": "https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-announces-definitive-agreement-to-acquire-brakebush-a-leading-value-added-chicken-company",
+     "reason": "Hormel Foods newsroom states: 'We expect to finance the acquisition through a combination of cash on hand and new debt... We intend to maintain our strong investment grade credit profile... At closing, we expect Proforma net debt to adjusted IBIDA to be slightly above our long-term target range'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Advisors: Wells Fargo (financial) and Faegre Drinker Biddle & Reath (legal) for Hormel; William Blair and Michael Best & Friedrich LLP for Brakebush",
+     "numeric": false,
+     "cited_url": "https://www.prnewswire.com/news-releases/hormel-foods-announces-definitive-agreement-to-acquire-brakebush-a-leading-value-added-chicken-company-302893854.html",
+     "reason": "PR Newswire press release states: 'Wells Fargo is acting as exclusive financial advisor to Hormel Foods and Faegre Drinker Biddle & Reath is serving as legal counsel. William Blair is acting as exclusive financial advisor and Michael Best & Friedrich LLP is serving as legal counsel for Brakebush'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tax treatment: asset purchase treatment expected, with ongoing cash tax benefit from stepped-up asset basis",
+     "numeric": false,
+     "cited_url": "https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-announces-definitive-agreement-to-acquire-brakebush-a-leading-value-added-chicken-company",
+     "reason": "Hormel Foods newsroom states: 'The transaction is expected to receive asset purchase treatment for US federal income tax purposes. As a result, Hormel Foods expects to receive an ongoing cash tax benefit from the step up in the tax basis of acquired assets'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Expected close: first quarter of Hormel's fiscal 2027, subject to customary closing conditions including regulatory approval",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/hormel-foods-announces-definitive-agreement-to-acquire-brakebush-a-leading-value-added-chicken-company-302893854.html",
+     "reason": "PR Newswire press release states: 'the transaction is expected to close during the first quarter of Hormel Foods' fiscal 2027, subject to customary closing conditions, including regulatory approval'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "EPS accretion: accretive to adjusted EPS beginning in fiscal 2028",
+     "numeric": true,
+     "cited_url": "https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-announces-definitive-agreement-to-acquire-brakebush-a-leading-value-added-chicken-company",
+     "reason": "Hormel Foods newsroom states: 'The company expects the acquisition to be accretive to adjusted earnings per share beginning in fiscal 2028'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Reporting: Brakebush results reported primarily within Hormel's Foodservice segment",
+     "numeric": false,
+     "cited_url": "https://www.hormelfoods.com/newsroom/press-releases/hormel-foods-announces-definitive-agreement-to-acquire-brakebush-a-leading-value-added-chicken-company",
+     "reason": "Hormel Foods newsroom states: 'The company expects to report the results of Brakebush's operations primarily in its Foodservice segment'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Strategic rationale: advances push into growing protein categories, expands value-added chicken position, strengthens Foodservice platform",
+     "numeric": false,
+     "cited_url": "https://www.prnewswire.com/news-releases/hormel-foods-announces-definitive-agreement-to-acquire-brakebush-a-leading-value-added-chicken-company-302893854.html",
+     "reason": "PR Newswire press release states: 'The acquisition advances Hormel Foods' strategy of investing in growing protein categories, will meaningfully expand the company's position in value-added chicken and is expected to strengthen its leading Foodservice platform through enhanced operator relationships, category expertise and an expanded direct sales organization'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fourth portfolio-shaping action in a year, following divestitures of Justin's, whole-bird turkey, and Brazil operations",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Answer does not cite a source for this claim; retrieved Shelby Report supports it but not among answer's cited sources",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 7,
+   "cited": 11,
+   "supported": 11,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,155 @@
+{
+ "id": "G19",
+ "category": "Trends",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "Give NVIDIA's Data Center revenue for each quarter from Q2 FY2026 through Q2 FY2027 and the QoQ growth for each.",
+ "grading": "Each quarterly value ±0.5% USD millions; QoQ ±0.5pp; fail if Compute & Networking segment figures substituted or quarters mislabeled",
+ "answer": "Data Center market-platform revenue (USD millions) / calculated QoQ growth: Q2 FY2026: 41,096 / 5.0726%; Q3 FY2026: 51,215 / 24.6228%; Q4 FY2026: 62,314 / 21.6714%; Q1 FY2027: 75,246 / 20.7530%; Q2 FY2027: 89,023 / 18.3093%. Q2 FY2026 growth uses the Q1 FY2026 baseline of USD 39,112 million. These are Data Center figures, not Compute & Networking segment revenue. [G19-E1, G19-E2]",
+ "output": {
+  "answer": "## NVIDIA Data Center Revenue: Q2 FY2026 → Q2 FY2027\n\n| Fiscal Quarter | Period Ended | Data Center Revenue | QoQ Growth |\n|---|---|---|---|\n| Q2 FY2026 | Jul 2025 | $41.1B | — |\n| Q3 FY2026 | Oct 2025 | $51.2B | +24.6% |\n| Q4 FY2026 | Jan 2026 | $62.3B | +21.7% |\n| Q1 FY2027 | Apr 2026 | $75.2B | +20.8% |\n| Q2 FY2027 | Jul 2026 | $89.0B | +18.4% |\n\n**Notes**\n- Q2 FY2026 Data Center revenue was ~$41.1B (up ~56% YoY).\n- Q3 FY2026: $51.2B (vs. ~$49.3B consensus); total revenue $57.0B.\n- Q4 FY2026: $62.3B, ~91.5% of total revenue; total revenue $68.1B.\n- Q1 FY2027: $75.2B (up 92% YoY), split ~$60.4B Compute / ~$14.8B Networking; total revenue $81.6B.\n- Q2 FY2027: $89.0B; total revenue $96.2B (up ~106% YoY).\n\nEvery quarter in this span set a record, with sequential growth decelerating gradually from ~25% to ~18% as the base scaled up.\n\nSources:\n- https://finance.yahoo.com/markets/stocks/articles/long-term-investors-know-exactly-155839181.html\n- https://finance.yahoo.com/markets/stocks/articles/wall-street-most-watched-researcher-173006251.html\n- https://finance.yahoo.com/news/nvidia-stock-falls-as-q4-beat-guidance-fail-to-satisfy-wall-street-170306228.html\n- https://finance.yahoo.com/news/nvidia-stock-slides-after-q3-earnings-forecasts-top-estimates-with-sales-for-ai-chips-off-the-charts-210758368.html\n- https://finance.yahoo.com/markets/stocks/articles/nvidia-12-9-billion-hugging-110515288.html\n\nOne caveat: these figures come from financial media coverage rather than NVIDIA's own press releases, so the Q2 FY2026 and Q2 FY2027 Data Center values in particular are worth confirming against the official earnings releases.",
+  "tokens": {
+   "input": 28484,
+   "output": 1749
+  },
+  "tavily_credits": 8,
+  "latency_s": 12.93,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/a9ea71a6eb034de80622c311b912aaf7",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Data Center revenue by quarter Q2 FY2026 Q3 FY2026 Q4 FY2026",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q1 FY2027 Q2 FY2027 data center revenue earnings",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q2 FY2026 data center revenue $41.1 billion quarter ended July 2025",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q2 FY2027 data center revenue breakdown press release",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/long-term-investors-know-exactly-155839181.html",
+    "https://finance.yahoo.com/markets/stocks/articles/nvidia-12-9-billion-hugging-110515288.html",
+    "https://finance.yahoo.com/markets/stocks/articles/wall-street-most-watched-researcher-173006251.html",
+    "https://finance.yahoo.com/news/nvidia-stock-falls-as-q4-beat-guidance-fail-to-satisfy-wall-street-170306228.html",
+    "https://finance.yahoo.com/news/nvidia-stock-slides-after-q3-earnings-forecasts-top-estimates-with-sales-for-ai-chips-off-the-charts-210758368.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 31,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.846,
+   "points": [
+    {
+     "point": "Q2 FY2026 Data Center revenue within ±0.5% USD millions (ref: 41,096)",
+     "met": true,
+     "note": "Agent reports $41.1B = 41,100 million; difference 0.01% within tolerance."
+    },
+    {
+     "point": "Q3 FY2026 Data Center revenue within ±0.5% USD millions (ref: 51,215)",
+     "met": true,
+     "note": "Agent reports $51.2B = 51,200 million; difference 0.03% within tolerance."
+    },
+    {
+     "point": "Q4 FY2026 Data Center revenue within ±0.5% USD millions (ref: 62,314)",
+     "met": true,
+     "note": "Agent reports $62.3B = 62,300 million; difference 0.02% within tolerance."
+    },
+    {
+     "point": "Q1 FY2027 Data Center revenue within ±0.5% USD millions (ref: 75,246)",
+     "met": true,
+     "note": "Agent reports $75.2B = 75,200 million; difference 0.06% within tolerance."
+    },
+    {
+     "point": "Q2 FY2027 Data Center revenue within ±0.5% USD millions (ref: 89,023)",
+     "met": true,
+     "note": "Agent reports $89.0B = 89,000 million; difference 0.03% within tolerance."
+    },
+    {
+     "point": "Q2 FY2026 QoQ growth within ±0.5pp (ref: 5.0726%)",
+     "met": false,
+     "note": "Agent shows '—' for Q2 FY2026 QoQ growth; no value provided."
+    },
+    {
+     "point": "Q3 FY2026 QoQ growth within ±0.5pp (ref: 24.6228%)",
+     "met": true,
+     "note": "Agent reports +24.6%; difference 0.02pp within tolerance."
+    },
+    {
+     "point": "Q4 FY2026 QoQ growth within ±0.5pp (ref: 21.6714%)",
+     "met": true,
+     "note": "Agent reports +21.7%; difference 0.03pp within tolerance."
+    },
+    {
+     "point": "Q1 FY2027 QoQ growth within ±0.5pp (ref: 20.7530%)",
+     "met": true,
+     "note": "Agent reports +20.8%; difference 0.05pp within tolerance."
+    },
+    {
+     "point": "Q2 FY2027 QoQ growth within ±0.5pp (ref: 18.3093%)",
+     "met": true,
+     "note": "Agent reports +18.4%; difference 0.09pp within tolerance."
+    },
+    {
+     "point": "No Compute & Networking segment substitution",
+     "met": true,
+     "note": "Agent's figures match Data Center market-platform revenue; Compute/Networking split noted but total is Data Center."
+    },
+    {
+     "point": "Correct fiscal quarter labeling (Q2 FY26 ended Jul 2025 … Q2 FY27 ended Jul 2026)",
+     "met": true,
+     "note": "Agent's period-ended months match reference fiscal quarter endings."
+    },
+    {
+     "point": "Q4 FY2026 figure sourced from 10-K/8-K",
+     "met": false,
+     "note": "Agent cites Yahoo Finance media articles, not NVIDIA's 10-K/8-K; caveats that figures are from financial media coverage."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "All quarterly revenue values and provided QoQ growth rates are within the specified tolerances, segment definition and quarter labeling are correct. However, the agent omitted the QoQ growth for Q2 FY2026 (showing '—') and the Q4 FY2026 figure is not sourced from the required 10-K/8-K filing. These two requirements are not met, so the answer is partially correct."
+  },
+  "citations": {
+   "claims": [],
+   "numeric_claims": 0,
+   "numeric_cited": 0,
+   "cited": 0,
+   "supported": 0,
+   "not_retrieved": 0,
+   "judge_error": "judge failed after 4 attempts: no structured output"
+  }
+ }
+}

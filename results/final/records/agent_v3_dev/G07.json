@@ -1,0 +1,238 @@
+{
+ "id": "G07",
+ "category": "Numerical reasoning",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Salesforce's current RPO at the end of Q2 FY2027, its YoY growth in both nominal and constant currency, and what share of total RPO it represents?",
+ "grading": "cRPO ±0.5%, USD billions; growth rates exact as disclosed (both labeled correctly); share ±1pp",
+ "answer": "Salesforce cRPO at July 31, 2026 was USD 33.5 billion, up 14% YoY in both nominal and constant currency terms. Total RPO was USD 66.3 billion, so cRPO represented 50.5279% of total RPO. [G07-E1]",
+ "output": {
+  "answer": "**Question:** What was Salesforce's current RPO at the end of Q2 FY2027, its YoY growth in both nominal and constant currency, and what share of total RPO it represents?\n*As of 2026-10-01*\n\n| | Current RPO (USD billions) | Current RPO YoY growth, as reported (%) | Current RPO YoY growth, constant currency (non-GAAP, %) | Total RPO (USD billions) | Current RPO as share of total RPO (%) |\n|---|---|---|---|---|---|\n| Q2 FY2027 (quarter ended July 31, 2026) | $33.5 [1][2] | 14% [1][2] | 14% [1] | $66.3 [1][2] | 50.5 [1] |\n| Q2 FY2026 (quarter ended July 31, 2025) | $29.4 [3] | 11% [3] | 10% [3] | $59.9 [3] | — |\n\n- Salesforce's current remaining performance obligation (cRPO) was $33.5 billion as of July 31, 2026 (Q2 FY2027, quarter ended July 31, 2026), as reported. [1][2]\n- Salesforce reported cRPO growth of 14% Y/Y and 14% in constant currency for Q2 FY2027 (quarter ended July 31, 2026); the constant-currency figure is a non-GAAP measure. [1]\n- The 10-Q states that, relative to July 31, 2025, Salesforce's cRPO growth as of July 31, 2026 was minimally impacted compared to what would have been reported using constant currency rates. [2]\n- Calculated nominal Y/Y cRPO growth for Q2 FY2027 (quarter ended July 31, 2026) versus Q2 FY2026 (quarter ended July 31, 2025) is 13.9%, based on cRPO of $33.5 billion and the prior-year balance of $29.4 billion. [1][3]\n- Total remaining performance obligation was $66.3 billion as of July 31, 2026 (Q2 FY2027), up 11% Y/Y. [1][2]\n- Current RPO represented 50.5% of total RPO as of July 31, 2026 (Q2 FY2027), calculated as $33.5 billion of current RPO divided by $66.3 billion of total RPO. [1]\n\n**Sources**\n[1] Salesforce, Inc. earnings release for Q2 FY2027, 8-K EX-99.1 (filed 2026-08-26) (www.sec.gov, 2026-08-26, primary) https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm\n[2] Salesforce, Inc. 10-Q for Q2 FY2027 (filed 2026-08-27) (www.sec.gov, 2026-08-27, primary) https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm\n[3] Salesforce, Inc. earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2025-09-03) (www.sec.gov, 2025-09-03, primary) https://www.sec.gov/Archives/edgar/data/1108524/000110852425000083/crm-q2fy26xexhibit991.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 26077,
+   "output": 5238
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 28.93,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/f6f78ecee8a4a6107d42fb9a7239f83d",
+  "companies": [
+   {
+    "name": "Salesforce, Inc.",
+    "ticker": "CRM",
+    "cik": "1108524",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Current remaining performance obligation (cRPO) balance at end of Q2 FY2027 (2026-07-31)",
+    "Total remaining performance obligation (RPO) balance at end of Q2 FY2027",
+    "Current RPO as a percentage/share of total RPO at end of Q2 FY2027",
+    "Year-over-year growth in current RPO, nominal (as-reported) basis",
+    "Year-over-year growth in current RPO, constant-currency basis",
+    "Prior-year (Q2 FY2026, ended 2025-07-31) current RPO and total RPO balances used as the comparison base",
+    "Any management commentary on RPO/cRPO drivers (bookings, duration, FX) and the cRPO outlook"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "CRM",
+     "label": "Q2 FY2027"
+    },
+    {
+     "ticker": "CRM",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "CRM",
+     "period": "Q2 FY2027",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "CRM",
+     "period": "Q2 FY2027",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "CRM",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q2 FY2027 (2026-05-01 to 2026-07-31) is filed, so the 10-Q and the 2026-08-26 earnings release 8-K are available.",
+    "Constant-currency cRPO growth is a non-GAAP metric; it is normally disclosed in the earnings release (and sometimes only quantified on the earnings call), not in the 10-Q financial statements.",
+    "The 10-Q discloses total RPO and current RPO in the remaining performance obligation note; the split of current vs. total RPO and the YoY comparison base come from the Q2 FY2027 release and the prior-year Q2 FY2026 release.",
+    "Q3 FY2027 and FY2027 are not yet reported and are not needed for this question."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000083/crm-q2fy26xexhibit991.htm",
+    "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
+    "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 5,
+   "retrieved_primary": 5
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "cRPO value: USD 33.5 billion ±0.5% (i.e., 33.3325–33.6675 billion)",
+     "met": true,
+     "note": "Agent reports $33.5 billion, exactly matching the reference."
+    },
+    {
+     "point": "YoY growth nominal: exact as disclosed (14%)",
+     "met": true,
+     "note": "Agent reports 14% nominal growth, matching the reference exactly."
+    },
+    {
+     "point": "YoY growth constant currency: exact as disclosed (14%)",
+     "met": true,
+     "note": "Agent reports 14% constant-currency growth, matching the reference exactly."
+    },
+    {
+     "point": "Share of total RPO: ±1 percentage point of 50.5279% (i.e., 49.53%–51.53%)",
+     "met": true,
+     "note": "Agent reports 50.5%, well within the tolerance."
+    },
+    {
+     "point": "Correct fiscal period (Q2 FY2027 ended July 31, 2026)",
+     "met": true,
+     "note": "Agent explicitly states quarter ended July 31, 2026, avoiding fiscal confusion."
+    },
+    {
+     "point": "No cRPO vs total RPO confusion",
+     "met": true,
+     "note": "Agent clearly distinguishes cRPO ($33.5B) from total RPO ($66.3B)."
+    },
+    {
+     "point": "Nominal vs constant-currency growth correctly labeled",
+     "met": true,
+     "note": "Agent labels both growth rates correctly as 14% nominal and 14% constant currency."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All requirements are met: cRPO value, both growth rates, share of total RPO, fiscal period, and correct labeling are all accurate and within specified tolerances."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Salesforce's current remaining performance obligation (cRPO) was $33.5 billion as of July 31, 2026 (Q2 FY2027).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
+     "reason": "Source [1] (earnings release 8-K EX-99.1 filed 2026-08-26) explicitly states: 'Current remaining performance obligation (\"cRPO\") of $33.5 billion, up 14% year-over-year (\"Y/Y\") and in constant currency (\"CC\")' and shows a table with 'As of July 31, 2026 | $ | 33.5'. Source [2] (10-Q filed 2026-08-27) confirms the same figure. The retrieved text supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Salesforce reported cRPO year-over-year growth of 14% for Q2 FY2027 (quarter ended July 31, 2026).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
+     "reason": "Source [1] states 'up 14% year-over-year (\"Y/Y\")' for cRPO. Source [2] repeats the same growth rate. The retrieved text supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Salesforce reported cRPO growth of 14% in constant currency for Q2 FY2027; the constant-currency figure is a non-GAAP measure.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
+     "reason": "Source [1] states 'up 14% year-over-year (\"Y/Y\") and in constant currency (\"CC\")'. The same source's guidance footnotes refer to 'non-GAAP CC remaining performance obligation growth', confirming constant-currency growth is a non-GAAP measure. The retrieved text supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The 10-Q states that relative to July 31, 2025, Salesforce's cRPO growth as of July 31, 2026 was minimally impacted compared to what would have been reported using constant currency rates.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+     "reason": "Source [2] (10-Q filed 2026-08-27) contains the exact sentence: 'Relative to July 31, 2025, our current remaining performance obligation growth as of July 31, 2026 was minimally impacted compared to what would have been reported using constant currency rates.' The retrieved text supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Calculated nominal year-over-year cRPO growth for Q2 FY2027 versus Q2 FY2026 is 13.9%, based on cRPO of $33.5 billion and prior-year balance of $29.4 billion.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
+     "reason": "Source [1] provides both figures in a table: $33.5B as of July 31, 2026 and $29.4B as of July 31, 2025. The calculation (33.5 - 29.4) / 29.4 = 0.139455... = 13.9455%, which rounds to 13.9% (within half the last digit). The arithmetic is correct and the inputs are directly from the cited source. The retrieved text supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total remaining performance obligation was $66.3 billion as of July 31, 2026 (Q2 FY2027).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
+     "reason": "Source [1] states 'Remaining performance obligation of $66.3 billion, up 11% Y/Y' and shows a table with 'As of July 31, 2026 | $ | 66.3'. Source [2] confirms the same figure. The retrieved text supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total remaining performance obligation grew 11% year-over-year for Q2 FY2027.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
+     "reason": "Source [1] explicitly states 'up 11% Y/Y' for total remaining performance obligation. Source [2] repeats the same growth rate. The retrieved text supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Current RPO represented 50.5% of total RPO as of July 31, 2026 (Q2 FY2027), calculated as $33.5 billion divided by $66.3 billion.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
+     "reason": "Source [1] provides both numerator ($33.5B) and denominator ($66.3B). The division yields 33.5 / 66.3 = 0.505279... = 50.5279%, which rounds to 50.5% (within half the last digit). The calculation is correct and the inputs are from the cited source. The retrieved text supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Salesforce's current remaining performance obligation (cRPO) was $29.4 billion as of July 31, 2025 (Q2 FY2026).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000083/crm-q2fy26xexhibit991.htm",
+     "reason": "Source [3] (earnings release 8-K EX-99.1 filed 2025-09-03) states 'Current remaining performance obligation of $29.4 billion, up 11% Y/Y and 10% in CC' and shows a table with 'As of July 31, 2025 | $ | 29.4'. The retrieved text supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Salesforce reported cRPO year-over-year growth of 11% for Q2 FY2026 (quarter ended July 31, 2025).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000083/crm-q2fy26xexhibit991.htm",
+     "reason": "Source [3] states 'up 11% Y/Y' for cRPO. The retrieved text supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Salesforce reported cRPO growth of 10% in constant currency for Q2 FY2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000083/crm-q2fy26xexhibit991.htm",
+     "reason": "Source [3] states 'up 11% Y/Y and 10% in CC' for cRPO. The retrieved text supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total remaining performance obligation was $59.9 billion as of July 31, 2025 (Q2 FY2026).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000083/crm-q2fy26xexhibit991.htm",
+     "reason": "Source [3] shows a table with 'As of July 31, 2025 | $ | 59.9' for total remaining performance obligation. The retrieved text supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 11,
+   "numeric_cited": 11,
+   "cited": 12,
+   "supported": 12,
+   "not_retrieved": 0
+  }
+ }
+}

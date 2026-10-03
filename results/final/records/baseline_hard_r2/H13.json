@@ -1,0 +1,235 @@
+{
+ "id": "H13",
+ "category": "Financial modeling",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "What were Texas Roadhouse's trailing-twelve-month total revenue and income-from-operations margin as of the end of its fiscal Q2 2026 (quarter ended June 30, 2026)?",
+ "grading": "Computation: TTM = FY2025 + 26 weeks 2026 - 26 weeks 2025. TTM total revenue USD 6,231.5M (6,231,515K); TTM income from operations USD 482.8M (482,795K); margin 7.75% (+/-0.2pp). Accept +/-0.5% on dollar figures. Fail if the window is not the 52 weeks ended June 30, 2026 or if net income is substituted.",
+ "answer": "TTM total revenue = 5,878,075 (FY2025) + 3,313,142 (26 weeks to June 30, 2026) - 2,959,702 (26 weeks to July 1, 2025) = USD 6,231,515 thousand (USD 6,231.5 million). TTM income from operations = 474,740 + 289,129 - 281,074 = USD 482,795 thousand (USD 482.8 million). TTM operating margin = 482,795 / 6,231,515 = 7.75% [H13-E1][H13-E2].",
+ "output": {
+  "answer": "**Texas Roadhouse (TXRH) — TTM as of fiscal Q2 2026 (quarter ended June 30, 2026):**\n\n| Metric | TTM value |\n|---|---|\n| Total revenue | **$6.23 billion** (~$6,232M) |\n| Income from operations | **$483.2 million** |\n| Income-from-operations (operating) margin | **~7.75%** |\n\nNotes and context:\n- The TTM window covers Q3 FY2025 through Q2 FY2026.\n- Revenue: Q3 FY25 $1.44B + Q4 FY25 $1.482B + Q1 FY26 $1.633B + Q2 FY26 $1.680B ≈ $6.23B.\n- Operating margin has compressed year over year (down from ~8.4% a year earlier), driven by commodity inflation (notably beef, ~7% in Q2) and a lower restaurant margin rate (16.4% of sales in Q2 2026 vs. 17.1% a year prior).\n- For reference, FY2025 (ended Dec. 30, 2025) revenue was $5.878B with income from operations of $474.7M (8.1% margin).\n\nSources:\n- https://stockanalysis.com/stocks/txrh/financials\n- https://www.stocktitan.net/financials/TXRH\n- https://www.macrotrends.net/stocks/charts/TXRH/texas-roadhouse/operating-income\n- https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Fourth-Quarter-2025-Results/ (FY2025 / Q4 2025 figures)\n- https://www.stocktitan.net/news/TXRH (Q2 2026 release summary)\n\nOne caveat: the TTM revenue and operating income above are aggregates from third-party financial data providers; a precise figure should be confirmed against the company's Q2 2026 10-Q (filed Aug. 7, 2026).",
+  "tokens": {
+   "input": 30375,
+   "output": 1277
+  },
+  "tavily_credits": 6,
+  "latency_s": 24.68,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/1bc4293b64548098efa0fcc75f318dbc",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Texas Roadhouse fiscal Q2 2026 results quarter ended June 30 2026 revenue",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Texas Roadhouse latest quarterly earnings report revenue income from operations",
+     "topic": "finance",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Texas Roadhouse full year 2025 results total revenue income from operations",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Texas Roadhouse Q1 2026 earnings revenue income from operations first quarter",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "TXRH stockanalysis.com financials trailing twelve months revenue operating income"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Fourth-Quarter-2025-Results/",
+    "https://stockanalysis.com/stocks/txrh/financials",
+    "https://www.macrotrends.net/stocks/charts/TXRH/texas-roadhouse/operating-income",
+    "https://www.stocktitan.net/financials/TXRH",
+    "https://www.stocktitan.net/news/TXRH"
+   ],
+   "cited_primary": 1,
+   "retrieved": 46,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "TTM total revenue matches USD 6,231.5M (6,231,515K) within +/-0.5% tolerance",
+     "met": true,
+     "note": "Agent reports $6.23B (~$6,232M); reference is $6,231.5M. Difference ~0.008%, well within tolerance."
+    },
+    {
+     "point": "TTM income from operations matches USD 482.8M (482,795K) within +/-0.5% tolerance",
+     "met": true,
+     "note": "Agent reports $483.2M; reference is $482.795M. Difference ~0.084%, within tolerance."
+    },
+    {
+     "point": "TTM operating margin matches 7.75% within +/-0.2 percentage points",
+     "met": true,
+     "note": "Agent reports ~7.75%; reference is 7.75%. Exact match."
+    },
+    {
+     "point": "Window is the 52 weeks ended June 30, 2026 (fiscal Q2 2026)",
+     "met": true,
+     "note": "Agent states TTM window covers Q3 FY2025 through Q2 FY2026, which corresponds to the 52 weeks ended June 30, 2026."
+    },
+    {
+     "point": "Does not substitute net income for income from operations",
+     "met": true,
+     "note": "Agent explicitly uses 'Income from operations' and 'Income-from-operations (operating) margin'."
+    },
+    {
+     "point": "Does not use restaurant margin instead of income from operations",
+     "met": true,
+     "note": "Agent uses income from operations, not restaurant margin."
+    },
+    {
+     "point": "Uses correct units (millions/billions, not thousands confusion)",
+     "met": true,
+     "note": "Agent reports in billions and millions, consistent with reference."
+    },
+    {
+     "point": "Does not use fiscal 2025 revenue only (USD 5,878M) or annualize first half",
+     "met": true,
+     "note": "Agent computes TTM as sum of four quarters (Q3 FY25–Q2 FY26), not just FY2025 revenue."
+    },
+    {
+     "point": "Does not add Q1 and Q2 2026 to FY2025 without subtracting 2025 first half",
+     "met": true,
+     "note": "Agent's method sums Q3 FY25, Q4 FY25, Q1 FY26, Q2 FY26, which is the correct trailing-twelve-month window."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: the agent's TTM revenue, income from operations, and operating margin match the reference values within the allowed tolerances; the window is correctly identified as the 52 weeks ended June 30, 2026; the correct metric (income from operations) is used; units are appropriate; and the computation avoids the common failure modes (using FY2025 only, double-counting, substituting net income or restaurant margin)."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Total revenue TTM as of fiscal Q2 2026 is $6.23 billion (~$6,232M)",
+     "numeric": true,
+     "cited_url": "https://stockanalysis.com/stocks/txrh/financials",
+     "reason": "The stockanalysis.com source shows Revenue for TTM (period ending Jun '26) as 6,232 (in millions), which equals $6.232 billion. This matches the claim of $6.23 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Income from operations TTM as of fiscal Q2 2026 is $483.2 million",
+     "numeric": true,
+     "cited_url": "https://stockanalysis.com/stocks/txrh/financials",
+     "reason": "The stockanalysis.com source shows Operating Income for TTM (period ending Jun '26) as 483.16 (in millions), which equals $483.16 million. This matches the claim of $483.2 million (rounded).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Income-from-operations (operating) margin TTM is ~7.75%",
+     "numeric": true,
+     "cited_url": "https://stockanalysis.com/stocks/txrh/financials",
+     "reason": "The stockanalysis.com source shows Operating Margin for TTM (period ending Jun '26) as 7.75%. This exactly matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TTM window covers Q3 FY2025 through Q2 FY2026",
+     "numeric": false,
+     "cited_url": "https://www.stocktitan.net/financials/TXRH",
+     "reason": "The stocktitan.net financials page explicitly states: 'TTM is the trailing twelve months, Q3 FY2025 through Q2 FY2026, summed from the four most recent quarterly filings.' This directly supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue breakdown: Q3 FY25 $1.44B + Q4 FY25 $1.482B + Q1 FY26 $1.633B + Q2 FY26 $1.680B ≈ $6.23B",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/5-most-interesting-analyst-questions-053716451.html",
+     "reason": "Multiple sources confirm the quarterly revenues: Q3 FY25 $1.44B (Yahoo Finance article '5 Most Interesting Analyst Questions' states 'Texas Roadhouse (TXRH) Q3 CY2025 Highlights: Revenue: $1.44 billion'); Q4 FY25 $1.482B (stocktitan 8-K filing shows 'Fourth-quarter total revenue rose to $1,482,031,000'); Q1 FY26 $1.633B (multiple Yahoo Finance articles state 'Revenue: $1.63 billion' for Q1 2026); Q2 FY26 $1.680B (multiple sources state $1.68 billion). Sum = 1.44 + 1.482 + 1.633 + 1.680 = 6.235B ≈ $6.23B. The calculation is correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Operating margin compressed year over year (down from ~8.4% a year earlier)",
+     "numeric": true,
+     "cited_url": "https://stockanalysis.com/stocks/txrh/financials",
+     "reason": "The stockanalysis.com source shows Operating Margin for TTM (Jun '26) = 7.75%, and for FY2025 (Dec '25) = 8.08%. The claim says 'down from ~8.4% a year earlier' which is a reasonable approximation for the TTM ending June 2025 (not directly shown but between FY2024 9.63% and FY2025 8.08%). The direction and magnitude are supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Commodity inflation notably beef ~7% in Q2 2026",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/news/TXRH",
+     "reason": "The stocktitan.net news page states: 'Commodity Inflation: 7% in Q2' and 'pressured by 7% commodity inflation, particularly in beef.' This directly supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Lower restaurant margin rate (16.4% of sales in Q2 2026 vs. 17.1% a year prior)",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/news/TXRH",
+     "reason": "The stocktitan.net news page states: 'Restaurant margin as a percentage of total sales decreased 66 basis points to 16.4% in the second quarter.' A 66 basis point decrease from 16.4% implies a prior rate of 17.06%, which rounds to 17.1%. This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 (ended Dec. 30, 2025) revenue was $5.878B with income from operations of $474.7M (8.1% margin)",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/TXRH/8-k-texas-roadhouse-inc-reports-material-event-38a39ea7ad9f.html",
+     "reason": "The stocktitan 8-K filing states: 'For the full year, revenue grew 9.4% to $5,878,075,000' and 'Income from operations declined 8.1% for the year to $474,740,000'. The stockanalysis.com source shows FY2025 Operating Margin of 8.08% (≈8.1%). All figures match.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 10-Q filed Aug. 7, 2026",
+     "numeric": false,
+     "cited_url": "https://au.finance.yahoo.com/sec-filing/TXRH/0001104659-26-092408_1289460",
+     "reason": "The Yahoo Finance SEC filings page shows 'TXRH • SEC Gov • 7 Aug 2026. ## TXRH : 10-Q : Periodic Financial Reports.' This supports the filing date of August 7, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TTM revenue and operating income are aggregates from third-party financial data providers",
+     "numeric": false,
+     "cited_url": "https://stockanalysis.com/stocks/txrh/financials",
+     "reason": "The answer itself notes this caveat. The cited sources (stockanalysis.com, stocktitan.net, macrotrends.net) are indeed third-party financial data providers. This is a meta-claim about the sources, which is accurate.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Precise figure should be confirmed against the company's Q2 2026 10-Q",
+     "numeric": false,
+     "cited_url": "https://au.finance.yahoo.com/sec-filing/TXRH/0001104659-26-092408_1289460",
+     "reason": "The SEC filings source confirms the 10-Q exists and was filed Aug 7, 2026. The claim is a reasonable caveat about verifying with the primary source.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 8,
+   "cited": 12,
+   "supported": 12,
+   "not_retrieved": 0
+  }
+ }
+}

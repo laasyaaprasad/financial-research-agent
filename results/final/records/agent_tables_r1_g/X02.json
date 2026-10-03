@@ -1,0 +1,242 @@
+{
+ "id": "X02",
+ "category": "Trends",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "Build an eight-quarter trend table for Ralph Lauren (fiscal year ends the Saturday closest to March 31). For each of the company's last eight reported fiscal quarters as of October 3, 2026, give net revenues and GAAP operating income, both in USD millions. Label each quarter with its fiscal quarter and fiscal year (e.g., 'Q1 FY2027', using the company's own convention) and its period-end date. Use GAAP figures as reported in the company's SEC filings (not adjusted operating income). Note that fourth-quarter results are not presented in a 10-Q.",
+ "grading": "Graded cell by cell: each value within tolerance and for the stated period; a missing cell counts as wrong.",
+ "answer": "Ralph Lauren, last eight reported fiscal quarters (USD millions; Q4 FY2025 and Q4 FY2026 derived as FY minus nine months and matching the Q4 releases):\n| Row | Revenue | GAAP operating income |\n|---|---|---|\n| Q2 FY2025 (ended 2024-09-28) | 1,726.0 | 178.9 |\n| Q3 FY2025 (ended 2024-12-28) | 2,143.5 | 389.7 |\n| Q4 FY2025 (ended 2025-03-29) | 1,697.3 | 155.0 |\n| Q1 FY2026 (ended 2025-06-28) | 1,719.1 | 273.6 |\n| Q2 FY2026 (ended 2025-09-27) | 2,010.7 | 245.7 |\n| Q3 FY2026 (ended 2025-12-27) | 2,406.0 | 471.3 |\n| Q4 FY2026 (ended 2026-03-28) | 1,978.7 | 188.6 |\n| Q1 FY2027 (ended 2026-06-27) | 1,959.8 | 342.4 |",
+ "output": {
+  "answer": "**Question:** Build an eight-quarter trend table for Ralph Lauren (fiscal year ends the Saturday closest to March 31). For each of the company's last eight reported fiscal quarters as of October 3, 2026, give net revenues and GAAP operating income, both in USD millions. Label each quarter with its fiscal quarter and fiscal year (e.g., 'Q1 FY2027', using the company's own convention) and its period-end date. Use GAAP figures as reported in the company's SEC filings (not adjusted operating income). Note that fourth-quarter results are not presented in a 10-Q.\n*As of 2026-10-03*\n\n| | Net revenues (USD millions, GAAP as reported) | GAAP operating income (USD millions) |\n|---|---|---|\n| Q2 FY2025 (quarter ended September 28, 2024) | 1,726.0 [1] | 178.9 [1] |\n| Q3 FY2025 (quarter ended December 28, 2024) | 2,143.5 [2][3] | 389.7 [2][3] |\n| Q4 FY2025 (quarter ended March 29, 2025) | 1,697.3 [4] | 155.0 [4] |\n| Q1 FY2026 (quarter ended June 28, 2025) | 1,719.1 [5] | 273.6 [5] |\n| Q2 FY2026 (quarter ended September 27, 2025) | 2,010.7 [1] | 245.7 [1] |\n| Q3 FY2026 (quarter ended December 27, 2025) | 2,406.0 [6][3] | 471.3 [6][3] |\n| Q4 FY2026 (quarter ended March 28, 2026) | 1,978.7 [7] | 188.6 [7] |\n| Q1 FY2027 (quarter ended June 27, 2026) | 1,959.8 [8][9] | 342.4 [8][9] |\n\n- Ralph Lauren uses a 52-53 week fiscal year ending on the Saturday closest to March 31, so the eight most recent reported fiscal quarters as of October 3, 2026 run from Q2 FY2025 (quarter ended September 28, 2024) through Q1 FY2027 (quarter ended June 27, 2026). [10][11][9]\n- All net revenue and operating income figures in the table are GAAP as reported (the income-statement line items), not adjusted/non-GAAP operating income. [4][7]\n- Fourth-quarter results are not presented in a 10-Q, so Q4 FY2025 and Q4 FY2026 net revenues and GAAP operating income are taken from the quarterly earnings releases (8-K EX-99.1) filed May 22, 2025 and May 21, 2026, which present three-month consolidated statements of operations. [4][7]\n- Q2 FY2025 (quarter ended September 28, 2024) is the eighth quarter of the trend; its figures are the comparative prior-year amounts tagged in the Q2 FY2026 10-Q XBRL data. [1]\n\n**Not available**\n- Q2 FY2027 (quarter ended September 26, 2026) net revenues and GAAP operating income: The quarter has ended but no earnings release or 10-Q covering it exists in the evidence as of October 3, 2026, so it is not among the last eight reported quarters. [9]\n\n**Sources**\n[1] RALPH LAUREN CORP XBRL data tagged in 10-Q filed 2025-11-06 (www.sec.gov, 2025-11-06, primary) https://www.sec.gov/Archives/edgar/data/1037038/000162828025049927/\n[2] RALPH LAUREN CORP XBRL data tagged in 10-Q filed 2025-02-06 (www.sec.gov, 2025-02-06, primary) https://www.sec.gov/Archives/edgar/data/1037038/000103703825000007/\n[3] RALPH LAUREN CORP 10-Q for Q3 FY2026 (filed 2026-02-05) (www.sec.gov, 2026-02-05, primary) https://www.sec.gov/Archives/edgar/data/1037038/000162828026005784/rl-20251227.htm\n[4] RALPH LAUREN CORP earnings release for Q4 FY2025, 8-K EX-99.1 (filed 2025-05-22) (www.sec.gov, 2025-05-22, primary) https://www.sec.gov/Archives/edgar/data/1037038/000103703825000010/rl-20250329xex991xpressrel.htm\n[5] RALPH LAUREN CORP XBRL data tagged in 10-Q filed 2025-08-07 (www.sec.gov, 2025-08-07, primary) https://www.sec.gov/Archives/edgar/data/1037038/000103703825000018/\n[6] RALPH LAUREN CORP XBRL data tagged in 10-Q filed 2026-02-05 (www.sec.gov, 2026-02-05, primary) https://www.sec.gov/Archives/edgar/data/1037038/000162828026005784/\n[7] RALPH LAUREN CORP earnings release for Q4 FY2026, 8-K EX-99.1 (filed 2026-05-21) (www.sec.gov, 2026-05-21, primary) https://www.sec.gov/Archives/edgar/data/1037038/000162828026037053/rl-20260328xex991xpressrel.htm\n[8] RALPH LAUREN CORP XBRL data tagged in 10-Q filed 2026-08-06 (www.sec.gov, 2026-08-06, primary) https://www.sec.gov/Archives/edgar/data/1037038/000162828026053992/\n[9] RALPH LAUREN CORP 10-Q for Q1 FY2027 (filed 2026-08-06) (www.sec.gov, 2026-08-06, primary) https://www.sec.gov/Archives/edgar/data/1037038/000162828026053992/rl-20260627.htm\n[10] RALPH LAUREN CORP 10-Q for Q3 FY2025 (filed 2025-02-06) (www.sec.gov, 2025-02-06, primary) https://www.sec.gov/Archives/edgar/data/1037038/000103703825000007/rl-20241228.htm\n[11] RALPH LAUREN CORP 10-Q for Q2 FY2026 (filed 2025-11-06) (www.sec.gov, 2025-11-06, primary) https://www.sec.gov/Archives/edgar/data/1037038/000162828025049927/rl-20250927.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 60944,
+   "output": 15306
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 119.2,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/2ee8e07a1fd0dfede556719763df5c2b",
+  "companies": [
+   {
+    "name": "RALPH LAUREN CORP",
+    "ticker": "RL",
+    "cik": "1037038",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Net revenues (USD millions) for each of the last seven reported fiscal quarters",
+    "GAAP operating income (USD millions) for each of the last seven reported fiscal quarters",
+    "Fiscal quarter and fiscal year label per the company's own convention (e.g., Q1 FY2027)",
+    "Period-end date for each quarter (e.g., 2026-06-27)",
+    "Confirmation that operating income is the GAAP income-statement line (not adjusted/non-GAAP operating income)",
+    "Q1 FY2026 figures derived as Q2 FY2026 10-Q six-month year-to-date less Q2 FY2026 quarter (since the Q1 FY2026 10-Q is not among the six documents)"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "RL",
+     "label": "Q3 FY2025"
+    },
+    {
+     "ticker": "RL",
+     "label": "Q4 FY2025"
+    },
+    {
+     "ticker": "RL",
+     "label": "Q1 FY2026"
+    },
+    {
+     "ticker": "RL",
+     "label": "Q2 FY2026"
+    },
+    {
+     "ticker": "RL",
+     "label": "Q3 FY2026"
+    },
+    {
+     "ticker": "RL",
+     "label": "Q4 FY2026"
+    },
+    {
+     "ticker": "RL",
+     "label": "Q1 FY2027"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "RL",
+     "period": "Q3 FY2025",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "RL",
+     "period": "Q4 FY2025",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "RL",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "RL",
+     "period": "Q3 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "RL",
+     "period": "Q4 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "RL",
+     "period": "Q1 FY2027",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Only SEVEN fiscal quarters are reported as of 2026-10-03: Q3 FY2025 through Q1 FY2027. The eighth quarter of a true eight-quarter trend would be Q2 FY2025 (2024-06-29 to 2024-09-28), which is not listed in the provided calendar, so it cannot be labeled or planned.",
+    "Q2 FY2027 (2026-06-28 to 2026-09-26) has ended but is 'not yet reported' — no earnings release or 10-Q exists, so it cannot be included and must not be estimated.",
+    "Q3 FY2027 and FY2027 are still in progress / not yet reported.",
+    "Fourth-quarter results are not presented in a 10-Q: Q4 FY2025 and Q4 FY2026 net revenues and GAAP operating income must come from the Q4 earnings releases (8-K, filed 2025-05-22 and 2026-05-21); the 10-Ks report only full-year figures.",
+    "Q1 FY2026 has no 10-Q among the six selected documents; its quarter figures are obtained from the Q2 FY2026 10-Q (six-month year-to-date less the Q2 quarter). If the auto-fetched Q1 FY2026 filing data is unavailable, the Q1 FY2026 10-Q would need to be substituted.",
+    "GAAP operating income is the income-statement line item; the earnings releases also show adjusted/non-GAAP operating income, which must not be used."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Q2 FY2027 (quarter ended September 26, 2026) net revenues and GAAP operating income",
+    "kind": "not_reported_yet",
+    "reason": "The quarter has ended but no earnings release or 10-Q covering it exists in the evidence as of October 3, 2026, so it is not among the last eight reported quarters.",
+    "evidence_ids": [
+     "E6"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1037038/000103703825000007/",
+    "https://www.sec.gov/Archives/edgar/data/1037038/000103703825000007/rl-20241228.htm",
+    "https://www.sec.gov/Archives/edgar/data/1037038/000103703825000010/rl-20250329xex991xpressrel.htm",
+    "https://www.sec.gov/Archives/edgar/data/1037038/000103703825000018/",
+    "https://www.sec.gov/Archives/edgar/data/1037038/000162828025049927/",
+    "https://www.sec.gov/Archives/edgar/data/1037038/000162828025049927/rl-20250927.htm",
+    "https://www.sec.gov/Archives/edgar/data/1037038/000162828026005784/",
+    "https://www.sec.gov/Archives/edgar/data/1037038/000162828026005784/rl-20251227.htm",
+    "https://www.sec.gov/Archives/edgar/data/1037038/000162828026037053/rl-20260328xex991xpressrel.htm",
+    "https://www.sec.gov/Archives/edgar/data/1037038/000162828026053992/",
+    "https://www.sec.gov/Archives/edgar/data/1037038/000162828026053992/rl-20260627.htm"
+   ],
+   "cited_primary": 11,
+   "retrieved": 13,
+   "retrieved_primary": 13
+  },
+  "correctness": {
+   "score": 1.0,
+   "verdict": "correct",
+   "points": [
+    {
+     "point": "Ralph Lauren Corporation Q2 FY2025 Revenue = 1726.0 USD millions",
+     "met": true,
+     "note": "answer: 1726.0"
+    },
+    {
+     "point": "Ralph Lauren Corporation Q2 FY2025 GAAP operating income = 178.9 USD millions",
+     "met": true,
+     "note": "answer: 178.9"
+    },
+    {
+     "point": "Ralph Lauren Corporation Q3 FY2025 Revenue = 2143.5 USD millions",
+     "met": true,
+     "note": "answer: 2143.5"
+    },
+    {
+     "point": "Ralph Lauren Corporation Q3 FY2025 GAAP operating income = 389.7 USD millions",
+     "met": true,
+     "note": "answer: 389.7"
+    },
+    {
+     "point": "Ralph Lauren Corporation Q4 FY2025 Revenue = 1697.3 USD millions",
+     "met": true,
+     "note": "answer: 1697.3"
+    },
+    {
+     "point": "Ralph Lauren Corporation Q4 FY2025 GAAP operating income = 155.0 USD millions",
+     "met": true,
+     "note": "answer: 155.0"
+    },
+    {
+     "point": "Ralph Lauren Corporation Q1 FY2026 Revenue = 1719.1 USD millions",
+     "met": true,
+     "note": "answer: 1719.1"
+    },
+    {
+     "point": "Ralph Lauren Corporation Q1 FY2026 GAAP operating income = 273.6 USD millions",
+     "met": true,
+     "note": "answer: 273.6"
+    },
+    {
+     "point": "Ralph Lauren Corporation Q2 FY2026 Revenue = 2010.7 USD millions",
+     "met": true,
+     "note": "answer: 2010.7"
+    },
+    {
+     "point": "Ralph Lauren Corporation Q2 FY2026 GAAP operating income = 245.7 USD millions",
+     "met": true,
+     "note": "answer: 245.7"
+    },
+    {
+     "point": "Ralph Lauren Corporation Q3 FY2026 Revenue = 2406.0 USD millions",
+     "met": true,
+     "note": "answer: 2406.0"
+    },
+    {
+     "point": "Ralph Lauren Corporation Q3 FY2026 GAAP operating income = 471.3 USD millions",
+     "met": true,
+     "note": "answer: 471.3"
+    },
+    {
+     "point": "Ralph Lauren Corporation Q4 FY2026 Revenue = 1978.7 USD millions",
+     "met": true,
+     "note": "answer: 1978.7"
+    },
+    {
+     "point": "Ralph Lauren Corporation Q4 FY2026 GAAP operating income = 188.6 USD millions",
+     "met": true,
+     "note": "answer: 188.6"
+    },
+    {
+     "point": "Ralph Lauren Corporation Q1 FY2027 Revenue = 1959.8 USD millions",
+     "met": true,
+     "note": "answer: 1959.8"
+    },
+    {
+     "point": "Ralph Lauren Corporation Q1 FY2027 GAAP operating income = 342.4 USD millions",
+     "met": true,
+     "note": "answer: 342.4"
+    }
+   ],
+   "rationale": "16/16 cells correct",
+   "cells_correct": 16,
+   "cells_total": 16
+  },
+  "citations": {
+   "claims": [],
+   "numeric_claims": 0,
+   "numeric_cited": 0,
+   "cited": 0,
+   "supported": 0,
+   "not_retrieved": 0,
+   "judge_error": "judge failed after 4 attempts: no structured output"
+  }
+ }
+}

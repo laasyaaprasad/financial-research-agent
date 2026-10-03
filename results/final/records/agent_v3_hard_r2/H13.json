@@ -1,0 +1,237 @@
+{
+ "id": "H13",
+ "category": "Financial modeling",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "What were Texas Roadhouse's trailing-twelve-month total revenue and income-from-operations margin as of the end of its fiscal Q2 2026 (quarter ended June 30, 2026)?",
+ "grading": "Computation: TTM = FY2025 + 26 weeks 2026 - 26 weeks 2025. TTM total revenue USD 6,231.5M (6,231,515K); TTM income from operations USD 482.8M (482,795K); margin 7.75% (+/-0.2pp). Accept +/-0.5% on dollar figures. Fail if the window is not the 52 weeks ended June 30, 2026 or if net income is substituted.",
+ "answer": "TTM total revenue = 5,878,075 (FY2025) + 3,313,142 (26 weeks to June 30, 2026) - 2,959,702 (26 weeks to July 1, 2025) = USD 6,231,515 thousand (USD 6,231.5 million). TTM income from operations = 474,740 + 289,129 - 281,074 = USD 482,795 thousand (USD 482.8 million). TTM operating margin = 482,795 / 6,231,515 = 7.75% [H13-E1][H13-E2].",
+ "output": {
+  "answer": "**Question:** What were Texas Roadhouse's trailing-twelve-month total revenue and income-from-operations margin as of the end of its fiscal Q2 2026 (quarter ended June 30, 2026)?\n*As of 2026-10-03*\n\n| | Total revenue (USD) | Income from operations (USD, GAAP) | Income-from-operations margin (%, GAAP) |\n|---|---|---|---|\n| Texas Roadhouse — TTM ended June 30, 2026 (Q3 FY2025 + Q4 FY2025 + Q1 FY2026 + Q2 FY2026) | 6,231,515,000 [1][2][3] | 482,795,000 [1][2][3] | 7.7 [1][2][3] |\n\n- Texas Roadhouse does not disclose trailing-twelve-month figures as such; the TTM window ended with fiscal Q2 2026 (13 weeks ended June 30, 2026) and comprises Q3 FY2025, Q4 FY2025, Q1 FY2026 and Q2 FY2026, derived as FY2025 (fiscal year ended December 30, 2025) less the first half of FY2025 (26 weeks ended July 1, 2025) plus the first half of FY2026 (26 weeks ended June 30, 2026). [1][2][3]\n- The TTM total revenue for the twelve months ended June 30, 2026 is 6,231,515,000 USD, a derived figure (not a company-disclosed amount), computed as FY2025 total revenue less H1 FY2025 total revenue plus H1 FY2026 total revenue. [1][2][3]\n- The TTM income from operations (GAAP) for the twelve months ended June 30, 2026 is 482,795,000 USD, a derived figure (not a company-disclosed amount), computed as FY2025 income from operations less H1 FY2025 income from operations plus H1 FY2026 income from operations. [1][2][3]\n- The TTM income-from-operations margin (GAAP) for the twelve months ended June 30, 2026 is 7.7%, a derived figure (the company does not disclose a TTM operating margin), computed as TTM income from operations divided by TTM total revenue. [1][2][3]\n\n**Not available**\n- Trailing-twelve-month total revenue and income-from-operations margin as disclosed by the company: Texas Roadhouse reports quarterly and year-to-date figures in its 10-Q and annual figures in its 10-K; no filing states a trailing-twelve-month revenue or operating margin, so both must be derived from FY2025 less H1 FY2025 plus H1 FY2026. [4][5][6]\n\n**Sources**\n[1] Texas Roadhouse, Inc. XBRL data tagged in 10-K filed 2026-02-27 (www.sec.gov, 2026-02-27, primary) https://www.sec.gov/Archives/edgar/data/1289460/000110465926021292/\n[2] Texas Roadhouse, Inc. XBRL data tagged in 10-Q filed 2025-08-08 (www.sec.gov, 2025-08-08, primary) https://www.sec.gov/Archives/edgar/data/1289460/000155837025010861/\n[3] Texas Roadhouse, Inc. XBRL data tagged in 10-Q filed 2026-08-07 (www.sec.gov, 2026-08-07, primary) https://www.sec.gov/Archives/edgar/data/1289460/000110465926092408/\n[4] Texas Roadhouse, Inc. 10-Q for Q2 FY2026 (filed 2026-08-07) (www.sec.gov, 2026-08-07, primary) https://www.sec.gov/Archives/edgar/data/1289460/000110465926092408/txrh-20260630x10q.htm\n[5] Texas Roadhouse, Inc. 10-K for FY2025 (filed 2026-02-27) (www.sec.gov, 2026-02-27, primary) https://www.sec.gov/Archives/edgar/data/1289460/000110465926021292/txrh-20251230x10k.htm\n[6] Texas Roadhouse, Inc. 10-Q for Q2 FY2025 (filed 2025-08-08) (www.sec.gov, 2025-08-08, primary) https://www.sec.gov/Archives/edgar/data/1289460/000155837025010861/txrh-20250701x10q.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 96418,
+   "output": 14659
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 85.96,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/59fc2fe84ceaf819837e805c000b05c4",
+  "companies": [
+   {
+    "name": "Texas Roadhouse, Inc.",
+    "ticker": "TXRH",
+    "cik": "1289460",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Total revenue for Q3 FY2025, Q4 FY2025, Q1 FY2026 and Q2 FY2026 (to sum into trailing-twelve-month revenue)",
+    "Income from operations for Q3 FY2025, Q4 FY2025, Q1 FY2026 and Q2 FY2026 (to sum into TTM income from operations)",
+    "TTM total revenue as of the quarter ended 2026-06-30",
+    "TTM income-from-operations margin (TTM income from operations / TTM total revenue) as of the quarter ended 2026-06-30",
+    "Prior-year comparatives (Q3 FY2024, Q4 FY2024, Q1 FY2025, Q2 FY2025) if a year-over-year TTM comparison is needed"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "TXRH",
+     "label": "Q2 FY2026"
+    },
+    {
+     "ticker": "TXRH",
+     "label": "Q1 FY2026"
+    },
+    {
+     "ticker": "TXRH",
+     "label": "Q4 FY2025"
+    },
+    {
+     "ticker": "TXRH",
+     "label": "Q3 FY2025"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "TXRH",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "TXRH",
+     "period": "FY2025",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "TXRH",
+     "period": "Q2 FY2025",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "All four quarters in the TTM window (Q3 FY2025, Q4 FY2025, Q1 FY2026, Q2 FY2026) are reported and filed, so no estimation is required.",
+    "The TTM figures are not stated as such in any filing; they must be derived as FY2025 (10-K) minus H1 FY2025 (Q2 FY2025 10-Q) plus H1 FY2026 (Q2 FY2026 10-Q), or by summing the four individual quarters.",
+    "Q3 FY2026 and later periods are not yet reported and are outside the requested window.",
+    "Texas Roadhouse reports 'income from operations' on its income statement; no non-GAAP operating margin is needed, though the earnings releases also show restaurant-margin and adjusted figures that are not the requested metric."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Trailing-twelve-month total revenue and income-from-operations margin as disclosed by the company",
+    "kind": "not_disclosed",
+    "reason": "Texas Roadhouse reports quarterly and year-to-date figures in its 10-Q and annual figures in its 10-K; no filing states a trailing-twelve-month revenue or operating margin, so both must be derived from FY2025 less H1 FY2025 plus H1 FY2026.",
+    "evidence_ids": [
+     "E1",
+     "E2",
+     "E3"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1289460/000110465926021292/",
+    "https://www.sec.gov/Archives/edgar/data/1289460/000110465926021292/txrh-20251230x10k.htm",
+    "https://www.sec.gov/Archives/edgar/data/1289460/000110465926092408/",
+    "https://www.sec.gov/Archives/edgar/data/1289460/000110465926092408/txrh-20260630x10q.htm",
+    "https://www.sec.gov/Archives/edgar/data/1289460/000155837025010861/",
+    "https://www.sec.gov/Archives/edgar/data/1289460/000155837025010861/txrh-20250701x10q.htm"
+   ],
+   "cited_primary": 6,
+   "retrieved": 8,
+   "retrieved_primary": 8
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "TTM total revenue matches USD 6,231.5M (6,231,515K) within +/-0.5%",
+     "met": true,
+     "note": "Agent reports 6,231,515,000 USD, which equals 6,231.515M USD, matching the reference 6,231.5M USD exactly."
+    },
+    {
+     "point": "TTM income from operations matches USD 482.8M (482,795K) within +/-0.5%",
+     "met": true,
+     "note": "Agent reports 482,795,000 USD, which equals 482.795M USD, matching the reference 482.8M USD exactly."
+    },
+    {
+     "point": "TTM operating margin matches 7.75% within +/-0.2 percentage points",
+     "met": true,
+     "note": "Agent reports 7.7%, which is within 0.05pp of the reference 7.75%, well inside the +/-0.2pp tolerance."
+    },
+    {
+     "point": "Window is the 52 weeks ended June 30, 2026",
+     "met": true,
+     "note": "Agent explicitly states the TTM window as Q3 FY2025 + Q4 FY2025 + Q1 FY2026 + Q2 FY2026, ending June 30, 2026, which is the correct 52-week period."
+    },
+    {
+     "point": "Uses income from operations (not net income or restaurant margin)",
+     "met": true,
+     "note": "Agent labels the line item 'Income from operations (USD, GAAP)' and does not substitute net income or restaurant margin."
+    },
+    {
+     "point": "Units are correct (USD dollars, magnitude matches)",
+     "met": true,
+     "note": "Agent presents figures in USD dollars (e.g., 6,231,515,000), which matches the reference magnitude of 6,231,515 thousand USD (i.e., 6,231,515,000 USD). No unit confusion."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All six requirements are satisfied: the three key figures match the reference values within the allowed tolerances, the trailing-twelve-month window is correctly identified as the 52 weeks ended June 30, 2026, the metric used is income from operations (not net income), and the units are consistent with the reference."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Texas Roadhouse's trailing-twelve-month total revenue as of end of fiscal Q2 2026 (quarter ended June 30, 2026) is $6,231,515,000",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1289460/000110465926021292/",
+     "reason": "Derived from FY2025 total revenue ($5,878,075,000 per 10-K), minus H1 FY2025 total revenue ($2,959,702,000 per 10-Q for Q2 FY2025), plus H1 FY2026 total revenue ($3,313,142,000 per 10-Q for Q2 FY2026). Calculation: 5,878,075 - 2,959,702 + 3,313,142 = 6,231,515 (in thousands). All input figures are present in the cited XBRL and filing sources.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Texas Roadhouse's trailing-twelve-month income from operations (GAAP) as of end of fiscal Q2 2026 is $482,795,000",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1289460/000110465926021292/",
+     "reason": "Derived from FY2025 income from operations ($474,740,000 per 10-K), minus H1 FY2025 income from operations ($281,074,000 per 10-Q for Q2 FY2025), plus H1 FY2026 income from operations ($289,129,000 per 10-Q for Q2 FY2026). Calculation: 474,740 - 281,074 + 289,129 = 482,795 (in thousands). All input figures are present in the cited XBRL and filing sources.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Texas Roadhouse's trailing-twelve-month income-from-operations margin (GAAP) as of end of fiscal Q2 2026 is 7.7%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1289460/000110465926021292/",
+     "reason": "Computed as TTM income from operations ($482,795,000) divided by TTM total revenue ($6,231,515,000) = 0.07747, which rounds to 7.7% (one decimal). The derived numerator and denominator are verified above.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The TTM window ended with fiscal Q2 2026 (13 weeks ended June 30, 2026) and comprises Q3 FY2025, Q4 FY2025, Q1 FY2026 and Q2 FY2026",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1289460/000110465926092408/txrh-20260630x10q.htm",
+     "reason": "The 10-Q for Q2 FY2026 shows a 13-week quarter ended June 30, 2026 and a 26-week half-year ended June 30, 2026. The fiscal year ends December 30, 2025. The four-quarter composition (Q3 FY2025 through Q2 FY2026) is consistent with the derivation method described (FY2025 less H1 FY2025 plus H1 FY2026).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The TTM total revenue is derived as FY2025 total revenue less H1 FY2025 total revenue plus H1 FY2026 total revenue",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1289460/000110465926021292/",
+     "reason": "The answer explicitly states this derivation method. The cited sources provide the three required input figures (FY2025 total revenue in 10-K, H1 FY2025 total revenue in 10-Q for Q2 FY2025, H1 FY2026 total revenue in 10-Q for Q2 FY2026). The arithmetic matches the reported TTM total revenue.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The TTM income from operations is derived as FY2025 income from operations less H1 FY2025 income from operations plus H1 FY2026 income from operations",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1289460/000110465926021292/",
+     "reason": "The answer explicitly states this derivation method. The cited sources provide the three required input figures (FY2025 operating income in 10-K, H1 FY2025 operating income in 10-Q for Q2 FY2025, H1 FY2026 operating income in 10-Q for Q2 FY2026). The arithmetic matches the reported TTM income from operations.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The TTM income-from-operations margin is derived as TTM income from operations divided by TTM total revenue",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1289460/000110465926021292/",
+     "reason": "The answer states this computation. The derived TTM income from operations and TTM total revenue are verified above; their ratio yields 7.7% as reported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Texas Roadhouse does not disclose trailing-twelve-month figures as such",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1289460/000110465926092408/txrh-20260630x10q.htm",
+     "reason": "The cited filings (10-K for FY2025, 10-Q for Q2 FY2025, 10-Q for Q2 FY2026) present only quarterly, year-to-date, and annual figures. No trailing-twelve-month revenue or operating margin is disclosed in any of these filings.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Texas Roadhouse reports quarterly and year-to-date figures in its 10-Q and annual figures in its 10-K; no filing states a trailing-twelve-month revenue or operating margin",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1289460/000110465926092408/txrh-20260630x10q.htm",
+     "reason": "The retrieved 10-Q and 10-K documents contain condensed consolidated statements of income for 13-week quarters, 26-week half-years, and 52/53-week fiscal years. There is no TTM column or disclosure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The TTM figures are derived from FY2025 less H1 FY2025 plus H1 FY2026",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1289460/000110465926092408/txrh-20260630x10q.htm",
+     "reason": "This is a summary of the derivation method described in the answer. The specific input figures are available in the cited sources and the arithmetic has been verified for both revenue and income from operations.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 10,
+   "supported": 10,
+   "not_retrieved": 0
+  }
+ }
+}

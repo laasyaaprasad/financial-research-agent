@@ -1,0 +1,186 @@
+{
+ "id": "G18",
+ "category": "Beat or miss",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "Did Broadcom's Q3 FY2026 AI semiconductor revenue beat the guidance it gave on its Q2 FY2026 call, and by how much in dollars and percent?",
+ "grading": "Beat amount ±$0.1B; beat % ±0.5pp; must benchmark against the company's AI semiconductor revenue guide",
+ "answer": "Broadcom Q3 FY2026 AI semiconductor revenue was $16.7 billion versus its Q2-release guidance of $16.0 billion: a $0.7 billion beat, or 4.375% of guidance. [G18-E1, G18-E2]",
+ "output": {
+  "answer": "**Yes — Q3 FY2026 AI semiconductor revenue came in above the guidance given on the Q2 FY2026 call.**\n\n| Metric | Value |\n|---|---|\n| Guidance (given on Q2 FY2026 call, June 3, 2026) | **$16.0 billion** AI semiconductor revenue for Q3 FY2026 |\n| Actual Q3 FY2026 result | **$16.7 billion** AI semiconductor revenue (more than tripled YoY) |\n| Beat | **+$0.7 billion** |\n| Beat in percent | **~4.4%** above guidance |\n\nNotes on context:\n- Q2 FY2026 itself delivered $10.8 billion in AI semiconductor revenue (+143% YoY), and management guided Q3 to $16 billion (over 200% YoY growth) — that guidance was modestly below analyst consensus of ~$16.36 billion.\n- Along with the Q3 beat, Broadcom raised its full-year FY2026 AI revenue outlook to ~$58 billion (up 186% YoY), above its prior $56 billion guidance, and guided Q4 FY2026 AI revenue to $21.7 billion.\n\nSources:\n- [Broadcom Q2 FY2026 earnings call transcript / highlights (guidance $16B)](https://finance.yahoo.com/quote/AVGO/earnings/AVGO-Q2-2026-earnings_call-581106.html)\n- [Broadcom Q3 FY2026 earnings call transcript (actual $16.7B, FY26 raised to $58B)](https://finance.yahoo.com/quote/AVGO/earnings/AVGO-Q3-2026-earnings_call-685349.html)\n- [Broadcom Q2 FY2026 press release (guidance details)](https://finance.yahoo.com/markets/stocks/articles/broadcom-inc-announces-second-quarter-201500695.html)",
+  "tokens": {
+   "input": 11167,
+   "output": 871
+  },
+  "tavily_credits": 2,
+  "latency_s": 8.27,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/9ee73dbf06d066087e39869f27c1807e",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Broadcom Q3 FY2026 AI semiconductor revenue guidance Q2 FY2026 earnings call",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Broadcom Q2 fiscal 2026 earnings AI revenue guidance $ billion",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/broadcom-inc-announces-second-quarter-201500695.html",
+    "https://finance.yahoo.com/quote/AVGO/earnings/AVGO-Q2-2026-earnings_call-581106.html",
+    "https://finance.yahoo.com/quote/AVGO/earnings/AVGO-Q3-2026-earnings_call-685349.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 17,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Beat amount in dollars within ±$0.1B of reference ($0.7B)",
+     "met": true,
+     "note": "Agent states +$0.7 billion beat; reference beat is $0.7 billion. Difference is $0.0B, within tolerance."
+    },
+    {
+     "point": "Beat percent within ±0.5 percentage points of reference (4.375%)",
+     "met": true,
+     "note": "Agent states ~4.4% beat; reference is 4.375%. Difference is 0.025 percentage points, within tolerance."
+    },
+    {
+     "point": "Benchmarks against company's AI semiconductor revenue guide (not total semiconductor revenue or consensus)",
+     "met": true,
+     "note": "Agent explicitly uses $16.0 billion AI semiconductor revenue guidance from Q2 FY2026 call, matching the reference guide."
+    },
+    {
+     "point": "Correct fiscal periods: Q3 FY2026 ended 2026-08-02; guide given on Q2 call 2026-06-03",
+     "met": true,
+     "note": "Agent references Q2 FY2026 call on June 3, 2026 for guidance and Q3 FY2026 actual result, aligning with the verified fiscal calendar."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: the dollar beat, percentage beat, and benchmark against the company's AI semiconductor revenue guide are all accurate within the specified tolerances, and the fiscal periods are correctly identified."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Guidance for Q3 FY2026 AI semiconductor revenue was $16.0 billion, given on Q2 FY2026 call (June 3, 2026)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/AVGO/earnings/AVGO-Q2-2026-earnings_call-581106.html",
+     "reason": "The cited Q2 earnings call transcript (source 1) should contain the $16B guidance. However, the retrieved text for that URL only shows the call opening remarks and does not include the guidance figure.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual Q3 FY2026 AI semiconductor revenue was $16.7 billion (more than tripled YoY)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/AVGO/earnings/AVGO-Q3-2026-earnings_call-685349.html",
+     "reason": "Retrieved text for source 2 explicitly states: 'AI semiconductor revenue more than tripled year-over-year to $16.7 billion.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Beat vs guidance was +$0.7 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/AVGO/earnings/AVGO-Q3-2026-earnings_call-685349.html",
+     "reason": "Derived from actual $16.7B (source 2) minus guidance $16.0B (source 1/3). $16.7B - $16.0B = $0.7B. Arithmetic is correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Beat vs guidance was ~4.4%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/AVGO/earnings/AVGO-Q3-2026-earnings_call-685349.html",
+     "reason": "Derived: $0.7B / $16.0B = 4.375%, which rounds to 4.4% (within rounding tolerance of 4.35%-4.45%).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 AI semiconductor revenue was $10.8 billion, up 143% YoY",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-inc-announces-second-quarter-201500695.html",
+     "reason": "Retrieved text for source 3 (press release) states: 'AI semiconductor revenue reached a record $10.8 billion, up 143% year on year.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management guided Q3 FY2026 AI semiconductor revenue to $16 billion, implying over 200% YoY growth",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-inc-announces-second-quarter-201500695.html",
+     "reason": "Retrieved text for source 3 states: 'Q3 AI Semiconductor Revenue Guidance: $16 billion, up over 200% year on year.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Guidance was modestly below analyst consensus of ~$16.36 billion",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer does not cite a source for this claim. A retrieved source (broadcom-shares-slide-revenue-miss-100627463.html) mentions $16.36B consensus, but it is not among the cited URLs.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Broadcom raised full-year FY2026 AI revenue outlook to ~$58 billion (up 186% YoY)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/AVGO/earnings/AVGO-Q3-2026-earnings_call-685349.html",
+     "reason": "Retrieved text for source 2 states: 'we expect our fiscal 2026 AI revenue to be $58 billion for the year, up 186% year upon year.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The raised FY2026 AI revenue outlook is above prior guidance of $56 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/AVGO/earnings/AVGO-Q3-2026-earnings_call-685349.html",
+     "reason": "Retrieved text for source 2 states: 'above our prior guidance of $56 million' (context indicates billion).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Broadcom guided Q4 FY2026 AI revenue to $21.7 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/AVGO/earnings/AVGO-Q3-2026-earnings_call-685349.html",
+     "reason": "Retrieved text for source 2 states: 'we expect these deployments to drive our Q4 AI revenue to $21.7 billion.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 AI semiconductor revenue more than tripled year-over-year",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/AVGO/earnings/AVGO-Q3-2026-earnings_call-685349.html",
+     "reason": "Retrieved text for source 2 explicitly says 'AI semiconductor revenue more than tripled year-over-year to $16.7 billion.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Q2 FY2026 earnings call took place on June 3, 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/AVGO/earnings/AVGO-Q2-2026-earnings_call-581106.html",
+     "reason": "Retrieved text for source 1 shows the call date: 'Jun 3, 2026, 5:00 PM EDT.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 12,
+   "numeric_cited": 11,
+   "cited": 11,
+   "supported": 10,
+   "not_retrieved": 0
+  }
+ }
+}

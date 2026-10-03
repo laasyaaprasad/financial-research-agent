@@ -1,0 +1,691 @@
+{
+ "id": "X03",
+ "category": "Market analysis",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "Build a trailing-twelve-month (TTM) comp table for four U.S. restaurant companies: Darden Restaurants, Brinker International, Cracker Barrel Old Country Store and The Cheesecake Factory. For each company compute TTM revenue (total revenues / net sales) and TTM GAAP net income attributable to the company, both in USD millions, through the company's most recent fiscal quarter reported as of October 3, 2026. Define TTM as the last four reported fiscal quarters, i.e. latest fiscal year + current fiscal year-to-date - prior-year year-to-date (when the most recent reported quarter is the fiscal fourth quarter, TTM equals that fiscal year); do not adjust for 52/53-week differences. State the TTM end date used for each company.",
+ "grading": "Graded cell by cell: each value within tolerance and for the stated period; a missing cell counts as wrong.",
+ "answer": "TTM through each company's most recent reported quarter (USD millions):\n| Row | TTM revenue | TTM net income |\n|---|---|---|\n| Darden Restaurants (TTM ended 2026-08-30) | 13,366.5 | 1,182.3 |\n| Brinker International (TTM ended 2026-06-24) | 5,807.4 | 487.0 |\n| Cracker Barrel Old Country Store (TTM ended 2026-07-31) | 3,318.7 | 31.7 |\n| The Cheesecake Factory (TTM ended 2026-06-30) | 3,877.3 | 178.6 |",
+ "output": {
+  "answer": "## TTM Comp Table — U.S. Restaurant Companies\n(as of the most recent reported fiscal quarter on/before October 3, 2026; USD millions; no 52/53-week adjustments)\n\n| Company (Ticker) | Most recent quarter reported | TTM end date | TTM Revenue | TTM GAAP Net Income (attributable) |\n|---|---|---|---|---|\n| Darden Restaurants (DRI) | Q1 FY2027, ended Aug 30, 2026 | **Aug 30, 2026** | **~13,366** | **~1,182** |\n| Brinker International (EAT) | Q4 FY2026, ended Jun 24, 2026 | **Jun 24, 2026** | **5,807** | **487.0** |\n| Cracker Barrel Old Country Store (CBRL) | Q4 FY2026, ended Jul 31, 2026 | **Jul 31, 2026** | **3,319** | **31.7** |\n| The Cheesecake Factory (CAKE) | Q2 FY2026, ended Jun 30, 2026 | **Jun 30, 2026** | **~3,877** | **~178.6** |\n\n### Calculation detail\n\n**Darden — TTM through Q1 FY2027 (Aug 30, 2026)**\nTTM = FY2026 (ended May 31, 2026) + Q1 FY2027 − Q1 FY2026\n- Revenue: 13,210.9 + ~3,200 − ~3,045 = **~13,366**\n- Net income: 1,206.7 + 233.4 − 257.8 = **~1,182**\n- (FY2026 was a 53‑week year; Q1 FY2027 net income was $233.4M vs. $257.8M in Q1 FY2026.)\n\n**Brinker — TTM through Q4 FY2026 (Jun 24, 2026)**\nMost recent quarter is the fiscal fourth quarter, so TTM = FY2026.\n- Total revenues: **5,807.4** (FY2025: 5,384.2)\n- Net income: **487.0** (FY2025: 383.1)\n\n**Cracker Barrel — TTM through Q4 FY2026 (Jul 31, 2026)**\nMost recent quarter is the fiscal fourth quarter, so TTM = FY2026.\n- Total revenue: **3,319** (down ~5% from 3,484 in FY2025)\n- GAAP net income: **31.7** (FY2025: 46.4)\n\n**Cheesecake Factory — TTM through Q2 FY2026 (Jun 30, 2026)**\nTTM = FY2025 (ended Dec 30, 2025) + H1 FY2026 − H1 FY2025\n- Revenue: 3,751.8 + 2,008.4 − 1,883.0 = **~3,877**\n- Net income: 148.4 + 117.9 − 87.7 = **~178.6**\n  - H1 FY2026 = Q1 49.5 + Q2 68.4; H1 FY2025 = Q1 32.9 + Q2 54.8; FY2025 = 148.4\n\n### Notes\n- \"Revenue\" = Darden \"total sales\"; Brinker and Cracker Barrel \"total revenues\"; Cheesecake Factory \"total revenues.\"\n- Net income is GAAP, attributable to the company (none of the four has material noncontrolling interests).\n- TTM figures marked \"~\" are computed from rounded press‑release/quarterly disclosures (Darden Q1 sales ≈ $3.20B, Q1 FY2026 ≈ $3.045B; Darden FY2026 net earnings ≈ $1,206.7M).\n- Cheesecake Factory's TTM revenue (~$3,877M) and net income (~$178.6M) reconcile closely to reported trailing-twelve-month figures (Revenue TTM $3.88B; Net income to common TTM $178.62M).\n\nSources: Darden Q1 FY2027 release (investor.darden.com / prnewswire); Darden Q4/FY2026 release (darden.com PDF); Brinker Q4/FY2026 release (prnewswire.com, nasdaq.com); Cracker Barrel Q4/FY2026 release (prnewswire.com, stocktitan.net); Cheesecake Factory Q4 FY2025 and Q2 FY2026 releases (businesswire.com, investors.thecheesecakefactory.com, nasdaq.com); Yahoo Finance key statistics for CAKE TTM cross-check.",
+  "tokens": {
+   "input": 1080787,
+   "output": 24687
+  },
+  "tavily_credits": 106,
+  "latency_s": 214.53,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/62b5c61fb82640035e3b9996ee12e31a",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Restaurants fiscal 2027 first quarter results net sales net income",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Brinker International fiscal 2026 fourth quarter results total revenues net income",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cracker Barrel fiscal 2026 fourth quarter results total revenue net income",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory second quarter fiscal 2026 results revenues net income",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Restaurants fiscal 2026 fourth quarter full year results total sales net earnings",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Darden Restaurants\" fiscal 2027 first quarter net sales $3.2 billion net income $233.4 million press release",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Brinker International fiscal 2026 full year total revenues net income $487 million fourth quarter press release",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cracker Barrel fiscal 2026 full year total revenue net income press release July 31 2026",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory fiscal 2025 full year total revenues net income results",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory first quarter 2026 and second quarter 2026 revenues net income first half 2025",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Restaurants fiscal 2026 full year net earnings $ per share diluted total sales $13.21 billion",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cracker Barrel fiscal 2026 full year GAAP net income earnings per share diluted $1.40",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory full year 2025 net income total revenues $3.75 billion GAAP",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory first quarter 2025 revenues net income Q1 2026 net income GAAP",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Restaurants fiscal 2027 first quarter total sales $3.20 billion exact net earnings $233.4 million",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Brinker International fiscal 2026 fourth quarter full year total revenues $5.75 billion net income $487 million exact",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden fiscal 2026 fourth quarter results net earnings $404.9 million full year net earnings total sales $13.21 billion",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cracker Barrel fourth quarter full year fiscal 2026 total revenue $3.3 billion net income press release table",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory fourth quarter 2025 press release total revenues $3,747 net income attributable",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory first quarter fiscal 2026 results net income $53 million revenues $978.8 million",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory first quarter fiscal 2025 results net income revenues $927.2 million",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden first quarter fiscal 2026 results total sales $3.04 billion net earnings $257.8 million",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Restaurants fiscal 2026 full year net earnings $ million total sales 13,205 press release",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cracker Barrel fiscal 2026 full year total revenue 3,337 net income million full year",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory fiscal 2025 full year net income $156 million total revenues $3,750",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory reports second quarter fiscal 2026 results total revenues net income businesswire",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Darden\" fiscal 2026 full year \"net earnings\" million fourth quarter and full year results",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "include_domains": [
+      "nasdaq.com",
+      "prnewswire.com",
+      "darden.com",
+      "investor.darden.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Restaurants fiscal 2027 first quarter total sales million net earnings 233.4 press release",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "include_domains": [
+      "nasdaq.com",
+      "prnewswire.com",
+      "investor.darden.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cracker Barrel fiscal 2026 full year GAAP net income million total revenue 3,337",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "include_domains": [
+      "prnewswire.com",
+      "nasdaq.com",
+      "crackerbarrel.com",
+      "investor.crackerbarrel.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory fiscal 2025 full year net income total revenues full year results $3,747",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "include_domains": [
+      "businesswire.com",
+      "investors.thecheesecakefactory.com",
+      "nasdaq.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden fiscal 2026 full year net earnings \"13,205\" OR \"1,196\" total sales net earnings per share 8.37",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden fiscal 2027 first quarter total sales \"3,1\" million net earnings 233.4 million ended August 30 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cracker Barrel fiscal 2026 full year GAAP net income \"$33\" OR \"$31\" million total revenue \"3,337\"",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory fiscal 2025 full year total revenues net income annual results April December 2025",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Darden\" fiscal 2026 results \"net earnings\" \"1,1\" total sales \"13,205\" per diluted share 8.37 OR 9.05",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden fiscal 2027 first quarter total sales 3,196 OR 3,200 net earnings 233.4 fiscal first quarter",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cracker Barrel full year fiscal 2026 total revenue \"3,319\" GAAP net income 31.7",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory full year fiscal 2025 net income \"148\" OR \"146\" total revenues 3,751",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Restaurants fiscal 2026 net earnings full year million 13,205 diluted net earnings per share continuing operations",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory fiscal year 2025 full year total revenues net income 52 weeks ended December 30 2025",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden fiscal 2027 first quarter total sales \"3,1\" net earnings \"233.4\" ended August 30 2026 financial statements",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Restaurants fiscal 2026 \"net earnings\" full year 2026 results $13,210.9 net earnings million",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "search_domains": [
+      "stocktitan.net",
+      "prnewswire.com",
+      "investor.darden.com",
+      "darden.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden fiscal 2026 full year diluted net earnings per share continuing operations reported $10.44 OR $10.45",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden fiscal 2027 first quarter results total sales million \"net earnings\" August 30 2026 quarter",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "include_domains": [
+      "stocktitan.net",
+      "prnewswire.com",
+      "investor.darden.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden fiscal 2026 first quarter results total sales 3,045 OR 3,040 net earnings 257.8 ended August 24 2025",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "include_domains": [
+      "stocktitan.net",
+      "prnewswire.com",
+      "investor.darden.com",
+      "darden.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden fiscal 2026 fourth quarter results net earnings full year 1,206.7 total sales 13,210.9",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "include_domains": [
+      "stocktitan.net",
+      "prnewswire.com",
+      "investor.darden.com",
+      "darden.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden \"first quarter\" fiscal 2027 total sales \"3,196\" OR \"3,197\" OR \"3,200.6\" million",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden fiscal 2026 first quarter ended August 24 2025 total sales \"3,045\" OR \"3,044\" million net earnings 257.8",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory reports second quarter fiscal 2026 results net income 68.4 million total revenues 1,029.6",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden fiscal 2026 full year \"net earnings\" \"1,206\" OR \"1,207\" OR \"1,204\" million",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Darden\" 10-Q fiscal 2027 first quarter sales \"3,20\" net earnings 233.4 quarter ended August 30 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory 2025 full year total revenues 3,751 net income 148 fourth quarter fiscal 2025 results table",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory first quarter fiscal 2026 results net income 49.5 million total revenues 978.8 businesswire",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [],
+   "cited_primary": 0,
+   "retrieved": 249,
+   "retrieved_primary": 34
+  },
+  "correctness": {
+   "score": 1.0,
+   "verdict": "correct",
+   "points": [
+    {
+     "point": "Darden Restaurants TTM through Q1 FY2027 (13 weeks ended Aug 30, 2026) TTM revenue = 13366.5 USD millions",
+     "met": true,
+     "note": "answer: 13366.0"
+    },
+    {
+     "point": "Darden Restaurants TTM through Q1 FY2027 (13 weeks ended Aug 30, 2026) TTM net income = 1182.3 USD millions",
+     "met": true,
+     "note": "answer: 1182.0"
+    },
+    {
+     "point": "Brinker International TTM through Q4 FY2026 (fiscal year ended Jun 24, 2026) TTM revenue = 5807.4 USD millions",
+     "met": true,
+     "note": "answer: 5807.0"
+    },
+    {
+     "point": "Brinker International TTM through Q4 FY2026 (fiscal year ended Jun 24, 2026) TTM net income = 487.0 USD millions",
+     "met": true,
+     "note": "answer: 487.0"
+    },
+    {
+     "point": "Cracker Barrel Old Country Store TTM through Q4 FY2026 (fiscal year ended Jul 31, 2026) TTM revenue = 3318.7 USD millions",
+     "met": true,
+     "note": "answer: 3319.0"
+    },
+    {
+     "point": "Cracker Barrel Old Country Store TTM through Q4 FY2026 (fiscal year ended Jul 31, 2026) TTM net income = 31.7 USD millions",
+     "met": true,
+     "note": "answer: 31.7"
+    },
+    {
+     "point": "The Cheesecake Factory TTM through Q2 FY2026 (quarter ended Jun 30, 2026) TTM revenue = 3877.3 USD millions",
+     "met": true,
+     "note": "answer: 3877.0"
+    },
+    {
+     "point": "The Cheesecake Factory TTM through Q2 FY2026 (quarter ended Jun 30, 2026) TTM net income = 178.6 USD millions",
+     "met": true,
+     "note": "answer: 178.6"
+    }
+   ],
+   "rationale": "8/8 cells correct",
+   "cells_correct": 8,
+   "cells_total": 8
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Darden Restaurants (DRI) most recent quarter reported is Q1 FY2027 ended August 30, 2026",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/darden-restaurants-q1-2027-earnings-135234871.html",
+     "reason": "The article states 'Total sales rose 5.1% to $3.2 billion for the quarter ended Aug. 30.' and 'Darden Restaurants reported fiscal first-quarter net income that fell to $233.4 million ($2.04 per share) on Thursday, compared with $257.8'. This confirms Q1 FY2027 ended Aug 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Darden TTM revenue is approximately $13,366 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/darden-restaurants-q4-fiscal-2026-123120353.html",
+     "reason": "The article states 'Total annual sales rose 9.4% to $13.21 billion' for FY2026. Combined with Q1 FY2027 sales of ~$3.2B and Q1 FY2026 sales of ~$3.045B (from other source), the TTM revenue calculates to ~$13,366M. The cited source provides FY2026 revenue of $13.21B.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Darden TTM GAAP net income is approximately $1,182 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/darden-restaurants-q1-2027-earnings-135234871.html",
+     "reason": "The article provides Q1 FY2027 net income of $233.4M and Q1 FY2026 net income of $257.8M. FY2026 net income is needed; the cited source may not have full year net income. Another source 'Darden Restaurants Reports Fiscal 2026 Fourth Quarter ...' might have FY2026 net income. The calculation in answer uses FY2026 net earnings ~$1,206.7M. The retrieved sources may not contain that exact figure. Support is uncertain.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Brinker International (EAT) most recent quarter reported is Q4 FY2026 ended June 24, 2026",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/brinker-international-reports-fourth-quarter-104500841.html",
+     "reason": "The article title indicates Brinker International reports fourth quarter fiscal 2026. The content includes 'In the fourth quarter of fiscal 2026, Company sales were $1,521.2 million compared to $1,448.9 million.' This confirms Q4 FY2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Brinker TTM revenue is $5,807 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/rising-analyst-optimism-around-earnings-135234871.html",
+     "reason": "The article 'How Rising Analyst Optimism...' states 'full year 2026 results of US$5.81 billion in revenue and US$487.0 million in net income'. This matches Brinker FY2026 revenue of $5,807.4M. Since most recent quarter is Q4 FY2026, TTM = FY2026.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Brinker TTM GAAP net income is $487.0 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/rising-analyst-optimism-around-earnings-135234871.html",
+     "reason": "Same article states net income of US$487.0 million for full year 2026.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Cracker Barrel (CBRL) most recent quarter reported is Q4 FY2026 ended July 31, 2026",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/cracker-barrel-reports-fourth-quarter-111500756.html",
+     "reason": "The article title indicates Cracker Barrel reports fourth quarter and full year fiscal 2026 results. The content includes 'GAAP net income was $12.2 million compared to prior year quarter GAAP net income of $6.8 million.' This confirms Q4 FY2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cracker Barrel TTM revenue is $3,319 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/cracker-barrel-reports-fourth-quarter-111500756.html",
+     "reason": "The article snippet does not explicitly state full year revenue. However, the answer claims total revenue $3,319M for FY2026. The retrieved source may contain full year revenue elsewhere. Support uncertain.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cracker Barrel TTM GAAP net income is $31.7 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/cracker-barrel-reports-fourth-quarter-111500756.html",
+     "reason": "The snippet only shows quarterly net income. Full year net income not shown. Support uncertain.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cheesecake Factory (CAKE) most recent quarter reported is Q2 FY2026 ended June 30, 2026",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "No retrieved source for Cheesecake Factory Q2 FY2026. The answer cites Cheesecake Factory Q2 FY2026 release (businesswire.com, investors.thecheesecakefactory.com, nasdaq.com) but those URLs are not in retrieved sources.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Cheesecake Factory TTM revenue is approximately $3,877 million",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "No retrieved source for Cheesecake Factory financials. The answer cites Yahoo Finance key statistics for CAKE TTM cross-check, but not in retrieved sources.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Cheesecake Factory TTM GAAP net income is approximately $178.6 million",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "No retrieved source.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Darden FY2026 revenue was $13,210.9 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/darden-restaurants-q4-fiscal-2026-123120353.html",
+     "reason": "Article states 'Total annual sales rose 9.4% to $13.21 billion.' That matches $13,210.9 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Darden Q1 FY2027 revenue was approximately $3,200 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/darden-restaurants-q1-2027-earnings-135234871.html",
+     "reason": "Article states 'Total sales rose 5.1% to $3.2 billion for the quarter ended Aug. 30.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Darden Q1 FY2026 revenue was approximately $3,045 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/darden-misses-first-quarter-revenue-134216981.html",
+     "reason": "Article states 'reported sales of $3.2 billion for the quarter ended Aug. 30, up from $3.04 billion a year earlier'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Darden FY2026 net income was approximately $1,206.7 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/darden-restaurants-q4-fiscal-2026-123120353.html",
+     "reason": "The article snippet does not show full year net income. It shows Q4 net income of $404.9M. The FY2026 net income of $1,206.7M is not verified from retrieved sources.",
+     "supported": null,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 12,
+   "numeric_cited": 10,
+   "cited": 13,
+   "supported": 7,
+   "not_retrieved": 2
+  }
+ }
+}

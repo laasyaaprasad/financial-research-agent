@@ -1,0 +1,185 @@
+{
+ "id": "T11",
+ "category": "Beat or miss",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "Did lululemon's second-quarter fiscal 2026 (quarter ended August 2, 2026) net revenue and diluted EPS land above, within or below the Q2 guidance ranges the company gave in its first-quarter release in June 2026?",
+ "grading": "Key points: (1) revenue USD 2,415.6M vs guidance USD 2,450M-2,475M = BELOW the range; (2) diluted EPS USD 2.92 vs guidance USD 1.76-1.81 = ABOVE the range; (3) notes the guidance did not include IEEPA tariff refunds and that Q2 EPS included USD 0.86/share from refunds and interest, so EPS excluding that (~USD 2.06) is still above the top of the range; (4) benchmark is company guidance, not consensus. Fail if both are called beats or if consensus is used.",
+ "answer": "Against the Q2 guidance in the June 4, 2026 release (net revenue USD 2.450-2.475 billion; diluted EPS USD 1.76-1.81; guidance excluded any IEEPA tariff refunds) [T11-E1], Q2 FY2026 net revenue was USD 2,415.6 million (below the low end by about 1.4%) and diluted EPS was USD 2.92 (above the high end). The EPS includes USD 0.86 per share from IEEPA tariff refunds ($134.5M) and associated interest ($4.1M); excluding that, EPS is about USD 2.06, still above the USD 1.81 top of the range. [T11-E2]",
+ "output": {
+  "answer": "**Question:** Did lululemon's second-quarter fiscal 2026 (quarter ended August 2, 2026) net revenue and diluted EPS land above, within or below the Q2 guidance ranges the company gave in its first-quarter release in June 2026?\n*As of 2026-10-03*\n\n| | Net revenue (USD billions) | Diluted EPS (USD) | Net revenue (USD thousands) | Diluted EPS excluding tariff refunds (USD) |\n|---|---|---|---|---|\n| Q2 FY2026 guidance (from Q1 FY2026 release, 8-K filed 2026-06-04) | $2.450 to $2.475 [1] | $1.76 to $1.81 [1] | — | — |\n| Q2 FY2026 actual (quarter ended August 2, 2026) | 2.415631 [2] | $2.92 [2][3] | $2,415,631 [2][3] | 2.06 [2] |\n\n- In its Q1 FY2026 earnings release (8-K filed 2026-06-04), lululemon guided Q2 FY2026 net revenue to a range of $2.450 billion to $2.475 billion, representing a decline of 3% to 2%. [1]\n- In the same Q1 FY2026 release, lululemon guided Q2 FY2026 diluted earnings per share to a range of $1.76 to $1.81, assuming a tax rate of approximately 30%. [1]\n- Q2 FY2026 (quarter ended August 2, 2026) net revenue was $2,415,631 thousand, which is below the Q2 guidance range of $2.450 billion to $2.475 billion given in the Q1 FY2026 release. [2][3][1]\n- Q2 FY2026 (quarter ended August 2, 2026) diluted earnings per share were $2.92, which is above the Q2 guidance range of $1.76 to $1.81 given in the Q1 FY2026 release. [2][3][1]\n- Q2 FY2026 diluted EPS of $2.92 included $0.86 per share related to IEEPA tariff refunds and associated interest, net of tax; excluding that item, diluted EPS would have been 2.06, still above the guided range of $1.76 to $1.81. [2][1]\n\n_1 draft statement(s) were withheld because they could not be verified against the sources (details in the run record)._\n\n**Sources**\n[1] lululemon athletica inc. earnings release for Q1 FY2026, 8-K EX-99.1 (filed 2026-06-04) (www.sec.gov, 2026-06-04, primary) https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260503xex991.htm\n[2] lululemon athletica inc. earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-09-03) (www.sec.gov, 2026-09-03, primary) https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm\n[3] lululemon athletica inc. XBRL data tagged in 10-Q filed 2026-09-03 (www.sec.gov, 2026-09-03, primary) https://www.sec.gov/Archives/edgar/data/1397187/000139718726000127/\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 68074,
+   "output": 14999
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 69.21,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/5e6fa7adece7f5b609147eed60d9fab7",
+  "companies": [
+   {
+    "name": "lululemon athletica inc.",
+    "ticker": "LULU",
+    "cik": "1397187",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Q2 FY2026 net revenue guidance range (low and high) as given in the Q1 FY2026 earnings release",
+    "Q2 FY2026 diluted EPS guidance range (low and high) as given in the Q1 FY2026 earnings release",
+    "Q2 FY2026 actual net revenue",
+    "Q2 FY2026 actual diluted EPS (GAAP, and adjusted/non-GAAP if the guidance was on that basis)",
+    "Whether each actual figure falls above, within, or below the corresponding guidance range"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "LULU",
+     "label": "Q2 FY2026"
+    },
+    {
+     "ticker": "LULU",
+     "label": "Q1 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "LULU",
+     "period": "Q1 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "LULU",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "LULU",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q2 FY2026 guidance ranges were published in the Q1 FY2026 earnings release (8-K filed 2026-06-04), not in the Q2 release; the Q2 FY2026 earnings release (8-K filed 2026-09-03) and 10-Q (filed 2026-09-03) supply the actuals.",
+    "Q3 FY2026 and FY2026 are still in progress / not yet reported, so no actuals exist for those periods.",
+    "If the guidance was expressed on an adjusted (non-GAAP) EPS basis, the comparable non-GAAP figure and reconciliation appear in the Q2 FY2026 earnings release rather than the 10-Q."
+   ]
+  },
+  "unavailable": [],
+  "removed": [
+   {
+    "text": "The Q1 FY2026 release states the Q2 FY2026 EPS guidance as a single range of $1.76 to $1.81 without labeling it GAAP or non-GAAP, and the Q2 FY2026 release and 10-Q report only GAAP diluted EPS of $2.92 (with a $0.86 tariff-refund component).",
+    "problem": "number 0.86 is not in the quotes and not calculated"
+   }
+  ],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260503xex991.htm",
+    "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm",
+    "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000127/"
+   ],
+   "cited_primary": 3,
+   "retrieved": 5,
+   "retrieved_primary": 5
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Revenue USD 2,415.6M vs guidance USD 2,450M-2,475M = BELOW the range",
+     "met": true,
+     "note": "Agent states Q2 FY2026 net revenue was $2,415,631 thousand, below the guidance range of $2.450B to $2.475B."
+    },
+    {
+     "point": "Diluted EPS USD 2.92 vs guidance USD 1.76-1.81 = ABOVE the range",
+     "met": true,
+     "note": "Agent states Q2 FY2026 diluted EPS was $2.92, above the guidance range of $1.76 to $1.81."
+    },
+    {
+     "point": "Notes guidance did not include IEEPA tariff refunds and that Q2 EPS included USD 0.86/share from refunds and interest, so EPS excluding that (~USD 2.06) is still above the top of the range",
+     "met": true,
+     "note": "Agent explicitly mentions the $0.86/share tariff refund benefit, calculates EPS excluding it as $2.06, and notes it remains above the guided range."
+    },
+    {
+     "point": "Benchmark is company guidance, not consensus; fails if both called beats or consensus used",
+     "met": true,
+     "note": "Agent uses only the company's Q1 FY2026 release guidance; no analyst consensus referenced."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All four key grading requirements are satisfied: revenue below guidance, EPS above guidance, tariff refund impact noted and adjusted EPS still above range, and benchmarking solely to company guidance."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "In its Q1 FY2026 earnings release (8-K filed 2026-06-04), lululemon guided Q2 FY2026 net revenue to a range of $2.450 billion to $2.475 billion, representing a decline of 3% to 2%.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260503xex991.htm",
+     "reason": "Source 1 explicitly states: 'For the second quarter of 2026, the Company expects net revenue to be in the range of $2.450 billion to $2.475 billion, representing a decline of 3% to 2%.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "In the same Q1 FY2026 release, lululemon guided Q2 FY2026 diluted earnings per share to a range of $1.76 to $1.81, assuming a tax rate of approximately 30%.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260503xex991.htm",
+     "reason": "Source 1 states: 'Diluted earnings per share are expected to be in the range of $1.76 to $1.81 for the quarter. This assumes a tax rate of approximately 30%.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 (quarter ended August 2, 2026) net revenue was $2,415,631 thousand ($2.415631 billion), which is below the Q2 guidance range of $2.450 billion to $2.475 billion given in the Q1 FY2026 release.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm",
+     "reason": "Source 2 shows net revenue for Q2 FY2026 as $2,415,631 (in thousands) and the guidance range from Source 1 is $2.450B–$2.475B. $2.415631B is less than $2.450B, so it is below the guidance range.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 (quarter ended August 2, 2026) diluted earnings per share were $2.92, which is above the Q2 guidance range of $1.76 to $1.81 given in the Q1 FY2026 release.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm",
+     "reason": "Source 2 reports diluted EPS of $2.92 for Q2 FY2026. The guidance range from Source 1 is $1.76–$1.81. $2.92 > $1.81, so it is above the guidance range.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 diluted EPS of $2.92 included $0.86 per share related to IEEPA tariff refunds and associated interest, net of tax; excluding that item, diluted EPS would have been $2.06, still above the guided range of $1.76 to $1.81.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm",
+     "reason": "Source 2 states: 'This includes $0.86 per share related to tariff refunds and associated interest(1), net of tax' and 'increased diluted earnings per share by $0.86.' Subtracting $0.86 from $2.92 yields $2.06, which is above the guidance range of $1.76–$1.81.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 actual net revenue in USD thousands was $2,415,631.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000127/lulu-20260802.htm",
+     "reason": "Source 3 (10-Q) shows 'Revenue from Contract with Customer, Excluding Assessed Tax: 2,415,631,000 USD' for the period 2026-05-04 to 2026-08-02, and the consolidated statements present net revenue as $2,415,631 (in thousands).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 diluted EPS excluding tariff refunds was $2.06.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm",
+     "reason": "Derived from reported diluted EPS of $2.92 and the disclosed $0.86 per share impact of tariff refunds (Source 2). $2.92 - $0.86 = $2.06.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 7,
+   "numeric_cited": 7,
+   "cited": 7,
+   "supported": 7,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,228 @@
+{
+ "id": "G03",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Costco's membership fee income for fiscal 2026, in USD millions, and the YoY growth?",
+ "grading": "±0.5%, USD millions; must be 52-week FY2026 column not 16-week Q4; fail if FY2025 presented as current",
+ "answer": "Costco FY2026 membership fee income was USD 5,907 million, versus USD 5,323 million in FY2025: 10.9713% YoY growth. These are the 52-week annual columns. [G03-E1]",
+ "output": {
+  "answer": "**Costco fiscal 2026 membership fee income: $5,907 million, up ~11.0% YoY** (from $5,323 million in fiscal 2025) — an increase of $584 million.\n\nDetails from Costco's Q4/FY2026 results (fiscal year ended August 30, 2026):\n- **Q4 FY2026:** $1,850M vs. $1,724M → **+7.3%**\n- **Q1 FY2026:** $1,329M → +14%\n- **Q2 FY2026:** $1,355M → +13.6%\n- **Q3 FY2026:** $1,373M → +10.7%\n\nContext:\n- Growth decelerated through the year as the September 2024 U.S./Canada fee increase fully cycled through (it accounted for ~35–40% of Q2 growth).\n- FY2026 net income: $9.226B ($20.76 diluted EPS); total revenue $303.2B; membership fees were ~half of ~$11.7B operating income.\n- Paid memberships ended the year at 84.1M (+3.8%), including 42.3M Executive members; U.S./Canada renewal rate 92.3%.\n\nSources:\n- Costco investor relations, Q4 & FY2026 results: https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Operating-Results/default.aspx\n- Q3 FY2026 release: https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Third-Quarter-and-Year-To-Date-Operating-Results-For-Fiscal-2026/default.aspx\n- Q2 FY2026 10-Q: https://www.stocktitan.net/sec-filings/COST/10-q-costco-wholesale-corp-new-quarterly-earnings-report-f7b450ede14b.html\n- TIKR summary: https://www.tikr.com/blog/why-costcos-next-quarter-is-the-real-test-of-its-7-fee-growth\n\nOne caveat: the $5,907M figure is from the earnings release income statement; the audited 10-K (typically filed in October) may present slightly different rounding/labels, but the total is consistent across sources.",
+  "tokens": {
+   "input": 32461,
+   "output": 1214
+  },
+  "tavily_credits": 8,
+  "latency_s": 12.79,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/91ef8ad459f4fe03901af69295c33cfe",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Costco membership fee income fiscal 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Costco Q1 fiscal 2026 earnings membership fee revenue year over year",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Costco fourth quarter fiscal 2026 membership fee income $ million August 30 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Costco fiscal 2026 full year membership fee revenue \"5,9\" billion 10-K",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Operating-Results/default.aspx",
+    "https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Third-Quarter-and-Year-To-Date-Operating-Results-For-Fiscal-2026/default.aspx",
+    "https://www.stocktitan.net/sec-filings/COST/10-q-costco-wholesale-corp-new-quarterly-earnings-report-f7b450ede14b.html",
+    "https://www.tikr.com/blog/why-costcos-next-quarter-is-the-real-test-of-its-7-fee-growth"
+   ],
+   "cited_primary": 2,
+   "retrieved": 31,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Membership fee income for fiscal 2026 in USD millions within ±0.5% of 5907 million",
+     "met": true,
+     "note": "Agent states $5,907 million, exactly matching reference 5907 million."
+    },
+    {
+     "point": "YoY growth percentage within ±0.5% of 10.9713%",
+     "met": true,
+     "note": "Agent states ~11.0% YoY, reference 10.9713%, difference 0.0287% well within tolerance."
+    },
+    {
+     "point": "Figure must be from 52-week FY2026 column, not 16-week Q4",
+     "met": true,
+     "note": "Agent cites fiscal year ended August 30, 2026 and earnings release income statement, which is the 52-week annual column."
+    },
+    {
+     "point": "Must not present FY2025 as current",
+     "met": true,
+     "note": "Agent clearly states FY2025 as prior year ($5,323 million in fiscal 2025)."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All requirements satisfied: correct annual membership fee income ($5,907M), correct YoY growth (~11.0% vs 10.97%), uses 52-week FY2026 column from earnings release, and does not misrepresent FY2025 as current."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Costco fiscal 2026 membership fee income was $5,907 million",
+     "numeric": true,
+     "cited_url": "https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Operating-Results/default.aspx",
+     "reason": "The Costco investor relations Q4/FY2026 results table shows 'Membership fees' for 52 weeks ended August 30, 2026 as 5,907 (in millions).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Costco fiscal 2025 membership fee income was $5,323 million",
+     "numeric": true,
+     "cited_url": "https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Operating-Results/default.aspx",
+     "reason": "The same table shows 'Membership fees' for 52 weeks ended August 31, 2025 as 5,323 (in millions).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal 2026 membership fee income increased ~11.0% YoY ($584 million increase)",
+     "numeric": true,
+     "cited_url": "https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Operating-Results/default.aspx",
+     "reason": "Calculated: (5,907 - 5,323) / 5,323 = 584 / 5,323 = 10.97% ≈ 11.0%. The $584M increase matches the difference.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2026 membership fee income: $1,850M vs $1,724M → +7.3%",
+     "numeric": true,
+     "cited_url": "https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Operating-Results/default.aspx",
+     "reason": "The table shows '16 Weeks Ended August 30, 2026' Membership fees: 1,850 vs August 31, 2025: 1,724. Growth = (1,850/1,724)-1 = 7.31% ≈ 7.3%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY2026 membership fee income: $1,329M → +14%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/costco-beats-q1-earnings-estimates-123600993.html",
+     "reason": "Yahoo Finance article states 'membership fees jumped 14% to $1,329 million' for Q1 FY2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 membership fee income: $1,355M → +13.6%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/costco-membership-income-jumps-double-133600245.html",
+     "reason": "Yahoo Finance article states 'membership fee income jumping 13.6% to $1,355 million in the second quarter of fiscal 2026'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 membership fee income: $1,373M → +10.7%",
+     "numeric": true,
+     "cited_url": "https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Third-Quarter-and-Year-To-Date-Operating-Results-For-Fiscal-2026/default.aspx",
+     "reason": "Multiple sources including the Q3 release and Yahoo Finance articles state 'Membership fee income increased 10.7% year over year to $1,373 million during the third quarter of fiscal 2026'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "September 2024 U.S./Canada fee increase accounted for ~35–40% of Q2 growth",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/COST/10-q-costco-wholesale-corp-new-quarterly-earnings-report-f7b450ede14b.html",
+     "reason": "The 10-Q filing states 'The fee income increase accounted for approximately 35% and 40% of membership fee growth during the second quarter and first half of 2026.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2026 net income: $9.226B ($20.76 diluted EPS)",
+     "numeric": true,
+     "cited_url": "https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Operating-Results/default.aspx",
+     "reason": "The earnings release states 'Net income for the fiscal year was $9.226 billion, $20.76 per diluted share'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2026 total revenue: $303.2B",
+     "numeric": true,
+     "cited_url": "https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Operating-Results/default.aspx",
+     "reason": "The table shows 'Total revenue' for 52 weeks ended August 30, 2026 as 303,154 (in millions) = $303.154B ≈ $303.2B.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Membership fees were ~half of ~$11.7B operating income in FY2026",
+     "numeric": true,
+     "cited_url": "https://www.tikr.com/blog/why-costcos-next-quarter-is-the-real-test-of-its-7-fee-growth",
+     "reason": "TIKR blog states 'Operating income rose from about $10.4 billion in fiscal 2025 to about $11.7 billion in fiscal 2026'. Membership fees $5.907B is 50.5% of $11.7B, consistent with '~half'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Paid memberships ended FY2026 at 84.1M (+3.8%), including 42.3M Executive members",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-collects-more-membership-022301447.html",
+     "reason": "Yahoo Finance article states 'Costco Wholesale Corporation (NASDAQ:COST) ended fiscal 2026 with 84.1 million paid memberships, up 3.8%, including 42.3 million Executive memberships.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "U.S./Canada renewal rate 92.3%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-collects-more-membership-022301447.html",
+     "reason": "Same article states 'Renewal rates were 92.3% in the United States and Canada and 89.8% worldwide.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2026 operating income ~$11.7B, up ~12.5% YoY",
+     "numeric": true,
+     "cited_url": "https://www.tikr.com/blog/why-costcos-next-quarter-is-the-real-test-of-its-7-fee-growth",
+     "reason": "TIKR blog states 'Operating income rose from about $10.4 billion in fiscal 2025 to about $11.7 billion in fiscal 2026, up roughly 12.5%'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 membership fee income grew 10.1% to $5.32B",
+     "numeric": true,
+     "cited_url": "https://www.tikr.com/blog/why-costcos-next-quarter-is-the-real-test-of-its-7-fee-growth",
+     "reason": "TIKR blog states 'Fee income jumped 10.1% to $5.32 billion in fiscal 2025'.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 15,
+   "numeric_cited": 15,
+   "cited": 15,
+   "supported": 15,
+   "not_retrieved": 0
+  }
+ }
+}

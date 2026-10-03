@@ -1,0 +1,208 @@
+{
+ "id": "G09",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "number",
+ "question": "What was Nike's revenue in its most recently reported quarter, and which fiscal quarter and date range was that?",
+ "grading": "Reference-free recency: must pick the newest released quarter as of query time, label it in fiscal terms with period-end date, and give revenue ±0.5% USD millions; fail if an older quarter is presented as latest",
+ "answer": "At the October 1, 2026 after-market snapshot, Nike had released Q1 FY2027 results: revenue was USD 11,213 million for June 1–August 31, 2026. The release is dated October 1. [G09-E1]",
+ "output": {
+  "answer": "**Question:** What was Nike's revenue in its most recently reported quarter, and which fiscal quarter and date range was that?\n*As of 2026-10-01*\n\n| | Total revenues (USD millions, as reported/GAAP) | Total revenues (USD billions, as reported/GAAP) | Revenue change, reported (%) | Revenue change, currency-neutral/non-GAAP (%) |\n|---|---|---|---|---|\n| NIKE, Inc. — Q1 FY2027 (three months ended August 31, 2026) | $11,213 [1] | $11.2 billion [1] | -4% [1] | -5% [1] |\n\n- NIKE, Inc.'s most recently reported quarter is the first quarter of fiscal 2027, the three months ended August 31, 2026 (June 1, 2026 to August 31, 2026). [1]\n- Total NIKE, Inc. revenues for Q1 FY2027, the quarter ended August 31, 2026, were $11,213 million, as reported (GAAP). [1]\n- On a headline basis, first quarter revenues were $11.2 billion, down 4 percent on a reported basis and down 5 percent on a currency-neutral (non-GAAP) basis. [1]\n- Within Q1 FY2027, NIKE Brand revenues were $10,952 million, down 4 percent on a reported and currency-neutral basis, and Converse revenues were $263 million, down 28 percent on a reported and currency-neutral basis. [1]\n\n**Not available**\n- Q1 FY2027 full financial statements and notes (Form 10-Q): As of 2026-10-01 the quarter is earnings-release only; the 10-Q has not yet been filed, so full financial statements and notes are unavailable. [1]\n- Q2 FY2027 (2026-09-01 to 2026-11-30) revenue: The quarter is still in progress and has not been reported as of 2026-10-01. [1]\n\n_1 draft statement(s) were withheld because they could not be verified against the sources (details in the run record)._\n\n**Sources**\n[1] NIKE, Inc. earnings release for Q1 FY2027, 8-K EX-99.1 (filed 2026-10-01) (www.sec.gov, 2026-10-01, primary) https://www.sec.gov/Archives/edgar/data/320187/000032018726000184/q1fy27exhibit991er.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 28398,
+   "output": 13638
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 63.73,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/4f5d8d5023f27a321255e3080bd4d892",
+  "companies": [
+   {
+    "name": "NIKE, Inc.",
+    "ticker": "NKE",
+    "cik": "320187",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Nike total revenue for the most recently reported quarter (Q1 FY2027)",
+    "Confirmation of the fiscal quarter label (Q1 FY2027) and its date range (2026-06-01 to 2026-08-31)",
+    "Any revenue breakdown/commentary disclosed in the release (e.g., Nike Brand vs. Converse, or regional splits) if the question's 'revenue' figure needs context"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "NKE",
+     "label": "Q1 FY2027"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "NKE",
+     "period": "Q1 FY2027",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q1 FY2027 (2026-06-01 to 2026-08-31) is the most recently reported quarter as of 2026-10-01, but it is earnings-release only: the 10-Q has not yet been filed, so full financial statements and notes are unavailable.",
+    "Q2 FY2027 (2026-09-01 to 2026-11-30) is still in progress and not yet reported, so no results exist for it.",
+    "Revenue figures must come from the Q1 FY2027 earnings release (8-K filed 2026-10-01); no estimation is planned."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Q1 FY2027 full financial statements and notes (Form 10-Q)",
+    "kind": "not_reported_yet",
+    "reason": "As of 2026-10-01 the quarter is earnings-release only; the 10-Q has not yet been filed, so full financial statements and notes are unavailable.",
+    "evidence_ids": [
+     "E1"
+    ]
+   },
+   {
+    "item": "Q2 FY2027 (2026-09-01 to 2026-11-30) revenue",
+    "kind": "not_reported_yet",
+    "reason": "The quarter is still in progress and has not been reported as of 2026-10-01.",
+    "evidence_ids": [
+     "E1"
+    ]
+   }
+  ],
+  "removed": [
+   {
+    "text": "The Q1 FY2027 figures were reported in NIKE's earnings release furnished as Exhibit 99.1 to a Form 8-K dated October 1, 2026; the corresponding Form 10-Q had not yet been filed, so full financial statements and notes are not yet available.",
+    "problem": "The evidence (E1) does not state that the release was furnished as Exhibit 99.1 to a Form 8-K dated October 1, 2026, nor that the Form 10-Q had not yet been filed. The quotes only show the dateline and conference call date; the 8-K exhibit/filing status and 10-Q unavailability are not supported by the cited evidence."
+   }
+  ],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/320187/000032018726000184/q1fy27exhibit991er.htm"
+   ],
+   "cited_primary": 1,
+   "retrieved": 1,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Pick the newest released quarter as of query time (2026-10-01)",
+     "met": true,
+     "note": "Agent correctly identifies Q1 FY2027 (released 2026-10-01) as the most recent quarter."
+    },
+    {
+     "point": "Label it in fiscal terms with period-end date",
+     "met": true,
+     "note": "Agent labels quarter as Q1 FY2027, three months ended August 31, 2026, with date range June 1–August 31, 2026."
+    },
+    {
+     "point": "Give revenue ±0.5% USD millions",
+     "met": true,
+     "note": "Agent reports revenue as $11,213 million, matching source exactly (0% error)."
+    },
+    {
+     "point": "Fail if an older quarter is presented as latest",
+     "met": true,
+     "note": "Agent does not present any older quarter as latest."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly identifies the latest reported quarter (Q1 FY2027), provides the fiscal quarter label and period-end date, and states the revenue figure within the required tolerance."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Nike's most recently reported quarter is Q1 FY2027, the three months ended August 31, 2026",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320187/000032018726000184/q1fy27exhibit991er.htm",
+     "reason": "The SEC filing (8-K EX-99.1) states: 'NIKE, Inc. today reported fiscal 2027 financial results for its first quarter ended August 31, 2026.' This confirms the quarter and end date.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The quarter date range is June 1, 2026 to August 31, 2026",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320187/000032018726000184/q1fy27exhibit991er.htm",
+     "reason": "The source only states 'first quarter ended August 31, 2026.' Nike's fiscal year ends May 31, so Q1 is June–August. The start date is not explicitly in the source but is standard for Nike's fiscal calendar.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total Nike revenues for Q1 FY2027 were $11,213 million (GAAP)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320187/000032018726000184/q1fy27exhibit991er.htm",
+     "reason": "The source table shows 'TOTAL NIKE, INC. REVENUES' for 8/31/2026 as $11,213 million. This matches the claim exactly.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total Nike revenues for Q1 FY2027 were $11.2 billion (rounded)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320187/000032018726000184/q1fy27exhibit991er.htm",
+     "reason": "The source states: 'First quarter revenues were $11.2 billion.' $11,213 million rounds to $11.2 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue decreased 4% on a reported basis (GAAP) year-over-year",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320187/000032018726000184/q1fy27exhibit991er.htm",
+     "reason": "The source table shows a change of '-4%' for TOTAL NIKE, INC. REVENUES. The text also says 'down 4 percent on a reported basis.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue decreased 5% on a currency-neutral (non-GAAP) basis year-over-year",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320187/000032018726000184/q1fy27exhibit991er.htm",
+     "reason": "The source table shows a second percentage column of '-5%' for TOTAL NIKE, INC. REVENUES. The text says 'down 5 percent on a currency-neutral basis.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Nike Brand revenues were $10,952 million, down 4% on both reported and currency-neutral bases",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320187/000032018726000184/q1fy27exhibit991er.htm",
+     "reason": "The source table shows 'TOTAL NIKE BRAND' at $10,952 million for 8/31/2026, with changes of '-4%' and '-4%' for the two percentage columns.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Converse revenues were $263 million, down 28% on both reported and currency-neutral bases",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320187/000032018726000184/q1fy27exhibit991er.htm",
+     "reason": "The source table shows 'Converse' at $263 million for 8/31/2026, with changes of '-28%' and '-28%'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "As of 2026-10-01, the Q1 FY2027 Form 10-Q has not yet been filed; only the earnings release (8-K) is available",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320187/000032018726000184/q1fy27exhibit991er.htm",
+     "reason": "The cited source is the 8-K earnings release (EX-99.1) filed 2026-10-01. The source does not mention a 10-Q filing. The claim is an inference about the absence of a 10-Q, which is reasonable but not directly verified by the source.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "As of 2026-10-01, Q2 FY2027 (September 1 to November 30, 2026) revenue has not been reported",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/320187/000032018726000184/q1fy27exhibit991er.htm",
+     "reason": "The source only covers Q1 FY2027 results. It does not discuss Q2. The claim is a logical inference based on the date of the release (October 1, 2026) and Nike's fiscal calendar, but not directly supported by the source.",
+     "supported": null,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 10,
+   "supported": 8,
+   "not_retrieved": 0
+  }
+ }
+}

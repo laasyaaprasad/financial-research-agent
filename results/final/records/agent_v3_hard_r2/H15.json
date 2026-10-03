@@ -1,0 +1,193 @@
+{
+ "id": "H15",
+ "category": "Qualitative retrieval",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "abstain",
+ "question": "What was Kinsale Capital Group's 2025 combined ratio for its Commercial Property division?",
+ "grading": "Must state that Kinsale does not disclose a combined ratio (or loss/expense ratio) for the Commercial Property division; it reports one segment and only company-wide ratios. May add the consolidated FY2025 combined ratio 75.9% (loss ratio 55.1%, expense ratio 20.8%) clearly labelled consolidated, and the division-level data that is disclosed (Commercial Property gross written premiums USD 374.5M, -17.9% y/y, 18.9% of total). Fail if any division-level combined-ratio number is presented as company-reported, or if 75.9% is presented as the Commercial Property ratio.",
+ "answer": "Kinsale does not disclose a combined ratio for the Commercial Property division. The company has one reportable segment (Excess and Surplus Lines Insurance) and reports loss, expense and combined ratios only on a consolidated basis: FY2025 combined ratio 75.9% (loss ratio 55.1%, expense ratio 20.8%) [H15-E1][H15-E2]. By division it discloses gross written premiums only; Commercial Property GWP was USD 374.5 million in 2025 (18.9% of total, down 17.9% from USD 456.2 million) [H15-E1]. A text search of the FY2025 10-K, the 2026 Q1/Q2 10-Qs, the Q4 2025 and 2026 Q1/Q2 earnings releases and the January 8, 2026 Investor Day slide text finds no combined or loss ratio tied to a named division [H15-E1][H15-E3][H15-E4].",
+ "output": {
+  "answer": "**Question:** What was Kinsale Capital Group's 2025 combined ratio for its Commercial Property division?\n*As of 2026-10-03*\n\n- Kinsale Capital Group reported a company-wide combined ratio of 75.9% for the year ended December 31, 2025 (FY2025), versus 76.4% for the year ended December 31, 2024; the combined ratio is a non-GAAP measure defined as the sum of the loss ratio and expense ratio as presented. [1][2]\n- Kinsale's Commercial Property Division is its largest division, and its gross written premiums were $374,451 thousand for the year ended December 31, 2025, down 17.9% from the prior year, but the company does not report a combined ratio for that division. [1][2]\n\n**Not available**\n- Kinsale Capital Group's FY2025 combined ratio for its Commercial Property division: Kinsale reports underwriting results (loss, expense and combined ratios) only on a consolidated company-wide basis; the FY2025 earnings release and 10-K disclose gross written premiums by underwriting division (including Commercial Property) but no division-level combined ratio. [1][2]\n\n**Sources**\n[1] Kinsale Capital Group, Inc. earnings release for FY2025, 8-K EX-99.1 (filed 2026-02-12) (www.sec.gov, 2026-02-12, primary) https://www.sec.gov/Archives/edgar/data/1669162/000166916226000012/earningsrelease4q2025.htm\n[2] Kinsale Capital Group, Inc. 10-K for FY2025 (filed 2026-02-20) (www.sec.gov, 2026-02-20, primary) https://www.sec.gov/Archives/edgar/data/1669162/000166916226000015/knsl-20251231.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 23199,
+   "output": 3001
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 24.07,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/eaa2d63950ddd7b1e0d3a31158406e8d",
+  "companies": [
+   {
+    "name": "Kinsale Capital Group, Inc.",
+    "ticker": "KNSL",
+    "cik": "1669162",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Kinsale Capital Group FY2025 combined ratio for the Commercial Property division",
+    "FY2025 loss ratio and expense ratio components for the Commercial Property division (if disclosed separately)",
+    "FY2024 combined ratio for the Commercial Property division for comparison",
+    "Definition/basis of the division-level combined ratio (GAAP vs. underwriting ratio presentation) as described in the filing"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "KNSL",
+     "label": "FY2025"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "KNSL",
+     "period": "FY2025",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "KNSL",
+     "period": "FY2025",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "KNSL",
+     "period": "FY2024",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Kinsale discloses underwriting results by division (e.g., Commercial Property, Small Business, Excess & Surplus) in its earnings release tables and 10-K MD&A; if the Commercial Property division's combined ratio is not broken out separately, only company-wide or other division groupings will be available.",
+    "FY2025 is fully reported (10-K filed 2026-02-20), so no estimation is needed."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Kinsale Capital Group's FY2025 combined ratio for its Commercial Property division",
+    "kind": "not_disclosed",
+    "reason": "Kinsale reports underwriting results (loss, expense and combined ratios) only on a consolidated company-wide basis; the FY2025 earnings release and 10-K disclose gross written premiums by underwriting division (including Commercial Property) but no division-level combined ratio.",
+    "evidence_ids": [
+     "E1",
+     "E2"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1669162/000166916226000012/earningsrelease4q2025.htm",
+    "https://www.sec.gov/Archives/edgar/data/1669162/000166916226000015/knsl-20251231.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 5,
+   "retrieved_primary": 5
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "State that Kinsale does not disclose a combined ratio (or loss/expense ratio) for the Commercial Property division",
+     "met": true,
+     "note": "Agent explicitly states 'the company does not report a combined ratio for that division' and 'no division-level combined ratio.'"
+    },
+    {
+     "point": "State that it reports one segment and only company-wide ratios",
+     "met": true,
+     "note": "Agent states 'Kinsale reports underwriting results (loss, expense and combined ratios) only on a consolidated company-wide basis.'"
+    },
+    {
+     "point": "May add the consolidated FY2025 combined ratio 75.9% (loss ratio 55.1%, expense ratio 20.8%) clearly labelled consolidated",
+     "met": true,
+     "note": "Agent provides consolidated combined ratio 75.9% labelled as company-wide; loss/expense breakdown omitted but optional."
+    },
+    {
+     "point": "May add the division-level data that is disclosed (Commercial Property gross written premiums USD 374.5M, -17.9% y/y, 18.9% of total)",
+     "met": true,
+     "note": "Agent provides GWP $374,451 thousand and -17.9% y/y; 18.9% of total omitted but optional."
+    },
+    {
+     "point": "No division-level combined-ratio number presented as company-reported",
+     "met": true,
+     "note": "Agent presents no division-level combined ratio."
+    },
+    {
+     "point": "75.9% not presented as the Commercial Property ratio",
+     "met": true,
+     "note": "Agent presents 75.9% as company-wide combined ratio, not attributed to Commercial Property."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly states that Kinsale does not disclose a division-level combined ratio for Commercial Property, provides the consolidated combined ratio (75.9%) clearly labelled as company-wide, and includes the disclosed division-level GWP data. No division-level combined ratio is presented, and the consolidated ratio is not misattributed."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Kinsale Capital Group reported a company-wide combined ratio of 75.9% for the year ended December 31, 2025 (FY2025), versus 76.4% for the year ended December 31, 2024",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1669162/000166916226000012/earningsrelease4q2025.htm",
+     "reason": "The earnings release shows a table with 'Combined ratio(5)' for 'Year Ended December 31, 2025' as 75.9% and for '2024' as 76.4%. The 10-K also shows 'Combined ratio (3)' 75.9% for 2025 and 76.4% for 2024.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The combined ratio is a non-GAAP measure defined as the sum of the loss ratio and expense ratio as presented",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1669162/000166916226000012/earningsrelease4q2025.htm",
+     "reason": "The earnings release includes footnote (5): 'The combined ratio is the sum of the loss ratio and expense ratio as presented. Calculations of each component may not add due to rounding.' The 10-K also states: 'Combined ratio is the sum of the loss ratio and the expense ratio as presented.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Kinsale's Commercial Property Division is its largest division",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1669162/000166916226000012/earningsrelease4q2025.htm",
+     "reason": "The earnings release states: 'Gross written premiums in the Commercial Property Division, the Company's largest division, declined 28.3% in the fourth quarter and 17.9% for the year ended December 31, 2025'. The 10-K similarly refers to 'our Commercial Property Division, our largest division'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Commercial Property Division gross written premiums were $374,451 thousand for the year ended December 31, 2025, down 17.9% from the prior year",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1669162/000166916226000012/earningsrelease4q2025.htm",
+     "reason": "The earnings release shows a table: 'Commercial Property | $ | 374,451 | $ | 456,170 | $ | 411,956' for years ended Dec 31, 2025, 2024, 2023. The decline from 456,170 to 374,451 is (456,170-374,451)/456,170 = 17.91%, matching the stated 17.9%. The 10-K also states 'Gross written premiums in our Commercial Property Division... decreased 17.9% relative to the prior year period'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Kinsale Capital Group does not report a combined ratio for its Commercial Property division",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1669162/000166916226000012/earningsrelease4q2025.htm",
+     "reason": "Both the earnings release and 10-K present combined ratio only on a consolidated company-wide basis. The segment reporting in the 10-K shows segment net income but no loss, expense, or combined ratios for individual divisions. The earnings release only shows company-wide combined ratio.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Kinsale reports underwriting results (loss, expense and combined ratios) only on a consolidated company-wide basis",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1669162/000166916226000015/knsl-20251231.htm",
+     "reason": "The 10-K includes a 'Summary of Operating Results' table with loss ratio, expense ratio, and combined ratio only for the consolidated company. Segment information (Note 13) provides segment net income but not underwriting ratios. The earnings release similarly only provides company-wide ratios.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The FY2025 earnings release and 10-K disclose gross written premiums by underwriting division (including Commercial Property) but no division-level combined ratio",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1669162/000166916226000012/earningsrelease4q2025.htm",
+     "reason": "The earnings release includes a table showing gross written premiums for Commercial Property division. The 10-K also provides gross written premiums by division. Neither source provides a combined ratio for any division.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 2,
+   "numeric_cited": 2,
+   "cited": 7,
+   "supported": 7,
+   "not_retrieved": 0
+  }
+ }
+}

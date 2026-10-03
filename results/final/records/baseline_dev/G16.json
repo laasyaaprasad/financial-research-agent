@@ -1,0 +1,203 @@
+{
+ "id": "G16",
+ "category": "Beat or miss",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "Did Walmart's Q2 FY2027 results land above, within, or below the Q2 guidance it gave in its Q1 FY2027 release, on net sales growth (cc), adjusted operating income growth (cc), and adjusted EPS?",
+ "grading": "Key points: (1) states each of the 3 guidance ranges correctly; (2) states each actual correctly (cc where specified); (3) correct per-metric verdict (above/within/below); (4) does not use LSEG/FactSet consensus as the benchmark",
+ "answer": "Against the Q1 release guide: net sales growth in constant currency was 5.0% versus 4.0–5.0%, within at the upper end; adjusted operating income growth in constant currency was 17.4% versus 7.0–10.0%, above; adjusted EPS was $0.81 versus $0.72–$0.74, above. Use net sales growth, not the 5.1% constant-currency total-revenue headline. The guide excluded tariff-refund benefits. [G16-E1, G16-E2]",
+ "output": {
+  "answer": "**Short answer: net sales (cc) — within (top end); adjusted operating income (cc) — nominally way above, but essentially in line ex-tariff refunds; adjusted EPS — above.**\n\n**Guidance given at Q1 FY27 (May 21, 2026)** — Q2 FY27:\n- Net sales (cc): +4.0% to 5.0%\n- Adjusted operating income (cc): +7.0% to 10.0%\n- Adjusted EPS: $0.72–$0.74\n\n**Q2 FY27 actuals (Aug 20, 2026)**\n| Metric | Guidance | Actual | Verdict |\n|---|---|---|---|\n| Net sales (cc) | +4.0–5.0% | ~+5% (revenue +5.9%, +5.1% cc) | Within — top end |\n| Adj. operating income (cc) | +7–10% | +17.4% | Above (but see caveat) |\n| Adjusted EPS | $0.72–$0.74 | $0.81 | Above |\n\n**Important caveat on operating income:** management said the ~17.4% cc adjusted operating income growth included a **~750 bps net benefit from IEEPA tariff refunds** — and the Q1 guidance explicitly **excluded any tariff-refund impact**. Setting that benefit aside, \"underlying operating income growth was at the top end of our 7–10% guidance,\" i.e., effectively in line/at the high end. Adjusted EPS of $0.81 likewise reflects the tariff-refund benefit.\n\nSo: sales in line at the high end, EPS clearly above, and operating income only \"above\" because of a one-time item that wasn't in the guidance baseline.\n\nSources:\n- Q1 FY27 release (guidance): https://www.sec.gov/Archives/edgar/data/104169/000010416926000095/earningsreleasefy27q1.htm\n- Q2 FY27 release: https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm\n- Q2 FY27 transcript (tariff refund / guidance framing): https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/transcript_management_call/Earnings+Transcript+%28FY27+Q2%29.pdf\n- Corporate Q2 FY27 summary: https://corporate.walmart.com/news/2026/08/20/walmart-releases-q2-fy27-earnings",
+  "tokens": {
+   "input": 15998,
+   "output": 1540
+  },
+  "tavily_credits": 4,
+  "latency_s": 11.73,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/6e408f3ad01e0dbf20e9c1015061904e",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q1 FY2027 earnings release Q2 guidance net sales growth constant currency adjusted EPS",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY2027 results adjusted EPS net sales growth constant currency",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://corporate.walmart.com/news/2026/08/20/walmart-releases-q2-fy27-earnings",
+    "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/transcript_management_call/Earnings+Transcript+%28FY27+Q2%29.pdf",
+    "https://www.sec.gov/Archives/edgar/data/104169/000010416926000095/earningsreleasefy27q1.htm",
+    "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm"
+   ],
+   "cited_primary": 4,
+   "retrieved": 16,
+   "retrieved_primary": 7
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "States each of the 3 guidance ranges correctly",
+     "met": true,
+     "note": "Agent correctly lists net sales CC growth guidance +4.0–5.0%, adjusted operating income CC growth +7.0–10.0%, adjusted EPS $0.72–$0.74."
+    },
+    {
+     "point": "States each actual correctly (cc where specified)",
+     "met": true,
+     "note": "Agent states net sales CC growth ~+5% (actual 5.0%), adjusted operating income CC growth +17.4%, adjusted EPS $0.81; all match reference."
+    },
+    {
+     "point": "Correct per-metric verdict (above/within/below)",
+     "met": true,
+     "note": "Agent verdicts: net sales within top end, adjusted operating income above, adjusted EPS above; matches reference."
+    },
+    {
+     "point": "Does not use LSEG/FactSet consensus as the benchmark",
+     "met": true,
+     "note": "Agent uses company guidance from Q1 FY27 release, not consensus estimates."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All four grading requirements are satisfied; the agent accurately reports guidance ranges, actuals, and verdicts without relying on consensus benchmarks."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Guidance for Q2 FY27 (given at Q1 FY27 on May 21, 2026): Net sales (cc) growth +4.0% to 5.0%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000095/earningsreleasefy27q1.htm",
+     "reason": "The Q1 FY27 SEC filing shows a table with 'Consolidated metric Q2 FY27 Net sales (cc) Increase 4.0% to 5.0%'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Guidance for Q2 FY27: Adjusted operating income (cc) growth +7.0% to 10.0%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000095/earningsreleasefy27q1.htm",
+     "reason": "The same filing shows 'Operating income (cc) Increase 7.0% to 10.0%'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Guidance for Q2 FY27: Adjusted EPS $0.72–$0.74",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000095/earningsreleasefy27q1.htm",
+     "reason": "The filing shows 'Adjusted EPS $0.72 to $0.74'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY27 actual net sales (cc) growth ~+5% (revenue +5.9%, +5.1% cc)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm",
+     "reason": "The Q2 FY27 SEC filing states 'Revenue growth of 5.9%, up 5.1% in constant currency (cc)'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY27 actual adjusted operating income (cc) growth +17.4%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm",
+     "reason": "The filing states 'Operating income growth of 28.8%, up 17.4% adjusted (cc)'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY27 actual adjusted EPS $0.81",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm",
+     "reason": "The filing states 'GAAP EPS of $0.80; Adjusted EPS1 of $0.81'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Verdict: Net sales (cc) within guidance at top end",
+     "numeric": false,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/transcript_management_call/Earnings+Transcript+%28FY27+Q2%29.pdf",
+     "reason": "The Q2 transcript says: 'Net Sales, enterprise net sales growth in constant currency of 5% was at the top end of our guidance of 4 to 5%'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Verdict: Adjusted operating income (cc) above guidance",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm",
+     "reason": "Actual adjusted operating income growth of 17.4% (cc) exceeds the guidance range of 7–10%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Verdict: Adjusted EPS above guidance",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm",
+     "reason": "Actual adjusted EPS of $0.81 exceeds the guidance range of $0.72–$0.74.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management stated the ~17.4% cc adjusted operating income growth included ~750 bps net benefit from IEEPA tariff refunds",
+     "numeric": true,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/transcript_management_call/Earnings+Transcript+%28FY27+Q2%29.pdf",
+     "reason": "The transcript states: 'Operating income growth included a net benefit of approximately 750 basis points related to tariff refunds received in Q2.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 guidance explicitly excluded any tariff-refund impact",
+     "numeric": false,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/transcript_management_call/Earnings+Transcript+%28FY27+Q2%29.pdf",
+     "reason": "The transcript quotes management: 'We'd also like to note that our guidance does not assume any impact from IEEPA tariff refunds.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Excluding the tariff-refund benefit, underlying operating income growth was at the top end of the 7–10% guidance",
+     "numeric": false,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/transcript_management_call/Earnings+Transcript+%28FY27+Q2%29.pdf",
+     "reason": "The transcript states: 'Setting aside this benefit, underlying operating income growth was at the top end of our 7 to 10% guidance.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Adjusted EPS of $0.81 likewise reflects the tariff-refund benefit",
+     "numeric": true,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/transcript_management_call/Earnings+Transcript+%28FY27+Q2%29.pdf",
+     "reason": "The transcript says: 'Enterprise adjusted operating income on a constant currency basis increased over 17% and adjusted EPS increased over 19%. This performance reflects the net benefit from the tariff refunds we received...'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Summary: Sales in line at high end, EPS clearly above, operating income only above due to one-time item not in guidance baseline",
+     "numeric": false,
+     "cited_url": "https://corporate.walmart.com/news/2026/08/20/walmart-releases-q2-fy27-earnings",
+     "reason": "The corporate summary and transcript together support this synthesis: sales at top end of guidance, EPS above, operating income boosted by a one-time tariff refund excluded from guidance.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 8,
+   "cited": 14,
+   "supported": 14,
+   "not_retrieved": 0
+  }
+ }
+}

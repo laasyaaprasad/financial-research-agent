@@ -1,0 +1,190 @@
+{
+ "id": "T14",
+ "category": "Adjustments",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "What caused Boeing's Defense, Space & Security segment to post an operating loss in the second quarter of 2026?",
+ "grading": "Key points: (1) BDS posted a loss from operations of USD 15M (margin -0.2%) vs earnings of USD 110M (margin 1.7%) in Q2 2025; (2) the main driver was a USD 280M reach-forward loss on the VC-25B (Air Force One) program; (3) management ties it to additional production and certification resources / higher costs for structural and wiring installation and airworthiness certification, with first delivery still anticipated in 2028; (4) revenue still rose 13% to USD 7,483M on higher volume, so the loss is a charge, not a demand issue. Partial credit for 3 of 4.",
+ "answer": "Boeing's Defense, Space & Security segment recorded a loss from operations of USD 15 million in Q2 2026 (margin -0.2%) versus earnings of USD 110 million (1.7%) a year earlier, even though revenue grew 13% to USD 7,483 million on higher volume. The release says results include USD 280 million of losses on the VC-25B program, primarily driven by an investment in additional production and certification resources (first delivery still anticipated in 2028). [T14-E1] The 10-Q attributes the USD 125 million earnings decrease mainly to USD 186 million higher net unfavorable cumulative catch-up adjustments, driven by the USD 280 million 2026 reach-forward loss on VC-25B, and to higher G&A, partially offset by higher volume; the loss reflects higher estimated costs for structural and wiring installation and airworthiness certification. [T14-E2]",
+ "output": {
+  "answer": "**Bottom line:** Boeing's Defense, Space & Security (BDS) segment posted a **$15 million operating loss** in Q2 2026 (versus a $110 million profit a year earlier) almost entirely because of a **$280 million charge on the VC-25B program** — the two 747-8s being converted into the next-generation Air Force One.\n\n**Key details:**\n- **The charge:** Boeing recorded $280 million in additional losses on the VC-25B program, which it attributed primarily to \"an investment in additional production and certification resources.\" First delivery is still expected in 2028.\n- **Why it hits so hard:** VC-25B is a 2018 firm-fixed-price contract (~$3.9 billion) under which Boeing absorbs every dollar of cost overrun, so added costs flow straight to the segment's bottom line.\n- **Revenue rose anyway:** BDS revenue grew 13% year over year to $7.483 billion (H1: $15.08 billion, +17%) on higher volume, but the margin fell to **(0.2)%** from 1.7%.\n- **Backlog:** BDS backlog stood at ~$85 billion, 27% from non-U.S. customers.\n- **Context:** The charge was the single line item that drove Boeing's wider-than-expected company-wide loss — core loss per share of $0.76 versus consensus of roughly $0.30–0.34 — even as free cash flow turned positive ($631 million) and total backlog hit a record $715 billion.\n\n**Sources:**\n- Boeing Q2 2026 press release: https://investors.boeing.com/investors/news/press-release-details/2026/Boeing-Reports-Second-Quarter-Results/default.aspx (PDF: https://s2.q4cdn.com/661678649/files/doc_financials/2026/q2/Press-Release.pdf)\n- CNBC: https://www.cnbc.com/2026/07/28/boeing-ba-2q-2026-earnings.html\n- Airforce Technology: https://www.airforce-technology.com/news/boeing-defence-q2-2026-results\n- AeroTime: https://www.aerotime.aero/articles/boeing-q2-2026-positive-cash-flow-revenue\n- Quartz: https://qz.com/boeing-second-quarter-earnings-air-force-one-charge-072826\n- Lynnwood Times: https://lynnwoodtimes.com/2026/07/29/boeing-second",
+  "tokens": {
+   "input": 13487,
+   "output": 777
+  },
+  "tavily_credits": 3,
+  "latency_s": 7.98,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/a72932ce80884f1e0af0df088f479237",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Boeing Defense, Space & Security segment operating loss second quarter 2026",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Boeing Q2 2026 earnings results defense space security",
+     "time_range": "year"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investors.boeing.com/investors/news/press-release-details/2026/Boeing-Reports-Second-Quarter-Results/default.aspx",
+    "https://lynnwoodtimes.com/2026/07/29/boeing-second",
+    "https://qz.com/boeing-second-quarter-earnings-air-force-one-charge-072826",
+    "https://s2.q4cdn.com/661678649/files/doc_financials/2026/q2/Press-Release.pdf",
+    "https://www.aerotime.aero/articles/boeing-q2-2026-positive-cash-flow-revenue",
+    "https://www.airforce-technology.com/news/boeing-defence-q2-2026-results",
+    "https://www.cnbc.com/2026/07/28/boeing-ba-2q-2026-earnings.html"
+   ],
+   "cited_primary": 1,
+   "retrieved": 16,
+   "retrieved_primary": 2
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "BDS posted a loss from operations of USD 15M (margin -0.2%) vs earnings of USD 110M (margin 1.7%) in Q2 2025",
+     "met": true,
+     "note": "Agent states $15M operating loss vs $110M profit a year earlier, margin (0.2)% vs 1.7%."
+    },
+    {
+     "point": "The main driver was a USD 280M reach-forward loss on the VC-25B (Air Force One) program",
+     "met": true,
+     "note": "Agent states $280M charge on VC-25B program, identifies it as Air Force One."
+    },
+    {
+     "point": "Management ties it to additional production and certification resources / higher costs for structural and wiring installation and airworthiness certification, with first delivery still anticipated in 2028",
+     "met": true,
+     "note": "Agent quotes 'investment in additional production and certification resources' and notes first delivery expected 2028."
+    },
+    {
+     "point": "Revenue still rose 13% to USD 7,483M on higher volume, so the loss is a charge, not a demand issue",
+     "met": true,
+     "note": "Agent states revenue grew 13% to $7.483B on higher volume."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All four key points are accurately covered in the agent's answer with correct figures and context."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Boeing's Defense, Space & Security (BDS) segment posted a $15 million operating loss in Q2 2026 versus a $110 million profit in Q2 2025",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/661678649/files/doc_financials/2026/q2/Press-Release.pdf",
+     "reason": "The PDF press release shows Table 5: Defense, Space & Security Earnings/(loss) from operations for Q2 2026 is ($15) million and for Q2 2025 is $110 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The loss was almost entirely due to a $280 million charge on the VC-25B program",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/661678649/files/doc_financials/2026/q2/Press-Release.pdf",
+     "reason": "The press release states: 'Results include $280 million of losses on the VC-25B program primarily driven by an investment in additional production and certification resources.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The VC-25B program converts two 747-8 aircraft into the next-generation Air Force One",
+     "numeric": false,
+     "cited_url": "https://www.cnbc.com/2026/07/28/boeing-ba-2q-2026-earnings.html",
+     "reason": "CNBC reports: 'Boeing took a $280 million loss on the program to deliver two 747s that will serve as the next-generation Air Force One aircraft.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Boeing attributed the $280 million charge primarily to an investment in additional production and certification resources",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/661678649/files/doc_financials/2026/q2/Press-Release.pdf",
+     "reason": "The press release explicitly says the $280 million losses were 'primarily driven by an investment in additional production and certification resources.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "First delivery of the VC-25B aircraft is still expected in 2028",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/661678649/files/doc_financials/2026/q2/Press-Release.pdf",
+     "reason": "The press release states: 'The company continues to anticipate first delivery in 2028.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "VC-25B is a 2018 firm-fixed-price contract worth approximately $3.9 billion under which Boeing absorbs all cost overruns",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/1-number-behind-boeing-q2-151513228.html",
+     "reason": "The Yahoo Finance article (syndicated from 24/7 Wall St.) describes the VC-25B as a 'two-jet, $3.9 billion firm-fixed-price contract awarded in July 2018' where 'Boeing eats every dollar of cost overrun.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "BDS revenue grew 13% year over year to $7.483 billion in Q2 2026 (first half: $15.08 billion, up 17%)",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/661678649/files/doc_financials/2026/q2/Press-Release.pdf",
+     "reason": "Table 5 in the press release shows Q2 2026 Revenues $7,483 million vs $6,617 million in 2025 (13% change) and First Half 2026 $15,082 million vs $12,915 million (17% change).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "BDS operating margin fell to (0.2)% in Q2 2026 from 1.7% in Q2 2025",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/661678649/files/doc_financials/2026/q2/Press-Release.pdf",
+     "reason": "Table 5 shows Operating margins for Q2 2026 (0.2)% and Q2 2025 1.7%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "BDS backlog stood at approximately $85 billion, with 27% from non-U.S. customers",
+     "numeric": true,
+     "cited_url": "https://www.airforce-technology.com/news/boeing-defence-q2-2026-results",
+     "reason": "Airforce Technology article states: 'Defense backlog stood at $85 billion, of which 27% came from customers outside the United States.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The VC-25B charge was the single line item that drove Boeing's wider-than-expected company-wide loss, resulting in a core loss per share of $0.76 versus consensus of roughly $0.30–0.34",
+     "numeric": true,
+     "cited_url": "https://www.cnbc.com/2026/07/28/boeing-ba-2q-2026-earnings.html",
+     "reason": "CNBC reports the core loss per share of $0.76 and consensus estimate of $0.34; Quartz cites a 30-cent estimate. The Yahoo Finance article explicitly calls the $280 million charge 'the single line item that pushed the company's Defense, Space & Security segment into the red and drove a wider-than-expected loss.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Free cash flow turned positive at $631 million in Q2 2026",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/661678649/files/doc_financials/2026/q2/Press-Release.pdf",
+     "reason": "The press release states 'free cash flow (non-GAAP) of $0.6 billion'; other sources (Yahoo Finance, AeroTime, Quartz) specify $631 million. The $0.6 billion figure is consistent with rounding to the nearest hundred million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total company backlog hit a record $715 billion",
+     "numeric": true,
+     "cited_url": "https://s2.q4cdn.com/661678649/files/doc_financials/2026/q2/Press-Release.pdf",
+     "reason": "The press release states: 'Total company backlog grew to a record $715 billion, including over 6,200 commercial airplanes.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 11,
+   "numeric_cited": 11,
+   "cited": 12,
+   "supported": 12,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,227 @@
+{
+ "id": "G17",
+ "category": "Qualitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "According to Walmart management, what drove the growth in Q2 FY2027 adjusted operating income, and how much of it was one-time?",
+ "grading": "Key points: (1) lists drivers explicitly cited by management (verify against source); (2) quantifies any one-time item if management did; (3) distinguishes reported vs adjusted operating income growth; (4) every causal claim has a citation",
+ "answer": "Management cited strong sales, better business mix from advertising and membership, improving eCommerce economics, and tariff refunds partly reinvested in prices. Gross-profit rate rose 96 basis points; operating-cost deleverage included higher U.S. self-insured liability claims, depreciation and healthcare expenses. [G17-E1, G17-E2] Adjusted operating income rose 17.4% in constant currency, versus 28.8% reported growth. Management quantified the one-time net tariff-refund contribution at approximately 750 basis points (7.5 percentage points) of operating-income growth, leaving underlying growth at the top end of the 7–10% guide. Nearly USD 2.9 billion of refunds received is the gross refund amount, not the net profit benefit. [G17-E3]",
+ "output": {
+  "answer": "## Summary\n\n**Headline:** Walmart's Q2 FY2027 (quarter ended July 31, 2026) adjusted operating income rose **17.4% in constant currency** (to ~$9.2 billion), while reported operating income grew **28.8%**. Management attributed the bulk of the upside to a **one-time tariff refund benefit**.\n\n### What management said drove the growth\n\nPer CFO John David Rainey on the Aug. 20, 2026 earnings call and the earnings release, the 17.4% (cc) adjusted operating income growth reflected:\n\n- **A net benefit of ~750 bps from IEEPA tariff refunds** received in Q2 — the company collected **nearly $2.9 billion** in refunds, recorded as a reduction to cost of sales (primarily in Walmart U.S.). This is explicitly framed as a non-recurring item.\n- **Higher gross margin / gross profit rate** (up 96 bps), also largely tariff-refund driven.\n- **Improved incremental margins in digital** and strength in **high-margin commerce solutions** — global advertising up 38%, membership fee revenue up 17%, marketplace growth.\n- **Strong sales growth** (revenue +5.9%, +5.1% cc) — partly offset by **price investments/rollbacks** and **operating expense deleverage** (72 bps, from higher claims expense, depreciation and associate healthcare costs).\n\n### How much was one-time\n\n- **Approximately 750 basis points** of the 17.4% growth — i.e., roughly **43% of the headline growth rate** — came from the tariff-refund benefit, net of price investments made in the quarter.\n- Stripping that out, management said **underlying operating income growth was at the top end of its 7%–10% guidance range**.\n- Rainey cautioned there are \"some idiosyncrasies to this quarter's results\" and asked investors to **view Q2 and Q3 together**, since remaining refunds are being reinvested into price and customer experience in H2. Consequently, Walmart guided **Q3 adjusted operating income growth to just 2%–4% (cc)**, while **raising full-year FY27 guidance to 7.0%–8.5% (cc)** from 6%–8%.\n\n**Bottom line:** Growth was driven by the one-time ~$2.9B tariff refund (≈750 bps of the 17.4%), plus durable mix/eCommerce-economics gains; underlying growth was ~7–10%, at the top end of guidance.\n\n### Sources\n- Walmart Q2 FY27 Earnings Release: https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm\n- Walmart Q2 FY27 Earnings Call transcript (management): https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/transcript_management_call/Earnings+Transcript+%28FY27+Q2%29.pdf\n- Walmart corporate news release: https://corporate.walmart.com/news/2026/08/20/walmart-releases-q2-fy27-earnings\n- Walmart 10-Q (tariff refunds ~$2.9B): https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000154/wmt-20260731.htm\n- CNBC coverage: https://www.cnbc.com/2026/08/20/walmart-wmt-q2-2027-earnings.html",
+  "tokens": {
+   "input": 32131,
+   "output": 1546
+  },
+  "tavily_credits": 4,
+  "latency_s": 14.83,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/93739afd4df097db6882a5b97d7ce353",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY2027 adjusted operating income growth",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart second quarter fiscal 2027 earnings results"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY27 earnings call transcript tariff refunds 750 basis points adjusted operating income",
+     "include_domains": [
+      "stock.walmart.com",
+      "sec.gov"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart Q2 FY27 adjusted operating income constant currency 17.4% tariff refunds one-time"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://corporate.walmart.com/news/2026/08/20/walmart-releases-q2-fy27-earnings",
+    "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/transcript_management_call/Earnings+Transcript+%28FY27+Q2%29.pdf",
+    "https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000154/wmt-20260731.htm",
+    "https://www.cnbc.com/2026/08/20/walmart-wmt-q2-2027-earnings.html",
+    "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm"
+   ],
+   "cited_primary": 4,
+   "retrieved": 33,
+   "retrieved_primary": 15
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Lists drivers explicitly cited by management (verify against source)",
+     "met": true,
+     "note": "Agent lists tariff refunds, gross margin improvement (96 bps), digital/incremental margins, advertising (38%) and membership (17%) growth, sales growth, and cost headwinds (claims, depreciation, healthcare), all matching reference drivers and attributed to management via earnings call/release."
+    },
+    {
+     "point": "Quantifies any one-time item if management did",
+     "met": true,
+     "note": "Agent quantifies the one-time net tariff-refund contribution at ~750 bps (7.5 pp) of operating income growth and notes ~$2.9B gross refunds, matching reference."
+    },
+    {
+     "point": "Distinguishes reported vs adjusted operating income growth",
+     "met": true,
+     "note": "Agent clearly states adjusted operating income grew 17.4% (cc) and reported operating income grew 28.8%, matching reference."
+    },
+    {
+     "point": "Every causal claim has a citation",
+     "met": true,
+     "note": "Agent attributes all causal claims to CFO Rainey on the Aug 20, 2026 earnings call and earnings release, and provides a sources list with URLs for the transcript, release, 10-Q, etc."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer satisfies all four grading requirements: it lists management-cited drivers, quantifies the one-time tariff refund benefit, distinguishes reported vs adjusted operating income growth, and provides citations for all causal claims."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Walmart's Q2 FY2027 (quarter ended July 31, 2026) adjusted operating income rose 17.4% in constant currency (to ~$9.2 billion)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm",
+     "reason": "SEC earnings release shows 'Operating income growth of 28.8%, up 17.4% adjusted (cc)1' and presentation shows 'Adjusted operating income (cc) ... 17.4%'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Reported operating income grew 28.8%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm",
+     "reason": "SEC earnings release states 'Operating income growth of 28.8%'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management attributed the bulk of the upside to a one-time tariff refund benefit",
+     "numeric": false,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/transcript_management_call/Earnings+Transcript+%28FY27+Q2%29.pdf",
+     "reason": "Transcript includes 'Operating income growth included a net benefit of approximately 750 basis points related to tariff refunds received in Q2' and 'Setting aside this benefit, underlying operating income growth was at the top end of our guidance.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "CFO John David Rainey on Aug. 20, 2026 earnings call and earnings release said the 17.4% (cc) adjusted operating income growth reflected a net benefit of ~750 bps from IEEPA tariff refunds received in Q2",
+     "numeric": true,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/transcript_management_call/Earnings+Transcript+%28FY27+Q2%29.pdf",
+     "reason": "Transcript states 'Operating income growth included a net benefit of approximately 750 basis points related to tariff refunds received in Q2.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The company collected nearly $2.9 billion in refunds, recorded as a reduction to cost of sales (primarily in Walmart U.S.)",
+     "numeric": true,
+     "cited_url": "https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000154/wmt-20260731.htm",
+     "reason": "10-Q filing says 'approximately $2.9 billion in tariff refunds, primarily in the Walmart U.S. segment, which were recorded as a reduction to cost of sales'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "This is explicitly framed as a non-recurring item",
+     "numeric": false,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/transcript_management_call/Earnings+Transcript+%28FY27+Q2%29.pdf",
+     "reason": "Transcript says 'Setting aside this benefit, underlying operating income growth was at the top end of our guidance,' implying non-recurring nature.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Higher gross margin / gross profit rate (up 96 bps), also largely tariff-refund driven",
+     "numeric": true,
+     "cited_url": "https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000154/wmt-20260731.htm",
+     "reason": "10-Q states 'Gross profit as a percentage of net sales (\"gross profit rate\") increased 96 and 53 basis points for the three and six months ended July 31, 2026, respectively... primarily due to tariff refunds'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Improved incremental margins in digital and strength in high-margin commerce solutions — global advertising up 38%, membership fee revenue up 17%, marketplace growth",
+     "numeric": true,
+     "cited_url": "https://corporate.walmart.com/news/2026/08/20/walmart-releases-q2-fy27-earnings",
+     "reason": "Corporate news release mentions 'global advertising up 38%, membership fee revenue up 17%, marketplace growth'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Strong sales growth (revenue +5.9%, +5.1% cc)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm",
+     "reason": "SEC earnings release shows 'Revenue of $187.9 billion, up 5.9%, or 5.1% (cc)1'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Partly offset by price investments/rollbacks and operating expense deleverage (72 bps, from higher claims expense, depreciation and associate healthcare costs)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm",
+     "reason": "SEC earnings release states 'Operating expense deleveraged 72 bps due to higher claims expense, depreciation, and associate healthcare costs'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Approximately 750 basis points of the 17.4% growth — i.e., roughly 43% of the headline growth rate — came from the tariff-refund benefit, net of price investments made in the quarter",
+     "numeric": true,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/transcript_management_call/Earnings+Transcript+%28FY27+Q2%29.pdf",
+     "reason": "Transcript states 'Operating income growth included a net benefit of approximately 750 basis points related to tariff refunds received in Q2.' 750 bps / 1740 bps = 43%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Stripping that out, management said underlying operating income growth was at the top end of its 7%–10% guidance range",
+     "numeric": true,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/transcript_management_call/Earnings+Transcript+%28FY27+Q2%29.pdf",
+     "reason": "Transcript says 'Setting aside this benefit, underlying operating income growth was at the top end of our 7% to 10% guidance.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Rainey cautioned there are 'some idiosyncrasies to this quarter's results' and asked investors to view Q2 and Q3 together, since remaining refunds are being reinvested into price and customer experience in H2",
+     "numeric": false,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/transcript_management_call/Earnings+Transcript+%28FY27+Q2%29.pdf",
+     "reason": "Transcript includes 'Rainey cautioned there are \"some idiosyncrasies to this quarter's results\" and asked investors to view Q2 and Q3 together, since remaining refunds are being reinvested into price and customer experience in H2.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Consequently, Walmart guided Q3 adjusted operating income growth to just 2%–4% (cc)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm",
+     "reason": "SEC earnings release states 'For Q3, net sales are expected to grow 3.0% to 3.75% and adjusted operating income to grow 2.0% to 4.0%.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "While raising full-year FY27 guidance to 7.0%–8.5% (cc) from 6%–8%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm",
+     "reason": "SEC earnings release states 'Net sales for FY27 are expected to grow 4.0% to 5.0% and adjusted operating income to grow 7.0% to 8.5%.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 12,
+   "numeric_cited": 12,
+   "cited": 15,
+   "supported": 15,
+   "not_retrieved": 0
+  }
+ }
+}

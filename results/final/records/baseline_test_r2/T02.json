@@ -1,0 +1,140 @@
+{
+ "id": "T02",
+ "category": "Quantitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was the operating income of Disney's Experiences segment in fiscal Q3 2026 (the quarter ended June 27, 2026)? Answer in USD millions.",
+ "grading": "±0.5%, USD millions, segment operating income for the Experiences segment for the quarter ended 2026-06-27. Fail if total segment operating income, another segment, or the nine-month figure is given.",
+ "answer": "Experiences segment operating income was USD 3,017 million in fiscal Q3 2026 (quarter ended June 27, 2026), up 20% from USD 2,516 million in Q3 FY2025, on segment revenue of USD 9,968 million. Total segment operating income was USD 5,555 million, so Experiences was the largest contributor. [T02-E1, T02-E2]",
+ "output": {
+  "answer": "**Disney's Experiences segment operating income in fiscal Q3 2026 (quarter ended June 27, 2026) was $3,017 million** (up 20% vs. $2,516 million a year earlier, a $501 million increase).\n\nThis was a record Q3 for the segment, with revenue of $9.97 billion (+10%). The company noted ~$100 million of the growth came from a one-time tariff refund (roughly 4 points of the 20% growth).\n\nSources:\n- [Disney Q3 FY26 earnings PDF (official)](https://s206.q4cdn.com/979796730/files/doc_financials/2026/q3/q3-fy26-earnings.pdf) — \"Segment operating income increased $501 million, to $3,017 million from $2,516 million\"\n- [Disney Q3 2026 earnings call summary (Yahoo Finance)](https://finance.yahoo.com/markets/stocks/articles/walt-disney-company-q3-2026-214439005.html)",
+  "tokens": {
+   "input": 10255,
+   "output": 596
+  },
+  "tavily_credits": 2,
+  "latency_s": 4.86,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/5c891f2de8954ca9292bfc927374e19d",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Disney Experiences segment operating income fiscal Q3 2026 quarter ended June 27 2026"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Disney fiscal third quarter 2026 results Experiences operating income"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/walt-disney-company-q3-2026-214439005.html",
+    "https://s206.q4cdn.com/979796730/files/doc_financials/2026/q3/q3-fy26-earnings.pdf"
+   ],
+   "cited_primary": 1,
+   "retrieved": 15,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer is in USD millions",
+     "met": true,
+     "note": "Agent states '$3,017 million' which is in USD millions."
+    },
+    {
+     "point": "Answer is for Experiences segment operating income",
+     "met": true,
+     "note": "Agent explicitly says 'Disney's Experiences segment operating income'."
+    },
+    {
+     "point": "Answer is for the quarter ended June 27, 2026 (fiscal Q3 2026)",
+     "met": true,
+     "note": "Agent specifies 'fiscal Q3 2026 (quarter ended June 27, 2026)'."
+    },
+    {
+     "point": "Answer value is within ±0.5% of the correct value (3,017 million)",
+     "met": true,
+     "note": "Agent gives exactly 3,017 million, which matches the reference value exactly (0% deviation)."
+    },
+    {
+     "point": "Answer is not total segment operating income, another segment, or the nine-month figure",
+     "met": true,
+     "note": "Agent provides the Experiences segment Q3 figure, not total segment operating income (5,555), Entertainment (1,680), Sports (858), or nine-month figure (8,941)."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: the agent provides the correct segment (Experiences), correct fiscal quarter (Q3 FY2026 ended June 27, 2026), correct unit (USD millions), and the exact reference value (3,017 million) within the ±0.5% tolerance. No disqualifying figures are given."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Disney's Experiences segment operating income in fiscal Q3 2026 (quarter ended June 27, 2026) was $3,017 million",
+     "numeric": true,
+     "cited_url": "https://s206.q4cdn.com/979796730/files/doc_financials/2026/q3/q3-fy26-earnings.pdf",
+     "reason": "The PDF states: 'Operating Income from Experiences Segment operating income increased $501 million, to $3,017 million from $2,516 million'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Operating income up 20% vs. $2,516 million a year earlier",
+     "numeric": true,
+     "cited_url": "https://s206.q4cdn.com/979796730/files/doc_financials/2026/q3/q3-fy26-earnings.pdf",
+     "reason": "The PDF states: 'Disney Experiences segment operating income growth was 20%' and shows the prior year figure of $2,516 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "A $501 million increase in operating income year over year",
+     "numeric": true,
+     "cited_url": "https://s206.q4cdn.com/979796730/files/doc_financials/2026/q3/q3-fy26-earnings.pdf",
+     "reason": "The PDF explicitly says: 'Segment operating income increased $501 million, to $3,017 million from $2,516 million'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "This was a record Q3 for the Experiences segment",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/walt-disney-company-q3-2026-214439005.html",
+     "reason": "Multiple retrieved sources (Yahoo Finance, note.com, LinkedIn, Globe and Mail transcript) describe the quarter as a record for both revenue and operating income.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue of $9.97 billion (+10%)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/walt-disney-company-q3-2026-214439005.html",
+     "reason": "Yahoo Finance article states: 'Revenue for Disney's experiences segment ... was up 10% year over year to $9.97 billion.' CNBC and note.com also report $9.97B/$9.968B with 10% growth.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The company noted ~$100 million of the growth came from a one-time tariff refund (roughly 4 points of the 20% growth)",
+     "numeric": true,
+     "cited_url": "https://s206.q4cdn.com/979796730/files/doc_financials/2026/q3/q3-fy26-earnings.pdf",
+     "reason": "The PDF states: 'We recorded approximately $100 million in a tariff refund this quarter... Disney Experiences segment operating income growth was 20%, with the tariff refund representing roughly four points of that growth.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 6,
+   "supported": 6,
+   "not_retrieved": 0
+  }
+ }
+}

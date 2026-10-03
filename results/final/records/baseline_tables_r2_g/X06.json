@@ -1,0 +1,201 @@
+{
+ "id": "X06",
+ "category": "Trends",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "As of March 31, 2026, what were Conagra Brands' net sales (USD millions) and GAAP diluted EPS (USD, as reported, not adjusted EPS) for each of the last four fiscal quarters it had reported? Use only filings and earnings releases available on or before March 31, 2026. Label each quarter with its fiscal quarter, fiscal year (Conagra's fiscal year ends on the last Sunday of May) and period-end date.",
+ "grading": "Graded cell by cell: each value within tolerance and for the stated period; a missing cell counts as wrong.",
+ "answer": "Conagra as of 2026-03-31 (last four reported quarters; net sales in USD millions, GAAP diluted EPS in USD; Q3 FY2026 was not reported until 2026-04-01):\n| Row | Net sales (revenue) | Diluted EPS |\n|---|---|---|\n| Q3 FY2025 (ended 2025-02-23) | 2,841.0 | 0.30 |\n| Q4 FY2025 (ended 2025-05-25) | 2,781.8 | 0.53 |\n| Q1 FY2026 (ended 2025-08-24) | 2,632.6 | 0.34 |\n| Q2 FY2026 (ended 2025-11-23) | 2,979.1 | -1.39 |",
+ "output": {
+  "answer": "Here are Conagra Brands' results for each of the last four fiscal quarters it had reported as of March 31, 2026, drawn from SEC filings and earnings releases available on or before that date.\n\n**Important note on scope:** Conagra's fiscal Q3 2026 (period ended February 22, 2026) had *not* yet been reported by March 31, 2026 — it was released on April 1, 2026, just after the cutoff. So the last four quarters actually reported as of March 31, 2026 are Q3 FY25 through Q2 FY26.\n\n| Fiscal Quarter | Fiscal Year | Period-End Date | Net Sales (USD M) | GAAP Diluted EPS (USD) |\n|---|---|---|---|---|\n| Q3 | FY2025 | February 23, 2025 | $2,841.0 | $0.30 |\n| Q4 | FY2025 | May 25, 2025 | $2,781.8 | $0.53 |\n| Q1 | FY2026 | August 24, 2025 | $2,632.6 | $0.34 |\n| Q2 | FY2026 | November 23, 2025 | $2,979.1 | $(1.39) |\n\n**Note on the Q2 FY26 figure:** The GAAP diluted loss per share of $1.39 (net loss of $663.6 million) primarily reflects non-cash goodwill and brand impairment charges. Adjusted EPS for that quarter was $0.45. The reported (GAAP) figure is shown as requested.\n\nFiscal-year convention: Conagra's fiscal year ends on the last Sunday of May (FY2025 ended May 25, 2025; FY2026 ends May 31, 2026).\n\nSources:\n- Q3 FY25 earnings release: https://www.conagrabrands.com/news-room/news-conagra-brands-reports-third-quarter-results-prn-122950\n- Q4 FY25 / FY25 earnings release: https://www.conagrabrands.com/news-room/news-conagra-brands-reports-fourth-quarter-results-prn-122930\n- Q1 FY26 earnings release: https://www.conagrabrands.com/news-room/news-conagra-brands-reports-first-quarter-results-prn-122968\n- Q2 FY26 earnings release: https://www.prnewswire.com/news-releases/conagra-brands-reports-second-quarter-results-302646369.html\n- Q2 FY26 Form 10-Q: https://www.stocktitan.net/sec-filings/CAG/10-q-conagra-brands-inc-quarterly-earnings-report-748d9d92de95.html\n- Q3 FY26 release date confirmation (April 1, 2026): https://www.conagrabrands.com/news-room/news-conagra-brands-to-release-fiscal-2026-third-quarter-earnings-on-april-1-2026-prn-122948",
+  "tokens": {
+   "input": 73815,
+   "output": 4961
+  },
+  "tavily_credits": 7,
+  "latency_s": 41.55,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/66a762ccc003593679685690573a4d0c",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Conagra Brands fiscal 2026 second quarter results net sales diluted EPS",
+     "time_range": "year"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Conagra Brands Q1 fiscal 2026 earnings net sales EPS August 2025",
+     "time_range": "year"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Conagra Brands reports second quarter fiscal 2026 results November 23 2025 net sales diluted EPS goodwill impairment"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Conagra Brands reports fourth quarter fiscal 2025 results net sales diluted EPS May 25 2025"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Conagra Brands reports third quarter fiscal 2025 results net sales diluted EPS February 23 2025"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Conagra Q3 fiscal 2026 earnings date March 2026 report"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Conagra Brands Q4 fiscal 2025 net sales $2,781 million thirteen weeks ended May 25 2025 statements of operations"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.conagrabrands.com/news-room/news-conagra-brands-reports-first-quarter-results-prn-122968",
+    "https://www.conagrabrands.com/news-room/news-conagra-brands-reports-fourth-quarter-results-prn-122930",
+    "https://www.conagrabrands.com/news-room/news-conagra-brands-reports-third-quarter-results-prn-122950",
+    "https://www.conagrabrands.com/news-room/news-conagra-brands-to-release-fiscal-2026-third-quarter-earnings-on-april-1-2026-prn-122948",
+    "https://www.prnewswire.com/news-releases/conagra-brands-reports-second-quarter-results-302646369.html",
+    "https://www.stocktitan.net/sec-filings/CAG/10-q-conagra-brands-inc-quarterly-earnings-report-748d9d92de95.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 55,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "verdict": "correct",
+   "points": [
+    {
+     "point": "Conagra Brands, Inc. Q3 FY2025 Net sales (revenue) = 2841.0 USD millions",
+     "met": true,
+     "note": "answer: 2841.0"
+    },
+    {
+     "point": "Conagra Brands, Inc. Q3 FY2025 Diluted EPS = 0.3 USD",
+     "met": true,
+     "note": "answer: 0.3"
+    },
+    {
+     "point": "Conagra Brands, Inc. Q4 FY2025 Net sales (revenue) = 2781.8 USD millions",
+     "met": true,
+     "note": "answer: 2781.8"
+    },
+    {
+     "point": "Conagra Brands, Inc. Q4 FY2025 Diluted EPS = 0.53 USD",
+     "met": true,
+     "note": "answer: 0.53"
+    },
+    {
+     "point": "Conagra Brands, Inc. Q1 FY2026 Net sales (revenue) = 2632.6 USD millions",
+     "met": true,
+     "note": "answer: 2632.6"
+    },
+    {
+     "point": "Conagra Brands, Inc. Q1 FY2026 Diluted EPS = 0.34 USD",
+     "met": true,
+     "note": "answer: 0.34"
+    },
+    {
+     "point": "Conagra Brands, Inc. Q2 FY2026 Net sales (revenue) = 2979.1 USD millions",
+     "met": true,
+     "note": "answer: 2979.1"
+    },
+    {
+     "point": "Conagra Brands, Inc. Q2 FY2026 Diluted EPS = -1.39 USD",
+     "met": true,
+     "note": "answer: -1.39"
+    }
+   ],
+   "rationale": "8/8 cells correct",
+   "cells_correct": 8,
+   "cells_total": 8
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Conagra Brands' fiscal Q3 FY2025 (period ended February 23, 2025) reported net sales of $2,841.0 million and GAAP diluted EPS of $0.30.",
+     "numeric": true,
+     "cited_url": "https://www.conagrabrands.com/news-room/news-conagra-brands-reports-third-quarter-results-prn-122950",
+     "reason": "The cited URL is not present in the retrieved sources, so the claim cannot be verified from the provided evidence.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Conagra Brands' fiscal Q4 FY2025 (period ended May 25, 2025) reported net sales of $2,781.8 million and GAAP diluted EPS of $0.53.",
+     "numeric": true,
+     "cited_url": "https://www.conagrabrands.com/news-room/news-conagra-brands-reports-fourth-quarter-results-prn-122930",
+     "reason": "The cited URL is not present in the retrieved sources. A different URL for the Q4 FY25 release (prn-122958) was retrieved and shows the same figures, but the exact cited URL was not retrieved.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Conagra Brands' fiscal Q1 FY2026 (period ended August 24, 2025) reported net sales of $2,632.6 million and GAAP diluted EPS of $0.34.",
+     "numeric": true,
+     "cited_url": "https://www.conagrabrands.com/news-room/news-conagra-brands-reports-first-quarter-results-prn-122968",
+     "reason": "Retrieved source #11 (same URL) shows a consolidated earnings table with net sales of $2,632.6 million and diluted EPS of $0.34 for the thirteen weeks ended August 24, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Conagra Brands' fiscal Q2 FY2026 (period ended November 23, 2025) reported net sales of $2,979.1 million and GAAP diluted EPS of $(1.39).",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/conagra-brands-reports-second-quarter-results-302646369.html",
+     "reason": "Retrieved source #23 (same URL) contains a table showing net sales of $2,979.1 million and diluted EPS of $(1.39) for the thirteen weeks ended November 23, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Conagra Brands' fiscal year ends on the last Sunday of May; FY2025 ended May 25, 2025, and FY2026 ends May 31, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.conagrabrands.com/news-room/news-conagra-brands-reports-fourth-quarter-results-prn-122930",
+     "reason": "The cited URL (Q4 FY25 release) is not in the retrieved sources. A different Q4 FY25 release (prn-122958) was retrieved and shows fifty-two weeks ended May 25, 2025 and fifty-three weeks ended May 31, 2026, supporting the fiscal year end dates, but the exact cited URL was not retrieved.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Conagra Brands' fiscal Q3 FY2026 (period ended February 22, 2026) had not been reported by March 31, 2026; it was released on April 1, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.conagrabrands.com/news-room/news-conagra-brands-to-release-fiscal-2026-third-quarter-earnings-on-april-1-2026-prn-122948",
+     "reason": "The cited URL is not present in the retrieved sources, so the claim cannot be verified from the provided evidence.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Conagra Brands' Q2 FY2026 GAAP diluted loss per share of $1.39 (net loss of $663.6 million) primarily reflects non-cash goodwill and brand impairment charges; adjusted EPS for the quarter was $0.45.",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/conagra-brands-reports-second-quarter-results-302646369.html",
+     "reason": "Retrieved source #23 states: 'Reported diluted loss per share was $1.39, primarily as a result of certain non-cash goodwill and brand impairment charges; adjusted earnings per share (EPS) were $0.45.' Retrieved source #22 (10-Q) confirms a net loss of $663.6 million.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 7,
+   "numeric_cited": 7,
+   "cited": 7,
+   "supported": 3,
+   "not_retrieved": 0
+  }
+ }
+}

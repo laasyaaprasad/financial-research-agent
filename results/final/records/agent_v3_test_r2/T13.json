@@ -1,0 +1,259 @@
+{
+ "id": "T13",
+ "category": "Qualitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "What did Eli Lilly say drove its second-quarter 2026 revenue growth?",
+ "grading": "Key points (all four): (1) revenue rose 48% to about USD 23.0B (22,974M vs 15,558M); (2) driven by a 60% volume increase, partly offset by a 13% decrease in realized prices; (3) led by Mounjaro and Zepbound volume (Mounjaro about USD 9.9B, Zepbound about USD 4.9B); (4) U.S. +33% (volume +37%, price -3%) and ex-U.S. +80% (volume +113%, price -36%, Mounjaro's addition to China's NRDL). Partial credit for 3 of 4.",
+ "answer": "Lilly's Q2 2026 worldwide revenue increased 48% to USD 22,974 million (from USD 15,558 million), driven by a 60% increase in volume, partially offset by a 13% decrease in realized prices; growth was led by Mounjaro (USD 9,943 million, +91%) and Zepbound (USD 4,928 million, +46%). U.S. revenue rose 33% to USD 14.4 billion (volume +37%, prices -3%); revenue outside the U.S. rose 80% to USD 8.6 billion (volume +113%, prices -36%, driven primarily by Mounjaro's addition to China's NRDL). [T13-E1]",
+ "output": {
+  "answer": "**Question:** What did Eli Lilly say drove its second-quarter 2026 revenue growth?\n*As of 2026-10-03*\n\n| | Volume (% change) | Price (% change) | Foreign exchange rates (% change) | Total revenue (% change) |\n|---|---|---|---|---|\n| U.S. — Q2 FY2026 vs Q2 FY2025 (three months ended June 30, 2026 vs 2025) | 37% [1] | (3)% [1] | — [1] | 33% [1] |\n| Outside U.S. — Q2 FY2026 vs Q2 FY2025 (three months ended June 30, 2026 vs 2025) | 113% [1] | (36)% [1] | 4% [1] | 80% [1] |\n| Consolidated — Q2 FY2026 vs Q2 FY2025 (three months ended June 30, 2026 vs 2025) | 60% [1] | (13)% [1] | 1% [1] | 48% [1] |\n\n- Lilly said Q2 FY2026 (quarter ended June 30, 2026) revenue increased 48% to $23.0 billion, driven primarily by Mounjaro and Zepbound volume. [2]\n- On a reported basis, Q2 FY2026 (quarter ended June 30, 2026) worldwide revenue was $22,974 million, an increase of 48% compared with Q2 FY2025, driven by a 60% increase in volume, partially offset by a 13% decrease in realized prices. [2][1]\n- Lilly said Key Products revenue grew to $15.7 billion in Q2 FY2026 (quarter ended June 30, 2026), led by Mounjaro and Zepbound. [2]\n- U.S. revenue in Q2 FY2026 (quarter ended June 30, 2026) increased 33% to $14.4 billion, driven by a 37% increase in volume, partially offset by a 3% decrease in realized prices, with the volume increase driven by Zepbound and Mounjaro. [2]\n- Revenue outside the U.S. in Q2 FY2026 (quarter ended June 30, 2026) increased 80% to $8.6 billion, driven by a 113% increase in volume, partially offset by a 36% decrease in realized prices, with the volume increase driven by Mounjaro and the lower prices driven primarily by the addition of Mounjaro to the National Reimbursement Drug List (NRDL) in China. [2][1]\n- Worldwide Mounjaro revenue in Q2 FY2026 (quarter ended June 30, 2026) increased 91% to $9.9 billion, with U.S. revenue of $4.8 billion up 45% on strong demand partially offset by lower realized prices, and revenue outside the U.S. up 172% to $5.2 billion primarily driven by volume growth partially offset by lower realized prices after Mounjaro's addition to the NRDL in China. [2]\n- U.S. Zepbound revenue in Q2 FY2026 (quarter ended June 30, 2026) increased 44% to $4.9 billion, primarily driven by strong demand, partially offset by lower realized prices including previously announced reductions in cash-pay prices. [2]\n- Lilly also noted that Jardiance revenue outside the U.S. in Q2 FY2026 (quarter ended June 30, 2026) included a sales-based milestone of $250 million associated with its collaboration with Boehringer Ingelheim. [2]\n- Lilly's Q2 FY2026 (quarter ended June 30, 2026) gross margin increase was attributed to improved cost of production and favorable product mix, partially offset by lower realized prices, not to revenue growth drivers. [2]\n\n**Sources**\n[1] ELI LILLY & Co 10-Q for Q2 FY2026 (filed 2026-08-05) (www.sec.gov, 2026-08-05, primary) https://www.sec.gov/Archives/edgar/data/59478/000005947826000081/lly-20260630.htm\n[2] ELI LILLY & Co earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-08-05) (www.sec.gov, 2026-08-05, primary) https://www.sec.gov/Archives/edgar/data/59478/000005947826000077/q226lillysalesandearningsp.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 29520,
+   "output": 5476
+  },
+  "tavily_credits": 2.0,
+  "latency_s": 27.51,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/fcc014e63b97177a223db20de1d8921a",
+  "companies": [
+   {
+    "name": "ELI LILLY & Co",
+    "ticker": "LLY",
+    "cik": "59478",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Q2 FY2026 total revenue and year-over-year growth rate",
+    "Management's stated drivers of Q2 FY2026 revenue growth (product/volume/price contributions)",
+    "Revenue by key product (e.g. Mounjaro, Zepbound, Verzenio, Taltz, orforglipron if launched) for Q2 FY2026 vs Q2 FY2025",
+    "Segment/geography commentary (U.S. vs ex-U.S.) explaining growth",
+    "Any one-time items, pricing, or channel/demand factors management cited",
+    "Prior-year Q2 FY2025 revenue base used for the growth comparison"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "LLY",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "LLY",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "LLY",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "LLY",
+     "period": "Q2 FY2025",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Management's explanation of Q2 2026 revenue growth drivers on the earnings call, which may not be fully captured in the release",
+     "query": "Eli Lilly Q2 2026 earnings call revenue growth drivers management commentary",
+     "topic": "news",
+     "days_back": 90
+    }
+   ],
+   "availability_notes": [
+    "Q2 FY2026 is reported (10-Q filed 2026-08-05; earnings release 8-K filed 2026-08-05), so both the release and periodic report are available.",
+    "Q3 FY2026 and later periods are not yet reported and are not relevant to this question.",
+    "If management quantified specific growth drivers only on the earnings call rather than in the 8-K release, that detail may require the call coverage search; otherwise the release and 10-Q MD&A should contain the explanation."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Eli Lilly Q2 2026 earnings call revenue growth drivers management commentary",
+     "topic": "news",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "start_date": "2026-07-05"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "http://markets.chroniclejournal.com/chroniclejournal/article/stockstory-2026-8-5-eli-lilly-nyselly-beats-expectations-in-strong-q2-cy2026-full-year-outlook-slightly-exceeds-expectations",
+      "http://markets.chroniclejournal.com/chroniclejournal/article/stockstory-2026-8-4-what-to-expect-from-eli-lillys-lly-q2-earnings",
+      "https://www.cnbc.com/2026/08/05/eli-lilly-lly-earnings-q2-2026.html"
+     ],
+     "query": "What did Eli Lilly say drove its second-quarter 2026 revenue growth?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/59478/000005947826000077/q226lillysalesandearningsp.htm",
+    "https://www.sec.gov/Archives/edgar/data/59478/000005947826000081/lly-20260630.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 9,
+   "retrieved_primary": 4
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Revenue rose 48% to about USD 23.0B (22,974M vs 15,558M)",
+     "met": true,
+     "note": "Agent states: 'Lilly said Q2 FY2026 revenue increased 48% to $23.0 billion' and 'worldwide revenue was $22,974 million, an increase of 48% compared with Q2 FY2025'."
+    },
+    {
+     "point": "Driven by a 60% volume increase, partly offset by a 13% decrease in realized prices",
+     "met": true,
+     "note": "Agent states: 'driven by a 60% increase in volume, partially offset by a 13% decrease in realized prices' and the consolidated table shows Volume 60%, Price (13)%."
+    },
+    {
+     "point": "Led by Mounjaro and Zepbound volume (Mounjaro about USD 9.9B, Zepbound about USD 4.9B)",
+     "met": true,
+     "note": "Agent states: 'Worldwide Mounjaro revenue ... increased 91% to $9.9 billion' and 'U.S. Zepbound revenue ... increased 44% to $4.9 billion'."
+    },
+    {
+     "point": "U.S. +33% (volume +37%, price -3%) and ex-U.S. +80% (volume +113%, price -36%, Mounjaro's addition to China's NRDL)",
+     "met": true,
+     "note": "Agent states: 'U.S. revenue ... increased 33% to $14.4 billion, driven by a 37% increase in volume, partially offset by a 3% decrease in realized prices' and 'Revenue outside the U.S. ... increased 80% to $8.6 billion, driven by a 113% increase in volume, partially offset by a 36% decrease in realized prices ... lower prices driven primarily by the addition of Mounjaro to the NRDL in China'."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All four required key points are explicitly and accurately covered in the agent's answer, with correct figures and attribution."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "U.S. Q2 FY2026 vs Q2 FY2025: Volume +37%, Price -3%, FX —, Total revenue +33% (three months ended June 30, 2026 vs 2025)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000081/lly-20260630.htm",
+     "reason": "The 10-Q filing shows a table with Volume 37% for U.S., Price (3)%, Foreign exchange rates —, and Revenue U.S. $14,413 vs $10,814 (33% increase) for the three months ended June 30, 2026 vs 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Outside U.S. Q2 FY2026 vs Q2 FY2025: Volume +113%, Price -36%, FX +4%, Total revenue +80%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000081/lly-20260630.htm",
+     "reason": "The same 10-Q table shows Volume 113% for Outside U.S., Price (36)%, Foreign exchange rates 4%, and Revenue Outside U.S. $8,561 vs $4,743 (80% increase).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Consolidated Q2 FY2026 vs Q2 FY2025: Volume +60%, Price -13%, FX +1%, Total revenue +48%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000081/lly-20260630.htm",
+     "reason": "The 10-Q table shows consolidated Volume 60%, Price (13)%, Foreign exchange rates 1%, and Total Revenue $22,974 vs $15,558 (48% increase).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Lilly said Q2 FY2026 revenue increased 48% to $23.0 billion, driven primarily by Mounjaro and Zepbound volume",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000077/q226lillysalesandearningsp.htm",
+     "reason": "The earnings release states: 'Revenue in Q2 2026 increased 48% to $23.0 billion driven primarily by Mounjaro and Zepbound volume.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "On a reported basis, Q2 FY2026 worldwide revenue was $22,974 million, an increase of 48% compared with Q2 FY2025, driven by a 60% increase in volume, partially offset by a 13% decrease in realized prices",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000077/q226lillysalesandearningsp.htm",
+     "reason": "The earnings release states: 'In Q2 2026, worldwide revenue was $23.0 billion, an increase of 48% compared with Q2 2025, driven by a 60% increase in volume, partially offset by a 13% decrease in realized prices.' The 10-Q confirms $22,974 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Lilly said Key Products revenue grew to $15.7 billion in Q2 FY2026, led by Mounjaro and Zepbound",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000077/q226lillysalesandearningsp.htm",
+     "reason": "The earnings release states: 'Key Products1 revenue grew to $15.7 billion in Q2 2026, led by Mounjaro and Zepbound.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "U.S. revenue in Q2 FY2026 increased 33% to $14.4 billion, driven by a 37% increase in volume, partially offset by a 3% decrease in realized prices, with the volume increase driven by Zepbound and Mounjaro",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000077/q226lillysalesandearningsp.htm",
+     "reason": "The earnings release states: 'Revenue in the U.S. increased 33% to $14.4 billion, driven by a 37% increase in volume, partially offset by a 3% decrease in realized prices. The increase in U.S. volume was driven by Zepbound and Mounjaro.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue outside the U.S. in Q2 FY2026 increased 80% to $8.6 billion, driven by a 113% increase in volume, partially offset by a 36% decrease in realized prices, with the volume increase driven by Mounjaro and the lower prices driven primarily by the addition of Mounjaro to the NRDL in China",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000077/q226lillysalesandearningsp.htm",
+     "reason": "The earnings release states: 'Revenue outside the U.S. increased 80% to $8.6 billion, driven by a 113% increase in volume, partially offset by a 36% decrease in realized prices. The lower realized prices outside the U.S. were driven primarily by the addition of Mounjaro to the National Reimbursement Drug List (NRDL) in China.' Also: 'The volume increase outside the U.S. was driven by Mounjaro.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Worldwide Mounjaro revenue in Q2 FY2026 increased 91% to $9.9 billion, with U.S. revenue of $4.8 billion up 45% on strong demand partially offset by lower realized prices, and revenue outside the U.S. up 172% to $5.2 billion primarily driven by volume growth partially offset by lower realized prices after Mounjaro's addition to the NRDL in China",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000077/q226lillysalesandearningsp.htm",
+     "reason": "The earnings release states: 'For Q2 2026, worldwide Mounjaro revenue increased 91% to $9.9 billion. U.S. revenue was $4.8 billion, an increase of 45%, reflecting strong demand, partially offset by lower realized prices. Revenue outside the U.S. increased 172% to $5.2 billion primarily driven by volume growth, partially offset by lower realized prices driven by the addition of Mounjaro to the NRDL in Q1 2026.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "U.S. Zepbound revenue in Q2 FY2026 increased 44% to $4.9 billion, primarily driven by strong demand, partially offset by lower realized prices including previously announced reductions in cash-pay prices",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000077/q226lillysalesandearningsp.htm",
+     "reason": "The earnings release states: 'For Q2 2026, U.S. Zepbound revenue increased 44% to $4.9 billion, primarily driven by strong demand, partially offset by lower realized prices, including previously announced reductions in cash-pay prices.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Lilly also noted that Jardiance revenue outside the U.S. in Q2 FY2026 included a sales-based milestone of $250 million associated with its collaboration with Boehringer Ingelheim",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000077/q226lillysalesandearningsp.htm",
+     "reason": "The earnings release states: 'Jardiance revenue outside the U.S. included a sales-based milestone of $250 million in Q2 2026, associated with the company's collaboration with Boehringer Ingelheim.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Lilly's Q2 FY2026 gross margin increase was attributed to improved cost of production and favorable product mix, partially offset by lower realized prices, not to revenue growth drivers",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000077/q226lillysalesandearningsp.htm",
+     "reason": "The earnings release states: 'The increase was primarily driven by improved cost of production and favorable product mix, partially offset by lower realized prices.' The phrase 'not to revenue growth drivers' is an inference but consistent with the stated drivers.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 11,
+   "numeric_cited": 11,
+   "cited": 12,
+   "supported": 12,
+   "not_retrieved": 0
+  }
+ }
+}

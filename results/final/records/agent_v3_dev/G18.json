@@ -1,0 +1,211 @@
+{
+ "id": "G18",
+ "category": "Beat or miss",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "Did Broadcom's Q3 FY2026 AI semiconductor revenue beat the guidance it gave on its Q2 FY2026 call, and by how much in dollars and percent?",
+ "grading": "Beat amount ±$0.1B; beat % ±0.5pp; must benchmark against the company's AI semiconductor revenue guide",
+ "answer": "Broadcom Q3 FY2026 AI semiconductor revenue was $16.7 billion versus its Q2-release guidance of $16.0 billion: a $0.7 billion beat, or 4.375% of guidance. [G18-E1, G18-E2]",
+ "output": {
+  "answer": "**Question:** Did Broadcom's Q3 FY2026 AI semiconductor revenue beat the guidance it gave on its Q2 FY2026 call, and by how much in dollars and percent?\n*As of 2026-10-01*\n\n| | AI semiconductor revenue (USD billions) | AI semiconductor revenue beat vs guidance (USD billions) | AI semiconductor revenue beat vs guidance (%) |\n|---|---|---|---|\n| Q3 FY2026 (quarter ended August 2, 2026) - actual | 16.7 [1] | — | — |\n| Q3 FY2026 (quarter ended August 2, 2026) - guidance given 2026-06-03 | 16.0 [2] | — | — |\n| Q3 FY2026 (quarter ended August 2, 2026) | — | 0.7 [1][2] | 4.4 [1][2] |\n\n- Broadcom guided on its Q2 FY2026 earnings call/release (quarter ended May 3, 2026, released 2026-06-03) for Q3 FY2026 AI semiconductor revenue of $16.0 billion, described as growth of over 200 percent year-over-year. [2]\n- Broadcom reported Q3 FY2026 (quarter ended August 2, 2026) AI semiconductor revenue of $16.7 billion, up 221% year-over-year and 54% quarter-over-quarter, a management-defined metric rather than a GAAP segment line. [1]\n- Q3 FY2026 AI semiconductor revenue beat the Q2 FY2026 guidance by 0.7 billion. [1][2]\n- That beat equals 4.4 percent above the guided figure. [1][2]\n\n**Not available**\n- A separate GAAP 'AI semiconductor' revenue line in Broadcom's financial statements: Broadcom does not report AI semiconductor revenue as a GAAP financial statement line; it is a management-defined metric disclosed in earnings releases and commentary (the 10-Q segment note reports only semiconductor solutions and infrastructure software). [1][3]\n\n**Sources**\n[1] Broadcom Inc. earnings release for Q3 FY2026, 8-K EX-99.1 (filed 2026-09-02) (www.sec.gov, 2026-09-02, primary) https://www.sec.gov/Archives/edgar/data/1730168/000173016826000076/avgo-08022026x8kxex99.htm\n[2] Broadcom Inc. earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-06-03) (www.sec.gov, 2026-06-03, primary) https://www.sec.gov/Archives/edgar/data/1730168/000173016826000051/avgo-05032026x8kxex99.htm\n[3] Broadcom Inc. 10-Q for Q3 FY2026 (filed 2026-09-10) (www.sec.gov, 2026-09-10, primary) https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/avgo-20260802.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 33559,
+   "output": 3224
+  },
+  "tavily_credits": 1.0,
+  "latency_s": 46.83,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/cb65920712fcc58311615f25c913bf3c",
+  "companies": [
+   {
+    "name": "Broadcom Inc.",
+    "ticker": "AVGO",
+    "cik": "1730168",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Broadcom Q3 FY2026 actual AI semiconductor revenue (dollars)",
+    "Broadcom Q3 FY2026 AI revenue guidance issued on the Q2 FY2026 earnings call (dollars)",
+    "Dollar variance: actual Q3 FY2026 AI revenue minus guided amount",
+    "Percent variance: dollar variance divided by guided amount",
+    "Any management commentary on AI revenue vs. guidance / outlook for Q4 FY2026 AI revenue"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "AVGO",
+     "label": "Q3 FY2026"
+    },
+    {
+     "ticker": "AVGO",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "AVGO",
+     "period": "Q3 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "AVGO",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "AVGO",
+     "period": "Q3 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Find the AI semiconductor revenue guidance figure Broadcom management gave for Q3 FY2026 on the Q2 FY2026 earnings call, and any commentary comparing actual Q3 AI revenue to that guidance",
+     "query": "Broadcom Q2 FY2026 earnings call AI semiconductor revenue guidance for Q3 FY2026",
+     "topic": "general",
+     "days_back": null
+    }
+   ],
+   "availability_notes": [
+    "Q3 FY2026 AI semiconductor revenue guidance was given on the Q2 FY2026 earnings call (2026-06-03); the exact guided dollar figure may appear only in call coverage/transcript rather than the Q2 earnings release, so a web search is included.",
+    "Broadcom does not report a separate 'AI semiconductor' line in its financial statements; AI revenue is a management-defined metric disclosed in earnings releases and commentary, so the 10-Q may not break it out.",
+    "Q4 FY2026 and FY2026 are not yet reported (period in progress), so no actuals exist for those periods."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "A separate GAAP 'AI semiconductor' revenue line in Broadcom's financial statements",
+    "kind": "not_disclosed",
+    "reason": "Broadcom does not report AI semiconductor revenue as a GAAP financial statement line; it is a management-defined metric disclosed in earnings releases and commentary (the 10-Q segment note reports only semiconductor solutions and infrastructure software).",
+    "evidence_ids": [
+     "E1",
+     "E3"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Broadcom Q2 FY2026 earnings call AI semiconductor revenue guidance for Q3 FY2026",
+     "topic": "general",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-01",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.prnewswire.com/news-releases/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial-results-and-quarterly-dividend-302790698.html",
+      "https://futurumgroup.com/insights/broadcom-q2-fy-2026-vmware-stability-supports-ai-led-semiconductor-expansion",
+      "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial"
+     ],
+     "query": "Did Broadcom's Q3 FY2026 AI semiconductor revenue beat the guidance it gave on its Q2 FY2026 call, and by how much in dollars and percent?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000051/avgo-05032026x8kxex99.htm",
+    "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000076/avgo-08022026x8kxex99.htm",
+    "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/avgo-20260802.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 10,
+   "retrieved_primary": 7
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Beat amount in dollars within ±$0.1B of reference ($0.7B)",
+     "met": true,
+     "note": "Agent reports beat of $0.7B, exactly matching reference $0.7B (difference $0.0B)."
+    },
+    {
+     "point": "Beat percent within ±0.5 percentage points of reference (4.375%)",
+     "met": true,
+     "note": "Agent reports beat of 4.4%, which is 0.025pp above reference 4.375%, well within ±0.5pp tolerance."
+    },
+    {
+     "point": "Benchmarked against the company's AI semiconductor revenue guide (not consensus or other)",
+     "met": true,
+     "note": "Agent explicitly uses guidance from Broadcom's Q2 FY2026 earnings release (2026-06-03) of $16.0B for AI semiconductor revenue."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All three grading requirements are satisfied: the dollar beat matches exactly, the percentage beat is within tolerance, and the benchmark is correctly the company's own guidance."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Broadcom guided on its Q2 FY2026 earnings call/release (quarter ended May 3, 2026, released 2026-06-03) for Q3 FY2026 AI semiconductor revenue of $16.0 billion, described as growth of over 200 percent year-over-year.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000051/avgo-05032026x8kxex99.htm",
+     "reason": "The Q2 FY2026 earnings release (filed 2026-06-03) states: 'The momentum continues and in Q3 we expect semiconductor revenue from AI to grow over 200 percent year-over-year to $16.0 billion.' This matches the guidance figure, growth description, quarter, and release date.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Broadcom reported Q3 FY2026 (quarter ended August 2, 2026) AI semiconductor revenue of $16.7 billion, up 221% year-over-year and 54% quarter-over-quarter, a management-defined metric rather than a GAAP segment line.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000076/avgo-08022026x8kxex99.htm",
+     "reason": "The Q3 FY2026 earnings release (filed 2026-09-02) states: 'Q3 AI semiconductor revenue of $16.7 billion grew 221% year-over-year, and 54% quarter-over-quarter.' The quarter end date matches. However, the release does not explicitly state that AI semiconductor revenue is a 'management-defined metric rather than a GAAP segment line'; that characterization is supported by the 10-Q (source [3]) but not by the cited source [1].",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 AI semiconductor revenue beat the Q2 FY2026 guidance by $0.7 billion.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000076/avgo-08022026x8kxex99.htm",
+     "reason": "Actual Q3 AI semiconductor revenue from source [1] is $16.7 billion; guidance from source [2] is $16.0 billion. The difference is $0.7 billion, which matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The beat equals 4.4 percent above the guided figure.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000076/avgo-08022026x8kxex99.htm",
+     "reason": "Beat of $0.7 billion divided by guided $16.0 billion = 0.04375 = 4.375%. Rounded to one decimal place, this is 4.4% (within the 4.35%-4.45% rounding tolerance).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Broadcom does not report AI semiconductor revenue as a GAAP financial statement line; it is a management-defined metric disclosed in earnings releases and commentary (the 10-Q segment note reports only semiconductor solutions and infrastructure software).",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/avgo-20260802.htm",
+     "reason": "The 10-Q for Q3 FY2026 (filed 2026-09-10) states: 'We have two reportable segments: semiconductor solutions and infrastructure software.' No separate AI semiconductor segment is reported. The earnings releases (source [1]) disclose AI semiconductor revenue as a non-GAAP metric. This supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 5,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}

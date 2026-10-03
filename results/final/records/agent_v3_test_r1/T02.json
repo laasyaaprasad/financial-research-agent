@@ -1,0 +1,140 @@
+{
+ "id": "T02",
+ "category": "Quantitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was the operating income of Disney's Experiences segment in fiscal Q3 2026 (the quarter ended June 27, 2026)? Answer in USD millions.",
+ "grading": "±0.5%, USD millions, segment operating income for the Experiences segment for the quarter ended 2026-06-27. Fail if total segment operating income, another segment, or the nine-month figure is given.",
+ "answer": "Experiences segment operating income was USD 3,017 million in fiscal Q3 2026 (quarter ended June 27, 2026), up 20% from USD 2,516 million in Q3 FY2025, on segment revenue of USD 9,968 million. Total segment operating income was USD 5,555 million, so Experiences was the largest contributor. [T02-E1, T02-E2]",
+ "output": {
+  "answer": "**Question:** What was the operating income of Disney's Experiences segment in fiscal Q3 2026 (the quarter ended June 27, 2026)? Answer in USD millions.\n*As of 2026-10-03*\n\n| | Segment operating income (USD millions) |\n|---|---|\n| Experiences segment, fiscal Q3 FY2026 (quarter ended June 27, 2026) | 3,017 [1][2] |\n\n- Disney's Experiences segment operating income was $3,017 million in fiscal Q3 2026 (quarter ended June 27, 2026), as reported in the segment results table. [1][2]\n- The $3,017 million Experiences segment operating income for fiscal Q3 2026 (quarter ended June 27, 2026) was up 20% versus $2,516 million in the prior-year quarter ended June 28, 2025, as disclosed. [1][2]\n- Within the Experiences segment for fiscal Q3 2026 (quarter ended June 27, 2026), supplemental operating income detail was $2,088 million for Domestic Parks & Experiences, $369 million for International Parks & Experiences and $560 million for Consumer Products. [1][2]\n\n**Sources**\n[1] Walt Disney Co 10-Q for Q3 FY2026 (filed 2026-08-05) (www.sec.gov, 2026-08-05, primary) https://www.sec.gov/Archives/edgar/data/1744489/000174448926000057/dis-20260627.htm\n[2] Walt Disney Co earnings release for Q3 FY2026, 8-K EX-99.1 (filed 2026-08-05) (www.sec.gov, 2026-08-05, primary) https://www.sec.gov/Archives/edgar/data/1744489/000174448926000056/fy2026_q3xerxex991.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 19337,
+   "output": 1681
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 19.15,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/85e9f651883d0c656d1fe8e16dbc18a8",
+  "companies": [
+   {
+    "name": "Walt Disney Co",
+    "ticker": "DIS",
+    "cik": "1744489",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Disney Experiences segment operating income for fiscal Q3 2026 (quarter ended 2026-06-27), in USD millions",
+    "Disney Experiences segment revenue for fiscal Q3 2026, for context on the segment table",
+    "Any management commentary or one-time items affecting Experiences segment operating income in the quarter"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "DIS",
+     "label": "Q3 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "DIS",
+     "period": "Q3 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "DIS",
+     "period": "Q3 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q3 FY2026 (2026-03-29 to 2026-06-27) is already reported: 10-Q filed 2026-08-05 and earnings release 8-K filed 2026-08-05, so segment operating income should be disclosed in both.",
+    "Segment operating income is a segment-level figure reported in the segment note of the 10-Q and in the earnings release segment tables; it is not part of the tagged financial statements, so both documents are needed."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000056/fy2026_q3xerxex991.htm",
+    "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000057/dis-20260627.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 3,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer in USD millions",
+     "met": true,
+     "note": "Agent answer states $3,017 million"
+    },
+    {
+     "point": "Segment operating income for Experiences segment",
+     "met": true,
+     "note": "Agent explicitly states Experiences segment operating income"
+    },
+    {
+     "point": "For quarter ended 2026-06-27 (fiscal Q3 2026)",
+     "met": true,
+     "note": "Agent specifies fiscal Q3 2026 (quarter ended June 27, 2026)"
+    },
+    {
+     "point": "Value within ±0.5% of 3,017 million",
+     "met": true,
+     "note": "Agent gives 3,017 million, exactly matching reference"
+    },
+    {
+     "point": "Not total segment operating income, another segment, or nine-month figure",
+     "met": true,
+     "note": "Agent provides Experiences segment figure, not total (5,555), Entertainment (1,680), Sports (858), or nine-month (8,941)"
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer matches the verified reference answer exactly: Experiences segment operating income of $3,017 million for fiscal Q3 2026 (quarter ended June 27, 2026), in USD millions, with correct segment and period."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Disney's Experiences segment operating income was $3,017 million in fiscal Q3 2026 (quarter ended June 27, 2026)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000057/dis-20260627.htm",
+     "reason": "The 10-Q filing shows 'Experiences operating income | 3,017 | 2,516 | 20 % | 8,941 | 8,117 | 10 %' for the quarter ended June 27, 2026, confirming the $3,017 million figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The $3,017 million Experiences segment operating income for fiscal Q3 2026 was up 20% versus $2,516 million in the prior-year quarter ended June 28, 2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000057/dis-20260627.htm",
+     "reason": "The 10-Q shows a 20% change column for Experiences operating income, and the 8-K states 'Segment operating income increased $501 million, to $3,017 million from $2,516 million', confirming the 20% increase.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Within the Experiences segment for fiscal Q3 2026, supplemental operating income detail was $2,088 million for Domestic Parks & Experiences, $369 million for International Parks & Experiences, and $560 million for Consumer Products",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000056/fy2026_q3xerxex991.htm",
+     "reason": "The 8-K earnings release includes a 'Supplemental operating income detail' table showing Domestic $2,088, International $369, Consumer Products $560, summing to $3,017 million for the quarter ended June 27, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 3,
+   "supported": 3,
+   "not_retrieved": 0
+  }
+ }
+}

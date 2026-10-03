@@ -1,0 +1,197 @@
+{
+ "id": "T12",
+ "category": "Beat or miss",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "Did Qualcomm's fiscal Q3 2026 (quarter ended June 28, 2026) total revenues and non-GAAP diluted EPS come in above, within or below the guidance ranges it gave with its fiscal Q2 2026 results in April 2026?",
+ "grading": "Key points: (1) revenues USD 9,947M vs guided USD 9.2B-10.0B = WITHIN the range (upper end); (2) non-GAAP diluted EPS USD 2.21 vs guided USD 2.10-2.30 = WITHIN the range; (3) benchmark is the company's own guidance. Optional: GAAP EPS 1.87 vs GAAP guide 1.26-1.46 is above the range. Fail if either is called above or below the range or consensus is used.",
+ "answer": "Guidance from the April 29, 2026 release for Q3 FY26: revenues USD 9.2-10.0 billion and non-GAAP diluted EPS USD 2.10-2.30. [T12-E1] Actual Q3 FY2026: revenues USD 9,947 million (within the range, near the high end) and non-GAAP diluted EPS USD 2.21 (within the range). GAAP EPS was USD 1.87 against GAAP guidance of USD 1.26-1.46 (above). [T12-E2]",
+ "output": {
+  "answer": "**Both metrics came in within Qualcomm's own guidance ranges** — near the top end on revenue, mid-range on EPS.\n\n**The guidance (given April 29, 2026, with FQ2 2026 results):**\n- Total revenues: $9.2B – $10.0B\n- Non-GAAP diluted EPS: $2.10 – $2.30\n- (QCT $7.9–8.5B; QTL $1.15–1.35B)\n\n**Actual FQ3 2026 results (quarter ended ~June 28, 2026; reported July 29, 2026):**\n- Total revenues: **$9.9 billion** — above the midpoint, at the high end of guidance\n- Non-GAAP diluted EPS: **$2.21** — inside the range, below the midpoint\n- GAAP EPS: $1.87; QCT $8.5B (high end); QTL $1.3B\n\nSo: **revenue within (high end); non-GAAP EPS within.** CEO Cristiano Amon characterized results as \"quarterly revenues at the high end of guidance,\" citing a challenging memory and supply environment.\n\nNote on a common confusion: relative to *analyst consensus*, revenue **beat** ($9.95B vs. ~$9.69B) while EPS **missed slightly** ($2.21 vs. ~$2.23). That's a different comparison than the company's own guidance ranges.\n\nSources:\n- https://www.qualcomm.com/news/releases/2026/07/qualcomm-announces-third-quarter-fiscal-2026-results\n- https://www.qualcomm.com/news/releases/2026/04/qualcomm-announces-second-quarter-fiscal-2026-results\n- https://s204.q4cdn.com/645488518/files/doc_financials/2026/q2/FY2026-2nd-Quarter-Earnings-Release.pdf\n- https://www.marketbeat.com/stocks/NASDAQ/QCOM/earnings",
+  "tokens": {
+   "input": 11459,
+   "output": 699
+  },
+  "tavily_credits": 2,
+  "latency_s": 5.52,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/d9ffbd3e409253b0bb33f473dd330afe",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Qualcomm fiscal Q3 2026 results revenues non-GAAP diluted EPS guidance",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Qualcomm fiscal Q2 2026 results April 2026 guidance third quarter revenue EPS outlook"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q2/FY2026-2nd-Quarter-Earnings-Release.pdf",
+    "https://www.marketbeat.com/stocks/NASDAQ/QCOM/earnings",
+    "https://www.qualcomm.com/news/releases/2026/04/qualcomm-announces-second-quarter-fiscal-2026-results",
+    "https://www.qualcomm.com/news/releases/2026/07/qualcomm-announces-third-quarter-fiscal-2026-results"
+   ],
+   "cited_primary": 0,
+   "retrieved": 20,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Revenues USD 9,947M vs guided USD 9.2B-10.0B = WITHIN the range (upper end)",
+     "met": true,
+     "note": "Agent states revenue $9.9B, within guidance range $9.2B-$10.0B, at high end. Matches reference."
+    },
+    {
+     "point": "Non-GAAP diluted EPS USD 2.21 vs guided USD 2.10-2.30 = WITHIN the range",
+     "met": true,
+     "note": "Agent states non-GAAP diluted EPS $2.21, inside guidance range $2.10-$2.30, below midpoint. Matches reference."
+    },
+    {
+     "point": "Benchmark is the company's own guidance (issued April 29, 2026 with Q2 FY2026 results)",
+     "met": true,
+     "note": "Agent explicitly cites guidance from April 29, 2026 release and uses it for comparison."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All three key requirements are met: revenue within guided range (upper end), non-GAAP EPS within guided range, and the correct company guidance benchmark is used. The agent avoids the failure modes: it does not compare GAAP EPS to non-GAAP range, does not call revenue a 'beat' relative to guidance, and uses the correct guidance date."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Qualcomm's FQ3 2026 total revenue came in within the company's guidance range, near the top end.",
+     "numeric": true,
+     "cited_url": "https://www.qualcomm.com/news/releases/2026/07/qualcomm-announces-third-quarter-fiscal-2026-results",
+     "reason": "The Q3 press release states: 'Total revenues of $9.9 billion delivered at the high end of guidance.' Guidance range was $9.2B–$10.0B, so $9.9B is near the top end.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Qualcomm's FQ3 2026 non-GAAP diluted EPS came in within the company's guidance range, near the mid-range.",
+     "numeric": true,
+     "cited_url": "https://www.qualcomm.com/news/releases/2026/07/qualcomm-announces-third-quarter-fiscal-2026-results",
+     "reason": "The Q3 press release reports non-GAAP EPS of $2.21. Guidance range was $2.10–$2.30 (midpoint $2.20). $2.21 is within the range and close to the midpoint.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Qualcomm's guidance for FQ3 2026 (issued April 29, 2026) was total revenues $9.2B–$10.0B.",
+     "numeric": true,
+     "cited_url": "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q2/FY2026-2nd-Quarter-Earnings-Release.pdf",
+     "reason": "The PDF shows 'Current Guidance Q3 FY26 Estimates1 Revenues $9.2B - $10.0B'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Qualcomm's guidance for FQ3 2026 was non-GAAP diluted EPS $2.10–$2.30.",
+     "numeric": true,
+     "cited_url": "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q2/FY2026-2nd-Quarter-Earnings-Release.pdf",
+     "reason": "The PDF shows 'Non-GAAP diluted EPS $2.10 - $2.30'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Qualcomm's guidance for FQ3 2026 included QCT revenues $7.9B–$8.5B.",
+     "numeric": true,
+     "cited_url": "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q2/FY2026-2nd-Quarter-Earnings-Release.pdf",
+     "reason": "The PDF shows 'QCT revenues $7.9B - $8.5B'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Qualcomm's guidance for FQ3 2026 included QTL revenues $1.15B–$1.35B.",
+     "numeric": true,
+     "cited_url": "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q2/FY2026-2nd-Quarter-Earnings-Release.pdf",
+     "reason": "The PDF shows 'QTL revenues $1.15B - $1.35B'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual FQ3 2026 total revenue was $9.9 billion (quarter ended ~June 28, 2026, reported July 29, 2026).",
+     "numeric": true,
+     "cited_url": "https://www.qualcomm.com/news/releases/2026/07/qualcomm-announces-third-quarter-fiscal-2026-results",
+     "reason": "The Q3 press release states: 'Total revenues of $9.9 billion delivered at the high end of guidance.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual FQ3 2026 non-GAAP diluted EPS was $2.21.",
+     "numeric": true,
+     "cited_url": "https://www.qualcomm.com/news/releases/2026/07/qualcomm-announces-third-quarter-fiscal-2026-results",
+     "reason": "The Q3 press release states: 'non-GAAP earnings per share of $2.21'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual FQ3 2026 GAAP EPS was $1.87.",
+     "numeric": true,
+     "cited_url": "https://www.qualcomm.com/news/releases/2026/07/qualcomm-announces-third-quarter-fiscal-2026-results",
+     "reason": "The retrieved text for the Q3 press release does not mention GAAP EPS. MarketBeat (another cited source) reports GAAP EPS of $1.87, but the cited URL for this claim is the press release.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual FQ3 2026 QCT revenue was $8.5 billion (high end of guidance).",
+     "numeric": true,
+     "cited_url": "https://www.qualcomm.com/news/releases/2026/07/qualcomm-announces-third-quarter-fiscal-2026-results",
+     "reason": "The Q3 press release states: 'QCT revenues of $8.5 billion at the high end of guidance'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual FQ3 2026 QTL revenue was $1.3 billion.",
+     "numeric": true,
+     "cited_url": "https://www.qualcomm.com/news/releases/2026/07/qualcomm-announces-third-quarter-fiscal-2026-results",
+     "reason": "The Q3 press release states: 'QTL revenues of $1.3 billion'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "CEO Cristiano Amon characterized results as 'quarterly revenues at the high end of guidance,' citing a challenging memory and supply environment.",
+     "numeric": false,
+     "cited_url": "https://www.qualcomm.com/news/releases/2026/07/qualcomm-announces-third-quarter-fiscal-2026-results",
+     "reason": "The Q3 press release includes the exact quote: 'Despite a challenging memory and supply environment, our third quarter results reflect solid execution of our growth strategy, with quarterly revenues at the high end of guidance,' said Cristiano Amon.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Relative to analyst consensus, FQ3 2026 revenue beat consensus ($9.95B vs. ~$9.69B).",
+     "numeric": true,
+     "cited_url": "https://www.marketbeat.com/stocks/NASDAQ/QCOM/earnings",
+     "reason": "MarketBeat reports: 'Quarterly revenue fell 4.0% year-over-year to $9.95 billion, above the consensus estimate of $9.69 billion.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Relative to analyst consensus, FQ3 2026 non-GAAP EPS missed consensus ($2.21 vs. ~$2.23).",
+     "numeric": true,
+     "cited_url": "https://www.marketbeat.com/stocks/NASDAQ/QCOM/earnings",
+     "reason": "MarketBeat reports: 'reporting an EPS of $2.21, which missed analysts' consensus estimates of $2.23 by $0.02.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 13,
+   "numeric_cited": 13,
+   "cited": 14,
+   "supported": 13,
+   "not_retrieved": 0
+  }
+ }
+}

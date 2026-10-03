@@ -1,0 +1,303 @@
+{
+ "id": "X06",
+ "category": "Trends",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "As of March 31, 2026, what were Conagra Brands' net sales (USD millions) and GAAP diluted EPS (USD, as reported, not adjusted EPS) for each of the last four fiscal quarters it had reported? Use only filings and earnings releases available on or before March 31, 2026. Label each quarter with its fiscal quarter, fiscal year (Conagra's fiscal year ends on the last Sunday of May) and period-end date.",
+ "grading": "Graded cell by cell: each value within tolerance and for the stated period; a missing cell counts as wrong.",
+ "answer": "Conagra as of 2026-03-31 (last four reported quarters; net sales in USD millions, GAAP diluted EPS in USD; Q3 FY2026 was not reported until 2026-04-01):\n| Row | Net sales (revenue) | Diluted EPS |\n|---|---|---|\n| Q3 FY2025 (ended 2025-02-23) | 2,841.0 | 0.30 |\n| Q4 FY2025 (ended 2025-05-25) | 2,781.8 | 0.53 |\n| Q1 FY2026 (ended 2025-08-24) | 2,632.6 | 0.34 |\n| Q2 FY2026 (ended 2025-11-23) | 2,979.1 | -1.39 |",
+ "output": {
+  "answer": "**Question:** As of March 31, 2026, what were Conagra Brands' net sales (USD millions) and GAAP diluted EPS (USD, as reported, not adjusted EPS) for each of the last four fiscal quarters it had reported? Use only filings and earnings releases available on or before March 31, 2026. Label each quarter with its fiscal quarter, fiscal year (Conagra's fiscal year ends on the last Sunday of May) and period-end date.\n*As of 2026-03-31*\n\n| | Net sales (USD millions) | GAAP diluted EPS (USD, as reported) |\n|---|---|---|\n| Q2 FY2026 (quarter ended November 23, 2025) | 2,979.1 [1][2] | (1.39) [1][2] |\n| Q1 FY2026 (quarter ended August 24, 2025) | 2,632.6 [3][4] | 0.34 [3][4] |\n| Q4 FY2025 (quarter ended May 25, 2025) | 2,781.8 [5] | 0.53 [5] |\n| Q3 FY2025 (quarter ended February 23, 2025) | 2,841.0 [6] | 0.30 [7][6] |\n\n- Conagra Brands' four most recently reported fiscal quarters as of March 31, 2026 are Q2 FY2026 (quarter ended November 23, 2025), Q1 FY2026 (quarter ended August 24, 2025), Q4 FY2025 (quarter ended May 25, 2025) and Q3 FY2025 (quarter ended February 23, 2025), with Conagra's fiscal year ending on the last Sunday of May. [1][3][5][7]\n- Q2 FY2026 GAAP diluted EPS was a loss of $(1.39) per share, as reported, driven primarily by non-cash goodwill and brand impairment charges, versus adjusted EPS of $0.45. [1]\n- Q1 FY2026 GAAP diluted EPS was $0.34, as reported, versus adjusted EPS of $0.39. [3]\n- Q4 FY2025 GAAP diluted EPS was $0.53, as reported, versus adjusted EPS of $0.56. [5]\n- Q3 FY2025 GAAP diluted EPS was $0.30, as reported, versus adjusted EPS of $0.51. [7]\n\n**Not available**\n- Net sales and GAAP diluted EPS for Q3 FY2026 (quarter ended February 22, 2026): As of March 31, 2026, Conagra had not yet reported Q3 FY2026 results; no earnings release or 10-Q for that quarter is in the evidence, so it is excluded from the four most recent reported quarters. [1]\n- Net sales and GAAP diluted EPS for Q4 FY2026 / FY2026: Q4 FY2026 and full-year FY2026 were still in progress and unreported as of March 31, 2026. [1]\n\n**Sources**\n[1] CONAGRA BRANDS INC. earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2025-12-19) (www.sec.gov, 2025-12-19, primary) https://www.sec.gov/Archives/edgar/data/23217/000002321725000094/tmb-20251219xex99d1.htm\n[2] CONAGRA BRANDS INC. XBRL data tagged in 10-Q filed 2025-12-19 (www.sec.gov, 2025-12-19, primary) https://www.sec.gov/Archives/edgar/data/23217/000110465925123200/\n[3] CONAGRA BRANDS INC. earnings release for Q1 FY2026, 8-K EX-99.1 (filed 2025-10-01) (www.sec.gov, 2025-10-01, primary) https://www.sec.gov/Archives/edgar/data/23217/000002321725000083/tmb-20251001xex99d1.htm\n[4] CONAGRA BRANDS INC. XBRL data tagged in 10-Q filed 2025-10-01 (www.sec.gov, 2025-10-01, primary) https://www.sec.gov/Archives/edgar/data/23217/000110465925095651/\n[5] CONAGRA BRANDS INC. earnings release for Q4 FY2025, 8-K EX-99.1 (filed 2025-07-10) (www.sec.gov, 2025-07-10, primary) https://www.sec.gov/Archives/edgar/data/23217/000002321725000039/tmb-20250710xex99d1.htm\n[6] CONAGRA BRANDS INC. XBRL data tagged in 10-Q filed 2025-04-03 (www.sec.gov, 2025-04-03, primary) https://www.sec.gov/Archives/edgar/data/23217/000155837025004399/\n[7] CONAGRA BRANDS INC. earnings release for Q3 FY2025, 8-K EX-99.1 (filed 2025-04-03) (www.sec.gov, 2025-04-03, primary) https://www.sec.gov/Archives/edgar/data/23217/000002321725000011/tmb-20250403xex99d1.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 56769,
+   "output": 5879
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 37.53,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/ec3ca940092bac102e50633dfe0c4176",
+  "companies": [
+   {
+    "name": "CONAGRA BRANDS INC.",
+    "ticker": "CAG",
+    "cik": "23217",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Net sales (USD millions) for Q3 FY2025",
+    "GAAP diluted EPS (USD, as reported) for Q3 FY2025",
+    "Net sales (USD millions) for Q4 FY2025",
+    "GAAP diluted EPS (USD, as reported) for Q4 FY2025",
+    "Net sales (USD millions) for Q1 FY2026",
+    "GAAP diluted EPS (USD, as reported) for Q1 FY2026",
+    "Net sales (USD millions) for Q2 FY2026",
+    "GAAP diluted EPS (USD, as reported) for Q2 FY2026"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "CAG",
+     "label": "Q3 FY2025"
+    },
+    {
+     "ticker": "CAG",
+     "label": "Q4 FY2025"
+    },
+    {
+     "ticker": "CAG",
+     "label": "Q1 FY2026"
+    },
+    {
+     "ticker": "CAG",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "CAG",
+     "period": "Q3 FY2025",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "CAG",
+     "period": "Q4 FY2025",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "CAG",
+     "period": "Q1 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "CAG",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q3 FY2026 (period ended 2026-02-22) had not yet been reported as of 2026-03-31 — no earnings release or 10-Q available, so it is excluded from the four most recent reported quarters.",
+    "Q4 FY2026 and FY2026 are still in progress and not reported as of 2026-03-31.",
+    "Net sales and GAAP diluted EPS are standard financial-statement line items; the tagged figures for each answer period's filing are fetched automatically, so the earnings releases are requested only to confirm the as-reported (not adjusted) headline figures."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Net sales and GAAP diluted EPS for Q3 FY2026 (quarter ended February 22, 2026)",
+    "kind": "not_reported_yet",
+    "reason": "As of March 31, 2026, Conagra had not yet reported Q3 FY2026 results; no earnings release or 10-Q for that quarter is in the evidence, so it is excluded from the four most recent reported quarters.",
+    "evidence_ids": [
+     "E4"
+    ]
+   },
+   {
+    "item": "Net sales and GAAP diluted EPS for Q4 FY2026 / FY2026",
+    "kind": "not_reported_yet",
+    "reason": "Q4 FY2026 and full-year FY2026 were still in progress and unreported as of March 31, 2026.",
+    "evidence_ids": [
+     "E4"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/23217/000002321725000011/tmb-20250403xex99d1.htm",
+    "https://www.sec.gov/Archives/edgar/data/23217/000002321725000039/tmb-20250710xex99d1.htm",
+    "https://www.sec.gov/Archives/edgar/data/23217/000002321725000083/tmb-20251001xex99d1.htm",
+    "https://www.sec.gov/Archives/edgar/data/23217/000002321725000094/tmb-20251219xex99d1.htm",
+    "https://www.sec.gov/Archives/edgar/data/23217/000110465925095651/",
+    "https://www.sec.gov/Archives/edgar/data/23217/000110465925123200/",
+    "https://www.sec.gov/Archives/edgar/data/23217/000155837025004399/"
+   ],
+   "cited_primary": 7,
+   "retrieved": 8,
+   "retrieved_primary": 8
+  },
+  "correctness": {
+   "score": 1.0,
+   "verdict": "correct",
+   "points": [
+    {
+     "point": "Conagra Brands, Inc. Q3 FY2025 Net sales (revenue) = 2841.0 USD millions",
+     "met": true,
+     "note": "answer: 2841.0"
+    },
+    {
+     "point": "Conagra Brands, Inc. Q3 FY2025 Diluted EPS = 0.3 USD",
+     "met": true,
+     "note": "answer: 0.3"
+    },
+    {
+     "point": "Conagra Brands, Inc. Q4 FY2025 Net sales (revenue) = 2781.8 USD millions",
+     "met": true,
+     "note": "answer: 2781.8"
+    },
+    {
+     "point": "Conagra Brands, Inc. Q4 FY2025 Diluted EPS = 0.53 USD",
+     "met": true,
+     "note": "answer: 0.53"
+    },
+    {
+     "point": "Conagra Brands, Inc. Q1 FY2026 Net sales (revenue) = 2632.6 USD millions",
+     "met": true,
+     "note": "answer: 2632.6"
+    },
+    {
+     "point": "Conagra Brands, Inc. Q1 FY2026 Diluted EPS = 0.34 USD",
+     "met": true,
+     "note": "answer: 0.34"
+    },
+    {
+     "point": "Conagra Brands, Inc. Q2 FY2026 Net sales (revenue) = 2979.1 USD millions",
+     "met": true,
+     "note": "answer: 2979.1"
+    },
+    {
+     "point": "Conagra Brands, Inc. Q2 FY2026 Diluted EPS = -1.39 USD",
+     "met": true,
+     "note": "answer: -1.39"
+    }
+   ],
+   "rationale": "8/8 cells correct",
+   "cells_correct": 8,
+   "cells_total": 8
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q2 FY2026 (quarter ended November 23, 2025) net sales were $2,979.1 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/23217/000002321725000094/tmb-20251219xex99d1.htm",
+     "reason": "The Q2 FY2026 earnings release (8-K EX-99.1 filed 2025-12-19) shows 'Net sales $ 2,979.1' and XBRL tag 'RevenueFromContractWithCustomerExcludingAssessedTax: 2,979,100,000 USD' for the period 2025-08-25 to 2025-11-23.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 GAAP diluted EPS was a loss of $(1.39) per share",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/23217/000002321725000094/tmb-20251219xex99d1.htm",
+     "reason": "The same earnings release states 'Reported diluted loss per share was $1.39' and XBRL tag 'EarningsPerShareDiluted: -1.39 USD/shares' for the quarter ended November 23, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY2026 (quarter ended August 24, 2025) net sales were $2,632.6 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/23217/000002321725000083/tmb-20251001xex99d1.htm",
+     "reason": "The Q1 FY2026 earnings release (8-K EX-99.1 filed 2025-10-01) shows 'Net sales $ 2,632.6' and XBRL tag 'RevenueFromContractWithCustomerExcludingAssessedTax: 2,632,600,000 USD' for the period 2025-05-26 to 2025-08-24.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY2026 GAAP diluted EPS was $0.34 per share",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/23217/000002321725000083/tmb-20251001xex99d1.htm",
+     "reason": "The same release states 'Reported diluted earnings per share (EPS) was $0.34' and XBRL tag 'EarningsPerShareDiluted: 0.34 USD/shares' for the quarter ended August 24, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2025 (quarter ended May 25, 2025) net sales were $2,781.8 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/23217/000002321725000039/tmb-20250710xex99d1.htm",
+     "reason": "The Q4 FY2025 earnings release (8-K EX-99.1 filed 2025-07-10) shows 'Net sales $ 2,781.8' for the quarter ended May 25, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2025 GAAP diluted EPS was $0.53 per share",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/23217/000002321725000039/tmb-20250710xex99d1.htm",
+     "reason": "The same release states 'Reported diluted earnings per share for the fourth quarter was $0.53' and 'net income attributable to Conagra Brands was $256 million, or $0.53 per diluted share.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2025 (quarter ended February 23, 2025) net sales were $2,841.0 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/23217/000155837025004399/",
+     "reason": "The XBRL data tagged in the 10-Q filed 2025-04-03 shows 'RevenueFromContractWithCustomerExcludingAssessedTax: 2,841,000,000 USD' for the period 2024-11-25 to 2025-02-23.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2025 GAAP diluted EPS was $0.30 per share",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/23217/000002321725000011/tmb-20250403xex99d1.htm",
+     "reason": "The Q3 FY2025 earnings release (8-K EX-99.1 filed 2025-04-03) states 'Reported diluted earnings per share (EPS) was $0.30' and XBRL tag 'EarningsPerShareDiluted: 0.3 USD/shares' for the period 2024-11-25 to 2025-02-23.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "As of March 31, 2026, Conagra Brands' four most recently reported fiscal quarters were Q2 FY2026 (ended Nov 23, 2025), Q1 FY2026 (ended Aug 24, 2025), Q4 FY2025 (ended May 25, 2025), and Q3 FY2025 (ended Feb 23, 2025), with fiscal year ending on the last Sunday of May",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/23217/000002321725000094/tmb-20251219xex99d1.htm",
+     "reason": "The four cited earnings releases (Q2 FY2026, Q1 FY2026, Q4 FY2025, Q3 FY2025) each state the quarter end dates. The Q4 FY2025 release notes the fiscal year ended May 25, 2025 (a Sunday), confirming the fiscal year ends on the last Sunday of May. No later quarterly filings (Q3 FY2026 or Q4 FY2026) appear in the retrieved sources as of March 31, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 GAAP diluted EPS was a loss of $(1.39) per share, driven primarily by non-cash goodwill and brand impairment charges, versus adjusted EPS of $0.45",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/23217/000002321725000094/tmb-20251219xex99d1.htm",
+     "reason": "The Q2 FY2026 earnings release states 'Reported diluted loss per share was $1.39, primarily as a result of non-cash goodwill and brand impairment charges' and 'adjusted earnings per share (EPS) were $0.45'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY2026 GAAP diluted EPS was $0.34, as reported, versus adjusted EPS of $0.39",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/23217/000002321725000083/tmb-20251001xex99d1.htm",
+     "reason": "The Q1 FY2026 earnings release states 'Reported diluted earnings per share (EPS) was $0.34' and 'Adjusted EPS was $0.39'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2025 GAAP diluted EPS was $0.53, as reported, versus adjusted EPS of $0.56",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/23217/000002321725000039/tmb-20250710xex99d1.htm",
+     "reason": "The Q4 FY2025 earnings release states 'Reported diluted earnings per share for the fourth quarter was $0.53; adjusted earnings per share (EPS) decreased 8.2% to $0.56'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2025 GAAP diluted EPS was $0.30, as reported, versus adjusted EPS of $0.51",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/23217/000002321725000011/tmb-20250403xex99d1.htm",
+     "reason": "The Q3 FY2025 earnings release states 'Reported diluted earnings per share (EPS) was $0.30' and 'Adjusted EPS was $0.51'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "As of March 31, 2026, Conagra had not yet reported Q3 FY2026 (quarter ended February 22, 2026) results; no earnings release or 10-Q for that quarter is in the evidence",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/23217/000002321725000094/tmb-20251219xex99d1.htm",
+     "reason": "The latest filing in the retrieved sources is the Q2 FY2026 earnings release dated December 19, 2025. No filing for Q3 FY2026 (which would have ended February 22, 2026) appears in the sources, consistent with the claim that it was not yet reported as of March 31, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "As of March 31, 2026, Q4 FY2026 and full-year FY2026 were still in progress and unreported",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/23217/000002321725000094/tmb-20251219xex99d1.htm",
+     "reason": "The retrieved sources contain no earnings release or 10-Q for Q4 FY2026 or full-year FY2026. The latest filing is Q2 FY2026 (December 19, 2025). Fiscal year 2026 would end on the last Sunday of May 2026, which is after March 31, 2026, so full-year results would not yet be available.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 12,
+   "numeric_cited": 12,
+   "cited": 15,
+   "supported": 15,
+   "not_retrieved": 0
+  }
+ }
+}

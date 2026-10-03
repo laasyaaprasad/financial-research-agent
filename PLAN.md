@@ -14,8 +14,8 @@ The baseline comes first so every later change can be measured against the start
 | — | Course correction (2026-10-03) | First M3–M5 attempt was overfit; re-scoped and rebuilt | see below |
 | M3 | Rebuilt agent | Generic pipeline: resolve → plan → evidence → write → verify | done |
 | M4 | Held-out test sets | 20 questions (`7ae904f`), 20 hard questions (`80b9802`), 8 table tasks (`38a7190`), each frozen before the agent ran on it | done |
-| M5 | Final evaluation | Baseline vs. agent on dev, held-out, hard and table sets, same model, within the credit budget | in progress |
-| M6 | Submission package | README, technical statement, build record | pending |
+| M5 | Final evaluation | Baseline vs. agent on dev, held-out, hard and table sets, same model, within the credit budget | done |
+| M6 | Submission package | README, final report, build record | done |
 
 ## M0: Project setup
 
@@ -208,20 +208,38 @@ The superseded code was removed from the working tree; it remains in git history
    - agent v3 on the held-out (×2), hard (×2) and dev (×1) sets
    - baseline runs on those sets reused, since the baseline code is unchanged
 
+**Result (final runs, pooled over three held-out sets × two runs, same model):**
+
+| Measure | Baseline | New agent |
+|---|---|---|
+| Fully correct | 79/84 | 81/84 |
+| Table cells correct | 99% | 97% |
+| Verified-correct | 40/84 | 68/84 |
+| Cited claims not supported | 27% | 9% |
+| Primary-source citations | 45% | 87% |
+| Correct refusals | 10/12 | 12/12 |
+| Tavily credits per question | 7.4 | 0.8 |
+| Median latency | 23 s | 48 s |
+
+- **Correctness:** a tie. **Trustworthiness and cost:** clear gains for the new agent. **Latency:** about 2× slower. Details are in `results/final/results.md`.
+- **Acceptance criteria:**
+  - **Met:**
+    - every refusal correct
+    - at least 90% of cited claims supported (91%)
+    - within the Tavily budget
+    - verified-correct well beyond run-to-run variation
+  - **Not met as originally framed:** a correctness gain over the baseline. The README and REPORT say so plainly.
+
 **Acceptance criteria**
 - **Headline:** the README reports quality next to credits, tokens and latency, without picking runs.
 - **Bar on the held-out sets:** the agent beats the baseline on at least one held-out measure an analyst cares about, by more than run-to-run variation. Otherwise the README says so plainly.
 - **Refusals and support:** all refusals correct, and at least 90% of cited claims supported.
 - **Budget:** total Tavily credits stay within 1,500 (about 735 used before the v3 final runs).
 
-## M6: Submission package
+## M6: Submission package (done)
 
-**What we build**
-- **README:** architecture diagram, one-command setup, results table, limitations, and "what I didn't do and why".
-- **Technical statement.**
-- **Build record:** the exported transcript.
-
-**Acceptance criteria**
-- A fresh clone plus `.env` runs the agent and the eval by following the README alone.
-- No `starter_agent.py` or `.env` in the repo.
-- Every claim in the statement has a measured result or a source behind it.
+- **`README.md`:** results table, architecture diagram, scope, evaluation design, usage, limitations.
+- **`REPORT.md`:** final report and technical statement, covering the problem, the baseline, why each component exists, results and how they were reached.
+- **`results/final/`:** `results.md` (regenerate with `uv run python -m evals.report --final`), scorecards, and compact per-question records.
+- **Build record:** the exported session transcript.
+- **Repo contents:** no `starter_agent.py`, `.env` or assignment brief in the repo; `scripts/check_secrets.py` reports no key material.

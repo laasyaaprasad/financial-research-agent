@@ -1,0 +1,207 @@
+{
+ "id": "H10",
+ "category": "Numerical reasoning",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "What were Ollie's Bargain Outlet's trailing-twelve-month net sales and net income as of the end of its fiscal Q2 2026 (quarter ended August 1, 2026), and what was the implied TTM net margin?",
+ "grading": "Computation: TTM = FY2025 + 26 weeks FY2026 - 26 weeks FY2025. Net sales USD 2,793.1M (2,793,108K); GAAP net income USD 273.6M (273,580K); net margin 9.79% (+/-0.3pp). Accept +/-0.5% on dollar figures. Fail if the TTM window is wrong (not Aug 3, 2025-Aug 1, 2026) or adjusted net income is used.",
+ "answer": "TTM to August 1, 2026 = FY2025 (52 weeks ended Jan 31, 2026) + 26 weeks ended Aug 1, 2026 - 26 weeks ended Aug 2, 2025. Net sales: 2,649,198 + 1,400,233 - 1,256,323 = USD 2,793,108 thousand (USD 2,793.1 million). Net income: 240,596 + 141,854 - 108,870 = USD 273,580 thousand (USD 273.6 million). TTM net margin = 273,580 / 2,793,108 = 9.79% [H10-E1][H10-E2].",
+ "output": {
+  "answer": "**Question:** What were Ollie's Bargain Outlet's trailing-twelve-month net sales and net income as of the end of its fiscal Q2 2026 (quarter ended August 1, 2026), and what was the implied TTM net margin?\n*As of 2026-10-03*\n\n| | Net sales (USD thousands) | Net income (USD thousands) |\n|---|---|---|\n| FY2025 (fiscal year ended January 31, 2026) | 2,649,198 [1][2] | 240,596 [1][2] |\n| First half FY2025 (26 weeks ended August 2, 2025) | 1,256,323 [3][4] | 108,870 [3][4] |\n| First half FY2026 (26 weeks ended August 1, 2026) | 1,400,233 [5][6] | 141,854 [5] |\n\n- Ollie's Bargain Outlet's trailing-twelve-month net sales for the twelve months ended August 1, 2026 (fiscal Q3 FY2025 through fiscal Q2 FY2026) were 2,793,108 thousand, derived as FY2025 full-year net sales less first-half FY2025 net sales plus first-half FY2026 net sales; the company does not disclose a TTM figure. [1][3][5]\n- Ollie's trailing-twelve-month net income for the twelve months ended August 1, 2026 (fiscal Q3 FY2025 through fiscal Q2 FY2026) was 273,580 thousand, derived as FY2025 full-year net income less first-half FY2025 net income plus first-half FY2026 net income. [1][3][5]\n- The implied trailing-twelve-month net margin as of the end of fiscal Q2 2026 (twelve months ended August 1, 2026) was 9.8%, calculated as TTM net income divided by TTM net sales; this is a derived figure, not a company-disclosed rate. [1][3][5]\n\n**Sources**\n[1] Ollie's Bargain Outlet Holdings, Inc. XBRL data tagged in 10-K filed 2026-03-19 (www.sec.gov, 2026-03-19, primary) https://www.sec.gov/Archives/edgar/data/1639300/000114036126010409/\n[2] Ollie's Bargain Outlet Holdings, Inc. 10-K for FY2025 (filed 2026-03-19) (www.sec.gov, 2026-03-19, primary) https://www.sec.gov/Archives/edgar/data/1639300/000114036126010409/ef20060524_10k.htm\n[3] Ollie's Bargain Outlet Holdings, Inc. XBRL data tagged in 10-Q filed 2025-09-03 (www.sec.gov, 2025-09-03, primary) https://www.sec.gov/Archives/edgar/data/1639300/000114036125033812/\n[4] Ollie's Bargain Outlet Holdings, Inc. 10-Q for Q2 FY2025 (filed 2025-09-03) (www.sec.gov, 2025-09-03, primary) https://www.sec.gov/Archives/edgar/data/1639300/000114036125033812/ef20050388_10q.htm\n[5] Ollie's Bargain Outlet Holdings, Inc. XBRL data tagged in 10-Q filed 2026-09-02 (www.sec.gov, 2026-09-02, primary) https://www.sec.gov/Archives/edgar/data/1639300/000110465926104755/\n[6] Ollie's Bargain Outlet Holdings, Inc. 10-Q for Q2 FY2026 (filed 2026-09-02) (www.sec.gov, 2026-09-02, primary) https://www.sec.gov/Archives/edgar/data/1639300/000110465926104755/olli-20260801x10q.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 73713,
+   "output": 11526
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 114.98,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/c43a082d04ac92caf2179a993a9765dd",
+  "companies": [
+   {
+    "name": "Ollie's Bargain Outlet Holdings, Inc.",
+    "ticker": "OLLI",
+    "cik": "1639300",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Net sales for fiscal Q2 2026 (quarter ended 2026-08-01) and the six months ended 2026-08-01",
+    "Net income for fiscal Q2 2026 and the six months ended 2026-08-01",
+    "Net sales and net income for the six months ended 2025-08-02 (prior-year H1, from the Q2 FY2025 10-Q)",
+    "Net sales and net income for full fiscal year FY2025 (2025-02-02 to 2026-01-31)",
+    "TTM net sales = FY2025 net sales - H1 FY2025 net sales + H1 FY2026 net sales",
+    "TTM net income = FY2025 net income - H1 FY2025 net income + H1 FY2026 net income",
+    "Implied TTM net margin = TTM net income / TTM net sales"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "OLLI",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "OLLI",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "OLLI",
+     "period": "FY2025",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "OLLI",
+     "period": "Q2 FY2025",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "All periods needed for the TTM window (Q3 FY2025, Q4 FY2025, Q1 FY2026, Q2 FY2026) are reported and filed, so no estimation is required.",
+    "TTM figures are not disclosed as such; they are derived by combining FY2025 full-year results (10-K) with the first-half FY2025 and first-half FY2026 results (10-Qs).",
+    "Q3 FY2026 and FY2026 are still in progress and are not part of the requested TTM window."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1639300/000110465926104755/",
+    "https://www.sec.gov/Archives/edgar/data/1639300/000110465926104755/olli-20260801x10q.htm",
+    "https://www.sec.gov/Archives/edgar/data/1639300/000114036125033812/",
+    "https://www.sec.gov/Archives/edgar/data/1639300/000114036125033812/ef20050388_10q.htm",
+    "https://www.sec.gov/Archives/edgar/data/1639300/000114036126010409/",
+    "https://www.sec.gov/Archives/edgar/data/1639300/000114036126010409/ef20060524_10k.htm"
+   ],
+   "cited_primary": 6,
+   "retrieved": 6,
+   "retrieved_primary": 6
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "TTM net sales = USD 2,793.1M (2,793,108K) with tolerance +/-0.5%",
+     "met": true,
+     "note": "Agent reports 2,793,108 thousand, exactly matching reference."
+    },
+    {
+     "point": "TTM net income = USD 273.6M (273,580K) with tolerance +/-0.5%",
+     "met": true,
+     "note": "Agent reports 273,580 thousand, exactly matching reference."
+    },
+    {
+     "point": "TTM net margin = 9.79% with tolerance +/-0.3 percentage points",
+     "met": true,
+     "note": "Agent reports 9.8%, which is within 0.01pp of 9.79%."
+    },
+    {
+     "point": "TTM window correct: Aug 3, 2025 to Aug 1, 2026 (fiscal Q3 FY2025 through fiscal Q2 FY2026)",
+     "met": true,
+     "note": "Agent explicitly states 'twelve months ended August 1, 2026 (fiscal Q3 FY2025 through fiscal Q2 FY2026)'."
+    },
+    {
+     "point": "Uses GAAP net income (not adjusted)",
+     "met": true,
+     "note": "Agent cites 10-K and 10-Q filings, which are GAAP; no mention of adjusted figures."
+    },
+    {
+     "point": "Computation method correct: FY2025 + 26 weeks FY2026 - 26 weeks FY2025",
+     "met": true,
+     "note": "Agent describes derivation as 'FY2025 full-year net sales less first-half FY2025 net sales plus first-half FY2026 net sales', matching the required formula."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All six requirements are satisfied. The agent's figures match the reference exactly, the TTM window is correctly identified, GAAP net income is used, and the computation method is properly described. The margin rounding to 9.8% is well within the allowed tolerance."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Ollie's Bargain Outlet's trailing-twelve-month net sales for the twelve months ended August 1, 2026 were 2,793,108 thousand USD",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1639300/000114036126010409/ef20060524_10k.htm",
+     "reason": "Derived as FY2025 full-year net sales (2,649,198) minus first-half FY2025 net sales (1,256,323) plus first-half FY2026 net sales (1,400,233) = 2,793,108. All three inputs are directly supported by the cited 10-K, 10-Q FY2025, and 10-Q FY2026 filings. The arithmetic is correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Ollie's Bargain Outlet's trailing-twelve-month net income for the twelve months ended August 1, 2026 was 273,580 thousand USD",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1639300/000114036126010409/ef20060524_10k.htm",
+     "reason": "Derived as FY2025 full-year net income (240,596) minus first-half FY2025 net income (108,870) plus first-half FY2026 net income (141,854) = 273,580. All three inputs are directly supported by the cited filings. The arithmetic is correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The implied trailing-twelve-month net margin as of the end of fiscal Q2 2026 was 9.8%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1639300/000114036126010409/ef20060524_10k.htm",
+     "reason": "Calculated as TTM net income (273,580) divided by TTM net sales (2,793,108) = 0.09796, which rounds to 9.8%. The derived inputs are correct and the division is accurate.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 net sales (fiscal year ended January 31, 2026) were 2,649,198 thousand USD",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1639300/000114036126010409/ef20060524_10k.htm",
+     "reason": "The 10-K for FY2025 shows Revenue from Contract with Customer, Excluding Assessed Tax: 2,649,198,000 USD for the period 2025-02-02 to 2026-01-31, and the consolidated statement of income shows Net sales $2,649,198 (in thousands).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 net income (fiscal year ended January 31, 2026) was 240,596 thousand USD",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1639300/000114036126010409/ef20060524_10k.htm",
+     "reason": "The 10-K shows Net Income (Loss) Attributable to Parent: 240,596,000 USD for the same period, and the consolidated statement of income shows Net income $240,596 (in thousands).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "First half FY2025 net sales (26 weeks ended August 2, 2025) were 1,256,323 thousand USD",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1639300/000114036125033812/ef20050388_10q.htm",
+     "reason": "The 10-Q for Q2 FY2025 shows Revenue from Contract with Customer, Excluding Assessed Tax: 1,256,323,000 USD for the period 2025-02-02 to 2025-08-02, and the reconciliation table shows net sales for twenty-six weeks ended August 2, 2025 as $1,256,323 (in thousands).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "First half FY2025 net income (26 weeks ended August 2, 2025) was 108,870 thousand USD",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1639300/000114036125033812/ef20050388_10q.htm",
+     "reason": "The 10-Q shows Net Income (Loss) Attributable to Parent: 108,870,000 USD for the period 2025-02-02 to 2025-08-02, and the reconciliation table shows net income for twenty-six weeks ended August 2, 2025 as $108,870 (in thousands).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "First half FY2026 net sales (26 weeks ended August 1, 2026) were 1,400,233 thousand USD",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1639300/000110465926104755/olli-20260801x10q.htm",
+     "reason": "The 10-Q for Q2 FY2026 shows Revenue from Contract with Customer, Excluding Assessed Tax: 1,400,233,000 USD for the period 2026-02-01 to 2026-08-01, and the reconciliation table shows net sales for twenty-six weeks ended August 1, 2026 as $1,400,233 (in thousands).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "First half FY2026 net income (26 weeks ended August 1, 2026) was 141,854 thousand USD",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1639300/000110465926104755/olli-20260801x10q.htm",
+     "reason": "The 10-Q shows Net Income (Loss) Attributable to Parent: 141,854,000 USD for the period 2026-02-01 to 2026-08-01, and the reconciliation table shows net income for twenty-six weeks ended August 1, 2026 as $141,854 (in thousands).",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 9,
+   "numeric_cited": 9,
+   "cited": 9,
+   "supported": 9,
+   "not_retrieved": 0
+  }
+ }
+}

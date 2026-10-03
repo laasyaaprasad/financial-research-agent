@@ -1,0 +1,137 @@
+{
+ "id": "T03",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Dell Technologies' revenue from AI-optimized servers in the second quarter of fiscal 2027 (the quarter ended July 31, 2026)? Answer in USD millions.",
+ "grading": "±0.5%, USD millions (accept $16.4B). Period must be Q2 FY2027 (three months ended 2026-07-31). Fail if orders, backlog, six-month (32,533) or ISG total (31,782) is given as the answer.",
+ "answer": "AI-optimized servers revenue was USD 16,401 million in Q2 FY2027 (three months ended July 31, 2026), up 100% from USD 8,208 million a year earlier. It sits within ISG revenue of USD 31,782 million; total Dell net revenue was USD 46,971 million. [T03-E1, T03-E2]",
+ "output": {
+  "answer": "**$16,400 million (i.e., $16.4 billion)** in AI-optimized server revenue for Q2 FY2027 (quarter ended July 31, 2026).\n\nDell reported this as a record, up ~100% year over year, alongside $60.9 billion in AI orders and a $95 billion AI backlog. Total revenue for the quarter was $47 billion, with ISG at $31.8 billion.\n\nSources:\n- [Dell Technologies Q2 FY2027 press release](https://investors.delltechnologies.com/news-releases/news-release-details/dell-technologies-delivers-second-quarter-fiscal-2027-financial)\n- [CNBC — Dell Q2 earnings report 2027](https://www.cnbc.com/2026/09/01/dell-q2-earnings-report-2027.html)\n- [Reuters — Dell lifts annual forecasts as AI demand powers record results](https://www.reuters.com/business/dell-again-lifts-forecasts-ai-demand-powers-record-results-2026-09-01)",
+  "tokens": {
+   "input": 9589,
+   "output": 518
+  },
+  "tavily_credits": 2,
+  "latency_s": 11.13,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/d600b760a4387b2680f9ee601d1b5ed4",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Dell Technologies AI-optimized servers revenue second quarter fiscal 2027",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Dell Q2 fiscal 2027 earnings AI server revenue"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investors.delltechnologies.com/news-releases/news-release-details/dell-technologies-delivers-second-quarter-fiscal-2027-financial",
+    "https://www.cnbc.com/2026/09/01/dell-q2-earnings-report-2027.html",
+    "https://www.reuters.com/business/dell-again-lifts-forecasts-ai-demand-powers-record-results-2026-09-01"
+   ],
+   "cited_primary": 1,
+   "retrieved": 20,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer in USD millions (accept $16.4B) with ±0.5% tolerance",
+     "met": true,
+     "note": "Agent gave $16,400 million, which is within 0.006% of the reference $16,401 million."
+    },
+    {
+     "point": "Period must be Q2 FY2027 (three months ended 2026-07-31)",
+     "met": true,
+     "note": "Agent explicitly states 'Q2 FY2027 (quarter ended July 31, 2026)'."
+    },
+    {
+     "point": "Must not give orders ($60.9B), backlog ($95B), six-month (32,533), or ISG total (31,782) as the answer",
+     "met": true,
+     "note": "Agent provides the correct AI-optimized server revenue ($16,400 million) and mentions orders/backlog only as additional context, not as the answer."
+    },
+    {
+     "point": "Answer must be a numeric value in USD millions",
+     "met": true,
+     "note": "Agent provides a numeric value: $16,400 million."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: the agent provides the correct AI-optimized server revenue for Q2 FY2027 in USD millions within the allowed tolerance, identifies the correct fiscal period, and does not confuse the figure with orders, backlog, six-month, or ISG total revenue."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "$16,400 million (i.e., $16.4 billion) in AI-optimized server revenue for Q2 FY2027 (quarter ended July 31, 2026)",
+     "numeric": true,
+     "cited_url": "https://investors.delltechnologies.com/news-releases/news-release-details/dell-technologies-delivers-second-quarter-fiscal-2027-financial",
+     "reason": "Dell press release states 'recognized a record $16.4 billion in revenue' for AI-optimized servers in Q2 FY2027.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Dell reported this as a record, up ~100% year over year",
+     "numeric": true,
+     "cited_url": "https://investors.delltechnologies.com/news-releases/news-release-details/dell-technologies-delivers-second-quarter-fiscal-2027-financial",
+     "reason": "Dell press release confirms record $16.4B but does not mention year-over-year growth; retrieved CNBC and Reuters also do not mention YoY growth for Q2 AI server revenue.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "$60.9 billion in AI orders",
+     "numeric": true,
+     "cited_url": "https://investors.delltechnologies.com/news-releases/news-release-details/dell-technologies-delivers-second-quarter-fiscal-2027-financial",
+     "reason": "Press release states 'booked a record $60.9 billion in orders'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "$95 billion AI backlog",
+     "numeric": true,
+     "cited_url": "https://investors.delltechnologies.com/news-releases/news-release-details/dell-technologies-delivers-second-quarter-fiscal-2027-financial",
+     "reason": "Press release states 'exited the quarter with a record $95 billion backlog'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total revenue for the quarter was $47 billion",
+     "numeric": true,
+     "cited_url": "https://investors.delltechnologies.com/news-releases/news-release-details/dell-technologies-delivers-second-quarter-fiscal-2027-financial",
+     "reason": "Press release (via earnings call transcript) states 'Revenue was $47 billion up 58%'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "ISG at $31.8 billion",
+     "numeric": true,
+     "cited_url": "https://investors.delltechnologies.com/news-releases/news-release-details/dell-technologies-delivers-second-quarter-fiscal-2027-financial",
+     "reason": "Press release states 'ISG delivered record revenue of $31.8 billion'.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 6,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,140 @@
+{
+ "id": "T09",
+ "category": "Numerical reasoning",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "Lam Research's fiscal 2026 ended June 28, 2026. Using its filed fiscal-year revenue and the revenue for the nine months ended March 29, 2026, what was the implied revenue for the fourth quarter of fiscal 2026 (the June 2026 quarter)? Answer in USD millions.",
+ "grading": "±0.5% of 6,722.2, USD millions (accept $6.72B). Derivation: FY2026 23,232.7 less nine months 16,510.5. Fail if a different quarter or YTD figure is given.",
+ "answer": "Implied fiscal Q4 2026 revenue was USD 6,722.2 million = FY2026 revenue 23,232.690 (USD thousands: 23,232,690) less nine-month revenue 16,510.452 (16,510,452). This matches the 6,722,238 thousand revenue reported in the June 2026 quarter earnings release. [T09-E1, T09-E2, T09-E3]",
+ "output": {
+  "answer": "**Question:** Lam Research's fiscal 2026 ended June 28, 2026. Using its filed fiscal-year revenue and the revenue for the nine months ended March 29, 2026, what was the implied revenue for the fourth quarter of fiscal 2026 (the June 2026 quarter)? Answer in USD millions.\n*As of 2026-10-03*\n\n- Lam Research's implied revenue for the fourth quarter of fiscal 2026 (the quarter ended June 28, 2026) was 6,722.2 USD millions, calculated as fiscal 2026 full-year revenue of $23,232,690 thousand less revenue of $16,510,452 thousand for the nine months ended March 29, 2026. [1][2][3][4]\n- The fiscal 2026 full-year revenue figure is GAAP, as reported, for the year ended June 28, 2026, and the nine-month figure is GAAP, as reported, for the nine months ended March 29, 2026 (a 39-week period). [1][2]\n\n**Sources**\n[1] LAM RESEARCH CORP 10-K for FY2026 (filed 2026-08-07) (www.sec.gov, 2026-08-07, primary) https://www.sec.gov/Archives/edgar/data/707549/000070754926000037/lrcx-20260628.htm\n[2] LAM RESEARCH CORP 10-Q for Q3 FY2026 (filed 2026-04-23) (www.sec.gov, 2026-04-23, primary) https://www.sec.gov/Archives/edgar/data/707549/000070754926000022/lrcx-20260329.htm\n[3] LAM RESEARCH CORP XBRL data tagged in 10-K filed 2026-08-07 (www.sec.gov, 2026-08-07, primary) https://www.sec.gov/Archives/edgar/data/707549/000070754926000037/\n[4] LAM RESEARCH CORP XBRL data tagged in 10-Q filed 2026-04-23 (www.sec.gov, 2026-04-23, primary) https://www.sec.gov/Archives/edgar/data/707549/000070754926000022/\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 20479,
+   "output": 2509
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 18.22,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/f345394df2e2c288ffa434a982976919",
+  "companies": [
+   {
+    "name": "LAM RESEARCH CORP",
+    "ticker": "LRCX",
+    "cik": "707549",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Lam Research total revenue for fiscal year 2026 (ended June 28, 2026), in USD millions",
+    "Lam Research revenue for the nine months ended March 29, 2026 (Q1+Q2+Q3 FY2026), in USD millions",
+    "Implied Q4 FY2026 (June 2026 quarter) revenue = FY2026 revenue minus nine-month revenue, in USD millions"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "LRCX",
+     "label": "FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "LRCX",
+     "period": "FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "LRCX",
+     "period": "Q3 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Both required periods are filed: FY2026 10-K (filed 2026-08-07) and Q3 FY2026 10-Q (filed 2026-04-23), so the full-year and nine-month revenue figures are available.",
+    "Q4 FY2026 revenue is not directly reported as a standalone figure in the question's framing; it is derived by subtracting the nine-month (Q1-Q3 FY2026) revenue from the FY2026 total. Note the Q4 FY2026 earnings release/10-K do report the quarter directly, but the question asks for the implied figure.",
+    "Q3 FY2026 Q3 FY2026 is not in the company's reporting calendar"
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/707549/000070754926000022/",
+    "https://www.sec.gov/Archives/edgar/data/707549/000070754926000022/lrcx-20260329.htm",
+    "https://www.sec.gov/Archives/edgar/data/707549/000070754926000037/",
+    "https://www.sec.gov/Archives/edgar/data/707549/000070754926000037/lrcx-20260628.htm"
+   ],
+   "cited_primary": 4,
+   "retrieved": 4,
+   "retrieved_primary": 4
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer is a number in USD millions",
+     "met": true,
+     "note": "Agent answered 6,722.2 USD millions."
+    },
+    {
+     "point": "Number corresponds to implied Q4 fiscal 2026 revenue (June 2026 quarter)",
+     "met": true,
+     "note": "Agent explicitly states it is for the fourth quarter of fiscal 2026 (quarter ended June 28, 2026)."
+    },
+    {
+     "point": "Derivation uses FY2026 revenue minus nine-month revenue (not six-month or other YTD)",
+     "met": true,
+     "note": "Agent calculates as fiscal 2026 full-year revenue of $23,232,690 thousand less revenue of $16,510,452 thousand for the nine months ended March 29, 2026."
+    },
+    {
+     "point": "Value within ±0.5% of 6,722.2 (i.e., 6,688.6 to 6,755.8)",
+     "met": true,
+     "note": "Agent's value 6,722.2 is exactly the reference value, well within tolerance."
+    },
+    {
+     "point": "Answer is not a different quarter (e.g., Q3 5,841) or YTD figure",
+     "met": true,
+     "note": "Agent's answer matches Q4 implied revenue, not Q3 or any other period."
+    },
+    {
+     "point": "Unit is USD millions (not thousands)",
+     "met": true,
+     "note": "Agent answers in USD millions as required."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All requirements are met: the agent provides the correct implied Q4 revenue (6,722.2 USD millions) derived from the correct FY2026 and nine-month figures, within the specified tolerance, with proper units and period identification."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Lam Research's implied revenue for the fourth quarter of fiscal 2026 (the quarter ended June 28, 2026) was 6,722.2 USD millions, calculated as fiscal 2026 full-year revenue of $23,232,690 thousand less revenue of $16,510,452 thousand for the nine months ended March 29, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/707549/000070754926000037/lrcx-20260628.htm",
+     "reason": "The 10-K (source 1) reports total revenue for the year ended June 28, 2026 as $23,232,690 thousand. The same 10-K (and the 10-Q, source 2) reports revenue for the nine months ended March 29, 2026 as $16,510,452 thousand. Subtracting: 23,232,690 - 16,510,452 = 6,722,238 thousand = 6,722.238 million. Rounded to one decimal place, this is 6,722.2 million USD. The arithmetic is correct and the inputs are directly quoted from the cited filings.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The fiscal 2026 full-year revenue figure is GAAP, as reported, for the year ended June 28, 2026, and the nine-month figure is GAAP, as reported, for the nine months ended March 29, 2026 (a 39-week period).",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/707549/000070754926000022/lrcx-20260329.htm",
+     "reason": "The 10-K is an audited annual report prepared under U.S. GAAP. The 10-Q explicitly states that the unaudited condensed consolidated financial statements have been prepared in accordance with U.S. GAAP for interim financial information. The same 10-Q notes that the nine months ended March 29, 2026 included 39 weeks. Both sources confirm the GAAP basis and the 39-week period.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 1,
+   "numeric_cited": 1,
+   "cited": 2,
+   "supported": 2,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,125 @@
+{
+ "id": "T01",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Palo Alto Networks' total revenue in its fiscal fourth quarter of 2026 (the quarter ended July 31, 2026)? Answer in USD millions.",
+ "grading": "±0.5%, USD millions (accept $3.41B). Period must be fiscal Q4 2026, the three months ended 2026-07-31. Fail if the FY2026 total, another quarter or ARR is given.",
+ "answer": "Palo Alto Networks reported total revenue of USD 3,410 million for fiscal Q4 2026 (three months ended July 31, 2026), up 34% from USD 2,536 million in Q4 FY2025. [T01-E1] Cross-check: FY2026 revenue of USD 11,480 million [T01-E2] less nine-month revenue of USD 8,070 million [T01-E3] equals USD 3,410 million.",
+ "output": {
+  "answer": "**Question:** What was Palo Alto Networks' total revenue in its fiscal fourth quarter of 2026 (the quarter ended July 31, 2026)? Answer in USD millions.\n*As of 2026-10-03*\n\n- Palo Alto Networks' total revenue for its fiscal fourth quarter of 2026 (quarter ended July 31, 2026) was $3,410 million, as reported (GAAP). [1]\n\n**Sources**\n[1] Palo Alto Networks Inc earnings release for Q4 FY2026, 8-K EX-99.1 (filed 2026-09-01) (www.sec.gov, 2026-09-01, primary) https://www.sec.gov/Archives/edgar/data/1327567/000132756726000019/ex991q426earningsrelease.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 16819,
+   "output": 949
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 18.74,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/c74e0e5f10cbd2398572f36879ef31b0",
+  "companies": [
+   {
+    "name": "Palo Alto Networks Inc",
+    "ticker": "PANW",
+    "cik": "1327567",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Total revenue for Q4 FY2026 (quarter ended 2026-07-31), in USD millions"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "PANW",
+     "label": "Q4 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "PANW",
+     "period": "Q4 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "PANW",
+     "period": "Q4 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q4 FY2026 (2026-05-01 to 2026-07-31) is reported: earnings release 8-K filed 2026-09-01 and 10-K filed 2026-09-10, so total revenue is available."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1327567/000132756726000019/ex991q426earningsrelease.htm"
+   ],
+   "cited_primary": 1,
+   "retrieved": 4,
+   "retrieved_primary": 4
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer in USD millions (unit correct)",
+     "met": true,
+     "note": "Agent answered $3,410 million, which is in USD millions."
+    },
+    {
+     "point": "Value within ±0.5% of 3,410 million",
+     "met": true,
+     "note": "Agent gave exactly 3,410 million, matching the reference."
+    },
+    {
+     "point": "Period is fiscal Q4 2026 (quarter ended July 31, 2026)",
+     "met": true,
+     "note": "Agent explicitly states fiscal fourth quarter of 2026 (quarter ended July 31, 2026)."
+    },
+    {
+     "point": "Not FY2026 total revenue (11,480)",
+     "met": true,
+     "note": "Agent did not provide FY2026 total revenue."
+    },
+    {
+     "point": "Not another quarter (e.g., Q3 3,002)",
+     "met": true,
+     "note": "Agent did not provide Q3 revenue."
+    },
+    {
+     "point": "Not ARR (e.g., NGS ARR $9.10B)",
+     "met": true,
+     "note": "Agent did not provide ARR."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer matches the verified reference value of 3,410 million USD for fiscal Q4 2026, with correct unit, period, and no confusion with full-year, other quarters, or ARR."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Palo Alto Networks' total revenue for its fiscal fourth quarter of 2026 (quarter ended July 31, 2026) was $3,410 million, as reported (GAAP).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1327567/000132756726000019/ex991q426earningsrelease.htm",
+     "reason": "The earnings release (8-K EX-99.1 filed 2026-09-01) includes a table showing 'Total revenue | 3,410 | 2,536 | 11,480 | 9,221' and states 'Total revenue for the fiscal fourth quarter 2026 grew 34% year over year to $3.41 billion.' The figure 3,410 is in millions of USD, matching $3.41 billion, and is presented on a GAAP basis.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 1,
+   "numeric_cited": 1,
+   "cited": 1,
+   "supported": 1,
+   "not_retrieved": 0
+  }
+ }
+}

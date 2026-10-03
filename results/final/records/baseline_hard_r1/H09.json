@@ -1,0 +1,182 @@
+{
+ "id": "H09",
+ "category": "Quantitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "How many shares did Casey's General Stores repurchase in its fiscal first quarter of 2027 (three months ended July 31, 2026), at what total cost and average price per share, and how much repurchase authorization remained at quarter end?",
+ "grading": "Key points: 54,647 shares repurchased in the quarter; total cost about USD 45.6M (45,642 thousand per the equity statement; accept USD 44.9M-45.7M if cash-flow basis is explained); average price USD 835.19; maximum dollar value remaining under the program USD 972.6M (972,601,128), after the Board expanded the program to USD 1.0B on June 4, 2026. Tolerance +/-0.5%. Fail if a prior-year quarter is used.",
+ "answer": "In fiscal Q1 2027 (May 1-July 31, 2026) Casey's repurchased 54,647 shares at an average price of USD 835.19 (monthly: 18,696 at USD 842.06; 17,386 at USD 814.82; 18,565 at USD 847.35), a total cost of about USD 45.6 million (USD 45,642 thousand in the statement of shareholders' equity; cash paid incl. excise taxes USD 44.9 million). USD 972.6 million (972,601,128) remained under the repurchase program at July 31, 2026, after the Board expanded the program from USD 400 million to USD 1.0 billion on June 4, 2026 [H09-E1].",
+ "output": {
+  "answer": "**Casey's General Stores — Q1 Fiscal 2027 (three months ended July 31, 2026)**\n\n| Metric | Amount |\n|---|---|\n| Shares repurchased | **54,647 shares** |\n| Total cost | **~$45.6 million** (excluding fees, commissions, excise taxes, and other costs) |\n| Average price per share | **$835.19** |\n| Authorization remaining at quarter end | **$972.6 million** |\n\n**Monthly detail (from the 10-Q, Item 2):**\n\n| Period | Shares Purchased | Avg. Price Paid | Remaining Authorization |\n|---|---|---|---|\n| May 1–31, 2026 | 18,696 | $842.06 | $78,868,744* |\n| June 1–30, 2026 | 17,386 | $814.82 | $988,332,112 |\n| July 1–31, 2026 | 18,565 | $847.35 | $972,601,128 |\n| **Total** | **54,647** | **$835.19** | **$972,601,128** |\n\n\\*The May figure reflects the tail end of the prior authorization; on June 4, 2026 the Board expanded the program to $1.0 billion, which is why the remaining balance jumps to ~$988 million in June.\n\nNote: The cash flow statement shows $44,856 thousand for \"Repurchase of common stock and payment of related excise taxes,\" slightly below the $45.6 million of share cost because of excise tax treatment.\n\nSources:\n- Casey's Q1 FY2027 earnings release: https://investor.caseys.com/news-releases/news-release-details/caseys-announces-first-quarter-results-3\n- 10-Q summary (repurchase table): https://www.stocktitan.net/sec-filings/CASY/10-q-caseys-general-stores-inc-quarterly-earnings-report-39bad1b20615.html\n\n(One caution: a YouTube transcript of the earnings call rendered the buyback as \"approximately 46 million shares,\" which is a transcription artifact — the filing confirms $45.6 million of shares, i.e., ~46 thousand shares.)",
+  "tokens": {
+   "input": 13667,
+   "output": 847
+  },
+  "tavily_credits": 4,
+  "latency_s": 17.18,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/85ab2186554319b965b023bc1e28f22f",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Casey's General Stores share repurchase first quarter fiscal 2027 July 31 2026",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Casey's General Stores first quarter fiscal 2026 repurchased shares average price repurchase authorization",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.caseys.com/news-releases/news-release-details/caseys-announces-first-quarter-results-3",
+    "https://www.stocktitan.net/sec-filings/CASY/10-q-caseys-general-stores-inc-quarterly-earnings-report-39bad1b20615.html"
+   ],
+   "cited_primary": 1,
+   "retrieved": 17,
+   "retrieved_primary": 6
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Shares repurchased in fiscal Q1 2027: 54,647 shares",
+     "met": true,
+     "note": "Agent states 54,647 shares repurchased, matching the reference."
+    },
+    {
+     "point": "Total cost: about USD 45.6M (45,642 thousand per equity statement; tolerance +/-0.5%, accept USD 44.9M-45.7M if cash-flow basis explained)",
+     "met": true,
+     "note": "Agent gives ~$45.6 million (excluding fees, commissions, excise taxes) and notes the cash-flow figure of $44,856 thousand, which is within tolerance and explained."
+    },
+    {
+     "point": "Average price per share: USD 835.19",
+     "met": true,
+     "note": "Agent reports $835.19, matching the reference."
+    },
+    {
+     "point": "Remaining repurchase authorization at quarter end: USD 972.6M (972,601,128) after Board expanded program to USD 1.0B on June 4, 2026",
+     "met": true,
+     "note": "Agent states $972.6 million remaining, shows the jump from ~$78.9M to ~$988M in June due to the expansion to $1.0B on June 4, 2026."
+    },
+    {
+     "point": "Correct fiscal quarter used (Q1 2027 = May–Jul 2026), not prior-year quarter",
+     "met": true,
+     "note": "Agent explicitly labels the quarter as Q1 Fiscal 2027 (three months ended July 31, 2026) and provides monthly breakdown for May–July 2026."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All key requirements are met: shares, total cost, average price, remaining authorization with expansion detail, and correct fiscal quarter. The agent's figures match the reference within tolerance and the explanation of the cash-flow vs. equity-statement cost is appropriate."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Shares repurchased in Q1 FY2027: 54,647 shares",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/CASY/10-q-caseys-general-stores-inc-quarterly-earnings-report-39bad1b20615.html",
+     "reason": "The 10-Q summary explicitly states: 'During the first quarter, we repurchased and retired 54,647 shares of our common stock under the share repurchase programs for a total of $45.6 million...' and the monthly table totals to 54,647 shares.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total cost of repurchases: ~$45.6 million (excluding fees, commissions, excise taxes, and other costs)",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/CASY/10-q-caseys-general-stores-inc-quarterly-earnings-report-39bad1b20615.html",
+     "reason": "The 10-Q summary states the total cost as $45.6 million excluding fees and taxes. The earnings release also says 'approximately $45.6 million of shares.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Average price per share: $835.19",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/CASY/10-q-caseys-general-stores-inc-quarterly-earnings-report-39bad1b20615.html",
+     "reason": "The 10-Q summary's monthly table shows a total average price of $835.19, which matches the weighted average of the monthly averages (18,696×$842.06 + 17,386×$814.82 + 18,565×$847.35) / 54,647 = $835.19.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Authorization remaining at quarter end: $972.6 million",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/CASY/10-q-caseys-general-stores-inc-quarterly-earnings-report-39bad1b20615.html",
+     "reason": "The 10-Q summary states: 'As of July 31, 2026, $972.6 million remained available thereunder.' The earnings release says 'approximately $973 million remaining.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "May 1–31, 2026: 18,696 shares purchased, average price $842.06, remaining authorization $78,868,744",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/CASY/10-q-caseys-general-stores-inc-quarterly-earnings-report-39bad1b20615.html",
+     "reason": "The 10-Q summary's monthly table lists exactly these figures for May 1–31, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "June 1–30, 2026: 17,386 shares purchased, average price $814.82, remaining authorization $988,332,112",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/CASY/10-q-caseys-general-stores-inc-quarterly-earnings-report-39bad1b20615.html",
+     "reason": "The 10-Q summary's monthly table lists exactly these figures for June 1–30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "July 1–31, 2026: 18,565 shares purchased, average price $847.35, remaining authorization $972,601,128",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/CASY/10-q-caseys-general-stores-inc-quarterly-earnings-report-39bad1b20615.html",
+     "reason": "The 10-Q summary's monthly table lists exactly these figures for July 1–31, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total for quarter: 54,647 shares, average price $835.19, remaining authorization $972,601,128",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/CASY/10-q-caseys-general-stores-inc-quarterly-earnings-report-39bad1b20615.html",
+     "reason": "The 10-Q summary's monthly table includes a total row with these exact values.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The May figure reflects the tail end of the prior authorization; on June 4, 2026 the Board expanded the program to $1.0 billion, causing the remaining balance to jump to ~$988 million in June",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/CASY/10-q-caseys-general-stores-inc-quarterly-earnings-report-39bad1b20615.html",
+     "reason": "The retrieved 10-Q summary shows the jump from $78.9 million to $988 million but does not explicitly mention a June 4 board expansion to $1.0 billion. The text only notes 'The Expanded Repurchase Program can be suspended or discontinued at any time.'",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cash flow statement shows $44,856 thousand for 'Repurchase of common stock and payment of related excise taxes,' slightly below the $45.6 million share cost due to excise tax treatment",
+     "numeric": true,
+     "cited_url": "https://investor.caseys.com/news-releases/news-release-details/caseys-announces-first-quarter-results-3",
+     "reason": "The earnings release's cash flow statement includes the line 'Repurchase of common stock and payment of related excise taxes | (44,856)' (in thousands). The same release states the company repurchased approximately $45.6 million of shares, confirming the difference is due to excise taxes.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "A YouTube transcript of the earnings call rendered the buyback as 'approximately 46 million shares,' which is a transcription artifact — the filing confirms $45.6 million of shares, i.e., ~46 thousand shares",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer mentions a YouTube transcript but does not cite a URL. Retrieved source 5 (YouTube transcript) contains 'During the first quarter, we repurchased approximately 46 million shares.' The 10-Q summary confirms 54,647 shares for $45.6 million (~46 thousand shares). Since no URL is cited in the answer, supported is null.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 11,
+   "numeric_cited": 10,
+   "cited": 10,
+   "supported": 9,
+   "not_retrieved": 0
+  }
+ }
+}

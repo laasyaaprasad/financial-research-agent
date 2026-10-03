@@ -1,0 +1,163 @@
+{
+ "id": "G14",
+ "category": "Adjustments",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "NVIDIA's Q2 FY2027 GAAP diluted EPS came in above non-GAAP. What were the two figures, and which reconciling items explain the gap?",
+ "grading": "Key points: (1) both EPS figures exact to the cent; (2) names the largest reconciling line items as shown in the table with sign; (3) explains why the net adjustment is negative; (4) no reasons not present in the filing",
+ "answer": "Q2 FY2027 diluted EPS was $2.46 GAAP and $2.22 non-GAAP. The reconciliation removes USD 7,771 million of equity-security gains, offset by USD 222 million of operating-cost adjustments, USD 298 million of other-income adjustments and USD 1,517 million of tax effects. Net income falls from USD 59,688 million to USD 53,954 million. Stock compensation remains included in non-GAAP starting FY2027. [G14-E1]",
+ "output": {
+  "answer": "**GAAP diluted EPS: $2.46** vs. **non-GAAP diluted EPS: $2.22** (Q2 FY2027, quarter ended July 26, 2026). GAAP came in ~$0.24 higher — an unusual inversion, since GAAP is normally the lower figure.\n\n**Reconciliation bridge (non-GAAP $2.22 → GAAP $2.46):**\n\n| Reconciling item | $ millions | EPS impact |\n|---|---|---|\n| Non-GAAP diluted EPS | — | $2.22 |\n| Acquisition-related and other costs | (222) | (0.01) |\n| Gain on equity securities, net | 7,771 | +0.32 |\n| Other | (298) | (0.01) |\n| Tax impact of adjustments | (1,517) | (0.06) |\n| **GAAP diluted EPS** | | **$2.46** |\n\n**What explains the gap:** the entire inversion is driven by **$7.77 billion of net gains on equity securities** sitting in GAAP other income, which NVIDIA excludes from non-GAAP. That single item adds $0.32/share, more than offsetting the drags: acquisition-related and other costs (amortization of intangibles, transaction costs, certain compensation charges) of $(222)M, \"other\" of $(298)M, and the related tax effect of $(1,517)M. Note that the net pre-tax impact of all non-GAAP adjustments was $(7,251)M — i.e., the company's non-GAAP exclusions were net *negative* this quarter, which is why non-GAAP EPS fell below GAAP.\n\nPractical takeaway: GAAP EPS is flattered by non-operating, non-cash, reversible mark-to-market gains, so $2.22 is arguably the more conservative read on operating earnings power.\n\nSources:\n- NVIDIA press release: https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027\n- NVIDIA Q2 FY27 quarterly presentation (full reconciliation table): https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/NVDA-F2Q27-Quarterly-Presentation-final-1.pdf\n- 8-K summary: https://www.stocktitan.net/sec-filings/NVDA/8-k-nvidia-corp-reports-material-event-bb35cdd18786.html\n- Analysis of the EPS inversion: https://www.nextgcomm.com/financials-nvidia-q2-earning-results-deep-analysis",
+  "tokens": {
+   "input": 14904,
+   "output": 1151
+  },
+  "tavily_credits": 3,
+  "latency_s": 9.84,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/b139bdef1f99210f9859363c75c128da",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA Q2 FY2027 GAAP diluted EPS non-GAAP reconciliation",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NVIDIA second quarter fiscal 2027 results earnings per share",
+     "time_range": "month"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+    "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/NVDA-F2Q27-Quarterly-Presentation-final-1.pdf",
+    "https://www.nextgcomm.com/financials-nvidia-q2-earning-results-deep-analysis",
+    "https://www.stocktitan.net/sec-filings/NVDA/8-k-nvidia-corp-reports-material-event-bb35cdd18786.html"
+   ],
+   "cited_primary": 2,
+   "retrieved": 20,
+   "retrieved_primary": 5
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "both EPS figures exact to the cent",
+     "met": true,
+     "note": "Agent states GAAP diluted EPS $2.46 and non-GAAP diluted EPS $2.22, matching reference exactly."
+    },
+    {
+     "point": "names the largest reconciling line items as shown in the table with sign",
+     "met": true,
+     "note": "Agent's reconciliation table includes all four key items (equity-security gains +7,771, operating-cost adjustments -222, other-income adjustments -298, tax effects -1,517) with correct signs relative to the non-GAAP→GAAP bridge."
+    },
+    {
+     "point": "explains why the net adjustment is negative",
+     "met": true,
+     "note": "Agent explains that the net pre-tax impact of non-GAAP exclusions was -$7,251M (i.e., net negative), causing non-GAAP EPS to fall below GAAP."
+    },
+    {
+     "point": "no reasons not present in the filing",
+     "met": true,
+     "note": "Agent only references items from the reconciliation table (equity gains, acquisition-related costs, other, tax impact) and does not invent extraneous reasons."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All four grading requirements are satisfied: EPS figures are exact, all major reconciling items are named with correct signs, the negative net adjustment is explained, and no outside reasons are introduced."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "GAAP diluted EPS for Q2 FY2027 (quarter ended July 26, 2026) was $2.46",
+     "numeric": true,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The NVIDIA press release for Q2 FY2027 shows GAAP diluted EPS of $2.46 in the GAAP summary table.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Non-GAAP diluted EPS for Q2 FY2027 was $2.22",
+     "numeric": true,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The same press release shows non-GAAP diluted EPS of $2.22 for Q2 FY2027.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "GAAP diluted EPS exceeded non-GAAP diluted EPS by approximately $0.24, an unusual inversion since GAAP is normally lower",
+     "numeric": true,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The press release reports GAAP EPS $2.46 and non-GAAP EPS $2.22; the difference is $0.24. The inversion is noted in the analysis source.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Reconciliation bridge: non-GAAP diluted EPS $2.22; acquisition-related and other costs $(222)M (EPS impact -$0.01); gain on equity securities, net $7,771M (EPS impact +$0.32); other $(298)M (EPS impact -$0.01); tax impact of adjustments $(1,517)M (EPS impact -$0.06); GAAP diluted EPS $2.46",
+     "numeric": true,
+     "cited_url": "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/NVDA-F2Q27-Quarterly-Presentation-final-1.pdf",
+     "reason": "The quarterly presentation includes a reconciliation table showing exactly these line items, dollar amounts, and EPS impacts, bridging non-GAAP $2.22 to GAAP $2.46.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The entire GAAP/non-GAAP inversion was driven by $7.77 billion of net gains on equity securities recorded in GAAP other income and excluded from non-GAAP",
+     "numeric": true,
+     "cited_url": "https://www.nextgcomm.com/financials-nvidia-q2-earning-results-deep-analysis",
+     "reason": "The analysis article explicitly states that GAAP EPS exceeds non-GAAP because $7.77bn of net gains on equity securities sit in GAAP other income and are excluded from non-GAAP.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The $7.77B gain on equity securities added $0.32 per share to GAAP EPS",
+     "numeric": true,
+     "cited_url": "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/NVDA-F2Q27-Quarterly-Presentation-final-1.pdf",
+     "reason": "The reconciliation table in the presentation shows an EPS impact of +0.32 from the gain on equity securities line.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Offsetting drags: acquisition-related and other costs $(222)M, \"other\" $(298)M, tax effect $(1,517)M",
+     "numeric": true,
+     "cited_url": "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/NVDA-F2Q27-Quarterly-Presentation-final-1.pdf",
+     "reason": "The same reconciliation table lists these three negative adjustments with the exact dollar amounts shown.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The net pre-tax impact of all non-GAAP adjustments was $(7,251)M, meaning non-GAAP exclusions were net negative this quarter, causing non-GAAP EPS to fall below GAAP",
+     "numeric": true,
+     "cited_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+     "reason": "The press release includes a line \"Total pre-tax impact of non-GAAP adjustments (7,251)\" in the reconciliation, confirming the net negative pre-tax adjustment.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "GAAP EPS is flattered by non-operating, non-cash, reversible mark-to-market gains, making non-GAAP EPS ($2.22) arguably a more conservative read on operating earnings power",
+     "numeric": false,
+     "cited_url": "https://www.nextgcomm.com/financials-nvidia-q2-earning-results-deep-analysis",
+     "reason": "The analysis article describes the equity securities gains as mark-to-market gains excluded from non-GAAP, supporting the characterization; the conclusion about conservatism is an interpretation consistent with the presented facts.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 8,
+   "cited": 9,
+   "supported": 9,
+   "not_retrieved": 0
+  }
+ }
+}

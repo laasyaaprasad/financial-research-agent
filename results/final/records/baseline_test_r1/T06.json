@@ -1,0 +1,163 @@
+{
+ "id": "T06",
+ "category": "Numerical reasoning",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "By what percentage did AMD's Data Center segment revenue grow year over year in Q2 2026 (quarter ended June 27, 2026 versus the quarter ended June 28, 2025)? Compute it from the reported segment revenue figures.",
+ "grading": "107.35% ±0.3pp; the company's own rounded 107% is also accepted. Inputs: Data Center segment revenue USD 6,718M (Q2 2026) and USD 3,240M (Q2 2025). Fail if total-company, sequential or six-month growth is given.",
+ "answer": "Data Center segment revenue was USD 6,718 million in Q2 2026 versus USD 3,240 million in Q2 2025, so growth = 6,718 / 3,240 - 1 = 107.35% (AMD's release rounds this to 107%). [T06-E1, T06-E2]",
+ "output": {
+  "answer": "## AMD Data Center Segment YoY Growth — Q2 2026\n\n**Reported figures (from AMD's Q2 2026 earnings release / 10-Q segment tables):**\n\n| Period | Data Center net revenue |\n|---|---|\n| Q2 2026 (three months ended June 27, 2026) | **$6,718 million** |\n| Q2 2025 (three months ended June 28, 2025) | **$3,240 million** |\n\n**Calculation:**\n\n- Increase = $6,718M − $3,240M = **$3,478M**\n- Growth rate = $3,478M ÷ $3,240M = **1.0735 → 107.3%**\n\n**Answer: approximately 107% year-over-year growth** (AMD rounded it to \"up 107%\" in its release). This works out to a 2.07× multiple of the prior-year quarter.\n\nSource: [AMD Reports Second Quarter 2026 Financial Results (AMD Investor Relations)](https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results) — and the corresponding [10-Q for the quarter ended June 27, 2026](https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000123/amd-20260627.htm), which states: \"Data Center net revenue of $6.7 billion for the three months ended June 27, 2026 increased by 107%, compared to net revenue of $3.2 billion for the prior year period.\"",
+  "tokens": {
+   "input": 39786,
+   "output": 983
+  },
+  "tavily_credits": 6,
+  "latency_s": 13.51,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/a72b7b53616011e538aa4ec79fb09d99",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AMD second quarter 2026 results Data Center segment revenue",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AMD Q2 2026 earnings press release Data Center segment revenue year-over-year"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AMD Q2 2026 segment table \"Data Center Segment\" 6,720 3,244 net revenue June 28 2025",
+     "include_domains": [
+      "ir.amd.com"
+     ],
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AMD second quarter 2025 results Data Center segment revenue $3.2 billion",
+     "include_domains": [
+      "ir.amd.com"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000123/amd-20260627.htm",
+    "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results"
+   ],
+   "cited_primary": 2,
+   "retrieved": 31,
+   "retrieved_primary": 19
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer provides Data Center segment revenue year-over-year growth for Q2 2026 vs Q2 2025",
+     "met": true,
+     "note": "Agent explicitly states 'Data Center net revenue' for Q2 2026 ($6,718M) and Q2 2025 ($3,240M) and computes YoY growth."
+    },
+    {
+     "point": "Computed percentage is 107.35% ±0.3pp (or rounded 107% accepted)",
+     "met": true,
+     "note": "Agent calculates 107.3% (1.0735), which falls within the tolerance range of 107.05%–107.65%. Also notes AMD's rounded 107%."
+    },
+    {
+     "point": "Answer does not use total-company growth, sequential Q/Q change, or six-month comparison",
+     "met": true,
+     "note": "Agent only presents the Q2-on-Q2 segment growth; no other growth metrics are given."
+    },
+    {
+     "point": "Answer uses the correct input figures: Data Center segment revenue USD 6,718M (Q2 2026) and USD 3,240M (Q2 2025)",
+     "met": true,
+     "note": "Agent's table matches the reference figures exactly."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: the agent correctly identifies the Data Center segment, uses the proper quarterly figures, computes the YoY growth as 107.3% (within the ±0.3pp tolerance of 107.35%), and does not confuse it with total-company, sequential, or six-month growth."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q2 2026 Data Center net revenue was $6,718 million for the three months ended June 27, 2026",
+     "numeric": true,
+     "cited_url": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
+     "reason": "The AMD press release includes a segment table showing Data Center Segment revenue of $6,718 million for the three months ended June 27, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2025 Data Center net revenue was $3,240 million for the three months ended June 28, 2025",
+     "numeric": true,
+     "cited_url": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
+     "reason": "The same press release table shows Data Center Segment revenue of $3,240 million for the three months ended June 28, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Increase = $6,718M − $3,240M = $3,478M",
+     "numeric": true,
+     "cited_url": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
+     "reason": "Arithmetic difference of the two reported revenue figures ($6,718M - $3,240M = $3,478M).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Growth rate = $3,478M ÷ $3,240M = 1.0735 → 107.3%",
+     "numeric": true,
+     "cited_url": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
+     "reason": "Division of the increase ($3,478M) by the prior-year revenue ($3,240M) yields 1.0735, or 107.35%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "AMD rounded the growth to 'up 107%' in its release",
+     "numeric": false,
+     "cited_url": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
+     "reason": "The press release states: 'Data Center segment revenue was $6.7 billion, up 107% year-over-year.' The 10-Q also states 'increased by 107%'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "This works out to a 2.07× multiple of the prior-year quarter",
+     "numeric": true,
+     "cited_url": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
+     "reason": "A 107.3% increase means the current quarter is 207.3% of the prior quarter, i.e., a 2.073× multiple, rounded to 2.07×.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The 10-Q states: 'Data Center net revenue of $6.7 billion for the three months ended June 27, 2026 increased by 107%, compared to net revenue of $3.2 billion for the prior year period.'",
+     "numeric": false,
+     "cited_url": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000123/amd-20260627.htm",
+     "reason": "The 10-Q filing contains the exact quoted text in the 'Data Center' section.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 7,
+   "supported": 7,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,140 @@
+{
+ "id": "T09",
+ "category": "Numerical reasoning",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "Lam Research's fiscal 2026 ended June 28, 2026. Using its filed fiscal-year revenue and the revenue for the nine months ended March 29, 2026, what was the implied revenue for the fourth quarter of fiscal 2026 (the June 2026 quarter)? Answer in USD millions.",
+ "grading": "±0.5% of 6,722.2, USD millions (accept $6.72B). Derivation: FY2026 23,232.7 less nine months 16,510.5. Fail if a different quarter or YTD figure is given.",
+ "answer": "Implied fiscal Q4 2026 revenue was USD 6,722.2 million = FY2026 revenue 23,232.690 (USD thousands: 23,232,690) less nine-month revenue 16,510.452 (16,510,452). This matches the 6,722,238 thousand revenue reported in the June 2026 quarter earnings release. [T09-E1, T09-E2, T09-E3]",
+ "output": {
+  "answer": "**Implied Q4 FY2026 (June 2026 quarter) revenue ≈ $6,722 million**\n\nCalculation:\n- Fiscal year 2026 revenue (10-K, year ended June 28, 2026): $23,232,690 thousand\n- Less: revenue for nine months ended March 29, 2026 (10-Q): $16,510,452 thousand\n- **Implied Q4 revenue: $6,722,238 thousand = $6,722 million**\n\nThis matches the reported June 2026 quarter revenue of $6,722,238 thousand (up ~15.1% sequentially, ~30% YoY), and FY26 revenue of $23.23 billion, up 26% from FY25.\n\nSources:\n- [Lam Research FY2026 10-K (lrcx-20260628.htm)](https://www.sec.gov/Archives/edgar/data/707549/000070754926000037/lrcx-20260628.htm)\n- [Lam Research Q3 FY2026 10-Q (lrcx-20260329.htm)](https://www.sec.gov/Archives/edgar/data/707549/000070754926000022/lrcx-20260329.htm)\n- [Lam Research press release, quarter ended June 28, 2026](https://newsroom.lamresearch.com/2026-07-29-Lam-Research-Corporation-Reports-Financial-Results-for-the-Quarter-Ended-June-28,-2026)",
+  "tokens": {
+   "input": 17622,
+   "output": 611
+  },
+  "tavily_credits": 4,
+  "latency_s": 10.21,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/2d53d10a969dae88774976898bc74638",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Lam Research fiscal 2026 full year revenue June 28 2026",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Lam Research revenue nine months ended March 29 2026 10-Q",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://newsroom.lamresearch.com/2026-07-29-Lam-Research-Corporation-Reports-Financial-Results-for-the-Quarter-Ended-June-28",
+    "https://www.sec.gov/Archives/edgar/data/707549/000070754926000022/lrcx-20260329.htm",
+    "https://www.sec.gov/Archives/edgar/data/707549/000070754926000037/lrcx-20260628.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 17,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer in USD millions (number)",
+     "met": true,
+     "note": "Agent answered $6,722 million, a numeric value in USD millions."
+    },
+    {
+     "point": "Implied revenue for Q4 fiscal 2026 derived from FY2026 revenue minus nine-month revenue",
+     "met": true,
+     "note": "Agent explicitly subtracted nine-month revenue (16,510,452 thousand) from FY2026 revenue (23,232,690 thousand) to get Q4 revenue."
+    },
+    {
+     "point": "Correct figures used: FY2026 revenue 23,232.7 million (23,232,690 thousand) and nine-month revenue 16,510.5 million (16,510,452 thousand)",
+     "met": true,
+     "note": "Agent's figures match the reference facts exactly."
+    },
+    {
+     "point": "Calculation yields 6,722.2 million within ±0.5% tolerance",
+     "met": true,
+     "note": "Agent's result 6,722 million matches reference 6,722.2 million; difference is 0.003%, well within tolerance."
+    },
+    {
+     "point": "Did not use wrong YTD (six-month) or Q3 quarter (5,841) as Q4",
+     "met": true,
+     "note": "Agent used nine-month YTD, not six-month, and did not confuse Q3 with Q4."
+    },
+    {
+     "point": "Unit correct (not thousands misrepresented as millions)",
+     "met": true,
+     "note": "Agent correctly converted thousands to millions (6,722,238 thousand = 6,722 million)."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: the agent provided the correct implied Q4 revenue in USD millions, used the proper FY2026 and nine-month figures, performed the correct subtraction, and presented the result with appropriate units and within the allowed tolerance."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Fiscal year 2026 revenue (year ended June 28, 2026) was $23,232,690 thousand",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/707549/000070754926000037/lrcx-20260628.htm",
+     "reason": "The 10-K filing states: 'The Company recorded $23,232,690 thousand in revenue for the year ended June 28, 2026.' This matches the claimed figure exactly.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue for nine months ended March 29, 2026 (10-Q) was $16,510,452 thousand",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/707549/000070754926000022/lrcx-20260329.htm",
+     "reason": "The 10-Q filing shows a table with 'Nine Months Ended March 29, 2026' total revenue of $16,510,452 thousand (sum of Systems revenue $10,635,640 and Customer support-related revenue $5,874,812).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Implied Q4 FY2026 revenue is $6,722,238 thousand ($6,722 million)",
+     "numeric": true,
+     "cited_url": "https://newsroom.lamresearch.com/2026-07-29-Lam-Research-Corporation-Reports-Financial-Results-for-the-Quarter-Ended-June-28,-2026",
+     "reason": "Subtracting nine-month revenue ($16,510,452) from full-year revenue ($23,232,690) yields $6,722,238 thousand. The press release confirms Q4 revenue of $6.72 billion (i.e., $6,722,238 thousand).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "June 2026 quarter revenue was up ~15.1% sequentially and ~30% year-over-year",
+     "numeric": true,
+     "cited_url": "https://newsroom.lamresearch.com/2026-07-29-Lam-Research-Corporation-Reports-Financial-Results-for-the-Quarter-Ended-June-28,-2026",
+     "reason": "The press release states revenue of $6.72 billion, up 15% sequentially (from $5.84 billion) and 30% year-over-year. The sequential growth calculates to (6,722,238 - 5,841,488) / 5,841,488 ≈ 15.1%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY26 revenue of $23.23 billion, up 26% from FY25",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/707549/000070754926000037/lrcx-20260628.htm",
+     "reason": "The 10-K shows FY26 revenue $23,232,690 thousand and FY25 revenue $18,435,591 thousand. The increase is $4,797,099 thousand, which is a 26.0% year-over-year growth.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 5,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}

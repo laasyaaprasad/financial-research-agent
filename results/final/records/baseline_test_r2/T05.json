@@ -1,0 +1,137 @@
+{
+ "id": "T05",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What were Uber's Gross Bookings in the second quarter of 2026 (three months ended June 30, 2026)? Answer in USD millions.",
+ "grading": "±0.5%, USD millions (accept $58.0B). Fail if revenue, outlook or growth percentage is given as the level.",
+ "answer": "Uber's Gross Bookings were USD 58,022 million in Q2 2026, up 24% (22% in constant currency) from USD 46,756 million in Q2 2025. [T05-E1, T05-E2]",
+ "output": {
+  "answer": "**Uber's Gross Bookings for Q2 2026 (three months ended June 30, 2026) were $58,022 million**, up 24% YoY (22% on a constant-currency basis).\n\nSegment breakdown:\n- Mobility: $28,988M (+22%)\n- Delivery: $27,463M (+26%)\n- Freight: $1,571M (+25%)\n\nSources:\n- [Uber Investor Relations – Q2 2026 press release](https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx)\n- [Uber Q2 2026 Prepared Remarks (PDF)](https://s23.q4cdn.com/407969754/files/doc_earnings/2026/q2/transcript/Uber-Q2-26-Prepared-Remarks.pdf)\n- [CNBC – Uber Q2 2026 earnings](https://www.cnbc.com/2026/08/05/uber-stock-q2-2026-earnings.html)",
+  "tokens": {
+   "input": 13874,
+   "output": 433
+  },
+  "tavily_credits": 3,
+  "latency_s": 5.8,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/dbde0fd667662b38fde2dfb558b8e06f",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Uber Q2 2026 Gross Bookings three months ended June 30 2026",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Uber second quarter 2026 results gross bookings"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx",
+    "https://s23.q4cdn.com/407969754/files/doc_earnings/2026/q2/transcript/Uber-Q2-26-Prepared-Remarks.pdf",
+    "https://www.cnbc.com/2026/08/05/uber-stock-q2-2026-earnings.html"
+   ],
+   "cited_primary": 1,
+   "retrieved": 16,
+   "retrieved_primary": 2
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer provides Gross Bookings for Q2 2026 (three months ended June 30, 2026)",
+     "met": true,
+     "note": "Agent states 'Uber's Gross Bookings for Q2 2026 (three months ended June 30, 2026) were $58,022 million'"
+    },
+    {
+     "point": "Answer is in USD millions",
+     "met": true,
+     "note": "Agent provides figure in millions: $58,022 million"
+    },
+    {
+     "point": "Answer is within ±0.5% of the correct value (58,022 million)",
+     "met": true,
+     "note": "Agent's figure exactly matches reference 58,022 million"
+    },
+    {
+     "point": "Answer does not incorrectly provide revenue, outlook, or growth percentage as the level",
+     "met": true,
+     "note": "Agent provides Gross Bookings level, not revenue ($14,191M), Q3 outlook ($58.25-60.25B), or constant-currency growth figure"
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer exactly matches the verified reference value of $58,022 million for Uber's Q2 2026 Gross Bookings, is expressed in USD millions, and does not confuse the metric with revenue, outlook, or growth percentages."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Uber's Gross Bookings for Q2 2026 (three months ended June 30, 2026) were $58,022 million",
+     "numeric": true,
+     "cited_url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx",
+     "reason": "Press release table shows Gross Bookings for three months ended June 30, 2026: $58,022 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Gross Bookings grew 24% YoY",
+     "numeric": true,
+     "cited_url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx",
+     "reason": "Press release table shows Gross Bookings % Change: 24%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Gross Bookings grew 22% on a constant-currency basis",
+     "numeric": true,
+     "cited_url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx",
+     "reason": "Press release table shows % Change (Constant Currency): 22%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mobility Gross Bookings were $28,988 million, up 22% YoY",
+     "numeric": true,
+     "cited_url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx",
+     "reason": "Press release table shows Mobility Gross Bookings 2026: $28,988 million, % Change: 22%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Delivery Gross Bookings were $27,463 million, up 26% YoY",
+     "numeric": true,
+     "cited_url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx",
+     "reason": "Press release table shows Delivery Gross Bookings 2026: $27,463 million, % Change: 26%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Freight Gross Bookings were $1,571 million, up 25% YoY",
+     "numeric": true,
+     "cited_url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx",
+     "reason": "Press release table shows Freight Gross Bookings 2026: $1,571 million, % Change: 25%.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 6,
+   "supported": 6,
+   "not_retrieved": 0
+  }
+ }
+}

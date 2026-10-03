@@ -1,5 +1,0 @@
-D03: correct (1.00) · 27s · 8 cr
-D01: correct (1.00) · 34s · 16 cr
-D02: correct (1.00) · 25s · 8 cr
-baseline_devtables: fixed 3/3 fully correct (mean 1.00) · credits 32 → 
-results/scorecard_baseline_devtables.md

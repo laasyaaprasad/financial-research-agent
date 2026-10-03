@@ -1,0 +1,123 @@
+{
+ "id": "T04",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Netflix's GAAP operating income in the second quarter of 2026 (quarter ended June 30, 2026)? Answer in USD millions.",
+ "grading": "±0.5%, USD millions (4,192.6 in the 10-Q; 4,193 in the letter; accept $4.19B). Fail if the Q3 forecast, revenue or net income is given.",
+ "answer": "Netflix reported GAAP operating income of USD 4,192.6 million in Q2 2026 (USD 4,193 million as rounded in the shareholder letter), up 11% from USD 3,774.7 million in Q2 2025, on revenue of USD 12,559.9 million (33.4% operating margin). [T04-E1, T04-E2]",
+ "output": {
+  "answer": "**Question:** What was Netflix's GAAP operating income in the second quarter of 2026 (quarter ended June 30, 2026)? Answer in USD millions.\n*As of 2026-10-03*\n\n| | GAAP operating income (USD millions) |\n|---|---|\n| Netflix — Q2 FY2026 (quarter ended June 30, 2026) | 4,192.6 [1][2][3] |\n\n- Netflix reported GAAP operating income of $4,192,610 thousand for Q2 FY2026, the quarter ended June 30, 2026, equal to 4,192.6 million. [1][2][3]\n- In the Q2 FY2026 earnings release summary results table, the same GAAP operating income was presented as $4,193 million, with an operating margin of 33.4%. [1]\n- Q2 FY2026 GAAP operating income of $4,192,610 thousand compared with $3,774,694 thousand in Q2 FY2025 (quarter ended June 30, 2025), a change of $417,916 thousand, or 11% as disclosed. [2]\n\n**Sources**\n[1] NETFLIX INC earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-07-16) (www.sec.gov, 2026-07-16, primary) https://www.sec.gov/Archives/edgar/data/1065280/000106528026000211/ex991_q226.htm\n[2] NETFLIX INC 10-Q for Q2 FY2026 (filed 2026-07-17) (www.sec.gov, 2026-07-17, primary) https://www.sec.gov/Archives/edgar/data/1065280/000106528026000212/nflx-20260630.htm\n[3] NETFLIX INC XBRL data tagged in 10-Q filed 2026-07-17 (www.sec.gov, 2026-07-17, primary) https://www.sec.gov/Archives/edgar/data/1065280/000106528026000212/\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 45650,
+   "output": 3762
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 49.5,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/a54293e2fa850c7e547f81572c7fff28",
+  "companies": [
+   {
+    "name": "NETFLIX INC",
+    "ticker": "NFLX",
+    "cik": "1065280",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "GAAP operating income for Q2 FY2026 (quarter ended 2026-06-30), in USD millions"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "NFLX",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "NFLX",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "NFLX",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q2 FY2026 (2026-04-01 to 2026-06-30) is filed: 10-Q filed 2026-07-17 and earnings release 8-K filed 2026-07-16, so the figure is available."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000211/ex991_q226.htm",
+    "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000212/",
+    "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000212/nflx-20260630.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 3,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer provides Netflix's GAAP operating income for Q2 2026 in USD millions within ±0.5% tolerance (4,192.6 or 4,193 or 4.19B).",
+     "met": true,
+     "note": "Agent states 4,192.6 million, matching the 10-Q figure exactly (4,192.6)."
+    },
+    {
+     "point": "Answer does not incorrectly provide revenue ($12,560M), net income ($3,401M), operating margin (33.4%), or Q3 forecast operating income ($4,268M) instead of Q2 operating income.",
+     "met": true,
+     "note": "Agent's primary answer is the operating income figure; revenue and margin are only mentioned as supplementary context."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly reports Netflix's GAAP operating income for Q2 2026 as 4,192.6 million USD, which matches the verified 10-Q value and falls within the ±0.5% tolerance. The answer does not confuse the metric with revenue, net income, margin, or a forecast."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Netflix reported GAAP operating income of $4,192,610 thousand for Q2 FY2026, the quarter ended June 30, 2026, equal to 4,192.6 million USD.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000211/ex991_q226.htm",
+     "reason": "The 8-K earnings release (source [1]) shows 'Operating income | 4,192,610' for the quarter ended June 30, 2026. The 10-Q (source [2]) and XBRL (source [3]) also report Operating Income (Loss) of 4,192,610,000 USD for the period 2026-04-01 to 2026-06-30. The figure is in thousands, so 4,192,610 thousand = 4,192.6 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "In the Q2 FY2026 earnings release summary results table, GAAP operating income was presented as $4,193 million with an operating margin of 33.4%.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000211/ex991_q226.htm",
+     "reason": "The earnings release summary table in the 8-K shows 'Operating Income | $ | 4,193' for Q2'26 and 'Operating Margin | 33.4 | %' for Q2'26. The rounded figure 4,193 million corresponds to 4,192.6 million, and the margin matches the 33.4% disclosed in the 10-Q.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 GAAP operating income of $4,192,610 thousand compared with $3,774,694 thousand in Q2 FY2025 (quarter ended June 30, 2025), a change of $417,916 thousand, or 11% as disclosed.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000212/nflx-20260630.htm",
+     "reason": "The 10-Q (source [2]) presents a comparison table for the three months ended June 30, 2026 vs June 30, 2025: 'Operating income | $ | 4,192,610 | $ | 3,774,694 | $ | 417,916 | 11 | %'. The arithmetic checks: 4,192,610 - 3,774,694 = 417,916; 417,916 / 3,774,694 ≈ 0.1107 (11%).",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 3,
+   "supported": 3,
+   "not_retrieved": 0
+  }
+ }
+}

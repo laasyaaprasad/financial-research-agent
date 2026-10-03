@@ -1,0 +1,260 @@
+{
+ "id": "G08",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "number",
+ "question": "What is Microsoft's most recent guidance for Azure revenue growth for the upcoming quarter, and is it in constant currency?",
+ "grading": "Reference-free: use the latest guidance before the run timestamp, quote the disclosed point estimate or range accurately, state currency basis and fiscal quarter. October 1 snapshot: approximately 45% CC for Q1 FY2027; no range should be invented.",
+ "answer": "The July 29, 2026 FY2026 Q4 call guided Azure revenue growth of approximately 45% in constant currency for Q1 FY2027, July 1–September 30, 2026. This was a point estimate, not a disclosed growth range. It is the latest earnings-call guide before the October 1 snapshot. [G08-E1]",
+ "output": {
+  "answer": "**Question:** What is Microsoft's most recent guidance for Azure revenue growth for the upcoming quarter, and is it in constant currency?\n*As of 2026-10-01*\n\n- Microsoft's most recent Azure revenue growth guidance for the upcoming quarter — Q1 FY2027, the quarter ending September 30, 2026 — is 45% in constant currency, given by CFO Amy Hood on the Q4 FY2026 earnings call held in connection with results for the quarter ended June 30, 2026. [1][2]\n- The Azure guidance is explicitly on a constant currency basis, not as reported. [1]\n- Microsoft's Q4 FY2026 earnings release (8-K EX-99.1, filed July 29, 2026) did not itself quantify the Azure outlook, stating only that forward-looking guidance would be provided on the earnings conference call and webcast. [3]\n- Management also indicated Azure growth would continue to accelerate in the first half of fiscal 2027, per the Q4 FY2026 earnings call coverage. [4]\n\n**Not available**\n- Azure revenue growth guidance for Q1 FY2027 as quantified in a Microsoft SEC filing or press release: The Q4 FY2026 8-K earnings release and 10-K (both filed 2026-07-29) do not quantify Azure guidance; the release states guidance would be given on the earnings call, and the 45% constant-currency figure appears only in earnings-call coverage (CNBC, Yahoo Finance). [3][5]\n- Actual Azure revenue growth for Q1 FY2027 (quarter ended September 30, 2026): Q1 FY2027 has not been reported as of 2026-10-01; the latest reported period in the evidence is Q4 FY2026, quarter ended June 30, 2026. [3]\n\n_1 draft statement(s) were withheld because they could not be verified against the sources (details in the run record)._\n\n**Sources**\n[1] Microsoft's AI spending guide is music to our ears, quieting the bears — for now - CNBC (www.cnbc.com, 2026-07-30, secondary) https://www.cnbc.com/2026/07/29/microsofts-ai-spending-guide-is-music-to-our-ears-quieting-the-bears-for-now.html\n[2] Microsoft's stock rockets more than 15% for largest single-day jump in history - Yahoo Finance (finance.yahoo.com, 2026-07-30, secondary) https://finance.yahoo.com/technology/article/microsofts-stock-rockets-more-than-15-for-largest-single-day-jump-in-history-120144134.html\n[3] MICROSOFT CORP earnings release for Q4 FY2026, 8-K EX-99.1 (filed 2026-07-29) (www.sec.gov, 2026-07-29, primary) https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-ex99_1.htm\n[4] Microsoft Corp (MSFT) (Q4 2026) Earnings Call Highlights: Record Revenue Surpasses $331 ... - Yahoo Finance (finance.yahoo.com, 2026-07-30, secondary) https://finance.yahoo.com/markets/stocks/articles/microsoft-corp-msft-q4-2026-050436699.html\n[5] MICROSOFT CORP 10-K for Q4 FY2026 (filed 2026-07-29) (www.sec.gov, 2026-07-29, primary) https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 45185,
+   "output": 5904
+  },
+  "tavily_credits": 3.0,
+  "latency_s": 57.55,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/20db76b1573f08925ce9f0f3859b4be2",
+  "companies": [
+   {
+    "name": "MICROSOFT CORP",
+    "ticker": "MSFT",
+    "cik": "789019",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Microsoft's most recent guidance for Azure revenue growth for the upcoming quarter (Q1 FY2027)",
+    "Whether that Azure growth guidance is expressed in constant currency or as-reported/USD",
+    "The exact wording/range of the Azure guidance and the period it applies to",
+    "Any segment-level or Intelligent Cloud commentary accompanying the Azure outlook"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "MSFT",
+     "label": "Q1 FY2027"
+    },
+    {
+     "ticker": "MSFT",
+     "label": "Q4 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "MSFT",
+     "period": "Q4 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "MSFT",
+     "period": "Q4 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Microsoft typically gives Azure growth guidance and its constant-currency basis on the earnings call rather than in the 8-K release; find coverage of the Q4 FY2026 (July 2026) call for the Q1 FY2027 Azure outlook",
+     "query": "Microsoft Q4 FY2026 earnings call Azure revenue growth guidance constant currency Q1 FY2027",
+     "topic": "news",
+     "days_back": 90
+    }
+   ],
+   "availability_notes": [
+    "Q1 FY2027 (2026-07-01 to 2026-09-30) is not yet reported as of 2026-10-01, so no Q1 FY2027 earnings release or 10-Q exists; the Azure guidance for that quarter can only come from the preceding period's (Q4 FY2026) release/call.",
+    "Microsoft's Azure growth guidance is frequently quantified only on the earnings call (management commentary) and may not appear in the 8-K earnings release itself; the release may give only qualitative or segment-level outlook.",
+    "The constant-currency vs. as-reported basis of the Azure guidance may not be explicitly stated in the release; if not disclosed, it cannot be inferred or estimated."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Azure revenue growth guidance for Q1 FY2027 as quantified in a Microsoft SEC filing or press release",
+    "kind": "not_in_evidence",
+    "reason": "The Q4 FY2026 8-K earnings release and 10-K (both filed 2026-07-29) do not quantify Azure guidance; the release states guidance would be given on the earnings call, and the 45% constant-currency figure appears only in earnings-call coverage (CNBC, Yahoo Finance).",
+    "evidence_ids": [
+     "E1",
+     "E2"
+    ]
+   },
+   {
+    "item": "Actual Azure revenue growth for Q1 FY2027 (quarter ended September 30, 2026)",
+    "kind": "not_reported_yet",
+    "reason": "Q1 FY2027 has not been reported as of 2026-10-01; the latest reported period in the evidence is Q4 FY2026, quarter ended June 30, 2026.",
+    "evidence_ids": [
+     "E1"
+    ]
+   }
+  ],
+  "removed": [
+   {
+    "text": "The 45% figure is forward-looking guidance, not an actual result; the most recent reported Azure and other cloud services revenue growth was 43% for Q4 FY2026, the quarter ended June 30, 2026.",
+    "problem": "number 45 is not in the quotes and not calculated"
+   }
+  ],
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Microsoft Q4 FY2026 earnings call Azure revenue growth guidance constant currency Q1 FY2027",
+     "topic": "news",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-01",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "start_date": "2026-07-03"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://finance.yahoo.com/markets/stocks/articles/microsoft-corp-msft-q4-2026-050436699.html",
+      "https://www.cnbc.com/2026/07/29/microsofts-ai-spending-guide-is-music-to-our-ears-quieting-the-bears-for-now.html",
+      "https://finance.yahoo.com/technology/article/microsofts-stock-rockets-more-than-15-for-largest-single-day-jump-in-history-120144134.html"
+     ],
+     "query": "What is Microsoft's most recent guidance for Azure revenue growth for the upcoming quarter, and is it in constant currency?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "MICROSOFT CORP Azure revenue growth guidance for Q1 FY2027 as quantified in a Microsoft SEC filing or press release",
+     "topic": "general",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-01",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/microsoft-corp-msft-q4-2026-050436699.html",
+    "https://finance.yahoo.com/technology/article/microsofts-stock-rockets-more-than-15-for-largest-single-day-jump-in-history-120144134.html",
+    "https://www.cnbc.com/2026/07/29/microsofts-ai-spending-guide-is-music-to-our-ears-quieting-the-bears-for-now.html",
+    "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-ex99_1.htm",
+    "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 9,
+   "retrieved_primary": 5
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Quote the disclosed point estimate or range accurately",
+     "met": true,
+     "note": "Agent states 45% Azure revenue growth guidance, matching the snapshot's 'approximately 45% CC'."
+    },
+    {
+     "point": "State currency basis",
+     "met": true,
+     "note": "Agent explicitly says 'in constant currency'."
+    },
+    {
+     "point": "State fiscal quarter",
+     "met": true,
+     "note": "Agent identifies the upcoming quarter as Q1 FY2027 (quarter ending September 30, 2026)."
+    },
+    {
+     "point": "Use the latest guidance before the run timestamp (2026-10-01)",
+     "met": true,
+     "note": "Agent cites the Q4 FY2026 earnings call (July 29, 2026) as the source, which is the latest guidance before the snapshot date."
+    },
+    {
+     "point": "No range should be invented",
+     "met": true,
+     "note": "Agent presents a point estimate (45%), not a range."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer accurately quotes the latest Azure revenue growth guidance (45% constant currency for Q1 FY2027), states the correct currency basis and fiscal quarter, and does not invent a range. All grading requirements are satisfied."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Microsoft's most recent Azure revenue growth guidance for the upcoming quarter — Q1 FY2027, the quarter ending September 30, 2026 — is 45% in constant currency, given by CFO Amy Hood on the Q4 FY2026 earnings call held in connection with results for the quarter ended June 30, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.cnbc.com/2026/07/29/microsofts-ai-spending-guide-is-music-to-our-ears-quieting-the-bears-for-now.html",
+     "reason": "The CNBC article states: 'The business is expected to accelerate once again, with revenue growth guided to 45% in constant currency in the first quarter of fiscal year 2027. | Microsoft said Azure growth accelerated to 43% in the period and expects it to hit 45% in the current quarter.' This directly supports the 45% constant currency guidance for Q1 FY2027.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Azure guidance is explicitly on a constant currency basis, not as reported.",
+     "numeric": false,
+     "cited_url": "https://www.cnbc.com/2026/07/29/microsofts-ai-spending-guide-is-music-to-our-ears-quieting-the-bears-for-now.html",
+     "reason": "The CNBC article explicitly says 'revenue growth guided to 45% in constant currency', confirming the guidance is on a constant currency basis.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft's Q4 FY2026 earnings release (8-K EX-99.1, filed July 29, 2026) did not itself quantify the Azure outlook, stating only that forward-looking guidance would be provided on the earnings conference call and webcast.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-ex99_1.htm",
+     "reason": "The 8-K filing includes the statement: 'Microsoft will provide forward-looking guidance in connection with this quarterly earnings announcement on its earnings conference call and webcast.' The filing does not contain a specific Azure revenue growth number.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management also indicated Azure growth would continue to accelerate in the first half of fiscal 2027, per the Q4 FY2026 earnings call coverage.",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-corp-msft-q4-2026-050436699.html",
+     "reason": "The Yahoo Finance earnings call highlights include the phrase 'with expectations for continued acceleration in H1 FY27', indicating management's comment on Azure growth accelerating in the first half of fiscal 2027.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Azure revenue growth guidance for Q1 FY2027 as quantified in a Microsoft SEC filing or press release: The Q4 FY2026 8-K earnings release and 10-K (both filed 2026-07-29) do not quantify Azure guidance; the release states guidance would be given on the earnings call, and the 45% constant-currency figure appears only in earnings-call coverage (CNBC, Yahoo Finance).",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-ex99_1.htm",
+     "reason": "The 8-K filing confirms guidance would be given on the call, not in the filing. The 10-K filing (also retrieved) does not contain a quantified Azure outlook. The 45% figure appears in the CNBC and Yahoo Finance articles covering the earnings call, as shown in the retrieved content for those sources.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Actual Azure revenue growth for Q1 FY2027 (quarter ended September 30, 2026): Q1 FY2027 has not been reported as of 2026-10-01; the latest reported period in the evidence is Q4 FY2026, quarter ended June 30, 2026.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-ex99_1.htm",
+     "reason": "The 8-K filing reports results for the quarter ended June 30, 2026 (Q4 FY2026). As of the answer's date (2026-10-01), the quarter ending September 30, 2026 (Q1 FY2027) has not yet been reported in any SEC filing or press release in the retrieved sources.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 1,
+   "numeric_cited": 1,
+   "cited": 6,
+   "supported": 6,
+   "not_retrieved": 0
+  }
+ }
+}

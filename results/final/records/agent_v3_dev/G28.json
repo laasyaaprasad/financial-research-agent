@@ -1,0 +1,418 @@
+{
+ "id": "G28",
+ "category": "Market analysis",
+ "difficulty": "hard",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "What are Alphabet, Meta, Amazon, and Microsoft each currently guiding for capital expenditures, and how do they line up on a calendar-2026 basis?",
+ "grading": "Reference-free recency: use each company’s latest guide before the run timestamp, date it and preserve its calendar/fiscal and lease definitions. At the October 1 snapshot, CY2026: Alphabet $195–205B; Meta $130–145B including finance-lease principal; Amazon ~$220B cash capex; Microsoft ~$175B including finance leases/excluding operating leases. Do not treat Microsoft’s fiscal FY2027 or Q1 figures as calendar totals, or invent a harmonized cash basis.",
+ "answer": "As of October 1, 2026, all four provide calendar-2026 capex numbers: Alphabet USD 195–205 billion (July 22 Q2 call); [G28-E1] Meta USD 130–145 billion including finance-lease principal payments (July 29 Q2 release); [G28-E2] Amazon approximately USD 220 billion in cash capex (July 30 Q2 call); [G28-E3] Microsoft approximately USD 175 billion (July 29 FY2026 Q4 call), including finance leases but excluding operating leases. Microsoft lowered the displayed capex amount because extending building useful lives shifts some future leases to operating classification; investment expectations apart from that change were unchanged. [G28-E4] Nominal ordering is Amazon, Alphabet, Microsoft, Meta, but the lease definitions differ, so these are not fully harmonized cash-spending measures. Microsoft separately expects FY2027 capex to grow YoY and Q1 FY2027 capex above USD 50 billion; those fiscal guides are not additional CY2026 totals. [G28-E4]",
+ "output": {
+  "answer": "**Question:** What are Alphabet, Meta, Amazon, and Microsoft each currently guiding for capital expenditures, and how do they line up on a calendar-2026 basis?\n*As of 2026-10-01*\n\n| | Capex guidance (USD) |\n|---|---|\n| Alphabet — calendar 2026 (FY2026, year ending Dec 31, 2026) | $180-$190 billion [1] |\n| Meta — calendar 2026 (FY2026, year ending Dec 31, 2026) | $130-145 billion [2] |\n| Amazon — calendar 2026 (FY2026, year ending Dec 31, 2026) | Not disclosed in evidence [3] |\n| Microsoft — calendar 2026 (Jan 1–Dec 31, 2026; spans Q3 FY2026–Q2 FY2027) | approximately $175 billion [4] |\n| Microsoft — Q1 FY2027 (quarter ending Sep 30, 2026) | over $50 billion [4] |\n\n- Meta guides calendar 2026 capital expenditures, including principal payments on finance leases, to a range of $130-145 billion, narrowed from its prior outlook of $125-145 billion. [2]\n- Alphabet's 2026 capital expenditure range is $180-$190 billion, as reported by Zacks Investment Research (published via Yahoo Finance), a secondary source; Alphabet's own Q2 FY2026 release (quarter ended June 30, 2026) does not contain a capex guidance figure. [1]\n- Microsoft expects calendar 2026 capital expenditures of approximately $175 billion, per CFO commentary on the Q4 FY2026 earnings call (secondary transcript), after the shift from finance to operating leases. [4]\n- Microsoft guides Q1 FY2027 (quarter ending September 30, 2026) capital expenditures to over $50 billion, including the lease reclassification impact from the useful life update. [4]\n- Microsoft expects FY2027 capital expenditures to grow year-over-year, given demand signals across its portfolio. [4]\n- Microsoft's calendar 2026 capex guidance was mechanically reduced from the $190 billion figure disclosed in Q3 FY2026 to approximately $175 billion because the useful-life change reclassifies some leases from finance to operating leases, as reported by MLQ News, a secondary source. [5]\n- Microsoft's roughly $190 billion calendar 2026 capex figure was guided in its fiscal third quarter ended March 31, 2026, per Zacks Investment Research (published via Yahoo Finance), a secondary source. [1]\n\n**Not available**\n- Amazon calendar 2026 capital expenditure guidance: Amazon's Q2 FY2026 release (quarter ended June 30, 2026) provides forward guidance only for Q3 2026 net sales and operating income; no numeric capex guidance for 2026 appears in the evidence. [3]\n- Microsoft Q2 FY2027 (Oct-Dec 2026) capital expenditure guidance: Microsoft guides capex one quarter at a time; Q1 FY2027 (ended September 30, 2026) results had not been released as of 2026-10-01, so no Q2 FY2027 capex guidance has been issued. [4]\n\n**Sources**\n[1] Oracle Solidifies AI Infrastructure Positioning: Will it Drive Growth? (finance.yahoo.com, undated, secondary) https://finance.yahoo.com/news/oracle-solidifies-ai-infrastructure-positioning-161500050.html\n[2] Meta Platforms, Inc. earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-07-29) (www.sec.gov, 2026-07-29, primary) https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm\n[3] AMAZON COM INC earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-07-30) (www.sec.gov, 2026-07-30, primary) https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm\n[4] Microsoft Corporation (MSFT) Q4 FY2026 earnings call transcript (finance.yahoo.com, undated, secondary) https://finance.yahoo.com/quote/MSFT/earnings/MSFT-Q4-2026-earnings_call-647770.html\n[5] Microsoft Brought 88 Data Centers Online in FY2026, Spent $41B in Q4 Alone | MLQ News (mlq.ai, undated, secondary) https://mlq.ai/news/microsoft-brought-88-data-centers-online-in-fy2026-spent-41b-in-q4-alone\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 148402,
+   "output": 31102
+  },
+  "tavily_credits": 5.0,
+  "latency_s": 131.76,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/2e42b8ee66878b5b303548f1dbf8ece0",
+  "companies": [
+   {
+    "name": "Alphabet Inc.",
+    "ticker": "GOOGL",
+    "cik": "1652044",
+    "resolved": true
+   },
+   {
+    "name": "Meta Platforms, Inc.",
+    "ticker": "META",
+    "cik": "1326801",
+    "resolved": true
+   },
+   {
+    "name": "AMAZON COM INC",
+    "ticker": "AMZN",
+    "cik": "1018724",
+    "resolved": true
+   },
+   {
+    "name": "MICROSOFT CORP",
+    "ticker": "MSFT",
+    "cik": "789019",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Alphabet's current full-year 2026 capital expenditures guidance (dollar range) and any commentary on the pace/quarterly cadence",
+    "Meta's current full-year 2026 capital expenditures guidance (dollar range) and any commentary on the pace/quarterly cadence",
+    "Amazon's current 2026 capital expenditures guidance or CFO commentary on expected capex for the year",
+    "Microsoft's capex guidance for the next quarter (Q1 FY2027, Jul-Sep 2026) as given on the Q4 FY2026 earnings call, including whether it is stated on a finance-lease-inclusive basis",
+    "Any Microsoft commentary on full fiscal-year 2027 capex trajectory or growth rate",
+    "Calendar-2026 alignment: Alphabet/Meta/Amazon FY2026 guidance vs. Microsoft's calendar-2026 quarters (Q1 FY2027 + Q2 FY2027), and whether Microsoft's Q2 FY2027 (Oct-Dec 2026) guidance exists yet"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "GOOGL",
+     "label": "FY2026"
+    },
+    {
+     "ticker": "META",
+     "label": "FY2026"
+    },
+    {
+     "ticker": "AMZN",
+     "label": "FY2026"
+    },
+    {
+     "ticker": "MSFT",
+     "label": "Q1 FY2027"
+    },
+    {
+     "ticker": "MSFT",
+     "label": "Q2 FY2027"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "GOOGL",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "META",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "AMZN",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "MSFT",
+     "period": "Q4 FY2026",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Microsoft gives capex guidance only on the earnings call, not in the release; get the Q1 FY2027 (Jul-Sep 2026) capex guidance and any FY2027 trajectory commentary from the Q4 FY2026 call",
+     "query": "Microsoft Q4 FY2026 earnings call capital expenditures guidance Q1 FY2027",
+     "topic": "general",
+     "days_back": null
+    }
+   ],
+   "availability_notes": [
+    "Microsoft's fiscal year ends June 30, so calendar 2026 spans Q1 FY2027 (Jul-Sep 2026) and Q2 FY2027 (Oct-Dec 2026); Microsoft guides capex one quarter at a time, so only Q1 FY2027 guidance exists as of 2026-10-01.",
+    "Microsoft Q2 FY2027 (Oct-Dec 2026) capex guidance is not yet available: Q1 FY2027 has not been reported (period ended, results not yet released), so no Q2 FY2027 guidance has been issued.",
+    "Microsoft's capex guidance is typically disclosed on the earnings call rather than in the 8-K release, so the release alone may not contain the forward figure.",
+    "Amazon does not always give a formal numeric capex guidance range; it may only provide qualitative/approximate CFO commentary in the release or on the call.",
+    "Alphabet, Meta and Amazon FY2026 guidance is calendar-2026 guidance, so it lines up directly with calendar 2026; Microsoft's must be assembled from two fiscal quarters."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Amazon calendar 2026 capital expenditure guidance",
+    "kind": "not_in_evidence",
+    "reason": "Amazon's Q2 FY2026 release (quarter ended June 30, 2026) provides forward guidance only for Q3 2026 net sales and operating income; no numeric capex guidance for 2026 appears in the evidence.",
+    "evidence_ids": [
+     "E3"
+    ]
+   },
+   {
+    "item": "Microsoft Q2 FY2027 (Oct-Dec 2026) capital expenditure guidance",
+    "kind": "not_reported_yet",
+    "reason": "Microsoft guides capex one quarter at a time; Q1 FY2027 (ended September 30, 2026) results had not been released as of 2026-10-01, so no Q2 FY2027 capex guidance has been issued.",
+    "evidence_ids": [
+     "E7"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Microsoft Q4 FY2026 earnings call capital expenditures guidance Q1 FY2027",
+     "topic": "general",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-01",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://fifthperson.com/microsoft-q4-2026",
+      "https://finance.yahoo.com/quote/MSFT/earnings/MSFT-Q4-2026-earnings_call-647770.html",
+      "https://futurumgroup.com/insights/microsoft-q4-fy-2026-ai-demand-accelerates-azure-and-enterprise-growth"
+     ],
+     "query": "What are Alphabet, Meta, Amazon, and Microsoft each currently guiding for capital expenditures, and how do they line up on a calendar-2026 basis?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Alphabet Inc. Meta Platforms, Inc. AMAZON COM INC MICROSOFT CORP Alphabet calendar-2026 capital expenditures guidance",
+     "topic": "general",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-01",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Alphabet Inc. Meta Platforms, Inc. AMAZON COM INC MICROSOFT CORP Amazon calendar-2026 capital expenditures guidance",
+     "topic": "general",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-01",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.ttnews.com/articles/amazon-bond-sale-37-billion",
+      "https://observer.com/2026/03/why-ai-infrastructure-is-the-next-tech-battleground",
+      "https://finance.yahoo.com/news/oracle-solidifies-ai-infrastructure-positioning-161500050.html"
+     ],
+     "query": "What are Alphabet, Meta, Amazon, and Microsoft each currently guiding for capital expenditures, and how do they line up on a calendar-2026 basis?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/news/oracle-solidifies-ai-infrastructure-positioning-161500050.html",
+    "https://finance.yahoo.com/quote/MSFT/earnings/MSFT-Q4-2026-earnings_call-647770.html",
+    "https://mlq.ai/news/microsoft-brought-88-data-centers-online-in-fy2026-spent-41b-in-q4-alone",
+    "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm",
+    "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 16,
+   "retrieved_primary": 5
+  },
+  "correctness": {
+   "score": 0.375,
+   "points": [
+    {
+     "point": "Alphabet's latest guide before Oct 1, 2026 is $195–205B for calendar 2026, dated July 22, 2026 (Q2 call), preserving calendar/fiscal and lease definitions.",
+     "met": false,
+     "note": "Agent gave $180–190B from a secondary source (Zacks/Yahoo Finance), not the primary Q2 call guidance; the primary guide is $195–205B per the snapshot."
+    },
+    {
+     "point": "Meta's latest guide before Oct 1, 2026 is $130–145B including finance-lease principal for calendar 2026, dated July 29, 2026 (Q2 release), preserving definitions.",
+     "met": true,
+     "note": "Agent correctly quoted $130–145B including principal payments on finance leases from Meta's 8-K (primary source)."
+    },
+    {
+     "point": "Amazon's latest guide before Oct 1, 2026 is ~$220B cash capex for calendar 2026, dated July 30, 2026 (Q2 call), preserving definitions.",
+     "met": false,
+     "note": "Agent stated 'Not disclosed in evidence' and provided no figure; the snapshot shows ~$220B cash capex from the July 30 Q2 call."
+    },
+    {
+     "point": "Microsoft's latest guide before Oct 1, 2026 is ~$175B including finance leases/excluding operating leases for calendar 2026, dated July 29, 2026 (Q4 FY2026 call), preserving definitions.",
+     "met": false,
+     "note": "Agent gave ~$175B but cited secondary sources (MLQ News, Zacks, Yahoo Finance transcript) rather than the primary Q4 FY2026 call; the date is only implicit and the lease definitions are mentioned but not sourced from the company's own guide."
+    },
+    {
+     "point": "Do not treat Microsoft's fiscal FY2027 or Q1 figures as calendar 2026 totals.",
+     "met": true,
+     "note": "Agent included Q1 FY2027 (>$50B) and FY2027 growth commentary but explicitly noted they are not additional CY2026 totals."
+    },
+    {
+     "point": "Do not invent a harmonized cash basis across companies.",
+     "met": true,
+     "note": "Agent noted 'the lease definitions differ, so these are not fully harmonized cash-spending measures.'"
+    },
+    {
+     "point": "Distinguish cash capex, finance-lease principal payments, and finance-lease asset additions for each company.",
+     "met": false,
+     "note": "Agent distinguished for Meta (finance-lease principal) and Microsoft (finance leases included, operating leases excluded), but provided no figures for Alphabet and Amazon, so the distinction could not be made for them."
+    },
+    {
+     "point": "Date each company's guide explicitly.",
+     "met": false,
+     "note": "Meta's guide is dated via source; Alphabet's guide is not dated (secondary source undated); Amazon's guide missing; Microsoft's guide only implicitly dated via reference to Q4 FY2026 call."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The core answer fails to provide correct, primary-sourced, dated calendar-2026 capex guidance for Alphabet and Amazon, and relies on secondary sources for Microsoft. Only Meta's guidance is fully correct and properly sourced. Since the question requires accurate guidance for all four companies as of the October 1 snapshot, the answer is incorrect."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Alphabet calendar 2026 capital expenditures guidance is $180-$190 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/oracle-solidifies-ai-infrastructure-positioning-161500050.html",
+     "reason": "The cited Yahoo Finance article is about Oracle, not Alphabet. The retrieved content does not mention Alphabet's capex guidance. The claim is not supported by the cited source.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Meta calendar 2026 capital expenditures guidance is $130-145 billion",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm",
+     "reason": "The Meta Q2 FY2026 8-K filing explicitly states: 'We anticipate 2026 capital expenditures, including principal payments on finance leases, to be in the range of $130-145 billion, narrowed from our prior outlook of $125-145 billion.' This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Amazon calendar 2026 capital expenditures guidance is not disclosed in the evidence",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm",
+     "reason": "The Amazon Q2 FY2026 8-K filing provides guidance only for Q3 2026 net sales and operating income. No numeric capex guidance for calendar 2026 appears in the retrieved content.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft calendar 2026 capital expenditures guidance is approximately $175 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/MSFT/earnings/MSFT-Q4-2026-earnings_call-647770.html",
+     "reason": "The Microsoft Q4 FY2026 earnings call transcript states: 'the shift from finance to operating leases adjusts our expectation to approximately $175 billion' for calendar year 2026 capex. This supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft Q1 FY2027 (quarter ending September 30, 2026) capital expenditures guidance is over $50 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/MSFT/earnings/MSFT-Q4-2026-earnings_call-647770.html",
+     "reason": "The same transcript states: 'We expect CapEx spend will be over $50 billion, including the lease reclassification impact from the useful life update.' This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Meta guides calendar 2026 capital expenditures, including principal payments on finance leases, to a range of $130-145 billion, narrowed from its prior outlook of $125-145 billion",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm",
+     "reason": "The Meta 8-K filing contains the exact quoted language. The claim is fully supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet's 2026 capital expenditure range is $180-$190 billion, as reported by Zacks Investment Research (published via Yahoo Finance), a secondary source",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/oracle-solidifies-ai-infrastructure-positioning-161500050.html",
+     "reason": "The cited Yahoo Finance article is about Oracle and does not contain Alphabet capex guidance in the retrieved content. The claim is not supported by the cited source.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet's own Q2 FY2026 release (quarter ended June 30, 2026) does not contain a capex guidance figure",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/news/oracle-solidifies-ai-infrastructure-positioning-161500050.html",
+     "reason": "The claim cites the Oracle article (source [1]) but refers to Alphabet's own 8-K filing. The cited source does not support the claim about Alphabet's filing. The Alphabet 8-K (retrieved separately) indeed does not show a capex guidance number, but the citation is incorrect.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft expects calendar 2026 capital expenditures of approximately $175 billion, per CFO commentary on the Q4 FY2026 earnings call (secondary transcript), after the shift from finance to operating leases",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/MSFT/earnings/MSFT-Q4-2026-earnings_call-647770.html",
+     "reason": "The transcript includes the CFO commentary about the lease reclassification adjusting calendar 2026 capex to approximately $175 billion. The claim is supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft guides Q1 FY2027 (quarter ending September 30, 2026) capital expenditures to over $50 billion, including the lease reclassification impact from the useful life update",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/MSFT/earnings/MSFT-Q4-2026-earnings_call-647770.html",
+     "reason": "The transcript explicitly states Q1 FY2027 capex expected to be over $50 billion inclusive of lease reclassification effects. Supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft expects FY2027 capital expenditures to grow year-over-year, given demand signals across its portfolio",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/quote/MSFT/earnings/MSFT-Q4-2026-earnings_call-647770.html",
+     "reason": "The transcript includes: 'We expect FY 2027 capital expenditures to grow year-over-year, given demand signals across our portfolio.' This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft's calendar 2026 capex guidance was mechanically reduced from the $190 billion figure disclosed in Q3 to approximately $175 billion because the useful-life change reclassifies some leases from finance to operating leases, as reported by MLQ News",
+     "numeric": true,
+     "cited_url": "https://mlq.ai/news/microsoft-brought-88-data-centers-online-in-fy2026-spent-41b-in-q4-alone",
+     "reason": "The MLQ News article states: 'This change reclassifies some leases from finance to operating, which mechanically reduced the calendar 2026 capex guidance from the $190 billion figure disclosed in Q3 to approximately $175 billion.' The claim is supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft's roughly $190 billion calendar 2026 capex figure was guided in its fiscal third quarter ended March 31, 2026, per Zacks Investment Research (published via Yahoo Finance), a secondary source",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/oracle-solidifies-ai-infrastructure-positioning-161500050.html",
+     "reason": "The cited Yahoo Finance article is about Oracle and does not mention Microsoft's Q3 FY2026 capex guidance in the retrieved content. The claim is not supported by the cited source.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Amazon calendar 2026 capital expenditure guidance: Amazon's Q2 FY2026 release (quarter ended June 30, 2026) provides forward guidance only for Q3 2026 net sales and operating income; no numeric capex guidance for 2026 appears in the evidence",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm",
+     "reason": "The Amazon 8-K filing shows Q3 2026 guidance for net sales and operating income only. No capex guidance for calendar 2026 is present. The claim is supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft Q2 FY2027 (Oct-Dec 2026) capital expenditure guidance: Microsoft guides capex one quarter at a time; Q1 FY2027 (ended September 30, 2026) results had not been released as of 2026-10-01, so no Q2 FY2027 capex guidance has been issued",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/quote/MSFT/earnings/MSFT-Q4-2026-earnings_call-647770.html",
+     "reason": "The cited transcript is from the Q4 FY2026 earnings call (July 2026). It does not mention the date 2026-10-01 or the release status of Q1 FY2027 results. The claim about the situation as of 2026-10-01 is not directly supported by the cited source.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 10,
+   "numeric_cited": 10,
+   "cited": 15,
+   "supported": 10,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,237 @@
+{
+ "id": "H12",
+ "category": "Numerical reasoning",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "What were Toro's trailing-twelve-month Professional segment net sales and segment profit (EBIT) as of the end of its fiscal Q3 2026 (quarter ended July 31, 2026), and what was the implied TTM segment margin?",
+ "grading": "Computation: TTM = FY2025 + nine months FY2026 - nine months FY2025. TTM Professional net sales USD 3,853.5M and segment profit USD 748.5M (each +/-0.5%); margin 19.42% (+/-0.3pp; accept 19.4%). Fail if the dollar figures are nine-month, fiscal-2025 or quarterly values, or a different segment is used.",
+ "answer": "TTM Professional net sales = 3,624.0 (FY2025) + 2,943.2 (nine months FY2026) - 2,713.7 (nine months FY2025) = USD 3,853.5 million. TTM Professional segment profit (EBIT) = 702.5 + 573.8 - 527.8 = USD 748.5 million. TTM segment margin = 748.5 / 3,853.5 = 19.42% [H12-E1][H12-E2].",
+ "output": {
+  "answer": "## Toro — Professional Segment TTM (12 months ended July 31, 2026)\n\nFiscal Q3 2026 ended July 31, 2026, and Toro's fiscal year ends October 31. So the TTM period is built as: **FY2025 (full year) − F25 nine months + F26 nine months**:\n\n| $ in millions | Net sales | Segment profit (EBIT) |\n|---|---|---|\n| FY2025 (12 mo ended 10/31/25) | 3,624.0 | 702.5 |\n| Less: F25 nine months | (2,713.7) | (527.8) |\n| Plus: F26 nine months | 2,943.2 | 573.8 |\n| **TTM (12 mo ended 7/31/26)** | **3,853.5** | **748.5** |\n\n**Results:**\n- **TTM Professional net sales: ~$3.85 billion** ($3,853.5M)\n- **TTM Professional segment profit (EBIT): ~$748.5 million**\n- **Implied TTM segment EBIT margin: ~19.4%** (748.5 / 3,853.5 = 19.42%)\n\n**Notes and context:**\n- For reference, the quarter itself: Professional net sales of $1,012.6M (+8.8% YoY, +6.1% organic) and segment profit of $211.8M (up 6.7%), a **20.9%** segment margin, down 40 bps YoY on higher material/manufacturing costs and mix, partly offset by price, productivity and volume leverage.\n- The nine-month F26 Professional margin was 19.5% (vs. 19.4% prior-year period), and the TTM figure of ~19.4% is essentially in line with FY2025's full-year 19.4% Professional EBIT margin.\n- Segment profit = EBIT (excludes general corporate expense, interest and taxes), so it is not directly comparable to GAAP consolidated operating income.\n- The $43M non-cash impairment charge taken in F26 Q3 related to AMP network/product rationalization was recorded in the **Other** segment, so it does **not** reduce the Professional EBIT figures above.\n\nSources:\n- [Toro Q3 FY2026 earnings release (SEC EX-99.1)](https://www.sec.gov/Archives/edgar/data/737758/000073775826000041/ttc09032026exhibit991.htm)\n- [Toro Form 10-Q for quarter ended July 31, 2026](https://www.sec.gov/Archives/edgar/data/737758/000073775826000043/ttc-20260731.htm)\n- [Toro Q4/FY2025 results and Form 10-K (Professional net sales $3,624.0M, EBIT $702.5M, 19.4% margin)](https://www.sec.gov/Archives/edgar/data/737758/000073775825000115/ttc-20251031.htm)\n- [Toro Q3 FY2026 earnings call transcript (Investing.com)](https://www.investing.com/news/transcripts/earnings-call-transcript-toro-beats-q3-2026-estimates-but-shares-fall-93CH-4888291)",
+  "tokens": {
+   "input": 30089,
+   "output": 1772
+  },
+  "tavily_credits": 8,
+  "latency_s": 35.31,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/52945ed9afe135e01f7d93a5b59838c6",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Toro Company fiscal Q3 2026 results Professional segment net sales segment profit",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Toro fiscal 2026 third quarter earnings Professional segment",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Toro fiscal 2025 fourth quarter full year results Professional segment net sales segment profit annual",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Toro fiscal 2025 10-K Professional segment net sales \"segment profit\" fiscal year ended October 31 2025",
+     "search_depth": "advanced",
+     "include_domains": [
+      "sec.gov",
+      "thetorocompany.com"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.investing.com/news/transcripts/earnings-call-transcript-toro-beats-q3-2026-estimates-but-shares-fall-93CH-4888291",
+    "https://www.sec.gov/Archives/edgar/data/737758/000073775825000115/ttc-20251031.htm",
+    "https://www.sec.gov/Archives/edgar/data/737758/000073775826000041/ttc09032026exhibit991.htm",
+    "https://www.sec.gov/Archives/edgar/data/737758/000073775826000043/ttc-20260731.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 32,
+   "retrieved_primary": 4
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "TTM Professional net sales = USD 3,853.5M (+/-0.5%)",
+     "met": true,
+     "note": "Agent reports $3,853.5M, exactly matching reference."
+    },
+    {
+     "point": "TTM Professional segment profit (EBIT) = USD 748.5M (+/-0.5%)",
+     "met": true,
+     "note": "Agent reports $748.5M, exactly matching reference."
+    },
+    {
+     "point": "TTM segment margin = 19.42% (+/-0.3pp; accept 19.4%)",
+     "met": true,
+     "note": "Agent reports ~19.4% (19.42% rounded), within tolerance."
+    },
+    {
+     "point": "Correct methodology: uses TTM rolling calculation (FY2025 + 9M FY2026 - 9M FY2025) and not nine-month, fiscal-2025, quarterly, or different segment figures",
+     "met": true,
+     "note": "Agent explicitly shows the calculation: FY2025 (3,624.0) - F25 nine months (2,713.7) + F26 nine months (2,943.2) = 3,853.5; same for profit. No wrong period or segment used."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly computes TTM Professional net sales ($3,853.5M), segment profit ($748.5M), and margin (19.42% ≈ 19.4%) using the proper rolling twelve-month formula, matching the reference answer exactly within tolerances."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Fiscal Q3 2026 ended July 31, 2026, and Toro's fiscal year ends October 31",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775826000043/ttc-20260731.htm",
+     "reason": "The 10-Q filing is titled for the quarter ended July 31, 2026, and the 10-K for fiscal year ended October 31, 2025 confirms the fiscal year end.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TTM period built as FY2025 (full year) minus F25 nine months plus F26 nine months",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775825000115/ttc-20251031.htm",
+     "reason": "The answer's TTM construction uses FY2025 full-year data (from 10-K) and nine-month data from the 10-Q (F25 and F26). The arithmetic is correct: 3,624.0 - 2,713.7 + 2,943.2 = 3,853.5 for net sales; 702.5 - 527.8 + 573.8 = 748.5 for EBIT.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 Professional net sales: $3,624.0 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775825000115/ttc-20251031.htm",
+     "reason": "The 10-K shows Professional segment net sales for fiscal 2025 as $3,624.0 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 Professional segment profit (EBIT): $702.5 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775825000115/ttc-20251031.htm",
+     "reason": "The 10-K shows Professional segment EBIT for fiscal 2025 as $702.5 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "F25 nine months Professional net sales: $2,713.7 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775826000043/ttc-20260731.htm",
+     "reason": "The 10-Q states: 'For the first nine months of fiscal 2026, Professional net sales were $2,943.2 million, an increase of 8.5 percent compared to $2,713.7 million from the same period in the prior fiscal year.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "F25 nine months Professional segment profit: $527.8 million",
+     "numeric": true,
+     "cited_url": "https://www.nasdaq.com/press-release/toro-company-reports-record-third-quarter-results-2026-09-03",
+     "reason": "The NASDAQ press release includes a table showing nine months ended August 1, 2025 Professional segment profit of $527.8 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "F26 nine months Professional net sales: $2,943.2 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775826000043/ttc-20260731.htm",
+     "reason": "The 10-Q states: 'For the first nine months of fiscal 2026, Professional net sales were $2,943.2 million.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "F26 nine months Professional segment profit: $573.8 million",
+     "numeric": true,
+     "cited_url": "https://www.nasdaq.com/press-release/toro-company-reports-record-third-quarter-results-2026-09-03",
+     "reason": "The NASDAQ press release table shows nine months ended July 31, 2026 Professional segment profit of $573.8 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TTM Professional net sales: $3,853.5 million (~$3.85 billion)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775825000115/ttc-20251031.htm",
+     "reason": "Derived from FY2025 net sales $3,624.0M minus F25 nine months $2,713.7M plus F26 nine months $2,943.2M = $3,853.5M. All inputs are sourced from SEC filings.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TTM Professional segment profit (EBIT): $748.5 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775825000115/ttc-20251031.htm",
+     "reason": "Derived from FY2025 EBIT $702.5M minus F25 nine months $527.8M plus F26 nine months $573.8M = $748.5M. All inputs sourced from SEC filings and earnings releases.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Implied TTM segment EBIT margin: ~19.4% (748.5 / 3,853.5 = 19.42%)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775825000115/ttc-20251031.htm",
+     "reason": "Calculation: 748.5 / 3,853.5 = 0.1942 (19.42%), rounds to 19.4%. FY2025 full-year margin is also 19.4% per 10-K.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 Professional net sales: $1,012.6 million (+8.8% YoY, +6.1% organic)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775826000041/ttc09032026exhibit991.htm",
+     "reason": "The earnings release (EX-99.1) and 10-Q both report Q3 Professional net sales of $1,012.6M, up 8.8% YoY. Organic growth of 6.1% is reported in the earnings call transcript and the Morningstar organic growth table.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 Professional segment profit: $211.8 million (up 6.7%), segment margin 20.9%, down 40 bps YoY",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775826000043/ttc-20260731.htm",
+     "reason": "The 10-Q states: 'Professional segment profit for the third quarter of fiscal 2026 increased 6.7 percent compared to the third quarter of fiscal 2025, and Professional segment profit margin decreased to 20.9 percent from 21.3 percent.' The NASDAQ release shows $211.8M vs $198.5M prior year.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Nine-month F26 Professional margin: 19.5% (vs 19.4% prior-year period)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775826000043/ttc-20260731.htm",
+     "reason": "The 10-Q states: 'Professional segment margin increased to 19.5 percent from 19.4 percent for the year-to-date period of fiscal 2025.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Segment profit = EBIT (excludes general corporate expense, interest, taxes), not directly comparable to GAAP consolidated operating income",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775826000009/ttc-20260130.htm",
+     "reason": "The 10-Q filing explains: 'The company evaluates the performance of its Professional and Residential reportable business segment results based on EBIT which includes allocated expenses that these operations would have incurred otherwise, but does not include general corporate expenses, interest expense, and income taxes.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "$43M non-cash impairment charge in F26 Q3 related to AMP network/product rationalization recorded in Other segment, not reducing Professional EBIT",
+     "numeric": true,
+     "cited_url": "https://www.investing.com/news/transcripts/earnings-call-transcript-toro-beats-q3-2026-estimates-but-shares-fall-93CH-4888291",
+     "reason": "The earnings call transcript states: 'Our adjusted earnings excludes a non-cash impairment charge of $43 million as part of our AMP-related network optimization and product portfolio rationalization.' The segment table in the 10-Q shows the Other segment loss of $103.5M in Q3 F26, which includes this impairment.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 13,
+   "numeric_cited": 13,
+   "cited": 16,
+   "supported": 16,
+   "not_retrieved": 0
+  }
+ }
+}

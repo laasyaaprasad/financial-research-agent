@@ -1,0 +1,134 @@
+{
+ "id": "H08",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was AAON's BASX-branded products backlog at June 30, 2026, in USD millions?",
+ "grading": "USD 1,430.4 million (1,430,379 thousand), +/-0.5%; accept 'about USD 1.43 billion'. Optional context: total backlog USD 1,970.8M; BASX backlog +185.4% vs June 30, 2025 (USD 501.1M). Fail if total backlog or another date is given as the BASX figure.",
+ "answer": "AAON's BASX-branded products backlog at June 30, 2026 was USD 1,430.4 million (1,430,379 thousand), versus USD 501.1 million at June 30, 2025 (+185.4%) and USD 1,302.1 million at December 31, 2025. Total backlog was USD 1,970.8 million (AAON-branded USD 540.5 million) [H08-E1]. The Q2 press release cites only total backlog of about USD 2.0 billion [H08-E2].",
+ "output": {
+  "answer": "**AAON's BASX-branded products backlog at June 30, 2026 was approximately $1.43 billion (≈ $1,430 million)**, up 185.4% year-over-year.\n\nContext from AAON's Q2 2026 results:\n- Total backlog: $1.97 billion (up 98.0% y/y)\n- BASX-branded backlog: ~$1.43 billion (+185.4% y/y)\n- AAON-branded backlog: $540.5 million (+9.4% y/y)\n\n(Total minus AAON-branded implies BASX-branded of roughly $1,429–1,430 million; AAON's materials cite it as $1.43B.)\n\nSources:\n- [AAON Q2 2026 press release (investors.aaon.com)](https://investors.aaon.com/investor-news/aaon-reports-record-second-quarter-2026-results-driven-by-strong-demand-accelerating-throughput-and-improved-operating-execution)\n- [AAON Q2 2026 results (PR Newswire)](https://www.prnewswire.com/news-releases/aaon-reports-record-second-quarter-2026-results-driven-by-strong-demand-accelerating-throughput-and-improved-operating-execution-302846687.html)\n- [AAON 8-K — The Aaon Group overview, $1.43B BASX backlog at 2Q26 (StockTitan)](https://www.stocktitan.net/sec-filings/AAON/8-k-aaon-inc-reports-material-event-610469cf7009.html)\n- [AAON Q2 2026 earnings summary — BASX backlog $1.43B (TradingKey)](https://www.tradingkey.com/news/earnings/262092372-tradingkey)",
+  "tokens": {
+   "input": 11872,
+   "output": 806
+  },
+  "tavily_credits": 2,
+  "latency_s": 31.82,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/10a446765e84aaf4c0faa2c472e1c4ec",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AAON BASX backlog June 30 2026"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "AAON backlog BASX segment quarterly filing"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investors.aaon.com/investor-news/aaon-reports-record-second-quarter-2026-results-driven-by-strong-demand-accelerating-throughput-and-improved-operating-execution",
+    "https://www.prnewswire.com/news-releases/aaon-reports-record-second-quarter-2026-results-driven-by-strong-demand-accelerating-throughput-and-improved-operating-execution-302846687.html",
+    "https://www.stocktitan.net/sec-filings/AAON/8-k-aaon-inc-reports-material-event-610469cf7009.html",
+    "https://www.tradingkey.com/news/earnings/262092372-tradingkey"
+   ],
+   "cited_primary": 1,
+   "retrieved": 16,
+   "retrieved_primary": 8
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Provides BASX-branded products backlog at June 30, 2026",
+     "met": true,
+     "note": "Agent explicitly states 'AAON's BASX-branded products backlog at June 30, 2026 was approximately $1.43 billion'."
+    },
+    {
+     "point": "Value in USD millions (or equivalent)",
+     "met": true,
+     "note": "Agent gives both '$1.43 billion' and '≈ $1,430 million', satisfying the unit requirement."
+    },
+    {
+     "point": "Value approximately 1,430.4 million within +/-0.5%",
+     "met": true,
+     "note": "$1.43 billion (1,430 million) is within 0.5% of the reference 1,430.4 million."
+    },
+    {
+     "point": "Does not confuse with total backlog or other dates",
+     "met": true,
+     "note": "Agent separately lists total backlog ($1.97B) and BASX-branded backlog (~$1.43B), and does not cite Dec 31, 2025 or June 30, 2025 figures as the June 30, 2026 BASX number."
+    },
+    {
+     "point": "Does not report in thousands without conversion",
+     "met": true,
+     "note": "Agent reports in billions/millions, not in raw thousands (1,430,379)."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly states the BASX-branded backlog at June 30, 2026 as approximately $1.43 billion (≈ $1,430 million), which matches the reference value of USD 1,430.4 million within the allowed tolerance. The answer avoids the failure modes: it does not substitute total backlog, does not use a different date, and uses proper units."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "AAON's BASX-branded products backlog at June 30, 2026 was approximately $1.43 billion (≈ $1,430 million), up 185.4% year-over-year.",
+     "numeric": true,
+     "cited_url": "https://www.tradingkey.com/news/earnings/262092372-tradingkey",
+     "reason": "The TradingKey source explicitly states: 'BASX-branded backlog increased 185.4% to $1.43 billion'. This matches both the dollar amount and the year-over-year percentage.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total backlog: $1.97 billion (up 98.0% y/y)",
+     "numeric": true,
+     "cited_url": "https://www.tradingkey.com/news/earnings/262092372-tradingkey",
+     "reason": "The TradingKey source states: 'Total backlog was $1.97 billion at quarter-end, up 98.0% year over year.' This matches the claim exactly.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "BASX-branded backlog: ~$1.43 billion (+185.4% y/y)",
+     "numeric": true,
+     "cited_url": "https://www.tradingkey.com/news/earnings/262092372-tradingkey",
+     "reason": "Same as claim 1; the TradingKey source provides the exact figures.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "AAON-branded backlog: $540.5 million (+9.4% y/y)",
+     "numeric": true,
+     "cited_url": "https://www.tradingkey.com/news/earnings/262092372-tradingkey",
+     "reason": "The TradingKey source states: 'AAON-branded backlog increased 9.4% to $540.5 million.' This matches the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total minus AAON-branded implies BASX-branded of roughly $1,429–1,430 million; AAON's materials cite it as $1.43B.",
+     "numeric": true,
+     "cited_url": "https://www.tradingkey.com/news/earnings/262092372-tradingkey",
+     "reason": "Derived from the two prior figures: $1,970 million -backlog figures from the same source: $1,970 million total minus $540.5 million AAON-branded = $1,429.5 million, which rounds to $1.43 billion. The arithmetic is correct and the source provides both inputs.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 5,
+   "supported": 5,
+   "not_retrieved": 0
+  }
+ }
+}

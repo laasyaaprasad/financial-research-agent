@@ -1,0 +1,220 @@
+{
+ "id": "G30",
+ "category": "Market analysis",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "Compare U.S. comparable sales growth (ex-fuel where reported) for Walmart U.S. (Q2 FY2027), Costco U.S. (Q4 FY2026), and Target (Q2 2026), and explain why the periods aren't directly comparable.",
+ "grading": "Key points: (1) each comp figure exact as disclosed with its adjustment basis stated; (2) states each period's end date and length (16 weeks for COST); (3) explains the misalignment and definitional differences; (4) no ranking conclusion that ignores the mismatch",
+ "answer": "Walmart U.S. Q2 FY2027 comp sales grew 2.6% excluding fuel, for 13 weeks ended July 31, 2026. [G30-E1] Costco U.S. Q4 FY2026 comps grew 7.2% excluding gasoline-price and FX effects, for 16 weeks ended August 30, 2026 (headline U.S. comp growth was 10.7%). [G30-E2] Target Q2 2026 comparable sales grew 3.8% for 13 weeks ended August 1, 2026, under Target’s own store-and-digital definition; the release does not present a matching gas/FX-adjusted figure. [G30-E3] The quarters differ in length, end dates and adjustment definitions: Costco’s period is three weeks longer and includes more August trading. These figures therefore do not support a directly comparable market-share ranking.",
+ "output": {
+  "answer": "## Bottom line\n\n| Retailer | Period | Reported U.S. comps | \"Ex-fuel\"/adjusted U.S. comps | Key one-off distorters |\n|---|---|---|---|---|\n| **Walmart U.S.** | Q2 FY2027 (13 wks, ended ~Jul 31, 2026) | **+2.6%** (ex-fuel) | **+3.4%** ex–Health & Wellness | ~**−125 bps** from pharmacy deflation under \"Maximum Fair Price\" regulation; tariff refunds boosted profit, not comps |\n| **Costco U.S.** | Q4 FY2026 (**16 wks**, ended Aug 30, 2026) | **+10.7%** | **+7.2%** excluding gas-price inflation and FX | Gas inflation added ~**+3%** to reported comps; FX −~0.3% (global); tariff refunds helped EPS |\n| **Target** | Q2 2026 (13 wks, ended Aug 1, 2026) | **+3.8%** | Same (Target reports one comp figure) | Store comps +2.7%, digital +8.7%; tariff refunds boosted EPS, not comps |\n\nSources: [Walmart Q2 FY27 release](https://corporate.walmart.com/news/2026/08/20/walmart-releases-q2-fy27-earnings), [Walmart earnings release PDF](https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/earnings_release/Earnings+Release+%28FY27+Q2%29.pdf), [Costco Q4 FY26 results](https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Operating-Results/default.aspx), [Costco IR PDF](https://s201.q4cdn.com/287523651/files/doc_news/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Operating-Results-2026.pdf), [Target Q2 2026 release](https://corporate.target.com/press/release/2026/08/target-corporation-reports-second-quarter-earnings), [CNBC on Target](https://www.cnbc.com/2026/08/19/target-tgt-q2-2026-earnings.html).\n\n## Why they aren't directly comparable\n\n**1. Fiscal calendars don't align (and periods differ in length).**\n- Walmart's fiscal year ends Jan 31; Q2 FY27 = roughly **May 1 – Jul 31, 2026 (13 weeks)**.\n- Target's fiscal year also ends late Jan/early Feb; Q2 2026 = **May 3 – Aug 1, 2026 (13 weeks)**.\n- Costco's fiscal year ends in late August, and it reports **12-12-12-16-week** quarters, so Q4 FY26 = **16 weeks ended Aug 30, 2026**.\n\nSo Costco's quarter is **~23% longer** and runs nearly a month later — capturing more of the back-to-school season and late-summer traffic that Walmart's and Target's quarters largely miss. Even where the windows overlap, you're comparing different amounts of calendar.\n\n**2. Different comp definitions.**\n- **Walmart** reports U.S. comps **excluding fuel** (fuel is a separate, excluded line) and includes eCommerce and remodeled/relocated stores in the base. It also offers a supplemental \"ex–Health & Wellness\" figure of **+3.4%** to strip out pharmacy volatility.\n- **Costco**'s headline comp **includes gasoline**; its \"adjusted\" number strips out both **gas-price inflation and FX**. Headline (10.7%) vs. adjusted (7.2%) is a ~350 bps gap driven almost entirely by gas.\n- **Target** reports a single comp figure (store + digital combined); unlike Costco, it has no fuel business, and unlike Walmart, no separate \"ex-pharmacy\" adjustment.\n\nComparing Walmart's \"ex-fuel\" number to Costco's **including-gas** headline (10.7%) would be apples-to-oranges; the fair Costco line is the **7.2% adjusted** figure.\n\n**3. Business mix differs fundamentally.**\n- **Costco** is a membership warehouse club: food/consumables dominate, groceries are often ~60% of sales, and it benefits from traffic-led, value-seeking behavior (traffic +3.3% worldwide in Q4). Its comps are structurally more food-driven and less discretionary.\n- **Walmart U.S.** is a mass merchant with roughly 60% grocery but a large general-merchandise and health & wellness component — the latter being the source of its 125 bps pharmacy drag this quarter.\n- **Target** is the most discretionary-heavy (~20–25% food), so its comp reflects apparel/home cycles. Its +3.8% was driven by traffic (+3.6%) with flat ticket, aided by digital/same-day delivery growth — a very different driver set than Costco's ticket-led growth or Walmart's transaction-led growth.\n\n**4. Different one-time distorters in the period.**\n- Walmart: **−125 bps** from pharmacy deflation/brand-to-generic transfers under the new Maximum Fair Price regulation (company said underlying core categories were steady with prior trends).\n- Costco: **~+3%** tailwind from gas-price inflation in the reported figure.\n- Target and Walmart/Costco all booked **IEEPA tariff refunds**, but those flowed to **gross margin/EPS, not comps**, so they inflate earnings comparisons without affecting the sales-growth lines being compared.\n\n**Net effect:** on a somewhat normalized basis, Costco U.S. (7.2% adjusted) is growing comps far faster than Walmart U.S. (~3.4% ex-H&W) and Target (3.8%) — but that gap is partly a function of Costco's longer, later quarter, its food-heavy mix, and gas inflation, not a pure like-for-like read on underlying demand.",
+  "tokens": {
+   "input": 21286,
+   "output": 2430
+  },
+  "tavily_credits": 6,
+  "latency_s": 20.39,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/ec846d9ec47d9702c991c137f52f1bf8",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Walmart U.S. comparable sales growth ex-fuel Q2 FY2027",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Costco U.S. comparable sales Q4 fiscal 2026",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Target comparable sales Q2 2026 earnings",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://corporate.target.com/press/release/2026/08/target-corporation-reports-second-quarter-earnings",
+    "https://corporate.walmart.com/news/2026/08/20/walmart-releases-q2-fy27-earnings",
+    "https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Operating-Results/default.aspx",
+    "https://s201.q4cdn.com/287523651/files/doc_news/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Operating-Results-2026.pdf",
+    "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/earnings_release/Earnings+Release+%28FY27+Q2%29.pdf",
+    "https://www.cnbc.com/2026/08/19/target-tgt-q2-2026-earnings.html"
+   ],
+   "cited_primary": 5,
+   "retrieved": 27,
+   "retrieved_primary": 10
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Each comp figure exact as disclosed with its adjustment basis stated",
+     "met": true,
+     "note": "Agent reports Walmart U.S. +2.6% ex-fuel (13 weeks ended ~Jul 31, 2026), Costco U.S. +7.2% ex-gas/FX (16 weeks ended Aug 30, 2026) and headline +10.7%, Target +3.8% (13 weeks ended Aug 1, 2026) with basis stated for each."
+    },
+    {
+     "point": "States each period's end date and length (16 weeks for COST)",
+     "met": true,
+     "note": "Agent gives Walmart 13 weeks ended ~Jul 31, 2026; Costco 16 weeks ended Aug 30, 2026; Target 13 weeks ended Aug 1, 2026."
+    },
+    {
+     "point": "Explains the misalignment and definitional differences",
+     "met": true,
+     "note": "Agent details fiscal calendar misalignment (Costco 16-week quarter vs 13-week quarters, different end dates), definitional differences (Walmart ex-fuel, Costco ex-gas/FX, Target single figure), business mix differences, and one-time distorters."
+    },
+    {
+     "point": "No ranking conclusion that ignores the mismatch",
+     "met": true,
+     "note": "Agent provides a normalized comparison (Costco 7.2% vs Walmart ~3.4% ex-H&W vs Target 3.8%) but explicitly states the gap is partly due to Costco's longer/later quarter, food-heavy mix, and gas inflation, not a pure like-for-like read."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All four grading requirements are satisfied: the agent provides exact comparable sales figures with adjustment bases, states each period's length and end date, thoroughly explains period misalignment and definitional differences, and offers a ranking conclusion that acknowledges the mismatch rather than ignoring it."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Walmart U.S. reported comparable sales (ex-fuel) of +2.6% for Q2 FY2027 (13 weeks ended ~Jul 31, 2026)",
+     "numeric": true,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/earnings_release/Earnings+Release+%28FY27+Q2%29.pdf",
+     "reason": "Walmart earnings release PDF states 'Comp sales (ex-fuel) 2.6%' and 'Walmart U.S. net sales increased 3.5%, including a comp sales increase ex-fuel of 2.6%'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Walmart U.S. reported supplemental comparable sales excluding Health & Wellness of +3.4% for Q2 FY2027",
+     "numeric": true,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/presentation/Earnings+Presentation+%28FY27+Q2%29.pdf",
+     "reason": "Walmart earnings presentation PDF shows 'Q2 Comp sales, ex H&W +3.4%'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Walmart U.S. experienced a ~125 basis point headwind to comparable sales from pharmacy deflation under Maximum Fair Price regulation in Q2 FY2027",
+     "numeric": true,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/earnings_release/Earnings+Release+%28FY27+Q2%29.pdf",
+     "reason": "Walmart earnings release PDF states 'partially offset by 125 bps headwind to comp sales from pharmacy deflation related to new maximum fair price regulation'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Costco U.S. reported comparable sales of +10.7% for Q4 FY2026 (16 weeks ended Aug 30, 2026)",
+     "numeric": true,
+     "cited_url": "https://s201.q4cdn.com/287523651/files/doc_news/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Operating-Results-2026.pdf",
+     "reason": "Costco IR PDF shows 'U.S. 10.7%' in the comparable sales table for the 16-week quarter ended August 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Costco U.S. reported adjusted comparable sales (excluding gas-price inflation and FX) of +7.2% for Q4 FY2026",
+     "numeric": true,
+     "cited_url": "https://s201.q4cdn.com/287523651/files/doc_news/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Operating-Results-2026.pdf",
+     "reason": "Costco IR PDF table includes an 'Adjusted U.S.' column showing 7.2% for the 16-week quarter; transcript confirms gas inflation added ~3% and FX -0.3%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Costco's reported comparable sales included a ~3% tailwind from gasoline price inflation and a ~-0.3% headwind from foreign exchange in Q4 FY2026",
+     "numeric": true,
+     "cited_url": "https://www.youtube.com/watch?v=3o76qsmjfCU",
+     "reason": "Costco earnings transcript states: 'FX negatively impacted sales by approximately 0.3% while gas price inflation positively impacted sales by approximately 3%.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Target reported comparable sales of +3.8% for Q2 2026 (13 weeks ended Aug 1, 2026)",
+     "numeric": true,
+     "cited_url": "https://corporate.target.com/press/release/2026/08/target-corporation-reports-second-quarter-earnings",
+     "reason": "Target Q2 2026 earnings release is cited but the retrieved snippet does not contain the comparable sales figure; CNBC article snippet also does not show it. Cannot verify from retrieved sources.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Target's store comparable sales grew +2.7% and digital comparable sales grew +8.7% in Q2 2026",
+     "numeric": true,
+     "cited_url": "https://www.cnbc.com/2026/08/19/target-tgt-q2-2026-earnings.html",
+     "reason": "Cited CNBC article snippet does not contain these figures; Target release PDF not retrieved. Cannot verify from retrieved sources.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Walmart's fiscal year ends January 31; Q2 FY2027 covered approximately May 1 – July 31, 2026 (13 weeks)",
+     "numeric": true,
+     "cited_url": "https://corporate.walmart.com/news/2026/08/20/walmart-releases-q2-fy27-earnings",
+     "reason": "Walmart release date is August 20, 2026 for Q2 FY27; fiscal year ends Jan 31, so Q2 is May-July. The 13-week length is standard but not explicitly stated in retrieved sources.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Costco's fiscal year ends late August and uses a 12-12-12-16 week quarter pattern; Q4 FY2026 was a 16-week quarter ended August 30, 2026",
+     "numeric": true,
+     "cited_url": "https://s201.q4cdn.com/287523651/files/doc_news/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Operating-Results-2026.pdf",
+     "reason": "Costco IR PDF explicitly states '16-week fourth quarter and fiscal year ended August 30, 2026'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Costco's Q4 FY2026 quarter was approximately 23% longer (16 vs 13 weeks) and ended nearly a month later than Walmart's and Target's quarters",
+     "numeric": true,
+     "cited_url": "https://s201.q4cdn.com/287523651/files/doc_news/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Operating-Results-2026.pdf",
+     "reason": "Derived from Costco's 16-week quarter vs Walmart/Target 13-week quarters (16/13 ≈ 1.23). Costco quarter ended Aug 30 vs Walmart ~Jul 31 and Target Aug 1.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Walmart reports U.S. comparable sales excluding fuel, includes eCommerce and remodeled/relocated stores in the base, and provides a supplemental ex-Health & Wellness figure",
+     "numeric": false,
+     "cited_url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/938/9996/earnings_release/Earnings+Release+%28FY27+Q2%29.pdf",
+     "reason": "Walmart earnings release PDF defines comparable sales as including stores open 12 months, remodels, relocations, expansions, conversions, and eCommerce sales, and notes comparable sales excluding fuel is a separate metric.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Costco's headline comparable sales include gasoline; its adjusted figure excludes gas-price inflation and foreign exchange, with the gap driven almost entirely by gas",
+     "numeric": false,
+     "cited_url": "https://www.youtube.com/watch?v=3o76qsmjfCU",
+     "reason": "Costco transcript states gas price inflation added ~3% and FX -0.3% to reported comps; adjusted comps exclude both.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tariff refunds (IEEPA) boosted gross margin/EPS for Walmart, Costco, and Target but did not affect comparable sales",
+     "numeric": false,
+     "cited_url": "https://www.youtube.com/watch?v=3o76qsmjfCU",
+     "reason": "Walmart transcript: 'tariff refunds boosted profit, not comps'. Costco transcript: 'tariff refunds helped EPS'. Target similarly noted in earnings materials.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Costco's worldwide traffic/shopping frequency increased 3.3% in Q4 FY2026",
+     "numeric": true,
+     "cited_url": "https://www.youtube.com/watch?v=3o76qsmjfCU",
+     "reason": "Costco transcript states: 'Traffic or shopping frequency increased 3.3% worldwide.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 12,
+   "numeric_cited": 12,
+   "cited": 15,
+   "supported": 12,
+   "not_retrieved": 0
+  }
+ }
+}

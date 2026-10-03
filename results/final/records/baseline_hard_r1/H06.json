@@ -1,0 +1,98 @@
+{
+ "id": "H06",
+ "category": "Quantitative retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "What did Jack Henry & Associates' fiscal 2026 Form 10-K report as remaining performance obligations at June 30, 2026 (in USD), and what share of that amount did the company expect to recognize over the next 12 months?",
+ "grading": "Key points: RPO at June 30, 2026 = USD 8,440,905 thousand (USD 8.44 billion; +/-0.5%); about 23% expected to be recognized over the next 12 months (about USD 1.94 billion; accept 23%). Optional detail: 18% in months 13-24. Fail if units are wrong by a factor of 1,000, or the figure is for another date/measure.",
+ "answer": "Jack Henry's FY2026 10-K (year ended June 30, 2026) reports remaining performance obligations of USD 8,440,905 thousand (about USD 8.44 billion) at June 30, 2026, of which approximately 23% (about USD 1.94 billion) is expected to be recognized over the next 12 months, 18% in months 13-24 and the balance thereafter [H06-E1][H06-E2]. The figure is not in the Q4 earnings release [H06-E3].",
+ "output": {
+  "answer": "**Jack Henry & Associates — Fiscal 2026 Form 10-K (period ended June 30, 2026)**\n\n- **Remaining performance obligations (RPO):** **$8,440,905 thousand, i.e., ≈ $8.44 billion.** As stated in the filing, \"estimated revenue expected to be recognized in the future related to performance obligations that are unsatisfied (or partially unsatisfied) at the end of the reporting period totaled $8,440,905.\"\n- **Share expected within 12 months:** **~23%** (≈ $1.94 billion), with 18% expected in months 13–24 and the balance thereafter.\n\nSource: [Jack Henry & Associates FY2026 Form 10-K, Note on Revenue — sec.gov](https://www.sec.gov/Archives/edgar/data/779152/000077915226000067/jkhy-20260630.htm)\n\nNote: figures in the filing are presented in thousands of dollars.",
+  "tokens": {
+   "input": 10908,
+   "output": 481
+  },
+  "tavily_credits": 3,
+  "latency_s": 89.11,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/7c2bbf1f28ca0429b238392a81bc5433",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Jack Henry & Associates fiscal 2026 Form 10-K remaining performance obligations",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Jack Henry Associates 10-K remaining performance obligations June 30, 2026"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/779152/000077915226000067/jkhy-20260630.htm"
+   ],
+   "cited_primary": 1,
+   "retrieved": 14,
+   "retrieved_primary": 11
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "RPO at June 30, 2026 = USD 8,440,905 thousand (USD 8.44 billion; +/-0.5%)",
+     "met": true,
+     "note": "Agent reports $8,440,905 thousand (≈ $8.44 billion), exactly matching the filing."
+    },
+    {
+     "point": "About 23% expected to be recognized over the next 12 months (about USD 1.94 billion; accept 23%)",
+     "met": true,
+     "note": "Agent states ~23% (≈ $1.94 billion), matching the reference."
+    },
+    {
+     "point": "Optional detail: 18% in months 13-24",
+     "met": true,
+     "note": "Agent includes the optional 18% figure for months 13–24, which is correct."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent accurately reports the remaining performance obligations at June 30, 2026, with correct units (thousands of USD), the correct fiscal period, and the correct 12-month recognition share. All key requirements are satisfied."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Remaining performance obligations (RPO) totaled $8,440,905 thousand (≈ $8.44 billion) as of June 30, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/779152/000077915226000067/jkhy-20260630.htm",
+     "reason": "The retrieved source states: 'As of June 30, 2026, estimated revenue expected to be recognized in the future related to performance obligations that are unsatisfied (or partially unsatisfied) at the end of the reporting period totaled $8,440,905.' The filing presents figures in thousands of dollars, so $8,440,905 thousand equals approximately $8.44 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The company expects to recognize approximately 23% of RPO within 12 months (≈ $1.94 billion), 18% in months 13–24, and the balance thereafter.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/779152/000077915226000067/jkhy-20260630.htm",
+     "reason": "The retrieved source states: 'The Company expects to recognize approximately 23% over the next 12 months, 18% in 13 - 24 months, and the balance thereafter.' 23% of $8.44 billion is approximately $1.94 billion.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 2,
+   "numeric_cited": 2,
+   "cited": 2,
+   "supported": 2,
+   "not_retrieved": 0
+  }
+ }
+}

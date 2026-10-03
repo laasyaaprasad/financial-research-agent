@@ -1,0 +1,94 @@
+{
+ "id": "H16",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "abstain",
+ "question": "Pull Skechers' latest 10-Q and give me net sales and earnings from operations for its quarter ended June 30, 2026, in USD millions.",
+ "grading": "Must state that no Skechers 10-Q exists for the quarter ended June 30, 2026 because Skechers was taken private (merger closed Sept 12, 2025; Form 15 deregistration filed Sept 23, 2025), so SEC-filed net sales and earnings from operations are unavailable. May cite the last filed quarter (June 30, 2025: net sales USD 2,440.0M; earnings from operations USD 173.1M) clearly labelled as 2025. Fail if any 2026 net sales or operating earnings figure is presented as filed.",
+ "answer": "There is no such filing. Skechers was acquired by 3G Capital (merger completed September 12, 2025; NYSE delisting) and filed a Form 15 on September 23, 2025 terminating its SEC reporting duties, with one holder of record [H16-E1][H16-E2]. Its last periodic reports on EDGAR are the 10-Q for the quarter ended June 30, 2025 (filed August 8, 2025: net sales USD 2,440.0 million; earnings from operations USD 173.1 million) and the FY2024 10-K (filed February 28, 2025); there is no 10-K for 2025 and no 10-Q for 2026 [H16-E3][H16-E4].",
+ "output": {
+  "answer": "**There is no 10-Q for the quarter ended June 30, 2026 — Skechers no longer files periodic reports with the SEC.**\n\nSkechers U.S.A., Inc. was acquired by 3G Capital in a $9 billion take-private deal. The merger closed on **September 12, 2025**, the stock was delisted from the NYSE (ticker SKX) the same day, and the company filed an 8-K confirming it requested Form 25 deregistration. Its own merger materials stated that after closing, \"Skechers will no longer file periodic reports, current reports, proxy or information statements with the SEC.\" So the June 30, 2026 quarter has no public 10-Q, and no Q2 2026 figures are available in USD millions from a filing.\n\n**Latest available 10-Q: quarter ended June 30, 2025** (filed Aug. 8, 2025, the last quarterly report before the deal closed):\n\n| ($ in millions) | Q2 2025 | Q2 2024 |\n|---|---|---|\n| Sales | $2,440.0 | $2,157.6 |\n| Earnings from operations | $173.1 | $206.5 |\n| Net earnings attributable to Skechers | $170.5 | $140.3 |\n\nNote the operating-line divergence: sales rose 13.1% while earnings from operations fell 16.2%, driven by a jump in G&A expenses (tariff-related costs, shipping/packaging).\n\nSources:\n- Skechers Q2 2025 10-Q (SEC): https://www.sec.gov/Archives/edgar/data/1065837/000095017025105871/skx-20250630.htm\n- Q2 2025 earnings release: https://about.skechers.com/press-release/skechers-announces-second-quarter-2025-financial-results\n- 3G Capital completion / NYSE delisting: https://about.skechers.com/press-release/3g-capital-completes-acquisition-of-skechers\n- 8-K on deregistration: https://www.sec.gov/Archives/edgar/data/1065837/000119312525201846/d41926d8k.htm\n\nIf you're seeing a \"June 30, 2026\" figure somewhere, it's likely either a private-company disclosure (e.g., bondholder/investor reporting, since the deal was debt-financed) or a data-vendor error. I can search for 3G-era private disclosures or financing documents if that would help.",
+  "tokens": {
+   "input": 12526,
+   "output": 1197
+  },
+  "tavily_credits": 2,
+  "latency_s": 20.95,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/3fb0ad83337af7256b3979d8a1be8f2f",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Skechers 10-Q quarter ended June 30, 2026 net sales earnings from operations"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Skechers 3G Capital acquisition completed 2025 no longer SEC filings"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://about.skechers.com/press-release/3g-capital-completes-acquisition-of-skechers",
+    "https://about.skechers.com/press-release/skechers-announces-second-quarter-2025-financial-results",
+    "https://www.sec.gov/Archives/edgar/data/1065837/000095017025105871/skx-20250630.htm",
+    "https://www.sec.gov/Archives/edgar/data/1065837/000119312525201846/d41926d8k.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 20,
+   "retrieved_primary": 8
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "State that no Skechers 10-Q exists for the quarter ended June 30, 2026",
+     "met": true,
+     "note": "Agent explicitly says: 'There is no 10-Q for the quarter ended June 30, 2026 — Skechers no longer files periodic reports with the SEC.'"
+    },
+    {
+     "point": "State the reason: Skechers was taken private (merger closed Sept 12, 2025; Form 15 deregistration filed Sept 23, 2025)",
+     "met": true,
+     "note": "Agent states merger closed September 12, 2025, stock delisted, and company filed an 8-K confirming it requested Form 25 deregistration (Form 15-12G per reference). The reason is correctly conveyed."
+    },
+    {
+     "point": "State that SEC-filed net sales and earnings from operations are unavailable",
+     "met": true,
+     "note": "Agent says: 'no Q2 2026 figures are available in USD millions from a filing.'"
+    },
+    {
+     "point": "May cite the last filed quarter (June 30, 2025: net sales USD 2,440.0M; earnings from operations USD 173.1M) clearly labelled as 2025",
+     "met": true,
+     "note": "Agent provides a table with Q2 2025 figures: Sales $2,440.0M, Earnings from operations $173.1M, clearly labelled as Q2 2025."
+    },
+    {
+     "point": "Fail if any 2026 net sales or operating earnings figure is presented as filed",
+     "met": true,
+     "note": "Agent presents no 2026 figures as filed; instead warns that any such figure would be from private disclosures or data-vendor error."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer fully satisfies the grading rule: it correctly states that no 10-Q exists for June 30, 2026 due to the take-private merger and deregistration, provides the last available quarter (Q2 2025) with accurate figures clearly labelled, and does not present any 2026 figures as filed."
+  },
+  "citations": {
+   "claims": [],
+   "numeric_claims": 0,
+   "numeric_cited": 0,
+   "cited": 0,
+   "supported": 0,
+   "not_retrieved": 0,
+   "judge_error": "judge failed after 4 attempts: no structured output"
+  }
+ }
+}

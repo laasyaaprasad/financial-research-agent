@@ -21,12 +21,12 @@ API keys live in `.env` (`TAVILY_API_KEY`, `NEBIUS_API_KEY`, plus any added late
 - SEC EDGAR requests need a `User-Agent` with contact info; read it from the `SEC_USER_AGENT` environment variable, never hardcode it.
 - Every milestone must pass its acceptance criteria in `PLAN.md` before the next starts. Report eval numbers as measured; don't round up or omit failures.
 - Claims from research that were not verified (vendor benchmarks, unconfirmed API behaviour such as `topic="finance"`) must be tested or caveated before they appear in the README or technical statement.
-- After each milestone passes its acceptance criteria and tests, commit it and give a brief summary of what changed and the measured results. The user authorized autonomous work through to the final solution on 2026-10-03; keep `PLAN.md` in sync with what is actually built.
+- After each milestone passes its acceptance criteria and tests, commit it and give a brief summary of what changed and the measured results. Keep `PLAN.md` in sync with what is actually built.
 
 ## Evaluation discipline (no overfitting)
 
 - `evals/golden.jsonl` is the **dev set**: it may be inspected and used during development.
-- `evals/test_heldout.jsonl` is the **held-out test set**: once its hash is recorded, don't change agent code in response to its results (crash fixes only, reported).
+- `evals/test_heldout.jsonl`, `evals/test_hard.jsonl` and `evals/test_tables.jsonl` are **held-out sets**: once a set's hash is recorded, don't change agent code in response to its results (crash fixes only, reported).
 - Production code (`agents/`) must stay generic: no company names, tickers, or rules written for a specific evaluation question. `tests/test_agent.py` enforces the company part.
 - Tavily credits are scarce (about 1,500 for the remaining work): develop with `--no-web` or `--web-cache-from`, and spend credits only on final end-to-end runs.
 - The baseline and the agent use the same model (`agents/llm.py`); the judge (`evals/scorers.py`) is a different model family.

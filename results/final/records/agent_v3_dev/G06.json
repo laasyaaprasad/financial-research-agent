@@ -1,0 +1,174 @@
+{
+ "id": "G06",
+ "category": "Numerical reasoning",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "What was Facebook's total revenue in Q2 2026, and what was the Reality Labs operating margin (operating loss / segment revenue) in that quarter?",
+ "grading": "Revenue ±0.5%, USD millions; RL margin ±1pp (negative); must state it interpreted 'Facebook' as Meta Platforms",
+ "answer": "Interpreting Facebook as Meta Platforms, rather than the Facebook app, Q2 2026 total revenue was USD 60,801 million. Reality Labs revenue was USD 431 million and its signed operating loss was USD -4,619 million, giving an operating margin of -1071.6937%. [G06-E1]",
+ "output": {
+  "answer": "**Question:** What was Facebook's total revenue in Q2 2026, and what was the Reality Labs operating margin (operating loss / segment revenue) in that quarter?\n*As of 2026-10-01*\n\n| | Total revenue (USD millions, GAAP, as reported) | Reality Labs revenue (USD millions, GAAP, as reported) | Reality Labs loss from operations (USD millions, GAAP, as reported) | Reality Labs operating margin (%, as disclosed) | Reality Labs operating margin (%, calculated as operating loss / segment revenue) |\n|---|---|---|---|---|---|\n| Meta Platforms, Inc. — Q2 FY2026 (quarter ended June 30, 2026) | $60,801 [1][2][3] | $431 [1][2] | $(4,619) [1][2] | (1,072)% [2] | -1,071.7% [1][2] |\n\n- Meta Platforms, Inc. (Facebook) reported total revenue of $60,801 million for Q2 FY2026, the quarter ended June 30, 2026, on a GAAP as-reported basis, an increase of 28% compared to the second quarter of 2025. [1][2][3]\n- Meta's 10-Q discloses the Reality Labs operating margin for Q2 FY2026 (quarter ended June 30, 2026) as (1,072)%, versus (1,224)% for the quarter ended June 30, 2025. [2]\n- Calculated as Reality Labs loss from operations divided by Reality Labs revenue, the Q2 FY2026 (quarter ended June 30, 2026) Reality Labs operating margin is -1,071.7%. [1][2]\n- Reality Labs revenue for Q2 FY2026 (quarter ended June 30, 2026) was $431 million, up 16% year-over-year, and its loss from operations was $(4,619) million, a loss that increased $89 million, or 2%, compared to the same period in 2025. [1][2]\n\n**Sources**\n[1] Meta Platforms, Inc. earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-07-29) (www.sec.gov, 2026-07-29, primary) https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm\n[2] Meta Platforms, Inc. 10-Q for Q2 FY2026 (filed 2026-07-30) (www.sec.gov, 2026-07-30, primary) https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm\n[3] Meta Platforms, Inc. XBRL data tagged in 10-Q filed 2026-07-30 (www.sec.gov, 2026-07-30, primary) https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 56476,
+   "output": 14382
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 89.05,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/c2319945668ef2ae928ab857fe50c63b",
+  "companies": [
+   {
+    "name": "Meta Platforms, Inc.",
+    "ticker": "META",
+    "cik": "1326801",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Meta total revenue for Q2 FY2026 (three months ended 2026-06-30)",
+    "Reality Labs segment revenue for Q2 FY2026",
+    "Reality Labs segment operating loss (income) for Q2 FY2026",
+    "Reality Labs operating margin = operating loss / segment revenue for Q2 FY2026",
+    "Family of Apps / total segment reconciliation if needed to confirm segment definitions"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "META",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "META",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "META",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q2 FY2026 (2026-04-01 to 2026-06-30) is reported: 10-Q filed 2026-07-30 and earnings release 8-K filed 2026-07-29, so both documents are available.",
+    "Reality Labs operating margin is not disclosed as a line item; it must be computed as segment operating loss divided by segment revenue from the segment tables (earnings release and 10-Q note on segments).",
+    "Q3 FY2026 and later periods are not yet reported and are not needed for this question."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm",
+    "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/",
+    "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 3,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Total revenue for Q2 2026 within ±0.5% of reference 60,801 million USD",
+     "met": true,
+     "note": "Agent reports $60,801 million, exactly matching reference."
+    },
+    {
+     "point": "Reality Labs operating margin (operating loss / segment revenue) within ±1 percentage point of reference -1071.6937%",
+     "met": true,
+     "note": "Agent calculates -1,071.7%, difference ~0.0063 pp, well within tolerance."
+    },
+    {
+     "point": "Agent explicitly states interpretation of 'Facebook' as Meta Platforms",
+     "met": true,
+     "note": "Agent writes 'Meta Platforms, Inc. (Facebook)' and 'Interpreting Facebook as Meta Platforms'."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All three grading requirements are satisfied: total revenue matches exactly, calculated operating margin is within the allowed tolerance, and the agent clearly notes the entity resolution from 'Facebook' to Meta Platforms."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Meta Platforms, Inc. (Facebook) reported total revenue of $60,801 million for Q2 FY2026 (quarter ended June 30, 2026) on a GAAP as-reported basis",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm",
+     "reason": "Source 1 (8-K EX-99.1 earnings release) states: 'Revenue | $ | 60,801 | $ | 47,516 | 28 | % | Total revenue for the second quarter of 2026 was $60.80 billion, an increase of 28% compared to the second quarter of 2025'. Source 2 (10-Q) and Source 3 (XBRL) also show the same figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total revenue increased 28% compared to Q2 2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm",
+     "reason": "Source 1 explicitly states 'an increase of 28% compared to the second quarter of 2025'. The same percentage appears in Source 2 and Source 3.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Reality Labs revenue for Q2 FY2026 was $431 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm",
+     "reason": "Source 1 shows 'Reality Labs | 431 | 370 | 833 | 782 | Revenue'. Source 2 shows 'Revenue | $ | 431 | $ | 370 | 16%'. Both confirm $431 million for the three months ended June 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Reality Labs revenue increased 16% year-over-year",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+     "reason": "Source 2 (10-Q) shows 'Revenue | $ | 431 | $ | 370 | 16%' for Reality Labs. The increase from $370 million to $431 million is 61/370 ≈ 16.5%, rounded to 16% as disclosed.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Reality Labs loss from operations for Q2 FY2026 was $(4,619) million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm",
+     "reason": "Source 1 shows 'Reality Labs | (4,619) | (4,530) | (8,647) | (8,739) | Loss from operations'. Source 2 shows 'Loss from operations | $ | (4,619) | $ | (4,530) | $ | (8,647) | $ | (8,739)'. Both confirm a loss of $4,619 million for the three months ended June 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Reality Labs loss from operations increased $89 million, or 2%, compared to the same period in 2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm",
+     "reason": "Source 1 explicitly states: 'RL loss from operations in the three months ended June 30, 2026 increased $89 million, or 2%, compared to the same period in 2025'. The figures $(4,619) million vs $(4,530) million yield a difference of $89 million, which is 89/4,530 ≈ 1.96%, rounded to 2%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Meta's 10-Q discloses the Reality Labs operating margin for Q2 FY2026 as (1,072)%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+     "reason": "Source 2 (10-Q) includes a line: 'Operating margin | 39 | % | 53 | % | (1,072) | % | (1,224) | % | 31 | % | 43 | %'. In the segment table, the (1,072)% corresponds to Reality Labs for the three months ended June 30, 2026, while (1,224)% is for the same period in 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Calculated Reality Labs operating margin (operating loss / segment revenue) for Q2 FY2026 is -1,071.7%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm",
+     "reason": "Derived from Reality Labs loss from operations of $(4,619) million and Reality Labs revenue of $431 million (both from Source 1 and Source 2). Calculation: -4,619 / 431 * 100 = -1,071.6937...%, which rounds to -1,071.7% (one decimal place). The answer's computed figure matches this calculation.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 8,
+   "cited": 8,
+   "supported": 8,
+   "not_retrieved": 0
+  }
+ }
+}

@@ -1,0 +1,296 @@
+{
+ "id": "X08",
+ "category": "Trends",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "For The Estee Lauder Companies (fiscal year ends June 30), report GAAP gross margin (gross profit / net sales, in %) and GAAP operating margin (operating income (loss) / net sales, in %) for each of its last four reported fiscal quarters as of October 3, 2026. Label each quarter with its fiscal quarter, fiscal year and period-end date. Use GAAP figures as reported (not adjusted/non-GAAP); fourth-quarter results are not separately filed on a 10-Q.",
+ "grading": "Graded cell by cell: each value within tolerance and for the stated period; a missing cell counts as wrong.",
+ "answer": "Estee Lauder GAAP margins (Q4 FY2026 derived as FY2026 minus nine months and matching the Q4 release):\n| Row | Gross margin | Operating margin |\n|---|---|---|\n| Q1 FY2026 (ended 2025-09-30) | 73.37% | 4.85% |\n| Q2 FY2026 (ended 2025-12-31) | 76.50% | 9.48% |\n| Q3 FY2026 (ended 2026-03-31) | 76.40% | 6.71% |\n| Q4 FY2026 (ended 2026-06-30) | 75.46% | -1.08% |",
+ "output": {
+  "answer": "**Question:** For The Estee Lauder Companies (fiscal year ends June 30), report GAAP gross margin (gross profit / net sales, in %) and GAAP operating margin (operating income (loss) / net sales, in %) for each of its last four reported fiscal quarters as of October 3, 2026. Label each quarter with its fiscal quarter, fiscal year and period-end date. Use GAAP figures as reported (not adjusted/non-GAAP); fourth-quarter results are not separately filed on a 10-Q.\n*As of 2026-10-03*\n\n| | Net sales (USD millions) | Gross profit (USD millions) | Operating income (loss) (USD millions) | GAAP gross margin (%) | GAAP operating margin (%) |\n|---|---|---|---|---|---|\n| Q1 FY2026 (quarter ended September 30, 2025) | 3,481 [1] | 2,554 [1] | 169 [1] | 73.4 [1] | 4.9 [1] |\n| Q2 FY2026 (quarter ended December 31, 2025) | 4,229 [2] | 3,235 [2] | 401 [2] | 76.5 [2] | 9.5 [2] |\n| Q3 FY2026 (quarter ended March 31, 2026) | 3,712 [3] | 2,836 [3] | 249 [3] | 76.4 [3] | 6.7 [3] |\n| Q4 FY2026 (quarter ended June 30, 2026) | 3,627 [4] | 2,737 [4] | (39) [4] | 75.5 (as disclosed) [4] | -1.1 [4] |\n\n- The Estée Lauder Companies' last four reported fiscal quarters as of October 3, 2026 are Q1 FY2026 through Q4 FY2026, since Q1 FY2027 (quarter ending September 30, 2026) had not been reported as of that date. [4]\n- Q4 FY2026 (quarter ended June 30, 2026) is not separately filed on a 10-Q; its quarterly net sales, gross profit and operating loss are reported in the Q4/FY2026 earnings release (8-K filed 2026-08-19) and reconcile to the FY2026 10-K figures. [4][5]\n- Q4 FY2026 GAAP gross margin was disclosed as 75.5% for the three months ended June 30, 2026; calculated from the same inputs it is 75.5%. [4]\n- All figures above are GAAP as reported; the company's non-GAAP adjusted gross margin and adjusted operating income (e.g., Adjusted Gross Profit, Non-GAAP of $2,750 million and Adjusted Operating Income, Non-GAAP of $267 million for the three months ended June 30, 2026) are excluded. [4]\n\n**Not available**\n- Q1 FY2027 (quarter ending September 30, 2026) gross margin and operating margin: As of October 3, 2026 the company had not yet reported results for the quarter ending September 30, 2026; the latest release covers the fiscal year ended June 30, 2026. [4]\n\n**Sources**\n[1] ESTEE LAUDER COMPANIES INC XBRL data tagged in 10-Q filed 2025-10-30 (www.sec.gov, 2025-10-30, primary) https://www.sec.gov/Archives/edgar/data/1001250/000100125025000109/\n[2] ESTEE LAUDER COMPANIES INC XBRL data tagged in 10-Q filed 2026-02-05 (www.sec.gov, 2026-02-05, primary) https://www.sec.gov/Archives/edgar/data/1001250/000100125026000006/\n[3] ESTEE LAUDER COMPANIES INC XBRL data tagged in 10-Q filed 2026-05-01 (www.sec.gov, 2026-05-01, primary) https://www.sec.gov/Archives/edgar/data/1001250/000100125026000019/\n[4] ESTEE LAUDER COMPANIES INC earnings release for Q4 FY2026, 8-K EX-99.1 (filed 2026-08-19) (www.sec.gov, 2026-08-19, primary) https://www.sec.gov/Archives/edgar/data/1001250/000100125026000038/elq4fy2026exhibit991.htm\n[5] ESTEE LAUDER COMPANIES INC XBRL data tagged in 10-K filed 2026-08-19 (www.sec.gov, 2026-08-19, primary) https://www.sec.gov/Archives/edgar/data/1001250/000100125026000041/\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 38599,
+   "output": 11876
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 57.24,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/1d514315008f797f9a28a293c9b3049f",
+  "companies": [
+   {
+    "name": "ESTEE LAUDER COMPANIES INC",
+    "ticker": "EL",
+    "cik": "1001250",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "GAAP net sales for Q1 FY2026 (quarter ended 2025-09-30)",
+    "GAAP gross profit for Q1 FY2026",
+    "GAAP operating income (loss) for Q1 FY2026",
+    "GAAP gross margin % (gross profit / net sales) for Q1 FY2026",
+    "GAAP operating margin % (operating income / net sales) for Q1 FY2026",
+    "GAAP net sales for Q2 FY2026 (quarter ended 2025-12-31)",
+    "GAAP gross profit for Q2 FY2026",
+    "GAAP operating income (loss) for Q2 FY2026",
+    "GAAP gross margin % for Q2 FY2026",
+    "GAAP operating margin % for Q2 FY2026",
+    "GAAP net sales for Q3 FY2026 (quarter ended 2026-03-31)",
+    "GAAP gross profit for Q3 FY2026",
+    "GAAP operating income (loss) for Q3 FY2026",
+    "GAAP gross margin % for Q3 FY2026",
+    "GAAP operating margin % for Q3 FY2026",
+    "GAAP net sales for Q4 FY2026 (quarter ended 2026-06-30)",
+    "GAAP gross profit for Q4 FY2026",
+    "GAAP operating income (loss) for Q4 FY2026",
+    "GAAP gross margin % for Q4 FY2026",
+    "GAAP operating margin % for Q4 FY2026"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "EL",
+     "label": "Q1 FY2026"
+    },
+    {
+     "ticker": "EL",
+     "label": "Q2 FY2026"
+    },
+    {
+     "ticker": "EL",
+     "label": "Q3 FY2026"
+    },
+    {
+     "ticker": "EL",
+     "label": "Q4 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "EL",
+     "period": "Q4 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "EL",
+     "period": "Q4 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q1 FY2027 (2026-07-01 to 2026-09-30) is not yet reported as of 2026-10-03, so it is excluded; the last four reported fiscal quarters are Q1-Q4 FY2026.",
+    "Q4 FY2026 is not separately filed on a 10-Q: its quarterly gross profit, net sales and operating income come from the Q4/FY2026 earnings release (8-K, 2026-08-19) and the FY2026 10-K, which reports the full fiscal year rather than the standalone fourth quarter.",
+    "Q1-Q3 FY2026 quarterly income-statement figures (net sales, gross profit, operating income) are in the respective 10-Qs and are fetched automatically as tagged financial-statement data; no separate documents are needed for those periods.",
+    "All figures must be GAAP as reported; non-GAAP/adjusted reconciliations in the releases should not be used."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Q1 FY2027 (quarter ending September 30, 2026) gross margin and operating margin",
+    "kind": "not_reported_yet",
+    "reason": "As of October 3, 2026 the company had not yet reported results for the quarter ending September 30, 2026; the latest release covers the fiscal year ended June 30, 2026.",
+    "evidence_ids": [
+     "E1"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1001250/000100125025000109/",
+    "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000006/",
+    "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000019/",
+    "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000038/elq4fy2026exhibit991.htm",
+    "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000041/"
+   ],
+   "cited_primary": 5,
+   "retrieved": 6,
+   "retrieved_primary": 6
+  },
+  "correctness": {
+   "score": 1.0,
+   "verdict": "correct",
+   "points": [
+    {
+     "point": "The Estee Lauder Companies Inc. Q1 FY2026 Gross margin = 73.37 %",
+     "met": true,
+     "note": "answer: 73.4"
+    },
+    {
+     "point": "The Estee Lauder Companies Inc. Q1 FY2026 Operating margin = 4.85 %",
+     "met": true,
+     "note": "answer: 4.9"
+    },
+    {
+     "point": "The Estee Lauder Companies Inc. Q2 FY2026 Gross margin = 76.5 %",
+     "met": true,
+     "note": "answer: 76.5"
+    },
+    {
+     "point": "The Estee Lauder Companies Inc. Q2 FY2026 Operating margin = 9.48 %",
+     "met": true,
+     "note": "answer: 9.5"
+    },
+    {
+     "point": "The Estee Lauder Companies Inc. Q3 FY2026 Gross margin = 76.4 %",
+     "met": true,
+     "note": "answer: 76.4"
+    },
+    {
+     "point": "The Estee Lauder Companies Inc. Q3 FY2026 Operating margin = 6.71 %",
+     "met": true,
+     "note": "answer: 6.7"
+    },
+    {
+     "point": "The Estee Lauder Companies Inc. Q4 FY2026 Gross margin = 75.46 %",
+     "met": true,
+     "note": "answer: 75.5"
+    },
+    {
+     "point": "The Estee Lauder Companies Inc. Q4 FY2026 Operating margin = -1.08 %",
+     "met": true,
+     "note": "answer: -1.1"
+    }
+   ],
+   "rationale": "8/8 cells correct",
+   "cells_correct": 8,
+   "cells_total": 8
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q1 FY2026 (quarter ended September 30, 2025) net sales were $3,481 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125025000109/",
+     "reason": "The 10-Q filed 2025-10-30 shows Revenue from Contract with Customer, Excluding Assessed Tax of 3,481,000,000 USD for the period 2025-07-01 to 2025-09-30.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY2026 GAAP gross margin was 73.4%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125025000109/",
+     "reason": "The same 10-Q shows Gross Profit of 2,554,000,000 USD and Revenue of 3,481,000,000 USD. Calculated gross margin = 2,554 / 3,481 = 73.37%, which rounds to 73.4%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY2026 GAAP operating margin was 4.9%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125025000109/",
+     "reason": "The 10-Q shows Operating Income of 169,000,000 USD. Calculated operating margin = 169 / 3,481 = 4.85%, which rounds to 4.9%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 (quarter ended December 31, 2025) net sales were $4,229 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000006/",
+     "reason": "The 10-Q filed 2026-02-05 shows Revenue from Contract with Customer, Excluding Assessed Tax of 4,229,000,000 USD for the period 2025-10-01 to 2025-12-31.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 GAAP gross margin was 76.5%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000006/",
+     "reason": "The same 10-Q shows Gross Profit of 3,235,000,000 USD. Calculated gross margin = 3,235 / 4,229 = 76.50%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 GAAP operating margin was 9.5%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000006/",
+     "reason": "The 10-Q shows Operating Income of 401,000,000 USD. Calculated operating margin = 401 / 4,229 = 9.48%, which rounds to 9.5%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 (quarter ended March 31, 2026) net sales were $3,712 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000019/",
+     "reason": "The 10-Q filed 2026-05-01 shows Revenue from Contract with Customer, Excluding Assessed Tax of 3,712,000,000 USD for the period 2026-01-01 to 2026-03-31.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 GAAP gross margin was 76.4%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000019/",
+     "reason": "The same 10-Q shows Gross Profit of 2,836,000,000 USD. Calculated gross margin = 2,836 / 3,712 = 76.40%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 GAAP operating margin was 6.7%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000019/",
+     "reason": "The 10-Q shows Operating Income of 249,000,000 USD. Calculated operating margin = 249 / 3,712 = 6.71%, which rounds to 6.7%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2026 (quarter ended June 30, 2026) net sales were $3,627 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000038/elq4fy2026exhibit991.htm",
+     "reason": "The 8-K EX-99.1 filed 2026-08-19 shows Net sales of $3,627 million for the three months ended June 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2026 GAAP gross margin was 75.5%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000038/elq4fy2026exhibit991.htm",
+     "reason": "The 8-K discloses Gross margin of 75.5% for the three months ended June 30, 2026. Gross profit of $2,737 million divided by net sales of $3,627 million equals 75.46%, which rounds to 75.5%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2026 GAAP operating margin was -1.1%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000038/elq4fy2026exhibit991.htm",
+     "reason": "The 8-K shows Operating (Loss) Income of $(39) million. Operating margin = -39 / 3,627 = -1.075%, which rounds to -1.1%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "As of October 3, 2026, the last four reported fiscal quarters were Q1 FY2026 through Q4 FY2026 because Q1 FY2027 (quarter ending September 30, 2026) had not yet been reported",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000038/elq4fy2026exhibit991.htm",
+     "reason": "The latest filing as of the 8-K date (2026-08-19) covers the fiscal year ended June 30, 2026. The next quarterly report (10-Q for Q1 FY2027) would be filed around late October 2026, after the October 3, 2026 cutoff.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2026 quarterly figures are reported in the 8-K earnings release filed 2026-08-19, not in a separate 10-Q, and reconcile to the FY2026 10-K",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000038/elq4fy2026exhibit991.htm",
+     "reason": "The 8-K EX-99.1 contains the quarterly income statement for the three months ended June 30, 2026. The 10-K filed the same day (source [5]) provides full-year figures that reconcile with the quarterly data.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "All figures in the table are GAAP as reported; non-GAAP adjusted measures are excluded",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000038/elq4fy2026exhibit991.htm",
+     "reason": "The 8-K presents both GAAP measures (Gross profit, Operating income) and non-GAAP measures (Adjusted Gross Profit, Adjusted Operating Income) separately. The answer uses only the GAAP line items.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 12,
+   "numeric_cited": 12,
+   "cited": 15,
+   "supported": 15,
+   "not_retrieved": 0
+  }
+ }
+}

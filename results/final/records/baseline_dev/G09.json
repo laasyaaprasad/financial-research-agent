@@ -1,0 +1,204 @@
+{
+ "id": "G09",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "number",
+ "question": "What was Nike's revenue in its most recently reported quarter, and which fiscal quarter and date range was that?",
+ "grading": "Reference-free recency: must pick the newest released quarter as of query time, label it in fiscal terms with period-end date, and give revenue ±0.5% USD millions; fail if an older quarter is presented as latest",
+ "answer": "At the October 1, 2026 after-market snapshot, Nike had released Q1 FY2027 results: revenue was USD 11,213 million for June 1–August 31, 2026. The release is dated October 1. [G09-E1]",
+ "output": {
+  "answer": "**Nike's most recently reported quarter:**\n\n- **Fiscal quarter:** First quarter of fiscal 2027 (Q1 FY2027)\n- **Date range:** June 1 – August 31, 2026 (quarter ended Aug. 31, 2026)\n- **Revenue:** **$11.2 billion**, down 4% on a reported basis and down 5% on a currency-neutral basis, versus the year-ago period\n\n**Additional context from that report (released ~Oct. 1, 2026):**\n- Diluted EPS: $0.48 (down 2% YoY), which beat consensus estimates of ~$0.43\n- NIKE Brand revenues: $11.0 billion (down 4%)\n- NIKE Direct: $4.1 billion (down 8%); wholesale: $6.8 billion (down 1%)\n- Greater China: $1.2 billion (down 22% reported / 26% currency-neutral); Converse: $263 million (down 28%)\n- Net income: $0.7 billion (down 2%)\n\nNike also guided fiscal 2027 revenue to decline by a high-single-digit percentage, announced job cuts tied to its \"Pace\" restructuring program, and reported that Q1 FY2027 results \"met expectations.\"\n\nSources:\n- https://au.finance.yahoo.com/news/nike-inc-reports-fiscal-2027-201500119.html (Nike's official Q1 FY2027 release)\n- https://finance.yahoo.com/markets/stocks/articles/nike-stock-tumbles-weak-fiscal-121140001.html\n- https://finance.yahoo.com/quote/NKE",
+  "tokens": {
+   "input": 14274,
+   "output": 685
+  },
+  "tavily_credits": 4,
+  "latency_s": 10.34,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/41378bf923f6d7da9e8185c6507a3a77",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nike most recent quarterly earnings revenue fiscal quarter",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nike fiscal 2027 first quarter results revenue $11.2 billion August 31 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://au.finance.yahoo.com/news/nike-inc-reports-fiscal-2027-201500119.html",
+    "https://finance.yahoo.com/markets/stocks/articles/nike-stock-tumbles-weak-fiscal-121140001.html",
+    "https://finance.yahoo.com/quote/NKE"
+   ],
+   "cited_primary": 0,
+   "retrieved": 19,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Identified the newest released quarter as of query time (Q1 FY2027)",
+     "met": true,
+     "note": "Agent states fiscal quarter: First quarter of fiscal 2027 (Q1 FY2027), matching snapshot."
+    },
+    {
+     "point": "Labeled the quarter in fiscal terms with period-end date",
+     "met": true,
+     "note": "Agent provides date range: June 1 – August 31, 2026 (quarter ended Aug. 31, 2026)."
+    },
+    {
+     "point": "Reported revenue within ±0.5% USD millions of the snapshot value",
+     "met": true,
+     "note": "Snapshot: $11,213 million; agent: $11.2 billion (11,200 million). Difference is 13 million (0.12%), well within tolerance."
+    },
+    {
+     "point": "Did not present an older quarter as the latest",
+     "met": true,
+     "note": "Agent correctly references Q1 FY2027 released ~Oct 1, 2026, not the prior quarter (Q4 FY2026)."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly identified the most recently reported quarter as Q1 FY2027 (ended Aug 31, 2026), provided the correct date range, and reported revenue of $11.2 billion, which is within ±0.5% of the snapshot value of $11,213 million. The answer aligns with the snapshot and sources."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Nike's most recently reported quarter is Q1 FY2027",
+     "numeric": false,
+     "cited_url": "https://au.finance.yahoo.com/news/nike-inc-reports-fiscal-2027-201500119.html",
+     "reason": "The official release title 'NIKE, Inc. Reports Fiscal 2027 First Quarter Results' and content 'First quarter revenues were $11.2 billion...' confirm the quarter is Q1 FY2027.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Quarter date range June 1 – August 31, 2026 (quarter ended Aug. 31, 2026)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/nike-stock-tumbles-weak-fiscal-121140001.html",
+     "reason": "Source states 'For the fiscal first quarter ended Aug. 31' but does not mention June 1 start date. The start date is inferred from Nike's fiscal calendar, not explicitly in the cited source.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue $11.2 billion, down 4% reported, down 5% currency-neutral vs year-ago",
+     "numeric": true,
+     "cited_url": "https://au.finance.yahoo.com/news/nike-inc-reports-fiscal-2027-201500119.html",
+     "reason": "Source explicitly states 'First quarter revenues were $11.2 billion, down 4 percent on a reported basis and down 5 percent on a currency-neutral basis'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Diluted EPS $0.48, down 2% YoY, beat consensus ~$0.43",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/NKE",
+     "reason": "Source states 'EPS (earnings per share) of $0.48 beat estimates' but does not provide YoY change or consensus estimate value. The YoY decline and consensus figure are not supported.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NIKE Brand revenues $11.0 billion, down 4%",
+     "numeric": true,
+     "cited_url": "https://au.finance.yahoo.com/news/nike-inc-reports-fiscal-2027-201500119.html",
+     "reason": "Source states 'NIKE Brand revenues were $11.0 billion, down 4 percent on a reported and currency-neutral basis'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NIKE Direct revenues $4.1 billion, down 8%",
+     "numeric": true,
+     "cited_url": "https://au.finance.yahoo.com/news/nike-inc-reports-fiscal-2027-201500119.html",
+     "reason": "Source states 'NIKE Direct revenues were $4.1 billion, down 8 percent on a reported basis'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Wholesale revenues $6.8 billion, down 1%",
+     "numeric": true,
+     "cited_url": "https://au.finance.yahoo.com/news/nike-inc-reports-fiscal-2027-201500119.html",
+     "reason": "Source states 'NIKE Brand wholesale revenues were $6.8 billion, down 1 percent on a reported and currency-neutral basis'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Greater China revenue $1.2 billion, down 22% reported / 26% currency-neutral",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/nike-stock-tumbles-weak-fiscal-121140001.html",
+     "reason": "Source states 'Greater China remained a weak spot, with revenue dropping 22% to $1.18 billion.' The reported revenue $1.18B rounds to $1.2B and 22% matches. However, the currency-neutral 26% decline is not mentioned in the source.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Converse revenue $263 million, down 28%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/nike-stock-tumbles-weak-fiscal-121140001.html",
+     "reason": "Source states 'Converse revenue decreased 28% to $263 million'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Net income $0.7 billion, down 2%",
+     "numeric": true,
+     "cited_url": "https://au.finance.yahoo.com/news/nike-inc-reports-fiscal-2027-201500119.html",
+     "reason": "Source states 'Net income was $0.7 billion, down 2 percent'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Nike guided fiscal 2027 revenue to decline by a high-single-digit percentage",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/nike-stock-tumbles-weak-fiscal-121140001.html",
+     "reason": "Source states 'Nike now expects fiscal 2027 revenue to decline by a high-single-digit percentage.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Nike announced job cuts tied to its 'Pace' restructuring program",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/nike-stock-tumbles-weak-fiscal-121140001.html",
+     "reason": "Source mentions 'restructuring costs tied to its Pace program' and 'restructuring charges' but does not explicitly state job cuts were announced.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY2027 results 'met expectations'",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The answer's cited sources do not include a source that mentions 'met expectations'. This claim appears in other retrieved sources but not in the three cited URLs.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Report released ~Oct. 1, 2026",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer's cited sources do not include a source that provides the release date. Other retrieved sources suggest Oct. 1, 2026, but not the cited URLs.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 10,
+   "numeric_cited": 9,
+   "cited": 12,
+   "supported": 8,
+   "not_retrieved": 0
+  }
+ }
+}

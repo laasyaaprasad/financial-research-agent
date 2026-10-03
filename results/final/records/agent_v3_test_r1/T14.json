@@ -1,0 +1,262 @@
+{
+ "id": "T14",
+ "category": "Adjustments",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "What caused Boeing's Defense, Space & Security segment to post an operating loss in the second quarter of 2026?",
+ "grading": "Key points: (1) BDS posted a loss from operations of USD 15M (margin -0.2%) vs earnings of USD 110M (margin 1.7%) in Q2 2025; (2) the main driver was a USD 280M reach-forward loss on the VC-25B (Air Force One) program; (3) management ties it to additional production and certification resources / higher costs for structural and wiring installation and airworthiness certification, with first delivery still anticipated in 2028; (4) revenue still rose 13% to USD 7,483M on higher volume, so the loss is a charge, not a demand issue. Partial credit for 3 of 4.",
+ "answer": "Boeing's Defense, Space & Security segment recorded a loss from operations of USD 15 million in Q2 2026 (margin -0.2%) versus earnings of USD 110 million (1.7%) a year earlier, even though revenue grew 13% to USD 7,483 million on higher volume. The release says results include USD 280 million of losses on the VC-25B program, primarily driven by an investment in additional production and certification resources (first delivery still anticipated in 2028). [T14-E1] The 10-Q attributes the USD 125 million earnings decrease mainly to USD 186 million higher net unfavorable cumulative catch-up adjustments, driven by the USD 280 million 2026 reach-forward loss on VC-25B, and to higher G&A, partially offset by higher volume; the loss reflects higher estimated costs for structural and wiring installation and airworthiness certification. [T14-E2]",
+ "output": {
+  "answer": "**Question:** What caused Boeing's Defense, Space & Security segment to post an operating loss in the second quarter of 2026?\n*As of 2026-10-03*\n\n- Boeing's Defense, Space & Security (BDS) segment reported a loss from operations of ($15) million in Q2 FY2026 (three months ended June 30, 2026), a swing from earnings of $110 million in Q2 FY2025. [1][2][3]\n- The company attributed the segment's Q2 FY2026 result to $280 million of losses on the VC-25B (Air Force One) program, primarily driven by an investment in additional production and certification resources. [1][3]\n- BDS Q2 FY2026 (three months ended June 30, 2026) operating margin was (0.2) percent, versus 1.7 percent in Q2 FY2025, a change of (1.9) Pts. [1][3]\n- The loss was not driven by weak revenue: BDS Q2 FY2026 revenue was $7,483 million, up 13 percent from $6,617 million in Q2 FY2025, driven by higher volume. [1][3]\n- Excluding the $280 million VC-25B charge, BDS would have reported operating earnings of 265 million in Q2 FY2026 (three months ended June 30, 2026). [1]\n- Boeing said it continues to anticipate first delivery of the VC-25B in 2028, and the 10-Q notes that a number of its ongoing fixed-price development programs (including VC-25B) have reach-forward losses with risk of additional reach-forward losses in future periods. [1][2]\n- The 10-Q also reports that BDS Q2 FY2026 revenue rose $866 million versus the prior-year quarter, primarily on increased revenues on proprietary and weapons programs, higher KC-46 volume and the acquisition of Spirit's defense business, with net cumulative contract catch-up adjustments $11 million less unfavorable than the comparable prior-year period. [2]\n- Quartz reported that the $280 million Air Force One charge inside the Defense, Space & Security segment pushed Boeing's adjusted (core) loss to 76 cents a share against a 30-cent analyst estimate, and that the segment swung to an operating loss of $15 million from $110 million of operating profit a year earlier. [4]\n\n**Sources**\n[1] BOEING CO earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-07-28) (www.sec.gov, 2026-07-28, primary) https://www.sec.gov/Archives/edgar/data/12927/000162828026049929/a202606jun308kprex991.htm\n[2] BOEING CO 10-Q for Q2 FY2026 (filed 2026-07-28) (www.sec.gov, 2026-07-28, primary) https://www.sec.gov/Archives/edgar/data/12927/000162828026050038/ba-20260630.htm\n[3] Boeing Company - Boeing Reports Second Quarter Results (investors.boeing.com, 2026-07-28, primary) https://investors.boeing.com/investors/news/press-release-details/2026/Boeing-Reports-Second-Quarter-Results/default.aspx\n[4] Boeing Q2 2026 earnings miss as Air Force One charge bites (qz.com, 2026-07-28, secondary) https://qz.com/boeing-second-quarter-earnings-air-force-one-charge-072826\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 87244,
+   "output": 11087
+  },
+  "tavily_credits": 3.0,
+  "latency_s": 75.93,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/36df6c048bbdb4944b7c595f00ac51ea",
+  "companies": [
+   {
+    "name": "BOEING CO",
+    "ticker": "BA",
+    "cik": "12927",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Boeing Defense, Space & Security (BDS) Q2 FY2026 operating loss (segment operating loss, $ and margin)",
+    "BDS Q2 FY2026 revenue and year-over-year change",
+    "Specific charges/losses recorded in Q2 FY2026 by program (e.g., fixed-price development programs such as KC-46A, T-7A, MQ-25, VC-25B, Starliner, SLS) and their dollar amounts",
+    "Management's stated reasons for the BDS loss (cost growth on fixed-price development programs, charges, volume/mix, performance issues) from the earnings release and 10-Q MD&A",
+    "BDS Q2 FY2025 operating result for comparison (prior-year baseline)",
+    "Any one-time items, contract adjustments, or program-specific write-downs quantified in the quarter"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "BA",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "BA",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "BA",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "BA",
+     "period": "Q2 FY2025",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Management's explanation of the BDS Q2 FY2026 operating loss and any program charges discussed on the earnings call, which may not be fully detailed in the release",
+     "query": "Boeing Q2 2026 earnings call Defense Space Security segment operating loss charges",
+     "topic": "news",
+     "days_back": 90
+    }
+   ],
+   "availability_notes": [
+    "Q2 FY2026 (April-June 2026) is reported: 10-Q filed 2026-07-28 and earnings release 8-K filed 2026-07-28, so segment results and MD&A are available.",
+    "Program-level charge amounts and management's detailed explanation may be disclosed only in the earnings call/8-K presentation rather than the 10-Q; a web search covers that.",
+    "Q3 FY2026 is not yet reported, so no post-Q2 updates are available."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Boeing Q2 2026 earnings call Defense Space Security segment operating loss charges",
+     "topic": "news",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "start_date": "2026-07-05"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://qz.com/boeing-second-quarter-earnings-air-force-one-charge-072826",
+      "https://finance.yahoo.com/markets/stocks/articles/1-number-behind-boeing-q2-151513228.html",
+      "https://www.airforce-technology.com/news/boeing-defence-q2-2026-results"
+     ],
+     "query": "What caused Boeing's Defense, Space & Security segment to post an operating loss in the second quarter of 2026?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "BOEING CO Management's detailed program-level explanation of the VC-25B charge beyond the earnings release wording (e.g., earnings-call commentary or Q&A)",
+     "topic": "general",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.financialsamurai.com/low-stock-market-return-scenario",
+      "https://responsiblealpha.com/the-mysterious-meandering-mississippi"
+     ],
+     "query": "What caused Boeing's Defense, Space & Security segment to post an operating loss in the second quarter of 2026?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investors.boeing.com/investors/news/press-release-details/2026/Boeing-Reports-Second-Quarter-Results/default.aspx",
+    "https://qz.com/boeing-second-quarter-earnings-air-force-one-charge-072826",
+    "https://www.sec.gov/Archives/edgar/data/12927/000162828026049929/a202606jun308kprex991.htm",
+    "https://www.sec.gov/Archives/edgar/data/12927/000162828026050038/ba-20260630.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 11,
+   "retrieved_primary": 5
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "BDS posted a loss from operations of USD 15M (margin -0.2%) vs earnings of USD 110M (margin 1.7%) in Q2 2025",
+     "met": true,
+     "note": "Agent states: 'Boeing's Defense, Space & Security (BDS) segment reported a loss from operations of ($15) million in Q2 FY2026 ... a swing from earnings of $110 million in Q2 FY2025' and 'BDS Q2 FY2026 operating margin was (0.2) percent, versus 1.7 percent in Q2 FY2025'."
+    },
+    {
+     "point": "The main driver was a USD 280M reach-forward loss on the VC-25B (Air Force One) program",
+     "met": true,
+     "note": "Agent states: 'The company attributed the segment's Q2 FY2026 result to $280 million of losses on the VC-25B (Air Force One) program' and later references 'reach-forward losses'."
+    },
+    {
+     "point": "Management ties it to additional production and certification resources / higher costs for structural and wiring installation and airworthiness certification, with first delivery still anticipated in 2028",
+     "met": true,
+     "note": "Agent includes 'primarily driven by an investment in additional production and certification resources' and 'Boeing said it continues to anticipate first delivery of the VC-25B in 2028'. The 10-Q detail on structural/wiring costs is not explicitly quoted but the core management explanation is captured."
+    },
+    {
+     "point": "Revenue still rose 13% to USD 7,483M on higher volume, so the loss is a charge, not a demand issue",
+     "met": true,
+     "note": "Agent states: 'The loss was not driven by weak revenue: BDS Q2 FY2026 revenue was $7,483 million, up 13 percent from $6,617 million in Q2 FY2025, driven by higher volume.'"
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer covers all four key points from the grading rule: the segment loss/margin figures, the VC-25B reach-forward loss as the primary driver, management's explanation (additional production/certification resources and 2028 delivery), and the revenue growth confirming the loss is a charge rather than a demand issue. No failure modes are present."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Boeing's Defense, Space & Security (BDS) segment reported a loss from operations of ($15) million in Q2 FY2026 (three months ended June 30, 2026), a swing from earnings of $110 million in Q2 FY2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/12927/000162828026049929/a202606jun308kprex991.htm",
+     "reason": "Source 1 (8-K Q2 2026) shows 'Earnings/(loss) from operations | ($15) | $110 | NM' for Defense, Space & Security second quarter. Source 2 (10-Q) and Source 3 (press release) confirm the same figures. Source 5 (8-K Q2 2025) shows $110 million earnings for Q2 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The company attributed the segment's Q2 FY2026 result to $280 million of losses on the VC-25B (Air Force One) program, primarily driven by an investment in additional production and certification resources",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/12927/000162828026049929/a202606jun308kprex991.htm",
+     "reason": "Source 1 states: 'Results include $280 million of losses on the VC-25B program primarily driven by an investment in additional production and certification resources.' Source 3 and Source 7 (PDF) repeat this language. Source 2 (10-Q) also mentions VC-25B as a significant fixed-price development program with reach-forward losses.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "BDS Q2 FY2026 (three months ended June 30, 2026) operating margin was (0.2) percent, versus 1.7 percent in Q2 FY2025, a change of (1.9) Pts",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/12927/000162828026049929/a202606jun308kprex991.htm",
+     "reason": "Source 1 shows 'Operating margins | (0.2) | % | 1.7 | % | (1.9) Pts' for Defense, Space & Security second quarter. Source 3 and Source 7 confirm the same margins and point change.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The loss was not driven by weak revenue: BDS Q2 FY2026 revenue was $7,483 million, up 13 percent from $6,617 million in Q2 FY2025, driven by higher volume",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/12927/000162828026049929/a202606jun308kprex991.htm",
+     "reason": "Source 1 shows 'Revenues | $7,483 | $6,617 | 13%' and states 'Defense, Space & Security second quarter revenue was $7.5 billion driven by higher volume.' Source 2 confirms the $866 million increase. Source 3 and Source 7 replicate the revenue table.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Excluding the $280 million VC-25B charge, BDS would have reported operating earnings of 265 million in Q2 FY2026 (three months ended June 30, 2026)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/12927/000162828026049929/a202606jun308kprex991.htm",
+     "reason": "Derived from cited figures: reported loss of ($15) million plus $280 million charge equals $265 million. Source 1 provides both inputs: loss of ($15) and $280 million VC-25B losses. The arithmetic is correct (280 - 15 = 265).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Boeing said it continues to anticipate first delivery of the VC-25B in 2028, and the 10-Q notes that a number of its ongoing fixed-price development programs (including VC-25B) have reach-forward losses with risk of additional reach-forward losses in future periods",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/12927/000162828026049929/a202606jun308kprex991.htm",
+     "reason": "Source 1 states: 'The company continues to anticipate first delivery in 2028.' and 'Examples of significant fixed-price development programs include Commercial Crew, KC-46A Tanker, MQ-25, T-7A Red Hawk, VC-25B, and commercial and military satellites. A number of our ongoing fixed-price development programs have reach-forward losses.' Source 2 repeats this language.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The 10-Q also reports that BDS Q2 FY2026 revenue rose $866 million versus the prior-year quarter, primarily on increased revenues on proprietary and weapons programs, higher KC-46 volume and the acquisition of Spirit's defense business, with net cumulative contract catch-up adjustments $11 million less unfavorable than the comparable prior-year period",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/12927/000162828026050038/ba-20260630.htm",
+     "reason": "Source 2 (10-Q) explicitly states: 'BDS revenues for the three months ended June 30, 2026, increased by $866 million compared with the same period in 2025. The increase was primarily due to increased revenues on proprietary and weapons programs, higher KC-46 volume and the acquisition of Spirit's defense business. The net cumulative contract catch-up adjustments were $11 million less unfavorable than the comparable period in the prior year.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Quartz reported that the $280 million Air Force One charge inside the Defense, Space & Security segment pushed Boeing's adjusted (core) loss to 76 cents a share against a 30-cent analyst estimate, and that the segment swung to an operating loss of $15 million from $110 million of operating profit a year earlier",
+     "numeric": true,
+     "cited_url": "https://qz.com/boeing-second-quarter-earnings-air-force-one-charge-072826",
+     "reason": "Source 4 (Quartz) states: 'The planemaker took a $280 million charge on the VC-25B program, pushing its adjusted loss to 76 cents a share against a 30-cent estimate' and 'The Air Force One charge came inside Boeing's Defense, Space & Security segment, which swung to an operating loss of $15 million in the quarter from operating profit of $110 million a year earlier.'",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 7,
+   "numeric_cited": 7,
+   "cited": 8,
+   "supported": 8,
+   "not_retrieved": 0
+  }
+ }
+}

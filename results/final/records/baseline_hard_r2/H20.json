@@ -1,0 +1,236 @@
+{
+ "id": "H20",
+ "category": "Qualitative retrieval",
+ "difficulty": "hard",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "What has Cal-Maine Foods reported or announced in the 30 days before October 3, 2026 about its quarterly results, shareholder returns and financing? Give dates and key figures.",
+ "grading": "Snapshot as of 2026-10-03; key points: (1) Sept 30, 2026: fiscal Q1 2027 (13 weeks ended Aug 29, 2026) net sales USD 539.6M (-41.5% y/y) and net loss attributable USD 58.6M or USD 1.26 per diluted share (vs net income USD 199.3M / USD 4.12); conventional shell egg segment loss USD 71.0M on a 59.3% lower average selling price; (2) no dividend for Q1 under the variable dividend policy (cumulative loss to recover USD 94.5M); (3) buybacks: 66,601 shares for USD 5.0M in Q1, USD 315.7M left of the USD 500M authorization, plus 204,888 shares for USD 14.9M after quarter end; (4) Aug 31/Sept 2, 2026: new five-year senior unsecured revolving credit facility up to USD 250M (accordion up to +USD 250M), maturing Aug 31, 2031, undrawn. Any three points with correct dates earn credit; must be dated and sourced; fail if fiscal 2026 Q1 numbers are presented as the latest or if Q1 is described as profitable.",
+ "answer": "Snapshot as of October 3, 2026. (1) September 30, 2026: Cal-Maine reported fiscal Q1 2027 (13 weeks ended August 29, 2026): net sales USD 539.6 million (-41.5% from USD 922.6 million), gross profit USD 0.4 million, operating loss USD 82.2 million and a net loss attributable of USD 58.6 million, or USD 1.26 per diluted share, versus net income of USD 199.3 million (USD 4.12) a year earlier [H20-E1][H20-E3]. Conventional shell egg net sales fell 59.5% on a 59.3% lower average selling price (segment loss USD 71.0 million); Specialty Shell Eggs and Prepared Foods rose to 54.1% of net sales [H20-E1]. (2) Under the variable dividend policy no dividend is payable for the quarter; USD 94.5 million of cumulative loss must be recovered before any future dividend [H20-E1]. (3) Buybacks: 66,601 shares for USD 5.0 million in the quarter (USD 315.7 million left of the USD 500 million program) and 204,888 shares for USD 14.9 million after quarter end [H20-E1]. (4) On August 31, 2026 (8-K filed September 2) the company entered into a Second Amended and Restated Credit Agreement: a five-year senior unsecured revolver of up to USD 250 million (accordion up to another USD 250 million), maturing August 31, 2031, with nothing borrowed at September 1 [H20-E2]. Secondary coverage corroborates the loss and dividend decision [H20-E4].",
+ "output": {
+  "answer": "## Cal-Maine Foods (Nasdaq: CALM) — Announcements, Sept. 3 – Oct. 3, 2026\n\n### 1. Quarterly results\n\n**Sept. 9, 2026** — Scheduled its fiscal 2027 first-quarter earnings release (announced it would report at ~6:00 a.m. ET on Sept. 30, with a 9:00 a.m. ET call).\n\n**Sept. 30, 2026** — Reported **Q1 fiscal 2027 results** (quarter ended Aug. 29, 2026), swinging to a loss on collapsing conventional egg prices:\n\n| Metric | Q1 FY2027 | Q1 FY2026 | Change |\n|---|---|---|---|\n| Net sales | $539.6M | $922.6M | –41.5% |\n| Gross profit | $0.4M | $311.3M | –99.9% |\n| Operating income (loss) | –$82.2M | $249.2M | –133% |\n| Net income (loss) | –$58.6M | $199.3M | –129.4% |\n| Diluted EPS | –$1.26 | $4.12 | –$5.38 |\n\n- Segment operating income: Conventional Shell Eggs –$71.0M (vs +$168.2M); Specialty Shell Eggs $14.9M (vs $64.2M); Prepared Foods $7.8M (vs $13.2M).\n- Missed consensus (revenue est. ~$561–586M; EPS est. –$0.77). Stock fell ~3–6% on the news.\n- Other figures: feed costs +4.3% y/y; delivery expense +16%; effective tax rate 24.2%; net cash used in operations $101.4M (vs +$278.6M a year earlier); capex $26.6M; cash and temporary investments $767.6M; \"virtually debt-free.\" CEO Sherman Miller cited the weak commodity cycle and investing ahead of growth, with >60% planned Prepared Foods capacity growth through 1H fiscal 2028.\n- Company released an investor slide deck the same day.\n\n### 2. Shareholder returns\n\n**Sept. 30, 2026** (with Q1 results):\n- **Share repurchases:** Repurchased 66,601 shares for ~$5.0M during Q1 FY2027. Under the $500M authorization (approved Feb. 2025), **$315.7M remained available** at quarter-end. **Subsequent to quarter-end, repurchased an additional 204,888 shares for $14.9M.**\n- **Dividend:** **No cash dividend declared for Q1 FY2027** under the variable dividend policy. The company must first recover a **cumulative loss of $94.5M** (measured from the last quarter in which a dividend was paid) before resuming payments.\n\n### 3. Financing\n\n- **Credit facility (disclosed Sept. 2, 2026 via 8-K for an Aug. 31, 2026 event):** Entered a **Second Amended and Restated Credit Agreement** — a **$250M senior unsecured revolving credit facility** with BMO Bank N.A. as administrative agent (with accordion/expansion capacity), amending and restating the Nov. 15, 2021 agreement.\n- **As of Sept. 30, 2026:** No amounts drawn under the credit facility; $5.9M in outstanding standby letters of credit. Balance sheet remained virtually debt-free.\n- **Acquisition:** Spent **$25M** during Q1 to acquire additional Eggland's Best franchise territory in the Northeast U.S.\n\n**Note on the window:** The credit agreement itself was signed Aug. 31 (just before the Sept. 3 window start) but disclosed Sept. 2; I've included it since it's the relevant financing event. An unrelated 8-K filing on **Oct. 2, 2026** (election of Letitia C. Hughes to the board) falls at the edge of the window but concerns governance, not results/returns/financing.\n\nSources:\n- https://investors.calmainefoods.com/news-releases/news-release-details/cal-maine-foods-reports-first-quarter-fiscal-2027-results\n- https://www.globenewswire.com/news-release/2026/09/30/3371667/0/en/cal-maine-foods-reports-first-quarter-fiscal-2027-results.html\n- https://www.fool.com/earnings/call-transcripts/2026/10/01/cal-maine-foods-calm-q1-2027-earnings-call-transcript\n- https://www.benzinga.com/markets/earnings/26/09/62074967/cal-maine-says-egg-market-rebound-is-unclear\n- https://www.marketscreener.com/news/cal-maine-foods-quarterly-report-for-quarter-ending-august-29-2026-form-10-q-ce785ad2df8aff20\n- https://www.stocktitan.net/sec-filings/CALM/10-q-cal-maine-foods-inc-quarterly-earnings-report-29973a853c98.html\n- https://www.quiverquant.com/news/Cal-Maine+Foods+Announces+Fiscal+2027+First+Quarter+Earnings+Release+and+Conference+Call+Schedule",
+  "tokens": {
+   "input": 40757,
+   "output": 1962
+  },
+  "tavily_credits": 8,
+  "latency_s": 105.09,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/33fdc0936a0492fb7cce332e79d869b9",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cal-Maine Foods quarterly results announcement September 2026",
+     "start_date": "2026-09-03",
+     "end_date": "2026-10-03",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cal-Maine Foods dividend special dividend share repurchase 2026",
+     "start_date": "2026-09-03",
+     "end_date": "2026-10-03",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cal-Maine Foods credit facility credit agreement amendment subsequent event September 2026",
+     "search_depth": "advanced",
+     "start_date": "2026-09-03",
+     "end_date": "2026-10-03"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cal-Maine Foods 8-K SEC filing September 2026 acquisition financing",
+     "search_depth": "advanced",
+     "start_date": "2026-09-03",
+     "end_date": "2026-10-03"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investors.calmainefoods.com/news-releases/news-release-details/cal-maine-foods-reports-first-quarter-fiscal-2027-results",
+    "https://www.benzinga.com/markets/earnings/26/09/62074967/cal-maine-says-egg-market-rebound-is-unclear",
+    "https://www.fool.com/earnings/call-transcripts/2026/10/01/cal-maine-foods-calm-q1-2027-earnings-call-transcript",
+    "https://www.globenewswire.com/news-release/2026/09/30/3371667/0/en/cal-maine-foods-reports-first-quarter-fiscal-2027-results.html",
+    "https://www.marketscreener.com/news/cal-maine-foods-quarterly-report-for-quarter-ending-august-29-2026-form-10-q-ce785ad2df8aff20",
+    "https://www.quiverquant.com/news/Cal-Maine+Foods+Announces+Fiscal+2027+First+Quarter+Earnings+Release+and+Conference+Call+Schedule",
+    "https://www.stocktitan.net/sec-filings/CALM/10-q-cal-maine-foods-inc-quarterly-earnings-report-29973a853c98.html"
+   ],
+   "cited_primary": 1,
+   "retrieved": 34,
+   "retrieved_primary": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Sept 30, 2026: fiscal Q1 2027 (13 weeks ended Aug 29, 2026) net sales USD 539.6M (-41.5% y/y) and net loss attributable USD 58.6M or USD 1.26 per diluted share (vs net income USD 199.3M / USD 4.12); conventional shell egg segment loss USD 71.0M on a 59.3% lower average selling price",
+     "met": true,
+     "note": "Agent reports Sept 30, 2026 Q1 FY2027 results with net sales $539.6M (-41.5%), net loss $58.6M, EPS -$1.26 vs prior $199.3M/$4.12, and conventional shell egg segment loss of $71.0M. The 59.3% lower average selling price is not explicitly stated but the segment loss figure is correct and dated."
+    },
+    {
+     "point": "No dividend for Q1 under the variable dividend policy (cumulative loss to recover USD 94.5M)",
+     "met": true,
+     "note": "Agent states no cash dividend declared for Q1 FY2027 under variable dividend policy, with cumulative loss of $94.5M to recover before resuming payments. Dated Sept 30, 2026."
+    },
+    {
+     "point": "Buybacks: 66,601 shares for USD 5.0M in Q1, USD 315.7M left of the USD 500M authorization, plus 204,888 shares for USD 14.9M after quarter end",
+     "met": true,
+     "note": "Agent reports 66,601 shares repurchased for $5.0M in Q1, $315.7M remaining of $500M authorization, and additional 204,888 shares for $14.9M after quarter-end. Dated Sept 30, 2026."
+    },
+    {
+     "point": "Aug 31/Sept 2, 2026: new five-year senior unsecured revolving credit facility up to USD 250M (accordion up to +USD 250M), maturing Aug 31, 2031, undrawn",
+     "met": true,
+     "note": "Agent discloses credit facility signed Aug 31, 2026, disclosed Sept 2 via 8-K: $250M senior unsecured revolving credit facility with accordion/expansion capacity, no amounts drawn, $5.9M standby letters of credit. Maturity date not explicitly mentioned but facility is correctly described and dated."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer includes all four required key points with correct dates and figures, satisfying the rule that any three points with correct dates earn credit. The answer is properly dated and sourced. No failure modes are triggered: fiscal 2026 Q1 numbers are not presented as latest, Q1 is correctly described as a loss, variable dividend is not asserted as payable, the new credit facility is included, and the $5.0M buyback is not mislabeled as the program size."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Cal-Maine Foods scheduled its fiscal 2027 first-quarter earnings release for ~6:00 a.m. ET on Sept. 30, with a 9:00 a.m. ET call (announced Sept. 9, 2026).",
+     "numeric": false,
+     "cited_url": "https://www.quiverquant.com/news/Cal-Maine+Foods+Announces+Fiscal+2027+First+Quarter+Earnings+Release+and+Conference+Call+Schedule",
+     "reason": "The press release announces the earnings release date and time.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cal-Maine Foods reported Q1 fiscal 2027 results (quarter ended Aug. 29, 2026) on Sept. 30, 2026.",
+     "numeric": false,
+     "cited_url": "https://investors.calmainefoods.com/news-releases/news-release-details/cal-maine-foods-reports-first-quarter-fiscal-2027-results",
+     "reason": "The press release title and date indicate Q1 FY2027 results reported on Sept. 30, 2026.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Net sales for Q1 FY2027 were $539.6M vs $922.6M in Q1 FY2026, a decrease of 41.5%.",
+     "numeric": true,
+     "cited_url": "https://investors.calmainefoods.com/news-releases/news-release-details/cal-maine-foods-reports-first-quarter-fiscal-2027-results",
+     "reason": "Financial highlights table shows net sales $539,607 thousand vs $922,602 thousand, change -41.5%.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Gross profit for Q1 FY2027 was $0.4M vs $311.3M in Q1 FY2026, a decrease of 99.9%.",
+     "numeric": true,
+     "cited_url": "https://investors.calmainefoods.com/news-releases/news-release-details/cal-maine-foods-reports-first-quarter-fiscal-2027-results",
+     "reason": "Financial highlights table shows gross profit $403 thousand vs $311,314 thousand, change -99.9%.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Operating loss for Q1 FY2027 was $82.2M vs operating income of $249.2M in Q1 FY2026, a change of -133%.",
+     "numeric": true,
+     "cited_url": "https://investors.calmainefoods.com/news-releases/news-release-details/cal-maine-foods-reports-first-quarter-fiscal-2027-results",
+     "reason": "Financial highlights table shows operating income (loss) $(82,165) thousand vs $249,184 thousand, change -133.0%.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Net loss for Q1 FY2027 was $58.6M vs net income of $199.3M in Q1 FY2026, a change of -129.4%.",
+     "numeric": true,
+     "cited_url": "https://investors.calmainefoods.com/news-releases/news-release-details/cal-maine-foods-reports-first-quarter-fiscal-2027-results",
+     "reason": "Financial highlights table shows net income (loss) $(58,615) thousand vs $199,340 thousand, change -129.4%.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Diluted EPS for Q1 FY2027 was -$1.26 vs $4.12 in Q1 FY2026, a decrease of $5.38.",
+     "numeric": true,
+     "cited_url": "https://investors.calmainefoods.com/news-releases/news-release-details/cal-maine-foods-reports-first-quarter-fiscal-2027-results",
+     "reason": "Financial highlights table shows income (loss) per share - diluted $(1.26) vs $4.12, change $(5.38).",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Segment operating income: Conventional Shell Eggs -$71.0M (vs +$168.2M); Specialty Shell Eggs $14.9M (vs $64.2M); Prepared Foods $7.8M (vs $13.2M).",
+     "numeric": true,
+     "cited_url": "https://investors.calmainefoods.com/news-releases/news-release-details/cal-maine-foods-reports-first-quarter-fiscal-2027-results",
+     "reason": "Segment operating income table shows Conventional Shell Eggs $(71,045) thousand vs $168,236 thousand; Specialty Shell Eggs $14,937 thousand vs $64,196 thousand; Prepared Foods $7,842 thousand vs $13,221 thousand.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The company missed consensus estimates (revenue ~$561–586M; EPS ~-$0.77) and stock fell ~3–6% on the news.",
+     "numeric": true,
+     "cited_url": "https://www.benzinga.com/markets/earnings/26/09/62074967/cal-maine-says-egg-market-rebound-is-unclear",
+     "reason": "Article likely contains analyst estimates and stock reaction.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Feed costs increased 4.3% year-over-year; delivery expense increased 16%; effective tax rate was 24.2%; net cash used in operations was $101.4M (vs $278.6M provided in prior year); capex was $26.6M; cash and temporary investments were $767.6M; balance sheet virtually debt-free.",
+     "numeric": true,
+     "cited_url": "https://www.fool.com/earnings/call-transcripts/2026/10/01/cal-maine-foods-calm-q1-2027-earnings-call-transcript",
+     "reason": "Earnings call transcript includes these metrics.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "CEO Sherman Miller cited weak commodity cycle and investing ahead of growth, with >60% planned Prepared Foods capacity growth through 1H fiscal 2028.",
+     "numeric": false,
+     "cited_url": "https://www.fool.com/earnings/call-transcripts/2026/10/01/cal-maine-foods-calm-q1-2027-earnings-call-transcript",
+     "reason": "CEO remarks in transcript.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Share repurchases: 66,601 shares repurchased for ~$5.0M during Q1 FY2027; $315.7M remained available under $500M authorization; subsequent to quarter-end, 204,888 shares repurchased for $14.9M.",
+     "numeric": true,
+     "cited_url": "https://www.globenewswire.com/news-release/2026/09/30/3371667/0/en/cal-maine-foods-reports-first-quarter-fiscal-2027-results.html",
+     "reason": "Share repurchase update section in press release.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "No cash dividend declared for Q1 FY2027 under variable dividend policy; cumulative loss of $94.5M must be recovered before resuming payments.",
+     "numeric": true,
+     "cited_url": "https://www.globenewswire.com/news-release/2026/09/30/3371667/0/en/cal-maine-foods-reports-first-quarter-fiscal-2027-results.html",
+     "reason": "Dividend payment section in press release.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Credit facility: Entered Second Amended and Restated Credit Agreement on Aug. 31, 2026 (disclosed Sept. 2, 2026) for a $250M senior unsecured revolving credit facility with BMO Bank N.A. as administrative agent.",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/CALM/10-q-cal-maine-foods-inc-quarterly-earnings-report-29973a853c98.html",
+     "reason": "10-Q filing includes credit agreement details.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "As of Sept. 30, 2026, no amounts drawn under credit facility; $5.9M in outstanding standby letters of credit; balance sheet virtually debt-free.",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/CALM/10-q-cal-maine-foods-inc-quarterly-earnings-report-29973a853c98.html",
+     "reason": "10-Q filing includes credit facility status.",
+     "supported": null,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 12,
+   "numeric_cited": 12,
+   "cited": 15,
+   "supported": 0,
+   "not_retrieved": 0
+  }
+ }
+}

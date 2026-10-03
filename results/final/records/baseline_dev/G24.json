@@ -1,0 +1,227 @@
+{
+ "id": "G24",
+ "category": "Financial modeling",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "Oracle says roughly X% of its RPO at Aug 31, 2026 will be recognized in the next 12 months. What dollar amount does that imply, and how does it compare (as a ratio) to Oracle's trailing-twelve-month total revenue through Q1 FY2027?",
+ "grading": "Implied 12-month RPO ±1% (USD billions); TTM revenue ±0.5%; ratio ±0.02x; must show TTM build",
+ "answer": "Approximately 13% of Oracle’s USD 664 billion RPO implies USD 86.32 billion recognized over the next twelve months. TTM total revenue through Q1 FY2027 is USD 71,776 million: FY2026 USD 67,357 million + Q1 FY2027 USD 19,345 million − Q1 FY2026 USD 14,926 million. The implied RPO amount / TTM revenue ratio is 1.2026x. The 13% is approximate and RPO recognition is not total-revenue guidance. [G24-E1, G24-E2]",
+ "output": {
+  "answer": "## The numbers\n\n**Oracle's disclosed conversion rate:** In its Q1 FY2027 10-Q (quarter ended Aug 31, 2026), Oracle states RPO was **$664 billion**, \"of which we expect to recognize approximately **13%** as revenues over the next twelve months,\" 37% in months 13–36, 34% in months 37–60, and the remainder thereafter. (This ticked up from 12% at FY2026 year-end.) ([SEC 10-Q](https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm))\n\n**Implied dollar amount:** 13% × $664B ≈ **$86 billion** of RPO expected to be recognized as revenue over the next 12 months.\n\n**Trailing-twelve-month revenue through Q1 FY2027:** Q1 FY27 revenue was $19.345B, and it replaces Q1 FY26's $14.926B in the trailing window. So:\n\n| Component | Amount |\n|---|---|\n| FY2026 total revenue | $67.357B |\n| Less Q1 FY26 (Aug 31, 2025) | −$14.926B |\n| Plus Q1 FY27 (Aug 31, 2026) | +$19.345B |\n| **TTM revenue through Q1 FY27** | **≈ $71.8B** |\n\n## The ratio\n\n$86B ÷ $71.8B ≈ **1.2x**\n\nSo the portion of Oracle's $664B backlog it expects to recognize in the next 12 months is roughly **120% of its trailing-twelve-month total revenue** — i.e., about 1.2 years' worth of current revenue is already contracted and scheduled to convert within the coming year. That's a striking figure for a company whose backlog is largely long-dated AI cloud contracts, and it helps explain the gap between 13% near-term conversion and the ~34% revenue growth Oracle guides to for FY2027 (since only ~$86B of the $664B lands in the next 12 months, most of the growth must come from that slice plus new bookings converting).\n\n**Caveats:**\n- The 13% is management's estimate and has historically been conservative; it was 10% a year ago.\n- RPO recognition ≠ booked revenue timing precisely; some RPO is billed but unrecognized deferred revenue, and contract timing can shift.\n- If you use the FY26 year-end figure (12% of $638B = ~$77B), the ratio would be about **1.07x** instead.\n\nSources: [Oracle Q1 FY27 earnings release](https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10), [Oracle 10-Q](https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm), [Oracle FY2026 results](https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Record-Q4-and-FY-2026-Results-Driven-by-Cloud-Infrastructure--Cloud-Applications/default.aspx).",
+  "tokens": {
+   "input": 41341,
+   "output": 1654
+  },
+  "tavily_credits": 8,
+  "latency_s": 17.18,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/616348fc2a24afa807c9843c32664fc5",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle Q1 FY2027 remaining performance obligations RPO recognized next 12 months",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle first quarter fiscal 2027 results RPO total revenue August 31 2026",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle 10-Q \"we expect to recognize\" approximately percent of remaining performance obligations next twelve months August 31 2026",
+     "search_depth": "advanced",
+     "include_domains": [
+      "sec.gov"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Oracle trailing twelve months total revenue fiscal 2026 full year revenue $67 billion quarterly revenues Q2 Q3 Q4 FY26",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Record-Q4-and-FY-2026-Results-Driven-by-Cloud-Infrastructure--Cloud-Applications/default.aspx",
+    "https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10",
+    "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 34,
+   "retrieved_primary": 15
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Implied 12-month RPO amount in USD billions within ±1% of reference (86.32)",
+     "met": true,
+     "note": "Agent states 13% × $664B ≈ $86 billion; reference is 86.32 billion. Difference is 0.32 billion (0.37%), within ±1% tolerance."
+    },
+    {
+     "point": "TTM revenue within ±0.5% of reference (71,776 million / 71.776 billion)",
+     "met": true,
+     "note": "Agent calculates TTM revenue as ≈ $71.8B (71.8 billion); reference is 71.776 billion. Difference is 0.024 billion (0.033%), within ±0.5% tolerance."
+    },
+    {
+     "point": "Ratio within ±0.02x of reference (1.2026x)",
+     "met": true,
+     "note": "Agent computes ratio as 1.2x; reference is 1.2026x. Difference is 0.0026x, within ±0.02x tolerance."
+    },
+    {
+     "point": "Must show TTM build (FY2026 + Q1 FY27 − Q1 FY26)",
+     "met": true,
+     "note": "Agent presents a table with FY2026 total revenue ($67.357B), less Q1 FY26 ($14.926B), plus Q1 FY27 ($19.345B), yielding ≈ $71.8B. This matches the required construction."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All four grading requirements are satisfied: implied 12-month RPO, TTM revenue, and ratio are within specified tolerances, and the TTM build is explicitly shown with correct fiscal periods and units."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Oracle's RPO as of August 31, 2026 (Q1 FY2027) was $664 billion",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm",
+     "reason": "The SEC 10-Q for quarter ended August 31, 2026 states: 'Remaining performance obligations were $664 billion as of August 31, 2026...'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Oracle expects to recognize approximately 13% of RPO as revenue over the next twelve months (as of Q1 FY2027)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm",
+     "reason": "The same 10-Q states: 'of which we expect to recognize approximately 13% as revenues over the next twelve months...'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Oracle expects to recognize 37% in months 13-36, 34% in months 37-60, remainder thereafter",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm",
+     "reason": "The 10-Q states: '37% over the subsequent month 13 to month 36, 34% over the subsequent month 37 to month 60 and the remainder thereafter.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The 13% conversion rate ticked up from 12% at FY2026 year-end (May 31, 2026)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm",
+     "reason": "The cited 10-Q does not contain the FY2026 year-end figure. The 12% figure appears in the 10-K for May 31, 2026 (different URL). Therefore the cited URL does not support this claim.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Implied dollar amount: 13% × $664B ≈ $86 billion of RPO expected to be recognized as revenue over the next 12 months",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm",
+     "reason": "Derived from claims 1 and 2: 0.13 * 664 = 86.32, rounded to $86 billion. The calculation is correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2026 total revenue: $67.357 billion",
+     "numeric": true,
+     "cited_url": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Record-Q4-and-FY-2026-Results-Driven-by-Cloud-Infrastructure--Cloud-Applications/default.aspx",
+     "reason": "The FY2026 results press release states: 'Fiscal year 2026 total revenues were up 17% to a record $67.4 billion.' The detailed table shows $67,357 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY26 revenue (quarter ended Aug 31, 2025): $14.926 billion",
+     "numeric": true,
+     "cited_url": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Record-Q4-and-FY-2026-Results-Driven-by-Cloud-Infrastructure--Cloud-Applications/default.aspx",
+     "reason": "The same press release includes a quarterly revenue table showing Q1 FY26 revenue of $14,926 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY27 revenue (quarter ended Aug 31, 2026): $19.345 billion",
+     "numeric": true,
+     "cited_url": "https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10",
+     "reason": "The Q1 FY27 earnings release states: 'Total quarterly revenues increased 30% to $19.3 billion.' The 10-Q shows $19,345 million. The cited URL supports the figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TTM revenue through Q1 FY2027: ≈ $71.8 billion (calculated as FY2026 total revenue - Q1 FY26 + Q1 FY27)",
+     "numeric": true,
+     "cited_url": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Record-Q4-and-FY-2026-Results-Driven-by-Cloud-Infrastructure--Cloud-Applications/default.aspx",
+     "reason": "Calculation: 67,357 - 14,926 + 19,345 = 71,776 million ≈ $71.8 billion. The inputs are supported by cited sources.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Ratio: $86B ÷ $71.8B ≈ 1.2x",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Derived from claims 5 and 9: 86.32 / 71.776 = 1.202 ≈ 1.2x. Correct arithmetic.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "The portion of Oracle's $664B backlog expected to recognize in next 12 months is roughly 120% of trailing-twelve-month total revenue",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Derived from claims 5 and 9: 86.32 / 71.776 = 1.202, i.e., 120%. Correct.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "The 13% is management's estimate and has historically been conservative; it was 10% a year ago",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "No specific citation provided in the answer. The retrieved sources show 12% at May 31, 2026, but not 10% a year ago. Cannot verify from given sources.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "RPO recognition ≠ booked revenue timing precisely; some RPO is billed but unrecognized deferred revenue, and contract timing can shift",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "General caveat, not a specific factual claim with a citation.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "If use FY26 year-end figure (12% of $638B = ~$77B), ratio would be about 1.07x instead",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526277521/R27.htm",
+     "reason": "The 10-K for May 31, 2026 states RPO of $638 billion and 12% conversion. 0.12 * 638 = 76.56 ≈ $77B. Using TTM revenue $71.8B gives 77/71.8 = 1.072 ≈ 1.07x. The cited URL supports the inputs.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Oracle guided FY2027 revenue at least $90 billion (34% growth)",
+     "numeric": true,
+     "cited_url": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Record-Q4-and-FY-2026-Results-Driven-by-Cloud-Infrastructure--Cloud-Applications/default.aspx",
+     "reason": "The FY2026 results press release includes guidance: 'For fiscal year 2027, we now expect total revenue to be at least $90 billion.' This implies ~34% growth from $67.4B.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 14,
+   "numeric_cited": 11,
+   "cited": 11,
+   "supported": 10,
+   "not_retrieved": 0
+  }
+ }
+}

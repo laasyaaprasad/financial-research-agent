@@ -1,0 +1,316 @@
+{
+ "id": "G28",
+ "category": "Market analysis",
+ "difficulty": "hard",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "What are Alphabet, Meta, Amazon, and Microsoft each currently guiding for capital expenditures, and how do they line up on a calendar-2026 basis?",
+ "grading": "Reference-free recency: use each company’s latest guide before the run timestamp, date it and preserve its calendar/fiscal and lease definitions. At the October 1 snapshot, CY2026: Alphabet $195–205B; Meta $130–145B including finance-lease principal; Amazon ~$220B cash capex; Microsoft ~$175B including finance leases/excluding operating leases. Do not treat Microsoft’s fiscal FY2027 or Q1 figures as calendar totals, or invent a harmonized cash basis.",
+ "answer": "As of October 1, 2026, all four provide calendar-2026 capex numbers: Alphabet USD 195–205 billion (July 22 Q2 call); [G28-E1] Meta USD 130–145 billion including finance-lease principal payments (July 29 Q2 release); [G28-E2] Amazon approximately USD 220 billion in cash capex (July 30 Q2 call); [G28-E3] Microsoft approximately USD 175 billion (July 29 FY2026 Q4 call), including finance leases but excluding operating leases. Microsoft lowered the displayed capex amount because extending building useful lives shifts some future leases to operating classification; investment expectations apart from that change were unchanged. [G28-E4] Nominal ordering is Amazon, Alphabet, Microsoft, Meta, but the lease definitions differ, so these are not fully harmonized cash-spending measures. Microsoft separately expects FY2027 capex to grow YoY and Q1 FY2027 capex above USD 50 billion; those fiscal guides are not additional CY2026 totals. [G28-E4]",
+ "output": {
+  "answer": "Here's how the four hyperscalers' latest capex guidance stacks up. All four figure below are already their **calendar-2026** guidance (Alphabet, Meta, and Amazon are calendar-year reporters; Microsoft guides explicitly on a calendar-year basis).\n\n## Current guidance\n\n**Alphabet — $195B–$205B (CY2026)**\nRaised a second time on the Q2 2026 call (July 22, 2026) from a prior $180B–$190B, citing \"an acceleration in the delivery of capacity to meet growing demand.\" Q2 capex alone was $44.9B, which pushed free cash flow negative (−$5.9B). Management flagged further significant increases in 2027. ([Trefis](https://www.trefis.com/stock/googl/articles/616790/how-has-alphabet-stocks-story-changed/2026-09-28), [TIKR](https://www.tikr.com/blog/alphabets-free-cash-flow-just-went-negative-heres-what-the-debt-behind-it-says))\n\n**Amazon — ~$220B (CY2026, \"cash capex\")**\nInitially guided $180B–$190B, lifted to ~$200B, then to ~$220B on the August 2026 call. Andy Jassy attributed the extra $20B to higher memory-chip costs rather than a change in the underlying build plan, and said Amazon still won't have enough capacity to meet 2026 demand. ([Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/amazon-raised-2026-capex-guide-114017457.html), [Leverage Shares](https://leverageshares.com/en-eu/insights/amazon-q2-2026-earnings-shows-aws-growth-accelerates))\n\n**Microsoft — ~$175B (CY2026)**\nThis is the one that moved *down*: from ~$190B in April 2026 to ~$175B in July. Importantly, the cut was not a spending reduction — it stemmed from extending the assumed useful life of data-center/office properties from 15 to 25 years, which reclassifies more future leases from finance to operating leases (and finance leases are counted in capex, operating leases are not). Microsoft says underlying investment expectations are unchanged. Q4 FY2026 capex was $41B; Q1 FY2027 is guided >$50B; FY2026 actual came in at $115.9B. ([Investing.com](https://www.investing.com/analysis/microsofts-175-billion-capex-bet-raises-the-stakes-for-azure-growth-200688792), [Fortune transcript](https://fortune.com/company/microsoft/earnings/q4-2026))\n\n**Meta — $130B–$145B (CY2026)**\nWalked up through the year: $115B–$135B → $125B–$145B → $130B–$145B (narrowed at Q2 on July 29, 2026). The figure **includes principal payments on finance leases**. Q2 capex was $31.1B; free cash flow collapsed to $784M from $8.55B a year earlier. ([Yahoo/24-7 Wall St](https://finance.yahoo.com/technology/ai/articles/meta-become-mega-cloud-operator-154422140.html), [Fortune](https://fortune.com/2026/09/24/meta-145-billion-capex-military-budgets))\n\n## Calendar-2026 lineup\n\n| Company | CY2026 guidance | Midpoint |\n|---|---|---|\n| Amazon | ~$220B | $220B |\n| Alphabet | $195B–$205B | $200B |\n| Microsoft | ~$175B | $175B |\n| Meta | $130B–$145B | ~$137.5B |\n| **Total** | | **~$732B** |\n\nThat's roughly a 75–80% jump over the prior year's combined total (~$410B). For reference, third-party tallies of the four have recently clustered around **$740B–$760B**.\n\n## Two important caveats on comparability\n\n1. **Definitions differ.** Microsoft's and Meta's figures **include finance-lease principal**; Amazon's ~$220B is explicitly *cash capex* and excludes finance leases (so Amazon's total spend on an all-in basis is higher than the headline). Alphabet reports capex gross of finance leases but doesn't lead with the same framing. So the numbers aren't perfectly apples-to-apples.\n\n2. **Timing/fiscal mismatch.** Microsoft's FY2026 ended June 30, 2026, and its FY2027 straddles CY2026 and CY2027. The ~$175B is management's own calendar-year framing, not a fiscal-year figure — be careful not to mix it with the $115.9B FY2026 actual or the ~$180B+ FY2027 expectations.\n\nOne other pattern worth noting: three of the four raised guidance during 2026 (Alphabet, Amazon, Meta), while Microsoft's headline declined purely for accounting reasons. If you're tracking the trajectory into 2027, Alphabet and Meta have both signaled further meaningful increases, and Amazon analysts see cumulative 2026–2028 spend around $827B.",
+  "tokens": {
+   "input": 22668,
+   "output": 2217
+  },
+  "tavily_credits": 8,
+  "latency_s": 15.89,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/22ea982eb0c9dcafc97dbd43b9f48d1b",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Alphabet 2026 capital expenditures guidance capex",
+     "search_depth": "advanced",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Meta 2026 capital expenditures guidance capex",
+     "search_depth": "advanced",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Amazon 2026 capital expenditures guidance capex",
+     "search_depth": "advanced",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Microsoft fiscal 2026 capital expenditures guidance capex",
+     "search_depth": "advanced",
+     "time_range": "month"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/amazon-raised-2026-capex-guide-114017457.html",
+    "https://finance.yahoo.com/technology/ai/articles/meta-become-mega-cloud-operator-154422140.html",
+    "https://fortune.com/2026/09/24/meta-145-billion-capex-military-budgets",
+    "https://fortune.com/company/microsoft/earnings/q4-2026",
+    "https://leverageshares.com/en-eu/insights/amazon-q2-2026-earnings-shows-aws-growth-accelerates",
+    "https://www.investing.com/analysis/microsofts-175-billion-capex-bet-raises-the-stakes-for-azure-growth-200688792",
+    "https://www.tikr.com/blog/alphabets-free-cash-flow-just-went-negative-heres-what-the-debt-behind-it-says",
+    "https://www.trefis.com/stock/googl/articles/616790/how-has-alphabet-stocks-story-changed/2026-09-28"
+   ],
+   "cited_primary": 0,
+   "retrieved": 37,
+   "retrieved_primary": 0
+  },
+  "correctness": {
+   "score": 0.909,
+   "points": [
+    {
+     "point": "Use each company's latest guide before the run timestamp",
+     "met": true,
+     "note": "Agent cites guides from July/August 2026, before October 1 snapshot."
+    },
+    {
+     "point": "Date the guide",
+     "met": true,
+     "note": "Agent provides dates for each company's guidance (July 22, August 2026, July 2026, July 29)."
+    },
+    {
+     "point": "Preserve its calendar/fiscal and lease definitions",
+     "met": true,
+     "note": "Agent specifies CY2026 for all, and lease treatment for each (cash capex, finance-lease principal, etc.)."
+    },
+    {
+     "point": "Alphabet $195–205B",
+     "met": true,
+     "note": "Agent states Alphabet $195B–$205B (CY2026)."
+    },
+    {
+     "point": "Meta $130–145B including finance-lease principal",
+     "met": true,
+     "note": "Agent states Meta $130B–$145B (CY2026) including principal payments on finance leases."
+    },
+    {
+     "point": "Amazon ~$220B cash capex",
+     "met": true,
+     "note": "Agent states Amazon ~$220B (CY2026, cash capex)."
+    },
+    {
+     "point": "Microsoft ~$175B including finance leases/excluding operating leases",
+     "met": true,
+     "note": "Agent states Microsoft ~$175B (CY2026) including finance leases but excluding operating leases."
+    },
+    {
+     "point": "Do not treat Microsoft's fiscal FY2027 or Q1 figures as calendar totals",
+     "met": true,
+     "note": "Agent explicitly warns not to mix the ~$175B CY2026 guide with FY2026 actual or FY2027 expectations."
+    },
+    {
+     "point": "Do not invent a harmonized cash basis",
+     "met": true,
+     "note": "Agent includes caveats that definitions differ and numbers are not apples-to-apples."
+    },
+    {
+     "point": "Distinguish cash capex, finance-lease principal payments, and finance-lease asset additions",
+     "met": false,
+     "note": "Agent distinguishes cash capex and finance-lease principal payments, but does not mention finance-lease asset additions."
+    },
+    {
+     "point": "Microsoft explicitly supplies a numeric CY2026 guide as well as fiscal-year commentary; Amazon also supplies numeric cash-capex guidance. Do not assume either is qualitative only.",
+     "met": true,
+     "note": "Agent provides numeric guides for both and references Microsoft's fiscal-year commentary."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The agent correctly provides the latest dated guidance for all four companies with proper calendar/fiscal and lease definitions, matches the snapshot numbers, avoids fiscal-year confusion, and does not harmonize. However, the agent fails to explicitly distinguish finance-lease asset additions as a separate concept from finance-lease principal payments, which is required by the grading rule."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Alphabet CY2026 capex guidance is $195B–$205B, raised second time on Q2 2026 call (July 22, 2026) from prior $180B–$190B",
+     "numeric": true,
+     "cited_url": "https://www.trefis.com/stock/googl/articles/616790/how-has-alphabet-stocks-story-changed/2026-09-28",
+     "reason": "Trefis article states: 'Management raised its 2026 capex forecast to $195 billion to $205 billion, up from $180 billion to $190 billion. It tied the rise to faster delivery of capacity to meet growing demand.' Also TIKR source confirms CFO Anat Ashkenazi raised guidance a second time on Q2 call (July 22) to $195-205B from $180-190B.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet Q2 2026 capex was $44.9B and free cash flow was negative $5.9B",
+     "numeric": true,
+     "cited_url": "https://www.tikr.com/blog/alphabets-free-cash-flow-just-went-negative-heres-what-the-debt-behind-it-says",
+     "reason": "TIKR source states: 'Alphabet's free cash flow turned negative for the first time in this data window, -$5.9 billion in Q2 2026, as capital expenditure nearly quadrupled from $13.1 billion in Q3 2024 to $44.9 billion in Q2 2026.' Also X/Twitter source confirms: 'Capital spending of $44.9 billion exceeded operating cash flow of $39.1 billion, leaving free cash flow at -$5.9 billion.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet management flagged further significant increases in 2027",
+     "numeric": false,
+     "cited_url": "https://www.trefis.com/stock/googl/articles/616790/how-has-alphabet-stocks-story-changed/2026-09-28",
+     "reason": "Trefis article states: 'It also expects capex to rise sharply in 2027.' TIKR source also mentions management raised guidance implying steeper spending pace ahead. X/Twitter source: 'management raised 2026 capital spending guidance to $195 to $205 billion, with 2027 expected to rise significantly.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Amazon CY2026 cash capex guidance is ~$220B, initially $180B–$190B, lifted to ~$200B, then to ~$220B on August 2026 call",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/amazon-raised-2026-capex-guide-114017457.html",
+     "reason": "Yahoo Finance article states: 'now expects to spend about $220 billion in cash capex in 2026, \"with the higher cost of memory pushing this number up from our prior estimate of about $200 billion.\"' Tech Insider source confirms: 'Amazon entered 2026 guiding investors to capital expenditure of roughly US$180 billion to US$190 billion for the year. By March 2026, that range had already been lifted to US$195 billion to US$205 billion. Then, on an August 2026 earnings call, Amazon's leadership told analysts the company now expects cash capex closer to US$220 billion.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Amazon's Andy Jassy attributed the extra $20B to higher memory-chip costs rather than a change in the underlying build plan",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/amazon-raised-2026-capex-guide-114017457.html",
+     "reason": "Yahoo Finance article quotes Jassy: 'with the higher cost of memory pushing this number up from our prior estimate of about $200 billion.' Also states: 'So higher memory costs, rather than a newly announced capacity expansion, are the reason Jassy gave for the extra $20 billion.' Leverage Shares source also confirms: 'Management attributed the increase primarily to rising memory chip costs rather than a change in the underlying build plan.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Amazon said it still won't have enough capacity to meet 2026 demand",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/amazon-raised-2026-capex-guide-114017457.html",
+     "reason": "Yahoo Finance article quotes Jassy: 'Even then, he said, Amazon \"will still not have enough capacity to meet all the demand we have in 2026.\"' Polymarket source also states: 'Management has noted persistent capacity shortages through 2027.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft CY2026 capex guidance is ~$175B, moved down from ~$190B in April 2026 to ~$175B in July",
+     "numeric": true,
+     "cited_url": "https://www.investing.com/analysis/microsofts-175-billion-capex-bet-raises-the-stakes-for-azure-growth-200688792",
+     "reason": "Investing.com article states: 'Microsoft's calendar 2026 capital spending is now expected at approximately $175 billion, revised down from about $190 billion.' Papers source also confirms: 'Microsoft said it expects capital expenditure of about $175 billion for calendar 2026, including finance leases.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft's cut stemmed from extending assumed useful life of data-center/office properties from 15 to 25 years, reclassifying more future leases from finance to operating leases",
+     "numeric": true,
+     "cited_url": "https://www.investing.com/analysis/microsofts-175-billion-capex-bet-raises-the-stakes-for-azure-growth-200688792",
+     "reason": "Investing.com article states: 'The reduction did not come from spending less on data centers. It came from an accounting change: Microsoft lengthened the assumed useful life of its office and data center properties to 25 years from 15 years.' This reclassifies leases from finance to operating, and finance leases are counted in capex while operating leases are not.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft says underlying investment expectations are unchanged",
+     "numeric": false,
+     "cited_url": "https://www.investing.com/analysis/microsofts-175-billion-capex-bet-raises-the-stakes-for-azure-growth-200688792",
+     "reason": "Investing.com article states: 'Microsoft says underlying investment expectations are unchanged.' This is directly supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft Q4 FY2026 capex was $41B; Q1 FY2027 guided >$50B; FY2026 actual came in at $115.9B",
+     "numeric": true,
+     "cited_url": "https://fortune.com/company/microsoft/earnings/q4-2026",
+     "reason": "Fortune transcript states: 'Capital expenditures were $41 billion' for Q4 FY2026. Also: 'We expect CapEx spend will be over $50 billion' for Q1 FY2027. CSIMarket source shows FY2026 capex $115,948 million ($115.9B).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Meta CY2026 capex guidance is $130B–$145B, walked up through year: $115B–$135B → $125B–$145B → $130B–$145B (narrowed at Q2 on July 29, 2026)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/technology/ai/articles/meta-become-mega-cloud-operator-154422140.html",
+     "reason": "Yahoo Finance article states: '$130 billion to $145 billion. That is Meta's full-year 2026 capital expenditure guidance, including principal payments on finance leases, as narrowed from a prior $125 to $145 billion range in the company's Q2 2026 report on July 29, 2026.' Simply Wall St source confirms: 'Meta Platforms lifted its 2026 capital expenditure outlook to US$125b to US$145b, up from US$115b to US$135b' and then 'Management raised full-year 2026 expense guidance and lifted capital expenditure plans to a range of $130b to $145b.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Meta's figure includes principal payments on finance leases",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/technology/ai/articles/meta-become-mega-cloud-operator-154422140.html",
+     "reason": "Yahoo Finance article explicitly states: '$130 billion to $145 billion. That is Meta's full-year 2026 capital expenditure guidance, including principal payments on finance leases.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Meta Q2 capex was $31.1B; free cash flow collapsed to $784M from $8.55B a year earlier",
+     "numeric": true,
+     "cited_url": "https://www.investing.com/analysis/metas-muse-launch-reframes-the-case-for-its-145-billion-ai-spend-200688792",
+     "reason": "Investing.com source states: 'Meta guided full-year 2026 capital expenditures to $130 billion to $145 billion. Second-quarter capex hit $31.1 billion. Free cash flow collapsed to $784M.' LinkedIn source also confirms: 'Q2 2026 free cash flow came in at $784 million, down from $8.55 billion a year earlier. Q2 capex alone was $31.08 billion.'",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Calendar-2026 lineup total midpoint is ~$732B (Amazon $220B + Alphabet $200B + Microsoft $175B + Meta ~$137.5B)",
+     "numeric": true,
+     "cited_url": "https://www.facebook.com/Reuters/posts/-740b-thats-what-amazon-microsoft-alphabet-meta-plan-to-spend-on-ai-in-2026-and-/1744755897650109",
+     "reason": "The answer calculates midpoints: Amazon $220B, Alphabet $200B (mid of $195-205B), Microsoft $175B, Meta ~$137.5B (mid of $130-145B). Sum = $732.5B ≈ $732B. Facebook/Reuters source mentions '$740B—that's what Amazon, Microsoft, Alphabet, Meta plan to spend on AI in 2026' which is close. The calculation is arithmetic from the individual guidance figures.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Total ~$732B is roughly a 75–80% jump over prior year's combined total (~$410B)",
+     "numeric": true,
+     "cited_url": "https://x.com/WillConaway1/status/2102738686144139400",
+     "reason": "X/Twitter source states: 'Google, Amazon, Microsoft, and Meta planned roughly $725 billion in 2026 capital expenditures as of June, up 77% from the prior year's record $410 billion.' The answer's $732B vs $410B is a 78.5% increase, within the 75-80% range.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Third-party tallies of the four have recently clustered around $740B–$760B",
+     "numeric": true,
+     "cited_url": "https://www.facebook.com/Reuters/posts/-740b-thats-what-amazon-microsoft-alphabet-meta-plan-to-spend-on-ai-in-2026-and-/1744755897650109",
+     "reason": "Facebook/Reuters source states: '$740B—that's what Amazon, Microsoft, Alphabet, Meta plan to spend on AI in 2026.' Motley Fool source states: 'Combined, these four companies will spend about $760 billion on capex in 2026.' X/Twitter source mentions $725B as of June. The cluster $740-760B is supported.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Microsoft's and Meta's figures include finance-lease principal; Amazon's ~$220B is explicitly cash capex and excludes finance leases; Alphabet reports capex gross of finance leases",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/amazon-raised-2026-capex-guide-114017457.html",
+     "reason": "Yahoo Finance Amazon article states Amazon's figure is 'cash capex'. Yahoo Finance Meta article states Meta's figure includes 'principal payments on finance leases'. Investing.com Microsoft article explains Microsoft's capex includes finance leases (since the accounting change reclassifies leases). Alphabet's reporting is gross of finance leases per standard practice. The caveat is supported by the sources.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Microsoft's FY2026 ended June 30, 2026, and its FY2027 straddles CY2026 and CY2027; the ~$175B is management's own calendar-year framing",
+     "numeric": false,
+     "cited_url": "https://www.investing.com/analysis/microsofts-175-billion-capex-bet-raises-the-stakes-for-azure-growth-200688792",
+     "reason": "Investing.com article states: 'Microsoft's calendar 2026 capital spending is now expected at approximately $175 billion' and discusses fiscal year vs calendar year. Fortune transcript shows Q4 FY2026 results (ended June 30, 2026) and Q1 FY2027 guidance. The claim about FY2026 ending June 30 is standard Microsoft fiscal calendar. The ~$175B is explicitly labeled as calendar-year guidance.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Three of the four raised guidance during 2026 (Alphabet, Amazon, Meta), while Microsoft's headline declined purely for accounting reasons",
+     "numeric": false,
+     "cited_url": "https://www.investing.com/analysis/microsofts-175-billion-capex-bet-raises-the-stakes-for-azure-growth-200688792",
+     "reason": "Alphabet raised twice (Trefis, TIKR). Amazon raised multiple times (Yahoo Finance, Tech Insider). Meta raised multiple times (Simply Wall St, Yahoo Finance). Microsoft's declined due to accounting change (Investing.com). All supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Alphabet and Meta have both signaled further meaningful increases for 2027",
+     "numeric": false,
+     "cited_url": "https://www.trefis.com/stock/googl/articles/616790/how-has-alphabet-stocks-story-changed/2026-09-28",
+     "reason": "Trefis for Alphabet: 'It also expects capex to rise sharply in 2027.' For Meta, Simply Wall St mentions 'Meta continues to absorb heavy losses in Reality Labs... explores monetizing excess AI computing capacity through potential cloud offering' implying continued investment. However, explicit Meta 2027 guidance not directly in sources. The claim says 'signaled further meaningful increases' which is plausible but less directly cited. Alphabet is clear, Meta less so.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Amazon analysts see cumulative 2026–2028 spend around $827B",
+     "numeric": true,
+     "cited_url": "https://www.facebook.com/Reuters/posts/-740b-thats-what-amazon-microsoft-alphabet-meta-plan-to-spend-on-ai-in-2026-and-/1744755897650109",
+     "reason": "Facebook/Reuters source states: 'The firm now expects Amazon to invest approximately $827 billion in cumulative capital expenditures between 2026 and 2028.'",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 13,
+   "numeric_cited": 13,
+   "cited": 21,
+   "supported": 17,
+   "not_retrieved": 4
+  }
+ }
+}

@@ -1,0 +1,193 @@
+{
+ "id": "T17",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "abstain",
+ "question": "What were Starbucks' global comparable store sales and total net revenues for its fiscal Q4 2026?",
+ "grading": "Must refuse: fiscal Q4 2026 (June 29 - September 27, 2026) has ended but Starbucks has not yet reported it as of 2026-10-03 (no Q4 earnings 8-K, no FY2026 10-K). May state the latest reported quarter is Q3 FY2026 and may mention the 2026-09-22 restructuring 8-K, but must not state any Q4 comparable sales or revenue figure as fact. Snapshot as of 2026-10-03; after the report date this question becomes answerable.",
+ "answer": "Not available as of 2026-10-03. Starbucks' fiscal Q4 2026 (June 29 - September 27, 2026) has ended but the company has not reported it: the most recent earnings 8-K and 10-Q (filed 2026-07-29) cover Q3 FY2026 (quarter ended June 28, 2026), and no fiscal 2026 10-K or Item 2.02 earnings 8-K for Q4 has been filed. [T17-E1, T17-E2] The only recent 8-K (September 24, 2026, Items 2.05 and 7.01) concerns store closures and restructuring, not quarterly results. [T17-E3] Third-party calendars list the Q4 earnings call for around October 29, 2026, which is after the as-of date.",
+ "output": {
+  "answer": "**Question:** What were Starbucks' global comparable store sales and total net revenues for its fiscal Q4 2026?\n*As of 2026-10-03*\n\n- For the most recent reported quarter, Q3 FY2026 (quarter ended 2026-06-28), Starbucks reported Revenues of 9,322,700,000 USD, versus 9,456,000,000 USD in the prior-year quarter ended 2025-06-29. [1]\n\n**Not available**\n- Starbucks global comparable store sales for fiscal Q4 2026 (quarter ended 2026-09-27): Fiscal Q4 FY2026 has ended but no earnings release or 10-K covering it is on file as of 2026-10-03; the latest filing in the evidence is the Q3 FY2026 10-Q filed 2026-07-29, which contains no actual Q4 FY2026 comparable store sales figure. Comparable store sales are also not tagged in the XBRL data provided. [1]\n- Starbucks total net revenues for fiscal Q4 2026 (quarter ended 2026-09-27): No Q4 FY2026 results have been reported as of 2026-10-03; the evidence's most recent revenue data is for the quarter ended 2026-06-28 (Q3 FY2026), and the Q4 FY2026 figure must not be estimated. [1]\n\n_1 draft statement(s) were withheld because they could not be verified against the sources (details in the run record)._\n\n**Sources**\n[1] STARBUCKS CORP XBRL data tagged in 10-Q filed 2026-07-29 (www.sec.gov, 2026-07-29, primary) https://www.sec.gov/Archives/edgar/data/829224/000082922426000130/\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 18061,
+   "output": 4133
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 29.2,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/b28082fdd92d6b6db25a5efed50cf2a3",
+  "companies": [
+   {
+    "name": "STARBUCKS CORP",
+    "ticker": "SBUX",
+    "cik": "829224",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Global comparable store sales growth for fiscal Q4 2026",
+    "Total net revenues for fiscal Q4 2026"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "SBUX",
+     "label": "Q4 FY2026"
+    }
+   ],
+   "documents": [],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Starbucks' fiscal Q4 2026 (2026-06-29 to 2026-09-27, projected dates) has not yet been reported as of 2026-10-03: the period has ended but no earnings release or 10-K is on file. No actual global comparable store sales or total net revenues figures exist for this period yet, and they must not be estimated.",
+    "The most recent reported period is Q3 FY2026 (2026-03-30 to 2026-06-28), whose 10-Q and earnings release were filed 2026-07-29; that release would contain only forward-looking guidance for Q4 FY2026, not the actual results requested.",
+    "Starbucks' Q4 FY2026 earnings release is expected around late October 2026 (Q4 FY2025's release was filed 2025-10-29), with the FY2026 10-K to follow."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Starbucks global comparable store sales for fiscal Q4 2026 (quarter ended 2026-09-27)",
+    "kind": "not_reported_yet",
+    "reason": "Fiscal Q4 FY2026 has ended but no earnings release or 10-K covering it is on file as of 2026-10-03; the latest filing in the evidence is the Q3 FY2026 10-Q filed 2026-07-29, which contains no actual Q4 FY2026 comparable store sales figure. Comparable store sales are also not tagged in the XBRL data provided.",
+    "evidence_ids": [
+     "E1"
+    ]
+   },
+   {
+    "item": "Starbucks total net revenues for fiscal Q4 2026 (quarter ended 2026-09-27)",
+    "kind": "not_reported_yet",
+    "reason": "No Q4 FY2026 results have been reported as of 2026-10-03; the evidence's most recent revenue data is for the quarter ended 2026-06-28 (Q3 FY2026), and the Q4 FY2026 figure must not be estimated.",
+    "evidence_ids": [
+     "E1"
+    ]
+   }
+  ],
+  "removed": [
+   {
+    "text": "Starbucks' fiscal Q4 2026 (the quarter ending 2026-09-27) had not been reported as of 2026-10-03; the most recent period in the evidence is the quarter ended 2026-06-28 (Q3 FY2026), whose XBRL data was tagged in a 10-Q filed 2026-07-29.",
+    "problem": "quote not found in cited evidence: 'date: 2026-07-29'"
+   }
+  ],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/829224/000082922426000130/"
+   ],
+   "cited_primary": 1,
+   "retrieved": 1,
+   "retrieved_primary": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Must refuse to provide Q4 2026 figures as they have not been reported as of 2026-10-03",
+     "met": true,
+     "note": "Agent explicitly states Q4 figures are not available and no earnings release or 10-K covering Q4 is on file as of 2026-10-03."
+    },
+    {
+     "point": "May state the latest reported quarter is Q3 FY2026",
+     "met": true,
+     "note": "Agent states the most recent reported quarter is Q3 FY2026 and provides revenue figure (9,322,700,000 USD) from the cited 10-Q source."
+    },
+    {
+     "point": "May mention the 2026-09-22 restructuring 8-K (optional)",
+     "met": true,
+     "note": "Optional requirement; agent did not mention it, which is permissible."
+    },
+    {
+     "point": "Must not state any Q4 comparable sales or revenue figure as fact",
+     "met": true,
+     "note": "Agent explicitly says no Q4 FY2026 results have been reported and the figure must not be estimated."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent correctly refuses to provide Q4 2026 figures, states the latest reported quarter is Q3 FY2026 with supporting revenue data, and does not fabricate any Q4 numbers, fully adhering to the grading rule."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Starbucks reported Revenues of 9,322,700,000 USD for Q3 FY2026 (quarter ended 2026-06-28)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000130/",
+     "reason": "The retrieved XBRL data shows 'Revenues (Revenues): 9,322,700,000 USD, 2026-03-30 to 2026-06-28' which matches the claimed figure and period.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Starbucks reported Revenues of 9,456,000,000 USD for prior-year quarter ended 2025-06-29",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000130/",
+     "reason": "The retrieved XBRL data shows 'Revenues (Revenues): 9,456,000,000 USD, 2025-03-31 to 2025-06-29' which matches the claimed figure and period.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal Q4 FY2026 quarter ended 2026-09-27",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000130/",
+     "reason": "The answer states the quarter end date for Q4 FY2026. The retrieved source does not contain this date, but it is a known fiscal calendar fact. The source is cited for the overall answer, but the retrieved text does not explicitly confirm the Q4 end date.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "As of 2026-10-03, no earnings release or 10-K covering Q4 FY2026 is on file",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000130/",
+     "reason": "The retrieved source is a 10-Q filed 2026-07-29 covering up to Q3 FY2026. It does not contain any information about filings after that date, nor does it state that no 10-K or earnings release for Q4 FY2026 exists as of 2026-10-03. The claim is about the broader filing status, which the single retrieved source cannot verify.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The latest filing in the evidence is the Q3 FY2026 10-Q filed 2026-07-29",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000130/",
+     "reason": "The retrieved source is exactly the 10-Q filed 2026-07-29, and no other filings are provided in the retrieved sources. This claim is directly supported by the evidence available.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Q3 FY2026 10-Q filed 2026-07-29 contains no actual Q4 FY2026 comparable store sales figure",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000130/",
+     "reason": "The retrieved XBRL data includes many line items but none labeled as comparable store sales for any period, let alone Q4 FY2026. The absence of such a figure in the provided data supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Comparable store sales are not tagged in the XBRL data provided",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000130/",
+     "reason": "The retrieved content lists numerous XBRL tags (Revenues, Deferred Revenue, Earnings Per Share, etc.) but no tag for comparable store sales. This supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "No Q4 FY2026 results have been reported as of 2026-10-03",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000130/",
+     "reason": "Similar to claim 4, the retrieved source only contains data up to Q3 FY2026. It does not provide evidence about whether Q4 results have been reported by 2026-10-03. The claim extends beyond the retrieved text.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The evidence's most recent revenue data is for the quarter ended 2026-06-28 (Q3 FY2026)",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000130/",
+     "reason": "The retrieved source shows revenue figures for the quarter ended 2026-06-28 and for prior periods, but no revenue data for any quarter after 2026-06-28. This supports the claim.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 9,
+   "supported": 6,
+   "not_retrieved": 0
+  }
+ }
+}

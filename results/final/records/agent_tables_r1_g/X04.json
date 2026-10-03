@@ -1,0 +1,268 @@
+{
+ "id": "X04",
+ "category": "Market analysis",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "Build a balance-sheet comp table for four U.S. retailers: TJX Companies, Ross Stores, Lowe's and Tractor Supply. Use each company's latest reported balance sheet as of October 3, 2026 (the most recent 10-Q or 10-K) and state its balance-sheet date. Report, in USD millions: (1) cash and cash equivalents (exclude short-term investments and restricted cash); (2) total debt = current portion of long-term debt + long-term debt (non-current portion), as presented on the face of the balance sheet, excluding operating lease liabilities, separately presented finance lease liabilities and any commercial paper or short-term borrowings; (3) net debt = total debt - cash and cash equivalents (a negative number means net cash).",
+ "grading": "Graded cell by cell: each value within tolerance and for the stated period; a missing cell counts as wrong.",
+ "answer": "Latest balance sheets (USD millions; negative net debt = net cash):\n| Row | Cash and cash equivalents | Total debt | Net debt |\n|---|---|---|---|\n| The TJX Companies (balance sheet 2026-08-01) | 6,004.0 | 2,871.0 | -3,133.0 |\n| Ross Stores (balance sheet 2026-08-01) | 4,288.1 | 1,018.5 | -3,269.6 |\n| Lowe's Companies (balance sheet 2026-07-31) | 3,172.0 | 37,556.0 | 34,384.0 |\n| Tractor Supply (balance sheet 2026-06-27) | 231.6 | 2,153.8 | 1,922.2 |",
+ "output": {
+  "answer": "**Question:** Build a balance-sheet comp table for four U.S. retailers: TJX Companies, Ross Stores, Lowe's and Tractor Supply. Use each company's latest reported balance sheet as of October 3, 2026 (the most recent 10-Q or 10-K) and state its balance-sheet date. Report, in USD millions: (1) cash and cash equivalents (exclude short-term investments and restricted cash); (2) total debt = current portion of long-term debt + long-term debt (non-current portion), as presented on the face of the balance sheet, excluding operating lease liabilities, separately presented finance lease liabilities and any commercial paper or short-term borrowings; (3) net debt = total debt - cash and cash equivalents (a negative number means net cash).\n*As of 2026-10-03*\n\n| | Balance-sheet date | Cash and cash equivalents (USD millions) | Total debt (USD millions) | Net debt (USD millions) |\n|---|---|---|---|---|\n| TJX Companies (Q2 FY2026, quarter ended August 1, 2026) | August 1, 2026 [1] | 6,004 [1][2] | 2,871 [1][2] | -3,133 [1][2] |\n| Ross Stores (Q2 FY2026, quarter ended August 1, 2026) | August 1, 2026 [3] | 4,288.124 [3][4] | 1,018.512 [3] | -3,269.612 [3] |\n| Lowe's (Q2 FY2026, quarter ended July 31, 2026) | July 31, 2026 [5] | 3,172 [5][6] | 37,556 [5] | 34,384 [5] |\n| Tractor Supply (Q2 FY2026, quarter ended June 27, 2026) | June 27, 2026 [7] | 231.588 [7][8] | 2,153.826 [7] | 1,922.238 [7] |\n\n- The latest reported balance sheet for each of the four retailers is the Q2 FY2026 10-Q: TJX Companies as of August 1, 2026, Ross Stores as of August 1, 2026, Lowe's as of July 31, 2026, and Tractor Supply as of June 27, 2026. [1][3][5][7]\n- TJX's balance sheet presents a current portion of long-term debt of $1,000 million and a non-current long-term debt of $1,871 million as of August 1, 2026, giving total debt of 2,871 million. [1][2]\n- TJX had no short-term bank borrowings or commercial paper outstanding as of August 1, 2026, and its 2.250% ten-year Notes due September 2026 are included within current maturities of long-term debt. [1]\n- Ross Stores' balance sheet presents a current portion of long-term debt of $241,459 thousand and long-term debt of $777,053 thousand as of August 1, 2026, giving total debt of 1,018.512 million. [3]\n- Lowe's balance sheet presents current maturities of long-term debt of $2,352 million and long-term debt, excluding current maturities, of $35,204 million as of July 31, 2026, giving total debt of 37,556 million. [5]\n- Lowe's had no outstanding borrowings under its commercial paper program as of July 31, 2026, and its fair-value note describes long-term debt as excluding finance lease obligations and the 2025 Term Loan, indicating the balance-sheet long-term debt caption may include finance lease obligations. [5]\n- Tractor Supply's balance sheet presents long-term debt of $2,153,826 thousand and no current portion of long-term debt as of June 27, 2026, giving total debt of 2,153.826 million. [7]\n- Tractor Supply's long-term debt caption includes $620.0 million of borrowings under its Revolving Credit Facility as of June 27, 2026, which is presented within long-term debt on the face of the balance sheet rather than as a short-term borrowing. [7]\n- Tractor Supply separately presents finance lease liabilities of $10,315 thousand current and $42,933 thousand non-current as of June 27, 2026, which are excluded from total debt per the stated definition. [7]\n- Q3 FY2026 balance sheets are not available for any of the four companies as of October 3, 2026: TJX, Ross Stores and Lowe's Q3 periods are still in progress, and Tractor Supply's Q3 FY2026 period ended September 26, 2026 but results are not yet released. [1][3][5][7]\n\n**Not available**\n- Q3 FY2026 balance sheets for TJX, Ross Stores, Lowe's and Tractor Supply as of October 3, 2026: The latest 10-Qs are for Q2 FY2026; TJX, Ross Stores and Lowe's Q3 periods are still in progress and Tractor Supply's Q3 FY2026 (period ended September 26, 2026) results are not yet released, so no Q3 FY2026 balance sheet exists as of October 3, 2026. [1][3][5][7]\n- TJX long-term debt (non-current) line on the face of the balance sheet: The balance-sheet excerpt in the 10-Q evidence is truncated before the long-term debt line; the non-current amount of $1,871 million is taken from the same filing's XBRL tag (LongTermDebtNoncurrent) rather than a visible face-of-balance-sheet caption. [1][2]\n- Lowe's finance lease liability amounts: Lowe's does not present a separate finance lease liability line in the balance-sheet excerpt provided; the fair-value note only states that long-term debt is shown excluding finance lease obligations, so the amount of any finance leases inside the long-term debt caption cannot be quantified from the evidence. [5]\n\n**Sources**\n[1] TJX COMPANIES INC /DE/ 10-Q for Q2 FY2026 (filed 2026-08-28) (www.sec.gov, 2026-08-28, primary) https://www.sec.gov/Archives/edgar/data/109198/000010919826000048/tjx-20260801.htm\n[2] TJX COMPANIES INC /DE/ XBRL data tagged in 10-Q filed 2026-08-28 (www.sec.gov, 2026-08-28, primary) https://www.sec.gov/Archives/edgar/data/109198/000010919826000048/\n[3] ROSS STORES, INC. 10-Q for Q2 FY2026 (filed 2026-09-01) (www.sec.gov, 2026-09-01, primary) https://www.sec.gov/Archives/edgar/data/745732/000074573226000041/rost-20260801.htm\n[4] ROSS STORES, INC. XBRL data tagged in 10-Q filed 2026-09-01 (www.sec.gov, 2026-09-01, primary) https://www.sec.gov/Archives/edgar/data/745732/000074573226000041/\n[5] LOWES COMPANIES INC 10-Q for Q2 FY2026 (filed 2026-08-27) (www.sec.gov, 2026-08-27, primary) https://www.sec.gov/Archives/edgar/data/60667/000006066726000117/low-20260731.htm\n[6] LOWES COMPANIES INC XBRL data tagged in 10-Q filed 2026-08-27 (www.sec.gov, 2026-08-27, primary) https://www.sec.gov/Archives/edgar/data/60667/000006066726000117/\n[7] TRACTOR SUPPLY CO /DE/ 10-Q for Q2 FY2026 (filed 2026-08-06) (www.sec.gov, 2026-08-06, primary) https://www.sec.gov/Archives/edgar/data/916365/000091636526000059/tsco-20260627.htm\n[8] TRACTOR SUPPLY CO /DE/ XBRL data tagged in 10-Q filed 2026-08-06 (www.sec.gov, 2026-08-06, primary) https://www.sec.gov/Archives/edgar/data/916365/000091636526000059/\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 231305,
+   "output": 64859
+  },
+  "tavily_credits": 1.0,
+  "latency_s": 495.39,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/512a53ade67a8dc9da4b53841b421b45",
+  "companies": [
+   {
+    "name": "TJX COMPANIES INC /DE/",
+    "ticker": "TJX",
+    "cik": "109198",
+    "resolved": true
+   },
+   {
+    "name": "ROSS STORES, INC.",
+    "ticker": "ROST",
+    "cik": "745732",
+    "resolved": true
+   },
+   {
+    "name": "LOWES COMPANIES INC",
+    "ticker": "LOW",
+    "cik": "60667",
+    "resolved": true
+   },
+   {
+    "name": "TRACTOR SUPPLY CO /DE/",
+    "ticker": "TSCO",
+    "cik": "916365",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Balance-sheet date (period-end date) of each company's latest reported balance sheet",
+    "Cash and cash equivalents, USD millions, excluding short-term investments and restricted cash",
+    "Current portion of long-term debt as presented on the face of the balance sheet, USD millions",
+    "Long-term debt, non-current portion, as presented on the face of the balance sheet, USD millions",
+    "Total debt = current portion of long-term debt + long-term debt (non-current), USD millions, excluding operating lease liabilities, separately presented finance lease liabilities, and commercial paper/short-term borrowings",
+    "Net debt = total debt - cash and cash equivalents, USD millions (negative = net cash)"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "TJX",
+     "label": "Q2 FY2026"
+    },
+    {
+     "ticker": "ROST",
+     "label": "Q2 FY2026"
+    },
+    {
+     "ticker": "LOW",
+     "label": "Q2 FY2026"
+    },
+    {
+     "ticker": "TSCO",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "TJX",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "ROST",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "LOW",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "TSCO",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Latest reported balance sheet for each company is the Q2 FY2026 10-Q: TJX as of 2026-08-01, ROST as of 2026-08-01, LOW as of 2026-07-31, TSCO as of 2026-06-27. TSCO's balance-sheet date is the oldest of the four because its Q3 FY2026 (period ended 2026-09-26) results are not yet released.",
+    "Q3 FY2026 is not yet reported for all four companies (TJX, ROST, LOW periods still in progress; TSCO's period has ended but results are not yet released), so no Q3 FY2026 balance sheet exists as of 2026-10-03.",
+    "Debt line-item captions differ by company and must be read from the face of each balance sheet: TJX typically presents only a non-current 'long-term debt' line (no current portion); ROST presents 'current portion of long-term debt' and 'long-term debt'; LOW presents 'current portion of long-term debt' and 'long-term debt, excluding current portion'; TSCO presents 'current maturities of long-term debt' and 'long-term debt, excluding current maturities'.",
+    "Excluded by instruction and therefore not to be added into total debt: operating lease liabilities (current and non-current), separately presented finance lease liabilities, and any commercial paper or short-term borrowings. If a company reports finance leases inside its long-term debt caption, that fact should be flagged rather than silently adjusted.",
+    "Cash figures must exclude short-term investments and restricted cash; if a company combines these on the face of the balance sheet, the note disaggregation in the same 10-Q is needed to isolate cash and cash equivalents."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Q3 FY2026 balance sheets for TJX, Ross Stores, Lowe's and Tractor Supply as of October 3, 2026",
+    "kind": "not_reported_yet",
+    "reason": "The latest 10-Qs are for Q2 FY2026; TJX, Ross Stores and Lowe's Q3 periods are still in progress and Tractor Supply's Q3 FY2026 (period ended September 26, 2026) results are not yet released, so no Q3 FY2026 balance sheet exists as of October 3, 2026.",
+    "evidence_ids": [
+     "E1",
+     "E2",
+     "E3",
+     "E4"
+    ]
+   },
+   {
+    "item": "TJX long-term debt (non-current) line on the face of the balance sheet",
+    "kind": "not_in_evidence",
+    "reason": "The balance-sheet excerpt in the 10-Q evidence is truncated before the long-term debt line; the non-current amount of $1,871 million is taken from the same filing's XBRL tag (LongTermDebtNoncurrent) rather than a visible face-of-balance-sheet caption.",
+    "evidence_ids": [
+     "E1",
+     "E5"
+    ]
+   },
+   {
+    "item": "Lowe's finance lease liability amounts",
+    "kind": "not_in_evidence",
+    "reason": "Lowe's does not present a separate finance lease liability line in the balance-sheet excerpt provided; the fair-value note only states that long-term debt is shown excluding finance lease obligations, so the amount of any finance leases inside the long-term debt caption cannot be quantified from the evidence.",
+    "evidence_ids": [
+     "E3"
+    ]
+   }
+  ],
+  "removed": [],
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "TJX COMPANIES INC /DE/ ROSS STORES, INC. LOWES COMPANIES INC TRACTOR SUPPLY CO /DE/ TJX long-term debt (non-current) line as printed on the face of the balance sheet",
+     "topic": "general",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.ntma.ie/uploads/general/NTMA-Annual-Report-and-Financial-Statements-2023.pdf",
+      "https://www.ntma.ie/annualreport2024/documents/NTMA-Annual-Report-2024.pdf"
+     ],
+     "query": "Build a balance-sheet comp table for four U.S. retailers: TJX Companies, Ross Stores, Lowe's and Tractor Supply. Use each company's latest reported balance sheet as of October 3, 2026 (the most recent 10-Q or 10-K) and state its balance-sheet date. Report, in USD millions: (1) cash and cash equivalents (exclude short-term investments and restricted cash); (2) total debt = current portion of long-",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/109198/000010919826000048/",
+    "https://www.sec.gov/Archives/edgar/data/109198/000010919826000048/tjx-20260801.htm",
+    "https://www.sec.gov/Archives/edgar/data/60667/000006066726000117/",
+    "https://www.sec.gov/Archives/edgar/data/60667/000006066726000117/low-20260731.htm",
+    "https://www.sec.gov/Archives/edgar/data/745732/000074573226000041/",
+    "https://www.sec.gov/Archives/edgar/data/745732/000074573226000041/rost-20260801.htm",
+    "https://www.sec.gov/Archives/edgar/data/916365/000091636526000059/",
+    "https://www.sec.gov/Archives/edgar/data/916365/000091636526000059/tsco-20260627.htm"
+   ],
+   "cited_primary": 8,
+   "retrieved": 10,
+   "retrieved_primary": 8
+  },
+  "correctness": {
+   "score": 1.0,
+   "verdict": "correct",
+   "points": [
+    {
+     "point": "The TJX Companies balance sheet Q2 FY2027 Cash and cash equivalents = 6004.0 USD millions",
+     "met": true,
+     "note": "answer: 6004.0"
+    },
+    {
+     "point": "The TJX Companies balance sheet Q2 FY2027 Total debt = 2871.0 USD millions",
+     "met": true,
+     "note": "answer: 2871.0"
+    },
+    {
+     "point": "The TJX Companies balance sheet Q2 FY2027 Net debt = -3133.0 USD millions",
+     "met": true,
+     "note": "answer: -3133.0"
+    },
+    {
+     "point": "Ross Stores balance sheet Q2 FY2026 Cash and cash equivalents = 4288.1 USD millions",
+     "met": true,
+     "note": "answer: 4288.124"
+    },
+    {
+     "point": "Ross Stores balance sheet Q2 FY2026 Total debt = 1018.5 USD millions",
+     "met": true,
+     "note": "answer: 1018.512"
+    },
+    {
+     "point": "Ross Stores balance sheet Q2 FY2026 Net debt = -3269.6 USD millions",
+     "met": true,
+     "note": "answer: -3269.612"
+    },
+    {
+     "point": "Lowe's Companies balance sheet Q2 FY2026 Cash and cash equivalents = 3172.0 USD millions",
+     "met": true,
+     "note": "answer: 3172.0"
+    },
+    {
+     "point": "Lowe's Companies balance sheet Q2 FY2026 Total debt = 37556.0 USD millions",
+     "met": true,
+     "note": "answer: 37556.0"
+    },
+    {
+     "point": "Lowe's Companies balance sheet Q2 FY2026 Net debt = 34384.0 USD millions",
+     "met": true,
+     "note": "answer: 34384.0"
+    },
+    {
+     "point": "Tractor Supply balance sheet Q2 FY2026 Cash and cash equivalents = 231.6 USD millions",
+     "met": true,
+     "note": "answer: 231.588"
+    },
+    {
+     "point": "Tractor Supply balance sheet Q2 FY2026 Total debt = 2153.8 USD millions",
+     "met": true,
+     "note": "answer: 2153.826"
+    },
+    {
+     "point": "Tractor Supply balance sheet Q2 FY2026 Net debt = 1922.2 USD millions",
+     "met": true,
+     "note": "answer: 1922.238"
+    }
+   ],
+   "rationale": "12/12 cells correct",
+   "cells_correct": 12,
+   "cells_total": 12
+  },
+  "citations": {
+   "claims": [],
+   "numeric_claims": 0,
+   "numeric_cited": 0,
+   "cited": 0,
+   "supported": 0,
+   "not_retrieved": 0,
+   "judge_error": "judge failed after 4 attempts: no structured output"
+  }
+ }
+}

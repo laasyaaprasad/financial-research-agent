@@ -1,0 +1,313 @@
+{
+ "id": "H19",
+ "category": "Qualitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "What is the most significant news for Hormel Foods in the past 30 days (as of October 3, 2026)? Give the date, deal terms and expected timing.",
+ "grading": "Snapshot as of 2026-10-03; key points: (1) Hormel announced on Sept 30, 2026 (agreement dated Sept 29) a definitive agreement to acquire Brakebush Brothers, LLC, a value-added chicken company; (2) price about USD 1.055 billion in cash, subject to customary adjustments; (3) expected to close in Hormel's fiscal Q1 2027 subject to customary conditions including HSR/regulatory approval (outside date March 29, 2027, with an automatic 3-month extension in specified circumstances); (4) any two of: Brakebush ~USD 1.2B LTM net sales, results primarily in Foodservice, expected accretive to adjusted EPS from fiscal 2028, ~USD 20M run-rate cost synergies by end of fiscal 2028, implied 10.7x adjusted EBITDA. Must carry the date and cite a primary or dated news source; fail if the deal is described as closed or if the price/timing is wrong.",
+ "answer": "Snapshot as of October 3, 2026: on September 29-30, 2026 Hormel Foods entered into (and announced) a definitive agreement to acquire Brakebush Brothers, LLC, a Wisconsin-based value-added chicken company, from the Brakebush family for a base purchase price of about USD 1.055 billion in cash, subject to customary adjustments [H19-E1][H19-E2]. Closing is expected in Hormel's fiscal Q1 2027 (roughly late October 2026 to late January 2027), subject to customary conditions including HSR waiting-period expiry; the agreement's outside date is March 29, 2027 with an automatic three-month extension in specified circumstances [H19-E1]. Brakebush had about USD 1.2 billion of net sales over the last twelve months, five production facilities and two R&D labs; results will be reported primarily in Foodservice; Hormel expects the deal to be accretive to adjusted EPS beginning in fiscal 2028, with about USD 20 million of run-rate cost synergies by the end of fiscal 2028 and an implied adjusted EBITDA multiple of 10.7x (8.9x after synergies) [H19-E2][H19-E3]. Secondary coverage corroborates the terms [H19-E4].",
+ "output": {
+  "answer": "**Question:** What is the most significant news for Hormel Foods in the past 30 days (as of October 3, 2026)? Give the date, deal terms and expected timing.\n*As of 2026-10-03*\n\n| | Announcement date | Purchase price (USD) | Implied adjusted EBITDA multiple (x, non-GAAP) | Target net sales, last 12 months (USD) | Expected run-rate cost synergies (USD) | Expected closing timing | EPS accretion timing | Financing |\n|---|---|---|---|---|---|---|---|---|\n| Hormel Foods – Brakebush acquisition (announced Sep 30, 2026) | September 30, 2026 [1] | $1.055 billion [1][2] | 10.7x; 8.9x after synergies [3] | approximately $1.2 billion [1] | ~$20 million by the end of fiscal 2028 [3] | Fiscal Q1 2027, subject to customary closing conditions including regulatory approval [1][3] | Beginning fiscal 2028 (adjusted EPS) [1] | Combination of cash on hand and long-term debt [3] |\n\n- The most significant Hormel Foods news in the past month is its announcement on September 30, 2026 that it entered into a definitive agreement to acquire Brakebush Brothers, LLC, a leading value-added chicken company, from the Brakebush family. [1][2]\n- The underlying Membership Interest Purchase Agreement was entered into on September 29, 2026 among Hormel Foods Corporation, Brakebush Holdings, Inc. and Brakebush Brothers, LLC, and was disclosed in an 8-K current report filed September 30, 2026. [2]\n- The purchase price is approximately $1.055 billion, consisting of a base purchase price of $1.055 billion in cash subject to customary adjustments. [1][2]\n- The transaction is expected to close during the first quarter of Hormel Foods' fiscal 2027, subject to customary closing conditions, including regulatory approval. [1][3]\n- Hormel expects to finance the acquisition with a combination of cash on hand and long-term debt and says it is committed to maintaining a strong investment-grade rating. [3]\n- Hormel expects the acquisition to be accretive to adjusted earnings per share beginning in fiscal 2028. [1]\n- Hormel expects to report the results of Brakebush's operations primarily in its Foodservice segment. [1][3]\n- Brakebush generated approximately $1.2 billion in net sales over the last 12 months and operates five production facilities and two research and development labs. [1]\n- Hormel expects run-rate cost synergies of approximately $20 million by the end of fiscal 2028. [3]\n- The transaction implies an adjusted EBITDA multiple of 10.7x, or 8.9x after synergies, based on a CY2026 adjusted EBITDA estimate for Brakebush; the multiple is a non-GAAP measure. [3]\n- Hormel's chicken share of its protein portfolio would rise from about 5% historically to roughly 13% pro forma for the transaction, per the company's investor presentation and outgoing CEO Jeff Ettinger's comments reported by the Chicago Tribune. [3][4]\n- Hormel shares closed on September 30, 2026 up 0.91% at USD 19.94, according to Openbook Analytics. [5]\n\n**Not available**\n- Final, as-closed deal terms and definitive closing date: The transaction is pending and expected to close in fiscal Q1 2027 subject to customary closing conditions including regulatory approval; no completed terms or closing date are disclosed in the evidence. [1][3]\n- Hormel Q4 FY2026 earnings news (quarter ending October 25, 2026): Hormel's fiscal Q4 2026 is still in progress as of October 3, 2026 and no earnings release for that quarter appears in the evidence.\n\n**Sources**\n[1] HORMEL FOODS CORP /DE/ 8-K current report, items 1.01,7.01,9.01 (filed 2026-09-30) EX-99.1 (www.sec.gov, 2026-09-30, primary) https://www.sec.gov/Archives/edgar/data/48465/000110465926112101/tm2626547d1_ex99-1.htm\n[2] Hormel Foods agrees to acquire Brakebush Brothers | HRL 8-K Filing (www.stocktitan.net, 2026-09-30, secondary) https://www.stocktitan.net/sec-filings/HRL/8-k-hormel-foods-corp-de-reports-material-event-46e425b3f1a5.html\n[3] HORMEL FOODS CORP /DE/ 8-K current report, items 1.01,7.01,9.01 (filed 2026-09-30) EX-99.2 (www.sec.gov, 2026-09-30, primary) https://www.sec.gov/Archives/edgar/data/48465/000110465926112101/tm2626547d1_ex99-2.htm\n[4] Hormel makes $1 billion bet on chicken - Chicago Tribune (www.chicagotribune.com, 2026-10-01, secondary) https://www.chicagotribune.com/2026/10/01/hormel-chicken/\n[5] Hormel Fundamental Analysis: HRL Debt and Margins | Openbook (www.openbookanalytics.com, 2026-10-02, secondary) https://www.openbookanalytics.com/news/insights/hormel-hrl-stock-fundamental-analysis-revenue-margins-debt-valuation-2026\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 43014,
+   "output": 10420
+  },
+  "tavily_credits": 2.0,
+  "latency_s": 140.22,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/93935000917a98715ff6523ecc55e645",
+  "companies": [
+   {
+    "name": "HORMEL FOODS CORP /DE/",
+    "ticker": "HRL",
+    "cik": "48465",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "Date of the most significant Hormel Foods news event in the past 30 days (between 2026-09-03 and 2026-10-03)",
+    "Nature of the event (e.g., acquisition, divestiture, leadership change, restructuring)",
+    "Deal terms: transaction value, cash/stock structure, counterparty, any financing or earn-out provisions",
+    "Expected timing: anticipated closing date or completion window, required regulatory approvals, and any stated milestones",
+    "Any guidance or financial-impact commentary tied to the event (e.g., accretion, EPS impact, synergies)"
+   ],
+   "answer_periods": [],
+   "documents": [],
+   "recent_filings_days": 30,
+   "searches": [
+    {
+     "purpose": "Identify the most significant Hormel Foods news in the past 30 days, including date, deal terms and expected timing",
+     "query": "Hormel Foods news September 2026 acquisition deal announcement",
+     "topic": "news",
+     "days_back": 30
+    },
+    {
+     "purpose": "Confirm deal terms, value and expected closing timing from coverage of the announcement",
+     "query": "Hormel Foods HRL deal terms value expected close 2026",
+     "topic": "news",
+     "days_back": 30
+    }
+   ],
+   "availability_notes": [
+    "This is a news/event question, not a financial-statement question: the answer depends on recent press coverage and 8-K current reports rather than the quarterly filings calendar.",
+    "Hormel's Q4 FY2026 (2026-07-27 to 2026-10-25) is still in progress and not yet reported, so no earnings release exists for the most recent quarter; any news in the window would come from 8-Ks or press coverage.",
+    "If the event is a pending transaction, final terms and closing timing may be subject to regulatory approval and could change; no estimates should be made where disclosure is absent."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Final, as-closed deal terms and definitive closing date",
+    "kind": "not_reported_yet",
+    "reason": "The transaction is pending and expected to close in fiscal Q1 2027 subject to customary closing conditions including regulatory approval; no completed terms or closing date are disclosed in the evidence.",
+    "evidence_ids": [
+     "E1",
+     "E2"
+    ]
+   },
+   {
+    "item": "Hormel Q4 FY2026 earnings news (quarter ending October 25, 2026)",
+    "kind": "not_reported_yet",
+    "reason": "Hormel's fiscal Q4 2026 is still in progress as of October 3, 2026 and no earnings release for that quarter appears in the evidence.",
+    "evidence_ids": []
+   }
+  ],
+  "removed": [],
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Hormel Foods HRL deal terms value expected close 2026",
+     "topic": "news",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "start_date": "2026-09-03"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Hormel Foods news September 2026 acquisition deal announcement",
+     "topic": "news",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "start_date": "2026-09-03"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.stocktitan.net/sec-filings/HRL/8-k-hormel-foods-corp-de-reports-material-event-46e425b3f1a5.html",
+      "https://www.foodmanufacturing.com/capital-investment/news/22975554/hormel-to-acquire-chicken-processor-brakebush-in-1b-deal",
+      "https://www.gurufocus.com/news/9103079/hormel-foods-hrl-to-acquire-brakebush-brothers-for-1055-billion-bolstering-protein-portfolio"
+     ],
+     "query": "What is the most significant news for Hormel Foods in the past 30 days (as of October 3, 2026)? Give the date, deal terms and expected timing.",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.chicagotribune.com/2026/10/01/hormel-chicken/",
+    "https://www.openbookanalytics.com/news/insights/hormel-hrl-stock-fundamental-analysis-revenue-margins-debt-valuation-2026",
+    "https://www.sec.gov/Archives/edgar/data/48465/000110465926112101/tm2626547d1_ex99-1.htm",
+    "https://www.sec.gov/Archives/edgar/data/48465/000110465926112101/tm2626547d1_ex99-2.htm",
+    "https://www.stocktitan.net/sec-filings/HRL/8-k-hormel-foods-corp-de-reports-material-event-46e425b3f1a5.html"
+   ],
+   "cited_primary": 2,
+   "retrieved": 8,
+   "retrieved_primary": 2
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Hormel announced on Sept 30, 2026 (agreement dated Sept 29) a definitive agreement to acquire Brakebush Brothers, LLC",
+     "met": true,
+     "note": "Agent states announcement date September 30, 2026 and notes the underlying Membership Interest Purchase Agreement was entered into on September 29, 2026, citing primary SEC 8-K filing."
+    },
+    {
+     "point": "Price about USD 1.055 billion in cash, subject to customary adjustments",
+     "met": true,
+     "note": "Agent reports purchase price approximately $1.055 billion, consisting of a base purchase price of $1.055 billion in cash subject to customary adjustments, citing primary sources."
+    },
+    {
+     "point": "Expected to close in Hormel's fiscal Q1 2027 subject to customary conditions including HSR/regulatory approval (outside date March 29, 2027, with an automatic 3-month extension in specified circumstances)",
+     "met": true,
+     "note": "Agent states expected closing timing: Fiscal Q1 2027, subject to customary closing conditions including regulatory approval. The outside date and automatic extension are not explicitly mentioned, but the core timing and condition are correct and not wrong; the snapshot context does not require exact match."
+    },
+    {
+     "point": "Any two of: Brakebush ~USD 1.2B LTM net sales, results primarily in Foodservice, expected accretive to adjusted EPS from fiscal 2028, ~USD 20M run-rate cost synergies by end of fiscal 2028, implied 10.7x adjusted EBITDA",
+     "met": true,
+     "note": "Agent includes at least four of these: net sales ~$1.2B, results primarily in Foodservice, EPS accretion beginning fiscal 2028, run-rate cost synergies ~$20M by end of fiscal 2028, implied adjusted EBITDA multiple 10.7x (8.9x after synergies)."
+    },
+    {
+     "point": "Must carry the date and cite a primary or dated news source; fail if deal described as closed or price/timing wrong",
+     "met": true,
+     "note": "Agent carries the announcement date (Sept 30, 2026) and cites primary SEC 8-K filings. The deal is correctly described as pending, not closed. Price and timing are accurate."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The agent's answer accurately captures the most significant news for Hormel Foods as of October 3, 2026: the definitive agreement to acquire Brakebush Brothers announced September 30, 2026. All key grading points are satisfied: correct announcement and agreement dates, correct purchase price ($1.055B cash subject to adjustments), correct expected closing timing (fiscal Q1 2027 subject to regulatory approval), and multiple supporting details (net sales, Foodservice reporting, EPS accretion, cost synergies, EBITDA multiple). Primary sources are cited. No failure conditions triggered."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Announcement date is September 30, 2026",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/48465/000110465926112101/tm2626547d1_ex99-1.htm",
+     "reason": "SEC EX-99.1 press release dateline reads 'AUSTIN, Minn., (Sep. 30, 2026) — Hormel Foods Corporation ... today announced'. StockTitan summary also states 'On September 30, 2026, Hormel Foods Corp ... announced'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Purchase price is approximately $1.055 billion",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/48465/000110465926112101/tm2626547d1_ex99-1.htm",
+     "reason": "EX-99.1 states 'The purchase price is approximately $1.055 billion'. EX-99.2 and StockTitan repeat the same figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Implied adjusted EBITDA multiple is 10.7x; 8.9x after synergies",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/48465/000110465926112101/tm2626547d1_ex99-2.htm",
+     "reason": "EX-99.2 investor presentation shows 'Implied adjusted EBITDA multiple1 of 10.7x and 8.9x after synergies' with footnote that it is based on CY2026 adjusted EBITDA estimate and is a non-GAAP measure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Target net sales for the last 12 months is approximately $1.2 billion",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/48465/000110465926112101/tm2626547d1_ex99-1.htm",
+     "reason": "EX-99.1 states 'Brakebush generated approximately $1.2 billion in net sales over the last 12 months'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Expected run-rate cost synergies of ~$20 million by end of fiscal 2028",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/48465/000110465926112101/tm2626547d1_ex99-2.htm",
+     "reason": "EX-99.2 states 'Expected run-rate cost synergies of ~$20 million by the end of fiscal 2028'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Expected closing timing: Fiscal Q1 2027 subject to customary closing conditions including regulatory approval",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/48465/000110465926112101/tm2626547d1_ex99-1.htm",
+     "reason": "EX-99.1: 'the transaction is expected to close during the first quarter of Hormel Foods' fiscal 2027, subject to customary closing conditions, including regulatory approval.' EX-99.2 repeats this.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "EPS accretion timing: beginning fiscal 2028 (adjusted EPS)",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/48465/000110465926112101/tm2626547d1_ex99-1.htm",
+     "reason": "EX-99.1: 'The company expects the acquisition to be accretive to adjusted earnings per share beginning in fiscal 2028.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Financing: combination of cash on hand and long-term debt",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/48465/000110465926112101/tm2626547d1_ex99-2.htm",
+     "reason": "EX-99.2: 'Expect to finance with a combination of cash on hand and long-term debt'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Membership Interest Purchase Agreement entered into on September 29, 2026",
+     "numeric": false,
+     "cited_url": "https://www.stocktitan.net/sec-filings/HRL/8-k-hormel-foods-corp-de-reports-material-event-46e425b3f1a5.html",
+     "reason": "StockTitan summary of the 8-K filing states: 'On September 29, 2026, Hormel Foods Corporation ... entered into a Membership Interest Purchase Agreement ... pursuant to which the Company has agreed to acquire from Seller all of the outstanding membership interests of Brakebush.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Brakebush generated approximately $1.2 billion in net sales over the last 12 months and operates five production facilities and two R&D labs",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/48465/000110465926112101/tm2626547d1_ex99-1.htm",
+     "reason": "EX-99.1: 'Brakebush generated approximately $1.2 billion in net sales over the last 12 months and operates five production facilities and two research and development labs.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hormel expects to report Brakebush results primarily in Foodservice segment",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/48465/000110465926112101/tm2626547d1_ex99-1.htm",
+     "reason": "EX-99.1: 'The company expects to report the results of Brakebush’s operations primarily in its Foodservice segment.' EX-99.2 repeats this.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hormel's chicken share of protein portfolio rises from ~5% to ~13% pro forma",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/48465/000110465926112101/tm2626547d1_ex99-2.htm",
+     "reason": "EX-99.2 includes a slide: 'Chicken ~13% | It has historically made up 5% of Hormel’s portfolio, but with the acquisition it will be closer to 13%, he said.' Chicago Tribune article corroborates the same quote from CEO Jeff Ettinger.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hormel shares closed on September 30, 2026 up 0.91% at USD 19.94",
+     "numeric": true,
+     "cited_url": "https://www.openbookanalytics.com/news/insights/hormel-hrl-stock-fundamental-analysis-revenue-margins-debt-valuation-2026",
+     "reason": "Openbook Analytics article states: 'The shares closed on 30 September 2026 up 0.91% at USD 19.94, on a market capitalisation of USD 10.98bn.'",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Purchase price consists of a base purchase price of $1.055 billion in cash subject to customary adjustments",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/48465/000110465926112101/tm2626547d1_ex99-1.htm",
+     "reason": "EX-99.1: 'The purchase price consists of a base purchase price of $1.055 billion in cash, subject to customary adjustments.' StockTitan summary repeats this.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hormel committed to maintaining strong investment-grade rating",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/48465/000110465926112101/tm2626547d1_ex99-2.htm",
+     "reason": "EX-99.2 includes 'Committed to maintaining strong investment-grade rating' in the financing section.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 8,
+   "cited": 15,
+   "supported": 15,
+   "not_retrieved": 0
+  }
+ }
+}

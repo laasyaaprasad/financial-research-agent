@@ -1,0 +1,147 @@
+{
+ "id": "T06",
+ "category": "Numerical reasoning",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "By what percentage did AMD's Data Center segment revenue grow year over year in Q2 2026 (quarter ended June 27, 2026 versus the quarter ended June 28, 2025)? Compute it from the reported segment revenue figures.",
+ "grading": "107.35% ±0.3pp; the company's own rounded 107% is also accepted. Inputs: Data Center segment revenue USD 6,718M (Q2 2026) and USD 3,240M (Q2 2025). Fail if total-company, sequential or six-month growth is given.",
+ "answer": "Data Center segment revenue was USD 6,718 million in Q2 2026 versus USD 3,240 million in Q2 2025, so growth = 6,718 / 3,240 - 1 = 107.35% (AMD's release rounds this to 107%). [T06-E1, T06-E2]",
+ "output": {
+  "answer": "**Question:** By what percentage did AMD's Data Center segment revenue grow year over year in Q2 2026 (quarter ended June 27, 2026 versus the quarter ended June 28, 2025)? Compute it from the reported segment revenue figures.\n*As of 2026-10-03*\n\n- AMD's Data Center segment revenue was $6,718 million in Q2 FY2026 (quarter ended June 27, 2026), as reported in the segment and disaggregated revenue table. [1]\n- AMD's Data Center segment revenue was $3,240 million in Q2 FY2025 (quarter ended June 28, 2025). [1][2]\n- AMD disclosed that Data Center segment revenue was up 107% year-over-year in Q2 FY2026 (quarter ended June 27, 2026). [1][3]\n- Calculated from the reported segment revenue figures, AMD's Data Center segment revenue grew 107.3% year over year in Q2 FY2026 (quarter ended June 27, 2026) versus Q2 FY2025 (quarter ended June 28, 2025). [1]\n\n**Sources**\n[1] ADVANCED MICRO DEVICES INC earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-08-04) (www.sec.gov, 2026-08-04, primary) https://www.sec.gov/Archives/edgar/data/2488/000000248826000121/q22026991.htm\n[2] ADVANCED MICRO DEVICES INC earnings release for Q2 FY2025, 8-K EX-99.1 (filed 2025-08-05) (www.sec.gov, 2025-08-05, primary) https://www.sec.gov/Archives/edgar/data/2488/000000248825000106/q22025991.htm\n[3] ADVANCED MICRO DEVICES INC earnings release for Q2 FY2026, 8-K EX-99.2 (filed 2026-08-04) (www.sec.gov, 2026-08-04, primary) https://www.sec.gov/Archives/edgar/data/2488/000000248826000121/amdq22026earningsslidesf.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 36412,
+   "output": 1903
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 31.94,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuqbnq6m0cg6ad0c1jrlh729/traces/39928f35927fb47eb62821551e64c648",
+  "companies": [
+   {
+    "name": "ADVANCED MICRO DEVICES INC",
+    "ticker": "AMD",
+    "cik": "2488",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "metrics": [
+    "AMD Data Center segment revenue for Q2 FY2026 (quarter ended 2026-06-27)",
+    "AMD Data Center segment revenue for Q2 FY2025 (quarter ended 2025-06-28)",
+    "Year-over-year percentage change in AMD Data Center segment revenue (Q2 FY2026 vs Q2 FY2025)"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "AMD",
+     "label": "Q2 FY2026"
+    },
+    {
+     "ticker": "AMD",
+     "label": "Q2 FY2025"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "AMD",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "AMD",
+     "period": "Q2 FY2025",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Both periods are filed/reported, so no estimation is needed; segment revenue is disclosed in the earnings release segment tables (and in the corresponding 10-Qs)."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/2488/000000248825000106/q22025991.htm",
+    "https://www.sec.gov/Archives/edgar/data/2488/000000248826000121/amdq22026earningsslidesf.htm",
+    "https://www.sec.gov/Archives/edgar/data/2488/000000248826000121/q22026991.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 6,
+   "retrieved_primary": 6
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Answer provides Data Center segment revenue YoY growth for Q2 2026 vs Q2 2025",
+     "met": true,
+     "note": "Agent explicitly states 'AMD's Data Center segment revenue grew 107.3% year over year in Q2 FY2026 (quarter ended June 27, 2026) versus Q2 FY2025 (quarter ended June 28, 2025).'"
+    },
+    {
+     "point": "Computed percentage is within tolerance (107.35% ±0.3pp) or company's rounded 107% accepted",
+     "met": true,
+     "note": "Agent's computed 107.3% falls within 107.05%–107.65% range; also cites company's disclosed 107% figure."
+    },
+    {
+     "point": "Answer does not use total-company, sequential, or six-month growth",
+     "met": true,
+     "note": "Agent only presents the segment YoY growth; no total-company, sequential Q/Q, or six-month comparison is given."
+    },
+    {
+     "point": "Answer computed from reported segment revenue figures (6,718 and 3,240)",
+     "met": true,
+     "note": "Agent quotes the exact figures: $6,718 million (Q2 2026) and $3,240 million (Q2 2025) and computes growth from them."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All grading requirements are satisfied: the agent correctly computes the Data Center segment YoY growth from the reported figures, the result (107.3%) is within the allowed tolerance, and no incorrect growth metric is substituted."
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "AMD's Data Center segment revenue was $6,718 million in Q2 FY2026 (quarter ended June 27, 2026), as reported in the segment and disaggregated revenue table.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000121/q22026991.htm",
+     "reason": "The source shows a segment revenue table with 'Data Center Segment | $ | 6,718 | $ | 5,775 | $ | 3,240 | $ | 12,493 | $ | 6,914' and a line 'Data Center Net Revenue 6,718 3,240 Up 107% 5,775 Up 16%'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "AMD's Data Center segment revenue was $3,240 million in Q2 FY2025 (quarter ended June 28, 2025).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000121/q22026991.htm",
+     "reason": "The same Q2 FY2026 earnings release includes a comparative column for Q2'25 showing $3,240 million for Data Center segment. The Q2 FY2025 earnings release (source 2) also shows 'Data Center Segment | $ | 3,240 | $ | 3,674 | $ | 2,834 | $ | 6,914 | $ | 5,171'.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "AMD disclosed that Data Center segment revenue was up 107% year-over-year in Q2 FY2026 (quarter ended June 27, 2026).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000121/q22026991.htm",
+     "reason": "The Q2 FY2026 earnings release states: 'Data Center segment revenue was $6.7 billion, up 107% year-over-year, driven by strong demand for AMD EPYC™ processors and AMD Instinct™ GPUs.' The earnings slides (source 3) repeat the same disclosure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Calculated from the reported segment revenue figures, AMD's Data Center segment revenue grew 107.3% year over year in Q2 FY2026 (quarter ended June 27, 2026) versus Q2 FY2025 (quarter ended June 28, 2025).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000121/q22026991.htm",
+     "reason": "Using the reported figures from source 1: Q2 FY2026 Data Center revenue = $6,718 million; Q2 FY2025 Data Center revenue = $3,240 million. Growth = (6718 - 3240) / 3240 = 3478 / 3240 = 1.07345679 = 107.345679%, which rounds to 107.3% (one decimal place).",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 4,
+   "supported": 4,
+   "not_retrieved": 0
+  }
+ }
+}
