@@ -1,0 +1,10 @@
+{
+  "file": "evals/test_hard.jsonl",
+  "sha256": "9f13c220cb43ba977ebee3b1237cf2e3def85bb46d49efe48b13beae53f1efcc",
+  "frozen_at": "2026-10-03",
+  "questions": 20,
+  "companies": 17,
+  "design": "Built after the first held-out set proved too easy to separate the agents (baseline 28/32). Targets documented failure modes of web-search research: point-in-time (as-of) questions, figures only in filing notes for mid/small caps, multi-step fiscal calculations, presumptive traps, guidance vs actual, plus 2 web-favoring news questions. Built blind by a research subagent from SEC filings; it never saw either agent's outputs.",
+  "verification": "216 programmatic checks by the builder; 9/9 XBRL cross-checks by the main agent",
+  "rule": "Frozen before either agent's first run on it; no agent code changes in response to its results."
+}
