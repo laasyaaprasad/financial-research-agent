@@ -13,6 +13,7 @@ import ast
 import operator
 import re
 from datetime import date
+from typing import Literal
 
 from pydantic import BaseModel, Field
 
@@ -44,7 +45,9 @@ class Claim(BaseModel):
 
 class Unavailable(BaseModel):
     item: str = Field(description="What was asked for")
-    reason: str = Field(description="Why it can't be given, e.g. not yet reported as of today, not disclosed, not an SEC filer")
+    kind: Literal["not_reported_yet", "not_disclosed", "not_sec_filer", "not_in_evidence"] = Field(
+        description="not_in_evidence = it may well exist, but the evidence provided doesn't contain it")
+    reason: str = Field(description="Why it can't be given")
     evidence_ids: list[str] = Field(default_factory=list)
 
 
@@ -78,9 +81,9 @@ Write the answer as a list of claims. Each claim is one factual sentence with:
   million, not $5.2 billion) unless the question asks for other units. Any number NOT printed in the evidence (growth rates, margins, sums, differences,
   ratios, implied values, conversions) must use `calculation`: give an expression over
   named inputs, each input with its value, evidence_id and verbatim quote, and put {result}
-  in the claim text. Code computes the result; never compute it yourself. For growth rates,
-  margins and ratios, calculate from the reported figures (to one decimal) even when the
-  company also states a rounded value.
+  in the claim text. Code computes the result; never compute it yourself. When the company
+  discloses a rate (growth, margin), report it as disclosed; if the disclosed rate is rounded
+  and both inputs are in the evidence, also give the calculated value to one decimal.
 - Answer every part of the question. If something the question asks for is not in the
   evidence, its period is not reported as of today, the company does not disclose it, or the
   company does not file with the SEC, list it under `unavailable` with the reason. Never
@@ -104,9 +107,16 @@ answered nor marked unavailable. Be strict but do not invent problems."""
 # ---------- deterministic checks ----------
 
 def normalize(text: str) -> str:
-    text = text.lower().replace("’", "'").replace("—", "-").replace("–", "-").replace("−", "-")
-    text = re.sub(r"[$|,*]", " ", text)
+    text = text.lower().replace("—", "-").replace("–", "-").replace("−", "-")
+    text = re.sub(r"[$|,*\"'‘’“”]", " ", text)
     return re.sub(r"\s+", " ", text).strip()
+
+
+def quote_found(quote: str, texts: list[str]) -> bool:
+    """A quote matches if every part between ellipses appears verbatim (after normalizing) in one source."""
+    parts = [normalize(p) for p in re.split(r"\[\.\.\.\]|\.\.\.|…", quote)]
+    parts = [p for p in parts if len(p) >= 4] or [normalize(quote)]
+    return any(all(p in t for p in parts) for t in texts)
 
 
 DATE = re.compile(r"\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.? \d{1,2}(?!\d)(?:, \d{4})?|\b\d{4}-\d{2}-\d{2}\b", re.I)
@@ -172,7 +182,7 @@ def check_claim(claim: Claim, evidence: dict[str, Evidence], computed: list[floa
         return "cites no valid evidence id", claim.text
     texts = [normalize(e.text) for e in cited]
     for q in claim.quotes:
-        if not any(normalize(q) in t for t in texts):
+        if not quote_found(q, texts):
             return f"quote not found in cited evidence: {q[:80]!r}", claim.text
     allowed = [v for q in claim.quotes for v, _ in numbers(q)] + list(computed)
     text = claim.text
@@ -181,7 +191,7 @@ def check_claim(claim: Claim, evidence: dict[str, Evidence], computed: list[floa
         variables = {}
         for i in calc.inputs:
             source = evidence.get(i.evidence_id)
-            if not source or normalize(i.quote) not in normalize(source.text):
+            if not source or not quote_found(i.quote, [normalize(source.text)]):
                 return f"calculation input quote not found in {i.evidence_id}: {i.quote[:80]!r}", text
             if not grounded(i.value, 9, [v for v, _ in numbers(i.quote)]):
                 return f"input {i.name}={i.value} is not printed in its quote", text

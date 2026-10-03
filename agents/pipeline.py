@@ -18,7 +18,7 @@ from agents.company import resolve
 from agents.edgar import EdgarClient
 from agents.llm import AGENT_MODEL
 from agents.planner import plan
-from agents.research import Web, number_evidence, sec_evidence, to_dicts, web_evidence
+from agents.research import Web, gap_evidence, number_evidence, sec_evidence, to_dicts, web_evidence
 from agents.writer import write
 
 DISCLAIMER = ("Draft for analyst review. Every figure is quoted from the cited source or computed in code "
@@ -82,6 +82,15 @@ def run(question: str, *, today: date | None = None, callbacks=None, web_cache: 
     evidence = number_evidence(evidence)
     result = write(question, today, research_plan.availability_notes, evidence, callbacks)
     add(result["tokens"])
+    # Gap filling: if something may exist but wasn't in the evidence, search for it once and rewrite.
+    gaps = [u["item"] for u in result["unavailable"] if u.get("kind") == "not_in_evidence"]
+    if gaps:
+        known = {e.url for e in evidence}
+        extra = [e for e in asyncio.run(gap_evidence(question, gaps, companies, today, web)) if e.url not in known]
+        if extra:
+            evidence = number_evidence(evidence + extra)
+            result = write(question, today, research_plan.availability_notes, evidence, callbacks)
+            add(result["tokens"])
 
     by_id = {e["id"]: e for e in to_dicts(evidence)}
     answer = render(question, today, result, by_id)
@@ -109,6 +118,7 @@ def run(question: str, *, today: date | None = None, callbacks=None, web_cache: 
         "unavailable": result["unavailable"],
         "removed": result["removed"],
         "semantic_check": result["semantic_check"],
+        "gaps_searched": gaps,
     }
 
 

@@ -25,7 +25,7 @@ from agents import tracing
 from agents.company import Company
 from agents.edgar import ARCHIVES, EdgarClient, EdgarError
 from agents.fiscal import Filing, filings_as_of
-from agents.planner import Plan
+from agents.planner import Plan, SearchRequest
 
 PASSAGE_CHARS = 1500
 MAX_EXTRACT_URLS = 3
@@ -288,6 +288,13 @@ async def web_evidence(question: str, plan: Plan, companies: list[Company], toda
                      date=_published(r.get("published_date")),
                      text=(extracted.get(r["url"]) or r.get("content") or "")[:6000])
             for r in ranked]
+
+
+async def gap_evidence(question: str, gaps: list[str], companies: list[Company], today: date, web: Web) -> list[Evidence]:
+    """One targeted search per item the writer couldn't find (at most two), plus one extract."""
+    names = " ".join(c.name for c in companies)
+    searches = [SearchRequest(purpose="fill a gap", query=f"{names} {gap}"[:200]) for gap in gaps[:2]]
+    return await web_evidence(question, Plan(metrics=gaps, searches=searches), companies, today, web)
 
 
 def number_evidence(items: list[Evidence]) -> list[Evidence]:

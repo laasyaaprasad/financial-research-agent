@@ -68,6 +68,14 @@ def test_claim_with_invented_quote_fails():
     assert "quote not found" in check_claim(claim, EVIDENCE)[0]
 
 
+def test_quote_matching_tolerates_ellipses_and_quotation_marks_only():
+    from agents.writer import normalize, quote_found
+    text = [normalize("Management said “underlying operating income growth was at the top end of guidance” for the quarter.")]
+    assert quote_found('"underlying operating income growth was at the top end of guidance"', text)
+    assert quote_found("Management said ... at the top end of guidance", text)
+    assert not quote_found("operating income growth exceeded guidance", text)
+
+
 def test_calculation_is_computed_in_code():
     calc = Calculation(expression="(rev / prior - 1) * 100", decimals=1, inputs=[
         Input(name="rev", value=46743, evidence_id="E1", quote="46,743"),
