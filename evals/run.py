@@ -181,8 +181,10 @@ def finish(name: str, manifest: dict, records: list[dict]) -> dict:
     card = write_scorecard(name, manifest, summary, records)
     write_judge_sample(name, records)
     o = summary["overall"]
-    console.print(f"[bold]{name}[/bold]: fixed {o['fixed_correct']}/{o['fixed_n']} fully correct "
-                  f"(mean {o['fixed_score']:.2f}) · credits {summary['ops']['credits_total']:g} → {card.relative_to(ROOT)}")
+    fixed = f"fixed {o['fixed_correct']}/{o['fixed_n']} fully correct (mean {o['fixed_score']:.2f})" if o["fixed_n"] else ""
+    dynamic = f"rubric all met {o['dynamic_correct']}/{o['dynamic_n']}" if o["dynamic_n"] else ""
+    console.print(f"[bold]{name}[/bold]: {' · '.join(x for x in (fixed, dynamic) if x)} · "
+                  f"credits {summary['ops']['credits_total']:g} → {card.relative_to(ROOT)}")
     return summary
 
 
@@ -198,6 +200,7 @@ def run(
     web: Annotated[bool, typer.Option(help="Allow live Tavily calls (agent only)")] = True,
     web_cache_from: Annotated[str | None, typer.Option(help="Replay Tavily responses from an earlier run; no credits")] = None,
     resume: Annotated[bool, typer.Option(help="Continue an interrupted run, skipping saved questions")] = False,
+    votes: Annotated[int, typer.Option(help="Judge each answer this many times and keep the majority verdict")] = 1,
 ) -> None:
     """Run an agent on a question set, score every answer, and write the scorecard."""
     rows = load_set(set_name, ids)
@@ -211,7 +214,7 @@ def run(
     runner = agent_runner(agent, name, web, web_cache_from)
     hosts = primary_hosts([r for s in SETS for r in load_set(s)])
     manifest = {"agent": agent, "set": set_name, "set_sha256": sha256(SETS[set_name]), "code": code_version(),
-                "ids": [r["id"] for r in rows], "web": web, "web_cache_from": web_cache_from}
+                "ids": [r["id"] for r in rows], "web": web, "web_cache_from": web_cache_from, "judge_votes": votes}
     if done and (raw_dir / "manifest.json").exists():
         first = json.loads((raw_dir / "manifest.json").read_text())
         manifest = {**first, "resumed": first.get("resumed", []) + [{"code": manifest["code"], "skipped": sorted(done)}]}
@@ -227,7 +230,7 @@ def run(
                           "error": f"{type(exc).__name__}: {exc}"[:500], "traceback": traceback.format_exc()[-2000:]}
             trace.finish(output)
         output["trace_id"], output["trace_url"] = trace.trace_id, trace.url
-        scores = score_row(row, output, hosts)
+        scores = score_row(row, output, hosts, votes)
         tracing.attach_scores(trace.trace_id, scores)
         record = {**{k: row[k] for k in FIELDS}, "output": output, "scores": scores}
         (raw_dir / f"{row['id']}.json").write_text(json.dumps(record, indent=1, ensure_ascii=False, default=str))
@@ -248,12 +251,13 @@ def run(
 
 
 @app.command()
-def rescore(source: str, name: str, workers: int = 4) -> None:
+def rescore(source: str, name: str, workers: int = 4, votes: Annotated[int, typer.Option(
+        help="Judge each answer this many times and keep the majority verdict")] = 1) -> None:
     """Re-judge a saved run's answers without re-running the agent."""
     src = RESULTS / "raw" / source
     first = json.loads((src / "manifest.json").read_text()) if (src / "manifest.json").exists() else {
         "agent": "starter", "set": "dev", "code": "6300b5f (M1 harness)", "model": "moonshotai/Kimi-K2.6"}
-    manifest = {**first, "rescored_from": source}
+    manifest = {**first, "rescored_from": source, "judge_votes": votes}
     rows = {r["id"]: r for s in SETS for r in load_set(s)}
     hosts = primary_hosts(list(rows.values()))
     out_dir = RESULTS / "raw" / name
@@ -262,7 +266,7 @@ def rescore(source: str, name: str, workers: int = 4) -> None:
 
     def one(path: Path) -> dict:
         rec = json.loads(path.read_text())
-        rec["scores"] = score_row(rows[rec["id"]], rec["output"], hosts)
+        rec["scores"] = score_row(rows[rec["id"]], rec["output"], hosts, votes)
         (out_dir / path.name).write_text(json.dumps(rec, indent=1, ensure_ascii=False, default=str))
         return rec
 

@@ -123,6 +123,14 @@ def is_primary(url: str, hosts: set[str]) -> bool:
 
 # ---------- scorers ----------
 
+TYPE_RULES = {
+    "abstain": "- This is an abstain question: the core requirement is met only if the agent clearly says the figure "
+               "is not available/disclosed and presents no number as an actual reported result.",
+    "clarify": "- This is a clarify question: the core requirement is met only if the agent asks a clarifying question "
+               "(naming the plausible options where relevant) and presents no figures as the answer.",
+}
+
+
 def score_correctness(row: dict, answer: str, retrieved: dict[str, dict]) -> dict:
     if not answer.strip():
         return {"score": 0.0, "verdict": "incorrect", "points": [], "rationale": "No answer produced."}
@@ -132,7 +140,9 @@ def score_correctness(row: dict, answer: str, retrieved: dict[str, dict]) -> dic
             f"retrieved sources for recency and support. The snapshot answer (as of {row.get('as_of')}) is context "
             "only; do not require an exact match.\n\n"
             f"Snapshot answer (context): {row.get('answer')}\n\n"
-            f"Agent's retrieved sources:\n{json.dumps(list(retrieved.values())[:15], ensure_ascii=False)[:15000]}")
+            "Agent's retrieved sources (excerpts; each starts with the passages the answer quoted):\n"
+            + json.dumps([{**r, "content": r.get("content", "")[:3000]} for r in list(retrieved.values())[:15]],
+                         ensure_ascii=False))
     else:
         reference = (f"Verified reference answer: {row.get('answer')}\n"
                      f"Reference facts: {json.dumps([e.get('facts') for e in row.get('evidence') or []], ensure_ascii=False)}\n"
@@ -153,9 +163,10 @@ Agent's answer:
 
 Instructions:
 - Split the grading rule into its individual requirements and judge each as met or not met.
+- Judge only the requirements written in the grading rule (and its fail conditions); add none of your own.
 - Numbers: apply the stated tolerance. Wrong fiscal period, unit, scale or entity means not met even if a number is close.
-- Abstain questions: met only if the agent clearly says the figure is not available/disclosed and presents no number as an actual reported result.
-- Clarify questions: met only if the agent asks a clarifying question (naming the plausible options where relevant) and presents no figures as the answer.
+- When checking a figure against the agent's sources, use the source the answer cites for it (match by URL and title).
+{TYPE_RULES.get(row["answer_type"], "")}
 - verdict = correct if every requirement is met, partial if some, incorrect if none or the core answer is wrong."""
     result = _judge(Correctness, prompt)
     score = sum(p.met for p in result.points) / len(result.points)
@@ -256,13 +267,26 @@ def score_sources(answer: str, retrieved: dict[str, dict], hosts: set[str]) -> d
             "retrieved": len(retrieved), "retrieved_primary": sum(is_primary(r["url"], hosts) for r in retrieved.values())}
 
 
-def score_row(row: dict, output: dict, hosts: set[str]) -> dict:
-    """All scores for one answer. A judge failure is recorded (scored 0) rather than stopping the run."""
+def _majority(grades: list[dict]) -> dict:
+    """The median grade by verdict, then score: with an odd number of votes this is the majority verdict when there is one."""
+    rank = {"incorrect": 0, "partial": 1, "correct": 2}
+    ordered = sorted(grades, key=lambda g: (rank[g["verdict"]], g["score"]))
+    return {**ordered[len(ordered) // 2], "votes": [g["verdict"] for g in grades]}
+
+
+def score_row(row: dict, output: dict, hosts: set[str], votes: int = 1) -> dict:
+    """All scores for one answer. A judge failure is recorded (scored 0) rather than stopping the run.
+
+    With votes > 1 the correctness judge runs that many times and the majority verdict is kept,
+    because reference-free rubric grading varies from call to call.
+    """
     answer = output.get("answer") or ""
     retrieved = retrieved_index(output.get("tool_results") or [])
     scores = {"sources": score_sources(answer, retrieved, hosts)}
     try:
-        scores["correctness"] = score_table(row, answer) if row.get("cells") else score_correctness(row, answer, retrieved)
+        grades = [score_table(row, answer) if row.get("cells") else score_correctness(row, answer, retrieved)
+                  for _ in range(votes)]
+        scores["correctness"] = grades[0] if votes == 1 else _majority(grades)
     except RuntimeError as exc:
         scores["correctness"] = {"score": 0.0, "verdict": "incorrect", "points": [], "rationale": f"JUDGE ERROR: {exc}"[:300],
                                  "judge_error": True}
