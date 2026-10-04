@@ -179,7 +179,24 @@ def final_report() -> str:
     return "\n".join(parts)
 
 
+def recall(run: str) -> tuple[int, int]:
+    """Reference figures found in retrieved text, summed over a run (computed from full local records)."""
+    from evals.scorers import evidence_recall, retrieved_index
+    from evals.run import SETS, load_set
+    rows = {r["id"]: r for name in SETS for r in load_set(name)}
+    figures = found = 0
+    for rec in load(run):
+        r = evidence_recall(rows[rec["id"]], retrieved_index(rec["output"].get("tool_results") or []))
+        figures, found = figures + r["figures"], found + r["found"]
+    return found, figures
+
+
 if __name__ == "__main__":
+    if sys.argv[1] == "--recall":
+        for run in sys.argv[2:]:
+            found, figures = recall(run)
+            print(f"{run}: {found}/{figures} reference figures in retrieved text ({100 * found / max(1, figures):.0f}%)")
+        sys.exit()
     if sys.argv[1] == "--final":
         print(final_report())
         sys.exit()

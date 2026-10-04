@@ -274,6 +274,27 @@ Retrieved sources (what the agent actually saw):
             "undecided": sum(1 for c in cited if c["in_retrieved"] and c["supported"] is None)}
 
 
+def evidence_recall(row: dict, retrieved: dict[str, dict]) -> dict:
+    """Share of the reference answer's figures that appear anywhere in the text the agent retrieved.
+
+    Deterministic (no judge): it measures retrieval, not writing. Figures are the numbers in the
+    reference evidence facts; trivial ones (under 10 without decimals) are skipped as too common.
+    """
+    from agents.writer import grounded, numbers
+
+    wanted = set()
+    for ev in row.get("evidence") or []:
+        for value in (ev.get("facts") or {}).values():
+            for v, d in numbers(json.dumps(value) if not isinstance(value, str) else value):
+                if d or abs(v) >= 10:
+                    wanted.add((v, d))
+    if not wanted:
+        return {"figures": 0, "found": 0}
+    found_numbers = [v for r in retrieved.values() for v, _ in numbers(r.get("content", ""))]
+    found = sum(1 for v, d in wanted if grounded(v, d, found_numbers))
+    return {"figures": len(wanted), "found": found}
+
+
 def score_sources(answer: str, retrieved: dict[str, dict], hosts: set[str]) -> dict:
     cited = sorted({u.rstrip(".,;") for u in URL_RE.findall(answer)})
     return {"cited_urls": cited, "cited_primary": sum(is_primary(u, hosts) for u in cited),
@@ -295,7 +316,7 @@ def score_row(row: dict, output: dict, hosts: set[str], votes: int = 1) -> dict:
     """
     answer = output.get("answer") or ""
     retrieved = retrieved_index(output.get("tool_results") or [])
-    scores = {"sources": score_sources(answer, retrieved, hosts)}
+    scores = {"sources": score_sources(answer, retrieved, hosts), "recall": evidence_recall(row, retrieved)}
     try:
         grades = [score_table(row, answer) if row.get("cells") else score_correctness(row, answer, retrieved)
                   for _ in range(votes)]
