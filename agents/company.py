@@ -24,6 +24,8 @@ class Mention(BaseModel):
     as_written: str = Field(default="", description="The words in the question that refer to this company")
     name: str = Field(description="Company name as the parent reporting company")
     ticker: str | None = Field(default=None, description="Its primary US stock ticker, if publicly listed and known")
+    aliases: list[str] = Field(default_factory=list, description="Other names the press uses for it: short name, "
+                               "former name, best-known brands; at most 4")
 
 
 class Mentions(BaseModel):
@@ -60,11 +62,16 @@ class Company:
     periods: list[Period] = field(default_factory=list)
     resolved: bool = True
     reason: str = ""
+    aliases: list[str] = field(default_factory=list)  # other names sources use: the user's words, short names, brands
 
 
 def _norm(name: str) -> str:
     name = re.sub(r"\b(corporation|corp|incorporated|inc|company|co|holdings|plc|ltd|limited|the)\b", "", name.lower())
     return re.sub(r"[^a-z0-9]", "", name)
+
+
+def _aliases(m: Mention) -> list[str]:
+    return list(dict.fromkeys(a for a in [m.as_written, m.name, *m.aliases[:4]] if a and a.strip()))
 
 
 def _search(client: EdgarClient, name: str) -> list[str]:
@@ -107,13 +114,14 @@ def resolve(question: str, today: date, client: EdgarClient,
                     ciks = set(found)
                 else:
                     companies.append(Company(requested=m.as_written or m.name, name=m.name, resolved=False, reason=(
-                        f"no longer files periodic reports with the SEC (last one filed {last})")))
+                        f"no longer files periodic reports with the SEC (last one filed {last})"), aliases=_aliases(m)))
                     continue
             elif found:
                 ciks = set(found)
         if len(ciks) != 1:
             reason = "matches several SEC registrants" if ciks else "no SEC-registered public company with this name"
-            companies.append(Company(requested=m.as_written or m.name, name=m.name, resolved=False, reason=reason))
+            companies.append(Company(requested=m.as_written or m.name, name=m.name, resolved=False, reason=reason,
+                                     aliases=_aliases(m)))
             continue
         cik = ciks.pop()
         if any(c.cik == cik for c in companies):
@@ -122,5 +130,5 @@ def resolve(question: str, today: date, client: EdgarClient,
         ticker = (sub.get("tickers") or [r["ticker"] for r in matches] or [None])[0]
         companies.append(Company(requested=m.as_written or m.name, name=sub["name"], ticker=ticker or f"CIK{cik}",
                                  cik=cik, fiscal_year_end=sub.get("fiscalYearEnd"),
-                                 periods=calendar(client, cik, today)))
+                                 periods=calendar(client, cik, today), aliases=_aliases(m)))
     return companies, None, tokens

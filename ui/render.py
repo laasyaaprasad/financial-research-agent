@@ -116,6 +116,9 @@ def render(output: dict, today: date, question: str, rewritten: bool = False) ->
     header = [f"**Researched as:** {question}", ""] if rewritten else []
     if output.get("clarification"):
         return "\n".join(header + [output["clarification"]]), None
+    if output.get("error"):  # a step failed: say so rather than show an empty answer
+        return "\n".join(header + [f"**No verified answer.** The research failed ({output['error']}), so nothing "
+                                    "was checked or cited. Please try again."]), None
     sources = output["sources"]
     # Calculation inputs are cited too, so every figure behind a statement has a marker.
     result = {**output, "claims": [{**c, "evidence_ids": _ids(c)} for c in output["claims"]],

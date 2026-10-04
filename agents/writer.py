@@ -17,8 +17,10 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
+from dataclasses import replace
+
 from agents.llm import structured
-from agents.research import Evidence
+from agents.research import Evidence, terms, top_passages
 
 
 # ---------- schemas ----------
@@ -273,18 +275,33 @@ def _draft_block(draft: Draft, texts: list[str]) -> str:
 def write(question: str, today: date, plan_notes: list[str], evidence: list[Evidence], callbacks=None,
           assumptions: list[str] = (), out_of_scope: list[str] = ()) -> dict:
     """Draft, check, verify, revise once. Returns the final claims, unavailable items and removed claims."""
-    by_id = {e.id: e for e in evidence}
-    context = (f"Today: {today}\nQuestion: {question}\n"
-               f"Interpretation: {list(assumptions) or 'none needed'}\n"
-               f"Declined as out of scope (do not answer): {list(out_of_scope) or 'none'}\n"
-               f"Planner notes on availability: {plan_notes or 'none'}\n\nEVIDENCE\n{_evidence_block(evidence)}")
+    by_id = {e.id: e for e in evidence}  # code checks always use the full evidence
+
+    def framed(items: list[Evidence]) -> str:
+        return (f"Today: {today}\nQuestion: {question}\n"
+                f"Interpretation: {list(assumptions) or 'none needed'}\n"
+                f"Declined as out of scope (do not answer): {list(out_of_scope) or 'none'}\n"
+                f"Planner notes on availability: {plan_notes or 'none'}\n\nEVIDENCE\n{_evidence_block(items)}")
+
+    context = framed(evidence)
     tokens = {"input": 0, "output": 0}
 
     def add(t):
         for k in tokens:
             tokens[k] += t.get(k, 0)
 
-    draft, t = structured(Draft, WRITER, context, reasoning="medium", callbacks=callbacks)
+    try:
+        draft, t = structured(Draft, WRITER, context, reasoning="medium", callbacks=callbacks)
+    except ValueError as exc:
+        # Usually the provider timing out on a long context: once more with each source cut to its
+        # two most relevant passages and less thinking, so the question still gets a checked answer.
+        query = terms(question)
+        context = framed([replace(e, text=top_passages(e.text, query, k=2)) for e in evidence])
+        try:
+            draft, t = structured(Draft, WRITER, context, reasoning="low", callbacks=callbacks, retries=1)
+        except ValueError:
+            return {"claims": [], "table": [], "unavailable": [], "removed": [], "missing": [], "semantic_check": False,
+                    "tokens": tokens, "draft_failed": str(exc)[:300]}
     add(t)
     semantic_check = True
     for attempt in range(2):

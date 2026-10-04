@@ -16,10 +16,10 @@ from urllib.parse import urlparse
 
 from agents import tracing
 from agents.company import resolve
-from agents.edgar import EdgarClient
+from agents.edgar import EdgarClient, EdgarError
 from agents.llm import AGENT_MODEL
-from agents.planner import plan
-from agents.research import Web, gap_evidence, number_evidence, sec_evidence, to_dicts, web_evidence
+from agents.planner import Plan, fallback, plan, validate
+from agents.research import SearchConfig, Web, gap_evidence, number_evidence, sec_evidence, to_dicts, web_evidence
 from agents.writer import normalize, quote_found, write
 
 DISCLAIMER = ("Draft for analyst review. Every figure is quoted from the cited source or computed in code "
@@ -78,7 +78,14 @@ def body(result: dict, cite) -> list[str]:
 def render(question: str, today: date, result: dict, evidence: dict) -> str:
     """Markdown brief with numbered citations to the sources actually used."""
     cite, order = citer(evidence)
-    lines = [f"**Question:** {question}", f"*As of {today}*", ""] + body(result, cite)
+    lines = [f"**Question:** {question}", f"*As of {today}*", ""]
+    if result.get("draft_failed"):
+        found = list(evidence.values())[:8]
+        lines += ["**No verified answer.** The model service failed while drafting the answer, so nothing was "
+                  "checked or cited. Sources retrieved for it:"]
+        lines += [f"- {e['title']} ({urlparse(e['url']).netloc}, {e['date'] or 'undated'}) {e['url']}" for e in found]
+        return "\n".join(lines + ["", f"_{DISCLAIMER}_"])
+    lines += body(result, cite)
     if result["removed"]:
         lines += ["", f"_{len(result['removed'])} draft statement(s) were withheld because they could not be "
                       "verified against the sources (details in the run record)._"]
@@ -106,6 +113,8 @@ def _plan_note(p) -> str:
 
 
 def _verified_note(result: dict) -> str:
+    if result.get("draft_failed"):
+        return f"Drafting failed, so nothing was checked: {result['draft_failed']}"
     n = len(result["claims"]) + len(result.get("table", []))
     lines = [f"{n} statement(s) verified against their sources, {len(result['unavailable'])} marked not available"]
     lines += [f"- Withheld: {r['text']} ({r['problem']})" for r in result["removed"]]
@@ -127,11 +136,13 @@ def _sources(ids: set[str], items: list[dict], by_id: dict) -> dict:
 
 
 def run(question: str, *, today: date | None = None, callbacks=None, web_cache: Path | str = "results/tavily_cache",
-        live_web: bool = True, on_step: Callable[[str, str | None], None] | None = None) -> dict:
+        live_web: bool = True, search: SearchConfig = SearchConfig(), fixed_plan: Plan | None = None,
+        on_step: Callable[[str, str | None], None] | None = None) -> dict:
     """Answer one question. Returns the brief plus everything the eval harness records.
 
-    `on_step(stage, detail)` reports progress to interactive front ends: `detail` is None when a
-    stage starts and a short markdown summary when it ends.
+    `fixed_plan` replays a saved research plan (evaluation only), so runs that compare search
+    settings differ only in how Tavily is called. `on_step(stage, detail)` reports progress to
+    interactive front ends: `detail` is None when a stage starts and a short markdown summary when it ends.
     """
     today = today or date.today()
     step = on_step or (lambda stage, detail: None)
@@ -144,14 +155,23 @@ def run(question: str, *, today: date | None = None, callbacks=None, web_cache: 
             tokens[k] += t.get(k, 0)
 
     step("Identify companies", None)
-    companies, clarification, t = resolve(question, today, client, callbacks)
+    try:
+        companies, clarification, t = resolve(question, today, client, callbacks)
+    except (ValueError, EdgarError) as exc:  # model or SEC unavailable: say so rather than return nothing
+        return failed(question, today, f"identifying the company failed ({type(exc).__name__})", tokens, start)
     add(t)
     step("Identify companies", f"Needs clarification: {clarification}" if clarification else _companies_note(companies))
     if clarification:  # nothing to research until the user says what they mean
         return clarify(question, today, clarification, tokens, start)
     step("Plan research", None)
-    research_plan, t = plan(question, companies, today, callbacks)
-    add(t)
+    if fixed_plan:
+        research_plan = validate(fixed_plan, companies)
+    else:
+        try:
+            research_plan, t = plan(question, companies, today, callbacks)
+            add(t)
+        except ValueError:
+            research_plan = fallback(question, companies)
     step("Plan research", _plan_note(research_plan))
     web = Web(web_cache, live=live_web)
     step("Read SEC filings", None)
@@ -159,7 +179,7 @@ def run(question: str, *, today: date | None = None, callbacks=None, web_cache: 
     step("Read SEC filings", f"{len(evidence)} source(s) read: filing passages and tagged XBRL data")
     if research_plan.searches:
         step("Search the web", None)
-        found = asyncio.run(web_evidence(question, research_plan, companies, today, web))
+        found = asyncio.run(web_evidence(question, research_plan, companies, today, web, search))
         evidence += found
         step("Search the web", f"{len(found)} result(s) kept" + ("" if live_web else " (cached responses only)"))
     evidence = number_evidence(evidence)
@@ -173,13 +193,15 @@ def run(question: str, *, today: date | None = None, callbacks=None, web_cache: 
     if gaps:
         step("Fill gaps", None)
         known = {e.url for e in evidence}
-        extra = [e for e in asyncio.run(gap_evidence(question, gaps, companies, today, web)) if e.url not in known]
+        extra = [e for e in asyncio.run(gap_evidence(question, gaps, companies, today, web, search)) if e.url not in known]
         if extra:
-            evidence = number_evidence(evidence + extra)
-            result = write(question, today, research_plan.availability_notes, evidence, callbacks, **framing)
-            add(result["tokens"])
+            evidence = number_evidence(evidence + extra)  # new items are numbered after the existing ones
+            rewritten = write(question, today, research_plan.availability_notes, evidence, callbacks, **framing)
+            add(rewritten["tokens"])
+            if not rewritten.get("draft_failed"):  # otherwise keep the first, already checked answer
+                result = rewritten
         step("Fill gaps", f"Searched for: {'; '.join(gaps)}. {len(extra)} new source(s)"
-             + (f", answer rewritten.\n{_verified_note(result)}" if extra else "."))
+             + (f", answer rewritten.\n{_verified_note(result)}" if extra and result is rewritten else "."))
 
     result.update(framing)
     by_id = {e["id"]: e for e in to_dicts(evidence)}
@@ -215,7 +237,16 @@ def run(question: str, *, today: date | None = None, callbacks=None, web_cache: 
         "gaps_searched": gaps,
         **framing,
         "clarification": None,
+        "error": f"drafting failed: {result['draft_failed']}" if result.get("draft_failed") else None,
     }
+
+
+def failed(question: str, today: date, reason: str, tokens: dict, start: float) -> dict:
+    """The answer when a step before research fails: an explicit message, never an empty answer."""
+    out = clarify(question, today, "", tokens, start)
+    out["answer"] = "\n".join([f"**Question:** {question}", f"*As of {today}*", "",
+                               f"**No answer.** {reason[0].upper() + reason[1:]}; please try again."])
+    return {**out, "clarification": None, "error": reason}
 
 
 def clarify(question: str, today: date, clarification: str, tokens: dict, start: float) -> dict:

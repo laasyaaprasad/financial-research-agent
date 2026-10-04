@@ -113,6 +113,13 @@ def test_clarification_and_rewritten_question():
     assert panel is None
 
 
+def test_failed_research_says_so_instead_of_an_empty_answer():
+    out = {**OUTPUT, "claims": [], "unavailable": [], "sources": {}, "error": "drafting failed: timeout"}
+    content, panel = render(out, TODAY, "q")
+    assert content.startswith("**No verified answer.** The research failed (drafting failed: timeout)")
+    assert panel is None
+
+
 def test_turn_summarizes_what_follow_ups_may_refer_to():
     summary = turn("and margins?", "What were X Corp's margins in Q2 FY2026?", OUTPUT)
     assert summary.splitlines()[:3] == ["Analyst: and margins?", "Researched as: What were X Corp's margins in Q2 FY2026?",

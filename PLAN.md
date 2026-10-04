@@ -271,6 +271,7 @@ The superseded code was removed from the working tree; it remains in git history
 **Result (2026-10-04)**
 - **CLI brief:** byte-identical to the previous `render` on all 128 section combinations, so eval answers are unaffected.
 - **Offline tests:** 38 pass: the 28 existing tests plus 10 new chat-rendering and conversation tests.
+- **Merged with main (2026-10-04):** brings in the web-dependent sets, configurable Tavily settings and explicit failure answers. The chat now shows a failed run as "No verified answer" instead of an empty reply. 53 tests pass. The CLI brief is byte-identical to main's on all 256 section combinations, including a failed draft.
 - **Browser checks (live web off, 0 Tavily credits):**
   - single-quarter question with a calculated margin
   - clarification, then a one-word reply: researched as "What was Intel's revenue last quarter?"
