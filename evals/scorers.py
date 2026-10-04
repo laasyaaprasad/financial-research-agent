@@ -232,8 +232,14 @@ Answer:
             "rationale": f"{correct}/{len(cells)} cells correct", "cells_correct": correct, "cells_total": len(cells)}
 
 
-def score_citations(answer: str, retrieved: dict[str, dict]) -> dict:
-    empty = {"claims": [], "numeric_claims": 0, "numeric_cited": 0, "cited": 0, "supported": 0, "not_retrieved": 0}
+def score_citations(answer: str, retrieved: dict[str, dict], attempts: int = 3) -> dict:
+    """Claim-level citation check against the text the agent retrieved.
+
+    The judge sometimes leaves claims undecided even though their source was retrieved; it is asked
+    again, and any that stay undecided are counted separately rather than as unsupported.
+    """
+    empty = {"claims": [], "numeric_claims": 0, "numeric_cited": 0, "cited": 0, "supported": 0, "not_retrieved": 0,
+             "undecided": 0}
     if not answer.strip():
         return empty
     prompt = f"""List the factual claims in this answer (at most 15, most important first). For each, give the URL
@@ -251,16 +257,21 @@ Answer:
 
 Retrieved sources (what the agent actually saw):
 {json.dumps(list(retrieved.values()), ensure_ascii=False)[:60000]}"""
-    claims = _judge(Citations, prompt).claims
-    out = []
-    for c in claims:
-        in_retrieved = bool(c.cited_url) and norm_url(c.cited_url) in retrieved
-        out.append({**c.model_dump(), "in_retrieved": in_retrieved, "supported": c.supported if in_retrieved else None})
+    for _ in range(attempts):
+        out = []
+        for c in _judge(Citations, prompt).claims:
+            in_retrieved = bool(c.cited_url) and norm_url(c.cited_url) in retrieved
+            out.append({**c.model_dump(), "in_retrieved": in_retrieved, "supported": c.supported if in_retrieved else None})
+        if not any(c["in_retrieved"] and c["supported"] is None for c in out):
+            break
+        prompt += ("\n\nFor EVERY claim whose cited URL is among the retrieved sources, set supported to true or "
+                   "false after checking the text; null is only for claims whose URL was not retrieved.")
     numeric = [c for c in out if c["numeric"]]
     cited = [c for c in out if c["cited_url"]]
     return {"claims": out, "numeric_claims": len(numeric), "numeric_cited": sum(1 for c in numeric if c["cited_url"]),
             "cited": len(cited), "supported": sum(1 for c in cited if c["supported"] is True),
-            "not_retrieved": sum(1 for c in cited if not c["in_retrieved"])}
+            "not_retrieved": sum(1 for c in cited if not c["in_retrieved"]),
+            "undecided": sum(1 for c in cited if c["in_retrieved"] and c["supported"] is None)}
 
 
 def score_sources(answer: str, retrieved: dict[str, dict], hosts: set[str]) -> dict:

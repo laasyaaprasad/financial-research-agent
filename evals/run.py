@@ -24,7 +24,7 @@ import typer
 from rich.console import Console
 
 from agents import tracing
-from evals.scorers import JUDGE_MODEL, primary_hosts, score_row
+from evals.scorers import JUDGE_MODEL, primary_hosts, retrieved_index, score_citations, score_row
 
 ROOT = Path(__file__).resolve().parent.parent
 SETS = {"dev": ROOT / "evals" / "golden.jsonl", "test": ROOT / "evals" / "test_heldout.jsonl",
@@ -80,6 +80,11 @@ def _pct(n: float, d: float) -> str:
     return f"{100 * n / d:.0f}%" if d else "n/a"
 
 
+def _undecided(c: dict) -> int:
+    """Cited claims the citation judge left undecided although their source was retrieved."""
+    return c.get("undecided", sum(1 for x in c.get("claims", []) if x.get("in_retrieved") and x.get("supported") is None))
+
+
 def summarize(records: list[dict]) -> dict:
     def agg(rs: list[dict]) -> dict:
         fixed = [r for r in rs if r["time_sensitivity"] == "static"]
@@ -96,8 +101,9 @@ def summarize(records: list[dict]) -> dict:
             "dynamic_correct": sum(r["scores"]["correctness"]["verdict"] == "correct" for r in dyn),
             "numeric_claims": sum(c["numeric_claims"] for c in cit),
             "numeric_cited": sum(c["numeric_cited"] for c in cit),
-            "cited_claims": sum(c["cited"] for c in cit),
+            "cited_claims": sum(c["cited"] - _undecided(c) for c in cit),
             "supported": sum(c["supported"] for c in cit),
+            "undecided": sum(_undecided(c) for c in cit),
             "cited_urls": sum(len(s["cited_urls"]) for s in src),
             "cited_primary": sum(s["cited_primary"] for s in src),
             "errors": sum(1 for r in rs if r["output"].get("error")),
@@ -255,13 +261,37 @@ def rescore(source: str, name: Annotated[str | None, typer.Argument(help="New ru
             workers: int = 4, votes: Annotated[int, typer.Option(
                 help="Judge each answer this many times and keep the majority verdict")] = 1,
             judge_errors: Annotated[bool, typer.Option(
-                help="Re-judge, in place, only answers whose grading failed (e.g. provider overload)")] = False) -> None:
+                help="Re-judge, in place, only answers whose grading failed (e.g. provider overload)")] = False,
+            undecided_citations: Annotated[bool, typer.Option(
+                help="Re-check, in place, only the citations of answers with undecided claims")] = False) -> None:
     """Re-judge a saved run's answers without re-running the agent."""
     src = RESULTS / "raw" / source
     first = json.loads((src / "manifest.json").read_text()) if (src / "manifest.json").exists() else {
         "agent": "starter", "set": "dev", "code": "6300b5f (M1 harness)", "model": "moonshotai/Kimi-K2.6"}
     rows = {r["id"]: r for s in SETS for r in load_set(s)}
     hosts = primary_hosts(list(rows.values()))
+    if undecided_citations:
+        name, out_dir = source, src
+        redo = [p for p in sorted(src.glob("[GTHDXE][0-9]*.json"))
+                if _undecided(json.loads(p.read_text())["scores"]["citations"])
+                or json.loads(p.read_text())["scores"]["citations"].get("judge_error")]
+        manifest = {**first, "citations_rechecked": first.get("citations_rechecked", []) + [p.stem for p in redo]}
+        (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=1))
+
+        def recheck(path: Path) -> dict:
+            rec = json.loads(path.read_text())
+            retrieved = retrieved_index(rec["output"].get("tool_results") or [])
+            try:
+                rec["scores"]["citations"] = score_citations(rec["output"].get("answer") or "", retrieved)
+            except RuntimeError as exc:
+                rec["scores"]["citations"]["judge_error"] = str(exc)[:300]
+            path.write_text(json.dumps(rec, indent=1, ensure_ascii=False, default=str))
+            return rec
+
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            list(pool.map(recheck, redo))
+        finish(name, manifest, [json.loads(p.read_text()) for p in sorted(src.glob("[GTHDXE][0-9]*.json"))])
+        return
     if judge_errors:
         name, out_dir = source, src
         votes = first.get("judge_votes", votes)

@@ -292,3 +292,13 @@ def test_table_text_cells_match_on_fiscal_label():
     assert _same_label("third quarter of fiscal 2026", "Q3 FY2026")
     assert not _same_label("Q2 FY2026", "Q3 FY2026")
     assert not _same_label("Q3 FY2025", "Q3 FY2026")
+
+
+def test_citation_check_asks_again_when_claims_are_left_undecided(monkeypatch):
+    import evals.scorers as scorers
+    url = "https://www.sec.gov/a.htm"
+    replies = [[{"claim": "Revenue was $5 million.", "numeric": True, "cited_url": url, "reason": "", "supported": None}],
+               [{"claim": "Revenue was $5 million.", "numeric": True, "cited_url": url, "reason": "", "supported": True}]]
+    monkeypatch.setattr(scorers, "_judge", lambda schema, prompt: schema(claims=replies.pop(0)))
+    result = scorers.score_citations("Revenue was $5 million [1].", {scorers.norm_url(url): {"url": url, "content": "x"}})
+    assert result["supported"] == 1 and result["undecided"] == 0 and not replies
