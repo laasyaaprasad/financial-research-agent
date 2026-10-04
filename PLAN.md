@@ -16,6 +16,7 @@ The baseline comes first so every later change can be measured against the start
 | M4 | Held-out test sets | 20 questions (`7ae904f`), 20 hard questions (`80b9802`), 8 table tasks (`38a7190`), each frozen before the agent ran on it | done |
 | M5 | Final evaluation | Baseline vs. agent on dev, held-out, hard and table sets, same model, within the credit budget | done |
 | M6 | Submission package | README, final report, build record | done |
+| M7 | Ambiguous and incomplete questions | Terse, vague or unanswerable analyst questions get a stated interpretation, a clarifying question or a clear decline; 16 held-out questions frozen first | see below |
 
 ## M0: Project setup
 
@@ -233,7 +234,7 @@ The superseded code was removed from the working tree; it remains in git history
     - our agent beats the shipped starter by far more than run-to-run variation on correctness, verified-correct and citations
     - every refusal correct
     - at least 90% of cited claims supported (91%)
-    - Tavily credits stayed within the budget (by Tavily's own count)
+  - **Not met: budget.** Tavily's usage endpoint reported 1,884 credits used on 2026-10-04 against the 1,500-credit plan, with 384 billed pay-as-you-go. The dashboard reading of 711 used earlier lagged badly. Most of the credits went to the starter runs.
   - **Same-model comparison:** correctness is a tie, so the architecture's own contribution is trust and cost. The README and REPORT say so plainly.
 
 **Acceptance criteria**
@@ -249,3 +250,41 @@ The superseded code was removed from the working tree; it remains in git history
 - **`results/final/`:** `results.md` (regenerate with `uv run python -m evals.report --final`), scorecards, and compact per-question records.
 - **Build record:** the exported session transcript.
 - **Repo contents:** no `starter_agent.py`, `.env` or assignment brief in the repo; `scripts/check_secrets.py` reports no key material.
+
+## M7: Ambiguous and incomplete questions
+
+Real analysts type "walmart revenue", "stz q2 net sales", "texas rev y/y last q" or "dltr a buy after this drop?". M3–M6 only tested well-formed questions, so this milestone tests and handles the rest. It has zero Tavily cost: every run here uses web search off, because the account was already past its plan (see M5).
+
+**Behaviour spec**, set before any run. The agent is single-turn, so "asking" means the answer is a clarifying question with no figures.
+- **Answer, and state the interpretation** when a sensible default exists:
+  - no period: the latest reported one; a quarter without a year: the latest such quarter
+  - years and quarters are fiscal, with dates, and the answer says so when the fiscal year isn't the calendar year
+  - vague metrics take their standard reading: sales = total revenue, earnings = GAAP net income and EPS, margins = gross and operating margin
+  - "how is X doing" = the latest quarter's headline results and guidance
+  - tickers, brands, former names and partial names: say which reporting company was meant
+- **Ask one clarifying question** when there is no reasonable reading: no company named, a name shared by several companies with nothing in the question singling one out, input that isn't a question, or a request to rank a whole sector.
+- **Decline the out-of-scope part** and answer the rest: advice, price targets, share prices, consensus, and requests to guess or ballpark unreported figures.
+- **Say it can't exist yet:** unreported periods, undisclosed metrics, private or deregistered companies.
+
+**Sets.** An analyst subagent wrote 40 questions across 12 edge-case types, each with a behaviour rubric. I checked their periods, dates and statuses against SEC filings. The 40 were split at random within each type (seed 20261004):
+- `evals/edge_dev.jsonl`: 24 dev questions.
+- `evals/test_edge.jsonl`: 16 held-out questions, frozen before any run (`test_edge_manifest.json`, commit `6b26c9d`).
+
+They're graded by the same judge, against the rubric and the agent's retrieved sources.
+
+**What changed (`3208211`)**, each traced to a dev failure:
+
+| Dev failure | Fix |
+|---|---|
+| "texas rev y/y last q" answered for Texas Instruments; "what was revenue last quarter?", "ebitda" and gibberish got "not available" | Company step returns a clarifying question (no research, about 1.5 s) when there's no reasonable reading; it runs with low reasoning effort, which separated "texas"/"american" (ask) from "delta … passenger revenue"/"f adj ebit" (answer) |
+| Kroger update didn't say the quarter was fiscal; open choices were invisible | Planner records `assumptions`, shown as "Interpreted as" at the top of the brief |
+| "pg fy27 net sales ballpark it" produced a projected FY2027 dollar figure from guidance | Planner `out_of_scope` (advice, targets, prices, consensus, requested estimates), shown as a separate section; writer and verifier reject projections of unreported figures |
+| Publix (files 10-Qs, no ticker) refused as "not an SEC registrant" | EDGAR company-name search for filers missing from the ticker list; a filer must have filed a periodic report within 400 days, otherwise it's reported as no longer filing |
+| Disney FY2026 projected to end Sept 26 (it's a 53-week year ending Oct 3) | Projected 52/53-week years use SEC's fiscal year end; checked on 25 companies |
+| Constellation Q2 used an early-September outlook 8-K as the "earnings release" | The results release is the last item 2.02 filing before the periodic report (this also fixed Tesla's deliveries 8-Ks being read as results) |
+| Shell (20-F filer) quarterly results | Calendar notes that annual-only filers' quarters need a web search; untested here because web is off |
+
+**Acceptance criteria**
+- **Dev:** at least 90% of dev questions meet every rubric point.
+- **Held-out:** clear improvement on the held-out set, with no code changes after its result.
+- **No regressions:** the original dev set and the dev table tasks, replayed from saved Tavily responses at zero credits, are no worse than before.

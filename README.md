@@ -60,9 +60,10 @@ Baseline credits are counted from its calls (1 per basic search, 2 per advanced)
 
 ```mermaid
 flowchart TD
-    Q[Question + as-of date] --> R[Resolve companies<br/>model names them; SEC ticker list confirms]
+    Q[Question + as-of date] --> R[Resolve companies<br/>model names them; SEC ticker list<br/>or EDGAR name search confirms]
+    R -- no reasonable reading --> X[Clarifying question<br/>no research, no figures]
     R --> C[Reporting calendar per company<br/>fiscal labels, exact dates,<br/>filed / earnings release only / not yet reported]
-    C --> P[Plan: one model call<br/>answer periods, filings to read, ≤3 web searches]
+    C --> P[Plan: one model call<br/>interpretation, out-of-scope parts,<br/>answer periods, filings, ≤3 web searches]
     P --> S[SEC evidence, free<br/>release and 10-Q/10-K passages,<br/>XBRL facts for every answer period]
     P --> W[Tavily<br/>basic search + one extract,<br/>news, call commentary, non-filers]
     S --> E[Numbered evidence]
@@ -72,14 +73,14 @@ flowchart TD
     K --> V{Verifier: company, metric, period,<br/>basis, actual vs guidance}
     V -- problems, once --> D
     V -- 'not in evidence' gaps, once --> W
-    V --> B[Cited brief or table<br/>not-available items · sources · draft for review]
+    V --> B[Cited brief or table<br/>interpreted as · not available · out of scope · sources]
 ```
 
 | Step | Module | What it does |
 |---|---|---|
-| Resolve | `agents/company.py` | The model names the companies; code resolves them against SEC's ticker list. Private or ambiguous names stay unresolved. |
-| Calendar | `agents/fiscal.py` | Builds each company's reporting periods from its own filings: fiscal labels (naming convention read from its annual-report XBRL), exact dates (including irregular quarters such as 12/12/12/16 weeks) and reporting status as of the question date. |
-| Plan | `agents/planner.py` | One call picks the answer periods, the filings to read and any web searches; code drops anything not in the calendar. |
+| Resolve | `agents/company.py` | The model names the companies, or returns one clarifying question when there's no reasonable reading (no company, a name shared by several companies, not a question, a sector ranking). Code resolves names against SEC's ticker list, then EDGAR's company search for filers without a ticker. Private, deregistered or ambiguous names stay unresolved. |
+| Calendar | `agents/fiscal.py` | Builds each company's reporting periods from its own filings: fiscal labels (naming convention read from its annual-report XBRL), exact dates (including irregular quarters such as 12/12/12/16 weeks, and 53-week years projected from SEC's fiscal year end) and reporting status as of the question date. When several item 2.02 filings follow a period (an outlook update, delivery numbers), the last one before the periodic report is taken as the results release. |
+| Plan | `agents/planner.py` | One call records how open parts of the question were read (period, fiscal vs calendar, metric definition, which company a ticker or brand means), lists out-of-scope parts (advice, price targets, prices, consensus, requested estimates), and picks the answer periods, filings and any web searches; code drops anything not in the calendar. |
 | Evidence | `agents/research.py` | **SEC:** BM25-ranked passages from earnings releases and 10-Q/10-K filings, plus XBRL facts for every answer period (core income-statement lines always included). **Tavily:** basic search, one query-focused extract, social media excluded, plus one gap-filling round if the writer reports something missing. |
 | Write and verify | `agents/writer.py` | Claims and table cells must quote their sources verbatim. Code rejects any quote that isn't in its source, rejects any number that isn't in a quote, and evaluates calculations itself (for example, fiscal Q4 = full year minus nine months). A verifier checks meaning. One revision is allowed; anything that still fails is withheld. |
 | Orchestrate | `agents/pipeline.py` | Runs the steps, renders the brief or table and provides the CLI. |
@@ -109,6 +110,8 @@ flowchart TD
 | `evals/test_hard.jsonl` | 20 questions: point-in-time, filing-only figures for mid/small caps, multi-step fiscal calculations, traps, guidance vs. actual | Held-out |
 | `evals/test_tables.jsonl` | 8 analyst table tasks (peer comps across fiscal calendars, 8-quarter trend with derived Q4, TTM and balance-sheet comps, segments), 86 cells | Held-out |
 | `evals/dev_tables.jsonl` | 3 table tasks on dev-set companies | Dev for table support |
+| `evals/edge_dev.jsonl` | 24 ambiguous or incomplete questions ("walmart revenue", "texas rev y/y last q", "dltr a buy after this drop?"), graded against behaviour rubrics | Dev for M7 |
+| `evals/test_edge.jsonl` | 16 more from the same pool, split at random within each of 12 edge-case types | Held-out (M7) |
 
 How the held-out sets were kept honest:
 - **Built blind.** Each held-out set was built by a research subagent from SEC filings, without seeing either agent's outputs.
@@ -122,6 +125,7 @@ How the answers were graded:
 - **Cell-by-cell tables.** For table tasks the judge only extracts each cell's value; code compares it to the reference within tolerance.
 - **Citation checks.** Every cited claim is checked against the text the agent actually retrieved.
 - **No self-grading.** The judge is a different model family from both agents.
+- **Votes for behaviour rubrics.** Grading the same edge-case answers twice flipped up to 8 of 24 verdicts, so those runs are graded three times and the median verdict is kept (`--votes 3`).
 - **Guard test.** `tests/test_agent.py` fails if any evaluation-set company name appears in `agents/`.
 
 ## Usage
