@@ -29,7 +29,8 @@ from evals.scorers import JUDGE_MODEL, primary_hosts, score_row
 ROOT = Path(__file__).resolve().parent.parent
 SETS = {"dev": ROOT / "evals" / "golden.jsonl", "test": ROOT / "evals" / "test_heldout.jsonl",
         "hard": ROOT / "evals" / "test_hard.jsonl", "dev_tables": ROOT / "evals" / "dev_tables.jsonl",
-        "tables": ROOT / "evals" / "test_tables.jsonl"}
+        "tables": ROOT / "evals" / "test_tables.jsonl", "edge_dev": ROOT / "evals" / "edge_dev.jsonl",
+        "edge": ROOT / "evals" / "test_edge.jsonl"}
 RESULTS = ROOT / "results"
 FIELDS = ("id", "category", "difficulty", "time_sensitivity", "answer_type", "question", "grading", "answer")
 # Rows of table sets also carry "cells"; scorers grade those cell by cell.
@@ -92,6 +93,7 @@ def summarize(records: list[dict]) -> dict:
             "fixed_score": statistics.mean(r["scores"]["correctness"]["score"] for r in fixed) if fixed else None,
             "dynamic_n": len(dyn),
             "dynamic_score": statistics.mean(r["scores"]["correctness"]["score"] for r in dyn) if dyn else None,
+            "dynamic_correct": sum(r["scores"]["correctness"]["verdict"] == "correct" for r in dyn),
             "numeric_claims": sum(c["numeric_claims"] for c in cit),
             "numeric_cited": sum(c["numeric_cited"] for c in cit),
             "cited_claims": sum(c["cited"] for c in cit),
@@ -126,7 +128,7 @@ HEAD = ("| Slice | Qs | Fixed answers: fully correct (mean score) | Time-sensiti
 
 def _row(label: str, a: dict) -> str:
     fixed = f"{a['fixed_correct']}/{a['fixed_n']} ({a['fixed_score']:.2f})" if a["fixed_n"] else "–"
-    dyn = f"{a['dynamic_score']:.2f} (n={a['dynamic_n']})" if a["dynamic_n"] else "–"
+    dyn = f"{a['dynamic_correct']}/{a['dynamic_n']} all met ({a['dynamic_score']:.2f})" if a["dynamic_n"] else "–"
     return (f"| {label} | {a['n']} | {fixed} | {dyn} | {_pct(a['numeric_cited'], a['numeric_claims'])} "
             f"| {_pct(a['supported'], a['cited_claims'])} | {_pct(a['cited_primary'], a['cited_urls'])} |")
 
@@ -201,10 +203,10 @@ def run(
     rows = load_set(set_name, ids)
     raw_dir = RESULTS / "raw" / name
     done = {}
-    if raw_dir.exists() and any(raw_dir.glob("[GTHDX][0-9]*.json")):
+    if raw_dir.exists() and any(raw_dir.glob("[GTHDXE][0-9]*.json")):
         if not resume:
             raise typer.BadParameter(f"results/raw/{name} already exists; choose a new run name or pass --resume")
-        done = {p.stem: json.loads(p.read_text()) for p in raw_dir.glob("[GTHDX][0-9]*.json")}
+        done = {p.stem: json.loads(p.read_text()) for p in raw_dir.glob("[GTHDXE][0-9]*.json")}
     raw_dir.mkdir(parents=True, exist_ok=True)
     runner = agent_runner(agent, name, web, web_cache_from)
     hosts = primary_hosts([r for s in SETS for r in load_set(s)])
@@ -265,7 +267,7 @@ def rescore(source: str, name: str, workers: int = 4) -> None:
         return rec
 
     with ThreadPoolExecutor(max_workers=workers) as pool:
-        records = list(pool.map(one, sorted(src.glob("[GTHDX][0-9]*.json"))))
+        records = list(pool.map(one, sorted(src.glob("[GTHDXE][0-9]*.json"))))
     finish(name, manifest, records)
 
 
@@ -273,7 +275,7 @@ def rescore(source: str, name: str, workers: int = 4) -> None:
 def compare(run_a: str, run_b: str) -> None:
     """Side-by-side metrics and per-question verdict changes for two runs on the same set."""
     def load(n):
-        recs = {p.stem: json.loads(p.read_text()) for p in (RESULTS / "raw" / n).glob("[GTHDX][0-9]*.json")}
+        recs = {p.stem: json.loads(p.read_text()) for p in (RESULTS / "raw" / n).glob("[GTHDXE][0-9]*.json")}
         return recs, json.loads((RESULTS / f"summary_{n}.json").read_text())
 
     (ra, sa), (rb, sb) = load(run_a), load(run_b)

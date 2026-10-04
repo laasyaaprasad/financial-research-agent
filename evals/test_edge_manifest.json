@@ -1,0 +1,10 @@
+{
+  "file": "evals/test_edge.jsonl",
+  "sha256": "d2e321e3f9747371e22196ef82dbe3c2fa633ef0d19913a3df1806c557100b65",
+  "frozen_at": "2026-10-04",
+  "questions": 16,
+  "companies": 14,
+  "design": "Ambiguous, incomplete and edge-case analyst questions (missing period or company, vague metric, open-ended updates, fiscal vs calendar wording, brands/tickers/former names, ambiguous names, out-of-scope requests, unreported periods with estimate pressure, private and non-SEC companies, malformed input, mixed answerable/unanswerable parts). Written by an analyst subagent from a behaviour spec (answer with stated assumptions / clarify / decline the out-of-scope part / say it cannot exist), split from a 40-question pool at random within each category (seed 20261004); the other half is evals/edge_dev.jsonl.",
+  "verification": "Reporting periods, statuses and dates checked against SEC submissions and the agent-independent calendar code; FedEx fiscal-year change, Walgreens delisting (25-NSE 2025-08-28) and Publix 10-Q filing confirmed from EDGAR.",
+  "rule": "Frozen before any agent run on it; no agent code changes in response to its results."
+}

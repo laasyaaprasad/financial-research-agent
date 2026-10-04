@@ -155,6 +155,7 @@ Instructions:
 - Split the grading rule into its individual requirements and judge each as met or not met.
 - Numbers: apply the stated tolerance. Wrong fiscal period, unit, scale or entity means not met even if a number is close.
 - Abstain questions: met only if the agent clearly says the figure is not available/disclosed and presents no number as an actual reported result.
+- Clarify questions: met only if the agent asks a clarifying question (naming the plausible options where relevant) and presents no figures as the answer.
 - verdict = correct if every requirement is met, partial if some, incorrect if none or the core answer is wrong."""
     result = _judge(Correctness, prompt)
     score = sum(p.met for p in result.points) / len(result.points)
