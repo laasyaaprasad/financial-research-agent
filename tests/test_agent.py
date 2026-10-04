@@ -262,7 +262,7 @@ def test_table_rendering_pivots_cells_with_citations():
     cells = [{"row": "Q1 FY2026", "column": "Revenue (USD m)", "value": "100", "evidence_ids": ["E1"]},
              {"row": "Q1 FY2026", "column": "Margin (%)", "value": "20.0", "evidence_ids": ["E1"]},
              {"row": "Q2 FY2026", "column": "Revenue (USD m)", "value": "110", "evidence_ids": ["E2"]}]
-    lines = _table(cells, lambda ids: "".join(f"[{i[1:]}]" for i in ids))
+    lines = _table(cells, lambda cell: "".join(f"[{i[1:]}]" for i in cell["evidence_ids"]))
     assert lines[0] == "| | Revenue (USD m) | Margin (%) |"
     assert lines[2] == "| Q1 FY2026 | 100 [1] | 20.0 [1] |"
     assert lines[3] == "| Q2 FY2026 | 110 [2] | — |"

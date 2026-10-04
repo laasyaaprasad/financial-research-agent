@@ -83,6 +83,8 @@ flowchart TD
 | Evidence | `agents/research.py` | **SEC:** BM25-ranked passages from earnings releases and 10-Q/10-K filings, plus XBRL facts for every answer period (core income-statement lines always included). **Tavily:** basic search, one query-focused extract, social media excluded, plus one gap-filling round if the writer reports something missing. |
 | Write and verify | `agents/writer.py` | Claims and table cells must quote their sources verbatim. Code rejects any quote that isn't in its source, rejects any number that isn't in a quote, and evaluates calculations itself (for example, fiscal Q4 = full year minus nine months). A verifier checks meaning. One revision is allowed; anything that still fails is withheld. |
 | Orchestrate | `agents/pipeline.py` | Runs the steps, renders the brief or table and provides the CLI. |
+| Follow-ups | `agents/followup.py` | In the chat, one model call rewrites a follow-up (or a reply to a clarification question) into a standalone question for the pipeline. It never answers. |
+| Chat UI | `ui/` | Chainlit front end over the same pipeline (see [Chat UI](#chat-ui)). |
 | Trace | `agents/tracing.py` | Langfuse via OpenTelemetry: one trace per question, with model and Tavily calls and the eval scores attached. |
 
 ## Scope
@@ -134,6 +136,23 @@ uv run python -m agents.pipeline "Compare revenue and operating margin for <comp
 uv run python -m agents.pipeline --today 2026-03-31 "What was <company>'s most recently reported quarterly revenue?"
 ```
 
+### Chat UI
+
+A conversational front end built on [Chainlit](https://github.com/Chainlit/chainlit), an open-source chat UI for Python LLM apps. It's an optional dependency group, so the agent and eval environments don't change.
+
+```bash
+uv run --group ui python -m ui            # http://localhost:8000; Chainlit options pass through, e.g. --port 8001
+```
+
+- **Citations on every statement.** Each claim, table cell and "not available" item ends with `[n]` markers. A marker links to its source, opened at the quoted passage where the browser can find it (URL text fragments). Hovering a marker shows the verbatim quote the statement relies on.
+- **Linked sources at the end.** A numbered list gives each source's title, domain, date and whether it is primary (SEC or company) or secondary.
+- **Evidence panel.** A side panel lists every source of the answer with the quotes behind each statement and any calculation, both the inputs and the expression computed in code. Each answer has its own panel, newest first.
+- **Progress steps.** While it runs (median 40 s), the chat shows each pipeline stage: companies identified (name, ticker, CIK), the research plan, filings read, web results, and statements verified or withheld.
+- **Conversation.** Follow-ups ("and the prior quarter?", "compare that with its closest peer") and replies to clarification questions are rewritten into a standalone question, shown as **Researched as**, before research. The rewrite runs only when there is earlier conversation. Later in a conversation, a message that isn't a research request (thanks, a greeting) gets a short description of the tool instead of research.
+- **Settings:** an as-of date for point-in-time questions, and a switch for live web search. With it off, the chat answers from SEC data and cached Tavily responses only, without spending credits.
+
+The UI calls `agents.pipeline.run` like the CLI and the eval harness do, so the answers are the ones that were evaluated. The CLI brief is unchanged byte for byte; the chat renders the same statements with links. Conversations are kept for the session only (no chat history database).
+
 Evaluate and test:
 
 ```bash
@@ -155,16 +174,17 @@ uv run python scripts/check_secrets.py       # scan files for key material
 - **SEC filers only:** foreign issuers' local filings and private companies get only what the web provides.
 - **No licensed data:** no consensus, estimates or paywalled transcripts. The beat/miss checks use company guidance, not consensus.
 - **Small samples:** 20-question sets and 8 table tasks detect large differences only, and the dev and table "dev" sets are small.
+- **Follow-up rewriting isn't evaluated.** The evaluation sets are single-turn, so the chat's rewrite of follow-ups into standalone questions was only checked by hand; a wrong rewrite is visible as **Researched as** above the answer.
 - **Skipped on purpose:**
   - a multi-agent supervisor: research found it costs about 15× the tokens, and these tasks have known shapes
   - Tavily `/research`: it hides source tiers and claim-level checking
   - a vector database: evidence is fetched fresh for each question
-  - a web UI
 
 ## Repository
 
 ```
-agents/      pipeline (company, fiscal, planner, research, writer, pipeline), baseline, tracing, llm, edgar
+agents/      pipeline (company, fiscal, planner, research, writer, pipeline), followup, baseline, tracing, llm, edgar
+ui/          chat UI (Chainlit app, chat rendering, config, readme)
 evals/       question sets + manifests + source notes, run.py (harness), scorers.py, report.py
 results/     final/ (results.md, scorecards, per-question records), history_kimi_baseline/ (starter on its original model)
 scripts/     check_env.py, check_secrets.py, verify_traces.py
