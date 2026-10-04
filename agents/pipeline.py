@@ -15,9 +15,9 @@ from urllib.parse import urlparse
 
 from agents import tracing
 from agents.company import resolve
-from agents.edgar import EdgarClient
+from agents.edgar import EdgarClient, EdgarError
 from agents.llm import AGENT_MODEL
-from agents.planner import Plan, plan, validate
+from agents.planner import Plan, fallback, plan, validate
 from agents.research import SearchConfig, Web, gap_evidence, number_evidence, sec_evidence, to_dicts, web_evidence
 from agents.writer import write
 
@@ -49,6 +49,12 @@ def render(question: str, today: date, result: dict, evidence: dict) -> str:
         return "".join(marks)
 
     lines = [f"**Question:** {question}", f"*As of {today}*", ""]
+    if result.get("draft_failed"):
+        found = list(evidence.values())[:8]
+        lines += ["**No verified answer.** The model service failed while drafting the answer, so nothing was "
+                  "checked or cited. Sources retrieved for it:"]
+        lines += [f"- {e['title']} ({urlparse(e['url']).netloc}, {e['date'] or 'undated'}) {e['url']}" for e in found]
+        return "\n".join(lines + ["", f"_{DISCLAIMER}_"])
     if result.get("assumptions"):
         lines += ["**Interpreted as:** " + " ".join(result["assumptions"]), ""]
     if result.get("table"):
@@ -92,15 +98,21 @@ def run(question: str, *, today: date | None = None, callbacks=None, web_cache: 
         for k in tokens:
             tokens[k] += t.get(k, 0)
 
-    companies, clarification, t = resolve(question, today, client, callbacks)
+    try:
+        companies, clarification, t = resolve(question, today, client, callbacks)
+    except (ValueError, EdgarError) as exc:  # model or SEC unavailable: say so rather than return nothing
+        return failed(question, today, f"identifying the company failed ({type(exc).__name__})", tokens, start)
     add(t)
     if clarification:  # nothing to research until the user says what they mean
         return clarify(question, today, clarification, tokens, start)
     if fixed_plan:
         research_plan = validate(fixed_plan, companies)
     else:
-        research_plan, t = plan(question, companies, today, callbacks)
-        add(t)
+        try:
+            research_plan, t = plan(question, companies, today, callbacks)
+            add(t)
+        except ValueError:
+            research_plan = fallback(question, companies)
     web = Web(web_cache, live=live_web)
     evidence = sec_evidence(question, research_plan, companies, today, client)
     evidence += asyncio.run(web_evidence(question, research_plan, companies, today, web, search))
@@ -114,9 +126,11 @@ def run(question: str, *, today: date | None = None, callbacks=None, web_cache: 
         known = {e.url for e in evidence}
         extra = [e for e in asyncio.run(gap_evidence(question, gaps, companies, today, web, search)) if e.url not in known]
         if extra:
-            evidence = number_evidence(evidence + extra)
-            result = write(question, today, research_plan.availability_notes, evidence, callbacks, **framing)
-            add(result["tokens"])
+            evidence = number_evidence(evidence + extra)  # new items are numbered after the existing ones
+            rewritten = write(question, today, research_plan.availability_notes, evidence, callbacks, **framing)
+            add(rewritten["tokens"])
+            if not rewritten.get("draft_failed"):  # otherwise keep the first, already checked answer
+                result = rewritten
 
     result.update(framing)
     by_id = {e["id"]: e for e in to_dicts(evidence)}
@@ -150,7 +164,16 @@ def run(question: str, *, today: date | None = None, callbacks=None, web_cache: 
         "gaps_searched": gaps,
         **framing,
         "clarification": None,
+        "error": f"drafting failed: {result['draft_failed']}" if result.get("draft_failed") else None,
     }
+
+
+def failed(question: str, today: date, reason: str, tokens: dict, start: float) -> dict:
+    """The answer when a step before research fails: an explicit message, never an empty answer."""
+    out = clarify(question, today, "", tokens, start)
+    out["answer"] = "\n".join([f"**Question:** {question}", f"*As of {today}*", "",
+                               f"**No answer.** {reason[0].upper() + reason[1:]}; please try again."])
+    return {**out, "clarification": None, "error": reason}
 
 
 def clarify(question: str, today: date, clarification: str, tokens: dict, start: float) -> dict:

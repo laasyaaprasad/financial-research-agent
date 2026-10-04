@@ -22,18 +22,21 @@ def structured(schema: type[T], system: str, user: str, *, model: str = AGENT_MO
 
     `reasoning` sets the model's thinking budget ("none", "low", "medium"): simple extraction
     needs none, while writing the answer benefits from more. If an attempt returns no parsable
-    output (usually a long context exhausting the thinking budget), the next attempt thinks
-    less; transient connection/server errors are retried after a short wait.
+    output or times out (usually a long context exhausting the thinking budget), the next attempt
+    thinks less; transient connection/server errors are retried after a short wait. Each request
+    waits at most 180 s and is retried once by the client, which bounds a slow provider's delay.
     """
     tokens = {"input": 0, "output": 0}
     error = None
     for attempt in range(retries + 1):
-        llm = ChatNebius(model=model, temperature=0, timeout=240, max_retries=2, reasoning_effort=reasoning)
+        llm = ChatNebius(model=model, temperature=0, timeout=180, max_retries=1, reasoning_effort=reasoning)
         runnable = llm.with_structured_output(schema, method="function_calling", include_raw=True)
         try:
             response = runnable.invoke([("system", system), ("human", user)], config={"callbacks": callbacks or []})
-        except Exception as exc:  # connection errors and 5xx from the provider
+        except Exception as exc:  # connection errors, timeouts and 5xx from the provider
             error = f"{type(exc).__name__}: {exc}"[:300]
+            if "timeout" in type(exc).__name__.lower() or "timed out" in str(exc).lower():
+                reasoning = LOWER[reasoning]
             time.sleep(5 * (attempt + 1))
             continue
         usage = getattr(response["raw"], "usage_metadata", None) or {}

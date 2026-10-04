@@ -349,3 +349,172 @@ def test_advanced_search_uses_chunks_and_company_sites(monkeypatch):
     assert own_site["include_domains"] == ["acme.com"] and "include_domains" not in open_web
     assert own_site["chunks_per_source"] == 3 and own_site["topic"] == "finance"
     assert items[0].tier == "primary" and items[1].tier == "secondary"
+
+
+# ---------- matching web results to the company ----------
+
+def _result(text):
+    return {"title": text, "content": ""}
+
+
+def test_company_match_uses_short_names_not_the_first_legal_word():
+    from agents.research import _is_company_source, _mentions_company
+    # The press uses the bracketed short name; the first legal word alone is an ordinary word.
+    c = Company(requested="ejemtex", name="Industria Ejemplo de Tejidos, S.A. (Ejemtex)", resolved=False)
+    assert _mentions_company(_result("Ejemtex first-half sales rise 7%"), [c])
+    assert not _mentions_company(_result("La industria de telecomunicaciones crece"), [c])
+    assert _is_company_source("https://www.ejemtex.com/en/press/h1-results", [c])
+    assert not _is_company_source("https://www.telecom-news.es/industria", [c])
+
+
+def test_company_match_ignores_common_first_words_and_other_companies_sites():
+    from agents.research import _is_company_source, _mentions_company
+    c = Company(requested="first acme", name="FIRST ACME BANK CORP /XX/", ticker="FAB", cik="1", aliases=["First Acme"])
+    assert _mentions_company(_result("First Acme lifts net interest income outlook"), [c])
+    assert not _mentions_company(_result("Bank earnings in the first quarter"), [c])
+    assert _mentions_company(_result("Shares of FAB rose after the call"), [c])          # ticker, case-sensitive
+    assert not _mentions_company(_result("a fab new product"), [c])
+    assert _is_company_source("https://investor.firstacme.com/news", [c])
+    assert not _is_company_source("https://investors.othercorp.com/news", [c])          # someone else's IR site
+    assert not _is_company_source("https://www.bankrate.com/acme", [c])
+
+
+def test_company_match_respects_word_boundaries_and_short_tickers():
+    from agents.research import _is_company_source, _mentions_company
+    c = Company(requested="f", name="ACME MOTOR CO", ticker="F", cik="2", aliases=["Acme"])
+    assert _mentions_company(_result("Acme's quarterly EBIT beat"), [c])                 # apostrophe normalized
+    assert not _mentions_company(_result("Acmeplex opens a new site; F grade for traffic"), [c])
+    assert not _is_company_source("https://www.acmeplexnews.com/a", [c])               # short names match labels exactly
+    assert _is_company_source("https://acme-global.com/ir", [c])
+
+
+def test_company_match_handles_possessives_and_registry_names():
+    from agents.research import _mentions_company
+    c = Company(requested="acmes", name="ACMES COMPANIES INC", ticker="AQX", cik="3")  # registry form of "Acme's"
+    assert _mentions_company(_result("Acme's second-quarter comparable sales fell"), [c])
+    assert _mentions_company(_result("ACMES Companies reports results"), [c])
+
+
+# ---------- failures never produce an empty answer ----------
+
+def test_structured_thinks_less_after_a_timeout(monkeypatch):
+    import agents.llm as llm
+    from agents.writer import Review
+    efforts = []
+
+    class APITimeoutError(Exception):
+        pass
+
+    class FakeChat:
+        def __init__(self, **kwargs):
+            efforts.append(kwargs["reasoning_effort"])
+
+        def with_structured_output(self, *a, **k):
+            return self
+
+        def invoke(self, *a, **k):
+            if len(efforts) == 1:
+                raise APITimeoutError("Request timed out.")
+            return {"parsed": Review(checks=[]), "raw": type("Raw", (), {"usage_metadata": {}})()}
+
+    monkeypatch.setattr(llm, "ChatNebius", FakeChat)
+    monkeypatch.setattr(llm.time, "sleep", lambda s: None)
+    llm.structured(Review, "s", "u", reasoning="medium")
+    assert efforts == ["medium", "low"]
+
+
+def _writer_with(monkeypatch, draft_replies):
+    import agents.writer as writer
+    calls = []
+
+    def fake(schema, system, user, *, reasoning="low", callbacks=None, retries=2):
+        calls.append((schema.__name__, reasoning, len(user)))
+        if schema is writer.Draft:
+            reply = draft_replies.pop(0)
+            if isinstance(reply, Exception):
+                raise reply
+            return reply, {"input": 1, "output": 1}
+        return writer.Review(checks=[]), {"input": 1, "output": 1}
+
+    monkeypatch.setattr(writer, "structured", fake)
+    long_text = "\n".join(f"Paragraph {i} about other matters." + " filler" * 200 for i in range(30))
+    evidence = [Evidence(id="E1", url="u", title="t", tier="primary", date=None,
+                         text=long_text + "\nRevenue was $5 million in the quarter.\n" + long_text)]
+    result = writer.write("What was revenue in the quarter?", date(2026, 10, 3), [], evidence)
+    return result, calls
+
+
+def test_writer_retries_with_shorter_evidence_after_a_failure(monkeypatch):
+    from agents.writer import Claim, Draft
+    good = Draft(claims=[Claim(text="Revenue was $5 million.", evidence_ids=["E1"], quotes=["Revenue was $5 million"])])
+    result, calls = _writer_with(monkeypatch, [ValueError("Draft: timed out"), good])
+    (_, first_effort, first_len), (_, second_effort, second_len) = calls[0], calls[1]
+    assert (first_effort, second_effort) == ("medium", "low") and second_len < first_len / 3
+    assert [c["text"] for c in result["claims"]] == ["Revenue was $5 million."]  # still checked against full evidence
+
+
+def test_writer_reports_failure_instead_of_raising(monkeypatch):
+    result, _ = _writer_with(monkeypatch, [ValueError("timed out"), ValueError("timed out again")])
+    assert result["claims"] == [] and "timed out" in result["draft_failed"]
+
+
+def test_planner_fallback_uses_latest_reported_period():
+    from agents.planner import fallback
+    reports = [("10-K", "2025-05-31", "2025-06-20"), ("10-Q", "2025-08-31", "2025-09-10"), ("8-K", "2025-12-18", "2025-12-18")]
+    company = Company(requested="x", name="X Corp", ticker="XX", cik="1",
+                      periods=calendar(FakeEdgar(reports), "1", date(2026, 1, 10)))
+    private = Company(requested="y", name="Y Private", resolved=False)
+    plan = fallback("x and y revenue", [company, private])
+    assert [p.label for p in plan.answer_periods] == ["Q2 FY2026"]  # earnings release only, after the filed Q1
+    assert [d.document for d in plan.documents] == ["earnings_release"]
+    assert len(plan.searches) == 1 and plan.searches[0].query.startswith("Y Private")
+    assert plan.assumptions and plan.availability_notes
+
+
+def test_pipeline_keeps_first_answer_when_gap_rewrite_fails(monkeypatch):
+    import asyncio
+    import agents.pipeline as pipeline
+    company = Company(requested="x", name="X Corp", ticker="XX", cik="1")
+    ev = Evidence(id="", url="https://www.sec.gov/a", title="10-Q", tier="primary", date="2026-08-01", text="Revenue $5 million")
+    extra = Evidence(id="", url="https://news.example.com/b", title="News", tier="secondary", date="2026-09-01", text="x")
+    first = {"claims": [{"text": "Revenue was $5 million.", "evidence_ids": ["E1"], "quotes": ["Revenue $5 million"]}],
+             "table": [], "removed": [], "missing": [], "semantic_check": True, "tokens": {"input": 1, "output": 1},
+             "unavailable": [{"item": "guidance", "kind": "not_in_evidence", "reason": "not found", "evidence_ids": []}]}
+    replies = [first, {"claims": [], "table": [], "unavailable": [], "removed": [], "missing": [], "semantic_check": False,
+                       "tokens": {"input": 1, "output": 1}, "draft_failed": "timed out"}]
+
+    async def no_web(*a, **k):
+        return []
+
+    async def gap(*a, **k):
+        return [extra]
+
+    monkeypatch.setattr(pipeline, "resolve", lambda *a, **k: ([company], None, {"input": 1, "output": 1}))
+    monkeypatch.setattr(pipeline, "plan", lambda *a, **k: (Plan(metrics=["revenue"]), {"input": 1, "output": 1}))
+    monkeypatch.setattr(pipeline, "sec_evidence", lambda *a, **k: [ev])
+    monkeypatch.setattr(pipeline, "web_evidence", no_web)
+    monkeypatch.setattr(pipeline, "gap_evidence", gap)
+    monkeypatch.setattr(pipeline, "write", lambda *a, **k: replies.pop(0))
+    out = pipeline.run("x revenue and guidance", today=date(2026, 10, 3), live_web=False)
+    assert "Revenue was $5 million." in out["answer"] and out["error"] is None
+
+
+def test_pipeline_explains_a_failed_company_step(monkeypatch):
+    import agents.pipeline as pipeline
+
+    def broken(*a, **k):
+        raise ValueError("Mentions: model did not return valid structured output")
+
+    monkeypatch.setattr(pipeline, "resolve", broken)
+    out = pipeline.run("x revenue", today=date(2026, 10, 3), live_web=False)
+    assert "**No answer.**" in out["answer"] and out["error"] and out["tavily_credits"] == 0
+
+
+def test_company_match_keeps_short_official_names():
+    from agents.research import _is_company_source, _mentions_company
+    c = Company(requested="qz", name="QZ INC", ticker="QZQ", cik="4")       # two-letter official name
+    d = Company(requested="4d", name="4D CO", ticker="FDX4", cik="5")        # name with a digit
+    assert _mentions_company(_result("QZ Inc. raises its outlook"), [c]) and _is_company_source("https://www.qz.com/ir", [c])
+    assert _mentions_company(_result("4D reports record revenue"), [d])
+    e = Company(requested="ab", name="Alpha Beta Gamma Corp", ticker="ABG", cik="6", aliases=["AB"])  # 2-letter alias ignored
+    assert not _mentions_company(_result("AB testing results"), [e])

@@ -140,3 +140,26 @@ def validate(result: Plan, companies: list[Company]) -> Plan:
     searches = [s for s in result.searches if 0 < len(s.query) < 400][:MAX_SEARCHES]
     return result.model_copy(update={"answer_periods": keep_periods, "documents": docs[:6],
                                      "searches": searches, "availability_notes": notes})
+
+
+def fallback(question: str, companies: list[Company]) -> Plan:
+    """Used if the planning call fails: each company's latest reported period with its filings, and one
+    web search per company without SEC filings."""
+    note = "The planning step failed, so each company's latest reported period was used."
+    periods, docs, searches = [], [], []
+    for c in companies:
+        if not c.resolved:
+            searches.append(SearchRequest(purpose="company without SEC filings", query=f"{c.name} {question}"[:399]))
+            continue
+        reported = [p for p in c.periods if p.report or p.earnings_releases]
+        if not reported:
+            continue
+        latest = max(reported, key=lambda p: (p.end, p.label.startswith("Q")))  # the quarter, if it ends with the year
+        periods.append(PeriodRef(ticker=c.ticker, label=latest.label))
+        if latest.earnings_releases:
+            docs.append(DocumentRequest(ticker=c.ticker, period=latest.label, document="earnings_release"))
+        if latest.report:
+            docs.append(DocumentRequest(ticker=c.ticker, period=latest.label, document="periodic_report"))
+    plan = Plan(assumptions=[note], metrics=[question[:300]], answer_periods=periods, documents=docs,
+                searches=searches[:MAX_SEARCHES], availability_notes=[note])
+    return validate(plan, companies)

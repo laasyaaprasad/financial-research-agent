@@ -14,6 +14,7 @@ import json
 import math
 import os
 import re
+import unicodedata
 from collections import Counter
 from dataclasses import asdict, dataclass
 from datetime import date, timedelta
@@ -297,21 +298,64 @@ def _published(value: str | None) -> str | None:
             return None
 
 
-def _is_company_source(url: str, companies: list[Company]) -> bool:
-    host = urlparse(url).netloc.lower()
-    if host.split(".")[0] in ("investor", "investors", "ir"):
-        return True
-    names = [re.sub(r"[^a-z]", "", c.name.lower().split()[0]) for c in companies]
-    domain = ".".join(host.split(".")[-2:])
-    return any(n and len(n) >= 3 and n in domain for n in names)
+# Words that start many company names, so alone they don't identify one ("First ...", "United ...").
+COMMON_WORDS = {"american", "bank", "first", "general", "global", "great", "international", "national", "new",
+                "north", "south", "united", "western", "eastern", "pacific", "atlantic", "central", "royal", "standard"}
+LEGAL_SUFFIX = re.compile(r"\b(the|inc|incorporated|corp|corporation|company|companies|co|plc|ltd|limited|llc|lp|holdings?|"
+                          r"group|sa|nv|ag|se|bv|spa|ab|asa|oyj|kk|as)\b")
+
+
+def _normal(text: str) -> str:
+    """Lowercase ASCII words without accents, possessives or punctuation (Société -> societe)."""
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode().lower()
+    text = re.sub(r"['’]", "", re.sub(r"['’]s\b", "", text))  # possessives dropped: "Acme's" -> "acme"
+    text = re.sub(r"\s+", " ", re.sub(r"[^a-z0-9&]+", " ", text)).strip()
+    return re.sub(r"\b(?:[a-z] )+[a-z]\b", lambda m: m.group().replace(" ", ""), text)  # initials: "s a" -> "sa"
+
+
+def _names(company: Company) -> list[str]:
+    """Normalized names a source may use for the company: its full name, bracketed names, aliases, the user's words."""
+    official = [company.name, *re.findall(r"\(([^)]+)\)", company.name)]
+    raw = official + [company.requested, *company.aliases]
+    names = set()
+    for i, r in enumerate(raw):
+        r = re.sub(r"\([^)]*\)", " ", r)
+        r = re.sub(r"/[A-Za-z]{2,3}/?\s*$", "", r.strip())  # SEC state-of-incorporation tags at the end of names
+        n = re.sub(r"\s+", " ", LEGAL_SUFFIX.sub(" ", _normal(r))).strip()
+        n = re.sub(r"^(?:(?:&|and|of|de)\s)+|(?:\s(?:&|and|of|de))+$", "", n).strip()  # dangling connectors
+        # Two-character names count only from the official name or with a digit ("XY Inc", "3D"): user words
+        # and aliases that short are too ambiguous.
+        shortest = 2 if i < len(official) or re.search(r"\d", n) else 3
+        if len(n) >= shortest and n not in COMMON_WORDS:
+            names.add(n)
+            if " " not in n and len(n) >= 5 and n.endswith("s"):  # registry names drop apostrophes: "acmes"
+                names.add(n[:-1])
+    if not any(" " not in n for n in names):  # no short name known: the first word may stand for the company
+        names |= {n.split()[0] for n in list(names) if len(n.split()[0]) >= 4 and n.split()[0] not in COMMON_WORDS}
+    return sorted(names)
 
 
 def _mentions_company(result: dict, companies: list[Company]) -> bool:
-    text = (result.get("title", "") + " " + result.get("content", "")).lower()
+    raw = result.get("title", "") + " " + result.get("content", "")
+    text = f" {_normal(raw)} "
     for c in companies:
-        tokens = [t for t in re.findall(r"[a-z]+", c.name.lower()) if len(t) >= 3 and t not in ("inc", "corp", "com", "the")]
-        if (tokens and tokens[0] in text) or (c.ticker and re.search(rf"\b{c.ticker.lower()}\b", text)):
+        if any(f" {n} " in text for n in _names(c)):
             return True
+        if c.ticker and len(c.ticker) >= 2 and not c.ticker.startswith("CIK") and \
+                re.search(rf"(?<![A-Za-z0-9]){re.escape(c.ticker)}(?![A-Za-z0-9])", raw):
+            return True
+    return False
+
+
+def _is_company_source(url: str, companies: list[Company]) -> bool:
+    """The URL is on a site named after the company (acme.com, investor.acmecorp.com, acme-global.com)."""
+    labels = [part for label in urlparse(url).netloc.lower().split(".") for part in [label, *label.split("-")]]
+    for c in companies:
+        for name in _names(c):
+            compact = name.replace(" ", "")
+            for label in labels:
+                if label == compact or (len(compact) >= 6 and (label.startswith(compact) or label.endswith(compact))):
+                    return True
     return False
 
 
