@@ -231,7 +231,8 @@ def test_top_passages_keeps_relevant_text():
 
 def test_production_code_has_no_evaluation_companies():
     companies = set()
-    for name in ("golden.jsonl", "test_heldout.jsonl", "test_hard.jsonl", "edge_dev.jsonl", "test_edge.jsonl"):
+    for name in ("golden.jsonl", "test_heldout.jsonl", "test_hard.jsonl", "edge_dev.jsonl", "test_edge.jsonl",
+                 "web_dev.jsonl", "test_web.jsonl"):
         path = ROOT / "evals" / name
         if path.exists():
             for line in path.read_text().splitlines():
@@ -302,3 +303,49 @@ def test_citation_check_asks_again_when_claims_are_left_undecided(monkeypatch):
     monkeypatch.setattr(scorers, "_judge", lambda schema, prompt: schema(claims=replies.pop(0)))
     result = scorers.score_citations("Revenue was $5 million [1].", {scorers.norm_url(url): {"url": url, "content": "x"}})
     assert result["supported"] == 1 and result["undecided"] == 0 and not replies
+
+
+# ---------- Tavily settings ----------
+
+class FakeWeb:
+    """Records Tavily calls; returns one result on the company's own site and one news result."""
+
+    def __init__(self):
+        self.calls = []
+
+    async def call(self, operation, **params):
+        self.calls.append((operation, params))
+        if operation == "extract":
+            return {"results": [{"url": u, "raw_content": "passage"} for u in params["urls"]]}
+        return {"results": [{"url": "https://investors.acme.com/q2", "title": "Acme Q2", "content": "Acme results", "score": 0.9},
+                            {"url": "https://news.example.com/acme", "title": "Acme news", "content": "Acme said", "score": 0.5}]}
+
+
+def _web_evidence(config, monkeypatch, domains=("acme.com",)):
+    import asyncio
+    import agents.research as research
+    monkeypatch.setattr(research, "official_domains", lambda name: domains)
+    web = FakeWeb()
+    plan = Plan(metrics=["guidance"], searches=[SearchRequest(purpose="p", query="Acme Q2 guidance call")])
+    company = Company(requested="acme", name="Acme Corp", ticker="ACME", cik="1")
+    items = asyncio.run(research.web_evidence("q", plan, [company], date(2026, 10, 3), web, config))
+    return web.calls, items
+
+
+def test_default_search_settings_are_unchanged(monkeypatch):
+    from agents.research import EXCLUDED_DOMAINS, SearchConfig
+    calls, items = _web_evidence(SearchConfig(), monkeypatch)
+    assert calls[0] == ("search", {"query": "Acme Q2 guidance call", "search_depth": "basic", "max_results": 5,
+                                   "end_date": "2026-10-03", "exclude_domains": EXCLUDED_DOMAINS, "topic": "general"})
+    assert calls[1][0] == "extract" and items[0].text == "passage"
+
+
+def test_advanced_search_uses_chunks_and_company_sites(monkeypatch):
+    from agents.research import SearchConfig
+    calls, items = _web_evidence(SearchConfig(depth="advanced", company_sites=True, finance_topic=True), monkeypatch)
+    # Only one result came from the company's own site, so the open web is searched too; no extract call.
+    assert [op for op, _ in calls] == ["search", "search"]
+    own_site, open_web = calls[0][1], calls[1][1]
+    assert own_site["include_domains"] == ["acme.com"] and "include_domains" not in open_web
+    assert own_site["chunks_per_source"] == 3 and own_site["topic"] == "finance"
+    assert items[0].tier == "primary" and items[1].tier == "secondary"

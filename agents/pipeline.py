@@ -17,8 +17,8 @@ from agents import tracing
 from agents.company import resolve
 from agents.edgar import EdgarClient
 from agents.llm import AGENT_MODEL
-from agents.planner import plan
-from agents.research import Web, gap_evidence, number_evidence, sec_evidence, to_dicts, web_evidence
+from agents.planner import Plan, plan, validate
+from agents.research import SearchConfig, Web, gap_evidence, number_evidence, sec_evidence, to_dicts, web_evidence
 from agents.writer import write
 
 DISCLAIMER = ("Draft for analyst review. Every figure is quoted from the cited source or computed in code "
@@ -77,8 +77,12 @@ def render(question: str, today: date, result: dict, evidence: dict) -> str:
 
 
 def run(question: str, *, today: date | None = None, callbacks=None, web_cache: Path | str = "results/tavily_cache",
-        live_web: bool = True) -> dict:
-    """Answer one question. Returns the brief plus everything the eval harness records."""
+        live_web: bool = True, search: SearchConfig = SearchConfig(), fixed_plan: Plan | None = None) -> dict:
+    """Answer one question. Returns the brief plus everything the eval harness records.
+
+    `fixed_plan` replays a saved research plan (evaluation only), so runs that compare search
+    settings differ only in how Tavily is called.
+    """
     today = today or date.today()
     start = time.perf_counter()
     client = EdgarClient()
@@ -92,11 +96,14 @@ def run(question: str, *, today: date | None = None, callbacks=None, web_cache: 
     add(t)
     if clarification:  # nothing to research until the user says what they mean
         return clarify(question, today, clarification, tokens, start)
-    research_plan, t = plan(question, companies, today, callbacks)
-    add(t)
+    if fixed_plan:
+        research_plan = validate(fixed_plan, companies)
+    else:
+        research_plan, t = plan(question, companies, today, callbacks)
+        add(t)
     web = Web(web_cache, live=live_web)
     evidence = sec_evidence(question, research_plan, companies, today, client)
-    evidence += asyncio.run(web_evidence(question, research_plan, companies, today, web))
+    evidence += asyncio.run(web_evidence(question, research_plan, companies, today, web, search))
     evidence = number_evidence(evidence)
     framing = {"assumptions": research_plan.assumptions, "out_of_scope": research_plan.out_of_scope}
     result = write(question, today, research_plan.availability_notes, evidence, callbacks, **framing)
@@ -105,7 +112,7 @@ def run(question: str, *, today: date | None = None, callbacks=None, web_cache: 
     gaps = [u["item"] for u in result["unavailable"] if u.get("kind") == "not_in_evidence"]
     if gaps:
         known = {e.url for e in evidence}
-        extra = [e for e in asyncio.run(gap_evidence(question, gaps, companies, today, web)) if e.url not in known]
+        extra = [e for e in asyncio.run(gap_evidence(question, gaps, companies, today, web, search)) if e.url not in known]
         if extra:
             evidence = number_evidence(evidence + extra)
             result = write(question, today, research_plan.availability_notes, evidence, callbacks, **framing)

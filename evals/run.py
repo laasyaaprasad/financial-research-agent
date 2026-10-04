@@ -30,7 +30,8 @@ ROOT = Path(__file__).resolve().parent.parent
 SETS = {"dev": ROOT / "evals" / "golden.jsonl", "test": ROOT / "evals" / "test_heldout.jsonl",
         "hard": ROOT / "evals" / "test_hard.jsonl", "dev_tables": ROOT / "evals" / "dev_tables.jsonl",
         "tables": ROOT / "evals" / "test_tables.jsonl", "edge_dev": ROOT / "evals" / "edge_dev.jsonl",
-        "edge": ROOT / "evals" / "test_edge.jsonl"}
+        "edge": ROOT / "evals" / "test_edge.jsonl", "web_dev": ROOT / "evals" / "web_dev.jsonl",
+        "web": ROOT / "evals" / "test_web.jsonl"}
 RESULTS = ROOT / "results"
 FIELDS = ("id", "category", "difficulty", "time_sensitivity", "answer_type", "question", "grading", "answer")
 # Rows of table sets also carry "cells"; scorers grade those cell by cell.
@@ -59,7 +60,8 @@ def code_version() -> str:
     return head + ("+uncommitted" if dirty else "")
 
 
-def agent_runner(agent: str, name: str, web: bool, web_cache_from: str | None):
+def agent_runner(agent: str, name: str, web: bool, web_cache_from: str | None, search: str | None = None,
+                 plans_from: str | None = None):
     if agent in ("baseline", "starter"):
         from agents.baseline import STARTER_MODEL, run
 
@@ -67,10 +69,20 @@ def agent_runner(agent: str, name: str, web: bool, web_cache_from: str | None):
         return lambda row, callbacks: run(row["question"], callbacks=callbacks, **({"model": model} if model else {}))
     if agent == "agent":
         from agents.pipeline import run
+        from agents.planner import Plan
+        from agents.research import SearchConfig
 
         cache = RESULTS / "tavily_cache" / (web_cache_from or name)
+        config = SearchConfig(**json.loads(search)) if search else SearchConfig()
+
+        def saved_plan(row):  # replay the research plan of an earlier run, so only search settings differ
+            path = RESULTS / "raw" / plans_from / f"{row['id']}.json" if plans_from else None
+            plan = json.loads(path.read_text())["output"].get("plan") if path and path.exists() else None
+            return Plan(**plan) if plan else None
+
         return lambda row, callbacks: run(row["question"], today=date.fromisoformat(row["as_of"][:10]), callbacks=callbacks,
-                                          web_cache=cache, live_web=web and not web_cache_from)
+                                          web_cache=cache, live_web=web and not web_cache_from, search=config,
+                                          fixed_plan=saved_plan(row))
     raise typer.BadParameter(f"unknown agent: {agent}")
 
 
@@ -207,20 +219,23 @@ def run(
     web_cache_from: Annotated[str | None, typer.Option(help="Replay Tavily responses from an earlier run; no credits")] = None,
     resume: Annotated[bool, typer.Option(help="Continue an interrupted run, skipping saved questions")] = False,
     votes: Annotated[int, typer.Option(help="Judge each answer this many times and keep the majority verdict")] = 1,
+    search: Annotated[str | None, typer.Option(help='Tavily settings as JSON, e.g. \'{"depth": "advanced"}\'')] = None,
+    plans_from: Annotated[str | None, typer.Option(help="Reuse each question's research plan from this run")] = None,
 ) -> None:
     """Run an agent on a question set, score every answer, and write the scorecard."""
     rows = load_set(set_name, ids)
     raw_dir = RESULTS / "raw" / name
     done = {}
-    if raw_dir.exists() and any(raw_dir.glob("[GTHDXE][0-9]*.json")):
+    if raw_dir.exists() and any(raw_dir.glob("[GTHDXEW][0-9]*.json")):
         if not resume:
             raise typer.BadParameter(f"results/raw/{name} already exists; choose a new run name or pass --resume")
-        done = {p.stem: json.loads(p.read_text()) for p in raw_dir.glob("[GTHDXE][0-9]*.json")}
+        done = {p.stem: json.loads(p.read_text()) for p in raw_dir.glob("[GTHDXEW][0-9]*.json")}
     raw_dir.mkdir(parents=True, exist_ok=True)
-    runner = agent_runner(agent, name, web, web_cache_from)
+    runner = agent_runner(agent, name, web, web_cache_from, search, plans_from)
     hosts = primary_hosts([r for s in SETS for r in load_set(s)])
     manifest = {"agent": agent, "set": set_name, "set_sha256": sha256(SETS[set_name]), "code": code_version(),
-                "ids": [r["id"] for r in rows], "web": web, "web_cache_from": web_cache_from, "judge_votes": votes}
+                "ids": [r["id"] for r in rows], "web": web, "web_cache_from": web_cache_from, "judge_votes": votes,
+                "search": json.loads(search) if search else None, "plans_from": plans_from}
     if done and (raw_dir / "manifest.json").exists():
         first = json.loads((raw_dir / "manifest.json").read_text())
         manifest = {**first, "resumed": first.get("resumed", []) + [{"code": manifest["code"], "skipped": sorted(done)}]}
@@ -272,7 +287,7 @@ def rescore(source: str, name: Annotated[str | None, typer.Argument(help="New ru
     hosts = primary_hosts(list(rows.values()))
     if undecided_citations:
         name, out_dir = source, src
-        redo = [p for p in sorted(src.glob("[GTHDXE][0-9]*.json"))
+        redo = [p for p in sorted(src.glob("[GTHDXEW][0-9]*.json"))
                 if _undecided(json.loads(p.read_text())["scores"]["citations"])
                 or json.loads(p.read_text())["scores"]["citations"].get("judge_error")]
         manifest = {**first, "citations_rechecked": first.get("citations_rechecked", []) + [p.stem for p in redo]}
@@ -290,12 +305,12 @@ def rescore(source: str, name: Annotated[str | None, typer.Argument(help="New ru
 
         with ThreadPoolExecutor(max_workers=workers) as pool:
             list(pool.map(recheck, redo))
-        finish(name, manifest, [json.loads(p.read_text()) for p in sorted(src.glob("[GTHDXE][0-9]*.json"))])
+        finish(name, manifest, [json.loads(p.read_text()) for p in sorted(src.glob("[GTHDXEW][0-9]*.json"))])
         return
     if judge_errors:
         name, out_dir = source, src
         votes = first.get("judge_votes", votes)
-        redo = [p for p in sorted(src.glob("[GTHDXE][0-9]*.json"))
+        redo = [p for p in sorted(src.glob("[GTHDXEW][0-9]*.json"))
                 if json.loads(p.read_text())["scores"]["correctness"].get("judge_error")]
         manifest = {**first, "regraded_judge_errors": first.get("regraded_judge_errors", []) + [p.stem for p in redo]}
     else:
@@ -304,7 +319,7 @@ def rescore(source: str, name: Annotated[str | None, typer.Argument(help="New ru
         manifest = {**first, "rescored_from": source, "judge_votes": votes}
         out_dir = RESULTS / "raw" / name
         out_dir.mkdir(parents=True, exist_ok=False)
-        redo = sorted(src.glob("[GTHDXE][0-9]*.json"))
+        redo = sorted(src.glob("[GTHDXEW][0-9]*.json"))
     (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=1))
 
     def one(path: Path) -> dict:
@@ -315,7 +330,7 @@ def rescore(source: str, name: Annotated[str | None, typer.Argument(help="New ru
 
     with ThreadPoolExecutor(max_workers=workers) as pool:
         list(pool.map(one, redo))
-    records = [json.loads(p.read_text()) for p in sorted(out_dir.glob("[GTHDXE][0-9]*.json"))]
+    records = [json.loads(p.read_text()) for p in sorted(out_dir.glob("[GTHDXEW][0-9]*.json"))]
     finish(name, manifest, records)
 
 
@@ -323,7 +338,7 @@ def rescore(source: str, name: Annotated[str | None, typer.Argument(help="New ru
 def compare(run_a: str, run_b: str) -> None:
     """Side-by-side metrics and per-question verdict changes for two runs on the same set."""
     def load(n):
-        recs = {p.stem: json.loads(p.read_text()) for p in (RESULTS / "raw" / n).glob("[GTHDXE][0-9]*.json")}
+        recs = {p.stem: json.loads(p.read_text()) for p in (RESULTS / "raw" / n).glob("[GTHDXEW][0-9]*.json")}
         return recs, json.loads((RESULTS / f"summary_{n}.json").read_text())
 
     (ra, sa), (rb, sb) = load(run_a), load(run_b)

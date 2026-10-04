@@ -1,0 +1,10 @@
+{
+  "file": "evals/test_web.jsonl",
+  "sha256": "b415bc50f9dacbf9478e2705ea475c31f1ab3a31eeda0648742a85e782aaf712",
+  "frozen_at": "2026-10-04",
+  "questions": 10,
+  "companies": 10,
+  "design": "Hard questions that need the web: guidance given only on earnings calls, recent events (incl. point-in-time as_of traps), foreign issuers' local-currency results, private companies' self-published figures vs media estimates, and multi-hop calculations combining a web-only fact with reported figures. Built blind by a research subagent from primary sources (company releases, IR decks, exchange filings, NHTSA) and reputable news; split from a 20-question pool at random within each of 5 categories (seed 20261005); the other half is evals/web_dev.jsonl.",
+  "verification": "Every key figure re-opened at its source by the builder; rows resting on secondary sources are listed in evals/web_sources.md. Spot checks against SEC XBRL (ACV revenue, Akamai cash and securities) matched.",
+  "rule": "Frozen before any agent run on it; no agent code or search-setting choice made in response to its results."
+}

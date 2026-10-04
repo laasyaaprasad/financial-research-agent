@@ -2,13 +2,13 @@
 
 Every evidence item carries its source URL, publication/filing date, the period it
 covers and a text body the writer must quote from. SEC data is free and preferred;
-Tavily is used only for the plan's searches, at about 1 credit per search plus one
-extract call.
+Tavily is used only for the plan's searches. `SearchConfig` sets how Tavily is called.
 """
 
 from __future__ import annotations
 
 import asyncio
+import functools
 import hashlib
 import json
 import math
@@ -21,10 +21,13 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 from urllib.parse import urlparse
 
+from pydantic import BaseModel, Field
+
 from agents import tracing
 from agents.company import Company
 from agents.edgar import ARCHIVES, EdgarClient, EdgarError
 from agents.fiscal import Filing, filings_as_of
+from agents.llm import structured
 from agents.planner import Plan, SearchRequest
 
 PASSAGE_CHARS = 1500
@@ -32,6 +35,32 @@ MAX_EXTRACT_URLS = 3
 # Social and user-generated sites are not credible sources for an analyst brief.
 EXCLUDED_DOMAINS = ["facebook.com", "linkedin.com", "x.com", "twitter.com", "instagram.com", "tiktok.com",
                     "reddit.com", "youtube.com", "quora.com"]
+
+
+@dataclass(frozen=True)
+class SearchConfig:
+    """How Tavily search is called. The defaults are the configuration evaluated in M5."""
+    depth: str = "basic"           # "basic": page summaries, then one query-focused extract; "advanced": ranked chunks
+    max_results: int = 5
+    finance_topic: bool = False    # topic="finance" for searches the planner didn't mark as news
+    company_sites: bool = False    # search the companies' own sites first; the open web if that finds little
+    auto_parameters: bool = False  # Tavily chooses the topic; dates, depth and domains stay pinned
+
+
+class Domains(BaseModel):
+    domains: list[str] = Field(default_factory=list, description="Domains only, e.g. example.com")
+
+
+@functools.lru_cache(maxsize=256)
+def official_domains(company: str) -> tuple[str, ...]:
+    """The company's own web domains (corporate site, investor relations, newsroom), as the model knows them."""
+    try:
+        result, _ = structured(Domains, "List the official web domains of this company: corporate site, investor "
+                               "relations and newsroom. At most 4; none if you aren't sure.", company, reasoning="none")
+    except ValueError:
+        return ()
+    return tuple(d.lower().strip().removeprefix("https://").removeprefix("www.").strip("/")
+                 for d in result.domains if "." in d)[:4]
 
 
 @dataclass
@@ -286,18 +315,39 @@ def _mentions_company(result: dict, companies: list[Company]) -> bool:
     return False
 
 
-async def web_evidence(question: str, plan: Plan, companies: list[Company], today: date, web: Web) -> list[Evidence]:
+def _on(host: str, domains) -> bool:
+    return any(host == d or host.endswith("." + d) for d in domains)
+
+
+async def web_evidence(question: str, plan: Plan, companies: list[Company], today: date, web: Web,
+                       config: SearchConfig = SearchConfig()) -> list[Evidence]:
     if not plan.searches:
         return []
+    own = [d for c in companies for d in official_domains(c.name)] if config.company_sites else []
 
-    async def search(s):
-        params = {"query": s.query[:399], "topic": s.topic, "search_depth": "basic", "max_results": 5,
+    async def search(s, include=None):
+        params = {"query": s.query[:399], "search_depth": config.depth, "max_results": config.max_results,
                   "end_date": str(today), "exclude_domains": EXCLUDED_DOMAINS}
+        if config.auto_parameters:
+            params["auto_parameters"] = True
+        else:
+            params["topic"] = "finance" if config.finance_topic and s.topic == "general" else s.topic
+        if config.depth == "advanced":
+            params["chunks_per_source"] = 3
         if s.days_back:
             params["start_date"] = str(today - timedelta(days=s.days_back))
+        if include:
+            params["include_domains"] = include
         return await web.call("search", **params)
 
-    responses = await asyncio.gather(*(search(s) for s in plan.searches))
+    responses = []
+    if own:
+        responses = await asyncio.gather(*(search(s, own) for s in plan.searches))
+        found = sum(1 for r in responses for x in r.get("results", []) if _on(urlparse(x["url"]).netloc.lower(), own))
+        if found < 2:  # the company's own sites had little: search the open web too
+            responses += await asyncio.gather(*(search(s) for s in plan.searches))
+    else:
+        responses = await asyncio.gather(*(search(s) for s in plan.searches))
     results: dict[str, dict] = {}
     for response in responses:
         for r in response.get("results", []):
@@ -310,23 +360,28 @@ async def web_evidence(question: str, plan: Plan, companies: list[Company], toda
         return []
 
     extracted = {}
-    top = [r["url"] for r in ranked[:MAX_EXTRACT_URLS]]
-    response = await web.call("extract", urls=top, query=question[:399], chunks_per_source=5, extract_depth="basic")
-    for r in response.get("results", []):
-        extracted[r["url"]] = r.get("raw_content") or ""
+    if config.depth == "basic":  # basic search returns page summaries; extract the passages that matter
+        top = [r["url"] for r in ranked[:MAX_EXTRACT_URLS]]
+        response = await web.call("extract", urls=top, query=question[:399], chunks_per_source=5, extract_depth="basic")
+        for r in response.get("results", []):
+            extracted[r["url"]] = r.get("raw_content") or ""
 
-    return [Evidence(id="", url=r["url"], title=r.get("title", ""),
-                     tier="primary" if _is_company_source(r["url"], companies) else "secondary",
+    def tier(url: str) -> str:
+        own_site = _is_company_source(url, companies) or _on(urlparse(url).netloc.lower(), own)
+        return "primary" if own_site else "secondary"
+
+    return [Evidence(id="", url=r["url"], title=r.get("title", ""), tier=tier(r["url"]),
                      date=_published(r.get("published_date")),
                      text=(extracted.get(r["url"]) or r.get("content") or "")[:6000])
             for r in ranked]
 
 
-async def gap_evidence(question: str, gaps: list[str], companies: list[Company], today: date, web: Web) -> list[Evidence]:
+async def gap_evidence(question: str, gaps: list[str], companies: list[Company], today: date, web: Web,
+                       config: SearchConfig = SearchConfig()) -> list[Evidence]:
     """One targeted search per item the writer couldn't find (at most two), plus one extract."""
     names = " ".join(c.name for c in companies)
     searches = [SearchRequest(purpose="fill a gap", query=f"{names} {gap}"[:200]) for gap in gaps[:2]]
-    return await web_evidence(question, Plan(metrics=gaps, searches=searches), companies, today, web)
+    return await web_evidence(question, Plan(metrics=gaps, searches=searches), companies, today, web, config)
 
 
 def number_evidence(items: list[Evidence]) -> list[Evidence]:

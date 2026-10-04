@@ -24,7 +24,7 @@ RECORDS = ROOT / "results" / "final" / "records"  # committed compact records
 
 def load(run: str) -> list[dict]:
     folder = RAW / run if (RAW / run).exists() else RECORDS / run
-    return [json.loads(p.read_text()) for p in sorted(folder.glob("[GTHDXE][0-9]*.json"))]
+    return [json.loads(p.read_text()) for p in sorted(folder.glob("[GTHDXEW][0-9]*.json"))]
 
 
 def export(run: str) -> None:
