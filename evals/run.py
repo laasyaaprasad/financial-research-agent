@@ -251,17 +251,30 @@ def run(
 
 
 @app.command()
-def rescore(source: str, name: str, workers: int = 4, votes: Annotated[int, typer.Option(
-        help="Judge each answer this many times and keep the majority verdict")] = 1) -> None:
+def rescore(source: str, name: Annotated[str | None, typer.Argument(help="New run name; omit with --judge-errors")] = None,
+            workers: int = 4, votes: Annotated[int, typer.Option(
+                help="Judge each answer this many times and keep the majority verdict")] = 1,
+            judge_errors: Annotated[bool, typer.Option(
+                help="Re-judge, in place, only answers whose grading failed (e.g. provider overload)")] = False) -> None:
     """Re-judge a saved run's answers without re-running the agent."""
     src = RESULTS / "raw" / source
     first = json.loads((src / "manifest.json").read_text()) if (src / "manifest.json").exists() else {
         "agent": "starter", "set": "dev", "code": "6300b5f (M1 harness)", "model": "moonshotai/Kimi-K2.6"}
-    manifest = {**first, "rescored_from": source, "judge_votes": votes}
     rows = {r["id"]: r for s in SETS for r in load_set(s)}
     hosts = primary_hosts(list(rows.values()))
-    out_dir = RESULTS / "raw" / name
-    out_dir.mkdir(parents=True, exist_ok=False)
+    if judge_errors:
+        name, out_dir = source, src
+        votes = first.get("judge_votes", votes)
+        redo = [p for p in sorted(src.glob("[GTHDXE][0-9]*.json"))
+                if json.loads(p.read_text())["scores"]["correctness"].get("judge_error")]
+        manifest = {**first, "regraded_judge_errors": first.get("regraded_judge_errors", []) + [p.stem for p in redo]}
+    else:
+        if not name:
+            raise typer.BadParameter("give a new run name (or pass --judge-errors)")
+        manifest = {**first, "rescored_from": source, "judge_votes": votes}
+        out_dir = RESULTS / "raw" / name
+        out_dir.mkdir(parents=True, exist_ok=False)
+        redo = sorted(src.glob("[GTHDXE][0-9]*.json"))
     (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=1))
 
     def one(path: Path) -> dict:
@@ -271,7 +284,8 @@ def rescore(source: str, name: str, workers: int = 4, votes: Annotated[int, type
         return rec
 
     with ThreadPoolExecutor(max_workers=workers) as pool:
-        records = list(pool.map(one, sorted(src.glob("[GTHDXE][0-9]*.json"))))
+        list(pool.map(one, redo))
+    records = [json.loads(p.read_text()) for p in sorted(out_dir.glob("[GTHDXE][0-9]*.json"))]
     finish(name, manifest, records)
 
 

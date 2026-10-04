@@ -80,6 +80,8 @@ def _judge(schema, prompt: str, retries: int = 4):
             if result is not None:
                 return result
             error = "no structured output"
+            # The judge sometimes answers in prose instead of calling the function; ask explicitly.
+            prompt += "\n\nReturn the grade only by calling the provided function, not as plain text."
         except Exception as exc:  # malformed or inconsistent judge output: ask again
             error = exc
     raise RuntimeError(f"judge failed after {retries} attempts: {error}")
