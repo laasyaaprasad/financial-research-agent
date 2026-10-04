@@ -14,6 +14,7 @@ import threading
 import time
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import quote
 
 import httpx
 from dotenv import load_dotenv
@@ -43,7 +44,8 @@ class EdgarClient:
         if not url.startswith(("https://www.sec.gov/", "https://data.sec.gov/")):
             raise EdgarError("Only SEC endpoints are permitted")
         path = self.cache_dir / kind / (hashlib.sha256(url.encode()).hexdigest() + ".txt")
-        fresh = kind != "json" or time.time() - path.stat().st_mtime < self.json_max_age_s if path.exists() else False
+        expires = kind in ("json", "search")
+        fresh = not expires or time.time() - path.stat().st_mtime < self.json_max_age_s if path.exists() else False
         if path.exists() and (fresh or self.offline):
             return path.read_text()  # filing documents and indexes never change; API data expires
         if self.offline:
@@ -92,6 +94,16 @@ class EdgarClient:
             return self.json(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{int(cik):010d}.json")
         except EdgarError:
             return {"facts": {}}  # some registrants file no XBRL financial data
+
+    def company_search(self, name: str) -> list[str]:
+        """CIKs of registrants whose name starts with `name` and that file 10-Q reports.
+
+        Covers SEC filers without a listed ticker (e.g. employee-owned companies or debt-only issuers),
+        which are missing from the ticker list.
+        """
+        page = self._fetch("https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=10-Q&owner=include"
+                           f"&count=40&output=atom&company={quote(name)}", "search")
+        return list(dict.fromkeys(str(int(c)) for c in re.findall(r"<cik>(\d+)</cik>", page)))
 
     def exhibits(self, cik: str, accession: str) -> list[dict]:
         """Documents in a filing with their declared types (e.g. EX-99.1), from the filing index page."""

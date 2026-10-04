@@ -36,6 +36,8 @@ class SearchRequest(BaseModel):
 
 
 class Plan(BaseModel):
+    assumptions: list[str] = Field(default_factory=list, description="How each part the question left open was read; shown to the user")
+    out_of_scope: list[str] = Field(default_factory=list, description="Requested items this tool declines, each with a short reason")
     metrics: list[str] = Field(description="The specific figures, facts or judgements the answer needs")
     answer_periods: list[PeriodRef] = Field(default_factory=list, description="Periods the answer is about")
     documents: list[DocumentRequest] = Field(default_factory=list, description="Filings to read, at most 6")
@@ -49,6 +51,27 @@ PROMPT = f"""You plan research for a financial analyst's question. Do not answer
 You get today's date and, for each company, its reporting calendar from SEC filings: fiscal
 period labels, exact dates and status (filed / earnings release only / not yet reported).
 
+0. Analysts type tersely. Read the question the way an analyst would mean it and record every
+   choice the question left open in `assumptions` (one short sentence each, with the fiscal label
+   and dates where relevant); leave it empty if nothing was open.
+   - No period: the latest reported period. A quarter without a year: the most recently
+     reported such quarter. Years and quarters are fiscal; when the fiscal year isn't the
+     calendar year, say so. "Last year" = the last completed fiscal year; "this year" = the
+     current fiscal year, or the last completed one if nothing of it is reported yet.
+   - Vague metrics take their standard reading: sales / revenue / top line = total revenue
+     (or the company's net sales line); earnings / profit / bottom line = GAAP net income and
+     diluted EPS; margins = gross and operating margin; cash = cash and cash equivalents.
+   - A general request (an update, "how is it doing", latest results) means the latest
+     quarter's headline results: revenue and growth, operating income or margin, net income,
+     diluted EPS, and the company's guidance if it gives any.
+   - When the company was asked for by anything other than its name (a ticker, a partial
+     name, a brand, product or former name), say which reporting company it was read as; share
+     classes are one company.
+   `out_of_scope`: decline, with a short reason, any part asking for investment advice or a
+   recommendation, a price target or valuation opinion, share prices or market capitalization,
+   analyst consensus or estimates, or a ranking of a sector or market. A request to guess,
+   estimate, ballpark or forecast a figure the company hasn't reported is declined here too
+   (the company's own guidance can still be quoted). Plan research only for the rest.
 1. answer_periods: the periods the question asks about, using the calendar's labels. Map
    calendar-date wording (e.g. "April-June 2026") to the fiscal period with those dates.
 2. documents (at most 6): the filings that contain the facts.
@@ -79,10 +102,16 @@ def _calendar_text(companies: list[Company]) -> str:
     blocks = []
     for c in companies:
         if not c.resolved:
-            blocks.append(f"{c.name}: NOT an SEC registrant ({c.reason}); no filings available.")
+            blocks.append(f"{c.name} (asked as '{c.requested}'): NOT a currently reporting SEC registrant "
+                          f"({c.reason}); no filings available.")
             continue
         lines = "\n".join("  " + p.describe() for p in c.periods[-12:])
-        blocks.append(f"{c.name} (ticker {c.ticker}, fiscal year ends {c.fiscal_year_end}):\n{lines}")
+        foreign = ""
+        if c.periods and not any(p.label.startswith("Q") for p in c.periods):
+            foreign = ("\n  Files annual reports only (e.g. a foreign issuer on Form 20-F): quarterly results are not "
+                       "in this calendar; use a web search for them.")
+        blocks.append(f"{c.name} (asked as '{c.requested}'; ticker {c.ticker}, fiscal year ends {c.fiscal_year_end}):"
+                      f"\n{lines}{foreign}")
     return "\n\n".join(blocks)
 
 

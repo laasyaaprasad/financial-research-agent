@@ -49,6 +49,8 @@ def render(question: str, today: date, result: dict, evidence: dict) -> str:
         return "".join(marks)
 
     lines = [f"**Question:** {question}", f"*As of {today}*", ""]
+    if result.get("assumptions"):
+        lines += ["**Interpreted as:** " + " ".join(result["assumptions"]), ""]
     if result.get("table"):
         lines += _table(result["table"], cite) + [""]
     if result["claims"]:
@@ -56,6 +58,8 @@ def render(question: str, today: date, result: dict, evidence: dict) -> str:
     if result["unavailable"]:
         lines += ["", "**Not available**"]
         lines += [f"- {u['item']}: {u['reason']} {cite(u['evidence_ids'])}".rstrip() for u in result["unavailable"]]
+    if result.get("out_of_scope"):
+        lines += ["", "**Outside this tool's scope**"] + [f"- {item}" for item in result["out_of_scope"]]
     if not result.get("semantic_check", True):
         lines += ["", "_The meaning check (company, period, basis) could not run for this answer; "
                       "quotes, numbers and arithmetic were still verified in code._"]
@@ -84,15 +88,18 @@ def run(question: str, *, today: date | None = None, callbacks=None, web_cache: 
         for k in tokens:
             tokens[k] += t.get(k, 0)
 
-    companies, t = resolve(question, today, client, callbacks)
+    companies, clarification, t = resolve(question, today, client, callbacks)
     add(t)
+    if clarification:  # nothing to research until the user says what they mean
+        return clarify(question, today, clarification, tokens, start)
     research_plan, t = plan(question, companies, today, callbacks)
     add(t)
     web = Web(web_cache, live=live_web)
     evidence = sec_evidence(question, research_plan, companies, today, client)
     evidence += asyncio.run(web_evidence(question, research_plan, companies, today, web))
     evidence = number_evidence(evidence)
-    result = write(question, today, research_plan.availability_notes, evidence, callbacks)
+    framing = {"assumptions": research_plan.assumptions, "out_of_scope": research_plan.out_of_scope}
+    result = write(question, today, research_plan.availability_notes, evidence, callbacks, **framing)
     add(result["tokens"])
     # Gap filling: if something may exist but wasn't in the evidence, search for it once and rewrite.
     gaps = [u["item"] for u in result["unavailable"] if u.get("kind") == "not_in_evidence"]
@@ -101,9 +108,10 @@ def run(question: str, *, today: date | None = None, callbacks=None, web_cache: 
         extra = [e for e in asyncio.run(gap_evidence(question, gaps, companies, today, web)) if e.url not in known]
         if extra:
             evidence = number_evidence(evidence + extra)
-            result = write(question, today, research_plan.availability_notes, evidence, callbacks)
+            result = write(question, today, research_plan.availability_notes, evidence, callbacks, **framing)
             add(result["tokens"])
 
+    result.update(framing)
     by_id = {e["id"]: e for e in to_dicts(evidence)}
     answer = render(question, today, result, by_id)
     supported = result["claims"] + result.get("table", [])
@@ -133,7 +141,20 @@ def run(question: str, *, today: date | None = None, callbacks=None, web_cache: 
         "removed": result["removed"],
         "semantic_check": result["semantic_check"],
         "gaps_searched": gaps,
+        **framing,
+        "clarification": None,
     }
+
+
+def clarify(question: str, today: date, clarification: str, tokens: dict, start: float) -> dict:
+    """The answer when the question can't be researched without asking the user first."""
+    answer = "\n".join([f"**Question:** {question}", f"*As of {today}*", "", f"**Clarification needed:** {clarification}",
+                        "", "_No figures were looked up; ask again with the company (and period) you mean._"])
+    return {"answer": answer, "tool_calls": [], "tool_results": [{"results": []}], "tokens": tokens,
+            "tavily_credits": 0, "latency_s": round(time.perf_counter() - start, 2), "model": AGENT_MODEL,
+            "companies": [], "plan": None, "evidence_ids_cited": [], "claims": [], "table": [], "unavailable": [],
+            "removed": [], "semantic_check": True, "gaps_searched": [], "assumptions": [], "out_of_scope": [],
+            "clarification": clarification}
 
 
 def main():

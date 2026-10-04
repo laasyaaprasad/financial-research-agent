@@ -96,13 +96,14 @@ def test_calculation_input_must_be_printed():
 class FakeEdgar:
     """Submissions and XBRL facts for a synthetic filer."""
 
-    def __init__(self, reports, fy_label_offset=0):
+    def __init__(self, reports, fy_label_offset=0, fiscal_year_end=None):
         self.reports = reports  # (form, report_date, filed)
         self.offset = fy_label_offset
+        self.fiscal_year_end = fiscal_year_end
 
     def submissions(self, cik):
         rows = sorted(self.reports, key=lambda r: r[2], reverse=True)
-        return {"filings": {"recent": {
+        return {"name": "SYNTHETIC CO", "tickers": [], "fiscalYearEnd": self.fiscal_year_end, "filings": {"recent": {
             "form": [r[0] for r in rows], "reportDate": [r[1] for r in rows], "filingDate": [r[2] for r in rows],
             "accessionNumber": [f"0000-{i}" for i in range(len(rows))], "primaryDocument": ["d.htm"] * len(rows),
             "items": ["2.02" if r[0] == "8-K" else "" for r in rows]}}}
@@ -137,6 +138,71 @@ def test_calendar_month_end_quarters():
     assert periods["Q1 FY2027"].end == date(2026, 8, 31) and periods["Q1 FY2027"].status.startswith("not yet reported (period ended")
 
 
+def test_calendar_projects_53_week_year_from_sec_fiscal_year_end():
+    # Saturday nearest Sept 30: FY2025 ended Sept 27, 2025; FY2026 runs 53 weeks to Oct 3, 2026.
+    reports = [("10-K", "2025-09-27", "2025-11-15"), ("10-Q", "2025-12-27", "2026-02-01"),
+               ("10-Q", "2026-03-28", "2026-05-01"), ("10-Q", "2026-06-27", "2026-08-01")]
+    periods = {p.label: p for p in calendar(FakeEdgar(reports, fiscal_year_end="1003"), "1", date(2026, 10, 3))}
+    assert periods["FY2026"].start == date(2025, 9, 28) and periods["FY2026"].end == date(2026, 10, 3)
+    assert periods["Q4 FY2026"].status == "not yet reported (period still in progress)"
+    # Without SEC's fiscal year end the projection keeps 52 weeks.
+    periods = {p.label: p for p in calendar(FakeEdgar(reports), "1", date(2026, 10, 3))}
+    assert periods["FY2026"].end == date(2026, 9, 26)
+
+
+# ---------- company resolution ----------
+
+class FakeRegistry(FakeEdgar):
+    """A filer missing from the ticker list, found only by EDGAR company search."""
+
+    def tickers(self):
+        return {}
+
+    def company_search(self, name):
+        return ["81"]
+
+
+def _mentions(monkeypatch, **fields):
+    import agents.company as company
+    monkeypatch.setattr(company, "structured", lambda *a, **k: (company.Mentions(**fields), {"input": 1, "output": 1}))
+    return company
+
+
+def test_resolve_finds_filers_without_a_ticker(monkeypatch):
+    company = _mentions(monkeypatch, companies=[{"name": "Employee Owned Grocer"}])
+    reports = [("10-K", "2025-12-27", "2026-02-25"), ("10-Q", "2026-06-27", "2026-08-03")]
+    companies, clarification, _ = company.resolve("q2 sales", date(2026, 10, 3), FakeRegistry(reports))
+    assert clarification is None and companies[0].resolved and companies[0].cik == "81"
+    assert companies[0].ticker == "CIK81"
+
+
+def test_resolve_rejects_filers_that_stopped_reporting(monkeypatch):
+    company = _mentions(monkeypatch, companies=[{"name": "Taken Private Co"}])
+    reports = [("10-K", "2024-08-31", "2024-10-15"), ("10-Q", "2025-05-31", "2025-06-26")]
+    companies, _, _ = company.resolve("fq3 comps", date(2026, 10, 3), FakeRegistry(reports))
+    assert not companies[0].resolved and "no longer files" in companies[0].reason
+
+
+def test_clarification_short_circuits_research(monkeypatch):
+    import agents.pipeline as pipeline
+    monkeypatch.setattr(pipeline, "resolve", lambda *a, **k: ([], "Which company do you mean?", {"input": 1, "output": 1}))
+    monkeypatch.setattr(pipeline, "plan", lambda *a, **k: pytest.fail("planned research for an unclear question"))
+    out = pipeline.run("what was revenue last quarter?", today=date(2026, 10, 3), live_web=False)
+    assert out["clarification"] == "Which company do you mean?" and out["tavily_credits"] == 0
+    assert "**Clarification needed:** Which company do you mean?" in out["answer"]
+
+
+def test_render_states_interpretation_and_scope():
+    from agents.pipeline import render
+    result = {"claims": [{"text": "Revenue was $10 million.", "evidence_ids": ["E1"]}], "unavailable": [], "removed": [],
+              "assumptions": ["No period given: used Q2 FY2026, the latest reported quarter."],
+              "out_of_scope": ["Buy recommendation: investment advice is out of scope."]}
+    evidence = {"E1": {"title": "10-Q", "url": "https://www.sec.gov/x", "date": "2026-08-01", "tier": "primary"}}
+    text = render("x rev, buy?", date(2026, 10, 3), result, evidence)
+    assert "**Interpreted as:** No period given" in text
+    assert "**Outside this tool's scope**\n- Buy recommendation" in text
+
+
 # ---------- planner validation and passage ranking ----------
 
 def test_planner_validation_drops_unknown_choices():
@@ -165,7 +231,7 @@ def test_top_passages_keeps_relevant_text():
 
 def test_production_code_has_no_evaluation_companies():
     companies = set()
-    for name in ("golden.jsonl", "test_heldout.jsonl", "test_hard.jsonl"):
+    for name in ("golden.jsonl", "test_heldout.jsonl", "test_hard.jsonl", "edge_dev.jsonl", "test_edge.jsonl"):
         path = ROOT / "evals" / name
         if path.exists():
             for line in path.read_text().splitlines():

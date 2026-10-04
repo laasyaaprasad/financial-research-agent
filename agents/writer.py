@@ -105,6 +105,11 @@ Write the answer as a list of claims. Each claim is one factual sentence with:
   own evidence, quotes and, if derived, calculation. If a quarter is not reported on its own
   (often fiscal Q4, reported only as the full year), calculate it as full year minus the
   nine-month figure. Use claims for anything that isn't a table value.
+- Follow the interpretation you are given for anything the question left open (period,
+  metric definition, company). Never give investment advice, a recommendation, a price target,
+  a share price, a consensus estimate or your own estimate or forecast, even if asked (no
+  calculation that projects an unreported figure from guidance); items declined as out of scope
+  are shown to the user separately. Quote company guidance as guidance.
 - Prefer company filings and releases. Use news sources for events and commentary, and say
   who reported it. Keep it concise: only claims that answer the question."""
 
@@ -116,8 +121,10 @@ metric, period (fiscal label and dates), unit, accounting basis (GAAP / non-GAAP
 question names a metric, the claim must use exactly that metric (e.g. net sales is not total
 revenue; operating income is not net income). A claim
 with a calculation is supported if its inputs are the right figures for what the claim says
-(code has already checked the arithmetic). Then list parts of the question that are neither
-answered nor marked unavailable. Be strict but do not invent problems."""
+(code has already checked the arithmetic). A claim that estimates or projects a figure the
+company has not reported (e.g. applying guided growth to a past result) is not supported; quoting
+the company's own guidance, labelled as guidance, is. Then list parts of the question that are
+neither answered nor marked unavailable. Be strict but do not invent problems."""
 
 
 # ---------- deterministic checks ----------
@@ -263,10 +270,13 @@ def _draft_block(draft: Draft, texts: list[str]) -> str:
     return "\n".join(lines)
 
 
-def write(question: str, today: date, plan_notes: list[str], evidence: list[Evidence], callbacks=None) -> dict:
+def write(question: str, today: date, plan_notes: list[str], evidence: list[Evidence], callbacks=None,
+          assumptions: list[str] = (), out_of_scope: list[str] = ()) -> dict:
     """Draft, check, verify, revise once. Returns the final claims, unavailable items and removed claims."""
     by_id = {e.id: e for e in evidence}
     context = (f"Today: {today}\nQuestion: {question}\n"
+               f"Interpretation: {list(assumptions) or 'none needed'}\n"
+               f"Declined as out of scope (do not answer): {list(out_of_scope) or 'none'}\n"
                f"Planner notes on availability: {plan_notes or 'none'}\n\nEVIDENCE\n{_evidence_block(evidence)}")
     tokens = {"input": 0, "output": 0}
 

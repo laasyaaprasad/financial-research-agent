@@ -75,10 +75,21 @@ def _naming_offset(client: EdgarClient, cik: str, annual: list[Filing]) -> int:
     return 0
 
 
-def _step(end: date, month_end: bool, months: int) -> date:
-    """Next period end: same day-of-month pattern for month-end calendars, else whole weeks."""
+def _step(end: date, month_end: bool, months: int, year_end_mmdd: str | None = None) -> date:
+    """Next period end: same day-of-month pattern for month-end calendars, else whole weeks.
+
+    A 52/53-week fiscal year ends on the same weekday nearest a fixed date; SEC's fiscalYearEnd
+    (MMDD) gives that date, so a projected year gets 53 weeks when that lands closer to it.
+    """
     if not month_end:
-        return end + timedelta(weeks=13 * months // 3)
+        nxt = end + timedelta(weeks=13 * months // 3)
+        if months == 12 and year_end_mmdd and len(year_end_mmdd) == 4:
+            target = date(nxt.year, int(year_end_mmdd[:2]), min(int(year_end_mmdd[2:]), 28))
+            target = min((target.replace(year=y) for y in (nxt.year - 1, nxt.year, nxt.year + 1)),
+                         key=lambda t: abs((t - nxt).days))
+            if abs((nxt + timedelta(weeks=1) - target).days) < abs((nxt - target).days):
+                nxt += timedelta(weeks=1)
+        return nxt
     y, m = divmod(end.month - 1 + months, 12)
     first_next = date(end.year + y + (m + 1) // 12, (m + 1) % 12 + 1, 1)
     return first_next - timedelta(days=1)
@@ -101,8 +112,9 @@ def calendar(client: EdgarClient, cik: str, today: date, years: int = 3) -> list
 
     # Fiscal-year ends: reported ones, then projected ones until the fiscal year containing today.
     fy_ends = sorted(f.report_date for f in annual)
+    year_end_mmdd = client.submissions(cik).get("fiscalYearEnd")
     while fy_ends[-1] < today:
-        fy_ends.append(_step(fy_ends[-1], month_end, 12))
+        fy_ends.append(_step(fy_ends[-1], month_end, 12, year_end_mmdd))
     has_quarters = any(f.form == "10-Q" for f in by_end.values())
 
     periods: list[Period] = []
@@ -137,6 +149,12 @@ def _period(label, start, end, projected, by_end, releases, today) -> Period:
     report = by_end.get(end)
     window_end = end + timedelta(days=100)
     matched = [r for r in releases if end < r.filed <= window_end]
+    # Several item 2.02 reports can follow a period (an outlook update or operating metrics before
+    # the results). The results release is usually the last one filed by the periodic report.
+    before_report = [r for r in matched if report and r.filed <= report.filed]
+    if before_report or matched:
+        chosen = (before_report or matched)[-1]
+        matched = [chosen] + [r for r in matched if r is not chosen]
     if report:
         status = "filed"
     elif matched:
