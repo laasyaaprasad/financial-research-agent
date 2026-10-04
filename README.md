@@ -151,6 +151,8 @@ uv run --group ui python -m ui            # http://localhost:8000; Chainlit opti
 - **Conversation.** Follow-ups ("and the prior quarter?", "compare that with its closest peer") and replies to clarification questions are rewritten into a standalone question, shown as **Researched as**, before research. The rewrite runs only when there is earlier conversation. Later in a conversation, a message that isn't a research request (thanks, a greeting) gets a short description of the tool instead of research.
 - **Settings:** an as-of date for point-in-time questions, and a switch for live web search. With it off, the chat answers from SEC data and cached Tavily responses only, without spending credits.
 
+**Look and feel.** The theme (`ui/public/theme.json`, `ui/public/brand.css`) follows the color palette in [Tavily's brand guidelines](https://www.tavily.com/brand): Off White and Black as the foundation, light by default, and Lavender as the accent. Lavender text on Off White falls short of WCAG AA contrast, so links are black with a lavender underline. Nothing is used that the project has no rights to: no Tavily logo, wordmark or brand mark (the app has its own name and mark), and no Suisse Int'l, the commercial typeface on tavily.com. Type is Inter and Geist Mono, both under the SIL Open Font License. The app's readme states that it is not affiliated with or endorsed by Tavily.
+
 The UI calls `agents.pipeline.run` like the CLI and the eval harness do, so the answers are the ones that were evaluated. The CLI brief is unchanged byte for byte; the chat renders the same statements with links. Conversations are kept for the session only (no chat history database).
 
 Evaluate and test:

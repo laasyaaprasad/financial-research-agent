@@ -30,6 +30,11 @@ def _escape(text: str) -> str:
     return re.sub(r"([\\`*_\[\]<>#|~$])", r"\\\1", " ".join(text.split()))
 
 
+def _domain(url: str) -> str:
+    """The source's site, without "www." (which markdown would turn into a second link)."""
+    return urlparse(url).netloc.removeprefix("www.")
+
+
 def _number(value: float) -> str:
     return f"{value:,.0f}" if float(value).is_integer() else f"{value:,}"
 
@@ -86,7 +91,7 @@ def evidence(question: str, today: date, order: list[str], sources: dict, statem
     for n, i in enumerate(order, start=1):
         s = sources[i]
         lines += ["", f"#### [{n}] {_escape(s['title'] or s['url'])}",
-                  f"{urlparse(s['url']).netloc} · {s['date'] or 'undated'} · {TIERS.get(s['tier'], s['tier'])} · "
+                  f"{_domain(s['url'])} · {s['date'] or 'undated'} · {TIERS.get(s['tier'], s['tier'])} · "
                   f"[open ↗](<{s['url']}>)"]
         for item in statements:
             if i not in _ids(item):
@@ -124,7 +129,7 @@ def render(output: dict, today: date, question: str, rewritten: bool = False) ->
         lines += ["", "**Sources**", ""]
         for n, i in enumerate(order, start=1):
             s = sources[i]
-            lines.append(f"{n}. [{_escape(s['title'] or s['url'])}](<{s['url']}>) · {urlparse(s['url']).netloc}"
+            lines.append(f"{n}. [{_escape(s['title'] or s['url'])}](<{s['url']}>) · {_domain(s['url'])}"
                          f" · {s['date'] or 'undated'} · {s['tier']}")
         lines += ["", f"Each citation opens its source; hover it for the quote. Open the {EVIDENCE} for the quotes and "
                       "calculations behind every statement."]

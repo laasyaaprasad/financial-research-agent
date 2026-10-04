@@ -50,7 +50,7 @@ def test_every_statement_cites_its_sources_with_links_and_quotes():
 def test_sources_are_listed_with_links_at_the_end():
     content, _ = render(OUTPUT, TODAY, "How did X Corp do?")
     sources = content.split("**Sources**")[1]
-    assert f"1. [X Corp 10-Q for Q2 FY2026](<{RELEASE}>) · www.sec.gov · 2026-08-01 · primary" in sources
+    assert f"1. [X Corp 10-Q for Q2 FY2026](<{RELEASE}>) · sec.gov · 2026-08-01 · primary" in sources
     assert "3. [Report \\[exclusive\\]](<https://news.example.com/a>) · news.example.com · undated · secondary" in sources
     assert f"Open the {EVIDENCE} for" in sources
     assert "_1 draft statement(s) were withheld" in content and content.endswith(
@@ -61,7 +61,7 @@ def test_sources_are_listed_with_links_at_the_end():
 def test_evidence_panel_shows_each_statement_with_its_quotes_and_calculation():
     _, panel = render(OUTPUT, TODAY, "How did X Corp do?")
     release, tagged, news = panel.split("#### ")[1:]
-    assert release.startswith("[1] X Corp 10-Q for Q2 FY2026\nwww.sec.gov · 2026-08-01 · Primary source")
+    assert release.startswith("[1] X Corp 10-Q for Q2 FY2026\nsec.gov · 2026-08-01 · Primary source")
     assert "> Total revenue \\| \\$ \\| 110" in release   # source punctuation shown literally
     assert "**Revenue grew 10.0% year over year.**" in release and "— input `rev` = 110" in release
     assert "Calculated in code: `(rev / prior - 1) * 100`" in release

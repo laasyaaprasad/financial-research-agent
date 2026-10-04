@@ -258,6 +258,7 @@ The superseded code was removed from the working tree; it remains in git history
 - **Citations:** every claim, table cell and "not available" item ends with `[n]` markers. Each marker links to its source, at the quoted passage where possible, and shows its quote on hover. The answer ends with a numbered, linked source list. An Evidence side panel shows, per source, the quotes and calculations behind each statement.
 - **Progress:** pipeline stages stream as steps through an optional `on_step` callback on `agents.pipeline.run`.
 - **Conversation:** `agents/followup.py` rewrites a follow-up, or a reply to a clarification question, into a standalone question using the last three turns. The rewritten question is shown above the answer.
+- **Look and feel:** follows the palette in Tavily's published brand guidelines: Off White and Black foundation, light by default, Lavender accent. It uses nothing the project has no rights to: its own name and mark, no Tavily logo, wordmark or brand mark, and open-licensed fonts (Inter, Geist Mono) instead of Tavily's commercial typeface. The app's readme states it is not affiliated with or endorsed by Tavily.
 - **Pipeline additions, behaviour unchanged:** `run()` also returns `sources` (each cited source's metadata and the quotes taken from it), and the brief's body rendering is shared with the chat.
 
 **Acceptance criteria**
@@ -265,6 +266,7 @@ The superseded code was removed from the working tree; it remains in git history
 - Offline tests cover the chat rendering (a marker on every statement, calculation inputs cited, the linked source list, the evidence panel, escaping, text-fragment links), the turn summary, and the no-history shortcut. The existing guard still finds no evaluation-set company in `agents/`.
 - In a browser: an answer shows steps, cited statements, linked sources and the Evidence panel; a follow-up is rewritten and answered; small talk gets the help text; a clarification reply resumes the original question.
 - Development runs use live web search off (SEC data and cached Tavily responses only).
+- **Theme contrast:** body text and links meet WCAG AA in both themes. Links are black text with a lavender underline, because lavender text on Off White is only 3.2:1.
 
 **Result (2026-10-04)**
 - **CLI brief:** byte-identical to the previous `render` on all 128 section combinations, so eval answers are unaffected.

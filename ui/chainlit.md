@@ -21,3 +21,7 @@ Follow-ups can refer to earlier answers ("and the prior quarter?", "compare that
 - **Live web search:** off answers from SEC data and previously cached web results only, without spending Tavily credits.
 
 Out of scope: investment advice, price targets, share prices, analyst consensus and estimates.
+
+## About
+
+Filings and financial data come from SEC EDGAR, web search from the Tavily API, and the language model runs on Nebius. This is an independent project: it is not affiliated with, sponsored or endorsed by Tavily. The color palette follows Tavily's published brand colors; no Tavily logos, marks or fonts are used.
