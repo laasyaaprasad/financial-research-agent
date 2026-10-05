@@ -28,9 +28,10 @@ CONTENT_CHARS = 6000
 # ---------- judge output schemas ----------
 
 class Point(BaseModel):
-    point: str = Field(description="One grading requirement, taken from the grading rule")
+    point: str = Field(description="One grading requirement from the rule, phrased as what a good answer does; "
+                                   "a fail condition becomes what the answer must avoid, e.g. 'Does not use Q3'")
     optional: bool = Field(default=False, description="True if the rule marks this item optional")
-    met: bool
+    met: bool = Field(description="True if the answer satisfies the point (for a fail condition: avoids that failure)")
     note: str = Field(description="Short reason, quoting the agent's value where relevant")
 
 
@@ -179,7 +180,8 @@ Agent's answer:
 
 Instructions:
 - Split the grading rule into its individual requirements and judge each as met or not met. Items the rule
-  calls optional get optional=true; they never affect the verdict.
+  calls optional get optional=true; they never affect the verdict. Write each fail condition as a point the
+  answer must avoid ("Does not present Q3 as the latest quarter"): met=true when the answer avoids it.
 - Judge only the requirements written in the grading rule (and its fail conditions); add none of your own.
   Details given in parentheses or as evidence (dates, filing names, sources) help you check a requirement;
   they are not separate requirements unless the rule says they must be stated.
