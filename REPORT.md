@@ -13,6 +13,23 @@
 - **The writer** must quote its sources verbatim. Code rejects any quote that isn't in its source and any number that isn't in a quote, and does every calculation itself.
 - **A verifier** catches the right number with the wrong meaning (GAAP vs. non-GAAP, guidance vs. actual). Whatever still fails is withheld rather than shown.
 
+**Models.**
+- **The agent: DeepSeek V4.1 Flash for every step** (on Nebius). It is stronger, faster and cheaper than the starter's Kimi K2.6: 39 against 27 on the Artificial Analysis Intelligence Index, 214 against 71 output tokens/s, and $0.30/$1.20 against $0.95/$4.00 per million tokens. Reasoning effort is set per step to what the task needs: none for listing a company's web domains, low for resolving companies, rewriting follow-ups and verifying, medium for planning, and high for writing and revising the answer.
+- **The judge: GPT-6 Luna** (OpenAI, high reasoning). It is a different model family from the agent, so no model grades its own kind, and it agreed with my hand grades on 8 of 10 answers. GLM-5.3-Flash on Nebius was tried first and dropped after throttling.
+- **The baselines:** the starter exactly as shipped on Kimi K2.6, and its design on DeepSeek V4.1 Flash, to separate the model's contribution from the architecture's.
+
+**How this answers the brief.** The task was to improve the starter in a way that creates clear value for a real user. The work covers each of the brief's example directions:
+
+| Direction | What this project does |
+|---|---|
+| Adapt it to a specific customer workflow | Built for financial analysts: cited, period-correct briefs, comps and trend tables, and a chat UI with follow-ups and point-in-time (as-of date) questions. |
+| Add a useful integration | SEC EDGAR, called directly through SEC's own APIs: the ticker list, filings and XBRL facts. |
+| Improve retrieval quality | SEC first, with ranked filing passages and XBRL facts; Tavily settings chosen by measurement; web results must be about the company; one gap-filling round. |
+| Improve source handling and citations | Verbatim quotes checked in code, a verifier for meaning, primary and secondary source tiers, and a citation on every statement: 94% of cited claims supported, 73% of sources primary. |
+| Add an evaluation loop | Dev sets, held-out sets frozen by hash, a judge from a different model family, re-grading, and Exact50 as the headline benchmark. |
+| Introduce a context engineering improvement | Instead of raw search results, the model is shown each company's reporting calendar and the as-of date, a plan validated in code, and ranked, numbered evidence. |
+| Improve observability/debuggability | OpenTelemetry traces in Langfuse for every step, model call and Tavily call, with eval scores attached and linked from each scorecard. |
+
 **Thought process.**
 1. **Measure before building.** I ran the starter exactly as shipped and with its design on our model, to separate the model's contribution from the architecture's.
 2. **Make every component intentional.** Each part had to answer a measured failure; the list above shows which.
