@@ -14,6 +14,7 @@ from __future__ import annotations
 import asyncio
 import hmac
 import os
+import secrets
 from datetime import date
 
 import chainlit as cl
@@ -31,14 +32,18 @@ HELP = ("I research SEC-reporting companies and cite a source for every statemen
         "answers. I don't give investment advice, price targets, share prices or consensus estimates.")
 
 
-APP_PASSWORD = os.getenv("APP_PASSWORD")
-if APP_PASSWORD:  # deployed: one shared password keeps the public URL from being used up by strangers
-    @cl.password_auth_callback
-    async def login(username: str, password: str) -> cl.User | None:
-        if hmac.compare_digest(password.encode(), APP_PASSWORD.encode()):
-            return cl.User(identifier=username.strip() or "reviewer")
-        await asyncio.sleep(1)  # slows down password guessing
-        return None
+# One shared password keeps the app from being used up by strangers; the name on the sign-in form is optional.
+PASSWORD = "tavilyfde"
+os.environ.setdefault("CHAINLIT_AUTH_SECRET", secrets.token_urlsafe(48))  # signs sessions; a restart signs users out
+
+
+@cl.password_auth_callback
+async def login(username: str, password: str) -> cl.User | None:
+    if hmac.compare_digest(password.encode(), PASSWORD.encode()):
+        return cl.User(identifier=username.strip() or "guest")
+    await asyncio.sleep(1)  # slows down password guessing
+    return None
+
 
 _one_at_a_time = asyncio.Lock()  # a small instance answers one question at a time
 

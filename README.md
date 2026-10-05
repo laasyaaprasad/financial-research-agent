@@ -193,12 +193,8 @@ terraform -chdir=infra apply
 uv run --with boto3 deploy/put_secrets.py
 ```
 
-and push to `main` (or run the workflow). The URL is `terraform -chdir=infra output -raw url`. To read the shared
-password:
-
-```bash
-aws ssm get-parameter --region us-east-2 --name /fin-research-agent/APP_PASSWORD --with-decryption --query Parameter.Value --output text
-```
+and push to `main` (or run the workflow). The URL is `terraform -chdir=infra output -raw url`; sign in with the shared
+password set in [ui/app.py](ui/app.py) (the name is optional).
 
 **Cost:** t3.micro and 20 GB of gp3 storage are free-tier eligible (the free tier's 750 hours a month are shared by
 every instance in the account); the public IPv4 address is about $3.60 a month. To remove everything, run
