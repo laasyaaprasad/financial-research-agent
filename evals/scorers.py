@@ -29,22 +29,34 @@ CONTENT_CHARS = 6000
 
 class Point(BaseModel):
     point: str = Field(description="One grading requirement, taken from the grading rule")
+    optional: bool = Field(default=False, description="True if the rule marks this item optional")
     met: bool
     note: str = Field(description="Short reason, quoting the agent's value where relevant")
 
 
 class Correctness(BaseModel):
     points: list[Point]
-    verdict: Literal["correct", "partial", "incorrect"]
+    verdict: Literal["correct", "partial", "incorrect"] = Field(
+        description="Your overall verdict; code recomputes it from the required points")
     rationale: str
 
     @model_validator(mode="after")
-    def consistent_verdict(self):
+    def has_points(self):
         if not self.points:
             raise ValueError("Correctness requires rubric points")
-        if all(p.met for p in self.points) != (self.verdict == "correct"):
-            raise ValueError("verdict must be 'correct' exactly when every requirement is met")
         return self
+
+
+def verdict(result: Correctness) -> tuple[str, float]:
+    """(verdict, score) from the required points: optional items never block "correct". When some but not all
+    required points are met, the judge's "incorrect" (the core answer is wrong) stands; otherwise "partial"."""
+    required = [p for p in result.points if not p.optional] or result.points
+    met = sum(p.met for p in required)
+    if met == len(required):
+        return "correct", 1.0
+    if met == 0 or result.verdict == "incorrect":
+        return "incorrect", met / len(required)
+    return "partial", met / len(required)
 
 
 class Claim(BaseModel):
@@ -83,8 +95,9 @@ def _judge(schema, prompt: str, retries: int = 4, model: str = JUDGE_MODEL):
             error = "no structured output"
             # The judge sometimes answers in prose instead of calling the function; ask explicitly.
             prompt += "\n\nReturn the grade only by calling the provided function, not as plain text."
-        except Exception as exc:  # malformed or inconsistent judge output: ask again
+        except Exception as exc:  # malformed judge output: ask again, saying what was wrong
             error = exc
+            prompt += f"\n\nYour previous reply could not be used ({str(exc)[:300]}). Call the function again with valid fields."
     raise RuntimeError(f"judge failed after {retries} attempts: {error}")
 
 
@@ -165,15 +178,18 @@ Agent's answer:
 >>>
 
 Instructions:
-- Split the grading rule into its individual requirements and judge each as met or not met.
+- Split the grading rule into its individual requirements and judge each as met or not met. Items the rule
+  calls optional get optional=true; they never affect the verdict.
 - Judge only the requirements written in the grading rule (and its fail conditions); add none of your own.
+  Details given in parentheses or as evidence (dates, filing names, sources) help you check a requirement;
+  they are not separate requirements unless the rule says they must be stated.
 - Numbers: apply the stated tolerance. Wrong fiscal period, unit, scale or entity means not met even if a number is close.
 - When checking a figure against the agent's sources, use the source the answer cites for it (match by URL and title).
 {TYPE_RULES.get(row["answer_type"], "")}
 - verdict = correct if every requirement is met, partial if some, incorrect if none or the core answer is wrong."""
     result = _judge(Correctness, prompt, model=judge)
-    score = sum(p.met for p in result.points) / len(result.points)
-    return {"score": round(score, 3), **result.model_dump()}
+    final, score = verdict(result)
+    return {"score": round(score, 3), **result.model_dump(), "verdict": final, "judge_verdict": result.verdict}
 
 
 def _same_label(answer: str, reference: str) -> bool:

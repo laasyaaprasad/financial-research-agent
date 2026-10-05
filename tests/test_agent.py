@@ -546,3 +546,13 @@ def test_usage_limit_is_detected_for_both_agents():
     agent = {"tool_calls": [{"name": "tavily_search", "credits": 0, "error": "ValueError: Error 432: exceeds the usage limit"}]}
     ok = {"tool_results": [{"results": [{"content": "Revenue was $432 million"}]}], "tool_calls": [{"credits": 1}]}
     assert usage_limit_hit(baseline) and usage_limit_hit(agent) and not usage_limit_hit(ok)
+
+
+def test_correctness_verdict_comes_from_required_points():
+    from evals.scorers import Correctness, Point, verdict
+    pt = lambda met, optional=False: Point(point="x", optional=optional, met=met, note="")
+    # an unmet optional item doesn't block "correct", whatever the judge said overall
+    assert verdict(Correctness(points=[pt(True), pt(False, optional=True)], verdict="partial", rationale="")) == ("correct", 1.0)
+    assert verdict(Correctness(points=[pt(True), pt(False)], verdict="correct", rationale="")) == ("partial", 0.5)
+    assert verdict(Correctness(points=[pt(True), pt(False)], verdict="incorrect", rationale="")) == ("incorrect", 0.5)
+    assert verdict(Correctness(points=[pt(False)], verdict="partial", rationale="")) == ("incorrect", 0.0)
