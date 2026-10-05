@@ -4,6 +4,8 @@ A research assistant for financial analysts. It answers questions about US-liste
 
 **Links:** [live chat app](https://3-143-102-144.sslip.io) (shared-password sign-in) · [technical statement and report](REPORT.md) · [kanban](https://github.com/users/laasyaaprasad/projects/3)
 
+**Sign-in:** the username and password for the live app are in the submission document.
+
 ## What it does
 
 - **Answers analyst questions** about SEC-reporting companies: reported results, calculations over them (growth, margins, trailing twelve months), guidance and management commentary, and recent developments. It also builds comparison and trend tables.
