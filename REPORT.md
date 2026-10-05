@@ -59,7 +59,9 @@ The brief suggested a few directions for improving the starter. Here's how I too
 
 ## 3. Architecture
 
-![Architecture: a question and as-of date go through company resolution, the reporting calendar and one planning call; SEC evidence and Tavily feed numbered evidence; the writer quotes sources verbatim; code checks and a verifier run before the cited brief or table is shown. The verifier can send problems back to the writer once and evidence gaps back to Tavily once.](docs/architecture.png)
+![Architecture](docs/architecture.png)
+
+A question and as-of date go through company resolution, the reporting calendar and one planning call; SEC evidence and Tavily feed numbered evidence; the writer quotes sources verbatim; code checks and a verifier run before the cited brief or table is shown. The verifier can send problems back to the writer once and evidence gaps back to Tavily once.
 
 | Step | What it does | Why it's there |
 |---|---|---|

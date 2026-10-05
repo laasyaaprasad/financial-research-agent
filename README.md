@@ -30,7 +30,9 @@ Measured on **Exact50**, 50 held-out questions on what an analyst tool has to ge
 
 ## How it works
 
-![Architecture: a question and as-of date go through company resolution, the reporting calendar and one planning call; SEC evidence and Tavily feed numbered evidence; the writer quotes sources verbatim; code checks and a verifier run before the cited brief or table is shown. The verifier can send problems back to the writer once and evidence gaps back to Tavily once.](docs/architecture.png)
+![Architecture](docs/architecture.png)
+
+A question and as-of date go through company resolution, the reporting calendar and one planning call; SEC evidence and Tavily feed numbered evidence; the writer quotes sources verbatim; code checks and a verifier run before the cited brief or table is shown. The verifier can send problems back to the writer once and evidence gaps back to Tavily once.
 
 1. **Resolve the company** against SEC's official list, so the answer is about the right company.
 2. **Build its reporting calendar** from its own filings: which fiscal periods exist, their exact dates, and what has been reported as of the question date.
