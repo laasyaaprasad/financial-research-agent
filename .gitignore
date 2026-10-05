@@ -31,3 +31,6 @@ ui/.chainlit/translations/*
 infra/.terraform/
 infra/*.tfstate
 infra/*.tfstate.*
+
+# Per-question run records (large; scorecards and results/final/exact50.md are committed instead)
+results/final/records/
