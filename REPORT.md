@@ -25,22 +25,7 @@ The starter as shipped (Kimi K2.6) searches the web for everything, doesn't know
 
 ## 3. Architecture and why each part exists
 
-```mermaid
-flowchart TD
-    Q[Question + as-of date] --> R[Resolve companies<br/>model names them; SEC ticker list confirms]
-    R --> C[Reporting calendar per company<br/>fiscal labels, exact dates,<br/>filed / earnings release only / not yet reported]
-    C --> P[Plan: one model call<br/>answer periods, filings to read, ≤3 web searches]
-    P --> S[SEC evidence, free<br/>release, 10-Q/10-K and 8-K passages,<br/>XBRL facts for every answer period]
-    P --> W[Tavily<br/>basic search + one extract,<br/>news, call commentary, non-filers]
-    S --> E[Numbered evidence]
-    W --> E
-    E --> D[Writer: claims and table cells<br/>with verbatim quotes; calculations as expressions]
-    D --> K{Code checks: quote in source?<br/>number in quote? arithmetic in code}
-    K --> V{Verifier: company, metric, period,<br/>basis, actual vs guidance}
-    V -- problems, once --> D
-    V -- 'not in evidence' gaps, once --> W
-    V --> B[Cited brief or table<br/>not-available items · sources · draft for review]
-```
+![Architecture: a question and as-of date go through company resolution, the reporting calendar and one planning call; SEC evidence and Tavily feed numbered evidence; the writer quotes sources verbatim; code checks and a verifier run before the cited brief or table is shown. The verifier can send problems back to the writer once and evidence gaps back to Tavily once.](docs/architecture.png)
 
 | Component | Why it's there |
 |---|---|
