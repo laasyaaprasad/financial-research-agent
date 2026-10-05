@@ -556,3 +556,39 @@ def test_correctness_verdict_comes_from_required_points():
     assert verdict(Correctness(points=[pt(True), pt(False)], verdict="correct", rationale="")) == ("partial", 0.5)
     assert verdict(Correctness(points=[pt(True), pt(False)], verdict="incorrect", rationale="")) == ("incorrect", 0.5)
     assert verdict(Correctness(points=[pt(False)], verdict="partial", rationale="")) == ("incorrect", 0.0)
+
+
+# ---------- grounding repairs ----------
+
+def test_quotes_match_across_zero_width_table_spacers():
+    from agents.writer import normalize, quote_found
+    source = "Adjusted EBITDA\n$\n77,842\n​\n$\n73,841\n​\nAdjusted EBITDA margin"
+    assert quote_found("Adjusted EBITDA $ 77,842 $ 73,841", [normalize(source)])
+
+
+def test_spelled_out_numbers_count_as_printed():
+    ev = {"E1": Evidence(id="E1", url="u", title="t", tier="primary", date=None,
+                         text="a contractual commitment of $11.6 billion over seven years")}
+    calc = Calculation(expression="total / years", decimals=2, inputs=[
+        Input(name="total", value=11.6, evidence_id="E1", quote="commitment of $11.6 billion"),
+        Input(name="years", value=7, evidence_id="E1", quote="over seven years")])
+    claim = Claim(text="That is {result} billion a year.", evidence_ids=["E1"], quotes=[], calculation=calc)
+    assert check_claim(claim, ev) == (None, "That is 1.66 billion a year.")
+
+
+def test_unquoted_number_gets_the_passage_that_prints_it():
+    from agents.writer import attach_quotes
+    ev = {"E1": Evidence(id="E1", url="u", title="t", tier="primary", date=None,
+                         text="Revenue of $321.1 million, up 9%\nGAAP Operating Margin of 10.2% and Non-GAAP Operating Margin 29.4%")}
+    claim = Claim(text="Non-GAAP operating margin was 29.4%.", evidence_ids=["E1"], quotes=["GAAP Operating Margin of 10.2%"])
+    assert check_claim(claim, ev)[0]  # the figure isn't in the writer's quote
+    attach_quotes(claim, ev)
+    assert len(claim.quotes) == 2 and check_claim(claim, ev)[0] is None
+    other = Claim(text="Non-GAAP operating margin was 31.5%.", evidence_ids=["E1"], quotes=["Operating Margin of 10.2%"])
+    attach_quotes(other, ev)  # a figure the source doesn't print gets no quote, and still fails
+    assert len(other.quotes) == 1 and check_claim(other, ev)[0]
+
+
+def test_words_starting_like_months_are_not_dates():
+    assert numbers("Non-GAAP Operating Margin 29.4% and Marketing 5") == [(29.4, 1), (5.0, 0)]
+    assert numbers("quarter ended Sept. 3 and Dec 31, 2026") == []

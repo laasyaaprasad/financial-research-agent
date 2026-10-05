@@ -71,7 +71,9 @@ period labels, exact dates and status (filed / earnings release only / not yet r
    recommendation, a price target or valuation opinion, share prices or market capitalization,
    analyst consensus or estimates, or a ranking of a sector or market. A request to guess,
    estimate, ballpark or forecast a figure the company hasn't reported is declined here too
-   (the company's own guidance can still be quoted). Plan research only for the rest.
+   (the company's own guidance can still be quoted). Plan research only for the rest. If nothing that was asked
+   can be answered (all of it declined, or its period not yet reported), plan the company's latest reported
+   quarter's headline results and guidance instead and say so in `assumptions`, so the answer offers what exists.
 1. answer_periods: the periods the question asks about, using the calendar's labels. Map
    calendar-date wording (e.g. "April-June 2026") to the fiscal period with those dates.
 2. documents (at most 6): the filings that contain the facts.

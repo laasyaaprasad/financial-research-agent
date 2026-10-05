@@ -133,7 +133,7 @@ neither answered nor marked unavailable. Be strict but do not invent problems.""
 
 def normalize(text: str) -> str:
     text = text.lower().replace("—", "-").replace("–", "-").replace("−", "-")
-    text = re.sub(r"[$|,*\"'‘’“”]", " ", text)
+    text = re.sub(r"[$|,*\"'‘’“”\u200b\u200c\u200d\u2060\ufeff\xad]", " ", text)  # incl. zero-width spacers
     return re.sub(r"\s+", " ", text).strip()
 
 
@@ -144,7 +144,9 @@ def quote_found(quote: str, texts: list[str]) -> bool:
     return any(all(p in t for p in parts) for t in texts)
 
 
-DATE = re.compile(r"\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.? \d{1,2}(?!\d)(?:, \d{4})?|\b\d{4}-\d{2}-\d{2}\b", re.I)
+# Month names or their abbreviations only: "Margin 29.4%" must not read as "March 29".
+MONTH = r"(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sept?(?:ember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)"
+DATE = re.compile(rf"\b{MONTH}\.? \d{{1,2}}(?!\d)(?:, \d{{4}})?|\b\d{{4}}-\d{{2}}-\d{{2}}\b", re.I)
 # Form names (10-K), filing items (Item 2.02), exhibits (EX-99.1) and period lengths (52 weeks, 13-week)
 # describe documents and periods, not financial quantities; the verifier checks them.
 NOT_QUANTITIES = re.compile(r"\b\d+-[KQF]\b|\bitems? \d+\.\d+\b|\bex(?:hibit)?[- ]?\d+(?:\.\d+)?\b"
@@ -196,6 +198,43 @@ def evaluate(expression: str, variables: dict[str, float]) -> float:
     return ev(ast.parse(expression, mode="eval"))
 
 
+WORDS = {w: n for n, w in enumerate("zero one two three four five six seven eight nine ten eleven twelve thirteen "
+                                     "fourteen fifteen sixteen seventeen eighteen nineteen twenty".split())}
+WORDS |= {"thirty": 30, "forty": 40, "fifty": 50, "sixty": 60, "seventy": 70, "eighty": 80, "ninety": 90}
+
+
+def printed(text: str) -> list[float]:
+    """Numbers a source prints, in digits or as words ("seven years")."""
+    return [v for v, _ in numbers(text)] + [float(WORDS[w]) for w in re.findall(r"[a-z]+", text.lower()) if w in WORDS]
+
+
+def _excerpt(value: float, decimals: int, text: str, width: int = 140) -> str | None:
+    """A short passage of `text` that prints `value` exactly as displayed (with or without thousands separators)."""
+    for shown in dict.fromkeys([f"{abs(value):,.{decimals}f}", f"{abs(value):.{decimals}f}"]):
+        for m in re.finditer(rf"(?<![\d.,]){re.escape(shown)}(?![\d]|[.,]\d)", text):
+            start, end = max(0, m.start() - width), min(len(text), m.end() + width // 2)
+            passage = re.sub(r"\s+", " ", text[start:end]).strip()
+            if quote_found(passage, [normalize(text)]):
+                return passage
+    return None
+
+
+def attach_quotes(item, evidence: dict[str, Evidence]) -> None:
+    """When a claim states a number that none of its quotes print but one of its cited sources prints verbatim, add
+    that passage as a quote. The writer often quotes the sentence next to the figure; the meaning check still
+    judges the added passage."""
+    cited = [evidence[i] for i in item.evidence_ids if i in evidence]
+    have = [v for q in item.quotes for v in printed(q)]
+    shown = item.value if isinstance(item, Cell) else item.text
+    for value, decimals in numbers(shown.replace("{result}", "")):
+        if grounded(value, decimals, have):
+            continue
+        passage = next((p for e in cited if (p := _excerpt(value, decimals, e.text))), None)
+        if passage:
+            item.quotes.append(passage)
+            have += printed(passage)
+
+
 def check_claim(claim: Claim, evidence: dict[str, Evidence], computed: list[float] = ()) -> tuple[str | None, str]:
     """Returns (problem or None, final claim text with any calculated result filled in).
 
@@ -209,7 +248,7 @@ def check_claim(claim: Claim, evidence: dict[str, Evidence], computed: list[floa
     for q in claim.quotes:
         if not quote_found(q, texts):
             return f"quote not found in cited evidence: {q[:80]!r}", claim.text
-    allowed = [v for q in claim.quotes for v, _ in numbers(q)] + list(computed)
+    allowed = [v for q in claim.quotes for v in printed(q)] + list(computed)
     text = claim.text
     if claim.calculation:
         calc = claim.calculation
@@ -218,7 +257,7 @@ def check_claim(claim: Claim, evidence: dict[str, Evidence], computed: list[floa
             source = evidence.get(i.evidence_id)
             if not source or not quote_found(i.quote, [normalize(source.text)]):
                 return f"calculation input quote not found in {i.evidence_id}: {i.quote[:80]!r}", text
-            if not grounded(i.value, 9, [v for v, _ in numbers(i.quote)]):
+            if not grounded(i.value, 9, printed(i.quote)):
                 return f"input {i.name}={i.value} is not printed in its quote", text
             variables[i.name] = i.value
         try:
@@ -305,6 +344,8 @@ def write(question: str, today: date, plan_notes: list[str], evidence: list[Evid
     add(t)
     semantic_check = True
     for attempt in range(2):
+        for item in [*draft.claims, *draft.table]:
+            attach_quotes(item, by_id)
         items = _items(draft)
         computed = [r for c in items if (r := _result(c, by_id)) is not None]
         results = [check_claim(c, by_id, computed) for c in items]

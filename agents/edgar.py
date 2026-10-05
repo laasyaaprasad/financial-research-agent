@@ -160,7 +160,7 @@ def html_to_text(html: str) -> str:
     parser.feed(html)
     lines = []
     for line in "".join(parser.parts).splitlines():
-        line = re.sub(r"[ \t\xa0]+", " ", line).strip()
+        line = re.sub(r"[ \t\xa0\u200b\u200c\u200d\u2060\ufeff]+", " ", line).strip()  # zero-width cell spacers too
         line = re.sub(r"(\|\s*)+\|", "|", line).strip(" |")  # collapse empty table cells
         if line:
             lines.append(line)
