@@ -16,6 +16,7 @@ The baseline comes first so every later change can be measured against the start
 | M4 | Held-out test sets | 20 questions (`7ae904f`), 20 hard questions (`80b9802`), 8 table tasks (`38a7190`), each frozen before the agent ran on it | done |
 | M5 | Final evaluation | Baseline vs. agent on dev, held-out, hard and table sets, same model, within the credit budget | done |
 | M6 | Submission package | README, final report, build record | done |
+| M7 | Conversational UI | Analysts can research in a chat, with every statement cited and linked | done |
 
 ## M0: Project setup
 
@@ -251,3 +252,34 @@ The superseded code was removed from the working tree; it remains in git history
 - **`results/final/`:** `results.md` (regenerate with `uv run python -m evals.report --final`), scorecards, and compact per-question records.
 - **Build record:** the exported session transcript.
 - **Repo contents:** no `starter_agent.py`, `.env` or assignment brief in the repo; `scripts/check_secrets.py` reports no key material.
+
+## M7: Conversational UI (done; branch `feature/conversational-ui`)
+
+**What we build**
+- `ui/`: a chat front end built on Chainlit, an open-source chat UI for Python LLM apps. It's in an optional `ui` dependency group, so the agent and eval environments are unchanged, and it starts with `uv run --group ui python -m ui`.
+- **Citations:** every claim, table cell and "not available" item ends with `[n]` markers. Each marker links to its source, at the quoted passage where possible, and shows its quote on hover. The answer ends with a numbered, linked source list. An Evidence side panel shows, per source, the quotes and calculations behind each statement.
+- **Progress:** pipeline stages stream as steps through an optional `on_step` callback on `agents.pipeline.run`.
+- **Conversation:** `agents/followup.py` rewrites a follow-up, or a reply to a clarification question, into a standalone question using the last three turns. The rewritten question is shown above the answer.
+- **Look and feel:** follows the palette in Tavily's published brand guidelines: Off White and Black foundation, light by default, Lavender accent. It uses nothing the project has no rights to: its own name and mark, no Tavily logo, wordmark or brand mark, and open-licensed fonts (Inter, Geist Mono) instead of Tavily's commercial typeface. The app's readme states it is not affiliated with or endorsed by Tavily.
+- **Pipeline additions, behaviour unchanged:** `run()` also returns `sources` (each cited source's metadata and the quotes taken from it), and the brief's body rendering is shared with the chat.
+
+**Acceptance criteria**
+- The CLI and eval brief is byte-identical to before for every combination of answer sections. Checked against the previous `render` on all 128 combinations.
+- Offline tests cover the chat rendering (a marker on every statement, calculation inputs cited, the linked source list, the evidence panel, escaping, text-fragment links), the turn summary, and the no-history shortcut. The existing guard still finds no evaluation-set company in `agents/`.
+- In a browser: an answer shows steps, cited statements, linked sources and the Evidence panel; a follow-up is rewritten and answered; small talk gets the help text; a clarification reply resumes the original question.
+- Development runs use live web search off (SEC data and cached Tavily responses only).
+- **Theme contrast:** body text and links meet WCAG AA in both themes. Links are black text with a lavender underline, because lavender text on Off White is only 3.2:1.
+
+**Result (2026-10-04)**
+- **CLI brief:** byte-identical to the previous `render` on all 128 section combinations, so eval answers are unaffected.
+- **Offline tests:** 38 pass: the 28 existing tests plus 10 new chat-rendering and conversation tests.
+- **Merged with main (2026-10-04):** brings in the web-dependent sets, configurable Tavily settings and explicit failure answers. The chat now shows a failed run as "No verified answer" instead of an empty reply. 53 tests pass. The CLI brief is byte-identical to main's on all 256 section combinations, including a failed draft.
+- **Browser checks (live web off, 0 Tavily credits):**
+  - single-quarter question with a calculated margin
+  - clarification, then a one-word reply: researched as "What was Intel's revenue last quarter?"
+  - follow-up "and what was gross margin in the same quarter a year earlier?": researched as Q2 FY2025 with its period end date
+  - small talk: got the help text, no research
+  - stop: the pipeline halted after its in-flight model call
+  - 4-quarter table, with the derived Q4 cited to both input filings
+- **Bug found and fixed in the browser:** a quoted table row's `|` characters in a citation's hover text split table cells. They are now escaped, and a test covers it.
+- **Chainlit behaviour designed around:** since 2.11, Chainlit opens the side panel with every side element in the chat. So each answer gets one Evidence panel, and earlier panels are re-sent so the newest is first.

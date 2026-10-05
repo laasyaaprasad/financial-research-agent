@@ -19,6 +19,9 @@ dependencies = [
 
 [dependency-groups]
 dev = ["pytest>=8"]
+ui = [
+    "chainlit>=2.12",
+]
 
 [build-system]
 requires = ["hatchling"]

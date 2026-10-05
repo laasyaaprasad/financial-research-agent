@@ -1,0 +1,62 @@
+/*
+ * Brand styling on top of theme.json. Chainlit loads this file before its own stylesheet, so
+ * selectors pair an element with a class to outrank its single-class utilities.
+ *
+ * Colors follow the palette published in Tavily's brand guidelines (Off White and Black as the
+ * foundation, Lavender as the accent). No Tavily logos, marks or proprietary fonts are used:
+ * type is Inter and Geist Mono (SIL Open Font License).
+ *
+ * Lavender text on Off White falls short of WCAG AA contrast (3.2:1), so it is used for
+ * underlines, outlines and tints behind black text (5.1:1), never for small text on light surfaces.
+ */
+
+:root {
+  --brand-lavender: 129 127 255;  /* #817FFF */
+  --brand-green: 128 175 155;     /* #80AF9B */
+}
+
+/* Headings: medium weight, tight tracking. */
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* Links, including the [n] citation after every statement: text in the foreground color,
+   lavender underline, lavender tint on hover. */
+a.text-primary {
+  text-decoration: underline;
+  text-decoration-color: rgb(var(--brand-lavender));
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  border-radius: 3px;
+}
+a.text-primary:hover {
+  background-color: rgb(var(--brand-lavender) / 0.18);
+}
+
+/* The Evidence panel link: a lavender chip. */
+a.element-link {
+  background-color: rgb(var(--brand-lavender) / 0.22);
+  color: hsl(var(--foreground));
+}
+a.element-link:hover {
+  background-color: rgb(var(--brand-lavender));
+  color: #1F1E1E;
+}
+
+/* Quotes in the Evidence panel: a lavender rule, upright text (they are verbatim source text). */
+.prose blockquote {
+  border-left-color: rgb(var(--brand-lavender));
+  font-style: normal;
+}
+
+/* Inline code (calculations, input names) in the mono face. */
+.prose code {
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+/* Keyboard focus in lavender. */
+:focus-visible {
+  outline-color: rgb(var(--brand-lavender));
+}

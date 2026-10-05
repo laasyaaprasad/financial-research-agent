@@ -21,3 +21,7 @@ results/sec/
 .pytest_cache/
 results/archive_superseded/
 results/tavily_cache/
+
+# Chat UI runtime files (Chainlit regenerates translations on start)
+ui/.files/
+ui/.chainlit/translations/
