@@ -26,3 +26,8 @@ results/tavily_cache/
 ui/.files/
 ui/.chainlit/translations/*
 !ui/.chainlit/translations/en-US.json
+
+# Terraform (local state stays on the machine that applies it)
+infra/.terraform/
+infra/*.tfstate
+infra/*.tfstate.*

@@ -45,6 +45,9 @@ async def login(username: str, password: str) -> cl.User | None:
     return None
 
 
+_one_at_a_time = asyncio.Lock()  # a small instance answers one question at a time
+
+
 @cl.set_starters
 async def starters():
     return [
@@ -151,8 +154,9 @@ async def on_message(message: cl.Message):
     steps = Steps(parent_id=cl.context.current_step.id)
     cl.user_session.set("steps", steps)
     try:
-        question, output = await cl.make_async(research)(text, history, today, settings.get("live_web", True), steps,
-                                                         f"ui-{cl.context.session.thread_id}")
+        async with _one_at_a_time:
+            question, output = await cl.make_async(research)(text, history, today, settings.get("live_web", True),
+                                                             steps, f"ui-{cl.context.session.thread_id}")
     except Exception as exc:  # model or network failure: report it in the chat and keep the session usable
         error = f"{type(exc).__name__}: {exc}"[:300]
         await steps.fail(error)
