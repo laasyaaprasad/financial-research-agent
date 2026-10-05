@@ -81,7 +81,7 @@ Plain single-figure lookups, which every configuration answers, were dropped. Ea
   - Exact50's rules were written after earlier results on these questions were known
   - the final agent's fixes came from diagnosing held-out failures (§5), so this is not a clean held-out test
 
-Full tables: [`results/final/exact50.md`](results/final/exact50.md). The earlier full held-out results (older agent, Nemotron judge, before the grading fixes) are in [`results/final/results.md`](results/final/results.md). On those mostly single-figure questions, the starter's design on our model was about as accurate as our agent (94% against 99% fully correct), and the architecture's gain was in trust and cost.
+Full tables: [`results/final/exact50.md`](results/final/exact50.md). The earlier full held-out results (older agent, Nemotron judge, before the grading fixes; its citation check also saw quotes attached to sources that didn't contain them, which may have flattered our agent's supported-claim rate there; the Exact50 grading strips them) are in [`results/final/results.md`](results/final/results.md). On those mostly single-figure questions, the starter's design on our model was about as accurate as our agent (94% against 99% fully correct), and the architecture's gain was in trust and cost.
 
 ## 5. How the result was reached
 

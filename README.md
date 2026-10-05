@@ -1,5 +1,7 @@
 # Cited financial research agent (Tavily + SEC EDGAR)
 
+**Links:** [live chat app](https://3-143-102-144.sslip.io) (shared-password sign-in) · [kanban](https://github.com/users/laasyaaprasad/projects/3) · [report](REPORT.md)
+
 An agent for financial analysts researching SEC-reporting companies. It answers questions, and builds comps and trend tables, about:
 - reported results
 - calculations over them
@@ -148,7 +150,7 @@ A conversational front end built on [Chainlit](https://github.com/Chainlit/chain
 uv run --group ui python -m ui            # http://localhost:8000; Chainlit options pass through, e.g. --port 8001
 ```
 
-- **Sign-in:** one shared password (set in `ui/app.py`); the name is optional.
+- **Sign-in:** one shared password, read from `APP_PASSWORD` (`.env` locally, SSM Parameter Store when deployed); the name is optional. Without it, sign-in is refused.
 - **Citations on every statement:** each claim, table cell and "not available" item ends with `[n]` markers. A marker links to its source, opened at the quoted passage where the browser can find it (URL text fragments). Hovering a marker shows the verbatim quote the statement relies on.
 - **Linked sources at the end:** a numbered list gives each source's title, domain, date and whether it is primary (SEC or company) or secondary.
 - **Evidence panel:** a side panel lists every source of the answer, with the quotes behind each statement and any calculation (both the inputs and the expression computed in code). Each answer has its own panel, newest first.
@@ -228,3 +230,5 @@ tests/       offline unit tests (no network)
 PLAN.md      milestones and acceptance criteria
 REPORT.md    final report and technical statement
 ```
+
+**History:** the early milestones (M0–M7) were committed straight to `main`; later work went through pull requests. Each commit is linked from its card on the [kanban](https://github.com/users/laasyaaprasad/projects/3), and the held-out manifests cite those commit IDs as the record of when each set was frozen, so history was not rewritten.
