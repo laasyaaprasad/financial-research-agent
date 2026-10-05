@@ -63,7 +63,7 @@ The baseline comes first so every later change can be measured against the start
   - **Citations:** share of numbers that cite a source, and whether the cited text supports the claim
   - **Sources:** share of primary sources (sec.gov, the company's investor-relations site)
 - The judge is a different model family on Nebius from the one being tested.
-- Output goes to `results/scorecard_baseline.md`, with the raw per-question data in `results/raw/`.
+- Output goes to a scorecard per run, with the raw per-question data in `results/raw/`. The M1 starter runs, re-graded, are in `results/final/`.
 
 **Acceptance criteria**
 - All 25 fixed-answer questions have an `answer`, `evidence` and `expected_periods`, with `verified_by_human` set to true.
@@ -87,7 +87,7 @@ The baseline comes first so every later change can be measured against the start
 - **Sources:** about 86% of numbers cite a source, but only 51–75% of cited claims are supported by the retrieved text, and only 20–24% of cited URLs are primary sources.
 - **Cost:** 7–9 Tavily credits and about 81k tokens per question.
 - **Run-to-run variation:** 12 of 30 verdicts changed between the two runs. Re-judging run 1's saved answers changed only 1 of 30, so the variation comes from the agent, not the judge.
-- **Judge agreement:** 8 of 9 with the user's grades, 9 of 10 including one delegated grade. See `results/judge_agreement_baseline_r1.md`.
+- **Judge agreement:** 8 of 9 with the user's grades, 9 of 10 including one delegated grade. See `results/final/judge_agreement_m1.md`.
 
 ## M2: Tracing (done)
 
@@ -332,4 +332,10 @@ The superseded code was removed from the working tree; it remains in git history
 | Median latency | 26 s | 12 s | 39 s | 45 s |
 
 Still weak: web-dependent questions and latency. All tables: `results/final/exact50.md`.
+
+## Submission (2026-10-05; PR #22)
+
+- **Sign-in password** moved from the public source to `APP_PASSWORD` (`.env` locally, SSM when deployed); sign-in is refused without it.
+- **Cleanup:** intermediate per-run outputs at the top of `results/` and the superseded `history_kimi_baseline/` runs removed (the re-graded runs are in `results/final/`); the M1 judge-agreement record kept as `results/final/judge_agreement_m1.md`; per-run outputs are now gitignored.
+- **README and REPORT:** design decisions with measured numbers: model choice, cost per question ($0.049 against $0.126 for the starter as shipped), where latency goes (Langfuse step timings), the Tavily settings comparison, judge history, and examples of what makes Exact50 hard.
 
