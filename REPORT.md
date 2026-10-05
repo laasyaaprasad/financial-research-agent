@@ -1,5 +1,7 @@
 # Report: a cited financial research agent
 
+**Live app:** [3-143-102-144.sslip.io](https://3-143-102-144.sslip.io) (shared-password sign-in)
+
 **Contents:** [Technical statement](#1-technical-statement) · [How this answers the brief](#2-how-this-answers-the-brief) · [Architecture](#3-architecture) · [Results](#4-results) · [Design decisions](#5-design-decisions-and-trade-offs) · [Evaluation method](#6-evaluation-method) · [How the result was reached](#7-how-the-result-was-reached) · [Limitations and next steps](#8-limitations-and-next-steps) · Appendices: [chat UI](#appendix-a-chat-ui), [deployment](#appendix-b-deployment), [commands](#appendix-c-commands)
 
 ## 1. Technical statement
@@ -234,7 +236,7 @@ The UI calls `agents.pipeline.run` like the CLI and the eval harness do, so the 
 
 ## Appendix B: Deployment
 
-The chat UI runs on one EC2 instance (t3.micro, `us-east-2`) in Docker, behind Caddy for HTTPS, at an `sslip.io` hostname of its Elastic IP. The instance answers one question at a time.
+The chat UI runs on one EC2 instance (t3.micro, `us-east-2`) in Docker, behind Caddy for HTTPS, at an `sslip.io` hostname of its Elastic IP: [3-143-102-144.sslip.io](https://3-143-102-144.sslip.io). The instance answers one question at a time.
 
 - **CI** ([.github/workflows/ci-cd.yml](.github/workflows/ci-cd.yml)): every push runs the tests, checks the Terraform, builds the image and checks that it holds no `.env` file or API key.
 - **CD (pull-based):** a push to `main` publishes the image to `ghcr.io/laasyaaprasad/financial-research-agent`. A systemd timer on the instance checks for a new image every 2 minutes and restarts the app when the image or the secrets change. GitHub has no AWS access.

@@ -67,7 +67,7 @@ More commands, the chat UI's features and the deployment setup are in the [repor
 
 ## Deployment
 
-- **Where:** one AWS EC2 instance (t3.micro) running Docker, behind Caddy for HTTPS.
+- **Where:** one AWS EC2 instance (t3.micro) running Docker, behind Caddy for HTTPS, live at [3-143-102-144.sslip.io](https://3-143-102-144.sslip.io).
 - **How:** every push runs the tests in GitHub Actions; a push to `main` publishes a new image, which the instance picks up within about 2 minutes.
 - **Secrets:** API keys live only in `.env` and in AWS SSM Parameter Store, never in the image, Terraform state or GitHub.
 
