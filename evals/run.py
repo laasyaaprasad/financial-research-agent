@@ -34,7 +34,7 @@ SETS = {"dev": ROOT / "evals" / "golden.jsonl", "test": ROOT / "evals" / "test_h
         "hard": ROOT / "evals" / "test_hard.jsonl", "dev_tables": ROOT / "evals" / "dev_tables.jsonl",
         "tables": ROOT / "evals" / "test_tables.jsonl", "edge_dev": ROOT / "evals" / "edge_dev.jsonl",
         "edge": ROOT / "evals" / "test_edge.jsonl", "web_dev": ROOT / "evals" / "web_dev.jsonl",
-        "web": ROOT / "evals" / "test_web.jsonl"}
+        "web": ROOT / "evals" / "test_web.jsonl", "exact50": ROOT / "evals" / "exact50.jsonl"}
 RESULTS = ROOT / "results"
 FIELDS = ("id", "category", "difficulty", "time_sensitivity", "answer_type", "question", "grading", "answer")
 # Rows of table sets also carry "cells"; scorers grade those cell by cell.
