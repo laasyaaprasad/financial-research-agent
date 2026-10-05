@@ -11,6 +11,10 @@ the side panel.
 
 from __future__ import annotations
 
+import asyncio
+import hmac
+import os
+import secrets
 from datetime import date
 
 import chainlit as cl
@@ -26,6 +30,19 @@ HELP = ("I research SEC-reporting companies and cite a source for every statemen
         "calculations over them (growth, margins, trailing twelve months), guidance, management commentary, recent "
         "developments, or a comparison table across companies or periods. Follow-up questions can refer to earlier "
         "answers. I don't give investment advice, price targets, share prices or consensus estimates.")
+
+
+# One shared password keeps the app from being used up by strangers; the name on the sign-in form is optional.
+PASSWORD = "tavilyfde"
+os.environ.setdefault("CHAINLIT_AUTH_SECRET", secrets.token_urlsafe(48))  # signs sessions; a restart signs users out
+
+
+@cl.password_auth_callback
+async def login(username: str, password: str) -> cl.User | None:
+    if hmac.compare_digest(password.encode(), PASSWORD.encode()):
+        return cl.User(identifier=username.strip() or "guest")
+    await asyncio.sleep(1)  # slows down password guessing
+    return None
 
 
 @cl.set_starters
