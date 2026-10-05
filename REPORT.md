@@ -39,17 +39,23 @@ That discipline mattered most when it was uncomfortable. My first version scored
 
 ## 2. How this answers the brief
 
-The task was to improve the starter in a way that creates clear value for a real user. The work covers each of the brief's example directions:
+The brief suggested a few directions for improving the starter. Here's how I took each one.
 
-| Direction | What this project does |
-|---|---|
-| Adapt it to a specific customer workflow | Built for financial analysts: cited, period-correct briefs, comps and trend tables, and a chat UI with follow-ups and point-in-time (as-of date) questions. |
-| Add a useful integration | SEC EDGAR, called directly through SEC's own APIs: the ticker list, filings and XBRL facts. |
-| Improve retrieval quality | SEC first, with ranked filing passages and XBRL facts; Tavily settings chosen by measurement; web results must be about the company; one gap-filling round. |
-| Improve source handling and citations | Verbatim quotes checked in code, a verifier for meaning, primary and secondary source tiers, and a citation on every statement: 94% of cited claims supported, 73% of sources primary. |
-| Add an evaluation loop | Dev sets, held-out sets frozen by hash, a judge from a different model family, re-grading, and Exact50 as the headline benchmark. |
-| Introduce a context engineering improvement | Instead of raw search results, the model is shown each company's reporting calendar and the as-of date, a plan validated in code, and ranked, numbered evidence. |
-| Improve observability/debuggability | OpenTelemetry traces in Langfuse for every step, model call and Tavily call, with eval scores attached and linked from each scorecard. |
+**Adapt it to a specific customer workflow.** I built it for one user: a financial analyst researching US-listed companies. It answers what they actually ask about (reported results, calculations like growth and margins, guidance and recent developments) and builds the comps and trend tables they make every day. It's just as clear about what it won't do: periods not yet reported, undisclosed metrics, investment advice. And the chat lets them ask follow-ups or pick an as-of date for point-in-time questions.
+
+**Add a useful integration.** I connected the agent directly to SEC EDGAR, the regulator's own database of company filings. It's the official source for reported numbers, it's free, and the data is structured. I call SEC's own APIs through a small client of my own instead of a third-party wrapper.
+
+**Improve retrieval quality.** The agent reads SEC filings first: the most relevant passages, ranked, plus the exact XBRL figures for each period. Tavily is used only for what filings lack, with basic search plus one focused extract, the cheapest setup and the one that scored best when I measured it. It keeps only results about the right company, and searches companies' own sites first when they don't file with the SEC. Tavily responses are cached, so I could replay runs at zero credits while developing.
+
+**Improve source handling and citations.** Every claim has to quote its source word for word. Code checks that each quote really is in that source and that every number appears in a quote, and it does all the arithmetic itself rather than trusting the model. A verifier then checks the meaning, such as the right metric, period and basis. Every statement that survives gets an `[n]` citation marked as a primary or secondary source.
+
+**Add an evaluation loop.** I kept practice questions separate from test questions, and each test set was frozen before the agent ever saw it. Answers are graded by a model from a different family, point by point against a rubric, with code deciding the final verdict, and every citation is checked against its source. The same harness runs the starter and my agent, so the comparison is fair. A unit test also fails if any test company's name shows up in the agent's code.
+
+**Introduce a context engineering improvement.** Instead of handing the model a question and a pile of search results, I control what it sees. It gets the company's real reporting calendar and today's date, then plans what to read before anything is fetched, and code removes any period that hasn't been reported. The writer works from ranked, numbered evidence, and each step thinks only as hard as it needs to (none, low, medium or high reasoning effort).
+
+**Improve observability/debuggability.** Every question becomes one trace in Langfuse, built on OpenTelemetry. It has a step for each part of the pipeline, every model call with its tokens and cost, and every Tavily call with the credits spent and the results returned. Evaluation scores are attached to each trace, so I could go from a failing answer straight to the step that broke it.
+
+**What I'd add next.** Today, finding which step or model call caused a wrong answer means reading its trace. The next step would be flagging that automatically, so failures are grouped by cause without opening each trace.
 
 ## 3. Architecture
 
