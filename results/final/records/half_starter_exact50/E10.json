@@ -1,0 +1,140 @@
+{
+ "id": "E10",
+ "category": "fiscal vs calendar",
+ "difficulty": "medium",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "adobe rev last year",
+ "grading": "(1) Identifies Adobe (ADBE). (2) Interprets 'last year' as the last completed fiscal year, fiscal 2025 (52 weeks ended Nov 28, 2025), says it is fiscal rather than calendar 2025, and gives the dates; it may mention that fiscal 2026 is still in progress (ends Nov 2026) with Q3 FY2026 the latest reported quarter. (3) Gives total revenue for fiscal 2025 with a citation (10-K or Q4 release). (4) Fail if it presents fiscal 2026 or a trailing/calendar-year sum as 'last year' without saying so, gives no dates, or gives a figure for another company.",
+ "answer": "Adobe fiscal 2025 (ended Nov 28, 2025): total revenue $23.77B (+11%); notes fiscal vs calendar and that fiscal 2026 is still open.",
+ "output": {
+  "answer": " For Adobe's last completed fiscal year (FY2023), revenue was a record **$19.41 billion**, up 10% year-over-year.\n\nSources:\n- [Yahoo Finance: Adobe Achieves Record Fiscal 2023 Revenue](https://finance.yahoo.com/news/adobe-inc-adbe-achieves-record-221102564.html)\n- [WSJ: Adobe Annual Income Statement](https://www.wsj.com/market-data/quotes/IT/XMIL/1ADBE/financials/annual/income-statement)\n\n*(Note: If you mean calendar 2024/FY2024, Adobe's revenue was approximately $21.5 billion based on recent financial data.)*",
+  "tokens": {
+   "input": 5894,
+   "output": 1560
+  },
+  "tavily_credits": 1,
+  "latency_s": 26.14,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/cc75f7a659f53e97465e48f402959194",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Adobe annual revenue 2023 fiscal year financial results",
+     "search_depth": "basic",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/news/adobe-inc-adbe-achieves-record-221102564.html",
+    "https://www.wsj.com/market-data/quotes/IT/XMIL/1ADBE/financials/annual/income-statement"
+   ],
+   "cited_primary": 0,
+   "retrieved": 9,
+   "retrieved_primary": 0
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 0.25,
+   "points": [
+    {
+     "point": "Identifies Adobe (ADBE).",
+     "optional": false,
+     "met": true,
+     "note": "The answer explicitly identifies Adobe."
+    },
+    {
+     "point": "Interprets “last year” as fiscal 2025, explicitly distinguishes it from calendar 2025, and gives the fiscal-year dates (52 weeks ended Nov. 28, 2025).",
+     "optional": false,
+     "met": false,
+     "note": "It instead calls FY2023 the last completed fiscal year and provides no FY2025 dates or fiscal-versus-calendar-2025 distinction."
+    },
+    {
+     "point": "Gives Adobe’s total revenue for fiscal 2025 with a citation to a 10-K or Q4 release.",
+     "optional": false,
+     "met": false,
+     "note": "It reports $19.41 billion for FY2023, citing a source about FY2023, rather than FY2025 revenue."
+    },
+    {
+     "point": "Avoids presenting an incorrect period as “last year,” omitting the required dates, or giving a figure for another company.",
+     "optional": false,
+     "met": false,
+     "note": "The answer presents FY2023 as last year and gives no dates."
+    },
+    {
+     "point": "May note that fiscal 2026 is still in progress, ending in November 2026, with Q3 FY2026 the latest reported quarter.",
+     "optional": true,
+     "met": true,
+     "note": "This was optional; the answer does not make this note."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "Although it names Adobe, the answer identifies FY2023—not FY2025—as the last completed fiscal year, omits the required dates, and gives a cited revenue figure for the wrong fiscal year.",
+   "judge_verdict": "incorrect",
+   "votes": [
+    "incorrect",
+    "incorrect",
+    "incorrect"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Adobe's last completed fiscal year was FY2023",
+     "numeric": true,
+     "cited_url": "https://www.wsj.com/market-data/quotes/IT/XMIL/1ADBE/financials/annual/income-statement",
+     "reason": "The retrieved WSJ text identifies Adobe's fiscal year as December–November and lists annual revenue for 2025, 2024, and 2023. That evidence does not support FY2023 being the last completed year; it shows later fiscal years. The retrieved passage has no publication date, but its listed FY2025 data contradicts the answer's period framing.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Adobe's FY2023 revenue was a record $19.41 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/adobe-inc-adbe-achieves-record-221102564.html",
+     "reason": "The retrieved Yahoo Finance article says Adobe reported record FY2023 revenue of $19.41 billion. The WSJ source separately lists FY2023 sales/revenue as $19,368 million ($19.368 billion), which conflicts with $19.41 billion; however, the Yahoo URL cited for this claim explicitly supports the stated amount and record characterization.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Adobe's FY2023 revenue increased 10% year over year",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/adobe-inc-adbe-achieves-record-221102564.html",
+     "reason": "The retrieved Yahoo Finance article explicitly says annual revenue increased 10% year over year for FY2023.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Adobe's FY2024 revenue was approximately $21.5 billion",
+     "numeric": true,
+     "cited_url": "https://www.wsj.com/market-data/quotes/IT/XMIL/1ADBE/financials/annual/income-statement",
+     "reason": "The retrieved WSJ text gives FY2024 Sales/Revenue as 21,525 USD millions, or $21.525 billion. Rounded to one decimal place, that is approximately $21.5 billion. The same source specifies that Adobe's fiscal year is December–November, so this evidence supports FY2024, not a separate calendar-year 2024 figure.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 4,
+   "supported": 3,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 62.4
+ }
+}

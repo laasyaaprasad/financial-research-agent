@@ -1,0 +1,449 @@
+{
+ "id": "W10",
+ "category": "foreign issuer",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "For Toyota Motor Corporation's FY2027 first quarter (April 1 - June 30, 2026; Toyota's fiscal year ends March 31), what were consolidated operating income and net income attributable to Toyota shareholders in yen, what is the company's revised FY2027 operating income forecast versus its previous (May 2026) forecast, and which line items explain why net income rose strongly while operating income fell?",
+ "grading": "Key points (all required): (1) Q1 FY2027 operating income about JPY 1,063.5 billion (JPY 1,063,473 million; accept 1,063.4-1,063.5), down 8.8% y/y; (2) net income attributable to Toyota JPY 1,477.0 billion (+75.6%); (3) revised FY2027 operating income forecast JPY 3.4 trillion versus JPY 3.0 trillion previously; (4) explanation: income before income taxes was JPY 1,963.9 billion (+56.8%), about JPY 900 billion above operating income, helped by other finance income (JPY 850.6 billion vs 153.7 billion a year earlier), equity-method profit (JPY 210.7 billion) and a foreign-exchange gain (JPY 112.4 billion vs a JPY 212.4 billion loss), partly offset by other finance costs (JPY 285.6 billion). Fail if the answer states the quarter as calendar 2027 or Jan-Mar, uses the May forecast (JPY 3.0 trillion) as current, or says net income fell.",
+ "answer": "Q1 FY2027 (April 1-June 30, 2026): sales revenues JPY 13,525.4 billion (+10.4%); operating income JPY 1,063.5 billion (-8.8% from JPY 1,166.1 billion); income before income taxes JPY 1,963.9 billion (+56.8%); net income attributable to Toyota JPY 1,477.0 billion (+75.6%) [W10-E1]. The gap is non-operating: other finance income of JPY 850.6 billion (JPY 153.7 billion a year earlier), equity-method profit JPY 210.7 billion and a JPY 112.4 billion FX gain (vs a JPY 212.4 billion loss), less JPY 285.6 billion of other finance costs [W10-E1]. The FY2027 forecast was raised on 4 August to operating income JPY 3.4 trillion (from JPY 3.0 trillion), net income JPY 3.25 trillion (from 3.0 trillion) and sales JPY 54.0 trillion (from 51.0 trillion), with USD/JPY assumed at 160 (from 150) [W10-E2].",
+ "output": {
+  "answer": "**Question:** For Toyota Motor Corporation's FY2027 first quarter (April 1 - June 30, 2026; Toyota's fiscal year ends March 31), what were consolidated operating income and net income attributable to Toyota shareholders in yen, what is the company's revised FY2027 operating income forecast versus its previous (May 2026) forecast, and which line items explain why net income rose strongly while operating income fell?\n*As of 2026-10-03*\n\n**Interpreted as:** Question's 'FY2027' = Toyota's fiscal year ending March 31, 2027; the calendar labels this same year 'FY2026' (2026-04-01 to 2027-03-31). Q1 = the quarter April 1 - June 30, 2026, reported ~early August 2026 (already reported as of today, 2026-10-03). 'Net income attributable to Toyota shareholders' = net income attributable to Toyota Motor Corporation. 'Previous (May 2026) forecast' = the full-year FY2027 operating income guidance issued with the FY2026 full-year results in May 2026. Toyota does not file quarterly results with the SEC, so Q1 figures and the revised outlook are read from the earnings release and web coverage.\n\n| | Operating income (¥ millions) | Net income attributable to Toyota Motor Corporation (¥ millions) | Sales revenues (¥ millions) | Income before income taxes (¥ millions) | Net income (¥ millions) | Operating income forecast (¥ billions) | Operating income forecast change (¥ billions) | Sales revenues forecast (¥ billions) | Sales revenues forecast change (¥ billions) | Operating margin (%) |\n|---|---|---|---|---|---|---|---|---|---|---|\n| Q1 FY2027 (quarter ended June 30, 2026) | 1,063,473 [1] | 1,477,044 [1] | 13,525,400 [1] | 1,963,862 [1] | 1,551,725 [1] | — | — | — | — | — |\n| Q1 FY2026 (quarter ended June 30, 2025) | 1,166,141 [1] | 841,345 [1] | — | 1,252,152 [1] | 872,193 [1] | — | — | — | — | — |\n| FY2027 forecast — previous (May 2026) | — | — | — | — | — | 3,000.0 [2] | — | 51,000.0 [2] | — | 5.9 [2] |\n| FY2027 forecast — revised (August 4, 2026) | — | — | — | — | — | 3,400.0 [2] | — | 54,000.0 [2] | — | 6.3 [2] |\n| FY2027 forecast — change | — | — | — | — | — | — | +400.0 [2] | — | +3,000.0 [2] | — |\n\n- Toyota's Q1 FY2027 (quarter ended June 30, 2026) consolidated operating income was ¥1,063,473 million (1,063.4 billion yen), a decrease of 102.6 billion yen, or 8.8%, from ¥1,166,141 million in Q1 FY2026 (quarter ended June 30, 2025); the calculated year-over-year change is -8.8%. [1]\n- Toyota's Q1 FY2027 (quarter ended June 30, 2026) net income attributable to Toyota Motor Corporation was ¥1,477,044 million (1,477.0 billion yen), an increase of 635.6 billion yen, or 75.6%, from ¥841,345 million in Q1 FY2026 (quarter ended June 30, 2025); the calculated year-over-year change is 75.6%. [1]\n- Toyota's revised FY2027 (year ending March 31, 2027) full-year operating income forecast, issued with the Q1 results on August 4, 2026, is ¥3,400.0 billion, raised by ¥400.0 billion from the previous forecast of ¥3,000.0 billion given with the May 2026 FY2026 full-year results. [2][3][4]\n- Alongside the operating income upgrade, Toyota's FY2027 forecast lifts sales revenues to ¥54,000.0 billion from ¥51,000.0 billion (a ¥3,000.0 billion increase) and the forecast operating margin to 6.3% from 5.9%. [2]\n- Toyota attributed the Q1 FY2027 operating income decline to these changes: marketing efforts +¥70.0 billion, effects of changes in exchange rates +¥345.0 billion, cost reduction efforts -¥85.0 billion, increase or decrease in expenses and expense reduction efforts -¥190.0 billion, and other -¥242.6 billion, which sum to -102.6 billion yen, matching the reported 102.6 billion yen decline. [1]\n- The line items that explain why Q1 FY2027 net income rose while operating income fell are below-the-line items: other finance income rose to ¥850,594 million from ¥153,721 million, foreign exchange gain (loss), net swung to a gain of ¥112,378 million from a loss of ¥212,375 million, and share of profit of investments accounted for using the equity method rose to ¥210,685 million from ¥141,044 million, while income tax expense rose only to ¥412,136 million from ¥379,959 million. [1]\n- Secondary coverage of the August 4, 2026 release said the net profit jump was driven largely by currency gains and non-operating income rather than core automotive performance, with other financial income surging from 153.7 billion yen to 850.5 billion yen partly on a one-time gain tied to the privatization of Toyota Industries, and noted the operating margin narrowed to 7.9% from 9.5% a year earlier. [5]\n\n_1 draft statement(s) were withheld because they could not be verified against the sources (details in the run record)._\n\n**Sources**\n[1] FINANCIAL SUMMARY FY2027 First Quarter (global.toyota, 2026-08-04, primary) https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_summary_en.pdf\n[2] FY2027 First Quarter Financial Results (global.toyota, undated, primary) https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_presentation_en.pdf\n[3] FY2027 1Q Results: Toyota Advances Shareholder Returns with 1-trillion-yen Buyback While Accelerating Global HEV Investments (toyotatimes.jp, undated, primary) http://toyotatimes.jp/en/toyota_news/financial_results_2027/001.html\n[4] Toyota Raises Net Income Guidance (www.just-auto.com, undated, secondary) https://www.just-auto.com/news/toyota-raises-guidance-net-income\n[5] Toyota (TM) Delivers Record Revenue but Operating Income Falls 8.8% in Q1 (tickeron.com, undated, secondary) https://tickeron.com/blogs/toyota-tm-delivers-record-revenue-but-operating-income-falls-8-8-in-q1-15345\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 97480,
+   "output": 53851
+  },
+  "tavily_credits": 7.0,
+  "latency_s": 204.1,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/78fafa3fe44f1fa1d27b1af2c6dbc71b",
+  "companies": [
+   {
+    "name": "TOYOTA MOTOR CORP/",
+    "ticker": "TM",
+    "cik": "1094517",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "Question's 'FY2027' = Toyota's fiscal year ending March 31, 2027; the calendar labels this same year 'FY2026' (2026-04-01 to 2027-03-31).",
+    "Q1 = the quarter April 1 - June 30, 2026, reported ~early August 2026 (already reported as of today, 2026-10-03).",
+    "'Net income attributable to Toyota shareholders' = net income attributable to Toyota Motor Corporation.",
+    "'Previous (May 2026) forecast' = the full-year FY2027 operating income guidance issued with the FY2026 full-year results in May 2026.",
+    "Toyota does not file quarterly results with the SEC, so Q1 figures and the revised outlook are read from the earnings release and web coverage."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Q1 FY2027 (April 1 - June 30, 2026) consolidated operating income, in yen",
+    "Q1 FY2027 net income attributable to Toyota Motor Corporation shareholders, in yen",
+    "Revised full-year FY2027 (year ending March 31, 2027) operating income forecast, announced with the Q1 results (~August 2026), in yen",
+    "Previous full-year FY2027 operating income forecast given in May 2026 (with the FY2026 full-year results), in yen, for the vs-previous comparison",
+    "Line items explaining the divergence: why net income attributable to Toyota rose strongly while operating income fell (e.g. equity in earnings of affiliates, other/non-operating income, FX gains, tax items, minority interests)"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "TM",
+     "label": "FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "TM",
+     "period": "FY2025",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": 60,
+   "searches": [
+    {
+     "purpose": "Get Q1 FY2027 (April-June 2026) consolidated operating income and net income attributable to Toyota shareholders, plus the revised full-year FY2027 operating income forecast vs the May 2026 forecast",
+     "query": "Toyota first quarter FY2027 April-June 2026 results operating income net income revised forecast",
+     "topic": "news",
+     "days_back": 90
+    },
+    {
+     "purpose": "Get management's explanation on the earnings call for why net income rose while operating income fell (line items such as equity in earnings of affiliates, other income, tax)",
+     "query": "Toyota Q1 FY2027 earnings call net income operating income explanation equity in earnings of affiliates",
+     "topic": "general",
+     "days_back": null
+    },
+    {
+     "purpose": "Confirm the May 2026 (FY2026 full-year results) FY2027 operating income forecast figure for the comparison",
+     "query": "Toyota May 2026 FY2027 operating income forecast guidance full year results",
+     "topic": "news",
+     "days_back": 180
+    }
+   ],
+   "availability_notes": [
+    "Toyota is a foreign private issuer that files only an annual Form 20-F; it does not file quarterly reports with the SEC, so the Q1 FY2027 (April-June 2026) figures and the revised forecast are not in the SEC calendar and must come from the earnings release / web.",
+    "The calendar labels the fiscal year ending March 31, 2027 as 'FY2026' (2026-04-01 to 2027-03-31); the question's 'FY2027' is the same year under Toyota's own convention. The Q1 period (Apr-Jun 2026) sits inside calendar FY2026.",
+    "The FY2025 20-F (filed 2026-06-10) covers the year ended March 31, 2026 and gives the prior-year baseline only; it does not contain Q1 FY2027 results."
+   ]
+  },
+  "unavailable": [],
+  "removed": [
+   {
+    "text": "Toyota's FY2027 forecast also puts net income at 3.25 trillion yen, versus the previous forecast of 3.00 trillion yen.",
+    "problem": "number 3 is not in the quotes and not calculated"
+   }
+  ],
+  "assumptions": [
+   "Question's 'FY2027' = Toyota's fiscal year ending March 31, 2027; the calendar labels this same year 'FY2026' (2026-04-01 to 2027-03-31).",
+   "Q1 = the quarter April 1 - June 30, 2026, reported ~early August 2026 (already reported as of today, 2026-10-03).",
+   "'Net income attributable to Toyota shareholders' = net income attributable to Toyota Motor Corporation.",
+   "'Previous (May 2026) forecast' = the full-year FY2027 operating income guidance issued with the FY2026 full-year results in May 2026.",
+   "Toyota does not file quarterly results with the SEC, so Q1 figures and the revised outlook are read from the earnings release and web coverage."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Toyota first quarter FY2027 April-June 2026 results operating income net income revised forecast",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2026-07-05",
+     "include_domains": [
+      "toyota.com",
+      "global.toyota",
+      "toyota.co.jp",
+      "toyotamotorcorp.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Toyota Q1 FY2027 earnings call net income operating income explanation equity in earnings of affiliates",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general",
+     "include_domains": [
+      "toyota.com",
+      "global.toyota",
+      "toyota.co.jp",
+      "toyotamotorcorp.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Toyota May 2026 FY2027 operating income forecast guidance full year results",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2026-04-06",
+     "include_domains": [
+      "toyota.com",
+      "global.toyota",
+      "toyota.co.jp",
+      "toyotamotorcorp.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_summary_en.pdf",
+      "https://pressroom.toyota.com/tmc-announces-april-through-june-2026-financial-results",
+      "https://global.toyota/en/ir/financial-results/index.html"
+     ],
+     "query": "For Toyota Motor Corporation's FY2027 first quarter (April 1 - June 30, 2026; Toyota's fiscal year ends March 31), what were consolidated operating income and net income attributable to Toyota shareholders in yen, what is the company's revised FY2027 operating income forecast versus its previous (May 2026) forecast, and which line items explain why net income rose strongly while operating income ",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Toyota Motor Corporation Toyota's previous (May 2026) FY2027 full-year operating income forecast, needed to state the revised August 2026 forecast against the figure it replaced",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general",
+     "include_domains": [
+      "toyota.com",
+      "global.toyota",
+      "toyota.co.jp",
+      "toyotamotorcorp.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Toyota Motor Corporation Toyota's previous (May 2026) FY2027 full-year operating income forecast, needed to state the revised August 2026 forecast against the figure it replaced",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "http://toyotatimes.jp/en/toyota_news/financial_results_2027/001.html",
+      "https://finance.yahoo.com/markets/stocks/articles/toyota-motor-tse-7203-down-092023411.html",
+      "https://tickeron.com/blogs/toyota-tm-delivers-record-revenue-but-operating-income-falls-8-8-in-q1-15345"
+     ],
+     "query": "For Toyota Motor Corporation's FY2027 first quarter (April 1 - June 30, 2026; Toyota's fiscal year ends March 31), what were consolidated operating income and net income attributable to Toyota shareholders in yen, what is the company's revised FY2027 operating income forecast versus its previous (May 2026) forecast, and which line items explain why net income rose strongly while operating income ",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "http://toyotatimes.jp/en/toyota_news/financial_results_2027/001.html",
+    "https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_presentation_en.pdf",
+    "https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_summary_en.pdf",
+    "https://tickeron.com/blogs/toyota-tm-delivers-record-revenue-but-operating-income-falls-8-8-in-q1-15345",
+    "https://www.just-auto.com/news/toyota-raises-guidance-net-income"
+   ],
+   "cited_primary": 2,
+   "retrieved": 9,
+   "retrieved_primary": 4
+  },
+  "recall": {
+   "figures": 38,
+   "found": 34
+  },
+  "correctness": {
+   "score": 0.818,
+   "points": [
+    {
+     "point": "States Q1 FY2027 consolidated operating income as about JPY 1,063.5 billion (acceptable JPY 1,063.4–1,063.5 billion / JPY 1,063,473 million) and says it fell 8.8% year over year.",
+     "optional": false,
+     "met": true,
+     "note": "Gives JPY 1,063,473 million and an 8.8% year-over-year decrease."
+    },
+    {
+     "point": "States Q1 FY2027 net income attributable to Toyota shareholders as JPY 1,477.0 billion and says it rose 75.6%.",
+     "optional": false,
+     "met": true,
+     "note": "Gives JPY 1,477,044 million and a 75.6% increase."
+    },
+    {
+     "point": "States the revised FY2027 operating income forecast is JPY 3.4 trillion, versus the previous May 2026 forecast of JPY 3.0 trillion.",
+     "optional": false,
+     "met": true,
+     "note": "Clearly identifies revised JPY 3,400.0 billion and previous May forecast JPY 3,000.0 billion."
+    },
+    {
+     "point": "Explains the increase in income before income taxes: gives approximately JPY 1,963.9 billion and +56.8%, about JPY 900 billion above operating income.",
+     "optional": false,
+     "met": false,
+     "note": "The table gives income before taxes of JPY 1,963,862 million, but does not state +56.8% or the approximately JPY 900 billion gap."
+    },
+    {
+     "point": "Identifies other finance income as a driver, rising to about JPY 850.6 billion from JPY 153.7 billion.",
+     "optional": false,
+     "met": true,
+     "note": "Gives JPY 850,594 million versus JPY 153,721 million."
+    },
+    {
+     "point": "Identifies equity-method profit of about JPY 210.7 billion as a driver.",
+     "optional": false,
+     "met": true,
+     "note": "Gives equity-method profit of JPY 210,685 million."
+    },
+    {
+     "point": "Identifies the FX swing as a driver: a JPY 112.4 billion gain versus a JPY 212.4 billion loss.",
+     "optional": false,
+     "met": true,
+     "note": "Gives JPY 112,378 million gain versus JPY 212,375 million loss."
+    },
+    {
+     "point": "Notes other finance costs of about JPY 285.6 billion as a partial offset.",
+     "optional": false,
+     "met": false,
+     "note": "Other finance costs are not stated."
+    },
+    {
+     "point": "Does not state or imply that the quarter was calendar 2027 or January–March 2027.",
+     "optional": false,
+     "met": true,
+     "note": "Correctly identifies Q1 as April 1–June 30, 2026 and FY2027 as the year ending March 31, 2027."
+    },
+    {
+     "point": "Does not use the May 2026 JPY 3.0 trillion forecast as the current/revised forecast.",
+     "optional": false,
+     "met": true,
+     "note": "Labels JPY 3.0 trillion as the previous forecast and JPY 3.4 trillion as revised."
+    },
+    {
+     "point": "Does not say that net income fell.",
+     "optional": false,
+     "met": true,
+     "note": "States net income attributable increased by 75.6%."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The answer correctly reports both Q1 headline earnings figures and the revised-versus-prior forecast, and it identifies several relevant non-operating drivers. However, it omits the stated pretax-income growth and approximately JPY 900 billion gap, and does not mention the JPY 285.6 billion other-finance-cost offset.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "partial",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Toyota Q1 FY2027 actual operating income and net income attributable, for quarter ended June 30, 2026; release date and IFRS basis",
+     "numeric": true,
+     "cited_url": "https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_summary_en.pdf",
+     "reason": "The retrieved Toyota financial summary identifies the unaudited FY2027 first quarter as April 1–June 30, 2026, states the information is prepared under IFRS, and reports operating income of ¥1,063,473 million and net income attributable to Toyota Motor Corporation of ¥1,477,044 million. The summary is dated August 4, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY2027 year-over-year operating-income decline and attributable-net-income increase, with prior-year values and reported rates",
+     "numeric": true,
+     "cited_url": "https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_summary_en.pdf",
+     "reason": "Toyota reports the comparative Q1 FY2026 operating income as ¥1,166,141 million and attributable net income as ¥841,345 million, and reports Q1 FY2027 changes of −8.8% and +75.6%, respectively. The exact differences are −¥102,668 million and +¥635,699 million, consistent with the source's rounded billion-yen descriptions.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Other Q1 actuals in the table: FY2027 sales revenues, income before tax and total net income, plus FY2026 comparative income before tax and total net income",
+     "numeric": true,
+     "cited_url": "https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_summary_en.pdf",
+     "reason": "The retrieved consolidated-results table reports FY2027 sales revenues ¥13,525,400 million, income before income taxes ¥1,963,862 million and net income ¥1,551,725 million; its statement gives FY2026 comparative income before taxes ¥1,252,152 million and net income ¥872,193 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2027 operating-income forecast revised from ¥3,000.0 billion to ¥3,400.0 billion, a ¥400.0 billion increase, with the revised outlook issued August 4, 2026",
+     "numeric": true,
+     "cited_url": "https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_presentation_en.pdf",
+     "reason": "The retrieved presentation's FY2027 forecast table gives previous operating income ¥3,000.0 billion, new forecast ¥3,400.0 billion and change +¥400.0 billion. The contemporaneous Toyota Q1 summary is dated August 4, 2026, supporting the release date when read with the Q1-results presentation.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The ¥3,000.0 billion previous operating-income forecast was specifically the forecast issued with Toyota's May 2026 full-year results",
+     "numeric": true,
+     "cited_url": "https://toyotatimes.jp/en/toyota_news/financial_results_2027/001.html",
+     "reason": "The retrieved Toyota Times text refers generally to May's FY2026 full-year financial-results announcement, while the presentation labels ¥3,000.0 billion only as the 'Previous Forecast.' The retrieved passages do not establish that this exact ¥3,000.0 billion figure was announced in May; the cited Just-auto text likewise says 'previously' without giving May as the date. Evidence for that date linkage is inadequate.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2027 sales-revenue forecast rises from ¥51,000.0 billion to ¥54,000.0 billion (+¥3,000.0 billion), and operating margin from 5.9% to 6.3%",
+     "numeric": true,
+     "cited_url": "https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_presentation_en.pdf",
+     "reason": "The retrieved FY2027 forecast table lists previous and new sales revenues as ¥51,000.0 billion and ¥54,000.0 billion, change +¥3,000.0 billion, and margins of 5.9% and 6.3%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Toyota's Q1 operating-income bridge: marketing +¥70.0bn, exchange rates +¥345.0bn, cost reduction −¥85.0bn, expenses/expense reduction −¥190.0bn, other −¥242.6bn; total −¥102.6bn",
+     "numeric": true,
+     "cited_url": "https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_summary_en.pdf",
+     "reason": "Toyota's summary lists those five effects with those signs and amounts and reports an operating-income decrease of ¥102.6 billion. Calculation: 70.0 + 345.0 − 85.0 − 190.0 − 242.6 = −102.6 billion yen.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 below-operating-line figures: other finance income, foreign-exchange gain/loss, equity-method profit and income-tax expense, with FY2026 and FY2027 amounts",
+     "numeric": true,
+     "cited_url": "https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_summary_en.pdf",
+     "reason": "The retrieved consolidated statement reports other finance income ¥153,721m then ¥850,594m; foreign exchange gain (loss), net −¥212,375m then +¥112,378m; share of profit of equity-method investments ¥141,044m then ¥210,685m; and income tax expense ¥379,959m then ¥412,136m, for the quarters ended June 30, 2025 and June 30, 2026. The figures and periods match the answer. These are statement data; the causal framing is the answer's interpretation of their contribution.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tickeron says the Q1 net-profit jump was largely due to currency gains/non-operating income rather than core automotive performance, and says other finance income partly reflected a one-time gain tied to Toyota Industries' privatization",
+     "numeric": false,
+     "cited_url": "https://tickeron.com/blogs/toyota-tm-delivers-record-revenue-but-operating-income-falls-8-8-in-q1-15345",
+     "reason": "The retrieved Tickeron passage explicitly characterizes the net-profit increase as driven largely by currency gains and non-operating income rather than core automotive performance, and says the other-financial-income increase partly reflected a one-time gain tied to Toyota Industries' privatization. This supports what the answer attributes to Tickeron, not necessarily an independent company attribution.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tickeron reports Toyota's operating margin narrowed to 7.9% from 9.5% a year earlier",
+     "numeric": true,
+     "cited_url": "https://tickeron.com/blogs/toyota-tm-delivers-record-revenue-but-operating-income-falls-8-8-in-q1-15345",
+     "reason": "The retrieved Tickeron text states that the operating margin narrowed to 7.9% from 9.5% a year earlier. It is secondary-source coverage; the cited passage directly supports the reported comparison.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 9,
+   "numeric_cited": 9,
+   "cited": 10,
+   "supported": 9,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 150.7
+ }
+}

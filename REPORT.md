@@ -17,14 +17,11 @@ Anything it can't support is refused explicitly.
 
 ## 2. Base agent results
 
-The starter as shipped (Kimi K2.6) searches the web for everything, doesn't know today's date, and does arithmetic in its head. It was graded by the final judge:
-
-| Set | Fully correct | Verified-correct | Primary-source citations | Tavily credits per question |
-|---|---|---|---|---|
-| Held-out sets 1 and 2 (34 fixed-answer questions × 2 runs) | 40/68 (59%) | 23/68 (34%) | 21% | 8.7 |
-| Dev set (25 fixed-answer questions, 3 runs) | 40/75 (53%) | 20/75 (27%) | 22% | 8.7 |
-
-It also refused only 7 of 12 requests that should have been refused, and 19% of its cited claims aren't supported by the text it retrieved.
+The starter as shipped (Kimi K2.6) searches the web for everything, doesn't know today's date, and does arithmetic in its head. On Exact50 (50 held-out questions; see §4), graded by GPT-6 Luna:
+- **Correctness:** fully correct on 14 of 50, and on 1 of the 16 ambiguous or edge-case requests.
+- **Usable answers:** 2 of 50 are verified-correct (correct, every cited claim supported, every number cited).
+- **Sources:** 66% of its cited claims are supported by the cited source, and 15% of its citations are primary sources.
+- **Cost:** it used 373 Tavily credits for the 50 questions.
 
 ## 3. Architecture and why each part exists
 
@@ -47,46 +44,67 @@ All production code is generic: a unit test fails if any evaluation-set company 
 
 ## 4. Final results vs. the base agent
 
-**Held-out sets:** all frozen and hashed before their first run:
-- 20 questions
-- 20 hard questions (point-in-time, filing-only, multi-step fiscal, traps)
-- 8 table tasks with 86 cells
+**Exact50** is 50 of the 74 held-out questions, chosen by fixed rules (`evals/exact50_selection.md`):
+- all 16 edge-case and ambiguous requests
+- all 10 web-dependent questions
+- 16 date traps
+- 4 actual-versus-guidance questions
+- 4 cross-calendar comparisons
 
-Every run was graded by the same different-family judge (Nemotron Ultra, 8/9 agreement with the user's grades). Our agent includes its model choice, DeepSeek V4.1 Flash. The middle column runs the starter's design on that same model, to separate the architecture's contribution from the model's.
+Plain single-figure lookups, which every configuration answers, were dropped. Each column is one fresh run, graded by `gpt-6-luna` (OpenAI, high reasoning, a different family from the agents; 8 of 10 agreement with the user's grades), with three votes per answer. The middle column runs the starter's design on our model, DeepSeek V4.1 Flash, to separate the architecture's contribution from the model's.
 
-| Held-out sets 1 and 2 | Starter (as shipped) | Starter design, our model | **Our agent** |
+| Exact50 | Starter (as shipped) | Starter design, our model | **Our agent** |
 |---|---|---|---|
-| Fully correct | 40/68 (59%) | 64/68 (94%) | **67/68 (99%)** |
-| **Verified-correct** (correct, every cited claim supported, every number cited) | 23/68 (34%) | 38/68 (56%) | **56/68 (82%)** |
-| Cited claims not supported by retrieved text | 19% | 16% | **9%** |
-| Primary-source citations | 21% | 41% | **82%** |
-| Refusals correct | 7/12 | 10/12 | **12/12** |
-| Tavily credits per question\* | 8.7 | 4.7 | **0.9** |
-| Median latency | 18 s | 17 s | 40 s |
+| Fully correct | 14/50 | 25/50 | **32/50** |
+| **Verified-correct** (correct, every cited claim supported, every number cited) | 2/50 | 0/50 | **18/50** |
+| Cited claims supported by the cited source | 66% | 69% | **94%** |
+| Primary-source citations | 15% | 26% | **73%** |
+| Edge-case and ambiguous requests correct | 1/16 | 1/16 | **11/16** |
+| Web-dependent questions correct | 3/10 | **7/10** | 3/10 |
+| Tavily credits (50 questions)\* | 373 | 338 | **115** |
+| Median latency | 26 s | **12 s** | 45 s |
 
-**Table set:** the as-shipped starter was not run on it, to protect the credit budget. Against the starter's design on our model, our agent got 167/172 cells correct vs. 171/172. Its cited figures not supported by retrieved text were 6% vs. 69%, and it used 0.2 credits per task vs. 20.8.
-
-\* Our agent's credits are Tavily's own per-call usage. The starter's are counted from its calls (1 per basic search, 2 per advanced), because its LangChain tool doesn't report usage.
+\* Our agent's credits are Tavily's own per-call usage. The starters' are counted from their successful searches, because their LangChain tool doesn't report usage.
 
 **How it compares**
 - **Against what was shipped:**
-  - fully correct rises from 59% to 99%
-  - answers usable without re-checking rise from 34% to 82%
-  - unsupported claims fall from 19% to 9%
-  - primary sources rise from 21% to 82%
-  - refusals correct rise from 7/12 to 12/12
-  - about 10× fewer Tavily credits
-  - about 2.2× slower
-- **Attribution:**
-  - **Correctness** comes mostly from the model choice: the starter's design reaches 94% on DeepSeek Flash.
-  - **Trust and cost** come from the architecture: verified-correct 56% → 82%, primary sources 41% → 82%, refusals 10/12 → 12/12, credits 4.7 → 0.9 per question, and on tables unsupported figures 69% → 6% at about 100× fewer credits.
+  - fully correct rises from 14 to 32 of 50, and verified-correct from 2 to 18
+  - supported citations rise from 66% to 94%, and primary sources from 15% to 73%
+  - it uses about a third of the credits
+  - it is slower: 45 s against 26 s
+- **Against the starter's design on the same model:**
+  - fully correct rises from 25 to 32, mostly on ambiguous and edge-case requests (1 → 11 of 16)
+  - every trust measure is higher, and it uses about a third of the credits
+  - it is weaker on web-dependent questions (3 against 7 of 10) and about 4× slower
+- **Caveats:**
+  - one run per column
+  - Exact50's rules were written after earlier results on these questions were known
+  - the final agent's fixes came from diagnosing held-out failures (§5), so this is not a clean held-out test
+
+Full tables: [`results/final/exact50.md`](results/final/exact50.md). The earlier full held-out results (older agent, Nemotron judge, before the grading fixes) are in [`results/final/results.md`](results/final/results.md). On those mostly single-figure questions, the starter's design on our model was about as accurate as our agent (94% against 99% fully correct), and the architecture's gain was in trust and cost.
 
 ## 5. How the result was reached
 
 1. **A first implementation was rebuilt.** It reached 21/25 on the dev set but was overfit: named-company rules and one prompt rule per test question. It was also unstable, ranging from 11 to 21 out of 25 across runs. It was replaced by the generic pipeline above, about 1,400 lines instead of about 5,700.
 2. **Two more held-out sets were added.** On the first held-out set, the starter's design on our model and our agent both scored near the ceiling, so I added the harder set and the table set to test where the architecture matters. They were built blind from SEC filings, without seeing either agent's outputs.
 3. **The as-shipped starter is the headline baseline.** It was run on the held-out sets once the comparison was framed as "what was shipped vs. what we built". The same-model runs stay as the architecture-only comparison.
-4. **Changes came only from dev failures.** Agent changes were driven by dev-set failures; none were made in response to held-out results. The known held-out issues stay unfixed and are reported: a unit mismatch in one table calculation, and an over-strict verifier rule.
+4. **Changes came only from dev failures, until the review.** Until 2026-10-05, agent changes were driven by dev-set failures only. Two known held-out issues remain unfixed and are reported: a unit mismatch in one table calculation, and an over-strict verifier rule.
 5. **Budget.** Most of the Tavily credits went to the starter runs. By conservative per-call accounting the total reached about the 1,500 limit, which is why the as-shipped starter has two runs on held-out sets 1 and 2 and none on the table set. Tavily's dashboard lagged and read 711.
 
-Details: [`README.md`](README.md), [`results/final/results.md`](results/final/results.md), [`PLAN.md`](PLAN.md).
+6. **The evaluation was reviewed (2026-10-05).** A full rerun looked wrong: the starter's design on our model was ahead on correctness. The review found problems in the harness first:
+   - answers scored 0 because the judge's verdict contradicted its own per-point marks
+   - one run graded by the agents' own model
+   - a citation check cut to the first 60,000 characters of everything retrieved, which hid support for long baseline retrievals
+   - many questions that every configuration answers
+
+   The grading was fixed (verdict from the required rubric points, cited sources shown in full, GPT-6 Luna as judge), and Exact50 was built from the held-out sets by rules written down first.
+7. **Generic fixes from the diagnosis.** The run records and Langfuse traces showed where held-out answers broke. The causes:
+   - a number check that read "Margin 29.4%" as a date
+   - zero-width spaces in SEC tables breaking quote matching
+   - SEC's tagged financial data lagging two companies' July 10-Qs
+   - calculations that couldn't chain
+   - web results about other companies passing the relevance filter
+
+   These were fixed in code. The planner and writer prompts were rewritten to teach a way of working through a question rather than rules for particular questions, and the writer's reasoning effort was raised. That moved Exact50 from 24 to 32 fully correct.
+
+Details: [`README.md`](README.md), [`results/final/exact50.md`](results/final/exact50.md), [`PLAN.md`](PLAN.md).

@@ -1,0 +1,275 @@
+{
+ "id": "T17",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "abstain",
+ "question": "What were Starbucks' global comparable store sales and total net revenues for its fiscal Q4 2026?",
+ "grading": "Must refuse: fiscal Q4 2026 (June 29 - September 27, 2026) has ended but Starbucks has not yet reported it as of 2026-10-03 (no Q4 earnings 8-K, no FY2026 10-K). May state the latest reported quarter is Q3 FY2026 and may mention the 2026-09-22 restructuring 8-K, but must not state any Q4 comparable sales or revenue figure as fact. Snapshot as of 2026-10-03; after the report date this question becomes answerable.",
+ "answer": "Not available as of 2026-10-03. Starbucks' fiscal Q4 2026 (June 29 - September 27, 2026) has ended but the company has not reported it: the most recent earnings 8-K and 10-Q (filed 2026-07-29) cover Q3 FY2026 (quarter ended June 28, 2026), and no fiscal 2026 10-K or Item 2.02 earnings 8-K for Q4 has been filed. [T17-E1, T17-E2] The only recent 8-K (September 24, 2026, Items 2.05 and 7.01) concerns store closures and restructuring, not quarterly results. [T17-E3] Third-party calendars list the Q4 earnings call for around October 29, 2026, which is after the as-of date.",
+ "output": {
+  "answer": "**Question:** What were Starbucks' global comparable store sales and total net revenues for its fiscal Q4 2026?\n*As of 2026-10-03*\n\n**Interpreted as:** Starbucks' fiscal Q4 2026 (2026-06-29 to 2026-09-27) has ended but is not yet reported, so per the fallback rule the plan covers the latest reported quarter instead: Q3 FY2026 (2026-03-30 to 2026-06-28). Fiscal year ends late September, so fiscal Q4 2026 is not calendar Q4; the question's 'fiscal Q4 2026' was read as the company's own Q4 FY2026 label. 'Global comparable store sales' read as the company's reported consolidated comparable store sales growth (including the North America and International segment comps it discloses). 'Total net revenues' read as the GAAP total net revenues line in the consolidated statements of earnings.\n\n| | Global comparable store sales growth (%) | Total net revenues (GAAP, USD millions) |\n|---|---|---|\n| Starbucks — Q3 FY2026 (13-week quarter ended June 28, 2026) | 7.9% [1][2] | $9,322.7 [3] |\n\n- Starbucks' fiscal Q4 2026 (2026-06-29 to 2026-09-27) had ended but was not yet reported as of 2026-10-03, so its global comparable store sales and total net revenues cannot be stated; the latest reported quarter is Q3 FY2026 (13-week quarter ended June 28, 2026). [1]\n- For Q3 FY2026 (quarter ended June 28, 2026), Starbucks reported consolidated net revenues decreased 1% to $9.3 billion, including on a constant currency basis, reflecting the Starbucks China transaction. [1]\n- The GAAP total net revenues line in the consolidated statements of earnings for Q3 FY2026 (quarter ended June 28, 2026) was $9,322.7 million, versus $9,456.0 million in the quarter ended June 29, 2025. [3]\n- The Q3 FY2026 global comparable store sales increase of 7.9% was driven by a 4.2% increase in comparable transactions and a 3.5% increase in average ticket, with North America comps up 8.1% and International comps up 5.7%. [1]\n- As guidance issued with the Q3 FY2026 release, Starbucks said it expects fourth quarter U.S. comparable store sales growth of 6.5% or greater, leading to full fiscal year 2026 global comparable store sales growth nearing 6.0% and consolidated net revenues flat to slight growth year over year; no Q4 FY2026 global comparable store sales or revenue figure was given. [1]\n\n**Not available**\n- Starbucks global comparable store sales for fiscal Q4 2026 (2026-06-29 to 2026-09-27): Q4 FY2026 ended 2026-09-27 but no earnings release or 10-K for the quarter exists as of 2026-10-03; the company gave only Q4 U.S. comp guidance (6.5% or greater), not a Q4 global comps figure. [1]\n- Starbucks total net revenues for fiscal Q4 2026 (2026-06-29 to 2026-09-27): Q4 FY2026 results were not yet reported as of 2026-10-03; the release provides only full fiscal year 2026 consolidated net revenue guidance of flat to slight growth year over year. [1]\n\n**Sources**\n[1] STARBUCKS CORP earnings release for Q3 FY2026, 8-K EX-99.1 (filed 2026-07-29) (www.sec.gov, 2026-07-29, primary) https://www.sec.gov/Archives/edgar/data/829224/000082922426000129/sbux-06282026xearningsrele.htm\n[2] Starbucks Coffee Company - Starbucks Reports Q3 Fiscal Year 2026 Results (investor.starbucks.com, 2026-07-29, primary) https://investor.starbucks.com/news/financial-releases/news-details/2026/Starbucks-Reports-Q3-Fiscal-Year-2026-Results/default.aspx\n[3] STARBUCKS CORP XBRL data tagged in 10-Q filed 2026-07-29 (www.sec.gov, 2026-07-29, primary) https://www.sec.gov/Archives/edgar/data/829224/000082922426000130/\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 23874,
+   "output": 3817
+  },
+  "tavily_credits": 2.0,
+  "latency_s": 25.62,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/a7041d9f744a83d26cb7756f3d2839bd",
+  "companies": [
+   {
+    "name": "STARBUCKS CORP",
+    "ticker": "SBUX",
+    "cik": "829224",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "Starbucks' fiscal Q4 2026 (2026-06-29 to 2026-09-27) has ended but is not yet reported, so per the fallback rule the plan covers the latest reported quarter instead: Q3 FY2026 (2026-03-30 to 2026-06-28).",
+    "Fiscal year ends late September, so fiscal Q4 2026 is not calendar Q4; the question's 'fiscal Q4 2026' was read as the company's own Q4 FY2026 label.",
+    "'Global comparable store sales' read as the company's reported consolidated comparable store sales growth (including the North America and International segment comps it discloses).",
+    "'Total net revenues' read as the GAAP total net revenues line in the consolidated statements of earnings."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Q3 FY2026 total net revenues (GAAP) and year-over-year growth vs Q3 FY2025",
+    "Q3 FY2026 global/consolidated comparable store sales growth, plus North America and International segment comps",
+    "Q3 FY2026 operating income and operating margin",
+    "Q3 FY2026 GAAP net income and diluted EPS",
+    "Q3 FY2026 segment net revenues (North America, International, Channel Development)",
+    "Company guidance/outlook for Q4 FY2026 and FY2026 as given with Q3 FY2026 results",
+    "Management commentary on comps and revenue trends from the Q3 FY2026 earnings call",
+    "Note that Q4 FY2026 results (period ended 2026-09-27) are not yet reported as of 2026-10-03; expected release around late October 2026"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "SBUX",
+     "label": "Q3 FY2026"
+    },
+    {
+     "ticker": "SBUX",
+     "label": "Q4 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "SBUX",
+     "period": "Q3 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "SBUX",
+     "period": "Q3 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Guidance for Q4 FY2026 / FY2026 and management's explanation of comps and revenue trends, which Starbucks typically gives on the earnings call rather than in the release",
+     "query": "Starbucks Q3 fiscal 2026 earnings call comparable store sales guidance Q4 FY2026",
+     "topic": "news",
+     "days_back": 90
+    }
+   ],
+   "availability_notes": [
+    "Q4 FY2026 (2026-06-29 to 2026-09-27) is not yet reported as of 2026-10-03 — no earnings release or 10-K exists, so its comps and net revenues cannot be stated and will not be estimated.",
+    "Q4 FY2026 guidance, if any, would have been issued with the Q3 FY2026 earnings release/call; the company may give only qualitative or full-year framing rather than a Q4 revenue or comps figure.",
+    "Comparable store sales are disclosed in the earnings release and MD&A, not as a tagged financial-statement line, so they come from the release/10-Q text."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Starbucks global comparable store sales for fiscal Q4 2026 (2026-06-29 to 2026-09-27)",
+    "kind": "not_reported_yet",
+    "reason": "Q4 FY2026 ended 2026-09-27 but no earnings release or 10-K for the quarter exists as of 2026-10-03; the company gave only Q4 U.S. comp guidance (6.5% or greater), not a Q4 global comps figure.",
+    "evidence_ids": [
+     "E1"
+    ]
+   },
+   {
+    "item": "Starbucks total net revenues for fiscal Q4 2026 (2026-06-29 to 2026-09-27)",
+    "kind": "not_reported_yet",
+    "reason": "Q4 FY2026 results were not yet reported as of 2026-10-03; the release provides only full fiscal year 2026 consolidated net revenue guidance of flat to slight growth year over year.",
+    "evidence_ids": [
+     "E1"
+    ]
+   }
+  ],
+  "removed": [],
+  "assumptions": [
+   "Starbucks' fiscal Q4 2026 (2026-06-29 to 2026-09-27) has ended but is not yet reported, so per the fallback rule the plan covers the latest reported quarter instead: Q3 FY2026 (2026-03-30 to 2026-06-28).",
+   "Fiscal year ends late September, so fiscal Q4 2026 is not calendar Q4; the question's 'fiscal Q4 2026' was read as the company's own Q4 FY2026 label.",
+   "'Global comparable store sales' read as the company's reported consolidated comparable store sales growth (including the North America and International segment comps it discloses).",
+   "'Total net revenues' read as the GAAP total net revenues line in the consolidated statements of earnings."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Starbucks Q3 fiscal 2026 earnings call comparable store sales guidance Q4 FY2026",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2026-07-05"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.fool.com/earnings/call-transcripts/2026/08/07/starbucks-sbux-q3-2026-earnings-call-transcript",
+      "https://finance.biggo.com/news/US_SBUX_2026-07-29",
+      "https://www.tipranks.com/news/company-announcements/starbucks-earnings-call-signals-profits-over-growth"
+     ],
+     "query": "What were Starbucks' global comparable store sales and total net revenues for its fiscal Q4 2026?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investor.starbucks.com/news/financial-releases/news-details/2026/Starbucks-Reports-Q3-Fiscal-Year-2026-Results/default.aspx",
+    "https://www.sec.gov/Archives/edgar/data/829224/000082922426000129/sbux-06282026xearningsrele.htm",
+    "https://www.sec.gov/Archives/edgar/data/829224/000082922426000130/"
+   ],
+   "cited_primary": 3,
+   "retrieved": 8,
+   "retrieved_primary": 4
+  },
+  "recall": {
+   "figures": 3,
+   "found": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Clearly refuses to provide Starbucks' fiscal Q4 FY2026 comparable-sales or revenue actuals and says they are unavailable/not reported as of 2026-10-03.",
+     "optional": false,
+     "met": true,
+     "note": "The answer says Q4 FY2026 had ended but was not yet reported and repeats that both Q4 metrics were not available as of 2026-10-03."
+    },
+    {
+     "point": "Does not present any global comparable-store-sales or total-net-revenue figure as an actual Q4 FY2026 result.",
+     "optional": false,
+     "met": true,
+     "note": "The listed 7.9% and $9,322.7 million are explicitly labeled Q3 FY2026, while the answer says no Q4 figures are available."
+    },
+    {
+     "point": "Does not present Q3 FY2026 numbers, analyst estimates, or guidance as if they were Q4 actuals.",
+     "optional": false,
+     "met": true,
+     "note": "Q3 figures are distinctly labeled as Q3; the Q4 U.S. comp and full-year revenue outlook are explicitly identified as guidance, not actual results."
+    },
+    {
+     "point": "May state that the latest reported quarter is Q3 FY2026.",
+     "optional": true,
+     "met": true,
+     "note": "The answer identifies Q3 FY2026 as the latest reported quarter."
+    },
+    {
+     "point": "May mention the 2026-09-22 restructuring 8-K.",
+     "optional": true,
+     "met": true,
+     "note": "The answer does not mention it; mentioning it is optional."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer clearly abstains on Q4 FY2026 actuals as of the specified snapshot date. It includes reported Q3 figures and Q4 guidance only with their periods and status clearly distinguished, and does not misrepresent either as Q4 actuals.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q3 FY2026 global comparable-store sales growth was 7.9%.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000129/sbux-06282026xearningsrele.htm",
+     "reason": "The release identifies Q3 FY2026 as the 13-week fiscal quarter ended June 28, 2026, and states that global comparable store sales increased 7.9%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 total net revenues were $9,322.7 million, compared with $9,456.0 million in Q3 FY2025.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000130/",
+     "reason": "The retrieved XBRL data reports Revenues of $9,322,700,000 for 2026-03-30 to 2026-06-28 and $9,456,000,000 for 2025-03-31 to 2025-06-29. Dividing each by 1,000,000 gives $9,322.7 million and $9,456.0 million, respectively; both are quarterly periods.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Starbucks reported Q3 FY2026 results for its 13-week quarter ended June 28, 2026; the release was dated July 29, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000129/sbux-06282026xearningsrele.htm",
+     "reason": "The release states “SEATTLE; July 29, 2026” and says the company reported results for its 13-week fiscal third quarter ended June 28, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 consolidated net revenues decreased 1% to $9.3 billion, reflecting the Starbucks China transaction, including on a constant-currency basis.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000129/sbux-06282026xearningsrele.htm",
+     "reason": "The release headline says Q3 consolidated net revenues were down 1% to $9.3 billion, reflecting the Starbucks China transaction; a highlights bullet says revenues decreased 1% to $9.3 billion, including on a constant currency basis.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Global comparable-store sales growth of 7.9% was primarily driven by transactions up 4.2% and average ticket up 3.5%.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000129/sbux-06282026xearningsrele.htm",
+     "reason": "The Q3 FY2026 highlights state global comparable sales increased 7.9%, primarily driven by a 4.2% increase in comparable transactions and a 3.5% increase in average ticket.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "North America comparable-store sales increased 8.1% and International comparable-store sales increased 5.7% in Q3 FY2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000129/sbux-06282026xearningsrele.htm",
+     "reason": "The release's Q3 FY2026 highlights state North America comparable sales increased 8.1% and International comparable sales increased 5.7%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Starbucks guided to Q4 U.S. comparable-store sales growth of at least 6.5%, full-FY2026 global comparable-store sales growth nearing 6.0%, and consolidated net revenues flat to slight year-over-year growth.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000129/sbux-06282026xearningsrele.htm",
+     "reason": "The release's FY2026 guidance lists fourth-quarter U.S. comparable-store sales growth of 6.5% or greater, full-fiscal-year global comparable-store sales growth nearing 6.0%, and consolidated net revenues flat to slight growth year over year. These are forward-looking guidance, not actual Q4 results.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 7,
+   "numeric_cited": 7,
+   "cited": 7,
+   "supported": 7,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 69.3
+ }
+}

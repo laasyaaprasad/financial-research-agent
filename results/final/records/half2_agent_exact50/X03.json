@@ -1,0 +1,322 @@
+{
+ "id": "X03",
+ "category": "Market analysis",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "Build a trailing-twelve-month (TTM) comp table for four U.S. restaurant companies: Darden Restaurants, Brinker International, Cracker Barrel Old Country Store and The Cheesecake Factory. For each company compute TTM revenue (total revenues / net sales) and TTM GAAP net income attributable to the company, both in USD millions, through the company's most recent fiscal quarter reported as of October 3, 2026. Define TTM as the last four reported fiscal quarters, i.e. latest fiscal year + current fiscal year-to-date - prior-year year-to-date (when the most recent reported quarter is the fiscal fourth quarter, TTM equals that fiscal year); do not adjust for 52/53-week differences. State the TTM end date used for each company.",
+ "grading": "Graded cell by cell: each value within tolerance and for the stated period; a missing cell counts as wrong.",
+ "answer": "TTM through each company's most recent reported quarter (USD millions):\n| Row | TTM revenue | TTM net income |\n|---|---|---|\n| Darden Restaurants (TTM ended 2026-08-30) | 13,366.5 | 1,182.3 |\n| Brinker International (TTM ended 2026-06-24) | 5,807.4 | 487.0 |\n| Cracker Barrel Old Country Store (TTM ended 2026-07-31) | 3,318.7 | 31.7 |\n| The Cheesecake Factory (TTM ended 2026-06-30) | 3,877.3 | 178.6 |",
+ "output": {
+  "answer": "**Question:** Build a trailing-twelve-month (TTM) comp table for four U.S. restaurant companies: Darden Restaurants, Brinker International, Cracker Barrel Old Country Store and The Cheesecake Factory. For each company compute TTM revenue (total revenues / net sales) and TTM GAAP net income attributable to the company, both in USD millions, through the company's most recent fiscal quarter reported as of October 3, 2026. Define TTM as the last four reported fiscal quarters, i.e. latest fiscal year + current fiscal year-to-date - prior-year year-to-date (when the most recent reported quarter is the fiscal fourth quarter, TTM equals that fiscal year); do not adjust for 52/53-week differences. State the TTM end date used for each company.\n*As of 2026-10-03*\n\n**Interpreted as:** TTM is built exactly as the question defines it: latest fiscal year + current fiscal year-to-date − prior-year year-to-date, using the last four reported fiscal quarters, with no 52/53-week adjustment. Darden: most recent reported quarter as of 2026-10-03 is Q1 FY2027 (2026-06-01 to 2026-08-30, 10-Q filed 2026-10-02), so TTM = FY2026 + Q1 FY2027 − Q1 FY2026 and the TTM end date is 2026-08-30. Brinker: most recent reported quarter is Q4 FY2026 (2026-03-26 to 2026-06-24, 10-K filed 2026-08-19); since that is the fiscal fourth quarter, TTM = FY2026 and the TTM end date is 2026-06-24. Cracker Barrel: most recent reported quarter is Q4 FY2026 (2026-05-02 to 2026-07-31, 10-K filed 2026-09-25); since that is the fiscal fourth quarter, TTM = FY2026 and the TTM end date is 2026-07-31. Cheesecake Factory: most recent reported quarter is Q2 FY2026 (2026-04-01 to 2026-06-30, 10-Q filed 2026-08-03), so TTM = FY2025 + Q1 FY2026 + Q2 FY2026 − Q1 FY2025 − Q2 FY2025 and the TTM end date is 2026-06-30. Fiscal years are not calendar years for Darden (ends late May), Brinker (ends late June) and Cracker Barrel (ends late July); Cheesecake Factory's fiscal year ends in late December, so its FY2025 ended 2025-12-30. 'Revenue' is read as each company's reported total revenues / net sales line; 'GAAP net income attributable to the company' is read as net income attributable to the parent (excluding noncontrolling interests), as reported. Because the four companies have different fiscal calendars, the TTM windows end on different dates (2026-08-30, 2026-06-24, 2026-07-31, 2026-06-30); no attempt is made to align them to a common date. All figures are taken from the companies' own reported financial statements; no analyst estimates or consensus figures are used.\n\n| | TTM revenue (USD millions) | TTM GAAP net income attributable to parent (USD millions) | TTM end date |\n|---|---|---|---|\n| Darden Restaurants (TTM ended 2026-08-30; FY2026 + Q1 FY2027 − Q1 FY2026) | 13,366.5 [1][2] | 1,182.3 [1][2] | 2026-08-30 [2] |\n| Brinker International (TTM ended 2026-06-24; TTM = FY2026, most recent quarter is fiscal Q4) | 5,807.4 [3] | 487.0 [3] | 2026-06-24 [3] |\n| Cracker Barrel Old Country Store (TTM ended 2026-07-31; TTM = FY2026, most recent quarter is fiscal Q4) | 3,318.714 [4] | 31.675 [4] | 2026-07-31 [4] |\n| Cheesecake Factory (TTM ended 2026-06-30; FY2025 + Q1 FY2026 + Q2 FY2026 − Q1 FY2025 − Q2 FY2025) | 3,877.2 [5][6][7] | 178.6 [5][6][7] | 2026-06-30 [7] |\n\n- Darden Restaurants' TTM window is built as FY2026 (2025-05-26 to 2026-05-31) plus Q1 FY2027 (2026-06-01 to 2026-08-30) minus Q1 FY2026 (2025-05-26 to 2025-08-24), so the TTM end date is 2026-08-30. [1][2]\n- Brinker International's most recent reported quarter is Q4 FY2026 (2026-03-26 to 2026-06-24), so its TTM equals FY2026 and the TTM end date is 2026-06-24. [3]\n- Cracker Barrel Old Country Store's most recent reported quarter is Q4 FY2026 (2026-05-02 to 2026-07-31), so its TTM equals FY2026 and the TTM end date is 2026-07-31. [4]\n- Cheesecake Factory's TTM window is built as FY2025 (2025-01-01 to 2025-12-30) plus Q1 FY2026 (2025-12-31 to 2026-03-31) plus Q2 FY2026 (2026-04-01 to 2026-06-30) minus Q1 FY2025 (2025-01-01 to 2025-04-01) minus Q2 FY2025 (2025-04-02 to 2025-07-01), so the TTM end date is 2026-06-30. [5][6][7]\n- All figures are as reported (GAAP) in the companies' own SEC filings (10-K/10-Q); no week-count adjustment is applied and no analyst estimates or consensus figures are used. [1][2][3][4][5][6][7]\n\n**Sources**\n[1] DARDEN RESTAURANTS INC XBRL data tagged in 10-K filed 2026-07-24 (www.sec.gov, 2026-07-24, primary) https://www.sec.gov/Archives/edgar/data/940944/000094094426000025/\n[2] DARDEN RESTAURANTS INC XBRL data tagged in 10-Q filed 2026-10-02 (www.sec.gov, 2026-10-02, primary) https://www.sec.gov/Archives/edgar/data/940944/000094094426000042/\n[3] BRINKER INTERNATIONAL, INC XBRL data tagged in 10-K filed 2026-08-19 (www.sec.gov, 2026-08-19, primary) https://www.sec.gov/Archives/edgar/data/703351/000070335126000029/\n[4] CRACKER BARREL OLD COUNTRY STORE, INC XBRL data tagged in 10-K filed 2026-09-25 (www.sec.gov, 2026-09-25, primary) https://www.sec.gov/Archives/edgar/data/1067294/000110465926110772/\n[5] CHEESECAKE FACTORY INC XBRL data tagged in 10-K filed 2026-02-23 (www.sec.gov, 2026-02-23, primary) https://www.sec.gov/Archives/edgar/data/887596/000110465926018643/\n[6] CHEESECAKE FACTORY INC XBRL data tagged in 10-Q filed 2026-05-04 (www.sec.gov, 2026-05-04, primary) https://www.sec.gov/Archives/edgar/data/887596/000110465926054987/\n[7] CHEESECAKE FACTORY INC XBRL data tagged in 10-Q filed 2026-08-03 (www.sec.gov, 2026-08-03, primary) https://www.sec.gov/Archives/edgar/data/887596/000110465926089840/\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 105605,
+   "output": 26969
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 115.24,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/c09a4901958a7b45e4070a0ded013194",
+  "companies": [
+   {
+    "name": "DARDEN RESTAURANTS INC",
+    "ticker": "DRI",
+    "cik": "940944",
+    "resolved": true
+   },
+   {
+    "name": "BRINKER INTERNATIONAL, INC",
+    "ticker": "EAT",
+    "cik": "703351",
+    "resolved": true
+   },
+   {
+    "name": "CRACKER BARREL OLD COUNTRY STORE, INC",
+    "ticker": "CBRL",
+    "cik": "1067294",
+    "resolved": true
+   },
+   {
+    "name": "CHEESECAKE FACTORY INC",
+    "ticker": "CAKE",
+    "cik": "887596",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "TTM is built exactly as the question defines it: latest fiscal year + current fiscal year-to-date − prior-year year-to-date, using the last four reported fiscal quarters, with no 52/53-week adjustment.",
+    "Darden: most recent reported quarter as of 2026-10-03 is Q1 FY2027 (2026-06-01 to 2026-08-30, 10-Q filed 2026-10-02), so TTM = FY2026 + Q1 FY2027 − Q1 FY2026 and the TTM end date is 2026-08-30.",
+    "Brinker: most recent reported quarter is Q4 FY2026 (2026-03-26 to 2026-06-24, 10-K filed 2026-08-19); since that is the fiscal fourth quarter, TTM = FY2026 and the TTM end date is 2026-06-24.",
+    "Cracker Barrel: most recent reported quarter is Q4 FY2026 (2026-05-02 to 2026-07-31, 10-K filed 2026-09-25); since that is the fiscal fourth quarter, TTM = FY2026 and the TTM end date is 2026-07-31.",
+    "Cheesecake Factory: most recent reported quarter is Q2 FY2026 (2026-04-01 to 2026-06-30, 10-Q filed 2026-08-03), so TTM = FY2025 + Q1 FY2026 + Q2 FY2026 − Q1 FY2025 − Q2 FY2025 and the TTM end date is 2026-06-30.",
+    "Fiscal years are not calendar years for Darden (ends late May), Brinker (ends late June) and Cracker Barrel (ends late July); Cheesecake Factory's fiscal year ends in late December, so its FY2025 ended 2025-12-30.",
+    "'Revenue' is read as each company's reported total revenues / net sales line; 'GAAP net income attributable to the company' is read as net income attributable to the parent (excluding noncontrolling interests), as reported.",
+    "Because the four companies have different fiscal calendars, the TTM windows end on different dates (2026-08-30, 2026-06-24, 2026-07-31, 2026-06-30); no attempt is made to align them to a common date.",
+    "All figures are taken from the companies' own reported financial statements; no analyst estimates or consensus figures are used."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Darden (DRI): TTM revenue in USD millions = FY2026 total revenues + Q1 FY2027 total revenues − Q1 FY2026 total revenues; TTM end date 2026-08-30",
+    "Darden (DRI): TTM GAAP net income attributable to Darden Restaurants, Inc. in USD millions = FY2026 + Q1 FY2027 − Q1 FY2026; TTM end date 2026-08-30",
+    "Brinker (EAT): TTM revenue in USD millions = FY2026 total revenues (most recent reported quarter is fiscal Q4, so TTM = FY2026); TTM end date 2026-06-24",
+    "Brinker (EAT): TTM GAAP net income attributable to Brinker International, Inc. in USD millions = FY2026; TTM end date 2026-06-24",
+    "Cracker Barrel (CBRL): TTM revenue in USD millions = FY2026 total revenues (most recent reported quarter is fiscal Q4, so TTM = FY2026); TTM end date 2026-07-31",
+    "Cracker Barrel (CBRL): TTM GAAP net income attributable to Cracker Barrel Old Country Store, Inc. in USD millions = FY2026; TTM end date 2026-07-31",
+    "Cheesecake Factory (CAKE): TTM revenue in USD millions = FY2025 total revenues + Q1 FY2026 + Q2 FY2026 − Q1 FY2025 − Q2 FY2025; TTM end date 2026-06-30",
+    "Cheesecake Factory (CAKE): TTM GAAP net income attributable to The Cheesecake Factory Incorporated in USD millions = FY2025 + Q1 FY2026 + Q2 FY2026 − Q1 FY2025 − Q2 FY2025; TTM end date 2026-06-30",
+    "Each company's stated TTM end date (fiscal quarter end) and the fiscal-quarter labels making up its TTM window",
+    "Confirmation that each component period's figures are as reported (no 52/53-week normalization, no non-GAAP adjustments)"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "DRI",
+     "label": "FY2026"
+    },
+    {
+     "ticker": "DRI",
+     "label": "Q1 FY2027"
+    },
+    {
+     "ticker": "DRI",
+     "label": "Q1 FY2026"
+    },
+    {
+     "ticker": "EAT",
+     "label": "FY2026"
+    },
+    {
+     "ticker": "CBRL",
+     "label": "FY2026"
+    },
+    {
+     "ticker": "CAKE",
+     "label": "FY2025"
+    },
+    {
+     "ticker": "CAKE",
+     "label": "Q1 FY2026"
+    },
+    {
+     "ticker": "CAKE",
+     "label": "Q2 FY2026"
+    },
+    {
+     "ticker": "CAKE",
+     "label": "Q1 FY2025"
+    },
+    {
+     "ticker": "CAKE",
+     "label": "Q2 FY2025"
+    }
+   ],
+   "documents": [],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Brinker Q1 FY2027 (2026-06-25 to 2026-09-23) has ended but results are not yet released, so Brinker's TTM stops at Q4 FY2026 (2026-06-24).",
+    "Cheesecake Factory Q3 FY2026 (2026-07-01 to 2026-09-29) has ended but results are not yet released, so CAKE's TTM stops at Q2 FY2026 (2026-06-30).",
+    "Darden Q2 FY2027, Brinker Q2 FY2027, Cracker Barrel Q1 FY2027 and Cheesecake Factory Q4 FY2026 are still in progress and are excluded from all TTM windows.",
+    "All component periods used are filed with the SEC (10-K/10-Q), so no estimated or projected figures are needed; the projected dates shown for unreported periods are not used."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "assumptions": [
+   "TTM is built exactly as the question defines it: latest fiscal year + current fiscal year-to-date − prior-year year-to-date, using the last four reported fiscal quarters, with no 52/53-week adjustment.",
+   "Darden: most recent reported quarter as of 2026-10-03 is Q1 FY2027 (2026-06-01 to 2026-08-30, 10-Q filed 2026-10-02), so TTM = FY2026 + Q1 FY2027 − Q1 FY2026 and the TTM end date is 2026-08-30.",
+   "Brinker: most recent reported quarter is Q4 FY2026 (2026-03-26 to 2026-06-24, 10-K filed 2026-08-19); since that is the fiscal fourth quarter, TTM = FY2026 and the TTM end date is 2026-06-24.",
+   "Cracker Barrel: most recent reported quarter is Q4 FY2026 (2026-05-02 to 2026-07-31, 10-K filed 2026-09-25); since that is the fiscal fourth quarter, TTM = FY2026 and the TTM end date is 2026-07-31.",
+   "Cheesecake Factory: most recent reported quarter is Q2 FY2026 (2026-04-01 to 2026-06-30, 10-Q filed 2026-08-03), so TTM = FY2025 + Q1 FY2026 + Q2 FY2026 − Q1 FY2025 − Q2 FY2025 and the TTM end date is 2026-06-30.",
+   "Fiscal years are not calendar years for Darden (ends late May), Brinker (ends late June) and Cracker Barrel (ends late July); Cheesecake Factory's fiscal year ends in late December, so its FY2025 ended 2025-12-30.",
+   "'Revenue' is read as each company's reported total revenues / net sales line; 'GAAP net income attributable to the company' is read as net income attributable to the parent (excluding noncontrolling interests), as reported.",
+   "Because the four companies have different fiscal calendars, the TTM windows end on different dates (2026-08-30, 2026-06-24, 2026-07-31, 2026-06-30); no attempt is made to align them to a common date.",
+   "All figures are taken from the companies' own reported financial statements; no analyst estimates or consensus figures are used."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1067294/000110465926110772/",
+    "https://www.sec.gov/Archives/edgar/data/703351/000070335126000029/",
+    "https://www.sec.gov/Archives/edgar/data/887596/000110465926018643/",
+    "https://www.sec.gov/Archives/edgar/data/887596/000110465926054987/",
+    "https://www.sec.gov/Archives/edgar/data/887596/000110465926089840/",
+    "https://www.sec.gov/Archives/edgar/data/940944/000094094426000025/",
+    "https://www.sec.gov/Archives/edgar/data/940944/000094094426000042/"
+   ],
+   "cited_primary": 7,
+   "retrieved": 10,
+   "retrieved_primary": 10
+  },
+  "recall": {
+   "figures": 16,
+   "found": 16
+  },
+  "correctness": {
+   "score": 1.0,
+   "verdict": "correct",
+   "points": [
+    {
+     "point": "Darden Restaurants TTM through Q1 FY2027 (13 weeks ended Aug 30, 2026) TTM revenue = 13366.5 USD millions",
+     "met": true,
+     "note": "answer: 13366.5"
+    },
+    {
+     "point": "Darden Restaurants TTM through Q1 FY2027 (13 weeks ended Aug 30, 2026) TTM net income = 1182.3 USD millions",
+     "met": true,
+     "note": "answer: 1182.3"
+    },
+    {
+     "point": "Brinker International TTM through Q4 FY2026 (fiscal year ended Jun 24, 2026) TTM revenue = 5807.4 USD millions",
+     "met": true,
+     "note": "answer: 5807.4"
+    },
+    {
+     "point": "Brinker International TTM through Q4 FY2026 (fiscal year ended Jun 24, 2026) TTM net income = 487.0 USD millions",
+     "met": true,
+     "note": "answer: 487.0"
+    },
+    {
+     "point": "Cracker Barrel Old Country Store TTM through Q4 FY2026 (fiscal year ended Jul 31, 2026) TTM revenue = 3318.7 USD millions",
+     "met": true,
+     "note": "answer: 3318.714"
+    },
+    {
+     "point": "Cracker Barrel Old Country Store TTM through Q4 FY2026 (fiscal year ended Jul 31, 2026) TTM net income = 31.7 USD millions",
+     "met": true,
+     "note": "answer: 31.675"
+    },
+    {
+     "point": "The Cheesecake Factory TTM through Q2 FY2026 (quarter ended Jun 30, 2026) TTM revenue = 3877.3 USD millions",
+     "met": true,
+     "note": "answer: 3877.2"
+    },
+    {
+     "point": "The Cheesecake Factory TTM through Q2 FY2026 (quarter ended Jun 30, 2026) TTM net income = 178.6 USD millions",
+     "met": true,
+     "note": "answer: 178.6"
+    }
+   ],
+   "rationale": "8/8 cells correct",
+   "cells_correct": 8,
+   "cells_total": 8,
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Darden TTM revenue: $13,366.5 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/940944/000094094426000042/",
+     "reason": "Computed in USD millions: FY2026 revenue $13,210.9m (10-K source https://www.sec.gov/Archives/edgar/data/940944/000094094426000025/) + Q1 FY2027 $3,200.3m − Q1 FY2026 $3,044.7m (10-Q source) = $13,366.5m. Metric and periods match the cited XBRL data.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Darden TTM GAAP net income attributable to parent: $1,182.3 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/940944/000094094426000042/",
+     "reason": "Computed: FY2026 parent net income $1,206.7m (10-K https://www.sec.gov/Archives/edgar/data/940944/000094094426000025/) + Q1 FY2027 $233.4m − comparative Q1 FY2026 $257.8m (10-Q) = $1,182.3m. The filings identify the measure as net income attributable to parent.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Brinker FY2026/TTM revenue: $5,807.4 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/703351/000070335126000029/",
+     "reason": "The cited 10-K reports Revenues of $5,807,400,000 for 2025-06-26 to 2026-06-24, equal to $5,807.4 million. No calculation is needed because the reported fiscal year is treated as TTM.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Brinker FY2026/TTM GAAP net income attributable to parent: $487.0 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/703351/000070335126000029/",
+     "reason": "The 10-K reports parent-attributable Net Income of $487,000,000 for 2025-06-26 to 2026-06-24, i.e. $487.0 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cracker Barrel FY2026/TTM revenue: $3,318.714 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1067294/000110465926110772/",
+     "reason": "The cited 10-K reports revenue from contracts of $3,318,714,000 for 2025-08-02 to 2026-07-31, which is $3,318.714 million. This is the reported fiscal-year amount used as TTM.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cracker Barrel FY2026/TTM GAAP net income attributable to parent: $31.675 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1067294/000110465926110772/",
+     "reason": "The 10-K reports parent-attributable net income of $31,675,000 for 2025-08-02 to 2026-07-31, equal to $31.675 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cheesecake Factory TTM revenue: $3,877.2 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/887596/000110465926089840/",
+     "reason": "Computed from cited filings: FY2025 revenue $3,751.806m (10-K https://www.sec.gov/Archives/edgar/data/887596/000110465926018643/) + FY2026 YTD revenue $2,008.466m − prior-year YTD revenue $1,883.022m (10-Q) = $3,877.250m. The answer's $3,877.2m is within the stated half-last-digit rounding allowance.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cheesecake Factory TTM GAAP net income attributable to parent: $178.6 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/887596/000110465926089840/",
+     "reason": "Computed: FY2025 parent net income $148.427m (10-K https://www.sec.gov/Archives/edgar/data/887596/000110465926018643/) + FY2026 YTD $117.942m − prior-year YTD $87.753m (10-Q) = $178.616m, rounding to $178.6m.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Darden TTM uses FY2026 plus Q1 FY2027 minus Q1 FY2026; end date 2026-08-30",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/940944/000094094426000042/",
+     "reason": "The 10-Q reports the current quarter as 2026-06-01 to 2026-08-30 and comparative quarter as 2025-05-26 to 2025-08-24; the cited 10-K reports FY2026 as 2025-05-26 to 2026-05-31 (https://www.sec.gov/Archives/edgar/data/940944/000094094426000025/). The 10-Q filing date is 2026-10-02, as stated in its source title.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Brinker TTM is FY2026 ending 2026-06-24; Q4 claimed as 2026-03-26 to 2026-06-24",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/703351/000070335126000029/",
+     "reason": "The 10-K supports FY2026's annual period 2025-06-26 to 2026-06-24 and its 2026-08-19 filing date. The retrieved text does not give the claimed Q4 start date (2026-03-26) or establish that this was the most recent filing as of 2026-10-03; therefore the full claim is not adequately supported.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cracker Barrel TTM is FY2026 ending 2026-07-31; Q4 claimed as 2026-05-02 to 2026-07-31",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1067294/000110465926110772/",
+     "reason": "The 10-K supports FY2026's annual period 2025-08-02 to 2026-07-31 and its 2026-09-25 filing date. The retrieved text does not show the claimed Q4 start date (2026-05-02) or establish that this was the most recent report as of 2026-10-03; therefore the full claim is not adequately supported.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cheesecake Factory TTM uses FY2025 plus FY2026 YTD minus prior-year YTD; end date 2026-06-30",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/887596/000110465926089840/",
+     "reason": "The 10-K gives FY2025 as 2025-01-01 to 2025-12-30; the 10-Qs give 2026 YTD as 2025-12-31 to 2026-06-30 and prior-year YTD as 2025-01-01 to 2025-07-01. The latest cited 10-Q reports Q2 through 2026-06-30 and was filed 2026-08-03. These periods support the TTM construction and end date.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 12,
+   "numeric_cited": 12,
+   "cited": 12,
+   "supported": 10,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 150.0
+ }
+}

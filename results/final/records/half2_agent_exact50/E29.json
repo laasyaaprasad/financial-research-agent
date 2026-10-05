@@ -1,0 +1,300 @@
+{
+ "id": "E29",
+ "category": "not yet reported",
+ "difficulty": "hard",
+ "time_sensitivity": "dynamic",
+ "answer_type": "abstain",
+ "question": "fedex q1 fy27 rev",
+ "grading": "(1) Identifies FedEx (FDX) and explains that FedEx changed its fiscal year end from May 31 to December 31 effective June 1, 2026 (seven-month transition period June 1 to Dec 31, 2026), so there is no reported 'Q1 FY2027' as of 2026-10-03; the next results are expected in late October 2026 (reported as Oct 28). (2) Gives no revenue figure for any period after May 31, 2026. (3) Offers the latest reported period: Q4 and full-year fiscal 2026 (ended May 31, 2026; reported June 23, 2026), with a citation; it may mention the June 1, 2026 FedEx Freight spin-off and recast financials. (4) Fail if it states or estimates revenue for June-August 2026 or 'Q1 FY27', or treats Q1 FY27 as reported.",
+ "answer": "No Q1 FY2027 exists: FedEx moved to a Dec 31 year end (transition period Jun 1-Dec 31, 2026) with the next release around Oct 28, 2026; gives the latest reported FY2026 (ended May 31, 2026; reported June 23, 2026).",
+ "output": {
+  "answer": "**Question:** fedex q1 fy27 rev\n*As of 2026-10-03*\n\n**Interpreted as:** \"q1 fy27\" read as fiscal Q1 FY2027 (2026-06-01 to 2026-08-31); FedEx's fiscal year ends 31 May, so FY2027 is not the calendar year. \"rev\" read as total revenue (FedEx's revenue line). Q1 FY2027 is not yet reported (period ended 2026-08-31, results not yet released), so per the fallback the plan covers the latest reported quarter instead: Q4 FY2026 (2026-03-01 to 2026-05-31), headline results plus the guidance FedEx gave for the next period. \"fedex\" read as FedEx Corp (FDX), the SEC registrant.\n\n- FedEx's fiscal Q1 FY2027 (quarter ending August 31, 2026) revenue is not yet reported as of 2026-10-03, so the latest reported quarter is used instead. [1]\n- FedEx reported Q4 FY2026 (quarter ended May 31, 2026) revenue of $25.0 billion on a GAAP as-reported basis, unchanged at $25.0 billion on an adjusted non-GAAP basis. [2]\n- FedEx's Q4 FY2026 (quarter ended May 31, 2026) total revenue was $25,007 million, compared with $22,220 million in Q4 FY2025, a 13% increase as disclosed. [2]\n- Calculated from the same figures, Q4 FY2026 revenue grew 12.5% year over year versus the 13% rounded rate disclosed. [2]\n- For full-year FY2026 (twelve months ended May 31, 2026), FedEx reported total revenue of $94,720 million versus $87,926 million in FY2025, an 8% increase as disclosed. [2][3][4]\n- As guidance for the next period, FedEx said on 2026-06-23 that for calendar year 2026 it is forecasting revenue growth of ~11% year over year. [2]\n\n**Not available**\n- FedEx fiscal Q1 FY2027 revenue (quarter 2026-06-01 to 2026-08-31): The quarter ended 2026-08-31 but no earnings release or 10-Q for Q1 FY2027 exists as of 2026-10-03; the next scheduled report is 2026-10-28, so the figure cannot be stated and is not estimated. [1]\n\n**Sources**\n[1] FedEx (FDX) Earnings Date and Reports 2026 (www.marketbeat.com, undated, secondary) https://www.marketbeat.com/stocks/NYSE/FDX/earnings\n[2] FEDEX CORP earnings release for Q4 FY2026, 8-K EX-99.1 (filed 2026-06-23) (www.sec.gov, 2026-06-23, primary) https://www.sec.gov/Archives/edgar/data/1048911/000104891126000050/fdx-earningsreleasefy2026q4.htm\n[3] FEDEX CORP 10-K for Q4 FY2026 (filed 2026-07-20) (www.sec.gov, 2026-07-20, primary) https://www.sec.gov/Archives/edgar/data/1048911/000104891126000105/fdx-20260531.htm\n[4] FEDEX CORP XBRL data tagged in 10-K filed 2026-07-20 (www.sec.gov, 2026-07-20, primary) https://www.sec.gov/Archives/edgar/data/1048911/000104891126000105/\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 76823,
+   "output": 14931
+  },
+  "tavily_credits": 3.0,
+  "latency_s": 73.44,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/ac5f917ead3f0e14d56e384c2d13b6b6",
+  "companies": [
+   {
+    "name": "FEDEX CORP",
+    "ticker": "FDX",
+    "cik": "1048911",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "\"q1 fy27\" read as fiscal Q1 FY2027 (2026-06-01 to 2026-08-31); FedEx's fiscal year ends 31 May, so FY2027 is not the calendar year.",
+    "\"rev\" read as total revenue (FedEx's revenue line).",
+    "Q1 FY2027 is not yet reported (period ended 2026-08-31, results not yet released), so per the fallback the plan covers the latest reported quarter instead: Q4 FY2026 (2026-03-01 to 2026-05-31), headline results plus the guidance FedEx gave for the next period.",
+    "\"fedex\" read as FedEx Corp (FDX), the SEC registrant."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Q4 FY2026 total revenue and year-over-year growth (vs Q4 FY2025)",
+    "Q4 FY2026 operating income and operating margin",
+    "Q4 FY2026 GAAP net income and diluted EPS",
+    "Q4 FY2026 segment revenue (Federal Express, Ground, Freight, etc.)",
+    "FedEx guidance for Q1 FY2027 (revenue/EPS outlook) as given in the Q4 FY2026 earnings release",
+    "Any management commentary on the quarter and outlook"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "FDX",
+     "label": "Q4 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "FDX",
+     "period": "Q4 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "FDX",
+     "period": "Q4 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "FDX",
+     "period": "Q4 FY2025",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Capture any guidance or management commentary on the Q4 FY2026 earnings call that is not in the press release",
+     "query": "FedEx Q4 FY2026 earnings call guidance Q1 FY2027",
+     "topic": "news",
+     "days_back": 120
+    }
+   ],
+   "availability_notes": [
+    "Q1 FY2027 (2026-06-01 to 2026-08-31) is not yet reported as of 2026-10-03 — the period has ended but no earnings release or 10-Q exists, so its revenue cannot be stated and will not be estimated.",
+    "Q2 FY2027 (2026-09-01 to 2026-11-30) is still in progress and not reported."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "FedEx fiscal Q1 FY2027 revenue (quarter 2026-06-01 to 2026-08-31)",
+    "kind": "not_reported_yet",
+    "reason": "The quarter ended 2026-08-31 but no earnings release or 10-Q for Q1 FY2027 exists as of 2026-10-03; the next scheduled report is 2026-10-28, so the figure cannot be stated and is not estimated.",
+    "evidence_ids": [
+     "E7"
+    ]
+   }
+  ],
+  "removed": [],
+  "assumptions": [
+   "\"q1 fy27\" read as fiscal Q1 FY2027 (2026-06-01 to 2026-08-31); FedEx's fiscal year ends 31 May, so FY2027 is not the calendar year.",
+   "\"rev\" read as total revenue (FedEx's revenue line).",
+   "Q1 FY2027 is not yet reported (period ended 2026-08-31, results not yet released), so per the fallback the plan covers the latest reported quarter instead: Q4 FY2026 (2026-03-01 to 2026-05-31), headline results plus the guidance FedEx gave for the next period.",
+   "\"fedex\" read as FedEx Corp (FDX), the SEC registrant."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "FedEx Q4 FY2026 earnings call guidance Q1 FY2027",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2026-06-05"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://finance.yahoo.com/quote/1ACN.MI/earnings/1ACN.MI-Q4-2026-earnings_call-690113.html"
+     ],
+     "query": "fedex q1 fy27 rev",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "fedex FedEx revenue guidance specifically for fiscal Q1 FY2027 or Q2 FY2027",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.marketbeat.com/stocks/NYSE/FDX/earnings",
+      "https://www.bizjournals.com/memphis/news/2025/12/22/fedex-updates-full-year-guidance-q2-2026.html",
+      "https://s21.q4cdn.com/665674268/files/doc_financials/2025/q2/Earnings-Transcript-Q2FY25.pdf"
+     ],
+     "query": "fedex q1 fy27 rev",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.marketbeat.com/stocks/NYSE/FDX/earnings",
+    "https://www.sec.gov/Archives/edgar/data/1048911/000104891126000050/fdx-earningsreleasefy2026q4.htm",
+    "https://www.sec.gov/Archives/edgar/data/1048911/000104891126000105/",
+    "https://www.sec.gov/Archives/edgar/data/1048911/000104891126000105/fdx-20260531.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 9,
+   "retrieved_primary": 5
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 0.714,
+   "points": [
+    {
+     "point": "Identifies the company as FedEx / FDX.",
+     "optional": false,
+     "met": true,
+     "note": "Explicitly identifies FedEx Corp (FDX)."
+    },
+    {
+     "point": "Explains that FedEx changed its fiscal year end from May 31 to December 31, effective June 1, 2026.",
+     "optional": false,
+     "met": false,
+     "note": "Instead says FedEx's fiscal year ends May 31 and defines FY27 Q1 as June–August."
+    },
+    {
+     "point": "Explains the seven-month June 1–December 31, 2026 transition period and that there is no reported 'Q1 FY2027' as of 2026-10-03 because of the fiscal-year change.",
+     "optional": false,
+     "met": false,
+     "note": "Treats Q1 FY27 as a conventional quarter ending August 31 that simply has not yet been released; does not mention the transition period."
+    },
+    {
+     "point": "States that the next results are expected in late October 2026, reported as October 28.",
+     "optional": false,
+     "met": true,
+     "note": "Says the next scheduled report is 2026-10-28."
+    },
+    {
+     "point": "Gives no revenue figure for any period after May 31, 2026.",
+     "optional": false,
+     "met": true,
+     "note": "Provides no revenue amount or Q1 FY27 revenue estimate. The cited ~11% is CY2026 revenue-growth guidance, not a revenue amount or a Q1 FY27 figure."
+    },
+    {
+     "point": "Offers the latest reported period, Q4 and full-year FY2026 ended May 31, 2026 and reported June 23, 2026, with a citation.",
+     "optional": false,
+     "met": true,
+     "note": "Provides Q4 FY2026 and FY2026 revenue, the May 31 period end, June 23 report date, and SEC citations [2]–[4]."
+    },
+    {
+     "point": "Does not state or estimate revenue for June–August 2026 or 'Q1 FY27', and does not treat Q1 FY27 as reported.",
+     "optional": false,
+     "met": true,
+     "note": "It gives no revenue amount or estimate for that period and explicitly says the revenue is not yet reported."
+    },
+    {
+     "point": "Optional: May mention the June 1, 2026 FedEx Freight spin-off and recast financials.",
+     "optional": true,
+     "met": false,
+     "note": "Does not mention these; the rubric makes this optional."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The answer correctly abstains from giving Q1 FY27 revenue, identifies the next report date, and supplies cited latest FY2026 results. However, it materially misses the fiscal-year change and transition period, instead incorrectly treating June–August as FedEx's Q1 FY27.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "partial",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q4 FY2026 revenue was $25.0 billion on both GAAP reported and adjusted non-GAAP bases",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1048911/000104891126000050/fdx-earningsreleasefy2026q4.htm",
+     "reason": "FedEx’s June 23, 2026 earnings release table reports Q4 fiscal 2026 revenue as $25.0 billion under both “As Reported (GAAP)” and “Adjusted (non-GAAP).” The claim preserves the metric and accounting bases.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q4 FY2026 total revenue was $25,007 million versus $22,220 million in Q4 FY2025, a disclosed 13% increase",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1048911/000104891126000050/fdx-earningsreleasefy2026q4.htm",
+     "reason": "The release’s financial highlights table labels the metric “Total Revenue” and reports 25,007 and 22,220 in millions for the three months ended May 31, 2026 and 2025, respectively, with percent change 13. These are consolidated actual results, not guidance.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Calculated Q4 FY2026 revenue growth was 12.5% year over year",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1048911/000104891126000050/fdx-earningsreleasefy2026q4.htm",
+     "reason": "Using the release’s actual total-revenue inputs: (25,007 − 22,220) / 22,220 × 100 = 12.5423%, which rounds to 12.5% at one decimal place; this is consistent with the release’s disclosed whole-percent 13%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2026 total revenue was $94,720 million versus $87,926 million in FY2025, with an 8% disclosed increase",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1048911/000104891126000050/fdx-earningsreleasefy2026q4.htm",
+     "reason": "The release’s financial highlights table reports total revenue of $94,720 million and $87,926 million for the twelve months ended May 31, 2026 and 2025, and percent change of 8. The 10-K independently gives consolidated revenue figures and the 8% change: https://www.sec.gov/Archives/edgar/data/1048911/000104891126000105/fdx-20260531.htm. The XBRL filing also supports the two revenue inputs: https://www.sec.gov/Archives/edgar/data/1048911/000104891126000105/.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FedEx’s calendar-year 2026 revenue growth forecast was approximately 11% year over year, announced June 23, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1048911/000104891126000050/fdx-earningsreleasefy2026q4.htm",
+     "reason": "The earnings release, dated June 23, 2026, introduces a CY 2026 outlook and lists “Revenue Growth” forecast value “~11% YoY.” This is company guidance for calendar 2026, not actual results.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 5,
+   "supported": 5,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 158.3
+ }
+}

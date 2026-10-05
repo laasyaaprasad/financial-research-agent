@@ -1,0 +1,83 @@
+{
+ "id": "E21",
+ "category": "missing company",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "clarify",
+ "question": "what was revenue last quarter?",
+ "grading": "(1) Responds with a clarifying question asking which company (name or ticker) the user means. (2) Gives no revenue numbers, no example company, and no generic benchmark. (3) Fail if it assumes a company or lists revenue for several companies.",
+ "answer": "Asks which company is meant; gives no figures.",
+ "output": {
+  "answer": "**Question:** what was revenue last quarter?\n*As of 2026-10-03*\n\n**Clarification needed:** Which company's revenue last quarter are you asking about?\n\n_No figures were looked up; ask again with the company (and period) you mean._",
+  "tokens": {
+   "input": 929,
+   "output": 79
+  },
+  "tavily_credits": 0,
+  "latency_s": 1.27,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/a9a85c88289d30717c88dc00b7871a61",
+  "companies": [],
+  "plan": null,
+  "unavailable": [],
+  "removed": [],
+  "assumptions": [],
+  "out_of_scope": [],
+  "clarification": "Which company's revenue last quarter are you asking about?",
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [],
+   "cited_primary": 0,
+   "retrieved": 0,
+   "retrieved_primary": 0
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Asks which company (name or ticker) the user means.",
+     "optional": false,
+     "met": true,
+     "note": "Asks: “Which company's revenue last quarter are you asking about?”"
+    },
+    {
+     "point": "Gives no revenue numbers, no example company, and no generic benchmark.",
+     "optional": false,
+     "met": true,
+     "note": "No revenue figures, example company, or benchmark are provided."
+    },
+    {
+     "point": "Does not assume a company or list revenue for several companies.",
+     "optional": false,
+     "met": true,
+     "note": "The answer makes no company assumption and lists no companies."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer directly asks which company's revenue is meant and provides no figures or assumed company.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [],
+   "numeric_claims": 0,
+   "numeric_cited": 0,
+   "cited": 0,
+   "supported": 0,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 86.8
+ }
+}

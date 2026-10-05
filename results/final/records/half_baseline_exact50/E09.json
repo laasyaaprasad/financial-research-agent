@@ -1,0 +1,280 @@
+{
+ "id": "E09",
+ "category": "open-ended update",
+ "difficulty": "medium",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "latest on medtronic?",
+ "grading": "(1) Identifies Medtronic plc (MDT). (2) Treats 'latest' as the latest quarterly results: Q1 fiscal 2027 (quarter ended July 31, 2026; reported Sept 1, 2026) and says it is fiscal (year ends around April 30), not calendar. (3) Gives headline revenue (about $9.8B) and growth, EPS (GAAP and/or non-GAAP, labelled) and the raised FY2027 guidance, each cited; may note that FY2027 is a 53-week year with the extra week in Q1. (4) Fail if it uses Q4 FY2026 or an older quarter as the latest, omits guidance and EPS, or offers an investment view.",
+ "answer": "Medtronic Q1 FY2027 (ended July 31, 2026; reported Sept 1, 2026): revenue $9.756B (+13.7% reported and organic, boosted by a 53rd week), GAAP EPS $1.14, non-GAAP EPS $1.45, FY27 guidance raised.",
+ "output": {
+  "answer": "Here's the latest on Medtronic (NYSE: MDT):\n\n## Recent Product & Regulatory News\n- **Cardiac mapping/ablation (Sept 30, 2026):** Medtronic received FDA clearance and CE Mark for its **Affera Prism-2 Mapping Software**, plus a CE Mark for the **PulseSelect ProxBox Adapter** with Proximity Indicator — expanding its electrophysiology (EP) portfolio in the competitive pulsed field ablation (PFA) market. ([MedTech Dive](https://www.medtechdive.com/news/medtronic-reveals-cardiac-mapping-and-ablation-software-clearances/831852), [Medtronic](https://news.medtronic.com/2026-09-30-Medtronic-announces-regulatory-milestones-for-newest-cardiac-mapping-and-ablation-software))\n- **Robotic surgery:** FDA clearance for the **LigaSure RAS Maryland** instrument on the **Hugo RAS** system (Sept 16, 2026). ([Today's Medical Developments](https://www.todaysmedicaldevelopments.com/news/regulatory-roundup-september-2026))\n- **CPT codes (Oct 1, 2026):** AMA approved **Category I CPT codes** for the **Altaviva** tibial neuromodulation device (urge urinary incontinence) and **Symplicity Spyral** renal denervation system (hypertension), effective January 2028 — a potential long-term growth catalyst. ([PR Newswire](https://www.prnewswire.com/news-releases/medtronic-receives-category-i-cpt-code-approvals-for-altaviva-and-symplicity-spyral-systems-302896491.html))\n\n## Earnings & Financials\n- **Fiscal Q1 2027 beat:** Revenue ~**$9.8B, up 13.7%** reported and organic (though an extra selling week added ~$570–670M). Adjusted EPS of **$1.45**, up 15.1% and beating estimates. ([Zacks/Yahoo Finance](https://finance.yahoo.com/healthcare/articles/medtronic-worth-buying-growth-improves-125800041.html))\n- **Guidance raised:** Management lifted FY2027 organic revenue growth to **7.25%–7.75%** (from 6.75%–7.25%) and adjusted EPS to **$5.94–$6.00**. ([Insider Monkey/Yahoo Finance](https://finance.yahoo.com/healthcare/articles/medtronic-mdt-raises-outlook-again-143459144.html))\n- **Segment growth:** Cardiovascular +19.5%, Diabetes +16.9%, Neuroscience +10.3%, Medical Surgical +10.0%.\n- **Stock reaction mixed:** Shares fell ~6.4% since earnings, with Wall Street split on re-rating potential. Targets raised (Mizuho $115, Wells Fargo $104), but some remain Neutral. Cramer commented it looks cheap at ~14x earnings but lacked clear catalysts. ([Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/medtronic-mdt-q1-beat-sparks-180848561.html))\n\n## Corporate / Strategic\n- **Diabetes separation:** Progressing on a **$4B tax-free MiniMed exchange offer** following MiniMed's March 2026 IPO — though the offer appears to be losing investor appeal. ([MarketBeat](https://www.marketbeat.com/instant-alerts/filing-medtronic-plc-mdt-shares-acquired-by-massmutual-private-wealth-trust-fsb-2026-10-05))\n- **M&A / investments:** $700M investment in **Cornerstone Robotics**, plus acquisitions of **Scientia Vascular** and **SPR Therapeutics**.\n- **Dividend:** 49-year streak of increases, ~3.27% yield. ([Yahoo Finance](https://finance.yahoo.com/healthcare/articles/medtronic-49-dividend-streak-faces-111532496.html))\n\n**Bottom line:** Medtronic is showing its best growth acceleration in years (led by heart devices/cardiac ablation, up 88% worldwide), with raised guidance and a cheap ~14–15x forward valuation and >3% yield. The debate is whether the growth is durable enough to drive a re-rating, especially given the one-time extra selling week and the uncertain MiniMed spin-off.\n\nWould you like a deeper dive into any specific area — earnings details, the diabetes separation, or analyst views?",
+  "tokens": {
+   "input": 11248,
+   "output": 1193
+  },
+  "tavily_credits": 3,
+  "latency_s": 10.23,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/7dc6c33378575d39767d53812eca9f70",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Medtronic latest news",
+     "topic": "news",
+     "time_range": "week",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Medtronic earnings stock news",
+     "topic": "finance",
+     "time_range": "month"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/healthcare/articles/medtronic-49-dividend-streak-faces-111532496.html",
+    "https://finance.yahoo.com/healthcare/articles/medtronic-mdt-raises-outlook-again-143459144.html",
+    "https://finance.yahoo.com/healthcare/articles/medtronic-worth-buying-growth-improves-125800041.html",
+    "https://finance.yahoo.com/markets/stocks/articles/medtronic-mdt-q1-beat-sparks-180848561.html",
+    "https://news.medtronic.com/2026-09-30-Medtronic-announces-regulatory-milestones-for-newest-cardiac-mapping-and-ablation-software",
+    "https://www.marketbeat.com/instant-alerts/filing-medtronic-plc-mdt-shares-acquired-by-massmutual-private-wealth-trust-fsb-2026-10-05",
+    "https://www.medtechdive.com/news/medtronic-reveals-cardiac-mapping-and-ablation-software-clearances/831852",
+    "https://www.prnewswire.com/news-releases/medtronic-receives-category-i-cpt-code-approvals-for-altaviva-and-symplicity-spyral-systems-302896491.html",
+    "https://www.todaysmedicaldevelopments.com/news/regulatory-roundup-september-2026"
+   ],
+   "cited_primary": 0,
+   "retrieved": 19,
+   "retrieved_primary": 0
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 0.6,
+   "points": [
+    {
+     "point": "Identifies Medtronic plc (MDT).",
+     "optional": false,
+     "met": true,
+     "note": "Identifies “Medtronic (NYSE: MDT),” which unambiguously identifies the company and ticker."
+    },
+    {
+     "point": "Treats the latest quarterly results as Q1 fiscal 2027, rather than another period.",
+     "optional": false,
+     "met": true,
+     "note": "Labels the results “Fiscal Q1 2027.”"
+    },
+    {
+     "point": "States the quarter ended July 31, 2026, and was reported September 1, 2026.",
+     "optional": false,
+     "met": false,
+     "note": "Neither the quarter-end date nor the report date is given."
+    },
+    {
+     "point": "Makes clear the period is fiscal, not calendar, and that Medtronic's fiscal year ends around April 30.",
+     "optional": false,
+     "met": false,
+     "note": "It calls the quarter fiscal, but does not distinguish fiscal from calendar or state the fiscal year-end timing."
+    },
+    {
+     "point": "Gives headline revenue of about $9.8B and its growth, with support from the cited source(s).",
+     "optional": false,
+     "met": false,
+     "note": "It gives ~$9.8B and 13.7%, but its cited Yahoo/Zacks passage supports the growth figure, not the $9.8B revenue amount."
+    },
+    {
+     "point": "Gives GAAP and/or non-GAAP EPS, labels the measure, and cites it.",
+     "optional": false,
+     "met": true,
+     "note": "Gives “Adjusted EPS of $1.45” and cites the Yahoo/Zacks passage, which reports adjusted first-quarter EPS of $1.45."
+    },
+    {
+     "point": "States that FY2027 guidance was raised and cites the guidance.",
+     "optional": false,
+     "met": true,
+     "note": "States raised FY2027 organic revenue growth and adjusted EPS guidance; the cited Yahoo passage supports the raised outlook and adjusted EPS range."
+    },
+    {
+     "point": "May note that FY2027 is a 53-week year with the extra week in Q1.",
+     "optional": true,
+     "met": false,
+     "note": "Mentions an extra selling week and its estimated revenue contribution, but does not say FY2027 is a 53-week year."
+    },
+    {
+     "point": "Does not use Q4 FY2026 or an older quarter as the latest.",
+     "optional": false,
+     "met": true,
+     "note": "Presents Q1 FY2027 as the latest quarterly results."
+    },
+    {
+     "point": "Does not omit both guidance and EPS.",
+     "optional": false,
+     "met": true,
+     "note": "Includes adjusted EPS and raised FY2027 guidance."
+    },
+    {
+     "point": "Does not offer an investment view.",
+     "optional": false,
+     "met": false,
+     "note": "Offers a view that the stock is “cheap,” discusses yield and re-rating potential, and concludes with an investment-style bottom line."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The answer identifies Medtronic and reports Q1 FY2027 with adjusted EPS and raised guidance, but omits the required quarter/report dates and fiscal-year-end context. Its cited source does not support the stated revenue amount, and it offers an investment view, which the rule expressly disallows.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "partial",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "FY2027 Q1 organic revenue growth was 13.7%; extra selling week added about 670 basis points",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/healthcare/articles/medtronic-worth-buying-growth-improves-125800041.html",
+     "reason": "The retrieved Yahoo/Zacks text explicitly says fiscal 2027 Q1 organic revenue increased 13.7% and the extra selling week contributed about 670 basis points.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2027 Q1 revenue was about $9.8 billion, up 13.7% reported, and the extra week added about $570–670 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/healthcare/articles/medtronic-worth-buying-growth-improves-125800041.html",
+     "reason": "The retrieved passage supports only 13.7% organic growth and an approximately 670-basis-point contribution from the extra week. It does not state total revenue, reported growth of 13.7%, or a $570–670 million sales contribution; the claim as a whole is inadequately evidenced.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Adjusted Q1 EPS was $1.45, up 15.1%, and beat the Zacks consensus estimate by 4.3%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/healthcare/articles/medtronic-worth-buying-growth-improves-125800041.html",
+     "reason": "The retrieved text gives adjusted first-quarter earnings of $1.45 per share, a 15.1% year-over-year increase, and a 4.3% beat versus the Zacks Consensus Estimate.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2027 organic revenue growth guidance was raised to 7.25%–7.75% from 6.75%–7.25%, and adjusted EPS guidance is $5.94–$6.00",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/healthcare/articles/medtronic-worth-buying-growth-improves-125800041.html",
+     "reason": "The retrieved text gives the raised organic revenue range and adjusted earnings guidance as $5.94–$6.00; the cited other Yahoo/Insider Monkey item also states the prior range and raised outlook. These are guidance figures, not actual results.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Segment revenue growth was Cardiovascular 19.5%, Diabetes 16.9%, Neuroscience 10.3%, and Medical Surgical 10.0%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/healthcare/articles/medtronic-mdt-raises-outlook-again-143459144.html",
+     "reason": "The retrieved article states revenue rose by exactly those four percentages. It does not label those numbers organic, so the answer's unqualified segment-growth wording is consistent with the retrieved wording.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "On Sept. 30, 2026, Medtronic received FDA clearance and CE Mark for Affera Prism-2 Mapping Software, and CE Mark for the PulseSelect ProxBox Adapter with Proximity Indicator",
+     "numeric": true,
+     "cited_url": "https://news.medtronic.com/2026-09-30-Medtronic-announces-regulatory-milestones-for-newest-cardiac-mapping-and-ablation-software",
+     "reason": "Medtronic's dated Sept. 30, 2026 press release explicitly states FDA clearance and CE Mark for the latest Affera Prism-2 software and CE Mark for the PulseSelect ProxBox Adapter with Proximity Indicator. MedTech Dive independently describes the same clearances.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "AMA approved Category I CPT codes for Altaviva and Symplicity Spyral, effective January 2028",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/medtronic-receives-category-i-cpt-code-approvals-for-altaviva-and-symplicity-spyral-systems-302896491.html",
+     "reason": "The Oct. 1, 2026 Medtronic press release distributed by PR Newswire states AMA approval of Category I CPT codes for both named systems and says the new codes are effective January 2028.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FDA cleared the LigaSure RAS Maryland instrument for Hugo RAS on Sept. 16, 2026",
+     "numeric": true,
+     "cited_url": "https://www.todaysmedicaldevelopments.com/news/regulatory-roundup-september-2026",
+     "reason": "The retrieved excerpt confirms FDA clearance of the LigaSure RAS Maryland jaw device for use with Hugo RAS, but does not establish Sept. 16 as the clearance date. The full dated claim is not supported by the supplied retrieved text.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Medtronic is progressing with a $4 billion tax-free MiniMed exchange offer after MiniMed's March 2026 IPO, and the offer appears to be losing investor appeal",
+     "numeric": true,
+     "cited_url": "https://www.marketbeat.com/instant-alerts/filing-medtronic-plc-mdt-shares-acquired-by-massmutual-private-wealth-trust-fsb-2026-10-05",
+     "reason": "MarketBeat's retrieved text describes a $4 billion tax-free MiniMed exchange offer and says it appears to be losing investor appeal. It does not support the claim that the offer is progressing or that a MiniMed IPO occurred in March 2026.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mizuho raised its target to $115 and Wells Fargo to $104; Wall Street is split on a re-rating",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/medtronic-mdt-q1-beat-sparks-180848561.html",
+     "reason": "The retrieved article says Mizuho raised its target to $115 and Wells Fargo to $104 and describes divided analyst views on whether growth warrants a re-rating.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Medtronic shares fell about 6.4% since earnings",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/medtronic-mdt-q1-beat-sparks-180848561.html",
+     "reason": "The retrieved excerpt discusses the Q1 beat and analyst target changes but gives no 6.4% share-price decline or measurement dates. The figure cannot be verified from the supplied text.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cramer said Medtronic looked cheap at about 14x earnings but lacked clear catalysts",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/medtronic-mdt-q1-beat-sparks-180848561.html",
+     "reason": "The retrieved excerpt does not mention Cramer, a 14x earnings multiple, or his catalyst commentary. The cited article text supplied here does not support the attribution.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Medtronic made a $700 million investment in Cornerstone Robotics and acquired Scientia Vascular and SPR Therapeutics",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer supplies no citation for this bullet. Although a different cited Yahoo article mentions a $700 million Cornerstone investment in its excerpt, it does not support the two acquisition claims, and that URL is not attached to this bullet; no cited URL for the complete claim can be verified.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Medtronic had a 49-year streak of dividend increases and an approximately 3.27% yield",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/healthcare/articles/medtronic-49-dividend-streak-faces-111532496.html",
+     "reason": "The retrieved Yahoo text states 49 straight dividend raises and a 3.27% yield. It also gives the annualized payout, but that is not needed to substantiate the stated figures.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Medtronic's cardiac ablation business was growing 88% worldwide",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/healthcare/articles/medtronic-49-dividend-streak-faces-111532496.html",
+     "reason": "The retrieved Yahoo article's headline summary explicitly says cardiac ablation was growing 88% worldwide.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 15,
+   "numeric_cited": 14,
+   "cited": 14,
+   "supported": 9,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 116.4
+ }
+}

@@ -1,0 +1,212 @@
+{
+ "id": "E14",
+ "category": "company naming",
+ "difficulty": "medium",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "jack daniels maker net sales latest qtr",
+ "grading": "(1) Maps 'Jack Daniel's maker' to the parent reporting company, Brown-Forman Corporation (NYSE: BF.A, BF.B), and says so; if it mentions the two share classes it treats them as one company. (2) Uses the latest reported quarter, Q1 fiscal 2027 (quarter ended July 31, 2026; reported Sept 2, 2026), and states it is fiscal (year ends April 30). (3) Gives company net sales for that quarter with a citation, not just the Jack Daniel's brand portfolio. (4) Fail if it reports a different company's figures (e.g., Diageo, Pernod, Constellation), presents brand-level figures as the company total, or uses an older quarter without saying so.",
+ "answer": "Brown-Forman Q1 FY2027 (ended July 31, 2026; reported Sept 2, 2026): net sales $911M (-1%), diluted EPS $0.38; says Jack Daniel's is a Brown-Forman brand.",
+ "output": {
+  "answer": "**Brown-Forman (Jack Daniel's parent) — latest quarter (Q1 FY2027, ended July 31, 2026):**\n\n- **Net sales: $911 million**, down 1% vs. $924 million a year earlier (also -1% organic)\n- Operating income: $252 million, down 3% reported (+4% organic)\n- Diluted EPS: $0.38, up 6% YoY\n- Notable drivers: end of the Korbel distribution deal, weaker tequila sales (Herradura/el Jimador down 12%), lower used-barrel sales; offset by RTD sales up 20% (New Mix +48%) and 9% organic growth in emerging markets\n- U.S. net sales down 3% reported; full-year FY2027 outlook reaffirmed\n\nSources:\n- [Brown-Forman Q1 FY2027 results (company release)](https://www.brown-forman.com/article/brown-forman-reports-first-quarter-fiscal-2027-results-reaffirms-full-year-outlook)\n- [Nasdaq press release](https://www.nasdaq.com/press-release/brown-forman-reports-first-quarter-fiscal-2027-results-reaffirms-full-year-outlook)\n- [Yahoo Finance/Zacks summary](https://finance.yahoo.com/markets/stocks/articles/brown-forman-q1-earnings-meet-144600348.html)",
+  "tokens": {
+   "input": 22940,
+   "output": 641
+  },
+  "tavily_credits": 4,
+  "latency_s": 8.95,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/b6fdade181a9b8ccfe32c4137760a410",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Brown-Forman net sales latest quarter Jack Daniel's",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Brown-Forman quarterly results net sales 2025",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Brown-Forman Reports First Quarter Fiscal 2027 Results net sales $911 million"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/brown-forman-q1-earnings-meet-144600348.html",
+    "https://www.brown-forman.com/article/brown-forman-reports-first-quarter-fiscal-2027-results-reaffirms-full-year-outlook",
+    "https://www.nasdaq.com/press-release/brown-forman-reports-first-quarter-fiscal-2027-results-reaffirms-full-year-outlook"
+   ],
+   "cited_primary": 0,
+   "retrieved": 29,
+   "retrieved_primary": 2
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 0.75,
+   "points": [
+    {
+     "point": "Maps Jack Daniel's maker to Brown-Forman Corporation, its parent reporting company, and says so; if share classes are mentioned, treats them as one company.",
+     "optional": false,
+     "met": true,
+     "note": "Calls Brown-Forman the “Jack Daniel's parent,” clearly mapping the brand maker to the reporting company; no share classes are mentioned."
+    },
+    {
+     "point": "Uses the latest reported quarter, Q1 fiscal 2027 ended July 31, 2026 (reported September 2, 2026), and states the fiscal-year context, including that the fiscal year ends April 30.",
+     "optional": false,
+     "met": false,
+     "note": "Identifies Q1 FY2027 and the July 31, 2026 quarter end, but does not state the September 2 reporting date or that Brown-Forman's fiscal year ends April 30."
+    },
+    {
+     "point": "Gives company net sales for that quarter with a citation, not just Jack Daniel's brand-portfolio sales.",
+     "optional": false,
+     "met": true,
+     "note": "Reports $911 million in net sales and cites Brown-Forman's company results release, which gives that company-wide figure."
+    },
+    {
+     "point": "Does not report another company's figures, present brand-level figures as the company total, or use an older quarter without saying so.",
+     "optional": false,
+     "met": true,
+     "note": "Uses Brown-Forman's Q1 FY2027 company-wide sales, not a competing issuer's or brand-level figure."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The parent-company identification and cited company-wide net sales figure are correct for the latest quarter, but the answer omits the specified fiscal-year-end/reporting-date context.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "correct",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Brown-Forman's first quarter of fiscal 2027 ended July 31, 2026",
+     "numeric": true,
+     "cited_url": "https://www.brown-forman.com/article/brown-forman-reports-first-quarter-fiscal-2027-results-reaffirms-full-year-outlook",
+     "reason": "The retrieved Brown-Forman release says results were for Q1 fiscal 2027, ended July 31, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Net sales were $911 million, down 1% reported and 1% organic year over year",
+     "numeric": true,
+     "cited_url": "https://www.brown-forman.com/article/brown-forman-reports-first-quarter-fiscal-2027-results-reaffirms-full-year-outlook",
+     "reason": "The release states reported net sales decreased 1% to $911 million and were down 1% on an organic basis, compared with the same prior-year period.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Prior-year net sales were $924 million",
+     "numeric": true,
+     "cited_url": "https://www.brown-forman.com/article/brown-forman-reports-first-quarter-fiscal-2027-results-reaffirms-full-year-outlook",
+     "reason": "The retrieved release excerpt says comparison is to the same prior-year period but does not state $924 million. The cited Yahoo excerpt gives $911 million and consensus of $921.2 million, not the prior-year actual. Although $911 versus $924 yields about a 1.4% decline (which can round to 1%), the $924 input is not evidenced in the retrieved text.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Operating income was $252 million, down 3% reported and up 4% organic",
+     "numeric": true,
+     "cited_url": "https://www.brown-forman.com/article/brown-forman-reports-first-quarter-fiscal-2027-results-reaffirms-full-year-outlook",
+     "reason": "The release states reported operating income decreased 3% to $252 million and increased 4% organically.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Diluted EPS was $0.38, up 6% year over year",
+     "numeric": true,
+     "cited_url": "https://www.brown-forman.com/article/brown-forman-reports-first-quarter-fiscal-2027-results-reaffirms-full-year-outlook",
+     "reason": "The release states diluted earnings per share increased 6% to $0.38.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "End of the Korbel relationship, lower used-barrel sales, and tequila weakness pressured sales",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/brown-forman-q1-earnings-meet-144600348.html",
+     "reason": "The retrieved Yahoo/Zacks excerpt explicitly attributes top-line pressure to the end of the Korbel relationship, lower used barrel sales, and tequila weakness.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Herradura and el Jimador sales were down 12%",
+     "numeric": true,
+     "cited_url": "https://www.brown-forman.com/article/brown-forman-reports-first-quarter-fiscal-2027-results-reaffirms-full-year-outlook",
+     "reason": "The retrieved Brown-Forman release excerpt does not provide the 12% figure or brand-level tequila results; the Yahoo excerpt only states tequila weakness generally.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Ready-to-Drink sales rose 20%, with New Mix up 48%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/brown-forman-q1-earnings-meet-144600348.html",
+     "reason": "The retrieved Yahoo/Zacks excerpt says RTD sales rose 20%, led by a 48% jump in New Mix.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Emerging markets had 9% organic growth",
+     "numeric": true,
+     "cited_url": "https://www.brown-forman.com/article/brown-forman-reports-first-quarter-fiscal-2027-results-reaffirms-full-year-outlook",
+     "reason": "The retrieved release excerpt does not include emerging-market results or a 9% growth figure.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "U.S. net sales declined 3% reported",
+     "numeric": true,
+     "cited_url": "https://www.brown-forman.com/article/brown-forman-reports-first-quarter-fiscal-2027-results-reaffirms-full-year-outlook",
+     "reason": "The retrieved release excerpt does not state U.S. net sales or a 3% decline.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Brown-Forman reaffirmed its full-year FY2027 outlook",
+     "numeric": false,
+     "cited_url": "https://www.brown-forman.com/article/brown-forman-reports-first-quarter-fiscal-2027-results-reaffirms-full-year-outlook",
+     "reason": "The cited release title explicitly says Brown-Forman reaffirms its full-year outlook; the answer identifies that outlook as FY2027.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Brown-Forman is the parent of Jack Daniel's",
+     "numeric": false,
+     "cited_url": "https://www.brown-forman.com/article/brown-forman-reports-first-quarter-fiscal-2027-results-reaffirms-full-year-outlook",
+     "reason": "The retrieved release excerpt identifies Brown-Forman but does not establish the parent-subsidiary/brand relationship to Jack Daniel's.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 9,
+   "numeric_cited": 9,
+   "cited": 12,
+   "supported": 7,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 106.2
+ }
+}

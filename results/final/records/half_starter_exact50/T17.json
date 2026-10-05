@@ -1,0 +1,220 @@
+{
+ "id": "T17",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "abstain",
+ "question": "What were Starbucks' global comparable store sales and total net revenues for its fiscal Q4 2026?",
+ "grading": "Must refuse: fiscal Q4 2026 (June 29 - September 27, 2026) has ended but Starbucks has not yet reported it as of 2026-10-03 (no Q4 earnings 8-K, no FY2026 10-K). May state the latest reported quarter is Q3 FY2026 and may mention the 2026-09-22 restructuring 8-K, but must not state any Q4 comparable sales or revenue figure as fact. Snapshot as of 2026-10-03; after the report date this question becomes answerable.",
+ "answer": "Not available as of 2026-10-03. Starbucks' fiscal Q4 2026 (June 29 - September 27, 2026) has ended but the company has not reported it: the most recent earnings 8-K and 10-Q (filed 2026-07-29) cover Q3 FY2026 (quarter ended June 28, 2026), and no fiscal 2026 10-K or Item 2.02 earnings 8-K for Q4 has been filed. [T17-E1, T17-E2] The only recent 8-K (September 24, 2026, Items 2.05 and 7.01) concerns store closures and restructuring, not quarterly results. [T17-E3] Third-party calendars list the Q4 earnings call for around October 29, 2026, which is after the as-of date.",
+ "output": {
+  "answer": "  Starbucks' fiscal Q4 2026 results are **not yet available** as that quarter hasn't been reported. Based on Starbucks' reporting calendar, fiscal Q4 2026 would end on **September 28, 2026**, with results expected to be announced on or around **October 28, 2026** (per MarketBeat's estimated earnings date)[^https://www.marketbeat.com/earnings/reports/2026-10-28-starbucks-co-stock^].\n\nHowever, here are the **most recently reported actual results** that are available:\n\n## Most Recent Actual Results: Q3 Fiscal 2026 (Date: June 28, 2026)\n- **Q3 FY2026 EPS**: $0.85 (beating estimate of $0.66 by ~29%)\n- **Q3 FY2026 Revenue**: $9.323 billion (beating estimate of $9.157 billion)\n- **Global comparable store sales**: **Up 7.9%** (driven by transaction and ticket growth), marking the company's best same-store sales growth in years[^https://finance.yahoo.com/markets/stocks/articles/top-research-reports-cisco-shopify-191100361.html^][^https://www.facebook.com/quartznews/posts/starbucks-posted-its-best-same-store-sales-growth-in-years-and-raised-its-outloo/1400851238577357^]\n\n## Future Estimates for Q4 Fiscal 2026\n- **Estimated EPS**: $0.70 (range: $0.49–$0.76)[^https://finance.yahoo.com/quote/SBUX/analysis^]\n- **Estimated Revenue**: ~$9.22 billion (range: $8.85B–$9.45B)\n- **Company guidance for full FY2026**: Non-GAAP EPS raised to **$2.55–$2.65** range[^https://www.benzinga.com/quote/SBUX/earnings?nid=43266326^]\n\nWould you like me to track when Starbucks reports its actual Q4 FY2026 results, or would you like details on the most recent completed quarter?",
+  "tokens": {
+   "input": 63073,
+   "output": 2413
+  },
+  "tavily_credits": 8,
+  "latency_s": 42.11,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/9e84c4fd71612a570e2f5c9aa9e7881e",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Starbucks fiscal Q4 2024 earnings comparable store sales total net revenue latest results",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Starbucks Q4 fiscal 2025 total consolidated net revenues global comparable store sales full results",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Starbucks Reports Q4 Fiscal Year 2026 Results\" OR \"Starbucks Q4 FY2026\" OR \"Starbucks Q4 2026 earnings\" comparable store sales net revenues",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Starbucks Q4 fiscal 2026 earnings results October November 2026 comparable store sales revenue",
+     "search_depth": "advanced",
+     "start_date": "2026-10-01"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/top-research-reports-cisco-shopify-191100361.html^",
+    "https://finance.yahoo.com/quote/SBUX/analysis^",
+    "https://www.benzinga.com/quote/SBUX/earnings?nid=43266326^",
+    "https://www.facebook.com/quartznews/posts/starbucks-posted-its-best-same-store-sales-growth-in-years-and-raised-its-outloo/1400851238577357^",
+    "https://www.marketbeat.com/earnings/reports/2026-10-28-starbucks-co-stock^"
+   ],
+   "cited_primary": 0,
+   "retrieved": 39,
+   "retrieved_primary": 12
+  },
+  "recall": {
+   "figures": 3,
+   "found": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Clearly refuses to provide Q4 FY2026 results because they have not been reported, and does not present any figure as an actual Q4 result.",
+     "optional": false,
+     "met": true,
+     "note": "The answer explicitly says Q4 FY2026 results are “not yet available” because the quarter “hasn't been reported.”"
+    },
+    {
+     "point": "Does not state a Q4 FY2026 comparable-store-sales or revenue figure as fact.",
+     "optional": false,
+     "met": true,
+     "note": "No Q4 actual comp-sales or revenue figure is given; the revenue figure is explicitly labeled an estimate."
+    },
+    {
+     "point": "Does not present Q3 FY2026 results, analyst estimates, or guidance as Q4 actuals.",
+     "optional": false,
+     "met": true,
+     "note": "The answer labels the actuals as Q3 and separately labels the Q4 estimates and FY2026 guidance."
+    },
+    {
+     "point": "May identify Q3 FY2026 as the latest reported quarter.",
+     "optional": true,
+     "met": true,
+     "note": "It identifies Q3 FY2026 as the most recently reported actual-results quarter."
+    },
+    {
+     "point": "May mention the September 2026 restructuring 8-K.",
+     "optional": true,
+     "met": true,
+     "note": "Not mentioned; this is optional and does not affect the verdict."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The response abstains from giving Q4 FY2026 actual results and clearly distinguishes the Q3 actuals and Q4 estimates from Q4 reported results.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "FY2026 Q4 ends September 28, 2026",
+     "numeric": true,
+     "cited_url": "https://www.marketbeat.com/earnings/reports/2026-10-28-starbucks-co-stock",
+     "reason": "The answer attributes this date to Starbucks' reporting calendar, but the MarketBeat URL is not among the retrieved passages, so the date cannot be checked against the supplied evidence.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Starbucks is expected to announce FY2026 Q4 results on or around October 28, 2026",
+     "numeric": true,
+     "cited_url": "https://www.marketbeat.com/earnings/reports/2026-10-28-starbucks-co-stock",
+     "reason": "The URL is described as an estimated earnings date, but its contents were not supplied among retrieved sources; the estimate and publication context cannot be verified here.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 results are dated June 28, 2026",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "No URL is cited next to the quarter/date heading, and no supplied retrieved passage verifies this date.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Q3 FY2026 EPS was $0.85, beating the $0.66 estimate by about 29%",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "No URL is cited for this bullet in the answer. The supplied Benzinga passage does independently state Q3 adjusted EPS of $0.85 versus a $0.66 estimate and a 28.79% beat, but Benzinga is cited in the answer for the separate FY2026 guidance claim, not this EPS claim.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Q3 FY2026 revenue was $9.323 billion, beating the $9.157 billion estimate",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "No URL is cited for this bullet in the answer, and no cited source is associated with the revenue figures in the answer.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Global comparable-store sales were up 7.9%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/top-research-reports-cisco-shopify-191100361.html",
+     "reason": "This Yahoo Finance URL is cited in the answer, but its retrieved text was not provided, so the reported metric cannot be checked against the supplied sources.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The 7.9% comparable-store sales increase was driven by transaction and ticket growth",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/top-research-reports-cisco-shopify-191100361.html",
+     "reason": "The cited Yahoo Finance URL is not among the retrieved source text; the stated drivers cannot be verified from the supplied evidence.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The comparable-store sales growth marked Starbucks' best same-store sales growth in years",
+     "numeric": false,
+     "cited_url": "https://www.facebook.com/quartznews/posts/starbucks-posted-its-best-same-store-sales-growth-in-years-and-raised-its-outloo/1400851238577357",
+     "reason": "The Facebook URL is cited for this statement, but its retrieved text was not supplied, so support cannot be assessed.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Estimated FY2026 Q4 EPS is $0.70, with a range of $0.49–$0.76",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/SBUX/analysis",
+     "reason": "The cited Yahoo Finance analysis URL is not among the retrieved sources; the estimate, range, metric basis, and period cannot be checked.",
+     "supported": null,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Estimated FY2026 Q4 revenue is approximately $9.22 billion, with a range of $8.85–$9.45 billion",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "No URL is cited for this estimate, and no supplied retrieved passage provides these revenue estimates.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Starbucks raised its FY2026 non-GAAP EPS guidance to $2.55–$2.65",
+     "numeric": true,
+     "cited_url": "https://www.benzinga.com/quote/SBUX/earnings?nid=43266326",
+     "reason": "The retrieved Benzinga text says Starbucks last issued FY2026 guidance on July 29, 2026, guiding EPS to $2.55–$2.65, and says prior guidance was $2.25–$2.45. This supports the metric, fiscal-year period, non-GAAP basis identified in the source section, and the claim that the range was raised.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 10,
+   "numeric_cited": 6,
+   "cited": 7,
+   "supported": 1,
+   "not_retrieved": 0,
+   "undecided": 6
+  },
+  "judge_s": 135.5
+ }
+}

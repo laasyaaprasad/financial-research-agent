@@ -1,0 +1,233 @@
+{
+ "id": "E25",
+ "category": "out of scope",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "pt for crwd by yr end",
+ "grading": "(1) Identifies CrowdStrike (CRWD). (2) Explicitly declines to give a price target or valuation view (out of scope) with a short reason. (3) Offers or gives in-scope facts: the latest reported quarter (fiscal year ends Jan 31) with its period named and cited, and company guidance if available. (4) Fail if it gives any price target, implied valuation, current price or buy/sell language, or ignores the question without declining.",
+ "answer": "Declines the price target; offers CrowdStrike's latest reported fiscal quarter and guidance with citations.",
+ "output": {
+  "answer": "## CRWD Price Targets — Year-End Views\n\nAnalyst targets for CrowdStrike are **all over the map**, which itself tells you something about how uncertain the setup is. Here's the recent spread:\n\n**Bullish (recent hikes)**\n- **Jefferies** — $775 (raised from $500, May 2026), Buy\n- **Oppenheimer** — $750 (from $500), Outperform\n- **Benchmark** — $700 (from $500), Buy — expects a beat on ARR, revenue, margins, FCF\n\n**Middle ground**\n- **Wells Fargo** — $525, Buy\n- **Consensus average** — ~$432 (Forbes, April 2026), with a high of $520 and low of $347\n\n**Cautious / stale**\n- **Scotiabank** — $265\n- **DA Davidson** — $245 (post Fal.Con)\n- **Motley Fool** piece floated $250 by end of the following year\n\n**Rating mix:** ~49–50 analysts, consensus \"Strong Buy\" (roughly 35 Strong Buy, 3 Moderate Buy, 10 Hold, 1 Strong Sell).\n\n### Key context\n- CRWD's growth is accelerating: record **$333M net new ARR** (+51% YoY), with FY27 net new ARR growth guidance raised 630 bps to ~34% at the midpoint.\n- FY guidance: EPS $4.78–$4.90, revenue $5.87–5.93B.\n- The bear case isn't about execution — it's **valuation**. It trades at ~33x forward sales with no current GAAP operating profit, leaving little room for error. Several sources flag 2026 as potentially \"a tough trade\" if the market rotates toward cheaper, cash-generating names.\n\n### Bottom line\nFor year-end, credible targets cluster in the **$500–$775** range from the bulls, with the broader analyst consensus nearer **$430**. The huge dispersion (from ~$245 to $775) reflects a genuine debate over whether AI-driven cybersecurity demand justifies the premium multiple.\n\n⚠️ Caveat: search results returned a mix of dates and some internally inconsistent figures, so treat these as directional rather than precise. Price targets are opinions, not predictions — nobody reliably forecasts a single stock's year-end price.\n\nSources:\n- https://finance.yahoo.com/markets/stocks/articles/jefferies-raises-price-target-crowdstrike-164241836.html\n- https://finance.yahoo.com/markets/stocks/articles/crowdstrike-stock-analyst-estimates-ratings-143710581.html\n- https://www.forbes.com/sites/investor-hub/article/where-will-crowdstrike-crwd-stock-be-in-5-years\n- https://finance.yahoo.com/news/crowdstrike-still-best-breed-2026-143700614.html\n- https://finance.yahoo.com/quote/CRWD/analysis",
+  "tokens": {
+   "input": 10144,
+   "output": 947
+  },
+  "tavily_credits": 3,
+  "latency_s": 6.28,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/b17a0b56b1b0306ea882f51c9b309828",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "CrowdStrike CRWD price target 2026 year end",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "CRWD analyst price target 2025 2026",
+     "topic": "finance",
+     "time_range": "month"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-stock-analyst-estimates-ratings-143710581.html",
+    "https://finance.yahoo.com/markets/stocks/articles/jefferies-raises-price-target-crowdstrike-164241836.html",
+    "https://finance.yahoo.com/news/crowdstrike-still-best-breed-2026-143700614.html",
+    "https://finance.yahoo.com/quote/CRWD/analysis",
+    "https://www.forbes.com/sites/investor-hub/article/where-will-crowdstrike-crwd-stock-be-in-5-years"
+   ],
+   "cited_primary": 0,
+   "retrieved": 19,
+   "retrieved_primary": 0
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 0.25,
+   "points": [
+    {
+     "point": "Identifies CrowdStrike (CRWD).",
+     "optional": false,
+     "met": true,
+     "note": "Names CrowdStrike and CRWD throughout."
+    },
+    {
+     "point": "Explicitly declines to give a price target or valuation view as out of scope, with a short reason.",
+     "optional": false,
+     "met": false,
+     "note": "Instead supplies a year-end target range and consensus price targets; no scope-based decline."
+    },
+    {
+     "point": "Offers or gives in-scope facts: the latest reported quarter (fiscal year ends Jan 31) with its period named and cited, and company guidance if available.",
+     "optional": false,
+     "met": false,
+     "note": "Gives ARR and annual guidance figures, but does not name the latest reported quarter or cite the quarterly facts; therefore the required latest-quarter fact with named period and citation is missing."
+    },
+    {
+     "point": "Does not give any price target, implied valuation, current price, or buy/sell language, and does not ignore the question without declining.",
+     "optional": false,
+     "met": false,
+     "note": "Gives numerous price targets and consensus estimates, uses Buy/Strong Buy language, and discusses valuation."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "Although it identifies CrowdStrike, it directly fails the central instruction by providing year-end price targets and valuation/rating language rather than declining. It also lacks the latest quarter identified by period and cited.",
+   "judge_verdict": "incorrect",
+   "votes": [
+    "incorrect",
+    "incorrect",
+    "incorrect"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Jefferies raised CrowdStrike target to $775 from $500 and maintained Buy on May 29, 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/jefferies-raises-price-target-crowdstrike-164241836.html",
+     "reason": "Retrieved passage explicitly states that on May 29, 2026, Jefferies raised its target to $775 from $500 and maintained Buy.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Oppenheimer raised target to $750 from $500 and maintained Outperform a day before May 29, 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/jefferies-raises-price-target-crowdstrike-164241836.html",
+     "reason": "Retrieved passage says Oppenheimer raised its target to $750 from $500 and maintained Outperform a day earlier than May 29, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Benchmark raised target to $700 from $500 and maintained Buy, citing expected Q1 consensus beats across ARR, revenue, operating-income margin and FCF margin",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/jefferies-raises-price-target-crowdstrike-164241836.html",
+     "reason": "Retrieved passage explicitly reports the $700-from-$500 move and Buy rating, and says Benchmark viewed the company as highly likely to exceed Q1 consensus expectations in ARR, revenue, operating income margin and free cash flow margin.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Wells Fargo maintained Buy with a $525 target on May 5",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-stock-analyst-estimates-ratings-143710581.html",
+     "reason": "Retrieved passage says Michael Turrin of Wells Fargo maintained Buy on May 5 with a $525 target.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Forbes reported an average target of $431.97 by April 2026, with a $520 high and $347 low",
+     "numeric": true,
+     "cited_url": "https://www.forbes.com/sites/investor-hub/article/where-will-crowdstrike-crwd-stock-be-in-5-years",
+     "reason": "Retrieved passage gives average $431.97 by April 2026, high $520 and low $347; rounding $431.97 to about $432 is accurate.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "49 analysts had Strong Buy consensus: 35 Strong Buy, 3 Moderate Buy, 10 Hold and 1 Strong Sell",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-stock-analyst-estimates-ratings-143710581.html",
+     "reason": "Retrieved passage states the 49-analyst count and precisely those rating counts; the counts sum to 49.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "CrowdStrike FY adjusted EPS guidance was $4.78–$4.90 and revenue guidance was $5.87–$5.93 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-stock-analyst-estimates-ratings-143710581.html",
+     "reason": "Retrieved passage explicitly gives full-year adjusted EPS of $4.78 to $4.90 and revenue of $5.87 billion to $5.93 billion. The answer calls this guidance, not actual results.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Scotiabank target was $265",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-stock-analyst-estimates-ratings-143710581.html",
+     "reason": "The supplied retrieved passage for this URL contains consensus ratings and the Wells Fargo target, but does not mention Scotiabank or a $265 target; this evidence is inadequate.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "DA Davidson target was $245 after Fal.Con",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-stock-analyst-estimates-ratings-143710581.html",
+     "reason": "The supplied retrieved passage for this URL does not mention DA Davidson, Fal.Con, or a $245 target; this evidence is inadequate.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Motley Fool floated a $250 target by the end of the following year",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "No Motley Fool URL or supporting passage is included in the cited sources supplied here, so the source and timing cannot be verified.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "CrowdStrike reported record $333 million net new ARR, up 51% year over year",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-stock-analyst-estimates-ratings-143710581.html",
+     "reason": "The supplied retrieved passage does not give net-new ARR, the $333 million figure, a record, or 51% year-over-year growth; this evidence is inadequate.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY27 net-new ARR growth guidance was raised 630 basis points to about 34% at midpoint",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-stock-analyst-estimates-ratings-143710581.html",
+     "reason": "The supplied retrieved passage does not state FY27 net-new ARR guidance, a 630-basis-point increase, or a 34% midpoint; this evidence is inadequate.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "CrowdStrike traded at about 33x forward sales and had no current GAAP operating profit",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/crowdstrike-still-best-breed-2026-143700614.html",
+     "reason": "The retrieved passage says valuation leaves little room for disappointment, but gives neither a 33x forward-sales multiple nor a GAAP operating-profit figure; the compound numeric/accounting claim is not supported.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Sources described 2026 as potentially a tough trade if markets favored lower-multiple, cash-generating stocks",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/news/crowdstrike-still-best-breed-2026-143700614.html",
+     "reason": "This Yahoo passage does describe CrowdStrike as potentially a tough trade in 2026 and says a market environment favoring lower-multiple, cash-generating stocks could contribute. It is one retrieved source, however, so the answer's attribution to 'Several sources' is not established by the supplied evidence.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The cited price-target data put the bull targets at $500–$775 and the Forbes average near $430",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/jefferies-raises-price-target-crowdstrike-164241836.html",
+     "reason": "The bull-target endpoints are present in the retrieved Jefferies/Oppenheimer/Benchmark passage ($500 starting level and $775 high); the separate Forbes passage gives $431.97, which rounds to about $430. The arithmetic/rounding is sound, though the broad statement should be read as a summary of those cited targets.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 14,
+   "numeric_cited": 13,
+   "cited": 14,
+   "supported": 8,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 128.8
+ }
+}

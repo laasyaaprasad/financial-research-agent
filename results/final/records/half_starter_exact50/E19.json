@@ -1,0 +1,168 @@
+{
+ "id": "E19",
+ "category": "ambiguous company",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "clarify",
+ "question": "united q2 rev",
+ "grading": "(1) Responds with a single clarifying question listing the plausible companies, for example United Airlines Holdings (UAL), United Parcel Service (UPS), UnitedHealth Group (UNH), United Rentals (URI). (2) Gives no revenue figures for any company. (3) Fail if it picks one (e.g., UPS or UnitedHealth) and gives numbers, or lists numbers for several companies.",
+ "answer": "Asks which 'United' (UAL, UPS, UNH, URI) and gives no figures.",
+ "output": {
+  "answer": " \"United\" could refer to two tickers. Here are the latest Q2 revenue figures:\n\n**United Airlines (UAL)** — Q2 2025  \n- Revenue: **$15.2 billion** (+1.7% YoY) — missed the $15.4B consensus  \n- Passenger revenue: $13.8B  \n\n**UnitedHealth Group (UNH)** — Q2 2025  \n- Revenue: **$111.6 billion** (+12.9% YoY) — beat the $111.5B consensus  \n- Optum revenue: $67.2B  \n\nIf you meant a different quarter/year, let me know.\n\n**Sources:**  \n- [Yahoo Finance — UAL Q2 2025](https://finance.yahoo.com/news/united-airlines-tops-q2-earnings-162200022.html)  \n- [Yahoo Finance — UNH Q2 2025](https://finance.yahoo.com/news/unitedhealth-group-reports-mixed-second-quarter-earnings-stock-down-in-premarket-trading-100923931.html)",
+  "tokens": {
+   "input": 14342,
+   "output": 1135
+  },
+  "tavily_credits": 4,
+  "latency_s": 12.27,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/265a9a557b8b2a1d1bb700ba53159493",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "United Airlines Q2 revenue 2024 earnings results",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "UnitedHealth Group Q2 revenue 2024 2025 UNH earnings",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/news/united-airlines-tops-q2-earnings-162200022.html",
+    "https://finance.yahoo.com/news/unitedhealth-group-reports-mixed-second-quarter-earnings-stock-down-in-premarket-trading-100923931.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 20,
+   "retrieved_primary": 0
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 0.0,
+   "points": [
+    {
+     "point": "Responds with a single clarifying question listing the plausible United companies (such as UAL, UPS, UNH, and URI).",
+     "optional": false,
+     "met": false,
+     "note": "The answer does not ask a clarifying question; it proceeds to report figures for UAL and UNH only."
+    },
+    {
+     "point": "Gives no revenue figures for any company.",
+     "optional": false,
+     "met": false,
+     "note": "It gives Q2 revenue and additional revenue figures for both United Airlines and UnitedHealth Group."
+    },
+    {
+     "point": "Avoids picking one company and giving numbers, or listing numbers for several companies.",
+     "optional": false,
+     "met": false,
+     "note": "It lists revenue numbers for two companies, directly matching the failure condition."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The answer fails the clarification requirement and supplies revenue figures for multiple possible United companies, so the core answer is wrong.",
+   "judge_verdict": "incorrect",
+   "votes": [
+    "incorrect",
+    "incorrect",
+    "incorrect"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "United Airlines' Q2 2025 revenue was $15.2 billion.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/united-airlines-tops-q2-earnings-162200022.html",
+     "reason": "The retrieved Yahoo Finance text explicitly identifies United Airlines (UAL), second-quarter 2025, and operating revenues of $15.2 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "United Airlines' revenue rose 1.7% year over year.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/united-airlines-tops-q2-earnings-162200022.html",
+     "reason": "The retrieved text says its $15.2 billion operating revenues increased 1.7% year over year.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "United Airlines' revenue missed the $15.4 billion consensus.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/united-airlines-tops-q2-earnings-162200022.html",
+     "reason": "The retrieved text says UAL revenue fell short of the Zacks Consensus Estimate of $15.4 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "United Airlines' passenger revenue was $13.8 billion.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/united-airlines-tops-q2-earnings-162200022.html",
+     "reason": "The retrieved text identifies passenger revenues of $13.8 billion for Q2 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "UnitedHealth Group's Q2 2025 revenue was $111.6 billion.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/unitedhealth-group-reports-mixed-second-quarter-earnings-stock-down-in-premarket-trading-100923931.html",
+     "reason": "The retrieved text reports $111.6 billion in revenues for a second quarter, but the supplied passage does not specify that this was Q2 2025. The amount is supported; the answer's specific year is not established by the retrieved text.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "UnitedHealth Group revenue increased 12.9% year over year.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/unitedhealth-group-reports-mixed-second-quarter-earnings-stock-down-in-premarket-trading-100923931.html",
+     "reason": "The source says revenue was up nearly $13 billion year over year, but provides no exact prior-year revenue input from which to verify 12.9%; the exact percentage is not established.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "UnitedHealth Group beat the $111.5 billion consensus.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/unitedhealth-group-reports-mixed-second-quarter-earnings-stock-down-in-premarket-trading-100923931.html",
+     "reason": "The retrieved text gives actual revenue of $111.6 billion and Wall Street expectations of $111.53 billion, and says the company beat top-line expectations. $111.53 billion rounds to $111.5 billion at one decimal place.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "UnitedHealth Group's Optum revenue was $67.2 billion.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/unitedhealth-group-reports-mixed-second-quarter-earnings-stock-down-in-premarket-trading-100923931.html",
+     "reason": "The retrieved passage does not mention Optum revenue or the $67.2 billion figure, so it does not substantiate the claim.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 8,
+   "cited": 8,
+   "supported": 5,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 44.1
+ }
+}

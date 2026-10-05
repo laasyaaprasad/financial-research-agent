@@ -1,0 +1,243 @@
+{
+ "id": "E14",
+ "category": "company naming",
+ "difficulty": "medium",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "jack daniels maker net sales latest qtr",
+ "grading": "(1) Maps 'Jack Daniel's maker' to the parent reporting company, Brown-Forman Corporation (NYSE: BF.A, BF.B), and says so; if it mentions the two share classes it treats them as one company. (2) Uses the latest reported quarter, Q1 fiscal 2027 (quarter ended July 31, 2026; reported Sept 2, 2026), and states it is fiscal (year ends April 30). (3) Gives company net sales for that quarter with a citation, not just the Jack Daniel's brand portfolio. (4) Fail if it reports a different company's figures (e.g., Diageo, Pernod, Constellation), presents brand-level figures as the company total, or uses an older quarter without saying so.",
+ "answer": "Brown-Forman Q1 FY2027 (ended July 31, 2026; reported Sept 2, 2026): net sales $911M (-1%), diluted EPS $0.38; says Jack Daniel's is a Brown-Forman brand.",
+ "output": {
+  "answer": " **Brown-Forman Corporation (Jack Daniel's Maker) — Latest Quarterly Net Sales:**\n\n**Q1 Fiscal 2027** (ended July 31, 2026):\n- **Net Sales: $911 million**\n- Change: **-1%** (both reported and organic basis)\n- Operating Income: $252 million (-3% reported, +4% organic)\n- Diluted EPS: $0.38 (+6%)\n\n**Key drivers:**\n- Declines from the end of the Korbel relationship, lower used barrel sales, and weakness in the tequila portfolio (organic sales down 13%)\n- Offset by growth in the Ready-to-Drink portfolio, led by New Mix (+48% reported, +36% organic) and Jack Daniel's Tennessee Blackberry\n\nThe company reaffirmed its full-year fiscal 2027 outlook amid a challenging U.S. spirits market.\n\n**Sources:**\n- [Brown-Forman Investor Relations](https://investors.brown-forman.com/investors/news-releases/press-release/2026/Brown-Forman-Reports-First-Quarter-Fiscal-2027-Results-Reaffirms-Full-Year-Outlook/default.aspx)\n- [StreetInsider](https://www.streetinsider.com/Business+Wire/Brown-Forman+Reports+First+Quarter+Fiscal+2027+Results%3B+Reaffirms+Full+Year+Outlook/27015890.html)\n- [Food Business MEA](https://www.foodbusinessmea.com/brown-forman-q1-sales-fall-1-as-tequila-weakness-weighs-on-fiscal-2027-performance)",
+  "tokens": {
+   "input": 35985,
+   "output": 1203
+  },
+  "tavily_credits": 12,
+  "latency_s": 45.93,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/ef109cebede13301511e351f857e5498",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Brown-Forman Jack Daniel's maker net sales latest quarterly earnings Q1 Q2 Q3 Q4 2024 2025",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "time_range": "year"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Brown-Forman\" net sales quarterly results 2024 2025 latest earnings",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "time_range": "month"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Brown-Forman FY2025 quarterly earnings revenue fiscal quarter",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "time_range": "year"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Brown-Forman\" \"Q4\" OR \"fourth quarter\" OR \"Q3\" OR \"third quarter\" 2025 net sales revenue results",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "time_range": "year"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Brown-Forman Quarterly Sales Slip on Tequila Slowdown\" net sales specifically amount",
+     "search_depth": "advanced",
+     "topic": "news",
+     "time_range": "year"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Brown-Forman\" \"first quarter\" OR \"Q1\" \"fiscal 2027\" OR \"fiscal 2026\" net sales reported results",
+     "search_depth": "advanced",
+     "topic": "finance",
+     "time_range": "year"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investors.brown-forman.com/investors/news-releases/press-release/2026/Brown-Forman-Reports-First-Quarter-Fiscal-2027-Results-Reaffirms-Full-Year-Outlook/default.aspx",
+    "https://www.foodbusinessmea.com/brown-forman-q1-sales-fall-1-as-tequila-weakness-weighs-on-fiscal-2027-performance",
+    "https://www.streetinsider.com/Business+Wire/Brown-Forman+Reports+First+Quarter+Fiscal+2027+Results%3B+Reaffirms+Full+Year+Outlook/27015890.html"
+   ],
+   "cited_primary": 1,
+   "retrieved": 28,
+   "retrieved_primary": 1
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 0.8,
+   "points": [
+    {
+     "point": "Maps Jack Daniel’s maker to Brown-Forman Corporation as the parent reporting company, treating any share classes as one company if mentioned.",
+     "optional": false,
+     "met": true,
+     "note": "The answer explicitly identifies “Brown-Forman Corporation (Jack Daniel's Maker)” and does not treat share classes separately."
+    },
+    {
+     "point": "Uses the latest reported quarter, Q1 fiscal 2027, ended July 31, 2026.",
+     "optional": false,
+     "met": true,
+     "note": "It states “Q1 Fiscal 2027 (ended July 31, 2026),” matching the cited company release."
+    },
+    {
+     "point": "States that Brown-Forman’s fiscal year ends April 30.",
+     "optional": false,
+     "met": false,
+     "note": "The answer calls the period “Fiscal 2027” but does not state the fiscal year-end date of April 30."
+    },
+    {
+     "point": "Gives company-wide net sales for that quarter with a citation, rather than only Jack Daniel’s brand-portfolio sales.",
+     "optional": false,
+     "met": true,
+     "note": "It gives “Net Sales: $911 million” and cites Brown-Forman’s investor-relations release, which reports company net sales."
+    },
+    {
+     "point": "Does not report another company's figures, present brand-level figures as company net sales, or use an older quarter without saying so.",
+     "optional": false,
+     "met": true,
+     "note": "The answer reports Brown-Forman’s company-wide Q1 FY2027 net sales, not another issuer’s or a brand-level total."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The answer correctly maps Jack Daniel’s maker to Brown-Forman, uses the latest cited quarter, and provides the company-wide net-sales figure with a citation. It omits the required statement that Brown-Forman’s fiscal year ends April 30.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "correct",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Brown-Forman Q1 FY2027 net sales were $911 million, down 1% both reported and organic",
+     "numeric": true,
+     "cited_url": "https://investors.brown-forman.com/investors/news-releases/press-release/2026/Brown-Forman-Reports-First-Quarter-Fiscal-2027-Results-Reaffirms-Full-Year-Outlook/default.aspx",
+     "reason": "The retrieved company release says Q1 FY2027 reported net sales decreased 1% to $911 million and were down 1% on an organic basis versus the prior-year period.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY2027 ended July 31, 2026",
+     "numeric": true,
+     "cited_url": "https://investors.brown-forman.com/investors/news-releases/press-release/2026/Brown-Forman-Reports-First-Quarter-Fiscal-2027-Results-Reaffirms-Full-Year-Outlook/default.aspx",
+     "reason": "The company release explicitly identifies the first quarter of fiscal 2027 as ended July 31, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Operating income was $252 million, down 3% reported and up 4% organic",
+     "numeric": true,
+     "cited_url": "https://investors.brown-forman.com/investors/news-releases/press-release/2026/Brown-Forman-Reports-First-Quarter-Fiscal-2027-Results-Reaffirms-Full-Year-Outlook/default.aspx",
+     "reason": "The release states reported operating income decreased 3% to $252 million and increased 4% on an organic basis.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Diluted EPS was $0.38, up 6%",
+     "numeric": true,
+     "cited_url": "https://investors.brown-forman.com/investors/news-releases/press-release/2026/Brown-Forman-Reports-First-Quarter-Fiscal-2027-Results-Reaffirms-Full-Year-Outlook/default.aspx",
+     "reason": "The release states diluted earnings per share increased 6% to $0.38.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Sales declines were driven by the end of the Korbel relationship, lower used-barrel sales, and weakness in tequila, partly offset by RTD growth led by New Mix",
+     "numeric": false,
+     "cited_url": "https://www.streetinsider.com/Business+Wire/Brown-Forman+Reports+First+Quarter+Fiscal+2027+Results%3B+Reaffirms+Full+Year+Outlook/27015890.html",
+     "reason": "StreetInsider's retrieved Business Wire text gives these drivers in substantially the same terms: end of Korbel relationship, declines in used-barrel sales and tequila, partially offset by RTD growth led by New Mix.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The tequila portfolio's organic sales fell 13%",
+     "numeric": true,
+     "cited_url": "https://www.foodbusinessmea.com/brown-forman-q1-sales-fall-1-as-tequila-weakness-weighs-on-fiscal-2027-performance",
+     "reason": "The retrieved Food Business MEA text explicitly says organic sales for Brown-Forman's Tequila portfolio fell 13%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "New Mix grew 48% reported and 36% organic",
+     "numeric": true,
+     "cited_url": "https://www.foodbusinessmea.com/brown-forman-q1-sales-fall-1-as-tequila-weakness-weighs-on-fiscal-2027-performance",
+     "reason": "The retrieved article says New Mix sales surged 36%, but does not state that this was the organic figure and provides no support for a 48% reported increase. The company and StreetInsider excerpts also do not include these percentages or bases, so the stated pair and accounting bases are not adequately evidenced.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Jack Daniel's Tennessee Blackberry helped offset pressures elsewhere in the business",
+     "numeric": false,
+     "cited_url": "https://investors.brown-forman.com/investors/news-releases/press-release/2026/Brown-Forman-Reports-First-Quarter-Fiscal-2027-Results-Reaffirms-Full-Year-Outlook/default.aspx",
+     "reason": "The release says momentum from Jack Daniel's Tennessee Blackberry, alongside New Mix and the RTD portfolio, helped offset pressures elsewhere.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Brown-Forman reaffirmed its full-year FY2027 outlook",
+     "numeric": true,
+     "cited_url": "https://investors.brown-forman.com/investors/news-releases/press-release/2026/Brown-Forman-Reports-First-Quarter-Fiscal-2027-Results-Reaffirms-Full-Year-Outlook/default.aspx",
+     "reason": "The cited official release title states that Brown-Forman reaffirmed its full-year outlook; the StreetInsider source title says the same. The answer specifies fiscal 2027, matching the release title and context.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The outlook was reaffirmed amid a challenging U.S. spirits market",
+     "numeric": false,
+     "cited_url": "https://www.foodbusinessmea.com/brown-forman-q1-sales-fall-1-as-tequila-weakness-weighs-on-fiscal-2027-performance",
+     "reason": "The retrieved Food Business MEA text describes challenging conditions in developed markets, while the company release refers to a challenging operating environment. The retrieved text does not establish the more specific claim that the outlook was reaffirmed amid a challenging U.S. spirits market.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Brown-Forman is the maker of Jack Daniel's",
+     "numeric": false,
+     "cited_url": "https://investors.brown-forman.com/investors/news-releases/press-release/2026/Brown-Forman-Reports-First-Quarter-Fiscal-2027-Results-Reaffirms-Full-Year-Outlook/default.aspx",
+     "reason": "The release discusses Jack Daniel's products in Brown-Forman's results and attributes the Tennessee Blackberry brand to its business, but the retrieved passage does not explicitly establish that Brown-Forman is Jack Daniel's maker.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 7,
+   "numeric_cited": 7,
+   "cited": 11,
+   "supported": 8,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 64.4
+ }
+}

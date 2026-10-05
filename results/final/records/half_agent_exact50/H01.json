@@ -1,0 +1,256 @@
+{
+ "id": "H01",
+ "category": "Complex retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "As of November 20, 2025, what was Ollie's Bargain Outlet's most recently reported quarterly net sales (state the fiscal quarter), and what full-year fiscal 2025 net sales outlook range was the company guiding to?",
+ "grading": "Key points (both required): (1) latest reported quarter = Q2 fiscal 2025 (13 weeks ended Aug 2, 2025), net sales USD 679.6M (accept 679,556K, +/-0.5%); (2) fiscal 2025 net sales outlook USD 2.631-2.644 billion (raised on Aug 28, 2025 from 2.579-2.599 billion). Fail if a period reported after 2025-11-20 (Q3 fiscal 2025, released 2025-12-09: net sales 613.6M, outlook 2.648-2.655B) is presented as the latest or in effect, or if a range for adjusted EPS/operating income is given instead of net sales.",
+ "answer": "As of November 20, 2025 the latest reported quarter was Ollie's fiscal Q2 2025 (13 weeks ended August 2, 2025), with net sales of USD 679.6 million (679,556 thousand; +17.5% y/y; 613 stores) [H01-E1][H01-E2]. The company was guiding to fiscal 2025 (year ending January 31, 2026) net sales of USD 2.631-2.644 billion, raised on August 28, 2025 from USD 2.579-2.599 billion (adjusted EPS outlook USD 3.76-3.84) [H01-E1]. Fiscal Q3 results (net sales USD 613.6 million, outlook raised to USD 2.648-2.655 billion) were not released until December 9, 2025 and must not be used [H01-E3]. EDGAR shows no 8-K Item 2.02 earnings filing between 2025-08-28 and 2025-12-09 [H01-E4].",
+ "output": {
+  "answer": "**Question:** As of November 20, 2025, what was Ollie's Bargain Outlet's most recently reported quarterly net sales (state the fiscal quarter), and what full-year fiscal 2025 net sales outlook range was the company guiding to?\n*As of 2025-11-20*\n\n**Interpreted as:** 'Most recently reported quarterly net sales' read as the latest quarter with results released as of 2025-11-20: Q2 FY2025 (2025-05-04 to 2025-08-02), since Q3 FY2025 is not yet reported. 'Net sales' read as the company's total net sales line (top line) as reported. 'Full-year fiscal 2025 net sales outlook' read as the FY2025 (2025-02-02 to 2026-01-31) net sales guidance range most recently given, i.e. in the Q2 FY2025 earnings release of 2025-08-28. Fiscal periods are Ollie's fiscal periods (FY ends late Jan/early Feb), not calendar periods.\n\n| | Net sales (USD thousands, GAAP, as reported) | Net sales guidance (USD billions, as guided) |\n|---|---|---|\n| Q2 FY2025 (thirteen weeks ended 2025-08-02) | $679,556 [1][2] | — |\n| FY2025 outlook (2025-02-02 to 2026-01-31) | — | $2.631 to $2.644 billion [1] |\n\n- Ollie's Bargain Outlet's most recently reported quarter as of November 20, 2025 was the second quarter of fiscal 2025, the thirteen weeks ended August 2, 2025, reported in the earnings release filed August 28, 2025. [1]\n- For Q2 FY2025 (thirteen weeks ended August 2, 2025), Ollie's reported GAAP net sales of $679,556 thousand, or $679.6 million. [1][2]\n- Ollie's guided to full-year fiscal 2025 (2025-02-02 to 2026-01-31) net sales of $2.631 to $2.644 billion, as stated in its Q2 FY2025 earnings release dated August 28, 2025. [1]\n- The $2.631 to $2.644 billion FY2025 net sales outlook was an increase from the company's previously provided range of $2.579 to $2.599 billion. [1]\n\n**Not available**\n- Actual full-year FY2025 net sales: FY2025 (2025-02-02 to 2026-01-31) is still in progress as of 2025-11-20; only the company's guidance range exists, not actual results. [1]\n- Q3 FY2025 net sales: Q3 FY2025 (2025-08-03 to 2025-11-01) has ended but had not been reported as of 2025-11-20. [1]\n\n**Sources**\n[1] Ollie's Bargain Outlet Holdings, Inc. earnings release for Q2 FY2025, 8-K EX-99.1 (filed 2025-08-28) (www.sec.gov, 2025-08-28, primary) https://www.sec.gov/Archives/edgar/data/1639300/000114036125033065/ef20054611_ex99-1.htm\n[2] Ollie's Bargain Outlet Holdings, Inc. XBRL data tagged in 10-Q filed 2025-09-03 (www.sec.gov, 2025-09-03, primary) https://www.sec.gov/Archives/edgar/data/1639300/000114036125033812/\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 20674,
+   "output": 2951
+  },
+  "tavily_credits": 1.0,
+  "latency_s": 18.22,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/27f43a0efdc15eb36728a9893da24618",
+  "companies": [
+   {
+    "name": "Ollie's Bargain Outlet Holdings, Inc.",
+    "ticker": "OLLI",
+    "cik": "1639300",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "'Most recently reported quarterly net sales' read as the latest quarter with results released as of 2025-11-20: Q2 FY2025 (2025-05-04 to 2025-08-02), since Q3 FY2025 is not yet reported.",
+    "'Net sales' read as the company's total net sales line (top line) as reported.",
+    "'Full-year fiscal 2025 net sales outlook' read as the FY2025 (2025-02-02 to 2026-01-31) net sales guidance range most recently given, i.e. in the Q2 FY2025 earnings release of 2025-08-28.",
+    "Fiscal periods are Ollie's fiscal periods (FY ends late Jan/early Feb), not calendar periods."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Q2 FY2025 (quarter ended 2025-08-02) net sales (total net sales, GAAP, as reported)",
+    "Q2 FY2025 net sales growth vs. Q2 FY2024 (prior-year comparative)",
+    "Full-year FY2025 net sales outlook range as guided (low and high end, in dollars), and whether it was raised/reaffirmed vs. prior guidance",
+    "Any comparable-store sales or other guidance components given alongside the FY2025 net sales outlook, if stated in the same release"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "OLLI",
+     "label": "Q2 FY2025"
+    },
+    {
+     "ticker": "OLLI",
+     "label": "FY2025"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "OLLI",
+     "period": "Q2 FY2025",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Capture any FY2025 net sales guidance detail or updates management gave on the Q2 FY2025 earnings call beyond the press release",
+     "query": "Ollie's Bargain Outlet Q2 fiscal 2025 earnings call full year net sales guidance",
+     "topic": "general",
+     "days_back": null
+    }
+   ],
+   "availability_notes": [
+    "Q3 FY2025 (2025-08-03 to 2025-11-01) has ended but is not yet reported as of 2025-11-20, so the most recently reported quarter is Q2 FY2025 (ended 2025-08-02, released 2025-08-28).",
+    "FY2025 (2025-02-02 to 2026-01-31) is still in progress; only the company's own guidance range exists, not actual full-year results.",
+    "Ollie's fiscal year ends in late January/early February, so FY2025 is not the calendar year 2025."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Actual full-year FY2025 net sales",
+    "kind": "not_reported_yet",
+    "reason": "FY2025 (2025-02-02 to 2026-01-31) is still in progress as of 2025-11-20; only the company's guidance range exists, not actual results.",
+    "evidence_ids": [
+     "E1"
+    ]
+   },
+   {
+    "item": "Q3 FY2025 net sales",
+    "kind": "not_reported_yet",
+    "reason": "Q3 FY2025 (2025-08-03 to 2025-11-01) has ended but had not been reported as of 2025-11-20.",
+    "evidence_ids": [
+     "E1"
+    ]
+   }
+  ],
+  "removed": [],
+  "assumptions": [
+   "'Most recently reported quarterly net sales' read as the latest quarter with results released as of 2025-11-20: Q2 FY2025 (2025-05-04 to 2025-08-02), since Q3 FY2025 is not yet reported.",
+   "'Net sales' read as the company's total net sales line (top line) as reported.",
+   "'Full-year fiscal 2025 net sales outlook' read as the FY2025 (2025-02-02 to 2026-01-31) net sales guidance range most recently given, i.e. in the Q2 FY2025 earnings release of 2025-08-28.",
+   "Fiscal periods are Ollie's fiscal periods (FY ends late Jan/early Feb), not calendar periods."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Ollie's Bargain Outlet Q2 fiscal 2025 earnings call full year net sales guidance",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2025-11-20",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://247wallst.com/companies/olli/earnings/2025/Q2",
+      "https://finance.yahoo.com/quote/OLLI/earnings/OLLI-Q2-2026-earnings_call-353074.html",
+      "https://investors.ollies.us/news-releases/news-release-details/ollies-bargain-outlet-holdings-inc-announces-first-quarter-7"
+     ],
+     "query": "As of November 20, 2025, what was Ollie's Bargain Outlet's most recently reported quarterly net sales (state the fiscal quarter), and what full-year fiscal 2025 net sales outlook range was the company guiding to?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1639300/000114036125033065/ef20054611_ex99-1.htm",
+    "https://www.sec.gov/Archives/edgar/data/1639300/000114036125033812/"
+   ],
+   "cited_primary": 2,
+   "retrieved": 5,
+   "retrieved_primary": 3
+  },
+  "recall": {
+   "figures": 10,
+   "found": 7
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "States the latest reported quarter as Q2 fiscal 2025 (13 weeks ended August 2, 2025) and reports net sales of USD 679.6 million, within the stated tolerance.",
+     "optional": false,
+     "met": true,
+     "note": "Identifies Q2 FY2025, the thirteen weeks ended 2025-08-02, and gives $679,556 thousand ($679.6 million)."
+    },
+    {
+     "point": "Gives the fiscal 2025 net sales outlook as USD 2.631–2.644 billion.",
+     "optional": false,
+     "met": true,
+     "note": "The table and summary state $2.631 to $2.644 billion as FY2025 net sales guidance."
+    },
+    {
+     "point": "Does not present Q3 fiscal 2025, or its post-November 20 results/outlook, as the latest quarter or guidance in effect.",
+     "optional": false,
+     "met": true,
+     "note": "Explicitly says Q3 FY2025 had not been reported as of 2025-11-20."
+    },
+    {
+     "point": "Does not present the superseded USD 2.579–2.599 billion range as current guidance.",
+     "optional": false,
+     "met": true,
+     "note": "Identifies this range only as the previously provided range, then states the raised range as current."
+    },
+    {
+     "point": "Does not give an adjusted-EPS or operating-income range instead of the requested net-sales outlook.",
+     "optional": false,
+     "met": true,
+     "note": "The requested outlook is given as net sales; no EPS or operating-income range is substituted."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer satisfies both required figures and fiscal period, and avoids the specified date and guidance-range failure modes.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q2 FY2025 net sales were $679,556 thousand ($679.6 million), for the thirteen weeks ended August 2, 2025; the amount is GAAP/as reported.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1639300/000114036125033065/ef20054611_ex99-1.htm",
+     "reason": "The release table lists net sales of $679,556 (in thousands) for the thirteen weeks ended August 2, 2025, and the highlights round this to $679.6 million. $679,556 thousand = $679.556 million, which rounds to $679.6 million. The release says results are reported on GAAP and adjusted non-GAAP bases; net sales is the stated GAAP top-line line.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2025 was Ollie's most recently reported quarter as of November 20, 2025.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1639300/000114036125033065/ef20054611_ex99-1.htm",
+     "reason": "The cited release establishes that Q2 FY2025 results were announced August 28, 2025, but its text does not establish that no later quarterly results had been released by November 20, 2025. The essential 'most recently reported as of November 20' comparison is not supported by this retrieved text.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Q2 FY2025 results were announced in a release dated August 28, 2025, for the quarter ended August 2, 2025.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1639300/000114036125033065/ef20054611_ex99-1.htm",
+     "reason": "The release headline is the company's Second Quarter Fiscal 2025 Results, and its opening states that it announced results for the second quarter ended August 2, 2025; the dateline is August 28, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The company's FY2025 net sales outlook was $2.631 billion to $2.644 billion, as stated in the August 28, 2025 Q2 release.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1639300/000114036125033065/ef20054611_ex99-1.htm",
+     "reason": "The Fiscal 2025 Outlook table identifies the current net sales outlook as $2.631 to $2.644 billion, in the release dated August 28, 2025. This is guidance, not actual reported full-year sales.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The FY2025 outlook was raised from the previously provided net sales range of $2.579 billion to $2.599 billion.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1639300/000114036125033065/ef20054611_ex99-1.htm",
+     "reason": "The Fiscal 2025 Outlook table labels $2.631–$2.644 billion as Current and $2.579–$2.599 billion as Previous; the release says the company is raising its previously provided sales outlook.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 covers February 2, 2025 through January 31, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1639300/000114036125033065/ef20054611_ex99-1.htm",
+     "reason": "The cited release identifies FY2025 outlook but does not give this fiscal-year start/end date range. The other cited source has a six-month period beginning February 2, 2025, but the retrieved text does not establish the claimed January 31, 2026 end date. Inadequate retrieved evidence for the full date range.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 6,
+   "supported": 4,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 66.3
+ }
+}

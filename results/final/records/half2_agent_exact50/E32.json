@@ -1,0 +1,243 @@
+{
+ "id": "E32",
+ "category": "private or non-SEC",
+ "difficulty": "medium",
+ "time_sensitivity": "dynamic",
+ "answer_type": "abstain",
+ "question": "tencent q2 revenue",
+ "grading": "(1) States that Tencent Holdings is listed in Hong Kong and is not an SEC registrant (no 10-K or 20-F; the U.S. ADR is an unsponsored OTC program), so it cannot answer from SEC filings. (2) If it provides company-published Q2 figures from Tencent's own investor materials, it labels them clearly as not SEC-filed, names the source and the currency (RMB), and does not label them as 10-K, 20-F or 6-K data. (3) Fail if it attributes the figure to an SEC filing, uses Tencent Music (TME) or another company's numbers as Tencent's, or gives an estimate.",
+ "answer": "Tencent is not an SEC registrant; says so; any figures from its own HKEX/IR release are clearly labelled non-SEC and in RMB, with no estimate.",
+ "output": {
+  "answer": "**Question:** tencent q2 revenue\n*As of 2026-10-03*\n\n**Interpreted as:** 'tencent' read as Tencent Holdings Limited (HKEX: 0700), a Hong Kong-listed company that is not an SEC registrant. No year given for 'q2', so read as the most recently reported second quarter: the quarter ended June 30, 2026 (Tencent's fiscal year is the calendar year). 'revenue' read as total revenue (top line) as reported in Tencent's interim results, with year-over-year growth against Q2 2025.\n\n| | Total revenue (RMB millions) |\n|---|---|\n| 2Q2026 (quarter ended June 30, 2026) | 204,785 [1] |\n| 2Q2025 (quarter ended June 30, 2025) | 184,504 [1] |\n\n- Tencent Holdings Limited (HKEX: 00700) announced its unaudited consolidated results for the quarter ended 30 June 2026 (\"2Q2026\") on 12 August 2026. [1]\n- Tencent's total revenues for 2Q2026 (quarter ended June 30, 2026) were RMB 204,785 million, unaudited and as reported, compared with RMB 184,504 million in 2Q2025 (quarter ended June 30, 2025). [1]\n- On the 2Q2026 earnings call, Tencent reported total revenue of RMB 204.8 billion, up 11% year-on-year as disclosed. [2]\n- Calculated from the reported figures, 2Q2026 revenue growth over 2Q2025 was 11.0%. [1]\n- A secondary source, Dealroom.co, also reported Tencent's second quarter 2026 revenue as CNY 204.8 billion. [3]\n\n**Not available**\n- SEC filings (10-Q/10-K/8-K) or an SEC-filed earnings release for Tencent's Q2 2026 revenue: Tencent Holdings Limited is a Hong Kong-listed company (HKEX: 00700) and is not a currently reporting SEC registrant, so no SEC filings are available; the figures come from the company's own interim results announcement and press coverage. [1]\n\n_1 draft statement(s) were withheld because they could not be verified against the sources (details in the run record)._\n\n**Sources**\n[1] For Immediate Release (www.tencent.com, undated, primary) https://www.tencent.com/wp-content/uploads/2026/08/Tencent-Announces-2026-Second-Quarter-Results.pdf\n[2] TENCENT (0700.HK) Q2 FY2026 earnings call transcript (finance.yahoo.com, undated, secondary) https://finance.yahoo.com/quote/0700.HK/earnings/0700.HK-Q2-2026-earnings_call-667897.html\n[3] Dealroom.co | Tencent reports $7.7B profit as shares fall 26% year-to-date amid AI spending debate (app.dealroom.co, undated, secondary) https://app.dealroom.co/news/feed/tencent-reports-7-7b-profit-as-shares-fall-26-year-to-date-amid-ai-spending-debate\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 26329,
+   "output": 5815
+  },
+  "tavily_credits": 2.0,
+  "latency_s": 27.5,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/34b75aab4623d3d9cbcc9977960394b3",
+  "companies": [
+   {
+    "name": "Tencent Holdings Limited",
+    "ticker": null,
+    "cik": null,
+    "resolved": false
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "'tencent' read as Tencent Holdings Limited (HKEX: 0700), a Hong Kong-listed company that is not an SEC registrant.",
+    "No year given for 'q2', so read as the most recently reported second quarter: the quarter ended June 30, 2026 (Tencent's fiscal year is the calendar year).",
+    "'revenue' read as total revenue (top line) as reported in Tencent's interim results, with year-over-year growth against Q2 2025."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Tencent total revenue for the quarter ended June 30, 2026 (Q2 2026), in RMB",
+    "Year-over-year revenue growth for Q2 2026 vs Q2 2025",
+    "Revenue breakdown by segment (VAS, marketing services, fintech & business services) if disclosed",
+    "Whether Q2 2026 results have been released as of 2026-10-03"
+   ],
+   "answer_periods": [],
+   "documents": [],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Find Tencent's reported Q2 2026 (quarter ended June 30, 2026) total revenue and growth, since the company files no SEC documents",
+     "query": "Tencent Holdings Q2 2026 second quarter revenue results",
+     "topic": "general",
+     "days_back": null
+    }
+   ],
+   "availability_notes": [
+    "Tencent Holdings Limited is not a currently reporting SEC registrant, so no SEC filings (10-Q/10-K/8-K) or earnings releases are available; the figures must come from the company's own interim results announcement and press coverage.",
+    "No reporting calendar is available for Tencent, so the exact release date and status of the Q2 2026 interim results cannot be confirmed from filings; if Q2 2026 has not yet been reported, the latest reported period's revenue would be the fallback.",
+    "Tencent Holdings Limited Q2 2026 (quarter ended June 30, 2026) is not in the company's reporting calendar"
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "SEC filings (10-Q/10-K/8-K) or an SEC-filed earnings release for Tencent's Q2 2026 revenue",
+    "kind": "not_sec_filer",
+    "reason": "Tencent Holdings Limited is a Hong Kong-listed company (HKEX: 00700) and is not a currently reporting SEC registrant, so no SEC filings are available; the figures come from the company's own interim results announcement and press coverage.",
+    "evidence_ids": [
+     "E3"
+    ]
+   }
+  ],
+  "removed": [
+   {
+    "text": "2Q2026 vs 2Q2025 (quarter ended June 30, 2026 vs June 30, 2025) | Revenue growth, year-on-year (%): 11% as disclosed; 11.0% calculated",
+    "problem": "number 2 is not in the quotes and not calculated"
+   }
+  ],
+  "assumptions": [
+   "'tencent' read as Tencent Holdings Limited (HKEX: 0700), a Hong Kong-listed company that is not an SEC registrant.",
+   "No year given for 'q2', so read as the most recently reported second quarter: the quarter ended June 30, 2026 (Tencent's fiscal year is the calendar year).",
+   "'revenue' read as total revenue (top line) as reported in Tencent's interim results, with year-over-year growth against Q2 2025."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Tencent Holdings Q2 2026 second quarter revenue results",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://app.dealroom.co/news/feed/tencent-reports-7-7b-profit-as-shares-fall-26-year-to-date-amid-ai-spending-debate",
+      "https://finance.yahoo.com/quote/0700.HK/earnings/0700.HK-Q2-2026-earnings_call-667897.html",
+      "https://www.tencent.com/wp-content/uploads/2026/08/Tencent-Announces-2026-Second-Quarter-Results.pdf"
+     ],
+     "query": "tencent q2 revenue",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://app.dealroom.co/news/feed/tencent-reports-7-7b-profit-as-shares-fall-26-year-to-date-amid-ai-spending-debate",
+    "https://finance.yahoo.com/quote/0700.HK/earnings/0700.HK-Q2-2026-earnings_call-667897.html",
+    "https://www.tencent.com/wp-content/uploads/2026/08/Tencent-Announces-2026-Second-Quarter-Results.pdf"
+   ],
+   "cited_primary": 0,
+   "retrieved": 5,
+   "retrieved_primary": 0
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 0.667,
+   "points": [
+    {
+     "point": "States that Tencent Holdings is Hong Kong-listed and not an SEC registrant, with no 10-K or 20-F and an unsponsored OTC U.S. ADR, and therefore cannot answer from SEC filings.",
+     "optional": false,
+     "met": false,
+     "note": "It identifies Tencent as Hong Kong-listed and says it is not a currently reporting SEC registrant with no SEC filings, but does not state the absence of 10-K/20-F filings or that the U.S. ADR is an unsponsored OTC program."
+    },
+    {
+     "point": "If giving Tencent-published Q2 figures, clearly labels them as non-SEC-filed, identifies Tencent's own investor-results source and uses RMB, without labeling the figures as 10-K, 20-F, or 6-K data.",
+     "optional": false,
+     "met": true,
+     "note": "It identifies Tencent's own interim results announcement as the source, reports RMB, and distinguishes the figures from unavailable SEC-filed material; it does not call them 10-K, 20-F, or 6-K data."
+    },
+    {
+     "point": "Does not attribute the reported figure to an SEC filing.",
+     "optional": false,
+     "met": true,
+     "note": "The answer says there are no SEC filings and attributes the revenue to Tencent's own interim results announcement."
+    },
+    {
+     "point": "Does not use Tencent Music (TME) or another company's figures as Tencent's.",
+     "optional": false,
+     "met": true,
+     "note": "The reported figures are attributed to Tencent Holdings and its own results announcement."
+    },
+    {
+     "point": "Does not give an estimate as the reported Q2 revenue.",
+     "optional": false,
+     "met": true,
+     "note": "The answer presents cited reported results, not an estimate."
+    },
+    {
+     "point": "For this abstain question, clearly says the figure is not available or disclosed and presents no number as an actual reported result.",
+     "optional": false,
+     "met": false,
+     "note": "It presents RMB 204,785 million as Tencent's actual reported 2Q2026 revenue, along with the prior-year figure."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The answer supplies actual reported Q2 revenue figures rather than abstaining, so it fails the required abstain core. It also omits required SEC-status details about the absence of 10-K/20-F filings and the unsponsored OTC ADR. Its use of Tencent's own source, RMB currency, and non-SEC framing otherwise avoids the specified sourcing and entity-substitution failures.",
+   "judge_verdict": "incorrect",
+   "votes": [
+    "incorrect",
+    "incorrect",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Tencent Q2 2026 revenue was RMB 204,785 million",
+     "numeric": true,
+     "cited_url": "https://www.tencent.com/wp-content/uploads/2026/08/Tencent-Announces-2026-Second-Quarter-Results.pdf",
+     "reason": "The cited interim-results income statement lists unaudited Revenues of RMB 204,785 million for 2Q2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tencent Q2 2025 revenue was RMB 184,504 million",
+     "numeric": true,
+     "cited_url": "https://www.tencent.com/wp-content/uploads/2026/08/Tencent-Announces-2026-Second-Quarter-Results.pdf",
+     "reason": "The same income statement lists unaudited Revenues of RMB 184,504 million for 2Q2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tencent announced unaudited consolidated results for the quarter ended June 30, 2026 on August 12, 2026",
+     "numeric": true,
+     "cited_url": "https://www.tencent.com/wp-content/uploads/2026/08/Tencent-Announces-2026-Second-Quarter-Results.pdf",
+     "reason": "The release header says Hong Kong, 12 August 2026, and states the company announced unaudited consolidated results for the quarter ended 30 June 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "On the Q2 2026 earnings call, Tencent reported revenue of RMB 204.8 billion, up 11% year over year",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/0700.HK/earnings/0700.HK-Q2-2026-earnings_call-667897.html",
+     "reason": "The retrieved transcript says: “For the second quarter of 2026, total revenue was RMB 204.8 billion, up 11% year-on-year.”",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Calculated Q2 2026 revenue growth over Q2 2025 was 11.0%",
+     "numeric": true,
+     "cited_url": "https://www.tencent.com/wp-content/uploads/2026/08/Tencent-Announces-2026-Second-Quarter-Results.pdf",
+     "reason": "Using the cited reported revenues and same RMB-million basis: (204,785 − 184,504) ÷ 184,504 × 100 = 10.99217%, which rounds to 11.0% to one decimal place.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Dealroom.co reported Tencent Q2 2026 revenue as CNY 204.8 billion",
+     "numeric": true,
+     "cited_url": "https://app.dealroom.co/news/feed/tencent-reports-7-7b-profit-as-shares-fall-26-year-to-date-amid-ai-spending-debate",
+     "reason": "The retrieved Dealroom text states Tencent reported second-quarter 2026 revenue of CNY 204.8 billion.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 6,
+   "supported": 6,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 111.2
+ }
+}

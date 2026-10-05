@@ -1,0 +1,243 @@
+{
+ "id": "W11",
+ "category": "foreign issuer",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "For Nintendo's first quarter of the fiscal year ending March 2027 (April 1 - June 30, 2026), what were net sales and operating profit in yen, how much did Nintendo say it recorded as a reduction of cost of sales from refunds of U.S. IEEPA tariffs, and - converting that refund at the quarter's average rate of JPY 159.38 per US dollar - what was operating profit excluding the refund and how did it compare with the prior-year quarter's JPY 56.9 billion?",
+ "grading": "Key points (all required): (1) net sales JPY 517.8 billion (-9.5% y/y); (2) operating profit JPY 142.5 billion (+150.5%; prior-year JPY 56.9 billion); (3) tariff refund approximately US$300 million recorded as a reduction of cost of sales; (4) at JPY 159.38/USD the refund is about JPY 47.8 billion, so operating profit excluding it is about JPY 94.7 billion (accept JPY 92-97 billion), roughly +66% versus JPY 56.9 billion (accept +62% to +70%). The answer must flag the conversion as an approximation. Fail if the quarter is mislabelled (e.g., Jan-Mar 2027), if the refund is treated as a yen figure disclosed by Nintendo, or if operating profit ex-refund is not computed.",
+ "answer": "Q1 FY3/2027 (April 1-June 30, 2026): net sales JPY 517.8 billion (-9.5%) and operating profit JPY 142.5 billion (+150.5% from JPY 56.9 billion). Nintendo said it recorded approximately US$300 million as a reduction of cost of sales for refunds of IEEPA tariffs [W11-E1]. At the average rate of JPY 159.38/USD that is about JPY 47.8 billion, so operating profit excluding the refund is about JPY 94.7 billion, still about +66% y/y. The full-year forecast (operating profit JPY 370.0 billion) was unchanged from May [W11-E1]. Switch 2 hardware sold 3.82 million units in the quarter [W11-E1].",
+ "output": {
+  "answer": "**Nintendo FY27/Q1 (April 1 – June 30, 2026) — reported August 6, 2026**\n\n| Metric | FY27/Q1 | FY26/Q1 | YoY |\n|---|---|---|---|\n| Net sales | ¥517.8 bn | ¥572.3 bn | −9.5% |\n| Operating profit | ¥142.5 bn | ¥56.9 bn | +150.5% |\n| Ordinary profit | ¥206.1 bn | ¥95.8 bn | +115.1% |\n| Profit attributable to owners of parent | ¥147.4 bn | ¥96.0 bn | +53.5% |\n\n**IEEPA tariff refund:** Nintendo recorded \"approximately 300 million U.S. dollars as a reduction of cost of sales in connection with refunds of IEEPA tariffs,\" noting the tariffs involved \"were primarily borne by the company rather than passed on to consumers through product prices.\" (It was the U.S. Supreme Court striking down the IEEPA duties that triggered the refunds.)\n\n**Converting at the quarter's average rate of ¥159.38/USD:**\n- $300M × ¥159.38 = **≈ ¥47.8 billion** (¥47.814 bn)\n\n**Operating profit excluding the refund:**\n- ¥142.5 bn − ¥47.8 bn = **≈ ¥94.7 billion** (¥94.69 bn)\n\n**Versus prior-year quarter (¥56.9 bn):**\n- 94.69 / 56.9 = 1.664 → **up ~66.4% year over year**, an increase of roughly **¥37.8 billion**\n- So even stripped of the one-time tariff windfall, operating profit still grew by about two-thirds, driven by a richer software mix (digital sales +90% to ¥132.7 bn) and IP-related income (+107.4% to ¥34.8 bn) — as opposed to the reported +150.5%.\n\nSources:\n- Nintendo, \"Financial Results Explanatory Material, 1st Quarter of Fiscal Year Ending March 2027\" (Aug 6, 2026): https://www.nintendo.co.jp/ir/pdf/2026/260806_2e.pdf\n- Reuters: https://www.reuters.com/business/retail-consumer/nintendo-q1-operating-profit-jumps-151-beating-analyst-estimates-2026-08-06\n- GamesIndustry.biz: https://www.gamesindustry.biz/nintendo-q1-sales-drop-95-operating-profit-soars-following-higher-software-sales-and-300m-in-us-tariff-refunds\n\n*Note: figures are approximate since Nintendo disclosed the refund as \"approximately $300 million,\" and sources round operating profit to either ¥142.5 bn or ¥142.6 bn.*",
+  "tokens": {
+   "input": 11933,
+   "output": 1117
+  },
+  "tavily_credits": 2,
+  "latency_s": 10.16,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/02cdbacfd392fad04abe2f9e49fff76e",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nintendo first quarter fiscal year ending March 2027 net sales operating profit IEEPA tariff refund"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nintendo Q1 FY2027 April June 2026 results net sales operating profit yen"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.gamesindustry.biz/nintendo-q1-sales-drop-95-operating-profit-soars-following-higher-software-sales-and-300m-in-us-tariff-refunds",
+    "https://www.nintendo.co.jp/ir/pdf/2026/260806_2e.pdf",
+    "https://www.reuters.com/business/retail-consumer/nintendo-q1-operating-profit-jumps-151-beating-analyst-estimates-2026-08-06"
+   ],
+   "cited_primary": 1,
+   "retrieved": 16,
+   "retrieved_primary": 2
+  },
+  "recall": {
+   "figures": 20,
+   "found": 16
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "States net sales of JPY 517.8 billion and year-over-year change of -9.5%.",
+     "optional": false,
+     "met": true,
+     "note": "Reports ¥517.8 bn and −9.5%."
+    },
+    {
+     "point": "States operating profit of JPY 142.5 billion, +150.5% year over year, and prior-year-quarter operating profit of JPY 56.9 billion.",
+     "optional": false,
+     "met": true,
+     "note": "All three figures appear in the table."
+    },
+    {
+     "point": "States Nintendo recorded approximately US$300 million as a reduction of cost of sales for IEEPA tariff refunds.",
+     "optional": false,
+     "met": true,
+     "note": "Describes the refund in U.S. dollars and quotes it as a reduction of cost of sales."
+    },
+    {
+     "point": "Converts the refund at JPY 159.38/USD to approximately JPY 47.8 billion, explicitly identifying the conversion as approximate.",
+     "optional": false,
+     "met": true,
+     "note": "Calculates approximately ¥47.8 bn and notes the figures are approximate because the disclosed refund was approximately $300 million."
+    },
+    {
+     "point": "Computes operating profit excluding the refund at approximately JPY 94.7 billion.",
+     "optional": false,
+     "met": true,
+     "note": "Shows ¥142.5 bn − ¥47.8 bn = approximately ¥94.7 bn."
+    },
+    {
+     "point": "Compares the ex-refund operating profit with prior-year JPY 56.9 billion and gives growth within the accepted +62% to +70% range.",
+     "optional": false,
+     "met": true,
+     "note": "Reports growth of about 66.4% year over year."
+    },
+    {
+     "point": "Does not mislabel the fiscal quarter (for example, as January–March 2027).",
+     "optional": false,
+     "met": true,
+     "note": "Correctly labels FY27/Q1 as April 1–June 30, 2026."
+    },
+    {
+     "point": "Does not present the refund as a yen amount disclosed by Nintendo.",
+     "optional": false,
+     "met": true,
+     "note": "Identifies Nintendo's disclosure as approximately US$300 million and separately presents the yen conversion."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer meets all required numerical and disclosure points, correctly identifies the quarter, and computes approximate ex-refund operating profit and its year-over-year growth.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Nintendo FY27/Q1 covered April–June 2026 and was reported August 6, 2026",
+     "numeric": true,
+     "cited_url": "https://www.nintendo.co.jp/ir/pdf/2026/260806_2e.pdf",
+     "reason": "The retrieved Nintendo PDF identifies the material as the first quarter of the fiscal year ending March 2027 and gives August 6, 2026. Reuters identifies the quarter as April–June. April 1–June 30 is the corresponding full calendar-quarter span.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Net sales were ¥517.8bn versus ¥572.3bn, down 9.5% year over year",
+     "numeric": true,
+     "cited_url": "https://www.nintendo.co.jp/ir/pdf/2026/260806_2e.pdf",
+     "reason": "The retrieved Nintendo comparison table explicitly gives FY27/Q1 ¥517.8bn, FY26/Q1 ¥572.3bn, and −9.5%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Operating profit was ¥142.5bn versus ¥56.9bn, up 150.5% year over year",
+     "numeric": true,
+     "cited_url": "https://www.nintendo.co.jp/ir/pdf/2026/260806_2e.pdf",
+     "reason": "The retrieved Nintendo table explicitly gives ¥142.5bn, ¥56.9bn and +150.5%. Reuters gives the same percentage and ¥142.6bn, a separately noted rounding difference.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Ordinary profit was ¥206.1bn versus ¥95.8bn, up 115.1% year over year",
+     "numeric": true,
+     "cited_url": "https://www.gamesindustry.biz/nintendo-q1-sales-drop-95-operating-profit-soars-following-higher-software-sales-and-300m-in-us-tariff-refunds",
+     "reason": "The retrieved GamesIndustry.biz text supports ¥206.1bn and +115.1%; the supplied excerpt does not show the prior-year ¥95.8bn figure.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Profit attributable to owners of parent was ¥147.4bn versus ¥96.0bn, up 53.5% year over year",
+     "numeric": true,
+     "cited_url": "https://www.gamesindustry.biz/nintendo-q1-sales-drop-95-operating-profit-soars-following-higher-software-sales-and-300m-in-us-tariff-refunds",
+     "reason": "GamesIndustry.biz supports ¥147.4bn but reports net profit growth of 53.3%, not 53.5%, and does not show the stated ¥96.0bn comparison. The displayed figures 147.4/96.0−1 calculate to about 53.5%, but that does not reconcile the source's reported percentage.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Nintendo recorded approximately US$300m as a reduction of cost of sales in connection with IEEPA tariff refunds",
+     "numeric": true,
+     "cited_url": "https://www.nintendo.co.jp/ir/pdf/2026/260806_2e.pdf",
+     "reason": "The retrieved Nintendo PDF states this directly, including the approximate amount and accounting treatment.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Nintendo said the tariffs involved were primarily borne by the company rather than passed to consumers through product prices",
+     "numeric": false,
+     "cited_url": "https://www.nintendo.co.jp/ir/pdf/2026/260806_2e.pdf",
+     "reason": "The retrieved Nintendo PDF states this directly.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The U.S. Supreme Court striking down the IEEPA duties triggered Nintendo's refunds",
+     "numeric": false,
+     "cited_url": "https://www.reuters.com/business/retail-consumer/nintendo-q1-operating-profit-jumps-151-beating-analyst-estimates-2026-08-06",
+     "reason": "Reuters says the administration refunded tariffs collected before the Supreme Court struck down those duties, but the retrieved text does not establish that the ruling specifically triggered Nintendo's refund. Nintendo's quoted statement does not give that causal account.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The quarter's average exchange rate was ¥159.38 per U.S. dollar",
+     "numeric": true,
+     "cited_url": "https://www.nintendo.co.jp/ir/pdf/2026/260806_2e.pdf",
+     "reason": "The retrieved text from the cited Nintendo PDF does not provide this average rate or otherwise substantiate it.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "US$300m converted at ¥159.38/USD equals approximately ¥47.8bn (¥47.814bn)",
+     "numeric": true,
+     "cited_url": "https://www.nintendo.co.jp/ir/pdf/2026/260806_2e.pdf",
+     "reason": "Arithmetic checks: 300,000,000 × 159.38 = ¥47,814,000,000, or ¥47.814bn. But the cited retrieved text does not support the exchange-rate input, and the refund amount itself is approximate; thus the derived figure is not adequately evidenced as stated.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Removing the converted refund from reported operating profit gives approximately ¥94.7bn operating profit excluding the refund",
+     "numeric": true,
+     "cited_url": "https://www.nintendo.co.jp/ir/pdf/2026/260806_2e.pdf",
+     "reason": "The arithmetic using the answer's rounded inputs is 142.5−47.814=¥94.686bn, approximately ¥94.7bn. Nintendo confirms operating profit and that the refund reduced cost of sales, but the cited retrieved text does not substantiate the conversion rate needed for this adjustment.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "That adjusted operating profit is about 66.4% above ¥56.9bn, an increase of about ¥37.8bn",
+     "numeric": true,
+     "cited_url": "https://www.nintendo.co.jp/ir/pdf/2026/260806_2e.pdf",
+     "reason": "Using the answer's adjusted value, (94.69/56.9−1)×100≈66.414%, and 94.69−56.9=¥37.79bn. The calculation is sound conditional on the adjustment, but its refund-conversion input is not evidenced in the retrieved material.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Digital sales rose 90% to ¥132.7bn and IP-related income rose 107.4% to ¥34.8bn, supporting the answer's software-mix explanation for adjusted profit growth",
+     "numeric": true,
+     "cited_url": "https://www.gamesindustry.biz/nintendo-q1-sales-drop-95-operating-profit-soars-following-higher-software-sales-and-300m-in-us-tariff-refunds",
+     "reason": "GamesIndustry.biz supports digital sales of ¥132.7bn, up 90%; the retrieved Nintendo PDF supports IP-related income of ¥34.8bn, up 107.4%. These facts are supported, and GamesIndustry.biz says higher software revenue helped reported profit. The sources do not specifically establish that these items caused the calculated profit growth after excluding the tariff refund.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The cited sources report operating profit as either ¥142.5bn or ¥142.6bn",
+     "numeric": true,
+     "cited_url": "https://www.reuters.com/business/retail-consumer/nintendo-q1-operating-profit-jumps-151-beating-analyst-estimates-2026-08-06",
+     "reason": "Reuters reports ¥142.6bn; the retrieved Nintendo PDF and GamesIndustry.biz report ¥142.5bn. The stated source-to-source difference is accurate.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 12,
+   "numeric_cited": 12,
+   "cited": 14,
+   "supported": 6,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 145.1
+ }
+}

@@ -1,0 +1,275 @@
+{
+ "id": "T20",
+ "category": "Market analysis",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "For calendar Q2 2026 (April 1 to June 30, 2026), what was net revenue at Visa and at Mastercard, and by how much did Visa's exceed Mastercard's? Use each company's own reported quarter that corresponds to those dates and answer in USD millions.",
+ "grading": "List of three: Visa net revenue USD 11,633M (fiscal Q3 2026), Mastercard net revenue USD 9,277M (Q2 2026), each ±0.5%; difference (Visa minus Mastercard) USD 2,356M ±1% (Visa about 25% larger). Optional: YoY growth Visa 14.4% vs Mastercard 14.1% (±0.3pp). Both quarters end 2026-06-30. Fail if Visa's March quarter or any non-matching Mastercard quarter is used.",
+ "answer": "Visa's fiscal Q3 2026 (quarter ended June 30, 2026) net revenue was USD 11,633 million, up from USD 10,172 million a year earlier (+14.4%). Mastercard's Q2 2026 (quarter ended June 30, 2026) net revenue was USD 9,277 million, up from USD 8,133 million (+14.1%). Visa's net revenue exceeded Mastercard's by USD 2,356 million (about 25% higher). [T20-E1, T20-E2, T20-E3]",
+ "output": {
+  "answer": "Both companies' quarters ended June 30, 2026 align exactly with calendar Q2 2026.\n\n## Calendar Q2 2026 (April 1 – June 30, 2026) Net Revenue\n\n| Company | Reported quarter | Net revenue |\n|---|---|---|\n| **Visa** | Fiscal Q3 2026 (quarter ended June 30, 2026) | **$11,633 million** (~$11.6B, +14% YoY) |\n| **Mastercard** | Q2 2026 (quarter ended June 30, 2026) | **$9,277 million** (~$9.3B, +14% YoY) |\n\n**Difference: Visa's net revenue exceeded Mastercard's by $2,356 million** (~$2.36 billion).\n\n### Notes on the comparison\n- **Visa** reports on a fiscal year ending September 30, so the April–June 2026 period is its fiscal third quarter (reported July 28, 2026). Exact figure: $11,633 million GAAP net revenue.\n- **Mastercard** reports on a calendar year, so April–June 2026 is simply its Q2 2026 (reported July 30, 2026). Exact figure: $9,277 million net revenue (up 14% reported, 12% currency-neutral).\n- Both figures are GAAP net revenue as reported by each company.\n\n### Sources\n- Visa Q3 FY2026 earnings release / 10-Q: [SEC filing](https://www.sec.gov/Archives/edgar/data/1403161/000140316126000103/q32026earningsrelease.htm) and [10-Q](https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm)\n- Mastercard Q2 2026 earnings (8-K): [SEC filing](https://www.sec.gov/Archives/edgar/data/1141391/000114139126000081/ma-20260730.htm); figure corroborated by [TradingView](https://www.tradingview.com/news/tradingview:d4b484d6e9e9b:0-mastercard-reports-q2-2026-revenue-9-3b-net-income-4-4b-adjusted-eps-5-04) and [Tickeron](https://tickeron.com/blogs/mastercard-ma-delivers-strong-q2-2026-earnings-with-revenue-and-eps-beats-15173)\n\nOne caveat: figures are drawn from SEC filings as reported in search results; for the most precise cents-level values you'd want to open the earnings release financial tables directly.",
+  "tokens": {
+   "input": 111809,
+   "output": 2320
+  },
+  "tavily_credits": 7,
+  "latency_s": 41.96,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/edadc9aac34da771bbd01452ab3e5a2f",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Visa Q3 fiscal 2026 net revenue April June 2026",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Mastercard Q2 2026 net revenue",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Visa fiscal third quarter 2026 results quarter ended June 30 2026 net revenue",
+     "include_domains": [
+      "usa.visa.com",
+      "investor.visa.com",
+      "sec.gov"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Visa Q3 fiscal 2026 net revenue $11.6 billion July 2026 earnings"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Visa fiscal third quarter 2026 net revenue \"$11,6\" million total net revenue table",
+     "include_domains": [
+      "sec.gov"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Visa\" fiscal third quarter 2026 earnings release net revenue \"11,6\" total net revenue June 30 2026",
+     "include_domains": [
+      "stocktitan.net",
+      "jamessharp.co.uk",
+      "tickeron.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Mastercard second quarter 2026 net revenue million June 30 2026 8-K results",
+     "include_domains": [
+      "sec.gov"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://tickeron.com/blogs/mastercard-ma-delivers-strong-q2-2026-earnings-with-revenue-and-eps-beats-15173",
+    "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000081/ma-20260730.htm",
+    "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000103/q32026earningsrelease.htm",
+    "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+    "https://www.tradingview.com/news/tradingview:d4b484d6e9e9b:0-mastercard-reports-q2-2026-revenue-9-3b-net-income-4-4b-adjusted-eps-5-04"
+   ],
+   "cited_primary": 3,
+   "retrieved": 66,
+   "retrieved_primary": 29
+  },
+  "recall": {
+   "figures": 4,
+   "found": 4
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Lists Visa net revenue as USD 11,633 million for fiscal Q3 2026, corresponding to April 1–June 30, 2026 (within ±0.5%).",
+     "optional": false,
+     "met": true,
+     "note": "Gives Visa fiscal Q3 2026, quarter ended June 30, at $11,633 million."
+    },
+    {
+     "point": "Lists Mastercard net revenue as USD 9,277 million for Q2 2026, corresponding to April 1–June 30, 2026 (within ±0.5%).",
+     "optional": false,
+     "met": true,
+     "note": "Gives Mastercard Q2 2026, quarter ended June 30, at $9,277 million."
+    },
+    {
+     "point": "Gives Visa minus Mastercard net revenue as USD 2,356 million (within ±1%) and describes Visa as about 25% larger.",
+     "optional": false,
+     "met": true,
+     "note": "States $2,356 million and approximately $2.36 billion; the quarter figures imply about 25% higher."
+    },
+    {
+     "point": "Does not use Visa's January–March fiscal Q2 or a non-matching Mastercard quarter.",
+     "optional": false,
+     "met": true,
+     "note": "Correctly identifies Visa fiscal Q3 and Mastercard Q2, both ended June 30, 2026."
+    },
+    {
+     "point": "Optional: Reports YoY growth of Visa 14.4% and Mastercard 14.1%, each within ±0.3 percentage points.",
+     "optional": true,
+     "met": false,
+     "note": "Only gives +14% for each; Visa's stated rounded figure is 0.4 percentage points below 14.4%."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All required figures and quarter mappings are correct, and the difference is exact. The optional YoY-growth detail is only rounded to 14% for both and does not meet the stated tolerance for Visa, but optional items do not affect the verdict.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Visa fiscal Q3 2026 net revenue was $11,633 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000103/q32026earningsrelease.htm",
+     "reason": "The retrieved Visa release reports net revenue of $11.6B, but the excerpt does not state $11,633 million. That rounded figure does not verify the exact million-dollar amount.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mastercard Q2 2026 net revenue was $9,277 million ($9.277 billion)",
+     "numeric": true,
+     "cited_url": "https://tickeron.com/blogs/mastercard-ma-delivers-strong-q2-2026-earnings-with-revenue-and-eps-beats-15173",
+     "reason": "Tickeron states second-quarter 2026 net revenue of $9.277 billion. Converting billions to millions gives $9,277 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Visa net revenue increased 14% year over year",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000103/q32026earningsrelease.htm",
+     "reason": "The release states net revenue of $11.6B, an increase of 14%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mastercard net revenue increased 14% reported and 12% currency-neutral year over year",
+     "numeric": true,
+     "cited_url": "https://tickeron.com/blogs/mastercard-ma-delivers-strong-q2-2026-earnings-with-revenue-and-eps-beats-15173",
+     "reason": "Tickeron states $9.277 billion net revenue, up 14% on a reported basis and 12% on a currency-neutral basis.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Visa revenue exceeded Mastercard revenue by $2,356 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000103/q32026earningsrelease.htm",
+     "reason": "The claimed arithmetic is 11,633 − 9,277 = 2,356 million. Mastercard's $9,277 million input is supported by Tickeron, but the cited Visa release excerpt only establishes rounded $11.6B, not the exact $11,633 million input; thus the exact difference is not adequately evidenced.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Visa's fiscal Q3 2026 was the three-month quarter ended June 30, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+     "reason": "The retrieved 10-Q excerpt refers to the three months ended June 30, 2026, and the cited Visa release identifies the results as Fiscal Third Quarter 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mastercard reported Q2 2026 results",
+     "numeric": true,
+     "cited_url": "https://www.tradingview.com/news/tradingview:d4b484d6e9e9b:0-mastercard-reports-q2-2026-revenue-9-3b-net-income-4-4b-adjusted-eps-5-04",
+     "reason": "The retrieved TradingView text says Mastercard reported second-quarter 2026 results.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mastercard's Q2 2026 quarter ended June 30, 2026",
+     "numeric": true,
+     "cited_url": "https://www.tradingview.com/news/tradingview:d4b484d6e9e9b:0-mastercard-reports-q2-2026-revenue-9-3b-net-income-4-4b-adjusted-eps-5-04",
+     "reason": "The excerpt identifies Q2 2026 results and separately says cards issued as of June 30, 2026, but does not explicitly state that the quarter ended June 30.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Visa announced its fiscal Q3 2026 results on July 28, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000103/q32026earningsrelease.htm",
+     "reason": "The release text identifies Visa's Fiscal Third Quarter 2026 results and is dated July 28, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mastercard reported its Q2 2026 results on July 30, 2026",
+     "numeric": true,
+     "cited_url": "https://www.tradingview.com/news/tradingview:d4b484d6e9e9b:0-mastercard-reports-q2-2026-revenue-9-3b-net-income-4-4b-adjusted-eps-5-04",
+     "reason": "TradingView says Mastercard reported Q2 2026 results and identifies the original SEC filing as Jul. 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Visa's fiscal year ends September 30",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+     "reason": "The retrieved 10-Q excerpt discusses three and nine months ended June 30, 2026, but does not state that Visa's fiscal year ends September 30.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Mastercard reports on a calendar-year basis",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000081/ma-20260730.htm",
+     "reason": "The retrieved excerpt identifies Mastercard Q2 2026 results, but does not establish that its fiscal year is the calendar year.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Both companies' revenue figures are GAAP net revenue as reported by each company",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000103/q32026earningsrelease.htm",
+     "reason": "The retrieved Visa release calls the figure net revenue but does not explicitly label it GAAP; the retrieved Mastercard passages also call it net revenue without establishing the claimed GAAP basis for both companies.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Calendar Q2 2026 is April 1 through June 30, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+     "reason": "The Visa 10-Q excerpt confirms a three-month period ended June 30, 2026, but does not explicitly give April 1 as the start date or identify the interval as calendar Q2.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 12,
+   "numeric_cited": 12,
+   "cited": 14,
+   "supported": 7,
+   "not_retrieved": 1,
+   "undecided": 0
+  },
+  "judge_s": 105.2
+ }
+}

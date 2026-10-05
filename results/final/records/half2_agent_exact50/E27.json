@@ -1,0 +1,288 @@
+{
+ "id": "E27",
+ "category": "not yet reported",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "abstain",
+ "question": "jpm 3q26 eps",
+ "grading": "(1) Identifies JPMorgan Chase (JPM) and states that Q3 2026 results have not been reported as of 2026-10-03 (scheduled Oct 13, 2026). (2) Gives no EPS figure for Q3 2026, whether estimate, consensus or guess. (3) Offers the latest reported quarter, Q2 2026 (ended June 30, 2026; reported July 14, 2026), with EPS labelled and cited. (4) Fail if it gives any Q3 2026 EPS number or analyst estimate.",
+ "answer": "Cannot give Q3 2026 EPS (JPM reports Oct 13, 2026); offers Q2 2026 reported EPS of $7.70 (and the figure excluding significant items) with citations.",
+ "output": {
+  "answer": "**Question:** jpm 3q26 eps\n*As of 2026-10-03*\n\n**Interpreted as:** '3q26' read as fiscal Q3 2026 (2026-07-01 to 2026-09-30); JPM's fiscal year is the calendar year. Q3 FY2026 has ended but is not yet reported (no earnings release listed), so per the fallback the plan covers the latest reported quarter, Q2 FY2026 (2026-04-01 to 2026-06-30), headline results and guidance instead. 'eps' read as GAAP diluted EPS, with net income as the accompanying bottom-line figure.\n\n- JPMorgan Chase's GAAP diluted EPS for fiscal Q3 2026 (quarter ended September 30, 2026) is not yet reported as of 2026-10-03; the latest reported quarter is fiscal Q2 2026 (quarter ended June 30, 2026). [1][2]\n- For fiscal Q2 2026 (quarter ended June 30, 2026), JPMorgan Chase reported GAAP diluted EPS of $7.70. [1][3][4][5]\n- For fiscal Q2 2026 (quarter ended June 30, 2026), JPMorgan Chase reported GAAP net income of $21,155 million. [3][4][5]\n- For fiscal Q2 2026 (quarter ended June 30, 2026), JPMorgan Chase reported GAAP diluted EPS of $7.70, up 30% versus fiscal Q1 2026 and up 47% versus fiscal Q2 2025, as disclosed. [3]\n- On a non-GAAP basis excluding significant items, JPMorgan Chase reported fiscal Q2 2026 (quarter ended June 30, 2026) net income of $16.9 billion and EPS of $6.14. [1][6]\n- For fiscal Q2 2026 (quarter ended June 30, 2026), JPMorgan Chase reported net revenue of $57,347 million on a reported basis and managed net revenue of $58,022 million on a non-GAAP managed basis. [1][3]\n- As guidance published with the fiscal Q2 2026 results, JPMorgan Chase said it expects FY2026 net interest income of ~$105.5B, market dependent. [7][6]\n- As guidance published with the fiscal Q2 2026 results, JPMorgan Chase said it expects FY2026 net interest income excluding Markets of ~$96.5B, market dependent. [7][6]\n- As guidance published with the fiscal Q2 2026 results, JPMorgan Chase said it expects FY2026 adjusted expense of ~$107.5B and a FY2026 Card Services net charge-off rate of ~3.2%. [7][6]\n\n**Not available**\n- JPMorgan Chase GAAP diluted EPS for fiscal Q3 2026 (quarter ended September 30, 2026): Q3 FY2026 has ended but no earnings release or 10-Q for that period exists in the evidence as of 2026-10-03; the latest reported quarter is Q2 FY2026 (quarter ended June 30, 2026). [1][2]\n- JPMorgan Chase Q3 FY2026 EPS guidance: The evidence contains no company-issued Q3 FY2026 EPS guidance; the Q2 FY2026 release and call provide only FY2026 net interest income, expense and Card Services net charge-off rate outlooks. [7][6]\n\n**Sources**\n[1] JPMORGAN CHASE & CO earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-07-14) (www.sec.gov, 2026-07-14, primary) https://www.sec.gov/Archives/edgar/data/19617/000162828026048078/a2q26erfexhibit991narrative.htm\n[2] FORM 10-Q (www.jpmorganchase.com, undated, primary) https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/quarterly-earnings/2026/2nd-quarter/corp-q2-2026.pdf\n[3] JPMORGAN CHASE & CO earnings release for Q2 FY2026, 8-K EX-99.2 (filed 2026-07-14) (www.sec.gov, 2026-07-14, primary) https://www.sec.gov/Archives/edgar/data/19617/000162828026048078/a2q26erfex992supplement.htm\n[4] JPMORGAN CHASE & CO 10-Q for Q2 FY2026 (filed 2026-08-06) (www.sec.gov, 2026-08-06, primary) https://www.sec.gov/Archives/edgar/data/19617/000162828026054343/jpm-20260630.htm\n[5] JPMORGAN CHASE & CO XBRL data tagged in 10-Q filed 2026-08-06 (www.sec.gov, 2026-08-06, primary) https://www.sec.gov/Archives/edgar/data/19617/000162828026054343/\n[6] 2Q26 Earnings Transcript (www.jpmorganchase.com, undated, primary) https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/quarterly-earnings/2026/2nd-quarter/2Q26-earnings-transcript.pdf\n[7] 2Q26 Earnings Presentation (www.jpmorganchase.com, undated, primary) https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/quarterly-earnings/2026/2nd-quarter/9e8f3cef-bd2a-4140-b50f-83c4fba3f23c.pdf\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 85253,
+   "output": 9134
+  },
+  "tavily_credits": 1.0,
+  "latency_s": 40.37,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/4efd6d484eebe553af3c6928ac09fdca",
+  "companies": [
+   {
+    "name": "JPMORGAN CHASE & CO",
+    "ticker": "JPM",
+    "cik": "19617",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "'3q26' read as fiscal Q3 2026 (2026-07-01 to 2026-09-30); JPM's fiscal year is the calendar year.",
+    "Q3 FY2026 has ended but is not yet reported (no earnings release listed), so per the fallback the plan covers the latest reported quarter, Q2 FY2026 (2026-04-01 to 2026-06-30), headline results and guidance instead.",
+    "'eps' read as GAAP diluted EPS, with net income as the accompanying bottom-line figure."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Q2 FY2026 GAAP diluted EPS (and prior-year comparative shown in the release)",
+    "Q2 FY2026 GAAP net income and net income applicable to common stockholders",
+    "Q2 FY2026 total net revenue and year-over-year growth",
+    "Q2 FY2026 operating income / expense and overhead ratio or margin detail",
+    "Company guidance or outlook for the next period (e.g. net interest income / expense outlook) as given in the Q2 FY2026 release or on the earnings call"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "JPM",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "JPM",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "JPM",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Management's guidance and commentary on the Q2 FY2026 earnings call (outlook for the next period, one-time items) that may not be in the release",
+     "query": "JPMorgan Chase Q2 2026 earnings call guidance net interest income outlook",
+     "topic": "general",
+     "days_back": null
+    }
+   ],
+   "availability_notes": [
+    "Q3 FY2026 (2026-07-01 to 2026-09-30) results are not yet reported as of 2026-10-03 — no earnings release or 10-Q exists for that period, so no Q3 FY2026 EPS can be stated or estimated.",
+    "Q3 FY2026 guidance, if any, would have been published in the Q2 FY2026 earnings release (2026-07-14) or discussed on that quarter's earnings call."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "JPMorgan Chase GAAP diluted EPS for fiscal Q3 2026 (quarter ended September 30, 2026)",
+    "kind": "not_reported_yet",
+    "reason": "Q3 FY2026 has ended but no earnings release or 10-Q for that period exists in the evidence as of 2026-10-03; the latest reported quarter is Q2 FY2026 (quarter ended June 30, 2026).",
+    "evidence_ids": [
+     "E1",
+     "E7"
+    ]
+   },
+   {
+    "item": "JPMorgan Chase Q3 FY2026 EPS guidance",
+    "kind": "not_disclosed",
+    "reason": "The evidence contains no company-issued Q3 FY2026 EPS guidance; the Q2 FY2026 release and call provide only FY2026 net interest income, expense and Card Services net charge-off rate outlooks.",
+    "evidence_ids": [
+     "E8",
+     "E9"
+    ]
+   }
+  ],
+  "removed": [],
+  "assumptions": [
+   "'3q26' read as fiscal Q3 2026 (2026-07-01 to 2026-09-30); JPM's fiscal year is the calendar year.",
+   "Q3 FY2026 has ended but is not yet reported (no earnings release listed), so per the fallback the plan covers the latest reported quarter, Q2 FY2026 (2026-04-01 to 2026-06-30), headline results and guidance instead.",
+   "'eps' read as GAAP diluted EPS, with net income as the accompanying bottom-line figure."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "JPMorgan Chase Q2 2026 earnings call guidance net interest income outlook",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-chase-q2-2026-earnings-115434127.html",
+      "https://www.trefis.com/data/companies/JPM",
+      "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/quarterly-earnings/2026/2nd-quarter/corp-q2-2026.pdf"
+     ],
+     "query": "jpm 3q26 eps",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/quarterly-earnings/2026/2nd-quarter/2Q26-earnings-transcript.pdf",
+    "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/quarterly-earnings/2026/2nd-quarter/9e8f3cef-bd2a-4140-b50f-83c4fba3f23c.pdf",
+    "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/quarterly-earnings/2026/2nd-quarter/corp-q2-2026.pdf",
+    "https://www.sec.gov/Archives/edgar/data/19617/000162828026048078/a2q26erfex992supplement.htm",
+    "https://www.sec.gov/Archives/edgar/data/19617/000162828026048078/a2q26erfexhibit991narrative.htm",
+    "https://www.sec.gov/Archives/edgar/data/19617/000162828026054343/",
+    "https://www.sec.gov/Archives/edgar/data/19617/000162828026054343/jpm-20260630.htm"
+   ],
+   "cited_primary": 4,
+   "retrieved": 9,
+   "retrieved_primary": 4
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 0.75,
+   "points": [
+    {
+     "point": "Identifies JPMorgan Chase (JPM) and states that Q3 2026 results have not been reported as of 2026-10-03, with the scheduled Oct. 13, 2026 date.",
+     "optional": false,
+     "met": false,
+     "note": "Identifies JPMorgan Chase and says Q3 FY2026 is not yet reported as of 2026-10-03, but does not state the scheduled Oct. 13 release date."
+    },
+    {
+     "point": "Gives no Q3 2026 EPS figure, whether an estimate, consensus, or guess.",
+     "optional": false,
+     "met": true,
+     "note": "No Q3 2026 EPS figure or estimate is given."
+    },
+    {
+     "point": "Offers the latest reported quarter, Q2 2026 (ended June 30, 2026; reported July 14, 2026), with EPS labeled and cited.",
+     "optional": false,
+     "met": true,
+     "note": "Offers Q2 FY2026 ending June 30, labels GAAP diluted EPS as $7.70, and cites the Q2 earnings release and filings; source [1] is identified as filed July 14, 2026."
+    },
+    {
+     "point": "Avoids giving any Q3 2026 EPS number or analyst estimate.",
+     "optional": false,
+     "met": true,
+     "note": "The response gives no Q3 EPS number or analyst estimate."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The answer abstains from providing Q3 EPS and supplies cited Q2 reported diluted EPS. It does not state the specified Oct. 13, 2026 scheduled release date, so the first requirement is incomplete.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "partial",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "JPMorgan Chase reported GAAP diluted EPS of $7.70 for Q2 2026, ended June 30, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026048078/a2q26erfexhibit991narrative.htm",
+     "reason": "The Q2 2026 earnings release identifies the results as second-quarter 2026 and lists diluted earnings per share of $7.70 in the reported results table. The supplement and 10-Q likewise show $7.70 for the three months ended June 30, 2026. This is actual reported GAAP/reported-basis diluted EPS, not guidance.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "JPMorgan Chase reported net income of $21,155 million for Q2 2026, ended June 30, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026048078/a2q26erfexhibit991narrative.htm",
+     "reason": "The release and supporting financial supplement list Q2 2026 net income as $21,155 million; the 10-Q confirms $21,155 million for the three months ended June 30, 2026. This is actual reported net income (GAAP), not an adjusted figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 diluted EPS of $7.70 was up 30% from Q1 2026 and 47% from Q2 2025, as disclosed.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026048078/a2q26erfexhibit991narrative.htm",
+     "reason": "The release table gives diluted EPS of $7.70 for 2Q26, $5.94 for 1Q26, and $5.24 for 2Q25, with disclosed changes of 30% and 47%. The arithmetic checks: (7.70−5.94)/5.94 = 29.63%, which rounds to 30%; (7.70−5.24)/5.24 = 46.95%, which rounds to 47%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Excluding significant items, JPMorgan Chase reported Q2 2026 net income of $16.9 billion and EPS of $6.14.",
+     "numeric": true,
+     "cited_url": "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/quarterly-earnings/2026/2nd-quarter/2Q26-earnings-transcript.pdf",
+     "reason": "The transcript attributes to CFO Jeremy Barnum the statement that, excluding the significant items noted, the Firm delivered net income of $16.9 billion and EPS of $6.14. These are actual quarter results on an adjusted/non-GAAP basis, not guidance.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "For Q2 2026, JPMorgan Chase reported net revenue of $57,347 million on a reported basis and managed net revenue of $58,022 million on a non-GAAP managed basis.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026048078/a2q26erfexhibit991narrative.htm",
+     "reason": "The release table lists 2Q26 reported net revenue of $57,347 million and managed net revenue of $58,022 million. Its notes define managed-basis results as non-GAAP and distinguish them from reported U.S. GAAP results. The financial supplement confirms both amounts.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "With Q2 2026 results, JPMorgan Chase expected FY2026 net interest income of approximately $105.5 billion, market dependent.",
+     "numeric": true,
+     "cited_url": "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/quarterly-earnings/2026/2nd-quarter/9e8f3cef-bd2a-4140-b50f-83c4fba3f23c.pdf",
+     "reason": "The earnings presentation's outlook states: 'Expect FY2026 net interest income of ~$105.5B, market dependent.' This is company guidance for the full fiscal year, not a reported actual.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "With Q2 2026 results, JPMorgan Chase expected FY2026 net interest income excluding Markets of approximately $96.5 billion, market dependent.",
+     "numeric": true,
+     "cited_url": "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/quarterly-earnings/2026/2nd-quarter/9e8f3cef-bd2a-4140-b50f-83c4fba3f23c.pdf",
+     "reason": "The presentation explicitly states FY2026 net interest income excluding Markets of ~$96.5B, market dependent. The transcript also gives the ~$96.5 billion full-year outlook. This is guidance, not an actual quarterly result.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "With Q2 2026 results, JPMorgan Chase expected FY2026 adjusted expense of approximately $107.5 billion and a Card Services net charge-off rate of approximately 3.2%.",
+     "numeric": true,
+     "cited_url": "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/quarterly-earnings/2026/2nd-quarter/9e8f3cef-bd2a-4140-b50f-83c4fba3f23c.pdf",
+     "reason": "The presentation outlook lists FY2026 adjusted expense of ~$107.5B and FY2026 Card Services NCO rate of ~3.2%. Its note defines adjusted expense as excluding Firmwide legal expense. Both are FY2026 guidance, not actuals.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Q2 2026 earnings release was filed July 14, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026048078/a2q26erfexhibit991narrative.htm",
+     "reason": "The cited source entry gives the filing date as 2026-07-14, and the retrieved SEC source metadata shows published_date 2026-07-14. The release is the company's second-quarter 2026 results release.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "JPMorgan Chase's Q2 2026 Form 10-Q was filed August 6, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026054343/jpm-20260630.htm",
+     "reason": "The source entry identifies the document as the Q2 FY2026 10-Q filed 2026-08-06, and the retrieved SEC source metadata shows published_date 2026-08-06. Its contents report the quarter ended June 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 10,
+   "numeric_cited": 10,
+   "cited": 10,
+   "supported": 10,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 139.6
+ }
+}

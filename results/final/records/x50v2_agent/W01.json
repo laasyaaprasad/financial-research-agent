@@ -1,0 +1,394 @@
+{
+ "id": "W01",
+ "category": "call commentary",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "On Bank of America's second-quarter 2026 earnings call (July 14, 2026), what full-year 2026 outlook did the CFO give for (a) net interest income (NII) growth and (b) operating leverage, and how did each compare with the outlook he said had been given earlier in 2026 (in January and/or April)?",
+ "grading": "Key points (all required): (1) full-year 2026 NII growth expected at the UPPER END of the 6%-8% range (not a new numeric range); (2) full-year 2026 operating leverage expected in the range of 300 to 400 basis points; (3) comparison with earlier outlook: NII growth was 5%-7% in January and raised to 6%-8% in April; operating leverage was 'more than 200 basis points' as of the April (Q1) call. Accept equivalent wording ('top end of 6-8%', '3-4 percentage points'). Fail if the answer gives plain 6%-8% or 5%-7% as the current NII view without 'upper end', gives 'more than 200 bps' as the current operating-leverage view, states a dollar NII figure as guidance, or relies on remarks from the Q3 2026 call (mid-October 2026, after the as_of date) or the mid-September Barclays conference.",
+ "answer": "(a) Full-year 2026 NII growth is now expected at the upper end of the 6%-8% range (the CFO recalled 5%-7% in January, raised to 6%-8% in April) [W01-E1]. (b) Full-year 2026 operating leverage is now expected to be 300 to 400 basis points, up from 'more than 200 basis points' given on the April call; first-half 2026 operating leverage had already exceeded 450 bps (Q2: 6.6%) [W01-E1]. Neither full-year outlook appears in the July 14 press release or in the slide deck filed with the 8-K [W01-E2, W01-E3].",
+ "output": {
+  "answer": "**Question:** On Bank of America's second-quarter 2026 earnings call (July 14, 2026), what full-year 2026 outlook did the CFO give for (a) net interest income (NII) growth and (b) operating leverage, and how did each compare with the outlook he said had been given earlier in 2026 (in January and/or April)?\n*As of 2026-10-03*\n\n**Interpreted as:** 'Second-quarter 2026 earnings call' read as BAC's Q2 FY2026 (quarter ended 2026-06-30) call held 2026-07-14, matching the 8-K earnings release date. Full-year 2026 = fiscal year ending 2026-12-31 (BAC's fiscal year is the calendar year). NII growth read as the CFO's stated full-year 2026 net interest income (GAAP, FTE basis as the company guides) growth versus 2025. Operating leverage read as the CFO's stated full-year 2026 operating leverage (revenue growth less expense growth) outlook. 'Earlier in 2026' read as the outlooks given on the Q4 2025 call (January 2026) and the Q1 2026 call (April 2026); both are compared where stated.\n\n- The only full-year 2026 net interest income growth outlook in the evidence is the one reported by CNBC on April 15, 2026 (Q1 FY2026 results day), when Bank of America raised its full-year 2026 NII growth guidance to between 6% and 8%, up from a prior projection of between 5% and 7%. [1]\n- The evidence does not attribute the April 2026 full-year 2026 NII growth guidance to the CFO by name; CNBC describes it as the bank's guidance, and the Q1 FY2026 8-K release (filed 2026-04-15) contains no full-year NII growth or operating leverage outlook. [1][2]\n\n**Not available**\n- CFO's full-year 2026 net interest income growth outlook given on the Q2 FY2026 earnings call (July 14, 2026): The evidence contains BAC's Q2 FY2026 8-K earnings release, presentation and supplemental information (all filed 2026-07-14) plus XBRL data, but no transcript or coverage of the July 14, 2026 earnings call, so the CFO's call commentary on full-year 2026 NII growth is not present. [3][4][5]\n- CFO's full-year 2026 operating leverage outlook given on the Q2 FY2026 earnings call (July 14, 2026): No call transcript or coverage is provided; the Q2 FY2026 materials report only the quarterly operating leverage of 6.6% for 2Q26, not a full-year 2026 operating leverage outlook. [3][4]\n- Comparison of the July 14, 2026 call's full-year 2026 NII growth and operating leverage outlooks with the January 2026 and April 2026 outlooks: The July 14, 2026 call outlooks are not in the evidence, so no comparison against the earlier 2026 outlooks can be made from the provided material. [3][4][5]\n- Full-year 2026 operating leverage outlook given earlier in 2026 (January 2026 Q4 2025 call and/or April 2026 Q1 2026 call): The evidence provides only quarterly operating leverage figures (e.g., 2.9% for 1Q26 and 6.6% for 2Q26) and no full-year 2026 operating leverage guidance from either the January or April 2026 calls. [2][6][3][4]\n- CFO's full-year 2026 NII growth outlook given on the January 2026 Q4 2025 earnings call: The January 14, 2026 Q4 2025 release and the CNBC preview of that date do not state a full-year 2026 NII growth outlook; the 5%-7% prior projection is referenced only retrospectively in the April 15, 2026 CNBC article, without attribution to the January call or the CFO. [7][8][1]\n\n**Sources**\n[1] Bank of America is set to report earnings. Here's what to expect - CNBC (www.cnbc.com, 2026-04-15, secondary) https://www.cnbc.com/2026/04/15/bank-of-america-bac-earnings-q1-2026.html\n[2] BANK OF AMERICA CORP /DE/ earnings release for Q1 FY2026, 8-K EX-99.1 (filed 2026-04-15) (www.sec.gov, 2026-04-15, primary) https://www.sec.gov/Archives/edgar/data/70858/000007085826000222/bac03312026ex991.htm\n[3] BANK OF AMERICA CORP /DE/ earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-07-14) (www.sec.gov, 2026-07-14, primary) https://www.sec.gov/Archives/edgar/data/70858/000007085826000353/bac06302026ex991.htm\n[4] BANK OF AMERICA CORP /DE/ earnings release for Q2 FY2026, 8-K EX-99.2 (filed 2026-07-14) (www.sec.gov, 2026-07-14, primary) https://www.sec.gov/Archives/edgar/data/70858/000007085826000353/bac06302026ex992.htm\n[5] BANK OF AMERICA CORP /DE/ earnings release for Q2 FY2026, 8-K EX-99.3 (filed 2026-07-14) (www.sec.gov, 2026-07-14, primary) https://www.sec.gov/Archives/edgar/data/70858/000007085826000353/bac-06302026ex993.htm\n[6] BANK OF AMERICA CORP /DE/ earnings release for Q1 FY2026, 8-K EX-99.2 (filed 2026-04-15) (www.sec.gov, 2026-04-15, primary) https://www.sec.gov/Archives/edgar/data/70858/000007085826000222/bac03312026ex992.htm\n[7] Bank of America Reports Fourth Quarter 2025 Financial Results - Bank of America (newsroom.bankofamerica.com, 2026-01-14, primary) https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/01/bank-of-america-reports-fourth-quarter-2025-financial-results.html\n[8] Bank of America is set to report fourth-quarter earnings – here's what to expect - CNBC (www.cnbc.com, 2026-01-14, secondary) https://www.cnbc.com/2026/01/14/bank-of-america-bac-q4-2025-earnings.html\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 78779,
+   "output": 6973
+  },
+  "tavily_credits": 6.0,
+  "latency_s": 48.16,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/c0e8bc8a547612b43d48eaa7a1016235",
+  "companies": [
+   {
+    "name": "BANK OF AMERICA CORP /DE/",
+    "ticker": "BAC",
+    "cik": "70858",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "'Second-quarter 2026 earnings call' read as BAC's Q2 FY2026 (quarter ended 2026-06-30) call held 2026-07-14, matching the 8-K earnings release date.",
+    "Full-year 2026 = fiscal year ending 2026-12-31 (BAC's fiscal year is the calendar year).",
+    "NII growth read as the CFO's stated full-year 2026 net interest income (GAAP, FTE basis as the company guides) growth versus 2025.",
+    "Operating leverage read as the CFO's stated full-year 2026 operating leverage (revenue growth less expense growth) outlook.",
+    "'Earlier in 2026' read as the outlooks given on the Q4 2025 call (January 2026) and the Q1 2026 call (April 2026); both are compared where stated."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "CFO's full-year 2026 net interest income (NII) growth outlook as stated on the Q2 2026 earnings call (July 14, 2026)",
+    "CFO's full-year 2026 operating leverage outlook as stated on the Q2 2026 earnings call",
+    "The earlier full-year 2026 NII growth outlook the CFO said had been given in January 2026 (Q4 2025 earnings call) and/or April 2026 (Q1 2026 earnings call)",
+    "The earlier full-year 2026 operating leverage outlook given in January and/or April 2026",
+    "Direction and magnitude of the change between the earlier outlooks and the Q2 2026 outlook for each metric (raised/lowered/reaffirmed, and by how much)",
+    "Any qualifications or drivers the CFO cited for the revised NII and operating leverage outlooks (rate path, deposit costs, loan growth, expenses)"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "BAC",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "BAC",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "BAC",
+     "period": "Q1 FY2026",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "CFO's full-year 2026 NII growth and operating leverage outlook given on the Q2 2026 earnings call (July 14, 2026)",
+     "query": "Bank of America Q2 2026 earnings call CFO full-year 2026 net interest income growth operating leverage outlook",
+     "topic": "news",
+     "days_back": 120
+    },
+    {
+     "purpose": "The earlier full-year 2026 NII and operating leverage outlook given in April 2026 (Q1 2026 earnings call)",
+     "query": "Bank of America Q1 2026 earnings call CFO 2026 net interest income growth operating leverage guidance April 2026",
+     "topic": "news",
+     "days_back": 300
+    },
+    {
+     "purpose": "The January 2026 full-year 2026 NII and operating leverage outlook (Q4 2025 earnings call)",
+     "query": "Bank of America Q4 2025 earnings call January 2026 full-year 2026 net interest income operating leverage guidance",
+     "topic": "news",
+     "days_back": 400
+    }
+   ],
+   "availability_notes": [
+    "The full-year 2026 NII growth and operating leverage outlooks are management commentary given on the earnings call; they may not be fully quantified in the 8-K earnings release, so call coverage is needed.",
+    "The January 2026 outlook was given on the Q4 2025 earnings call, which is outside the provided FY2026 calendar; it must be sourced from call coverage/news rather than a listed filing.",
+    "FY2026 itself is still in progress and not yet reported, so no actual full-year results exist to compare against — only outlooks."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "CFO's full-year 2026 net interest income growth outlook given on the Q2 FY2026 earnings call (July 14, 2026)",
+    "kind": "not_in_evidence",
+    "reason": "The evidence contains BAC's Q2 FY2026 8-K earnings release, presentation and supplemental information (all filed 2026-07-14) plus XBRL data, but no transcript or coverage of the July 14, 2026 earnings call, so the CFO's call commentary on full-year 2026 NII growth is not present.",
+    "evidence_ids": [
+     "E1",
+     "E2",
+     "E3"
+    ]
+   },
+   {
+    "item": "CFO's full-year 2026 operating leverage outlook given on the Q2 FY2026 earnings call (July 14, 2026)",
+    "kind": "not_in_evidence",
+    "reason": "No call transcript or coverage is provided; the Q2 FY2026 materials report only the quarterly operating leverage of 6.6% for 2Q26, not a full-year 2026 operating leverage outlook.",
+    "evidence_ids": [
+     "E1",
+     "E2"
+    ]
+   },
+   {
+    "item": "Comparison of the July 14, 2026 call's full-year 2026 NII growth and operating leverage outlooks with the January 2026 and April 2026 outlooks",
+    "kind": "not_in_evidence",
+    "reason": "The July 14, 2026 call outlooks are not in the evidence, so no comparison against the earlier 2026 outlooks can be made from the provided material.",
+    "evidence_ids": [
+     "E1",
+     "E2",
+     "E3"
+    ]
+   },
+   {
+    "item": "Full-year 2026 operating leverage outlook given earlier in 2026 (January 2026 Q4 2025 call and/or April 2026 Q1 2026 call)",
+    "kind": "not_in_evidence",
+    "reason": "The evidence provides only quarterly operating leverage figures (e.g., 2.9% for 1Q26 and 6.6% for 2Q26) and no full-year 2026 operating leverage guidance from either the January or April 2026 calls.",
+    "evidence_ids": [
+     "E4",
+     "E5",
+     "E1",
+     "E2"
+    ]
+   },
+   {
+    "item": "CFO's full-year 2026 NII growth outlook given on the January 2026 Q4 2025 earnings call",
+    "kind": "not_in_evidence",
+    "reason": "The January 14, 2026 Q4 2025 release and the CNBC preview of that date do not state a full-year 2026 NII growth outlook; the 5%-7% prior projection is referenced only retrospectively in the April 15, 2026 CNBC article, without attribution to the January call or the CFO.",
+    "evidence_ids": [
+     "E10",
+     "E11",
+     "E8"
+    ]
+   }
+  ],
+  "removed": [],
+  "assumptions": [
+   "'Second-quarter 2026 earnings call' read as BAC's Q2 FY2026 (quarter ended 2026-06-30) call held 2026-07-14, matching the 8-K earnings release date.",
+   "Full-year 2026 = fiscal year ending 2026-12-31 (BAC's fiscal year is the calendar year).",
+   "NII growth read as the CFO's stated full-year 2026 net interest income (GAAP, FTE basis as the company guides) growth versus 2025.",
+   "Operating leverage read as the CFO's stated full-year 2026 operating leverage (revenue growth less expense growth) outlook.",
+   "'Earlier in 2026' read as the outlooks given on the Q4 2025 call (January 2026) and the Q1 2026 call (April 2026); both are compared where stated."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Bank of America Q2 2026 earnings call CFO full-year 2026 net interest income growth operating leverage outlook",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2026-06-05"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Bank of America Q1 2026 earnings call CFO 2026 net interest income growth operating leverage guidance April 2026",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2025-12-07"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Bank of America Q4 2025 earnings call January 2026 full-year 2026 net interest income operating leverage guidance",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2025-08-29"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.cnbc.com/2026/04/15/bank-of-america-bac-earnings-q1-2026.html",
+      "https://markets.ft.com/data/announce/detail?dockey=600-202604150645CANADANWCANADAPR_C0667-1",
+      "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/01/bank-of-america-reports-fourth-quarter-2025-financial-results.html"
+     ],
+     "query": "On Bank of America's second-quarter 2026 earnings call (July 14, 2026), what full-year 2026 outlook did the CFO give for (a) net interest income (NII) growth and (b) operating leverage, and how did each compare with the outlook he said had been given earlier in 2026 (in January and/or April)?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Bank of America CFO's full-year 2026 net interest income growth outlook given on the Q2 FY2026 earnings call (July 14, 2026)",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Bank of America CFO's full-year 2026 operating leverage outlook given on the Q2 FY2026 earnings call (July 14, 2026)",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/01/bank-of-america-reports-fourth-quarter-2025-financial-results.html",
+    "https://www.cnbc.com/2026/01/14/bank-of-america-bac-q4-2025-earnings.html",
+    "https://www.cnbc.com/2026/04/15/bank-of-america-bac-earnings-q1-2026.html",
+    "https://www.sec.gov/Archives/edgar/data/70858/000007085826000222/bac03312026ex991.htm",
+    "https://www.sec.gov/Archives/edgar/data/70858/000007085826000222/bac03312026ex992.htm",
+    "https://www.sec.gov/Archives/edgar/data/70858/000007085826000353/bac-06302026ex993.htm",
+    "https://www.sec.gov/Archives/edgar/data/70858/000007085826000353/bac06302026ex991.htm",
+    "https://www.sec.gov/Archives/edgar/data/70858/000007085826000353/bac06302026ex992.htm"
+   ],
+   "cited_primary": 5,
+   "retrieved": 12,
+   "retrieved_primary": 7
+  },
+  "recall": {
+   "figures": 16,
+   "found": 14
+  },
+  "correctness": {
+   "score": 0.5,
+   "points": [
+    {
+     "point": "States that full-year 2026 NII growth is expected at the upper end of the 6%-8% range.",
+     "optional": false,
+     "met": false,
+     "note": "The answer says the July call outlook is unavailable and only reports the April 6%-8% guidance."
+    },
+    {
+     "point": "States that full-year 2026 operating leverage is expected in the range of 300 to 400 basis points.",
+     "optional": false,
+     "met": false,
+     "note": "The answer says no full-year outlook is available and does not give 300-400 basis points."
+    },
+    {
+     "point": "Compares the NII outlook with the earlier outlook: 5%-7% in January, raised to 6%-8% in April.",
+     "optional": false,
+     "met": false,
+     "note": "It reports an April 6%-8% outlook raised from a prior 5%-7% projection, but does not identify the 5%-7% outlook as January's; it explicitly says the source does not attribute it to the January call."
+    },
+    {
+     "point": "Compares the operating-leverage outlook with the earlier April outlook of more than 200 basis points.",
+     "optional": false,
+     "met": false,
+     "note": "The answer does not state the earlier more-than-200-basis-point outlook."
+    },
+    {
+     "point": "Does not present plain 6%-8% or 5%-7% as the current NII outlook without saying 'upper end'.",
+     "optional": false,
+     "met": true,
+     "note": "It presents those ranges only as earlier guidance and says the July call outlook is unavailable."
+    },
+    {
+     "point": "Does not present 'more than 200 basis points' as the current operating-leverage outlook.",
+     "optional": false,
+     "met": true,
+     "note": "It does not give that figure as the current outlook."
+    },
+    {
+     "point": "Does not state a dollar NII figure as guidance.",
+     "optional": false,
+     "met": true,
+     "note": "No dollar NII guidance is given."
+    },
+    {
+     "point": "Does not rely on remarks from the Q3 2026 call or the mid-September Barclays conference.",
+     "optional": false,
+     "met": true,
+     "note": "The answer cites neither source."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The answer withholds both requested current full-year outlook figures. It mentions the April NII range but does not state the required January-to-April history explicitly, and omits the prior April operating-leverage outlook.",
+   "judge_verdict": "incorrect",
+   "votes": [
+    "incorrect",
+    "incorrect",
+    "incorrect"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "BAC raised 2026 NII growth guidance from 5–7% to 6–8% on April 15, 2026",
+     "numeric": true,
+     "cited_url": "https://www.cnbc.com/2026/04/15/bank-of-america-bac-earnings-q1-2026.html",
+     "reason": "CNBC, published 2026-04-15, says Bank of America previously projected net interest income growth of 5%–7% “this year” and raised guidance Wednesday to 6%–8% due to first-quarter outperformance. The article date anchors “this year” to 2026. It does not specify a GAAP/FTE basis or identify the CFO as the source, so this supports the bank-level guidance and ranges only.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "BAC reported 2Q26 quarterly operating leverage of 6.6%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/70858/000007085826000353/bac06302026ex991.htm",
+     "reason": "The Q2 2026 earnings release, filed 2026-07-14, reports “Operating Leverage of 6.6%” and defines operating leverage as revenue growth less noninterest-expense growth year over year. This is a quarterly 2Q26 actual, not a full-year outlook.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "BAC reported 1Q26 quarterly operating leverage of 2.9%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/70858/000007085826000222/bac03312026ex992.htm",
+     "reason": "The Q1 2026 presentation, filed 2026-04-15, reports “Operating leverage 2.9%” for 1Q26. This is a quarterly actual, not a full-year outlook.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 3,
+   "supported": 3,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 21.8
+ }
+}

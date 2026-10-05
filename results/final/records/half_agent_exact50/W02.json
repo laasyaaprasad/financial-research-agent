@@ -1,0 +1,320 @@
+{
+ "id": "W02",
+ "category": "call commentary",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "On ASML's second-quarter 2026 results call (July 15, 2026), what full-year 2026 growth did management say it expected for (a) memory-related net system sales, (b) EUV net system sales and (c) Installed Base Management sales, and roughly how many Low NA EUV systems did it expect to ship in 2026?",
+ "grading": "Key points (all required): (a) memory-related net system sales to grow by OVER 75% in 2026; (b) EUV net system sales growth of OVER 45%, on around 65 Low NA EUV systems shipped in 2026; (c) Installed Base Management sales to grow OVER 30% in 2026. Accept 'more than'/'over' phrasing; do not accept ranges that replace the thresholds. Optional supporting items (not required): advanced Logic foundry-related net system sales >25%; non-EUV system sales ~+25% on ~130 immersion shipments; China ~20% of 2026 net sales. Fail if the answer substitutes the EUR 43-45bn FY2026 sales range, the 30% 2027 capacity increase, or Q3 guidance for these growth rates, or uses statements from the Q3 2026 results (October 2026, after the as_of date).",
+ "answer": "(a) Memory-related net system sales expected to grow by over 75% in 2026; (b) EUV net system sales growth of over 45%, with around 65 Low NA EUV systems expected to ship in 2026; (c) Installed Base Management sales expected to grow over 30% [W02-E1]. Also on the call: advanced Logic foundry-related net system sales >25%, non-EUV system sales ~+25% (about 130 immersion DUV shipments) and China about 20% of 2026 net sales [W02-E1]. None of these growth rates appears in the press release or presentation, which give FY2026 net sales of EUR 43-45bn, gross margin 54%-56% and the 2027 capacity plans [W02-E2, W02-E3].",
+ "output": {
+  "answer": "**Question:** On ASML's second-quarter 2026 results call (July 15, 2026), what full-year 2026 growth did management say it expected for (a) memory-related net system sales, (b) EUV net system sales and (c) Installed Base Management sales, and roughly how many Low NA EUV systems did it expect to ship in 2026?\n*As of 2026-10-03*\n\n**Interpreted as:** 'ASML' read as ASML Holding NV (ticker ASML), a foreign private issuer that files only a Form 20-F annually. The question is about the Q2 2026 results call held 2026-07-15 (quarter ended 2026-06-30); ASML's quarterly results are not in the SEC calendar, so the call/release must be sourced from the web. The growth figures asked for are management's full-year 2026 (FY2026, ending 2026-12-31) expectations versus FY2025, as stated on that call. 'Memory-related net system sales' = net system sales to memory customers; 'EUV net system sales' = total EUV net system sales; 'Installed Base Management sales' = ASML's service/field-option segment. 'Low NA EUV systems' = 0.33 NA (NXE) EUV systems, as distinct from High NA (EXE).\n\n| | Growth (%) | Systems (count) |\n|---|---|---|\n| Memory-related net system sales growth, FY2026 (ending 2026-12-31) vs FY2025 — management expectation on the 2026-07-15 Q2 2026 call | over 75% (also described as \"roughly 75%\") [1][2] | — |\n| EUV net system sales growth, FY2026 (ending 2026-12-31) vs FY2025 — management expectation on the 2026-07-15 Q2 2026 call | about 45% (also described as \"over 45%\") [2][3] | — |\n| Installed Base Management sales growth, FY2026 (ending 2026-12-31) vs FY2025 — management expectation on the 2026-07-15 Q2 2026 call | over 30% [1][2] | — |\n| Low NA EUV systems expected to ship, FY2026 (ending 2026-12-31) — management expectation on the 2026-07-15 Q2 2026 call | — | about 65 [2][4] |\n\n- On ASML's Q2 2026 results call held 2026-07-15 (quarter ended 2026-06-30), management gave these as forward-looking expectations for FY2026 (year ending 2026-12-31) versus FY2025, not as reported results. [2][4]\n- Management said the FY2026 growth expectations were supported by about 45% growth in the EUV business, about 25% growth in DUV metrology and inspection, more than 30% growth in the combined upgrade and service business, and roughly 75% growth in memory revenue. [2]\n- The Low NA EUV shipment figure was tied to capacity planning: ASML said it plans to add 30% to its 2026 low NA EUV capacity of around 65 for 2027. [4]\n\n**Sources**\n[1] ASML (ASML) Q2 2026 Earnings Call Transcript | The Motley Fool (www.fool.com, undated, secondary) https://www.fool.com/earnings/call-transcripts/2026/07/15/asml-asml-q2-2026-earnings-call-transcript\n[2] Earnings call transcript: ASML Q2 2026 beats guidance as AI demand lifts outlook By Investing.com (www.investing.com, undated, secondary) https://www.investing.com/news/transcripts/earnings-call-transcript-asml-q2-2026-beats-guidance-as-ai-demand-lifts-outlook-93CH-4792156\n[3] ASML Holding NV (ASML) Q2 2026 Earnings Call Highlights: Surpassing Guidance with Strong EUV ... (finance.yahoo.com, undated, secondary) https://finance.yahoo.com/markets/stocks/articles/asml-holding-nv-asml-q2-210029930.html\n[4] Press Release Financial Results Q2 2026 (ourbrand.asml.com, undated, primary) https://ourbrand.asml.com/asset/c8dbf3fc-4c5e-4406-83f6-27694b138245/Press-Release-Financial-Results-Q2-2026.pdf\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 28220,
+   "output": 18400
+  },
+  "tavily_credits": 3.0,
+  "latency_s": 84.71,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/8c93613dd0ddf29ad6f6a4166e4b4f8b",
+  "companies": [
+   {
+    "name": "ASML HOLDING NV",
+    "ticker": "ASML",
+    "cik": "937966",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "'ASML' read as ASML Holding NV (ticker ASML), a foreign private issuer that files only a Form 20-F annually.",
+    "The question is about the Q2 2026 results call held 2026-07-15 (quarter ended 2026-06-30); ASML's quarterly results are not in the SEC calendar, so the call/release must be sourced from the web.",
+    "The growth figures asked for are management's full-year 2026 (FY2026, ending 2026-12-31) expectations versus FY2025, as stated on that call.",
+    "'Memory-related net system sales' = net system sales to memory customers; 'EUV net system sales' = total EUV net system sales; 'Installed Base Management sales' = ASML's service/field-option segment.",
+    "'Low NA EUV systems' = 0.33 NA (NXE) EUV systems, as distinct from High NA (EXE)."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Management's expected FY2026 growth (year-over-year) in memory-related net system sales, as stated on the July 15, 2026 Q2 2026 call",
+    "Management's expected FY2026 growth (year-over-year) in EUV net system sales",
+    "Management's expected FY2026 growth (year-over-year) in Installed Base Management sales",
+    "Management's expected number of Low NA (0.33 NA / NXE) EUV systems to ship in 2026",
+    "Context: Q2 2026 headline results and any FY2026 total revenue/gross margin guidance given on the same call"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "ASML",
+     "label": "FY2026"
+    }
+   ],
+   "documents": [],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Find management's FY2026 growth expectations for memory net system sales, EUV net system sales and Installed Base Management sales, plus Low NA EUV shipment count, as stated on the Q2 2026 call",
+     "query": "ASML Q2 2026 earnings call July 15 2026 memory EUV Installed Base Management 2026 growth guidance",
+     "topic": "general",
+     "days_back": null
+    },
+    {
+     "purpose": "Cross-check the Low NA EUV (NXE) 2026 shipment expectation and full-year 2026 outlook from the Q2 2026 results release/call coverage",
+     "query": "ASML second quarter 2026 results Low NA EUV shipments 2026 outlook",
+     "topic": "news",
+     "days_back": 120
+    }
+   ],
+   "availability_notes": [
+    "ASML files annual reports only (Form 20-F); its Q2 2026 quarterly results and the July 15, 2026 earnings call are not in the SEC filing calendar, so these figures must come from web coverage of the call/release.",
+    "FY2026 is still in progress and not yet reported; the figures sought are management's forward-looking expectations, not reported results.",
+    "These specific growth expectations (memory net system sales, EUV net system sales, Installed Base Management sales) and the Low NA EUV shipment count are typically given only in management commentary on the call, not in the financial statements."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "assumptions": [
+   "'ASML' read as ASML Holding NV (ticker ASML), a foreign private issuer that files only a Form 20-F annually.",
+   "The question is about the Q2 2026 results call held 2026-07-15 (quarter ended 2026-06-30); ASML's quarterly results are not in the SEC calendar, so the call/release must be sourced from the web.",
+   "The growth figures asked for are management's full-year 2026 (FY2026, ending 2026-12-31) expectations versus FY2025, as stated on that call.",
+   "'Memory-related net system sales' = net system sales to memory customers; 'EUV net system sales' = total EUV net system sales; 'Installed Base Management sales' = ASML's service/field-option segment.",
+   "'Low NA EUV systems' = 0.33 NA (NXE) EUV systems, as distinct from High NA (EXE)."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "ASML Q2 2026 earnings call July 15 2026 memory EUV Installed Base Management 2026 growth guidance",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "ASML second quarter 2026 results Low NA EUV shipments 2026 outlook",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2026-06-05"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.investing.com/news/transcripts/earnings-call-transcript-asml-q2-2026-beats-guidance-as-ai-demand-lifts-outlook-93CH-4792156",
+      "https://seekingalpha.com/article/4922266-asml-just-told-us-the-ai-boom-isnt-slowing-down",
+      "https://finance.yahoo.com/markets/stocks/articles/asml-holding-nv-asml-q2-210029930.html"
+     ],
+     "query": "On ASML's second-quarter 2026 results call (July 15, 2026), what full-year 2026 growth did management say it expected for (a) memory-related net system sales, (b) EUV net system sales and (c) Installed Base Management sales, and roughly how many Low NA EUV systems did it expect to ship in 2026?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/asml-holding-nv-asml-q2-210029930.html",
+    "https://ourbrand.asml.com/asset/c8dbf3fc-4c5e-4406-83f6-27694b138245/Press-Release-Financial-Results-Q2-2026.pdf",
+    "https://www.fool.com/earnings/call-transcripts/2026/07/15/asml-asml-q2-2026-earnings-call-transcript",
+    "https://www.investing.com/news/transcripts/earnings-call-transcript-asml-q2-2026-beats-guidance-as-ai-demand-lifts-outlook-93CH-4792156"
+   ],
+   "cited_primary": 1,
+   "retrieved": 6,
+   "retrieved_primary": 1
+  },
+  "recall": {
+   "figures": 17,
+   "found": 16
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "States memory-related net system sales were expected to grow by over 75% in 2026.",
+     "optional": false,
+     "met": true,
+     "note": "The table says “over 75%,” although it also adds “roughly 75%.”"
+    },
+    {
+     "point": "States EUV net system sales were expected to grow by over 45% in 2026.",
+     "optional": false,
+     "met": true,
+     "note": "The table explicitly includes “over 45%,” while also describing it as “about 45%.”"
+    },
+    {
+     "point": "States that around 65 Low NA EUV systems were expected to ship in 2026.",
+     "optional": false,
+     "met": true,
+     "note": "The table gives “about 65” as the systems expected to ship."
+    },
+    {
+     "point": "States Installed Base Management sales were expected to grow by over 30% in 2026.",
+     "optional": false,
+     "met": true,
+     "note": "The table says “over 30%.”"
+    },
+    {
+     "point": "Does not substitute the EUR 43–45bn FY2026 total-sales range for the requested growth rates.",
+     "optional": false,
+     "met": true,
+     "note": "The answer gives the requested segment growth rates and does not present this range as a growth rate."
+    },
+    {
+     "point": "Does not substitute the 30% 2027 capacity increase for a requested growth rate or shipment count.",
+     "optional": false,
+     "met": true,
+     "note": "The answer separately mentions the 2027 capacity plan but gives the requested growth rates and shipment count."
+    },
+    {
+     "point": "Does not substitute Q3 guidance for the requested 2026 segment growth rates.",
+     "optional": false,
+     "met": true,
+     "note": "No Q3 guidance is used as an answer to the requested rates."
+    },
+    {
+     "point": "Does not use statements from ASML's Q3 2026 results (October 2026) as the source for the requested figures.",
+     "optional": false,
+     "met": true,
+     "note": "The answer attributes the figures to the July 15 Q2 2026 call."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All required figures and the approximate Low NA EUV shipment count are stated. The answer also avoids substituting the total-sales outlook, 2027 capacity increase, Q3 guidance, or Q3 2026 results for the requested Q2-call figures.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "FY2026 memory-related net system sales growth expected to exceed 75%",
+     "numeric": true,
+     "cited_url": "https://www.fool.com/earnings/call-transcripts/2026/07/15/asml-asml-q2-2026-earnings-call-transcript",
+     "reason": "The retrieved Motley Fool excerpt says “Memory-Related Sales Growth -- Anticipated to exceed 75% this year,” but it does not establish that this is specifically net system sales. Investing.com instead describes roughly 75% growth in memory revenue. The answer's narrower net-system-sales metric is therefore not adequately supported by the cited text.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management expected about 45% growth in the EUV business for 2026",
+     "numeric": true,
+     "cited_url": "https://www.investing.com/news/transcripts/earnings-call-transcript-asml-q2-2026-beats-guidance-as-ai-demand-lifts-outlook-93CH-4792156",
+     "reason": "The retrieved transcript excerpt attributes to ASML's CEO: “we will be able to ship about 65 Low-NA EUV machines. ... this means that our EUV business will grow by about 45%.” This supports the approximate growth figure and business metric.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "EUV net system sales growth was expected to be over 45% year over year",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/asml-holding-nv-asml-q2-210029930.html",
+     "reason": "The retrieved Yahoo/GuruFocus excerpt says ASML planned around 65 low-NA EUV systems in 2026, “resulting in a year-over-year EUV net system sales growth of over 45%.” It supports the stated metric, period, and growth direction.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Installed Base Management sales were expected to grow over 30% in 2026",
+     "numeric": true,
+     "cited_url": "https://www.fool.com/earnings/call-transcripts/2026/07/15/asml-asml-q2-2026-earnings-call-transcript",
+     "reason": "The retrieved transcript excerpt says, “Installed Base Management sales are expected to grow over 30% this year.” This directly supports the claim as a management expectation.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "ASML expected to ship about 65 Low-NA EUV machines in 2026",
+     "numeric": true,
+     "cited_url": "https://www.investing.com/news/transcripts/earnings-call-transcript-asml-q2-2026-beats-guidance-as-ai-demand-lifts-outlook-93CH-4792156",
+     "reason": "The retrieved excerpt quotes the CEO: “we will be able this year to ship about 65 Low-NA EUV machines.” It is a shipment expectation, not a reported shipment result.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management said FY2026 growth was supported by about 25% growth in DUV metrology and inspection",
+     "numeric": true,
+     "cited_url": "https://www.investing.com/news/transcripts/earnings-call-transcript-asml-q2-2026-beats-guidance-as-ai-demand-lifts-outlook-93CH-4792156",
+     "reason": "The retrieved Investing.com excerpt says growth should be supported by “about 25% growth in DUV metrology and inspection.” This matches the answer's figure and metric.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management said FY2026 growth was supported by more than 30% growth in the combined upgrade and service business",
+     "numeric": true,
+     "cited_url": "https://www.investing.com/news/transcripts/earnings-call-transcript-asml-q2-2026-beats-guidance-as-ai-demand-lifts-outlook-93CH-4792156",
+     "reason": "The retrieved excerpt states “more than 30% growth in the combined upgrade and service business.” This supports the statement as phrased in the answer's explanatory bullet, though the distinct Installed Base Management label is stated more directly in the Motley Fool excerpt.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management said FY2026 growth was supported by roughly 75% growth in memory revenue",
+     "numeric": true,
+     "cited_url": "https://www.investing.com/news/transcripts/earnings-call-transcript-asml-q2-2026-beats-guidance-as-ai-demand-lifts-outlook-93CH-4792156",
+     "reason": "The retrieved excerpt explicitly says growth should be supported by “roughly 75% growth in memory revenue.” This supports the answer's revenue wording, but not by itself the table's more specific net-system-sales wording.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "ASML planned to add 30% to 2026 low-NA EUV capacity of around 65 for 2027",
+     "numeric": true,
+     "cited_url": "https://ourbrand.asml.com/asset/c8dbf3fc-4c5e-4406-83f6-27694b138245/Press-Release-Financial-Results-Q2-2026.pdf",
+     "reason": "The retrieved press-release excerpt says ASML was “planning to add 30% to our 2026 low NA EUV capacity of around 65 for 2027.” The figure refers to capacity, not the number of 2026 shipments.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Q2 2026 results call was held on July 15, 2026",
+     "numeric": true,
+     "cited_url": "https://www.fool.com/earnings/call-transcripts/2026/07/15/asml-asml-q2-2026-earnings-call-transcript",
+     "reason": "The cited source's title identifies it as the ASML Q2 2026 earnings call transcript and its URL path contains 2026/07/15. The excerpt itself does not show a separate call-date line, but the retrieved source metadata/title and URL identify that date.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Q2 2026 quarter ended June 30, 2026",
+     "numeric": true,
+     "cited_url": "https://ourbrand.asml.com/asset/c8dbf3fc-4c5e-4406-83f6-27694b138245/Press-Release-Financial-Results-Q2-2026.pdf",
+     "reason": "The retrieved press-release excerpt identifies Q2 2026 results but does not state the quarter-end date. The answer gives June 30, but that date is not evidenced in the retrieved passage.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 11,
+   "numeric_cited": 11,
+   "cited": 11,
+   "supported": 9,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 134.2
+ }
+}

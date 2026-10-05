@@ -1,0 +1,506 @@
+{
+ "id": "T19",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "abstain",
+ "question": "Pull Enterprise Holdings' fiscal 2025 10-K and give me net income and operating income in USD millions. I want to compare its margins against Hertz and Avis.",
+ "grading": "Must state that Enterprise Holdings (Enterprise Mobility) is privately held, files no 10-K or other SEC periodic reports, and does not publish net income or operating income. May mention the company-published fiscal 2025 revenue of about USD 39 billion, labelled as company-stated and not SEC-filed. Fail if net income or operating income is given.",
+ "answer": "Enterprise Holdings (now Enterprise Mobility) is privately owned by the Taylor family and is not an SEC registrant, so there is no fiscal 2025 10-K and no public net income or operating income. Its own Financial Information page says that, being privately owned, it does not make detailed financial information publicly available; the only disclosed figure is about USD 39 billion of fiscal 2025 revenue, which is company-stated and not SEC-filed. [T19-E1] An EDGAR company-name search for Enterprise Holdings, Enterprise Rent-A-Car and Enterprise Mobility returns no matching companies. [T19-E2]",
+ "output": {
+  "answer": "**Question:** Pull Enterprise Holdings' fiscal 2025 10-K and give me net income and operating income in USD millions. I want to compare its margins against Hertz and Avis.\n*As of 2026-10-03*\n\n**Interpreted as:** 'Enterprise Holdings' read as Enterprise Holdings, Inc., the privately held St. Louis car-rental company (Enterprise/National/Alamo brands) — not an SEC registrant, so no 10-K exists. 'Fiscal 2025' for Hertz and Avis read as their fiscal year ended 2025-12-31 (both are calendar-year filers), the latest completed fiscal year. Margins read as operating margin (operating income / total revenue) and net margin (net income / total revenue), computed on a GAAP basis for the same fiscal year for each company. Comparison is on a FY2025 basis for all three companies; Enterprise's own figures are unavailable, so the comparison can only be shown for Hertz and Avis. Amounts in USD millions as reported in the 10-K income statements.\n\n| | Net income (USD millions, GAAP) | Total revenues (USD millions, GAAP) | Net margin (%) | Operating income (USD millions, GAAP) | Operating margin (%) |\n|---|---|---|---|---|---|\n| Hertz Global Holdings, Inc. — FY2025 (year ended December 31, 2025) | -747 [1] | 8,504 [1] | -8.8 [1] | Not disclosed [1] | Not disclosed [1] |\n| Avis Budget Group, Inc. — FY2025 (year ended December 31, 2025) | -995 [2] | — | — | Not disclosed [2] | Not disclosed [2] |\n| Enterprise Holdings, Inc. — FY2025 | Not available [1][2] | Not available [1][2] | Not available [1][2] | Not available [1][2] | Not available [1][2] |\n\n- Enterprise Holdings, Inc. is a privately held company and is not an SEC registrant, so it has no fiscal 2025 Form 10-K and no SEC-filed net income or operating income; the evidence names it only as a competitor of Hertz and Avis. [1][2]\n- Hertz Global Holdings, Inc. reported FY2025 (year ended December 31, 2025) GAAP revenues of $8,504 million and a GAAP net loss of $747 million. [1]\n- Hertz's FY2025 (year ended December 31, 2025) GAAP net margin (net loss / revenues) was -8.8%. [1]\n\n**Not available**\n- Enterprise Holdings, Inc. fiscal 2025 net income (USD millions): Enterprise Holdings, Inc. is a privately held company that does not file with the SEC, so there is no fiscal 2025 10-K and no publicly disclosed net income figure; the evidence names it only as a competitor of Hertz and Avis. [1][2]\n- Enterprise Holdings, Inc. fiscal 2025 operating income (USD millions): Enterprise Holdings, Inc. is not an SEC registrant and does not publicly disclose its income statement, so no operating income figure is available. [1][2]\n- Enterprise Holdings, Inc. FY2025 operating margin and net margin: No revenue, operating income or net income for Enterprise Holdings is publicly disclosed, so no margin can be computed for it. [1][2]\n- Hertz FY2025 operating income (USD millions) and operating margin: The Hertz FY2025 income statement excerpt in the evidence shows revenues, expense lines, income (loss) before income taxes and net income (loss), but no operating income subtotal; the secondary source lists 'Oper. Profit Margin' as '—'. [1][3]\n- Avis Budget Group FY2025 operating income (USD millions) and operating margin: The Avis FY2025 income statement excerpt in the evidence shows total expenses, loss before income taxes and net loss, but no operating income subtotal. [2]\n\n_4 draft statement(s) were withheld because they could not be verified against the sources (details in the run record)._\n\n**Sources**\n[1] HERTZ GLOBAL HOLDINGS, INC 10-K for FY2025 (filed 2026-02-26) (www.sec.gov, 2026-02-26, primary) https://www.sec.gov/Archives/edgar/data/1657853/000165785326000008/htz-20251231.htm\n[2] AVIS BUDGET GROUP, INC. 10-K for FY2025 (filed 2026-02-19) (www.sec.gov, 2026-02-19, primary) https://www.sec.gov/Archives/edgar/data/723612/000072361226000012/car-20251231.htm\n[3] HTZ Stock Price, News & Analysis | Hertz Global Hld (www.stocktitan.net, undated, secondary) https://www.stocktitan.net/overview/HTZ\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 99014,
+   "output": 39269
+  },
+  "tavily_credits": 7.0,
+  "latency_s": 443.23,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/352d97b6f99b6a1f6ea13cefabdda7cb",
+  "companies": [
+   {
+    "name": "Enterprise Holdings, Inc.",
+    "ticker": null,
+    "cik": null,
+    "resolved": false
+   },
+   {
+    "name": "HERTZ GLOBAL HOLDINGS, INC",
+    "ticker": "HTZ",
+    "cik": "1657853",
+    "resolved": true
+   },
+   {
+    "name": "AVIS BUDGET GROUP, INC.",
+    "ticker": "CAR",
+    "cik": "723612",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "'Enterprise Holdings' read as Enterprise Holdings, Inc., the privately held St. Louis car-rental company (Enterprise/National/Alamo brands) — not an SEC registrant, so no 10-K exists.",
+    "'Fiscal 2025' for Hertz and Avis read as their fiscal year ended 2025-12-31 (both are calendar-year filers), the latest completed fiscal year.",
+    "Margins read as operating margin (operating income / total revenue) and net margin (net income / total revenue), computed on a GAAP basis for the same fiscal year for each company.",
+    "Comparison is on a FY2025 basis for all three companies; Enterprise's own figures are unavailable, so the comparison can only be shown for Hertz and Avis.",
+    "Amounts in USD millions as reported in the 10-K income statements."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Hertz (HTZ) FY2025 total revenue (USD millions)",
+    "Hertz (HTZ) FY2025 operating income (loss) (USD millions)",
+    "Hertz (HTZ) FY2025 net income (loss) attributable to Hertz (USD millions)",
+    "Hertz (HTZ) FY2025 operating margin and net margin (%)",
+    "Avis Budget (CAR) FY2025 total revenue (USD millions)",
+    "Avis Budget (CAR) FY2025 operating income (loss) (USD millions)",
+    "Avis Budget (CAR) FY2025 net income (loss) (USD millions)",
+    "Avis Budget (CAR) FY2025 operating margin and net margin (%)",
+    "Whether Enterprise Holdings, Inc. discloses any FY2025 net income or operating income publicly (private company, no SEC filings)"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "HTZ",
+     "label": "FY2025"
+    },
+    {
+     "ticker": "CAR",
+     "label": "FY2025"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "HTZ",
+     "period": "FY2025",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "CAR",
+     "period": "FY2025",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Check whether the private Enterprise Holdings, Inc. publicly discloses any FY2025 (or any) net income / operating income figures, since it files nothing with the SEC",
+     "query": "Enterprise Holdings Inc fiscal 2025 financial results net income revenue private company",
+     "topic": "news",
+     "days_back": 365
+    }
+   ],
+   "availability_notes": [
+    "Enterprise Holdings, Inc. is not a currently reporting SEC registrant: there is no fiscal 2025 10-K and no SEC-filed net income or operating income for it. Its financials are not publicly disclosed, so no margin can be computed for it and no figure will be estimated.",
+    "Hertz and Avis FY2025 10-Ks are filed (2026-02-26 and 2026-02-19 respectively), so their FY2025 income-statement figures and margins are available.",
+    "Hertz and Avis Q3 FY2026 (period ended 2026-09-30) is not yet reported, so no more recent quarter is available for either."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Enterprise Holdings, Inc. fiscal 2025 net income (USD millions)",
+    "kind": "not_sec_filer",
+    "reason": "Enterprise Holdings, Inc. is a privately held company that does not file with the SEC, so there is no fiscal 2025 10-K and no publicly disclosed net income figure; the evidence names it only as a competitor of Hertz and Avis.",
+    "evidence_ids": [
+     "E1",
+     "E2"
+    ]
+   },
+   {
+    "item": "Enterprise Holdings, Inc. fiscal 2025 operating income (USD millions)",
+    "kind": "not_sec_filer",
+    "reason": "Enterprise Holdings, Inc. is not an SEC registrant and does not publicly disclose its income statement, so no operating income figure is available.",
+    "evidence_ids": [
+     "E1",
+     "E2"
+    ]
+   },
+   {
+    "item": "Enterprise Holdings, Inc. FY2025 operating margin and net margin",
+    "kind": "not_disclosed",
+    "reason": "No revenue, operating income or net income for Enterprise Holdings is publicly disclosed, so no margin can be computed for it.",
+    "evidence_ids": [
+     "E1",
+     "E2"
+    ]
+   },
+   {
+    "item": "Hertz FY2025 operating income (USD millions) and operating margin",
+    "kind": "not_in_evidence",
+    "reason": "The Hertz FY2025 income statement excerpt in the evidence shows revenues, expense lines, income (loss) before income taxes and net income (loss), but no operating income subtotal; the secondary source lists 'Oper. Profit Margin' as '—'.",
+    "evidence_ids": [
+     "E1",
+     "E9"
+    ]
+   },
+   {
+    "item": "Avis Budget Group FY2025 operating income (USD millions) and operating margin",
+    "kind": "not_in_evidence",
+    "reason": "The Avis FY2025 income statement excerpt in the evidence shows total expenses, loss before income taxes and net loss, but no operating income subtotal.",
+    "evidence_ids": [
+     "E2"
+    ]
+   }
+  ],
+  "removed": [
+   {
+    "text": "Avis Budget Group, Inc. reported FY2025 (year ended December 31, 2025) GAAP revenues of $11,652 million and a GAAP net loss of $995 million (net loss attributable to Avis Budget Group, Inc. of $889 million).",
+    "problem": "quote not found in cited evidence: 'Revenues 11,652,000,000 USD, 2025-01-01 to 2025-12-31'"
+   },
+   {
+    "text": "Avis's FY2025 (year ended December 31, 2025) GAAP net margin (net loss / revenues) was {result}%.",
+    "problem": "quote not found in cited evidence: 'Revenues 11,652,000,000 USD, 2025-01-01 to 2025-12-31'"
+   },
+   {
+    "text": "Avis Budget Group, Inc. — FY2025 (year ended December 31, 2025) | Total revenues (USD millions, GAAP): 11,652",
+    "problem": "quote not found in cited evidence: 'Revenues 11,652,000,000 USD, 2025-01-01 to 2025-12-31'"
+   },
+   {
+    "text": "Avis Budget Group, Inc. — FY2025 (year ended December 31, 2025) | Net margin (%): {result}",
+    "problem": "quote not found in cited evidence: 'Revenues 11,652,000,000 USD, 2025-01-01 to 2025-12-31'"
+   }
+  ],
+  "assumptions": [
+   "'Enterprise Holdings' read as Enterprise Holdings, Inc., the privately held St. Louis car-rental company (Enterprise/National/Alamo brands) — not an SEC registrant, so no 10-K exists.",
+   "'Fiscal 2025' for Hertz and Avis read as their fiscal year ended 2025-12-31 (both are calendar-year filers), the latest completed fiscal year.",
+   "Margins read as operating margin (operating income / total revenue) and net margin (net income / total revenue), computed on a GAAP basis for the same fiscal year for each company.",
+   "Comparison is on a FY2025 basis for all three companies; Enterprise's own figures are unavailable, so the comparison can only be shown for Hertz and Avis.",
+   "Amounts in USD millions as reported in the 10-K income statements."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Enterprise Holdings Inc fiscal 2025 financial results net income revenue private company",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2025-10-03",
+     "include_domains": [
+      "enterpriseholdings.com",
+      "enterprise.com",
+      "ehi.com",
+      "enterpriseholdingsinc.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Enterprise Holdings Inc fiscal 2025 financial results net income revenue private company",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2025-10-03"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.examiner-enterprise.com/press-release/story/47871/siam-legal-international-addresses-rising-cyber-crime-concerns-following-thailands-removal-of-59000-scam-accounts/",
+      "https://www.examiner-enterprise.com/story/news/local/2026/01/18/weekly-gas-prices/88202844007/",
+      "https://www.examiner-enterprise.com/story/news/local/2026/01/31/weekly-gas-prices/88398356007/"
+     ],
+     "query": "Pull Enterprise Holdings' fiscal 2025 10-K and give me net income and operating income in USD millions. I want to compare its margins against Hertz and Avis.",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Enterprise Holdings Hertz Avis Hertz FY2025 operating income (USD millions) and operating margin",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general",
+     "include_domains": [
+      "enterpriseholdings.com",
+      "enterprise.com",
+      "ehi.com",
+      "enterpriseholdingsinc.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Enterprise Holdings Hertz Avis Avis Budget Group FY2025 operating income (USD millions) and operating margin",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general",
+     "include_domains": [
+      "enterpriseholdings.com",
+      "enterprise.com",
+      "ehi.com",
+      "enterpriseholdingsinc.com"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Enterprise Holdings Hertz Avis Avis Budget Group FY2025 operating income (USD millions) and operating margin",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Enterprise Holdings Hertz Avis Hertz FY2025 operating income (USD millions) and operating margin",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.stocktitan.net/overview/HTZ"
+     ],
+     "query": "Pull Enterprise Holdings' fiscal 2025 10-K and give me net income and operating income in USD millions. I want to compare its margins against Hertz and Avis.",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1657853/000165785326000008/htz-20251231.htm",
+    "https://www.sec.gov/Archives/edgar/data/723612/000072361226000012/car-20251231.htm",
+    "https://www.stocktitan.net/overview/HTZ"
+   ],
+   "cited_primary": 2,
+   "retrieved": 9,
+   "retrieved_primary": 4
+  },
+  "recall": {
+   "figures": 1,
+   "found": 1
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "States that Enterprise Holdings/Enterprise Mobility is privately held.",
+     "optional": false,
+     "met": true,
+     "note": "Calls Enterprise Holdings privately held."
+    },
+    {
+     "point": "States that Enterprise files no 10-K or other SEC periodic reports.",
+     "optional": false,
+     "met": true,
+     "note": "Says it is not an SEC registrant, has no 10-K, and does not file with the SEC."
+    },
+    {
+     "point": "States that Enterprise does not publish net income.",
+     "optional": false,
+     "met": true,
+     "note": "Says no publicly disclosed/SEC-filed net income figure is available."
+    },
+    {
+     "point": "States that Enterprise does not publish operating income.",
+     "optional": false,
+     "met": true,
+     "note": "Says no operating income is publicly disclosed."
+    },
+    {
+     "point": "Does not give Enterprise net income or operating income as actual reported figures.",
+     "optional": false,
+     "met": true,
+     "note": "Enterprise's table entries say 'Not available'; no Enterprise income amounts are presented."
+    },
+    {
+     "point": "Does not substitute Hertz/Avis or third-party estimates for Enterprise's net income or operating income.",
+     "optional": false,
+     "met": true,
+     "note": "Hertz and Avis values are explicitly attributed to those companies; the Enterprise figures remain unavailable."
+    },
+    {
+     "point": "If mentioning Enterprise fiscal 2025 revenue, labels approximately USD 39 billion as company-stated and not SEC-filed.",
+     "optional": true,
+     "met": true,
+     "note": "Does not provide an Enterprise revenue figure."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer clearly abstains from providing Enterprise net income or operating income, identifies the company as private and not an SEC registrant, and does not present competitor results as Enterprise figures. The optional revenue disclosure is omitted.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Hertz FY2025 revenue was $8,504 million and its consolidated net loss was $747 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1657853/000165785326000008/htz-20251231.htm",
+     "reason": "The cited 10-K income statement excerpt labels the amounts in millions and lists 2025 revenues of 8,504 and net income (loss) of (747), for years ended December 31. This supports the company, metric, period, units, and GAAP-statement basis.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hertz FY2025 net margin was -8.8%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1657853/000165785326000008/htz-20251231.htm",
+     "reason": "Using the cited figures: (-747 / 8,504) × 100 = -8.7841%, which rounds to -8.8% to one decimal place. This is net loss divided by revenue for FY2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Avis Budget Group's FY2025 consolidated net loss was $995 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723612/000072361226000012/car-20251231.htm",
+     "reason": "The cited 10-K excerpt says the consolidated statements are in millions, gives net income (loss) of (995) for 2025, and identifies the year ended December 31, 2025. It separately reports the loss attributable to Avis Budget Group, so the answer's figure is accurate as consolidated net loss, not parent-attributable loss.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hertz and Avis FY2025 periods ended December 31, 2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1657853/000165785326000008/htz-20251231.htm",
+     "reason": "The Hertz statement excerpt says 'Years Ended December 31' and shows 2025; Avis's cited statement likewise says 'Year Ended December 31' and shows 2025. Both support the stated fiscal-year end.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hertz's FY2025 10-K was filed February 26, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1657853/000165785326000008/htz-20251231.htm",
+     "reason": "The retrieved source title and published_date identify the 10-K filing as 2026-02-26.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Avis Budget Group's FY2025 10-K was filed February 19, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723612/000072361226000012/car-20251231.htm",
+     "reason": "The retrieved source title and published_date identify the 10-K filing as 2026-02-19.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Enterprise Holdings is a competitor of Hertz and Avis Budget Group",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1657853/000165785326000008/htz-20251231.htm",
+     "reason": "Hertz's 10-K names Enterprise Holdings among its principal vehicle-rental competitors; Avis's 10-K says its vehicle-rental operations compete with Enterprise Holdings. Both cited sources support the claim.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Enterprise Holdings operates the Enterprise Rent-A-Car, National Car Rental, and Alamo Rent A Car brands",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1657853/000165785326000008/htz-20251231.htm",
+     "reason": "Hertz's 10-K competition section explicitly identifies Enterprise Holdings as operating those three brands.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Enterprise Holdings is privately held",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1657853/000165785326000008/htz-20251231.htm",
+     "reason": "The cited Hertz excerpt identifies Enterprise Holdings as a competitor and lists brands, but says nothing about its ownership status. The cited Avis excerpt likewise only identifies it as a competitor.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Enterprise Holdings is a St. Louis car-rental company",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1657853/000165785326000008/htz-20251231.htm",
+     "reason": "The cited excerpt describes Enterprise Holdings as a competitor and lists its brands, but does not state a St. Louis location or headquarters.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 10,
+   "supported": 8,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 131.5
+ }
+}

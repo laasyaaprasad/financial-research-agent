@@ -1,0 +1,243 @@
+{
+ "id": "T10",
+ "category": "Complex retrieval",
+ "difficulty": "hard",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "What is Paychex's current fiscal 2027 outlook (as of today) for PEO and Insurance Solutions revenue growth and for interest on funds held for clients?",
+ "grading": "Key points: (1) PEO and Insurance Solutions revenue growth 7% to 8% (previously 6% to 7%); (2) interest on funds held for clients $200 million to $210 million (previously $195 million to $205 million); (3) identifies the 2026-09-23 release as the latest update. Optional: total revenue growth 5%-6% and adjusted EPS growth 7%-9% unchanged. Fail if the superseded June ranges are presented as current. Snapshot as of 2026-10-03; later releases supersede.",
+ "answer": "As of 2026-10-03 the latest Paychex fiscal 2027 outlook is from the Q1 FY2027 release dated September 23, 2026: PEO and Insurance Solutions revenue growth of 7% to 8% (raised from 6% to 7%) and interest on funds held for clients of $200 million to $210 million (raised from $195 million to $205 million). Unchanged in that update: total revenue growth 5% to 6%, Management Solutions growth 5% to 6%, adjusted operating margin about 44% and adjusted diluted EPS growth 7% to 9%. [T10-E1] The June 24, 2026 release had the lower ranges. [T10-E2]",
+ "output": {
+  "answer": "**Question:** What is Paychex's current fiscal 2027 outlook (as of today) for PEO and Insurance Solutions revenue growth and for interest on funds held for clients?\n*As of 2026-10-03*\n\n**Interpreted as:** \"Current fiscal 2027 outlook\" read as Paychex's most recent guidance for FY2027 (fiscal year 2026-06-01 to 2027-05-31, ending May 31), i.e. the outlook as reaffirmed/updated with Q1 FY2027 results on 2026-09-23, originally issued with Q4 FY2026 results on 2026-06-24. Paychex's fiscal year is not the calendar year; FY2027 began 2026-06-01 and is still in progress, so the outlook is forward-looking guidance, not reported results. PEO and Insurance Solutions revenue growth read as the company's guided growth rate for that segment's total revenue in FY2027. Interest on funds held for clients read as the company's guided FY2027 figure/growth for that line, as presented in its outlook.\n\n| | Guided growth rate (%) | Guided amount (USD millions) |\n|---|---|---|\n| PEO and Insurance Solutions revenue growth — FY2027 outlook (fiscal year ending May 31, 2027), as of 2026-09-23 | 7% to 8% [1] | — |\n| Interest on funds held for clients — FY2027 outlook (fiscal year ending May 31, 2027), as of 2026-09-23 | — | $200 million to $210 million [1] |\n| PEO and Insurance Solutions revenue growth — FY2027 outlook as originally issued 2026-06-24 | 6% to 7% [2] | — |\n| Interest on funds held for clients — FY2027 outlook as originally issued 2026-06-24 | — | $195 million to $205 million [2] |\n\n- As of its Q1 FY2027 earnings release dated 2026-09-23, Paychex's current fiscal 2027 outlook (fiscal year ending May 31, 2027) guides PEO and Insurance Solutions revenue growth of 7% to 8%, updated from previously 6% to 7%. [1]\n- As of the same Q1 FY2027 release, Paychex's current fiscal 2027 outlook guides interest on funds held for clients of $200 million to $210 million, updated from previously $195 million to $205 million. [1]\n- The prior fiscal 2027 outlook issued with Q4 FY2026 results on 2026-06-24 had guided PEO and Insurance Solutions revenue growth of 6% to 7% and interest on funds held for clients of $195 million to $205 million. [2]\n- The Q1 FY2027 outlook was presented in the release's \"Fiscal 2027 Business Outlook\" section, which states the outlook reflects current assumptions and market conditions and that changes in the macroeconomic environment could alter guidance. [1]\n\n**Not available**\n- Actual FY2027 PEO and Insurance Solutions revenue growth and actual FY2027 interest on funds held for clients: FY2027 (2026-06-01 to 2027-05-31) is still in progress as of 2026-10-03; only guidance has been issued, no full-year actuals exist.\n\n**Sources**\n[1] PAYCHEX INC earnings release for Q1 FY2027, 8-K EX-99.1 (filed 2026-09-23) (www.sec.gov, 2026-09-23, primary) https://www.sec.gov/Archives/edgar/data/723531/000072353126000004/payx-ex99_1.htm\n[2] PAYCHEX INC earnings release for Q4 FY2026, 8-K EX-99.1 (filed 2026-06-24) (www.sec.gov, 2026-06-24, primary) https://www.sec.gov/Archives/edgar/data/723531/000119312526280314/payx-ex99_1.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 19594,
+   "output": 2791
+  },
+  "tavily_credits": 1.0,
+  "latency_s": 26.82,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/551124954a86220cb3c21e9a620b08c2",
+  "companies": [
+   {
+    "name": "PAYCHEX INC",
+    "ticker": "PAYX",
+    "cik": "723531",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "\"Current fiscal 2027 outlook\" read as Paychex's most recent guidance for FY2027 (fiscal year 2026-06-01 to 2027-05-31, ending May 31), i.e. the outlook as reaffirmed/updated with Q1 FY2027 results on 2026-09-23, originally issued with Q4 FY2026 results on 2026-06-24.",
+    "Paychex's fiscal year is not the calendar year; FY2027 began 2026-06-01 and is still in progress, so the outlook is forward-looking guidance, not reported results.",
+    "PEO and Insurance Solutions revenue growth read as the company's guided growth rate for that segment's total revenue in FY2027.",
+    "Interest on funds held for clients read as the company's guided FY2027 figure/growth for that line, as presented in its outlook."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "FY2027 guided growth rate for PEO and Insurance Solutions revenue (most recent guidance)",
+    "FY2027 guided interest on funds held for clients (figure and/or growth rate)",
+    "Whether the FY2027 outlook for these two items was reaffirmed or revised at Q1 FY2027 (2026-09-23) versus the original FY2027 guidance given with Q4 FY2026 results (2026-06-24)",
+    "Any stated drivers/commentary behind the PEO and Insurance Solutions and interest-on-funds outlook"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "PAYX",
+     "label": "FY2027"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "PAYX",
+     "period": "Q1 FY2027",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "PAYX",
+     "period": "Q4 FY2026",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Capture any FY2027 outlook detail (PEO and Insurance Solutions revenue growth, interest on funds held for clients) quantified or clarified by management on the Q1 FY2027 earnings call rather than in the release",
+     "query": "Paychex Q1 fiscal 2027 earnings call FY2027 outlook PEO Insurance Solutions revenue interest on funds held for clients",
+     "topic": "news",
+     "days_back": 30
+    }
+   ],
+   "availability_notes": [
+    "FY2027 is still in progress (2026-06-01 to 2027-05-31); no FY2027 results exist yet, so only guidance figures can be given, not actuals.",
+    "Q2 FY2027 (2026-09-01 to 2026-11-30) is not yet reported as of 2026-10-03.",
+    "Segment-level and interest-on-funds guidance is typically disclosed in the earnings release outlook section; if a specific figure is only quantified on the earnings call, it may not appear in the filing."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Actual FY2027 PEO and Insurance Solutions revenue growth and actual FY2027 interest on funds held for clients",
+    "kind": "not_reported_yet",
+    "reason": "FY2027 (2026-06-01 to 2027-05-31) is still in progress as of 2026-10-03; only guidance has been issued, no full-year actuals exist.",
+    "evidence_ids": []
+   }
+  ],
+  "removed": [],
+  "assumptions": [
+   "\"Current fiscal 2027 outlook\" read as Paychex's most recent guidance for FY2027 (fiscal year 2026-06-01 to 2027-05-31, ending May 31), i.e. the outlook as reaffirmed/updated with Q1 FY2027 results on 2026-09-23, originally issued with Q4 FY2026 results on 2026-06-24.",
+   "Paychex's fiscal year is not the calendar year; FY2027 began 2026-06-01 and is still in progress, so the outlook is forward-looking guidance, not reported results.",
+   "PEO and Insurance Solutions revenue growth read as the company's guided growth rate for that segment's total revenue in FY2027.",
+   "Interest on funds held for clients read as the company's guided FY2027 figure/growth for that line, as presented in its outlook."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Paychex Q1 fiscal 2027 earnings call FY2027 outlook PEO Insurance Solutions revenue interest on funds held for clients",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2026-09-03"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/723531/000072353126000004/payx-ex99_1.htm",
+    "https://www.sec.gov/Archives/edgar/data/723531/000119312526280314/payx-ex99_1.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 2,
+   "retrieved_primary": 2
+  },
+  "recall": {
+   "figures": 4,
+   "found": 4
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "States current FY2027 PEO and Insurance Solutions revenue growth guidance is 7% to 8%, previously 6% to 7%.",
+     "optional": false,
+     "met": true,
+     "note": "The answer states the 2026-09-23 current range is 7% to 8%, updated from previously 6% to 7%."
+    },
+    {
+     "point": "States current FY2027 interest on funds held for clients guidance is $200 million to $210 million, previously $195 million to $205 million.",
+     "optional": false,
+     "met": true,
+     "note": "The answer gives $200 million to $210 million as the current range and $195 million to $205 million as the previous range."
+    },
+    {
+     "point": "Identifies the 2026-09-23 release as the latest update.",
+     "optional": false,
+     "met": true,
+     "note": "It identifies the Q1 FY2027 earnings release dated 2026-09-23 as the source of the current outlook."
+    },
+    {
+     "point": "Optionally notes total revenue growth of 5%-6% and adjusted EPS growth of 7%-9% are unchanged.",
+     "optional": true,
+     "met": false,
+     "note": "These unchanged optional outlook items are not stated."
+    },
+    {
+     "point": "Does not present the superseded June ranges as current.",
+     "optional": false,
+     "met": true,
+     "note": "The June ranges are clearly labeled as the originally issued outlook; the answer gives the September ranges as current."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer reports both updated FY2027 ranges and their prior June ranges, correctly attributes the update to the September 23 Q1 release, and does not misrepresent the superseded guidance as current.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Paychex’s September 23 Q1 FY2027 outlook was its latest/current FY2027 guidance as of October 3, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723531/000072353126000004/payx-ex99_1.htm",
+     "reason": "The retrieved Q1 release is dated September 23, 2026 and contains updated guidance, but it does not establish that no later guidance had been issued by October 3, 2026. The source is insufficient to verify the asserted latest-as-of date.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY2027 guidance: PEO and Insurance Solutions revenue growth of 7%–8%, previously 6%–7%.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723531/000072353126000004/payx-ex99_1.htm",
+     "reason": "In the “Fiscal 2027 Business Outlook” table, the Q1 release gives PEO and Insurance Solutions revenue growth as 7% to 8%, with “Previously 6% to 7%.” These are forward-looking guidance rates, not actual results.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 FY2027 guidance: interest on funds held for clients of $200 million–$210 million, previously $195 million–$205 million.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723531/000072353126000004/payx-ex99_1.htm",
+     "reason": "The same outlook table states $200 million to $210 million and “Previously $195 million to $205 million.” The metric is a guided amount in USD millions, not actual FY2027 results.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Q4 FY2026 release dated June 24, 2026, gave the initial FY2027 outlook of 6%–7% PEO and Insurance Solutions revenue growth and $195 million–$205 million interest on funds held for clients.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723531/000119312526280314/payx-ex99_1.htm",
+     "reason": "The retrieved release is dated June 24, 2026, identifies its outlook as for the fiscal year ending May 31, 2027, and states PEO and Insurance Solutions revenue growth of 6% to 7% and interest on funds held for clients of $195 million to $205 million. These are guidance figures.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal 2027 is the fiscal year ending May 31, 2027.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723531/000072353126000004/payx-ex99_1.htm",
+     "reason": "The Q1 release describes the quarter ended August 31, 2026 as the first quarter of the fiscal year ending May 31, 2027 (“fiscal 2027”).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Q1 FY2027 release was dated September 23, 2026, and reported results for the quarter ended August 31, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723531/000072353126000004/payx-ex99_1.htm",
+     "reason": "The release opening gives Rochester, N.Y. (September 23, 2026) and says Paychex reported results for the fiscal quarter ended August 31, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Paychex said its current outlook reflects current assumptions and market conditions, and macroeconomic changes could alter its guidance.",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723531/000072353126000004/payx-ex99_1.htm",
+     "reason": "The “Fiscal 2027 Business Outlook” section states that the current outlook reflects current assumptions and market conditions and that changes in the macroeconomic environment could alter guidance.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 7,
+   "supported": 6,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 99.1
+ }
+}

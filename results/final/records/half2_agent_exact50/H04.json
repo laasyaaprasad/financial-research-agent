@@ -1,0 +1,239 @@
+{
+ "id": "H04",
+ "category": "Complex retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "As of May 20, 2026, what was The J.M. Smucker Company's most recently reported quarterly adjusted EPS (state the fiscal quarter), and what fiscal 2026 net sales growth guidance range was in effect?",
+ "grading": "Key points (both required): (1) latest reported quarter = fiscal Q3 2026 (three months ended Jan 31, 2026), adjusted EPS USD 2.38 (GAAP loss per share was USD 6.79); (2) fiscal 2026 net sales growth guidance 3.5% to 4.0% (narrowed from 3.5%-4.5% on 2026-02-26; adjusted EPS range USD 8.75-9.25 unchanged). Fail if fiscal Q4 2026 / FY2026 actuals (released 2026-06-09) are presented as available, or if GAAP EPS is given as the adjusted figure.",
+ "answer": "As of May 20, 2026 Smucker's latest reported quarter was fiscal Q3 2026 (three months ended January 31, 2026): adjusted EPS of USD 2.38 (down 9% from USD 2.61), while GAAP diluted EPS was a loss of USD 6.79 on noncash impairment charges [H04-E1]. Fiscal 2026 guidance in effect (updated February 26, 2026): net sales growth 3.5% to 4.0% (previously 3.5%-4.5%) and adjusted EPS USD 8.75-9.25 (unchanged) [H04-E1]. Fiscal Q4 and full-year results (adjusted EPS USD 2.77 and USD 9.15) were released June 9, 2026, after the as_of date [H04-E2].",
+ "output": {
+  "answer": "**Question:** As of May 20, 2026, what was The J.M. Smucker Company's most recently reported quarterly adjusted EPS (state the fiscal quarter), and what fiscal 2026 net sales growth guidance range was in effect?\n*As of 2026-05-20*\n\n**Interpreted as:** 'Most recently reported quarterly adjusted EPS' = the non-GAAP adjusted EPS the company reported for its latest reported quarter, Q3 FY2026 (2025-11-01 to 2026-01-31, earnings release 8-K filed 2026-02-26); Q4 FY2026 (ended 2026-04-30) is not yet reported as of 2026-05-20. Smucker's fiscal year ends April 30, so FY2026 = 2025-05-01 to 2026-04-30 and is not yet reported; the FY2026 net sales growth guidance 'in effect' is the most recent full-year outlook the company has issued, i.e. the one given with Q3 FY2026 results. 'Adjusted EPS' read as the company's reported adjusted (non-GAAP) diluted EPS, not GAAP diluted EPS. Company asked by full name 'The J.M. Smucker Company' = SJM (The J.M. Smucker Company), one registrant.\n\n- The J.M. Smucker Company's most recently reported quarterly adjusted EPS as of May 20, 2026 was $2.38 (non-GAAP, as reported) for Q3 FY2026, the quarter ended January 31, 2026. [1]\n- That Q3 FY2026 adjusted EPS of $2.38 was a decrease of 9 percent versus the prior-year quarter, as disclosed. [1]\n- The fiscal 2026 net sales growth guidance in effect (updated with Q3 FY2026 results, issued February 26, 2026) was a net sales increase of 3.5% to 4.0% versus the prior year. [1]\n- The prior fiscal 2026 net sales growth guidance had been 3.5% to 4.5%, and the change in the midpoint reflected the estimated impact of a February fire at the Emporia, Kansas manufacturing facility. [1]\n- The same Q3 FY2026 outlook guidance stated adjusted earnings per share of $8.75 to $9.25 for fiscal 2026 (guidance, unchanged from the previous outlook). [1]\n\n**Not available**\n- Actual Q4 FY2026 and full-year FY2026 results (quarter/year ended April 30, 2026): As of May 20, 2026, Q4 FY2026 and FY2026 (ended 2026-04-30) had not been reported; the latest reported quarter is Q3 FY2026 (ended 2026-01-31), so only guidance can be quoted for the full year. [1]\n\n**Sources**\n[1] J M SMUCKER Co earnings release for Q3 FY2026, 8-K EX-99.1 (filed 2026-02-26) (www.sec.gov, 2026-02-26, primary) https://www.sec.gov/Archives/edgar/data/91419/000009141926000013/sjm20260226exhibit991.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 19995,
+   "output": 2670
+  },
+  "tavily_credits": 2.0,
+  "latency_s": 19.54,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/4f5353db59eeb221bfe2ae7e5262fcff",
+  "companies": [
+   {
+    "name": "J M SMUCKER Co",
+    "ticker": "SJM",
+    "cik": "91419",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "'Most recently reported quarterly adjusted EPS' = the non-GAAP adjusted EPS the company reported for its latest reported quarter, Q3 FY2026 (2025-11-01 to 2026-01-31, earnings release 8-K filed 2026-02-26); Q4 FY2026 (ended 2026-04-30) is not yet reported as of 2026-05-20.",
+    "Smucker's fiscal year ends April 30, so FY2026 = 2025-05-01 to 2026-04-30 and is not yet reported; the FY2026 net sales growth guidance 'in effect' is the most recent full-year outlook the company has issued, i.e. the one given with Q3 FY2026 results.",
+    "'Adjusted EPS' read as the company's reported adjusted (non-GAAP) diluted EPS, not GAAP diluted EPS.",
+    "Company asked by full name 'The J.M. Smucker Company' = SJM (The J.M. Smucker Company), one registrant."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Q3 FY2026 adjusted (non-GAAP) diluted EPS as reported, with the fiscal quarter label",
+    "Q3 FY2026 GAAP diluted EPS and net income (context for the adjusted figure)",
+    "Q3 FY2026 net sales and comparison to prior-year quarter (Q3 FY2025)",
+    "FY2026 full-year net sales growth guidance range in effect (as updated with Q3 FY2026 results), including any change from prior guidance",
+    "Any other FY2026 guidance elements disclosed alongside (e.g. adjusted EPS range) for context"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "SJM",
+     "label": "Q3 FY2026"
+    },
+    {
+     "ticker": "SJM",
+     "label": "FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "SJM",
+     "period": "Q3 FY2026",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Capture any FY2026 guidance detail or management commentary on the Q3 FY2026 earnings call that is not in the press release",
+     "query": "J.M. Smucker Q3 fiscal 2026 earnings call net sales growth guidance",
+     "topic": "news",
+     "days_back": 120
+    }
+   ],
+   "availability_notes": [
+    "Q4 FY2026 and FY2026 (ended 2026-04-30) are not yet reported as of 2026-05-20, so no actual FY2026 results exist; only the guidance range can be quoted.",
+    "Adjusted EPS is a non-GAAP measure and appears in the earnings release/non-GAAP reconciliations rather than the face of the financial statements."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Actual Q4 FY2026 and full-year FY2026 results (quarter/year ended April 30, 2026)",
+    "kind": "not_reported_yet",
+    "reason": "As of May 20, 2026, Q4 FY2026 and FY2026 (ended 2026-04-30) had not been reported; the latest reported quarter is Q3 FY2026 (ended 2026-01-31), so only guidance can be quoted for the full year.",
+    "evidence_ids": [
+     "E1"
+    ]
+   }
+  ],
+  "removed": [],
+  "assumptions": [
+   "'Most recently reported quarterly adjusted EPS' = the non-GAAP adjusted EPS the company reported for its latest reported quarter, Q3 FY2026 (2025-11-01 to 2026-01-31, earnings release 8-K filed 2026-02-26); Q4 FY2026 (ended 2026-04-30) is not yet reported as of 2026-05-20.",
+   "Smucker's fiscal year ends April 30, so FY2026 = 2025-05-01 to 2026-04-30 and is not yet reported; the FY2026 net sales growth guidance 'in effect' is the most recent full-year outlook the company has issued, i.e. the one given with Q3 FY2026 results.",
+   "'Adjusted EPS' read as the company's reported adjusted (non-GAAP) diluted EPS, not GAAP diluted EPS.",
+   "Company asked by full name 'The J.M. Smucker Company' = SJM (The J.M. Smucker Company), one registrant."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "J.M. Smucker Q3 fiscal 2026 earnings call net sales growth guidance",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-05-20",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2026-01-20"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.marketbeat.com/instant-alerts/j-m-smucker-q3-earnings-call-highlights-2026-02-28/",
+      "https://www.foodbusinessnews.net/articles/29709-alabama-uncrustables-plant-set-for-enhancements"
+     ],
+     "query": "As of May 20, 2026, what was The J.M. Smucker Company's most recently reported quarterly adjusted EPS (state the fiscal quarter), and what fiscal 2026 net sales growth guidance range was in effect?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/91419/000009141926000013/sjm20260226exhibit991.htm"
+   ],
+   "cited_primary": 1,
+   "retrieved": 4,
+   "retrieved_primary": 2
+  },
+  "recall": {
+   "figures": 9,
+   "found": 7
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Identifies fiscal Q3 2026 (three months ended January 31, 2026) as the latest reported quarter.",
+     "optional": false,
+     "met": true,
+     "note": "The answer names Q3 FY2026 and the January 31, 2026 quarter end."
+    },
+    {
+     "point": "Gives adjusted EPS as USD 2.38 for that quarter.",
+     "optional": false,
+     "met": true,
+     "note": "The answer states $2.38 and explicitly identifies it as adjusted, non-GAAP EPS."
+    },
+    {
+     "point": "Gives the fiscal 2026 net sales growth guidance in effect as 3.5% to 4.0%.",
+     "optional": false,
+     "met": true,
+     "note": "The answer states a net sales increase of 3.5% to 4.0%."
+    },
+    {
+     "point": "Does not present fiscal Q4 2026 or FY2026 actual results released June 9, 2026 as available as of May 20, 2026.",
+     "optional": false,
+     "met": true,
+     "note": "It states Q4/FY2026 results had not been reported as of the as-of date."
+    },
+    {
+     "point": "Does not give GAAP EPS as the adjusted EPS figure.",
+     "optional": false,
+     "met": true,
+     "note": "It correctly identifies $2.38 as non-GAAP adjusted EPS and does not misstate the GAAP loss as adjusted EPS."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer correctly identifies Q3 FY2026 adjusted EPS and the in-effect FY2026 net sales growth range, and avoids both specified failure modes.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q3 FY2026 adjusted diluted EPS was $2.38 for the quarter ended January 31, 2026; results were announced February 26, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/91419/000009141926000013/sjm20260226exhibit991.htm",
+     "reason": "The release states that it announced third-quarter FY2026 results on February 26, 2026, for the quarter ended January 31, 2026. Its table for the three months ended January 31 reports adjusted earnings per share—assuming dilution—of $2.38 for 2026. The release labels the adjusted measure as non-GAAP and provides reconciliations.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 adjusted EPS decreased 9% versus the prior-year quarter",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/91419/000009141926000013/sjm20260226exhibit991.htm",
+     "reason": "The executive summary says adjusted earnings per share was $2.38, a decrease of 9 percent; the quarterly results table also gives a 9% decrease for adjusted EPS versus the three months ended January 31, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Current FY2026 net sales growth guidance was 3.5% to 4.0% versus the prior year",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/91419/000009141926000013/sjm20260226exhibit991.htm",
+     "reason": "The full-year outlook table labels the current net sales increase versus prior year as 3.5% to 4.0%; accompanying text says net sales are expected to increase 3.5% to 4.0% versus the prior year. This is guidance, not actual results.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Prior FY2026 net sales growth guidance was 3.5% to 4.5%, and the revised midpoint reflected the estimated impact of a February fire at the Emporia, Kansas facility",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/91419/000009141926000013/sjm20260226exhibit991.htm",
+     "reason": "The full-year outlook table lists previous guidance as 3.5% to 4.5%. The release states that the change in the midpoint reflects the estimated impact of a recent fire at the company's Emporia, Kansas manufacturing facility in February.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2026 adjusted EPS guidance was $8.75 to $9.25 and was maintained from the previous outlook",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/91419/000009141926000013/sjm20260226exhibit991.htm",
+     "reason": "The full-year outlook table gives current and previous adjusted EPS guidance as $8.75–$9.25 in both columns; release text says the company maintains its adjusted EPS guidance for the full fiscal year.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 5,
+   "supported": 5,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 119.0
+ }
+}

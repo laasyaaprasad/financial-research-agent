@@ -1,0 +1,158 @@
+{
+ "id": "E17",
+ "category": "company naming",
+ "difficulty": "hard",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "ua vs uaa - which one had higher rev last qtr",
+ "grading": "(1) Explains that UA (Class C) and UAA (Class A) are two share classes of one company, Under Armour, Inc., so there is only one revenue figure and neither ticker 'has higher revenue'. (2) Uses the latest reported quarter, Q1 fiscal 2027 (quarter ended June 30, 2026; reported Aug 7, 2026) and says the fiscal year ends March 31. (3) Gives the company's revenue for that quarter with a citation (about $1.1B, down about 3%). (4) Fail if it reports different revenue figures for the two tickers, treats them as two companies, picks one ticker as 'better', or gives investment commentary.",
+ "answer": "UA and UAA are the same company (Class C and Class A shares); Under Armour Q1 FY2027 (ended June 30, 2026; reported Aug 7, 2026) revenue about $1.1B (-3%).",
+ "output": {
+  "answer": " **UA and UAA are both Under Armour** — just different share classes of the same company. Therefore, they report the **exact same revenue**.\n\n- **UAA** = Class A shares (has voting rights)\n- **UA** = Class C shares (no voting rights)\n\nFor the most recent quarter (Q3 fiscal 2025, ended Dec. 31, 2024), Under Armour reported revenue of **~$1.4 billion** (or ~$1.33 billion depending on currency adjustments) — and this figure applies to both tickers.\n\nThe financials are identical; the only difference is typically share price (UAA usually trades at a slight premium due to voting rights). \n\nSources:\n- [KULT Recruit - Under Armour Q3 Results](https://blog.kultrecruit.com/under-armour-raises-profit-forecast-for-fiscal-2025-after-stronger-q3-results)\n- [FashionUnited - Under Armour Q3 Results](https://fashionunited.com/news/business/under-armour-q3-exceeds-expectations-despite-revenue-decline/2026020670467)",
+  "tokens": {
+   "input": 9464,
+   "output": 805
+  },
+  "tavily_credits": 1,
+  "latency_s": 26.64,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/c377985f37fd474d43276ed2607e9161",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "UA UAA stock Under Armour revenue last quarter Q3 2024",
+     "search_depth": "fast",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "UA UAA stock Under Armour revenue last quarter Q3 2024",
+     "search_depth": "basic",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://blog.kultrecruit.com/under-armour-raises-profit-forecast-for-fiscal-2025-after-stronger-q3-results",
+    "https://fashionunited.com/news/business/under-armour-q3-exceeds-expectations-despite-revenue-decline/2026020670467"
+   ],
+   "cited_primary": 0,
+   "retrieved": 10,
+   "retrieved_primary": 0
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 0.25,
+   "points": [
+    {
+     "point": "Explains UA (Class C) and UAA (Class A) are share classes of Under Armour, Inc., so there is one revenue figure and neither ticker has higher revenue.",
+     "optional": false,
+     "met": true,
+     "note": "It says both are Under Armour, specifies UA as Class C and UAA as Class A, and says the revenue is the same."
+    },
+    {
+     "point": "Uses the latest reported quarter, Q1 fiscal 2027 (ended June 30, 2026; reported Aug. 7, 2026), and states that the fiscal year ends March 31.",
+     "optional": false,
+     "met": false,
+     "note": "It instead identifies Q3 fiscal 2025, ended Dec. 31, 2024, as the most recent quarter; it does not give the required latest quarter or fiscal year-end."
+    },
+    {
+     "point": "Gives revenue for that quarter with a citation (about $1.1 billion, down about 3%).",
+     "optional": false,
+     "met": false,
+     "note": "It cites older results and gives approximately $1.4 billion / $1.33 billion, not the required Q1 FY2027 revenue of about $1.1 billion, down about 3%."
+    },
+    {
+     "point": "Avoids reporting different revenue figures for the two tickers, treating them as two companies, choosing one ticker as better, or giving investment commentary.",
+     "optional": false,
+     "met": false,
+     "note": "It correctly treats the tickers as the same issuer and does not choose a better ticker, but adds market commentary: “UAA usually trades at a slight premium.”"
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The answer gets the share-class distinction and the conclusion that neither ticker has higher revenue right, but uses an obsolete quarter and revenue figure, and includes investment/market commentary prohibited by the rule.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "partial",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "UA and UAA are Under Armour share classes; UA is Class C without voting rights and UAA is Class A with voting rights",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Neither retrieved passage mentions UA, UAA, the share classes, or voting rights. The answer lists only the two earnings articles, which provide no evidence for this claim.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "UA and UAA therefore report exactly the same revenue, and their financials are identical",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "The retrieved sources report company-level revenue but do not compare the tickers or establish that all financials are identical. The statement goes beyond the cited evidence.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Under Armour's Q3 fiscal 2025 quarter ended December 31, 2024",
+     "numeric": true,
+     "cited_url": "https://blog.kultrecruit.com/under-armour-raises-profit-forecast-for-fiscal-2025-after-stronger-q3-results",
+     "reason": "The retrieved KULT text identifies the latest results as Q3 Fiscal 2025 and says the latest quarter was up to December 31, 2024. It supports the fiscal quarter and end date.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Under Armour reported approximately $1.4 billion of revenue for that quarter",
+     "numeric": true,
+     "cited_url": "https://blog.kultrecruit.com/under-armour-raises-profit-forecast-for-fiscal-2025-after-stronger-q3-results",
+     "reason": "KULT says revenue for the latest quarter fell 6% to $1.4 billion, and identifies that latest quarter as up to December 31, 2024. This supports the approximate actual revenue figure and period.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue for that same Q3 FY2025 was also approximately $1.33 billion depending on currency adjustments",
+     "numeric": true,
+     "cited_url": "https://fashionunited.com/news/business/under-armour-q3-exceeds-expectations-despite-revenue-decline/2026020670467",
+     "reason": "The retrieved FashionUnited text gives $1.33 billion for the quarter ended December 31, 2025, not December 31, 2024. It says revenue fell 5% and fell 6% on a currency-neutral basis; it does not present $1.33 billion as a currency-adjusted alternative for the earlier Q3 FY2025 period. The cited figure is assigned to the wrong period/basis.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "UAA usually trades at a slight premium to UA because of voting rights",
+     "numeric": false,
+     "cited_url": null,
+     "reason": "Neither retrieved source discusses the tickers, their share prices, a trading premium, or voting rights, so the claim is not evidenced by the cited sources.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 3,
+   "numeric_cited": 3,
+   "cited": 3,
+   "supported": 2,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 54.0
+ }
+}

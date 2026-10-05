@@ -1,0 +1,269 @@
+{
+ "id": "W19",
+ "category": "multi-hop",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "On 24 September 2026 Akamai announced a multi-year agreement with Anthropic. As of 3 October 2026: (a) what is the committed contract value and term, (b) the average annual commitment as a percentage of the midpoint of Akamai's 2026 revenue guidance as given with its Q2 2026 results (6 August 2026), and (c) how large is the total capital expenditure Akamai attributes to this commitment, as a multiple of its cash, cash equivalents and marketable securities at 30 June 2026?",
+ "grading": "Key points (all required): (a) US$11.6 billion of contractual commitment over seven years (optional expansion up to a further US$9 billion, about US$20 billion in total); (b) average annual commitment = 11.6 / 7 = about US$1.657 billion = about 36.9% of the US$4,487.5 million midpoint of 2026 revenue guidance (accept 36%-38%); (c) total related capex of about US$5.5 billion = about 1.19x cash, cash equivalents and marketable securities of US$4.616 billion at 30 June 2026 (accept 1.15x-1.23x). Fail if US$20bn, the US$1.7bn capex step-up, or a different guidance range is used, or if the term is not seven years.",
+ "answer": "(a) US$11.6 billion over seven years (plus a potential US$9 billion expansion, about US$20 billion in total) [W19-E1]. (b) 11.6 / 7 = about US$1.657 billion a year, about 36.9% of the US$4,487.5 million midpoint of Akamai's 2026 revenue guidance (US$4,445-4,530 million) [W19-E2]. (c) Total capex tied to the commitment is about US$5.5 billion, about 1.19x the US$4.616 billion of cash, cash equivalents and marketable securities at 30 June 2026 [W19-E1, W19-E2]. Akamai said it expects no impact on 2026 revenue guidance and about US$1.7 billion of extra 2026 capex.",
+ "output": {
+  "answer": "## (a) Committed contract value and term\n\n**~$11.6 billion over seven years** (an initial fixed contractual commitment), with the option to expand by up to an additional **$9 billion**, for a potential total of **~$20 billion**. The commitment was formalized via Project Plans 2 and 3 entered September 18, 2026 under a May 5, 2026 master services agreement; each plan has an initial seven-year term from its service start date.\n\n## (b) Average annual commitment as % of FY2026 revenue guidance midpoint\n\n- Average annual commitment: $11.6B ÷ 7 = **$1.657B/yr**\n- FY2026 revenue guidance midpoint (given Aug 6, 2026): ($4.445B + $4.530B) ÷ 2 = **$4.4875B**\n\n$1.657B ÷ $4.4875B ≈ **36.9%** (≈37%)\n\nSo the average annual contract value equals roughly **37%** of the midpoint of Akamai's 2026 revenue guidance.\n\n## (c) Related capex vs. cash/securities at June 30, 2026\n\n- Total capex attributed to the commitment: **~$5.5 billion** (plus a ~$1.7B increase in 2026 capex to pre-purchase supply-chain components, incl. memory)\n- Cash, cash equivalents and marketable securities at June 30, 2026: **$4.616 billion**\n\n$5.5B ÷ $4.616B ≈ **1.19×**\n\nSo the attributed capex is about **1.2 times** Akamai's June 30, 2026 cash, cash equivalents and marketable securities.\n\n**Caveats:** The $11.6B is a gross contractual commitment, not recognized revenue; Akamai did not disclose the revenue-recognition schedule or margins, so the straight-line annual figure is an approximation. Guidance was stated to be unaffected by the deal.\n\nSources:\n- Akamai press release: https://www.akamai.com/newsroom/press-release/akamai-announces-11-6-billion-multi-year-agreement-with-anthropic-to-support-growing-demand\n- RTTNews: https://www.rttnews.com/3693810/akamai-anthropic-enter-11-6-bln-multi-year-cloud-agreement.aspx\n- Unite.AI (8-K details): https://www.unite.ai/akamai-signs-expanded-seven-year-cloud-agreement-with-anthropic\n- Akamai Q2 2026 results (guidance, $4.616B cash): https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results",
+  "tokens": {
+   "input": 34084,
+   "output": 1328
+  },
+  "tavily_credits": 6,
+  "latency_s": 20.01,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/d9d0149eb57094b0e857061140a7fa87",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Akamai Anthropic multi-year agreement September 2026 committed contract value",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Akamai Q2 2026 results revenue guidance August 2026",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Akamai Q2 2026 balance sheet cash cash equivalents marketable securities June 30 2026",
+     "search_depth": "advanced",
+     "include_domains": [
+      "ir.akamai.com",
+      "akamai.com"
+     ]
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.akamai.com/newsroom/press-release/akamai-announces-11-6-billion-multi-year-agreement-with-anthropic-to-support-growing-demand",
+    "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results",
+    "https://www.rttnews.com/3693810/akamai-anthropic-enter-11-6-bln-multi-year-cloud-agreement.aspx",
+    "https://www.unite.ai/akamai-signs-expanded-seven-year-cloud-agreement-with-anthropic"
+   ],
+   "cited_primary": 1,
+   "retrieved": 26,
+   "retrieved_primary": 8
+  },
+  "recall": {
+   "figures": 12,
+   "found": 12
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "States the committed contractual value as US$11.6 billion over seven years.",
+     "optional": false,
+     "met": true,
+     "note": "Says “~$11.6 billion over seven years.”"
+    },
+    {
+     "point": "Optionally identifies the potential expansion of up to US$9 billion, about US$20 billion total, without treating it as the committed amount.",
+     "optional": true,
+     "met": true,
+     "note": "Clearly distinguishes the additional $9 billion option and potential ~$20 billion total from the $11.6 billion commitment."
+    },
+    {
+     "point": "Calculates the average annual commitment as approximately US$1.657 billion (US$11.6 billion divided by seven).",
+     "optional": false,
+     "met": true,
+     "note": "Gives $11.6B ÷ 7 = $1.657B/yr."
+    },
+    {
+     "point": "Compares the annual commitment with the midpoint of Akamai’s 2026 revenue guidance, using the US$4,445–4,530 million range and US$4,487.5 million midpoint, and gives a percentage within 36%–38%.",
+     "optional": false,
+     "met": true,
+     "note": "Uses the stated guidance range, calculates the $4.4875B midpoint, and reports 36.9%."
+    },
+    {
+     "point": "States total capex related to the commitment as about US$5.5 billion, rather than confusing it with the US$1.7 billion 2026 capex increase.",
+     "optional": false,
+     "met": true,
+     "note": "Identifies ~$5.5B as total related capex and separately labels ~$1.7B as a 2026 increase."
+    },
+    {
+     "point": "Compares the total related capex with US$4.616 billion of cash, cash equivalents and marketable securities at 30 June 2026, giving a multiple within 1.15x–1.23x.",
+     "optional": false,
+     "met": true,
+     "note": "Uses $4.616B at June 30, 2026 and calculates 1.19x."
+    },
+    {
+     "point": "Does not present the potential US$20 billion total as the committed contract value.",
+     "optional": false,
+     "met": true,
+     "note": "Explicitly labels ~$20B as potential total and ~$11.6B as the fixed contractual commitment."
+    },
+    {
+     "point": "Does not use the US$1.7 billion 2026 capex increase as the total capex attributable to the commitment.",
+     "optional": false,
+     "met": true,
+     "note": "States total attributed capex is ~$5.5B and treats ~$1.7B as an increase in 2026 capex."
+    },
+    {
+     "point": "Does not use a different 2026 revenue guidance range or midpoint.",
+     "optional": false,
+     "met": true,
+     "note": "Uses $4.445B–$4.530B and midpoint $4.4875B."
+    },
+    {
+     "point": "Does not give a term other than seven years.",
+     "optional": false,
+     "met": true,
+     "note": "States seven years."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer gives the committed value and seven-year term, computes the annual commitment share using the correct guidance midpoint, and compares total related capex with the correct cash and marketable securities balance. It also clearly distinguishes the optional potential expansion and the 2026 capex increase from the required figures.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Akamai announced a $11.6 billion contractual commitment over seven years",
+     "numeric": true,
+     "cited_url": "https://www.akamai.com/newsroom/press-release/akamai-announces-11-6-billion-multi-year-agreement-with-anthropic-to-support-growing-demand",
+     "reason": "Akamai's release says the expanded relationship includes \"$11.6 billion of contractual commitment over seven years.\" It supports the amount, company, metric, and term.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The relationship may expand by up to an additional $9 billion, for a potential total of about $20 billion",
+     "numeric": true,
+     "cited_url": "https://www.unite.ai/akamai-signs-expanded-seven-year-cloud-agreement-with-anthropic",
+     "reason": "Unite.AI says the commitment provides for potential expansion up to an additional $9 billion, bringing the total potential commitment to approximately $20 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Project Plans 2 and 3 were entered September 18, 2026, under a May 5, 2026 Master Services Agreement; each has an initial seven-year term from its service start date",
+     "numeric": true,
+     "cited_url": "https://www.unite.ai/akamai-signs-expanded-seven-year-cloud-agreement-with-anthropic",
+     "reason": "The retrieved Unite.AI text gives both agreement dates and says each project plan's initial seven-year term begins on its respective service start date.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Akamai's FY2026 revenue guidance range was $4.445 billion to $4.530 billion",
+     "numeric": true,
+     "cited_url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results",
+     "reason": "The Q2 2026 release's financial-guidance table lists full-year 2026 revenue low end $4,445 million and high end $4,530 million. Converting millions to billions gives the stated range.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The FY2026 revenue guidance was given August 6, 2026",
+     "numeric": true,
+     "cited_url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results",
+     "reason": "The retrieved release text contains the guidance table but does not state its publication date; the supplied evidence therefore does not establish August 6, 2026.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The FY2026 revenue guidance midpoint is $4.4875 billion",
+     "numeric": true,
+     "cited_url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results",
+     "reason": "Using the retrieved guidance endpoints: ($4.445B + $4.530B) / 2 = $8.975B / 2 = $4.4875B. The arithmetic is correct and both inputs are supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The average annualized amount of the $11.6 billion, seven-year commitment is about $1.657 billion per year",
+     "numeric": true,
+     "cited_url": "https://www.akamai.com/newsroom/press-release/akamai-announces-11-6-billion-multi-year-agreement-with-anthropic-to-support-growing-demand",
+     "reason": "Using the supported $11.6B commitment and seven-year term: $11.6B / 7 = $1.657142...B per year, which rounds to $1.657B. This is a calculation, not a company-reported annual schedule.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The average annualized commitment is approximately 36.9% of the FY2026 revenue guidance midpoint",
+     "numeric": true,
+     "cited_url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results",
+     "reason": "Using supported inputs: ($11.6B / 7) / [($4.445B + $4.530B) / 2] × 100 = 36.928...%, which rounds to 36.9%. The arithmetic and units are consistent.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Akamai estimated total capital expenditures related to the commitment at approximately $5.5 billion",
+     "numeric": true,
+     "cited_url": "https://www.akamai.com/newsroom/press-release/akamai-announces-11-6-billion-multi-year-agreement-with-anthropic-to-support-growing-demand",
+     "reason": "The Akamai release says total capital expenditures related to the $11.6 billion commitment are estimated at approximately $5.5 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Akamai anticipated an approximately $1.7 billion increase in 2026 capital expenditures to secure and pre-purchase critical supply-chain components, including memory",
+     "numeric": true,
+     "cited_url": "https://www.akamai.com/newsroom/press-release/akamai-announces-11-6-billion-multi-year-agreement-with-anthropic-to-support-growing-demand",
+     "reason": "The release states an anticipated approximately $1.7 billion increase in 2026 capex to secure and pre-purchase critical supply-chain components, including memory.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Akamai had $4.616 billion in cash, cash equivalents and marketable securities as of June 30, 2026",
+     "numeric": true,
+     "cited_url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results",
+     "reason": "The Q2 2026 results text states that cash, cash equivalents and marketable securities was $4.616 billion as of June 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The commitment-related capex estimate is about 1.19 times the June 30, 2026 cash/securities balance",
+     "numeric": true,
+     "cited_url": "https://www.akamai.com/newsroom/press-release/akamai-announces-11-6-billion-multi-year-agreement-with-anthropic-to-support-growing-demand",
+     "reason": "Using the supported approximate capex estimate and the cash balance supported by the cited Q2 release: $5.5B / $4.616B = 1.1915..., which rounds to 1.19× (or 1.2× to one decimal).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Akamai anticipated no impact to its 2026 revenue guidance from the agreement",
+     "numeric": true,
+     "cited_url": "https://www.akamai.com/newsroom/press-release/akamai-announces-11-6-billion-multi-year-agreement-with-anthropic-to-support-growing-demand",
+     "reason": "The Akamai release explicitly says it anticipates no impact to the company's 2026 revenue guidance.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The $11.6 billion is a gross contractual commitment, not recognized revenue",
+     "numeric": true,
+     "cited_url": "https://www.akamai.com/newsroom/press-release/akamai-announces-11-6-billion-multi-year-agreement-with-anthropic-to-support-growing-demand",
+     "reason": "The release supports describing the $11.6 billion as a contractual commitment, but the retrieved text does not establish its revenue-recognition or accounting treatment. The added assertion that it is not recognized revenue is not evidenced there.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 14,
+   "numeric_cited": 14,
+   "cited": 14,
+   "supported": 12,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 123.1
+ }
+}

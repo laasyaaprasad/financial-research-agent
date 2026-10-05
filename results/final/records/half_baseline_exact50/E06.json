@@ -1,0 +1,286 @@
+{
+ "id": "E06",
+ "category": "vague metric",
+ "difficulty": "hard",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "berkshire cash",
+ "grading": "(1) Identifies Berkshire Hathaway Inc. as one company (Class A and Class B shares) without asking which class. (2) Uses the latest balance sheet date, June 30, 2026 (Q2 2026 10-Q, reported Aug 2026), says so, and notes Q3 2026 not yet reported. (3) States explicitly which definition of 'cash' it uses: the consolidated cash and cash equivalents line, versus the widely quoted 'cash, cash equivalents and U.S. Treasury Bills' held by insurance and other businesses; if it quotes the larger Treasury-bill-inclusive figure it says it includes T-bills; cites the filing. (4) Fail if it gives a 'cash' number with no definition, counts the equity portfolio as cash, uses a different balance-sheet date without saying so, or gives a figure for another company.",
+ "answer": "Berkshire at June 30, 2026: insurance and other businesses held about $359.2B of cash, equivalents and U.S. Treasury Bills (net of unsettled purchases); the answer defines which cash measure it quotes.",
+ "output": {
+  "answer": "**Berkshire Hathaway cash pile — latest picture (Q2 2026)**\n\n| Period | Cash + T-bills |\n|---|---|\n| End 2022 | ~$129B |\n| End 2025 | ~$373B |\n| Q1 2026 | **$397.4B (record)** |\n| Q2 2026 | **~$365B** (–4%, first sequential drop in 3+ years) |\n\n**Key points**\n- The peak of ~$397 billion came in Q1 2026 — Berkshire's all-time high, and reportedly more than Apple, Amazon, Alphabet, and Microsoft combined. It was large enough to buy almost any S&P 500 company outright.\n- The decline in Q2 2026 was Greg Abel's first quarter as CEO (Buffett stepped back in January 2026). Berkshire became a **net buyer of equities for the first time in 14 quarters**, buying ~$23.5B of stocks vs. ~$3.7B sold.\n- Notable deployment: a **$6.8B purchase of homebuilder Taylor Morrison** and a **$10B investment in Alphabet**, plus **$4.5B in buybacks**.\n- Context: Buffett built the reserve by selling roughly **$173B net of equities over 2022–2024**, parking proceeds in short-term Treasuries while waiting for cheaper valuations. Berkshire also sharply cut its Apple stake (from a peak of ~915M shares to ~228M).\n\n**Read on it:** The shrinking pile signals a strategic pivot — Abel appears more willing to deploy capital than Buffett was in recent years, though the reserve remains historically enormous. As a percentage of total assets, the cash was the highest since at least 1998 at its peak.\n\n**Sources**\n- https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-brk-b-cash-173952752.html\n- https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-400-billion-cash-164334461.html\n- https://finance.yahoo.com/markets/stocks/articles/may-soon-why-warren-buffett-121121468.html\n- https://www.wsj.com/livecoverage/july-jobs-report-stock-market-08-07-2026/card/one-thing-i-m-watching-berkshire-hathaway-s-cash-hoard-aY9lS9gycBx09VU0HA10\n\nWant me to dig into where the cash is invested (e.g., T-bill maturities) or how it compares to Berkshire's market cap?",
+  "tokens": {
+   "input": 8411,
+   "output": 775
+  },
+  "tavily_credits": 4,
+  "latency_s": 6.56,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/9ed3d900d1ea78c40eb7146a5c6f7dbe",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Berkshire Hathaway cash position 2025 latest",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Berkshire Hathaway cash pile T-bills record",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-400-billion-cash-164334461.html",
+    "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-brk-b-cash-173952752.html",
+    "https://finance.yahoo.com/markets/stocks/articles/may-soon-why-warren-buffett-121121468.html",
+    "https://www.wsj.com/livecoverage/july-jobs-report-stock-market-08-07-2026/card/one-thing-i-m-watching-berkshire-hathaway-s-cash-hoard-aY9lS9gycBx09VU0HA10"
+   ],
+   "cited_primary": 0,
+   "retrieved": 13,
+   "retrieved_primary": 0
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 0.538,
+   "points": [
+    {
+     "point": "Identifies Berkshire Hathaway as the company being discussed and does not ask which share class.",
+     "optional": false,
+     "met": true,
+     "note": "The answer names Berkshire Hathaway and asks no class-related clarification."
+    },
+    {
+     "point": "Makes clear that Class A and Class B are shares of the same Berkshire Hathaway company.",
+     "optional": false,
+     "met": false,
+     "note": "It does not mention Class A or Class B shares."
+    },
+    {
+     "point": "Identifies Q2 2026 as the latest reported period.",
+     "optional": false,
+     "met": true,
+     "note": "It labels the latest figure Q2 2026."
+    },
+    {
+     "point": "States the latest balance-sheet date as June 30, 2026.",
+     "optional": false,
+     "met": false,
+     "note": "It says Q2 2026 but never gives June 30, 2026."
+    },
+    {
+     "point": "States that the Q2 2026 10-Q was reported in August 2026.",
+     "optional": false,
+     "met": false,
+     "note": "No 10-Q or August 2026 filing date is stated."
+    },
+    {
+     "point": "Notes that Q3 2026 has not yet been reported.",
+     "optional": false,
+     "met": false,
+     "note": "The answer does not mention Q3 2026 reporting status."
+    },
+    {
+     "point": "Explicitly labels the quoted measure as including Treasury bills.",
+     "optional": false,
+     "met": true,
+     "note": "The table labels the amounts “Cash + T-bills,” and the text also refers to short-term Treasuries."
+    },
+    {
+     "point": "Distinguishes the consolidated cash-and-cash-equivalents line from the widely quoted cash, equivalents, and U.S. Treasury Bills held by insurance and other businesses.",
+     "optional": false,
+     "met": false,
+     "note": "It does not explain this distinction or specify the insurance-and-other-businesses measure."
+    },
+    {
+     "point": "Cites Berkshire's filing for the cash measure.",
+     "optional": false,
+     "met": false,
+     "note": "The listed sources are news articles, not the filing."
+    },
+    {
+     "point": "Does not give a cash number with no definition.",
+     "optional": false,
+     "met": true,
+     "note": "The figures are labeled “Cash + T-bills,” rather than left entirely undefined."
+    },
+    {
+     "point": "Does not count the equity portfolio as cash.",
+     "optional": false,
+     "met": true,
+     "note": "Equity purchases and holdings are discussed separately from the cash-plus-T-bills figures."
+    },
+    {
+     "point": "Does not use a different balance-sheet date without saying so.",
+     "optional": false,
+     "met": true,
+     "note": "The answer identifies the quoted period as Q2 2026."
+    },
+    {
+     "point": "Does not give a figure for another company.",
+     "optional": false,
+     "met": true,
+     "note": "The figures are attributed to Berkshire Hathaway."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The answer identifies Berkshire and labels its figures as cash plus T-bills, but it omits the required June 30 date, filing/reporting details, Q3 status, the precise distinction between cash measures, and a filing citation.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "partial",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q2 cash and Treasury bills: $364.7B at June 30, 2026, down 4% sequentially",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-brk-b-cash-173952752.html",
+     "reason": "The retrieved passage explicitly says Berkshire cash and Treasury bill holdings were $364.7 billion on June 30, 2026, down 4% from three months earlier. This supports the answer's approximate Q2 figure and decline; metric and period match.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "First sequential cash decline in more than three years",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-brk-b-cash-173952752.html",
+     "reason": "The retrieved passage explicitly calls the June 30, 2026 decline the first sequential decline in more than three years.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "End-2022 cash and short-term investments were about $129B",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-400-billion-cash-164334461.html",
+     "reason": "The retrieved text says Berkshire held $397 billion in cash and short-term investments, nearly triple its 2022 level of $129 billion. It supports the approximate 2022 figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "End-2025 cash and T-bills were about $373B",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-400-billion-cash-164334461.html",
+     "reason": "The retrieved passage does not give $373B as end-2025 cash or cash plus T-bills. It gives end-2025 total assets of $1.22T and long-term equity investments of $657.0B, neither of which establishes the claimed cash figure.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 2026 cash reached $397.4B, a record/all-time high",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/may-soon-why-warren-buffett-121121468.html",
+     "reason": "The retrieved text says the cash peaked at a record $397B in Q1 2026 and that the reserve swelled to a record $397.4B by the end of Q1, citing Berkshire's 10-Q. That supports the amount, period, and record characterization.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Q1 peak exceeded Apple, Amazon, Alphabet, and Microsoft combined",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/may-soon-why-warren-buffett-121121468.html",
+     "reason": "The retrieved text explicitly says Berkshire's record Q1 2026 cash surpassed the combined cash holdings of Apple, Amazon, Alphabet, and Microsoft.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The cash pile was large enough to buy almost any S&P 500 company outright",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/may-soon-why-warren-buffett-121121468.html",
+     "reason": "The retrieved passage supports a comparison with four companies' combined cash holdings but does not state or provide evidence that Berkshire could buy almost any S&P 500 company outright.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Greg Abel took over as CEO in January 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-brk-b-cash-173952752.html",
+     "reason": "The retrieved text explicitly says Abel took over as CEO in January 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Q2 2026 decline was Abel's first quarter as CEO",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-brk-b-cash-173952752.html",
+     "reason": "The source says Abel took over in January 2026 and identifies the decline as occurring in Q2 2026. January falls in Q1, so Q2 is not his first calendar quarter as CEO; the source does not support the answer's characterization.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Buffett stepped back in January 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-brk-b-cash-173952752.html",
+     "reason": "The retrieved text says Abel took over as CEO in January 2026, but does not state that Buffett stepped back in January. That event wording is not established by the retrieved passage.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Berkshire became a net buyer after 14 quarters, buying $23.5B of equities and selling $3.7B",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-brk-b-cash-173952752.html",
+     "reason": "The retrieved text says Berkshire bought $23.5B of other equities and sold $3.7B, making it a net buyer for the first time in more than three years. The companion retrieved article explicitly describes a 14-quarter net-selling streak ending in Q2 2026. The stated purchases, sales, net-buyer status, and streak match.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 deals: $6.8B Taylor Morrison purchase, $10B Alphabet investment, and $4.5B of buybacks",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-brk-b-cash-173952752.html",
+     "reason": "The retrieved text explicitly gives the $6.8B Taylor Morrison purchase, $10B investment in Alphabet shares, and $4.5B repurchase amount for the quarter.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Buffett sold about $173B net of equities in 2022–2024 and parked proceeds in T-bills while awaiting market dislocations",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/may-soon-why-warren-buffett-121121468.html",
+     "reason": "The retrieved text says Buffett built the reserve by selling $173B net in equities over 2022–2024 and parked the proceeds in T-bills while awaiting deep market dislocations. This supports the period, amount, and described use of proceeds.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Berkshire cut its Apple stake from a peak of about 915M shares to about 228M",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/may-soon-why-warren-buffett-121121468.html",
+     "reason": "None of the retrieved passages gives Berkshire's Apple share count at the peak or the later 228M figure. The cited cash-hoard text does not support this claim.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "At its peak, cash as a percentage of total assets was the highest since at least 1998",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-400-billion-cash-164334461.html",
+     "reason": "The retrieved passage gives end-2025 total assets and cash/short-term-investment figures but no historical cash-to-assets ratio or comparison back to 1998. The claim is not supported by the cited text.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 13,
+   "numeric_cited": 13,
+   "cited": 15,
+   "supported": 9,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 111.7
+ }
+}

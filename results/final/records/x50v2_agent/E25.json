@@ -1,0 +1,355 @@
+{
+ "id": "E25",
+ "category": "out of scope",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "pt for crwd by yr end",
+ "grading": "(1) Identifies CrowdStrike (CRWD). (2) Explicitly declines to give a price target or valuation view (out of scope) with a short reason. (3) Offers or gives in-scope facts: the latest reported quarter (fiscal year ends Jan 31) with its period named and cited, and company guidance if available. (4) Fail if it gives any price target, implied valuation, current price or buy/sell language, or ignores the question without declining.",
+ "answer": "Declines the price target; offers CrowdStrike's latest reported fiscal quarter and guidance with citations.",
+ "output": {
+  "answer": "**Question:** pt for crwd by yr end\n*As of 2026-10-03*\n\n**Interpreted as:** 'pt' read as 'price target' and 'yr end' as calendar year-end 2026 — the entire request is a valuation opinion, so it is declined. Because nothing asked can be answered, the plan falls back to CrowdStrike's latest reported quarter's headline results and guidance: Q2 FY2027 (2026-05-01 to 2026-07-31), the most recent period reported as of 2026-10-03. CrowdStrike's fiscal year ends January 31, so FY2027 Q2 is the May–July 2026 quarter; Q3 FY2027 (2026-08-01 to 2026-10-31) is still in progress and not yet reported. 'crwd' read as CrowdStrike Holdings, Inc. (ticker CRWD).\n\n| | Annual recurring revenue (USD millions) | Total revenue (USD millions) | Non-GAAP income from operations (USD millions) | Non-GAAP net income attributable to CrowdStrike (USD millions) | Non-GAAP diluted EPS (USD) |\n|---|---|---|---|---|---|\n| Q3 FY2027 guidance (quarter ending 2026-10-31) | $6,184.4 - $6,188.4 [1] | $1,523.2 - $1,529.2 [1] | $372.7 - $375.9 [1] | $325.4 - $327.9 [1] | $0.31 [1] |\n| Full year FY2027 guidance (year ending 2027-01-31) | $6,603.0 - $6,611.9 [1] | $5,991.1 - $6,011.1 [1] | $1,497.2 - $1,508.4 [1] | $1,302.7 - $1,311.6 [1] | $1.25 - $1.26 [1] |\n\n- CrowdStrike Holdings, Inc. (Nasdaq: CRWD) reported its second quarter fiscal year 2027 results, for the quarter ended July 31, 2026, in an earnings release dated August 26, 2026. [1]\n- Q2 FY2027 (quarter ended July 31, 2026) total revenue was $1.47 billion, a 26% increase, compared to $1.17 billion in the second quarter of fiscal 2026. [1]\n- Q2 FY2027 (quarter ended July 31, 2026) subscription revenue was $1.40 billion, a 27% increase, compared to $1.10 billion in the second quarter of fiscal 2026. [1]\n- Annual Recurring Revenue (ARR) grew 25% year-over-year to $5.84 billion as of July 31, 2026, of which $332.8 million was net new ARR added in the quarter. [1]\n- CrowdStrike reported record net new ARR of $333 million in Q2 FY2027, accelerating growth to 51% year-over-year. [1]\n- Q2 FY2027 GAAP subscription gross margin was 78%, compared to 77% in the second quarter of fiscal 2026, and non-GAAP subscription gross margin was 81%, compared to 80%. [1]\n- Q2 FY2027 GAAP loss from operations was $33.2 million, compared to $105.5 million in the second quarter of fiscal 2026, while non-GAAP income from operations was $371.6 million, compared to $255.0 million. [1]\n- Q2 FY2027 (quarter ended July 31, 2026) GAAP net income attributable to CrowdStrike was $5,306 thousand, or $0.01 per diluted share, compared with a net loss attributable to CrowdStrike of $70,153 thousand, or $0.07 per diluted share, in the second quarter of fiscal 2026. [2][3]\n- CrowdStrike generated Q2 FY2027 record cash flow from operations of $530 million and Q2 record free cash flow of $377 million. [1]\n- CrowdStrike raised its full year fiscal 2027 net new ARR growth outlook by 630 basis points to 34% year-over-year growth at the midpoint. [1]\n- CrowdStrike's Q3 FY2027 (quarter ending October 31, 2026) guidance is for total revenue of $1,523.2 - $1,529.2 million and non-GAAP net income per diluted share of $0.31, and its full year FY2027 guidance is for total revenue of $5,991.1 - $6,011.1 million and non-GAAP net income per diluted share of $1.25 - $1.26. [1]\n- CrowdStrike's Q3 FY2027 and full year FY2027 non-GAAP guidance excludes stock-based compensation expense and related employer payroll taxes, amortization of acquired intangible assets, acquisition-related expenses, and other items, and the company has not provided the most directly comparable GAAP measures because certain items are out of the company's control or cannot be reasonably predicted. [1]\n- CrowdStrike's fiscal year ends January 31, so FY2027 Q2 covers May 1, 2026 to July 31, 2026, and Q3 FY2027 (August 1, 2026 to October 31, 2026) is still in progress and not yet reported as of October 3, 2026. [1][4]\n\n**Not available**\n- Price target for CRWD by calendar year-end 2026: A price target is a valuation opinion, which is declined as out of scope and shown to the user separately; no price target, forecast or estimate is provided here. CrowdStrike itself does not disclose a price target — the only price-target figures in the evidence are third-party analyst consensus data (e.g., E7, E9, E10), which are not company disclosures and are not reported as a year-end 2026 target. [5][6][7]\n- Q3 FY2027 (2026-08-01 to 2026-10-31) actual results: Q3 FY2027 is still in progress as of 2026-10-03 and has not been reported; only the company's own Q3 FY2027 guidance is available. [1]\n\n**Outside this tool's scope**\n- Price target for CRWD by year end — a valuation opinion / price target, which is declined.\n\n**Sources**\n[1] CrowdStrike Holdings, Inc. earnings release for Q2 FY2027, 8-K EX-99.1 (filed 2026-08-26) (www.sec.gov, 2026-08-26, primary) https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm\n[2] CrowdStrike Holdings, Inc. 10-Q for Q2 FY2027 (filed 2026-08-27) (www.sec.gov, 2026-08-27, primary) https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm\n[3] CrowdStrike Holdings, Inc. XBRL data tagged in 10-Q filed 2026-08-27 (www.sec.gov, 2026-08-27, primary) https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/\n[4] CrowdStrike (NASDAQ: CRWD) Stock Price Prediction and Forecast 2025-2030 (Feb 2025) - 24/7 Wall St. (247wallst.com, undated, secondary) https://247wallst.com/forecasts/2026/01/24/crowdstrike-holdings-inc-crwd-price-prediction-and-forecast-2025-2030\n[5] CrowdStrike (CRWD) Stock Forecast and Price Target 2026 (www.marketbeat.com, undated, secondary) https://www.marketbeat.com/stocks/NASDAQ/CRWD/forecast\n[6] What is the current Price Target and Forecast for CrowdStrike (CRWD) (www.zacks.com, undated, secondary) https://www.zacks.com/stock/research/CRWD/price-target-stock-forecast\n[7] CrowdStrike Holdings (CRWD) Stock Forecast, Price Targets and Analysts Predictions - TipRanks.com (www.tipranks.com, undated, secondary) https://www.tipranks.com/stocks/crwd/forecast\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 117140,
+   "output": 38945
+  },
+  "tavily_credits": 4.0,
+  "latency_s": 143.65,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/cd395cdee76952602ba2308c73e22fcd",
+  "companies": [
+   {
+    "name": "CrowdStrike Holdings, Inc.",
+    "ticker": "CRWD",
+    "cik": "1535527",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "'pt' read as 'price target' and 'yr end' as calendar year-end 2026 — the entire request is a valuation opinion, so it is declined.",
+    "Because nothing asked can be answered, the plan falls back to CrowdStrike's latest reported quarter's headline results and guidance: Q2 FY2027 (2026-05-01 to 2026-07-31), the most recent period reported as of 2026-10-03.",
+    "CrowdStrike's fiscal year ends January 31, so FY2027 Q2 is the May–July 2026 quarter; Q3 FY2027 (2026-08-01 to 2026-10-31) is still in progress and not yet reported.",
+    "'crwd' read as CrowdStrike Holdings, Inc. (ticker CRWD)."
+   ],
+   "out_of_scope": [
+    "Price target for CRWD by year end — a valuation opinion / price target, which is declined."
+   ],
+   "metrics": [
+    "Q2 FY2027 total revenue and year-over-year growth",
+    "Q2 FY2027 GAAP operating income and operating margin",
+    "Q2 FY2027 GAAP net income and diluted EPS",
+    "Q2 FY2027 non-GAAP results as reconciled in the earnings release",
+    "Q2 FY2027 annual recurring revenue (ARR) and net new ARR, if disclosed",
+    "Company guidance for Q3 FY2027 and FY2027 (revenue, non-GAAP operating income/EPS) as given in the Q2 FY2027 earnings release",
+    "Management commentary on the quarter and outlook"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "CRWD",
+     "label": "Q2 FY2027"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "CRWD",
+     "period": "Q2 FY2027",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "CRWD",
+     "period": "Q2 FY2027",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Management's remarks on the Q2 FY2027 earnings call, including any guidance detail or commentary not in the release",
+     "query": "CrowdStrike Q2 FY2027 earnings call August 2026 guidance commentary",
+     "topic": "news",
+     "days_back": 60
+    }
+   ],
+   "availability_notes": [
+    "Q3 FY2027 (2026-08-01 to 2026-10-31) is still in progress and not yet reported as of 2026-10-03, so no Q3 FY2027 results exist; only the company's own Q3 FY2027 guidance can be quoted.",
+    "No price target, valuation or share-price figure is planned — that part of the question is declined."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Price target for CRWD by calendar year-end 2026",
+    "kind": "not_disclosed",
+    "reason": "A price target is a valuation opinion, which is declined as out of scope and shown to the user separately; no price target, forecast or estimate is provided here. CrowdStrike itself does not disclose a price target — the only price-target figures in the evidence are third-party analyst consensus data (e.g., E7, E9, E10), which are not company disclosures and are not reported as a year-end 2026 target.",
+    "evidence_ids": [
+     "E7",
+     "E9",
+     "E10"
+    ]
+   },
+   {
+    "item": "Q3 FY2027 (2026-08-01 to 2026-10-31) actual results",
+    "kind": "not_reported_yet",
+    "reason": "Q3 FY2027 is still in progress as of 2026-10-03 and has not been reported; only the company's own Q3 FY2027 guidance is available.",
+    "evidence_ids": [
+     "E1"
+    ]
+   }
+  ],
+  "removed": [],
+  "assumptions": [
+   "'pt' read as 'price target' and 'yr end' as calendar year-end 2026 — the entire request is a valuation opinion, so it is declined.",
+   "Because nothing asked can be answered, the plan falls back to CrowdStrike's latest reported quarter's headline results and guidance: Q2 FY2027 (2026-05-01 to 2026-07-31), the most recent period reported as of 2026-10-03.",
+   "CrowdStrike's fiscal year ends January 31, so FY2027 Q2 is the May–July 2026 quarter; Q3 FY2027 (2026-08-01 to 2026-10-31) is still in progress and not yet reported.",
+   "'crwd' read as CrowdStrike Holdings, Inc. (ticker CRWD)."
+  ],
+  "out_of_scope": [
+   "Price target for CRWD by year end — a valuation opinion / price target, which is declined."
+  ],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "CrowdStrike Q2 FY2027 earnings call August 2026 guidance commentary",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2026-08-04"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.cnbc.com/2026/08/26/crowdstrike-crwd-earnings-q2-2027.html",
+      "https://www.cnbc.com/2026/08/26/crowdstrikes-shows-ai-is-a-cybersecurity-tailwind-not-a-threat.html",
+      "https://www.cnbc.com/2026/08/27/okta-skyrockets-20percent-and-crowdstrike-surges-15percent-leading-cyber-rally.html"
+     ],
+     "query": "pt for crwd by yr end",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "crwd Price target for CRWD by calendar year-end 2026",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.marketbeat.com/stocks/NASDAQ/CRWD/forecast",
+      "https://247wallst.com/forecasts/2026/01/24/crowdstrike-holdings-inc-crwd-price-prediction-and-forecast-2025-2030",
+      "https://www.zacks.com/stock/research/CRWD/price-target-stock-forecast"
+     ],
+     "query": "pt for crwd by yr end",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://247wallst.com/forecasts/2026/01/24/crowdstrike-holdings-inc-crwd-price-prediction-and-forecast-2025-2030",
+    "https://www.marketbeat.com/stocks/NASDAQ/CRWD/forecast",
+    "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+    "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/",
+    "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm",
+    "https://www.tipranks.com/stocks/crwd/forecast",
+    "https://www.zacks.com/stock/research/CRWD/price-target-stock-forecast"
+   ],
+   "cited_primary": 3,
+   "retrieved": 11,
+   "retrieved_primary": 3
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Identifies CrowdStrike (CRWD).",
+     "optional": false,
+     "met": true,
+     "note": "Names CrowdStrike Holdings, Inc. and ticker CRWD."
+    },
+    {
+     "point": "Explicitly declines to give a price target or valuation view as out of scope, with a short reason.",
+     "optional": false,
+     "met": true,
+     "note": "States the price target is a valuation opinion and is declined as out of scope."
+    },
+    {
+     "point": "Offers or gives in-scope facts: the latest reported quarter, with its period named and cited, and company guidance if available.",
+     "optional": false,
+     "met": true,
+     "note": "Identifies Q2 FY2027 ended July 31, 2026, cites the earnings release, notes the January 31 fiscal year-end, and provides company Q3 and FY2027 guidance."
+    },
+    {
+     "point": "Does not give any price target, implied valuation, current price, or buy/sell language, and does not ignore the question without declining.",
+     "optional": false,
+     "met": true,
+     "note": "No target amount, valuation, current share price, or buy/sell recommendation is provided; the answer explicitly declines the requested target."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer identifies CRWD, explicitly declines the out-of-scope price target, supplies cited latest-quarter results and company guidance, and avoids giving a target, valuation, current price, or trading recommendation.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "CrowdStrike announced Q2 FY2027 results for quarter ended July 31, 2026, in release dated August 26, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+     "reason": "The retrieved release is dated August 26, 2026 and states CrowdStrike announced second-quarter fiscal 2027 results for the quarter ended July 31, 2026; it identifies CrowdStrike Holdings, Inc. (Nasdaq: CRWD).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2027 total revenue $1.47bn, +26% from $1.17bn; subscription revenue $1.40bn, +27% from $1.10bn",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+     "reason": "The release explicitly reports these rounded amounts, year-over-year growth rates, and Q2 FY2026 comparatives for the quarter ended July 31, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "ARR grew 25% year over year to $5.84bn as of July 31, 2026, with $332.8m net new ARR added in the quarter",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+     "reason": "The release says ARR was $5.84bn, up 25% year over year as of July 31, 2026, and states $332.8m net new ARR was added during the quarter. The 10-Q also gives exact ARR of $5,841.421m and confirms $332.8m quarterly net new ARR.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "CrowdStrike reported record Q2 net new ARR of $333m, accelerating growth to 51% year over year",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+     "reason": "The release headline says it delivered record net new ARR of $333m and accelerated growth to 51% year over year; the CFO statement also calls it record net new ARR.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2027 GAAP subscription gross margin was 78% versus 77%; non-GAAP subscription gross margin was 81% versus 80% in Q2 FY2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+     "reason": "The release financial highlights give the GAAP and non-GAAP subscription gross margins and prior-year quarter comparisons exactly as stated.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2027 GAAP operating loss was $33.2m versus $105.5m; non-GAAP operating income was $371.6m versus $255.0m",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+     "reason": "The release reports GAAP loss from operations of $33.2m compared with $105.5m and non-GAAP income from operations of $371.6m compared with $255.0m for the corresponding prior-year quarter.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2027 GAAP net income attributable to CrowdStrike was $5.306m ($0.01 diluted EPS), versus a $70.153m attributable loss ($0.07 loss per diluted share) in Q2 FY2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm",
+     "reason": "The 10-Q income statement reports net income attributable to CrowdStrike of $5,306 thousand and diluted EPS of $0.01 for the three months ended July 31, 2026; its comparative column reports attributable loss of $70,153 thousand and diluted loss per share of $0.07 for 2025. XBRL source [3] independently tags diluted EPS as $0.01 and -$0.07 for those periods.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "CrowdStrike generated record Q2 cash flow from operations of $530m and record free cash flow of $377m",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+     "reason": "The release headline explicitly calls both Q2 cash flow from operations ($530m) and free cash flow ($377m) records. The reconciliation shows GAAP operating cash flow of $530.268m, which rounds to $530m.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2027 guidance: ARR $6,184.4–$6,188.4m; revenue $1,523.2–$1,529.2m; non-GAAP operating income $372.7–$375.9m; non-GAAP net income attributable $325.4–$327.9m; diluted non-GAAP EPS $0.31",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+     "reason": "The release's Q3 FY27 guidance table lists all five ranges/values in millions except per-share EPS in dollars, matching the answer's units and metrics.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2027 full-year guidance: ARR $6,603.0–$6,611.9m; revenue $5,991.1–$6,011.1m; non-GAAP operating income $1,497.2–$1,508.4m; non-GAAP net income attributable $1,302.7–$1,311.6m; diluted non-GAAP EPS $1.25–$1.26",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+     "reason": "The release's Full Year FY27 guidance table gives each listed range, with dollar-million units for financial measures and dollars per diluted share for EPS, as transcribed.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "CrowdStrike raised full-year FY2027 net new ARR growth outlook by 630 basis points to 34% year-over-year growth at midpoint",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+     "reason": "Both the release headline and CFO commentary state the 630-basis-point increase and 34% midpoint outlook. This is company guidance, not an actual result.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The non-GAAP guidance excludes listed adjustments and the company did not provide directly comparable GAAP measures because some items are outside its control or not reasonably predictable",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+     "reason": "The release says non-GAAP guidance excludes stock-based compensation and payroll taxes, acquired-intangible amortization, acquisition-related expenses, and further specified items; it says directly comparable GAAP measures were not provided because certain items are beyond company control or cannot reasonably be predicted. The answer summarizes the list with 'and other items,' rather than claiming it is exhaustive.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "CrowdStrike's fiscal year ends January 31; FY2027 Q2 covers May 1–July 31, 2026, while Q3 covers August 1–October 31, 2026 and was in progress/not yet reported on October 3, 2026",
+     "numeric": true,
+     "cited_url": "https://247wallst.com/forecasts/2026/01/24/crowdstrike-holdings-inc-crwd-price-prediction-and-forecast-2025-2030",
+     "reason": "The retrieved 24/7 Wall St. source labels CrowdStrike fiscal years as ending January 31. The 10-Q identifies the three months ended July 31, 2026, consistent with May 1–July 31 Q2; applying the same quarterly fiscal calendar gives Q3 August 1–October 31. October 3 precedes Q3 end, so the in-progress status follows from the dates. The release also provides Q3 FY27 guidance. The fiscal year-end assertion is secondary-source supported; the quarter dates/status are inferred from the fiscal calendar and reporting period.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 12,
+   "numeric_cited": 12,
+   "cited": 13,
+   "supported": 13,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 107.8
+ }
+}

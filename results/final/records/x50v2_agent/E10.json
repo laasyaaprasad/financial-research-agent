@@ -1,0 +1,187 @@
+{
+ "id": "E10",
+ "category": "fiscal vs calendar",
+ "difficulty": "medium",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "adobe rev last year",
+ "grading": "(1) Identifies Adobe (ADBE). (2) Interprets 'last year' as the last completed fiscal year, fiscal 2025 (52 weeks ended Nov 28, 2025), says it is fiscal rather than calendar 2025, and gives the dates; it may mention that fiscal 2026 is still in progress (ends Nov 2026) with Q3 FY2026 the latest reported quarter. (3) Gives total revenue for fiscal 2025 with a citation (10-K or Q4 release). (4) Fail if it presents fiscal 2026 or a trailing/calendar-year sum as 'last year' without saying so, gives no dates, or gives a figure for another company.",
+ "answer": "Adobe fiscal 2025 (ended Nov 28, 2025): total revenue $23.77B (+11%); notes fiscal vs calendar and that fiscal 2026 is still open.",
+ "output": {
+  "answer": "**Question:** adobe rev last year\n*As of 2026-10-03*\n\n**Interpreted as:** 'adobe' read as Adobe Inc. (ticker ADBE), the SEC registrant. 'last year' = the last completed fiscal year, FY2025 (2024-11-30 to 2025-11-28); Adobe's fiscal year ends in late November, not 31 December. 'rev' = total revenue (Adobe's top-line revenue line) for the full fiscal year, GAAP as reported.\n\n- Adobe Inc. (Nasdaq: ADBE) reported total revenue of $23.77 billion for FY2025, the fiscal year ended November 28, 2025 (2024-11-30 to 2025-11-28), on a GAAP as-reported basis, representing 11% year-over-year growth as reported and in constant currency. [1][2]\n\n**Sources**\n[1] ADOBE INC. earnings release for FY2025, 8-K EX-99.1 (filed 2025-12-10) (www.sec.gov, 2025-12-10, primary) https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm\n[2] ADOBE INC. XBRL data tagged in 10-K filed 2026-01-15 (www.sec.gov, 2026-01-15, primary) https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 17218,
+   "output": 1723
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 12.97,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/cc286ab1068c00266e839b24a2f01c79",
+  "companies": [
+   {
+    "name": "ADOBE INC.",
+    "ticker": "ADBE",
+    "cik": "796343",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "'adobe' read as Adobe Inc. (ticker ADBE), the SEC registrant.",
+    "'last year' = the last completed fiscal year, FY2025 (2024-11-30 to 2025-11-28); Adobe's fiscal year ends in late November, not 31 December.",
+    "'rev' = total revenue (Adobe's top-line revenue line) for the full fiscal year, GAAP as reported."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Total revenue for FY2025 (2024-11-30 to 2025-11-28), as reported in the FY2025 income statement",
+    "Prior-year (FY2024) total revenue for context / year-over-year growth, if useful"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "ADBE",
+     "label": "FY2025"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "ADBE",
+     "period": "FY2025",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "FY2026 is still in progress (Q4 FY2026 ends 2026-11-27), so FY2025 is the latest completed and reported fiscal year."
+   ]
+  },
+  "unavailable": [],
+  "removed": [],
+  "assumptions": [
+   "'adobe' read as Adobe Inc. (ticker ADBE), the SEC registrant.",
+   "'last year' = the last completed fiscal year, FY2025 (2024-11-30 to 2025-11-28); Adobe's fiscal year ends in late November, not 31 December.",
+   "'rev' = total revenue (Adobe's top-line revenue line) for the full fiscal year, GAAP as reported."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+    "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/"
+   ],
+   "cited_primary": 2,
+   "retrieved": 2,
+   "retrieved_primary": 2
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Identifies Adobe (ADBE).",
+     "optional": false,
+     "met": true,
+     "note": "Identifies Adobe Inc. and explicitly gives ticker ADBE."
+    },
+    {
+     "point": "Interprets “last year” as the last completed fiscal year, FY2025, rather than calendar 2025; identifies the fiscal period and gives its dates.",
+     "optional": false,
+     "met": true,
+     "note": "Calls it FY2025 and a fiscal year, contrasts it with the calendar year, and gives 2024-11-30 to 2025-11-28, ending November 28, 2025."
+    },
+    {
+     "point": "Gives Adobe's total revenue for FY2025 with a citation to a 10-K or Q4 release.",
+     "optional": false,
+     "met": true,
+     "note": "Reports $23.77 billion and cites Adobe's FY2025 Q4 earnings release [1], which states FY2025 revenue of $23.77 billion."
+    },
+    {
+     "point": "Does not present fiscal 2026 or a trailing/calendar-year sum as “last year,” omit the relevant dates, or give a figure for another company.",
+     "optional": false,
+     "met": true,
+     "note": "Uses FY2025 and its fiscal dates, and identifies the figure as Adobe's revenue."
+    },
+    {
+     "point": "Optionally notes that FY2026 is still in progress through November 2026 and that Q3 FY2026 is the latest reported quarter.",
+     "optional": true,
+     "met": false,
+     "note": "This optional context is not mentioned; its omission does not affect the verdict."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The response identifies Adobe/ADBE, correctly interprets “last year” as completed fiscal 2025 and supplies the period dates, and cites the FY2025 Q4 release for the $23.77 billion revenue figure. It avoids the specified period/entity failure modes.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Adobe Inc. is identified as Nasdaq: ADBE",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+     "reason": "The cited release identifies the issuer as “Adobe (Nasdaq:ADBE).”",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Adobe FY2025 revenue was $23.77 billion on a GAAP, as-reported basis",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+     "reason": "The release states FY2025 revenue of $23.77 billion. The cited SEC XBRL data gives Revenue of $23,769,000,000 for the FY2025 interval, which rounds to $23.77 billion; this is the reported revenue line, not a non-GAAP measure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Adobe FY2025 covered 2024-11-30 through 2025-11-28",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/",
+     "reason": "The XBRL data gives Revenue for 2024-11-30 to 2025-11-28; the release labels the results FY2025 and says the year ended Nov. 28, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 revenue grew 11% year over year, as reported and in constant currency",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+     "reason": "The release explicitly states FY2025 revenue of $23.77 billion represented 11% year-over-year growth as reported and in constant currency.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The FY2025 earnings release/8-K exhibit was filed 2025-12-10",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+     "reason": "The cited source is identified as the FY2025 8-K EX-99.1 filed 2025-12-10, and the release itself is dated Dec. 10, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Adobe's 10-K containing the cited XBRL data was filed 2026-01-15",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/",
+     "reason": "The cited source title identifies the XBRL data as tagged in the 10-K filed 2026-01-15; the retrieved source metadata also gives that publication date.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 6,
+   "supported": 6,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 92.5
+ }
+}

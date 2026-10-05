@@ -1,0 +1,198 @@
+{
+ "id": "T12",
+ "category": "Beat or miss",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "Did Qualcomm's fiscal Q3 2026 (quarter ended June 28, 2026) total revenues and non-GAAP diluted EPS come in above, within or below the guidance ranges it gave with its fiscal Q2 2026 results in April 2026?",
+ "grading": "Key points: (1) revenues USD 9,947M vs guided USD 9.2B-10.0B = WITHIN the range (upper end); (2) non-GAAP diluted EPS USD 2.21 vs guided USD 2.10-2.30 = WITHIN the range; (3) benchmark is the company's own guidance. Optional: GAAP EPS 1.87 vs GAAP guide 1.26-1.46 is above the range. Fail if either is called above or below the range or consensus is used.",
+ "answer": "Guidance from the April 29, 2026 release for Q3 FY26: revenues USD 9.2-10.0 billion and non-GAAP diluted EPS USD 2.10-2.30. [T12-E1] Actual Q3 FY2026: revenues USD 9,947 million (within the range, near the high end) and non-GAAP diluted EPS USD 2.21 (within the range). GAAP EPS was USD 1.87 against GAAP guidance of USD 1.26-1.46 (above). [T12-E2]",
+ "output": {
+  "answer": " For Qualcomm's fiscal Q3 2026 (ended June 28, 2026), both metrics came in **within** the guidance ranges provided in April 2026:\n\n| Metric | Q3 Guidance (from Q2 report) | Q3 Actual | vs. Guidance |\n|---|---|---|---|\n| **Total Revenues** | **$9.2B – $10.0B** | **~$9.95B** ($9,947M) | **Within** (at the high end) |\n| **Non-GAAP Diluted EPS** | **$2.10 – $2.30** | **$2.21** | **Within** |\n\nQualcomm's CFO noted on the July 2026 earnings call that revenue came in \"at the high end of our guidance.\" The $2.21 non-GAAP EPS was comfortably in the middle of the $2.10–$2.30 guided range.\n\n**Sources:**\n- Q2 2026 guidance: [TIKR](https://www.tikr.com/blog/qualcomm-reports-10-6b-in-q2-revenue-with-eps-at-high-end-of-guidance), [StockTitan 8-K Summary](https://www.stocktitan.net/sec-filings/QCOM/8-k-qualcomm-inc-de-reports-material-event-f186ee5c88a8.html)\n- Q3 2026 actual results: [Qualcomm Q3 Earnings Release (PDF)](https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/FY2026-3rd-Quarter-Earnings-Release.pdf), [TipRanks Q3 Report](https://www.tipranks.com/stocks/qcom/earnings/q3-2026-report)",
+  "tokens": {
+   "input": 16214,
+   "output": 1455
+  },
+  "tavily_credits": 4,
+  "latency_s": 18.07,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/3cd367e1f37f22b15c03bb964917c672",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Qualcomm fiscal Q2 2026 results earnings guidance Q3 2026 revenue EPS",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Qualcomm fiscal Q3 2026 results revenue EPS June 28 2026",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/FY2026-3rd-Quarter-Earnings-Release.pdf",
+    "https://www.stocktitan.net/sec-filings/QCOM/8-k-qualcomm-inc-de-reports-material-event-f186ee5c88a8.html",
+    "https://www.tikr.com/blog/qualcomm-reports-10-6b-in-q2-revenue-with-eps-at-high-end-of-guidance",
+    "https://www.tipranks.com/stocks/qcom/earnings/q3-2026-report"
+   ],
+   "cited_primary": 0,
+   "retrieved": 19,
+   "retrieved_primary": 2
+  },
+  "recall": {
+   "figures": 9,
+   "found": 8
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Identifies Q3 FY2026 total revenue of USD 9,947M against the company’s Q3 guidance of USD 9.2B–10.0B as within the range (near the upper end), not above or below.",
+     "optional": false,
+     "met": true,
+     "note": "States $9.2B–$10.0B guidance, actual $9,947M, and labels it “Within (at the high end).”"
+    },
+    {
+     "point": "Identifies Q3 FY2026 non-GAAP diluted EPS of USD 2.21 against the company’s Q3 guidance of USD 2.10–2.30 as within the range, not above or below.",
+     "optional": false,
+     "met": true,
+     "note": "States $2.10–$2.30 guidance, actual $2.21, and labels it “Within.”"
+    },
+    {
+     "point": "Uses Qualcomm’s own guidance as the benchmark, not consensus.",
+     "optional": false,
+     "met": true,
+     "note": "Explicitly identifies Q3 guidance as guidance from the Q2 report; compares actuals directly to those ranges."
+    },
+    {
+     "point": "Optional: Notes that GAAP EPS of USD 1.87 was above the GAAP guidance range of USD 1.26–1.46.",
+     "optional": true,
+     "met": false,
+     "note": "Does not mention GAAP EPS; this is optional."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer correctly compares both actual metrics with Qualcomm’s own Q3 guidance and classifies each as within range.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Fiscal Q3 2026 ended June 28, 2026",
+     "numeric": true,
+     "cited_url": "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/FY2026-3rd-Quarter-Earnings-Release.pdf",
+     "reason": "The release identifies the results as fiscal third quarter 2026 and says it ended June 28, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 revenue guidance was $9.2B–$10.0B",
+     "numeric": true,
+     "cited_url": "https://www.tikr.com/blog/qualcomm-reports-10-6b-in-q2-revenue-with-eps-at-high-end-of-guidance",
+     "reason": "The retrieved TIKR text explicitly says Qualcomm guided Q3 FY2026 revenue of $9.2B to $10.0B.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 non-GAAP diluted EPS guidance was $2.10–$2.30",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/QCOM/8-k-qualcomm-inc-de-reports-material-event-f186ee5c88a8.html",
+     "reason": "The retrieved StockTitan text explicitly gives projected Non-GAAP diluted EPS of $2.10 to $2.30 for Q3 fiscal 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Q3 guidance was provided in April 2026",
+     "numeric": true,
+     "cited_url": "https://www.tikr.com/blog/qualcomm-reports-10-6b-in-q2-revenue-with-eps-at-high-end-of-guidance",
+     "reason": "The retrieved TIKR article says it was last updated May 1, 2026, and gives Q3 guidance, but does not state that the guidance was issued in April. The cited StockTitan passage also gives no issue date.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 actual revenue was $9,947 million (about $9.95B)",
+     "numeric": true,
+     "cited_url": "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/FY2026-3rd-Quarter-Earnings-Release.pdf",
+     "reason": "The release's reconciliation table gives Q3 fiscal 2026 revenue as $9,947 million. Converting to billions gives $9.947B, which rounds to $9.95B to two decimal places.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 FY2026 actual non-GAAP diluted EPS was $2.21",
+     "numeric": true,
+     "cited_url": "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/FY2026-3rd-Quarter-Earnings-Release.pdf",
+     "reason": "The release reports Non-GAAP EPS of $2.21 and its reconciliation labels diluted EPS at $2.21 for Q3 fiscal 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Both actuals were within the stated guidance ranges",
+     "numeric": false,
+     "cited_url": "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/FY2026-3rd-Quarter-Earnings-Release.pdf",
+     "reason": "Using the actuals in the cited Qualcomm release and the guidance ranges in the answer's cited TIKR/StockTitan sources: $9.2B ≤ $9.947B ≤ $10.0B, and $2.10 ≤ $2.21 ≤ $2.30. Both comparisons are correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue was at the high end of guidance",
+     "numeric": false,
+     "cited_url": "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/FY2026-3rd-Quarter-Earnings-Release.pdf",
+     "reason": "The release quotes Qualcomm CEO Cristiano Amon saying quarterly revenues were at the high end of guidance; TipRanks also describes reported revenue as at the high end. The reported $9.947B is $0.053B below the $10.0B upper bound.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Qualcomm's CFO said on the July 2026 earnings call that revenue came in at the high end of guidance",
+     "numeric": true,
+     "cited_url": "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/FY2026-3rd-Quarter-Earnings-Release.pdf",
+     "reason": "The release supports the high-end statement but attributes it to CEO Cristiano Amon in the earnings release, not the CFO on an earnings call. The retrieved TipRanks text says there was a July 29, 2026 conference call but does not support this CFO attribution or quoted call statement.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The earnings call was in July 2026",
+     "numeric": true,
+     "cited_url": "https://www.tipranks.com/stocks/qcom/earnings/q3-2026-report",
+     "reason": "TipRanks lists the conference call as Wednesday, July 29, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "$2.21 EPS was in the middle of the $2.10–$2.30 range",
+     "numeric": true,
+     "cited_url": "https://www.tikr.com/blog/qualcomm-reports-10-6b-in-q2-revenue-with-eps-at-high-end-of-guidance",
+     "reason": "The midpoint is ($2.10 + $2.30)/2 = $2.20; the reported $2.21 is $0.01 above it and within the range. The cited TIKR page supports the guidance input; Qualcomm's cited release reports the actual EPS. “Comfortably” is qualitative, but the numerical characterization as near the midpoint is accurate.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 9,
+   "numeric_cited": 9,
+   "cited": 11,
+   "supported": 9,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 65.4
+ }
+}

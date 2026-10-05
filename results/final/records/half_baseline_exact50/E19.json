@@ -1,0 +1,201 @@
+{
+ "id": "E19",
+ "category": "ambiguous company",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "clarify",
+ "question": "united q2 rev",
+ "grading": "(1) Responds with a single clarifying question listing the plausible companies, for example United Airlines Holdings (UAL), United Parcel Service (UPS), UnitedHealth Group (UNH), United Rentals (URI). (2) Gives no revenue figures for any company. (3) Fail if it picks one (e.g., UPS or UnitedHealth) and gives numbers, or lists numbers for several companies.",
+ "answer": "Asks which 'United' (UAL, UPS, UNH, URI) and gives no figures.",
+ "output": {
+  "answer": "\"United\" could refer to a couple of companies. Here are the Q2 2026 revenue figures for both:\n\n**United Airlines (UAL)** — Q2 2026 (quarter ended June 30)\n- **Total operating revenue: $17.67 billion**, up ~16% year over year (roughly in line with the ~$17.68B consensus)\n- Passenger revenue: $16.10B (+16.4%); domestic +20.3%, international +11.2%\n- Adjusted EPS: $1.99 (beat estimates)\n- Sources: [Yahoo Finance/Zacks](https://finance.yahoo.com/markets/stocks/articles/united-ual-6-4-since-153005284.html), [Yahoo Finance earnings recap](https://finance.yahoo.com/markets/stocks/articles/united-airlines-q2-2026-earnings-203046842.html)\n\n**UnitedHealth Group (UNH)** — Q2 2026 (quarter ended June 2026)\n- **Revenue: $112.03 billion**, beating the ~$110.1B consensus by ~1.7%\n- Adjusted EPS: $6.38; raised full-year adjusted EPS outlook to $19.50–$20\n- Sources: [Yahoo Finance/Zacks](https://finance.yahoo.com/healthcare/articles/unitedhealth-group-unh-q2-earnings-110502398.html), [WSJ](https://www.wsj.com/business/earnings/unitedhealth-results-handily-beat-wall-street-expectations-fb967ef6)\n\nLet me know which company you meant if you'd like more detail.",
+  "tokens": {
+   "input": 21909,
+   "output": 788
+  },
+  "tavily_credits": 5,
+  "latency_s": 9.88,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/013f21ee7b9561b0f83b101652ea2cb7",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "United Airlines Q2 revenue",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "United Airlines second quarter 2026 revenue earnings results",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "UnitedHealth Group Q2 revenue 2026",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/healthcare/articles/unitedhealth-group-unh-q2-earnings-110502398.html",
+    "https://finance.yahoo.com/markets/stocks/articles/united-airlines-q2-2026-earnings-203046842.html",
+    "https://finance.yahoo.com/markets/stocks/articles/united-ual-6-4-since-153005284.html",
+    "https://www.wsj.com/business/earnings/unitedhealth-results-handily-beat-wall-street-expectations-fb967ef6"
+   ],
+   "cited_primary": 0,
+   "retrieved": 30,
+   "retrieved_primary": 0
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 0.0,
+   "points": [
+    {
+     "point": "Responds with a single clarifying question listing the plausible United companies.",
+     "optional": false,
+     "met": false,
+     "note": "It gives Q2 revenue details for UAL and UNH, then asks which company was meant; it does not provide a single clarifying question listing the plausible options."
+    },
+    {
+     "point": "Gives no revenue figures for any company.",
+     "optional": false,
+     "met": false,
+     "note": "It states UAL revenue of $17.67 billion and UNH revenue of $112.03 billion, among other figures."
+    },
+    {
+     "point": "Does not pick one United company and give numbers or list numbers for several companies.",
+     "optional": false,
+     "met": false,
+     "note": "It lists figures for two companies, United Airlines (UAL) and UnitedHealth Group (UNH), instead of clarifying first."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The answer violates the core clarify requirement by providing revenue figures for multiple plausible United companies rather than asking a single clarifying question.",
+   "judge_verdict": "incorrect",
+   "votes": [
+    "incorrect",
+    "incorrect",
+    "incorrect"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "United Airlines Q2 2026 total operating revenue was $17.67 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/united-ual-6-4-since-153005284.html",
+     "reason": "The retrieved Zacks/Yahoo text says United Airlines' operating revenues rose to $17.67 billion. Its companion cited earnings recap also gives $17.67 billion in revenue for the quarter ended June 30.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "United Airlines operating revenue rose about 16% year over year and was roughly in line with $17.68 billion consensus",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/united-ual-6-4-since-153005284.html",
+     "reason": "The retrieved text states revenues rose 16% and were essentially in line with the $17.68-billion consensus mark.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "United Airlines Q2 2026 passenger revenue was $16.10 billion, up 16.4% year over year",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/united-ual-6-4-since-153005284.html",
+     "reason": "The retrieved text explicitly says passenger revenues increased 16.4% year over year to $16.10 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "United Airlines domestic passenger revenue rose 20.3% and international passenger revenue rose 11.2%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/united-ual-6-4-since-153005284.html",
+     "reason": "The retrieved text explicitly gives domestic passenger revenue growth of 20.3% and international growth of 11.2%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "United Airlines Q2 2026 adjusted EPS was $1.99 and beat estimates",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/united-ual-6-4-since-153005284.html",
+     "reason": "The retrieved text says adjusted earnings were $1.99 per share, above the $1.92 Zacks consensus estimate by 3.7%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "United Airlines' Q2 2026 was the quarter ended June 30",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/united-airlines-q2-2026-earnings-203046842.html",
+     "reason": "The retrieved recap explicitly identifies the quarter as ended June 30 and reports its results.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "UnitedHealth Group Q2 2026 revenue was $112.03 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/healthcare/articles/unitedhealth-group-unh-q2-earnings-110502398.html",
+     "reason": "The retrieved Zacks/Yahoo text explicitly says revenues were $112.03 billion for the quarter ended June 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "UnitedHealth revenue beat consensus by about 1.7%, with consensus approximately $110.1 billion",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/healthcare/articles/unitedhealth-group-unh-q2-earnings-110502398.html",
+     "reason": "The retrieved text explicitly says revenue surpassed the Zacks consensus by 1.74%. Derivation: $112.03B / (1 + 0.0174) = about $110.114B, which rounds to approximately $110.1B. The stated 1.7% also rounds correctly.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "UnitedHealth Group's Q2 2026 revenue period was the quarter ended June 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/healthcare/articles/unitedhealth-group-unh-q2-earnings-110502398.html",
+     "reason": "The retrieved text explicitly states that $112.03 billion was revenue for the quarter ended June 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "UnitedHealth Group adjusted EPS was $6.38",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/healthcare/articles/unitedhealth-group-unh-q2-earnings-110502398.html",
+     "reason": "The retrieved text reports quarterly earnings of $6.38 per share but does not say this is adjusted EPS. The answer's adjusted-accounting-basis attribution is not supported by the cited passage.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "UnitedHealth raised full-year adjusted EPS outlook to $19.50–$20",
+     "numeric": true,
+     "cited_url": "https://www.wsj.com/business/earnings/unitedhealth-results-handily-beat-wall-street-expectations-fb967ef6",
+     "reason": "The retrieved WSJ passage only says the company substantially raised its earnings projection for the year; it gives neither the $19.50–$20 range nor that the projection is adjusted EPS. The cited Zacks/Yahoo passage also provides no such guidance range.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 11,
+   "numeric_cited": 11,
+   "cited": 11,
+   "supported": 9,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 62.2
+ }
+}

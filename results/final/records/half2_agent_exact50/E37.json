@@ -1,0 +1,395 @@
+{
+ "id": "E37",
+ "category": "malformed input",
+ "difficulty": "medium",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "tsm gm",
+ "grading": "(1) Maps the ticker TSM to Taiwan Semiconductor Manufacturing Company (TSMC), reads 'gm' as gross margin, and says so; may note TSMC is a foreign private issuer that files Form 20-F annually and Form 6-K for quarterly results. (2) Uses the latest reported quarter, Q2 2026 (quarter ended June 30, 2026; reported July 16, 2026), and notes Q3 2026 has not been reported. (3) Gives the gross margin for the quarter (67.7%) with a citation to the 6-K or earnings release, and may add the company's Q3 gross margin guidance (65%-67%) clearly labelled as guidance. (4) Fail if it reads 'gm' as General Motors, asks only a clarifying question, gives any Q3 2026 actual, or gives another company's margin.",
+ "answer": "TSMC Q2 2026 (ended June 30, 2026; reported July 16, 2026): gross margin 67.7%, with Q3 guidance of 65%-67%; maps TSM to TSMC.",
+ "output": {
+  "answer": "**Question:** tsm gm\n*As of 2026-10-03*\n\n**Interpreted as:** 'tsm' read as Taiwan Semiconductor Manufacturing Company Limited (TSM), the SEC registrant (foreign private issuer filing Form 20-F). 'gm' read as gross margin. No period given: latest reported quarter, Q2 2026 (April-June 2026), reported ~July 2026; TSMC's calendar lists only annual periods, so quarterly figures must come from a web search. Gross margin read as GAAP gross margin (gross profit / net revenue), with the prior-year quarter (Q2 2025) for comparison. Guidance read as the company's own outlook for the next quarter (Q3 2026), quoted as given, not estimated.\n\n| | Gross margin (%), as reported | Gross margin (%), company guidance |\n|---|---|---|\n| Q2 2026 (quarter ended June 30, 2026) | 67.7% [1][2] | — |\n| Q2 2025 (quarter ended June 30, 2025) | 58.62% [3] | — |\n| Q3 2026 (quarter ending September 30, 2026) | — | 65% to 67% [4][1][2] |\n\n- TSMC's gross margin for Q2 2026 (quarter ended June 30, 2026) was 67.7%, as reported. [1][2]\n- TSMC's Q2 2026 results were prepared in accordance with TIFRS on a consolidated basis, not US GAAP. [2]\n- TSMC's gross margin for the prior-year quarter, Q2 2025 (quarter ended June 30, 2025), was 58.62%. [3]\n- The year-over-year change in TSMC's gross margin from Q2 2025 to Q2 2026 was 9.08 percentage points. [1][3]\n- TSMC disclosed that Q2 2026 gross margin rose 150 basis points sequentially and came in slightly ahead of guidance. [4]\n- For Q3 2026 (quarter ending September 30, 2026), TSMC guided gross margin to 65% to 67%, as guidance rather than an actual result. [4][1][2]\n- TSMC's CFO guided Q3 2026 gross margin down 170 basis points to 66%, citing 3 to 4 percentage points of dilution from the 2-nanometer ramp. [3]\n\n**Not available**\n- Q3 2026 actual gross margin: Q3 2026 (July-September 2026) results had not been reported as of 2026-10-03; only company guidance is available. [4][1]\n- Q2 2026 gross margin from a TSMC SEC filing or quarterly results page: TSMC files annual reports (Form 20-F) and furnishes 6-Ks; the evidence provided contains only secondary sources for the quarterly gross margin figure, and the FY2026 20-F is not yet filed. [1]\n\n**Sources**\n[1] TSMC Q2 Earnings Call: What It Means for SMH | VanEck (www.vaneck.com, undated, secondary) https://www.vaneck.com/us/en/blogs/thematic-investing/tsmc-q2-earnings-call-what-it-means-for-smh\n[2] TSMC 2026-Q2 results | SemiWiki (semiwiki.com, undated, secondary) https://semiwiki.com/forum/threads/tsmc-2026-q2-results.25528\n[3] TSMC Spent $15.59 Billion on CapEx in a Single Quarter, 42% More Than the Quarter Before. Here’s What It Means For the Stock. | TIKR.com (www.tikr.com, undated, secondary) https://www.tikr.com/blog/tsmc-spent-15-59-billion-on-capex-in-a-single-quarter-42-more-than-the-quarter-before-heres-what-it-means-for-the-stock\n[4] TSMC Earnings Call: AI Boom Drives Aggressive Expansion - The Globe and Mail (www.theglobeandmail.com, undated, secondary) https://www.theglobeandmail.com/investing/markets/stocks/TSM/pressreleases/3343802/tsmc-earnings-call-ai-boom-drives-aggressive-expansion\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 42229,
+   "output": 14078
+  },
+  "tavily_credits": 6.0,
+  "latency_s": 79.21,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/f69afa1e649f3b3549045ff582ea9282",
+  "companies": [
+   {
+    "name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+    "ticker": "TSM",
+    "cik": "1046179",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "'tsm' read as Taiwan Semiconductor Manufacturing Company Limited (TSM), the SEC registrant (foreign private issuer filing Form 20-F).",
+    "'gm' read as gross margin.",
+    "No period given: latest reported quarter, Q2 2026 (April-June 2026), reported ~July 2026; TSMC's calendar lists only annual periods, so quarterly figures must come from a web search.",
+    "Gross margin read as GAAP gross margin (gross profit / net revenue), with the prior-year quarter (Q2 2025) for comparison.",
+    "Guidance read as the company's own outlook for the next quarter (Q3 2026), quoted as given, not estimated."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Q2 2026 gross margin (GAAP, gross profit / net revenue) and gross profit and net revenue figures",
+    "Q2 2025 gross margin for year-over-year comparison",
+    "Q2 2026 gross margin by revenue mix if disclosed (e.g. advanced nodes, platform mix) and any management explanation of margin drivers",
+    "Company's Q3 2026 gross margin guidance (and revenue guidance for context), as given in the Q2 2026 earnings release or call"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "TSM",
+     "label": "FY2026"
+    }
+   ],
+   "documents": [],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "TSMC's latest reported quarterly gross margin (Q2 2026) and prior-year comparison, since quarterly results are not in the SEC calendar",
+     "query": "TSMC Q2 2026 results gross margin gross profit revenue",
+     "topic": "general",
+     "days_back": null
+    },
+    {
+     "purpose": "TSMC's own Q3 2026 gross margin guidance and management commentary, often given on the earnings call rather than in the release",
+     "query": "TSMC Q3 2026 guidance gross margin outlook earnings call",
+     "topic": "general",
+     "days_back": null
+    }
+   ],
+   "availability_notes": [
+    "TSMC files annual reports only (20-F); its calendar has no quarterly periods, so quarterly gross margin and guidance are not in the listed filings and must come from web sources.",
+    "Q3 2026 (July-September 2026) results are not yet reported as of 2026-10-03; only the company's Q3 2026 guidance, if given, can be quoted.",
+    "The FY2026 20-F is not yet filed (period in progress), so no periodic report covers the latest quarter."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Q3 2026 actual gross margin",
+    "kind": "not_reported_yet",
+    "reason": "Q3 2026 (July-September 2026) results had not been reported as of 2026-10-03; only company guidance is available.",
+    "evidence_ids": [
+     "E1",
+     "E2"
+    ]
+   },
+   {
+    "item": "Q2 2026 gross margin from a TSMC SEC filing or quarterly results page",
+    "kind": "not_in_evidence",
+    "reason": "TSMC files annual reports (Form 20-F) and furnishes 6-Ks; the evidence provided contains only secondary sources for the quarterly gross margin figure, and the FY2026 20-F is not yet filed.",
+    "evidence_ids": [
+     "E2"
+    ]
+   }
+  ],
+  "removed": [],
+  "assumptions": [
+   "'tsm' read as Taiwan Semiconductor Manufacturing Company Limited (TSM), the SEC registrant (foreign private issuer filing Form 20-F).",
+   "'gm' read as gross margin.",
+   "No period given: latest reported quarter, Q2 2026 (April-June 2026), reported ~July 2026; TSMC's calendar lists only annual periods, so quarterly figures must come from a web search.",
+   "Gross margin read as GAAP gross margin (gross profit / net revenue), with the prior-year quarter (Q2 2025) for comparison.",
+   "Guidance read as the company's own outlook for the next quarter (Q3 2026), quoted as given, not estimated."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "TSMC Q3 2026 guidance gross margin outlook earnings call",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "TSMC Q2 2026 results gross margin gross profit revenue",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.theglobeandmail.com/investing/markets/stocks/TSM/pressreleases/3343802/tsmc-earnings-call-ai-boom-drives-aggressive-expansion",
+      "https://www.vaneck.com/us/en/blogs/thematic-investing/tsmc-q2-earnings-call-what-it-means-for-smh",
+      "https://www.investing.com/news/transcripts/earnings-call-transcript-tsmc-lifts-2026-outlook-as-ai-demand-stays-hot-in-q2-2026-93CH-4794777"
+     ],
+     "query": "tsm gm",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "tsm Year-over-year change in TSMC gross margin from Q2 2025 to Q2 2026",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "tsm TSMC Q2 2025 (quarter ended June 30, 2025) gross margin",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.tikr.com/blog/tsmc-spent-15-59-billion-on-capex-in-a-single-quarter-42-more-than-the-quarter-before-heres-what-it-means-for-the-stock",
+      "https://semiwiki.com/forum/threads/tsmc-2026-q2-results.25528",
+      "https://www.hudson-labs.com/research/tsmc-q3-2026-earnings-preview-tsm-revenue-and-margins"
+     ],
+     "query": "tsm gm",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://semiwiki.com/forum/threads/tsmc-2026-q2-results.25528",
+    "https://www.theglobeandmail.com/investing/markets/stocks/TSM/pressreleases/3343802/tsmc-earnings-call-ai-boom-drives-aggressive-expansion",
+    "https://www.tikr.com/blog/tsmc-spent-15-59-billion-on-capex-in-a-single-quarter-42-more-than-the-quarter-before-heres-what-it-means-for-the-stock",
+    "https://www.vaneck.com/us/en/blogs/thematic-investing/tsmc-q2-earnings-call-what-it-means-for-smh"
+   ],
+   "cited_primary": 0,
+   "retrieved": 9,
+   "retrieved_primary": 1
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 0.833,
+   "points": [
+    {
+     "point": "Maps TSM to Taiwan Semiconductor Manufacturing Company (TSMC).",
+     "optional": false,
+     "met": true,
+     "note": "Explicitly identifies TSM as Taiwan Semiconductor Manufacturing Company Limited."
+    },
+    {
+     "point": "States that “gm” means gross margin.",
+     "optional": false,
+     "met": true,
+     "note": "Explicitly says “'gm' read as gross margin.”"
+    },
+    {
+     "point": "May note TSMC is a foreign private issuer that files Form 20-F annually and Form 6-K for quarterly results.",
+     "optional": true,
+     "met": true,
+     "note": "Notes foreign private issuer and annual Form 20-F/6-K filing practice."
+    },
+    {
+     "point": "Uses Q2 2026 as the latest reported quarter.",
+     "optional": false,
+     "met": true,
+     "note": "Identifies Q2 2026 as the latest reported quarter."
+    },
+    {
+     "point": "Gives the Q2 2026 quarter-end date as June 30, 2026.",
+     "optional": false,
+     "met": true,
+     "note": "States the quarter ended June 30, 2026."
+    },
+    {
+     "point": "Gives the Q2 2026 report date as July 16, 2026.",
+     "optional": false,
+     "met": false,
+     "note": "Only says it was reported “~July 2026,” not July 16, 2026."
+    },
+    {
+     "point": "Notes Q3 2026 has not been reported.",
+     "optional": false,
+     "met": true,
+     "note": "Says Q3 2026 actual results had not been reported as of 2026-10-03."
+    },
+    {
+     "point": "Gives Q2 2026 gross margin as 67.7%.",
+     "optional": false,
+     "met": true,
+     "note": "Reports Q2 2026 gross margin of 67.7%."
+    },
+    {
+     "point": "Cites a 6-K or earnings release for the 67.7% gross-margin figure.",
+     "optional": false,
+     "met": false,
+     "note": "Citations [1] and [2] are VanEck and SemiWiki, secondary sources; no 6-K or earnings release is cited."
+    },
+    {
+     "point": "May add the company's Q3 gross-margin guidance of 65%-67%, clearly labeled as guidance.",
+     "optional": true,
+     "met": true,
+     "note": "Lists 65%-67% for Q3 2026 in a column labeled company guidance and reiterates it as guidance."
+    },
+    {
+     "point": "Does not read “gm” as General Motors.",
+     "optional": false,
+     "met": true,
+     "note": "Interprets “gm” as gross margin, not General Motors."
+    },
+    {
+     "point": "Does not ask only a clarifying question.",
+     "optional": false,
+     "met": true,
+     "note": "Provides a substantive answer."
+    },
+    {
+     "point": "Does not give any Q3 2026 actual gross-margin figure.",
+     "optional": false,
+     "met": true,
+     "note": "Clearly marks the Q3 figure as guidance and says the actual had not been reported."
+    },
+    {
+     "point": "Does not give another company's gross margin.",
+     "optional": false,
+     "met": true,
+     "note": "All stated margin figures are attributed to TSMC."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The answer correctly interprets the terse query, identifies the latest quarter, gives the correct 67.7% figure, and labels Q3 guidance appropriately. It does not provide the exact July 16, 2026 report date and does not cite a 6-K or earnings release for the actual margin figure, so not all required items are met.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "partial",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q2 2026 gross margin was 67.7% (quarter ended June 30, 2026)",
+     "numeric": true,
+     "cited_url": "https://www.vaneck.com/us/en/blogs/thematic-investing/tsmc-q2-earnings-call-what-it-means-for-smh",
+     "reason": "VanEck says TSMC’s Q2 2026 gross margin reached 67.7%; the retrieved SemiWiki text also identifies the second quarter ended June 30, 2026 and reports gross margin of 67.7%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 figures were prepared under TIFRS on a consolidated basis, not US GAAP",
+     "numeric": false,
+     "cited_url": "https://semiwiki.com/forum/threads/tsmc-2026-q2-results.25528",
+     "reason": "Retrieved text says all figures were prepared in accordance with TIFRS on a consolidated basis. That supports the stated accounting basis and distinguishes it from US GAAP.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2025 gross margin was 58.62%",
+     "numeric": true,
+     "cited_url": "https://www.tikr.com/blog/tsmc-spent-15-59-billion-on-capex-in-a-single-quarter-42-more-than-the-quarter-before-heres-what-it-means-for-the-stock",
+     "reason": "TIKR explicitly says TSMC gross margin was 58.62% in the June 2025 quarter, supporting the value and period.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Year-over-year gross-margin increase from Q2 2025 to Q2 2026 was 9.08 percentage points",
+     "numeric": true,
+     "cited_url": "https://www.tikr.com/blog/tsmc-spent-15-59-billion-on-capex-in-a-single-quarter-42-more-than-the-quarter-before-heres-what-it-means-for-the-stock",
+     "reason": "TIKR gives the more precise June 2026 margin as 67.72% and June 2025 as 58.62%. Calculation: 67.72% − 58.62% = 9.10 percentage points, not 9.08. Using the separately rounded 67.7% figure gives 9.08, but does not justify the two-decimal result when the cited source provides 67.72%.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 gross margin rose 150 basis points sequentially and was slightly ahead of guidance",
+     "numeric": true,
+     "cited_url": "https://www.theglobeandmail.com/investing/markets/stocks/TSM/pressreleases/3343802/tsmc-earnings-call-ai-boom-drives-aggressive-expansion",
+     "reason": "The retrieved Globe and Mail/TipRanks call summary says Q2 gross margin was 67.7%, up 150 basis points sequentially and slightly ahead of guidance.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TSMC guided Q3 2026 gross margin to 65%–67%",
+     "numeric": true,
+     "cited_url": "https://www.theglobeandmail.com/investing/markets/stocks/TSM/pressreleases/3343802/tsmc-earnings-call-ai-boom-drives-aggressive-expansion",
+     "reason": "The retrieved text explicitly gives Q3 gross-margin guidance of 65%–67%; VanEck and SemiWiki also report that range.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "CFO Wendell Huang guided Q3 gross margin down 170 basis points to 66%, citing 3–4 percentage points of dilution from the 2-nanometer ramp",
+     "numeric": true,
+     "cited_url": "https://www.tikr.com/blog/tsmc-spent-15-59-billion-on-capex-in-a-single-quarter-42-more-than-the-quarter-before-heres-what-it-means-for-the-stock",
+     "reason": "TIKR explicitly attributes the 170-basis-point-down-to-66% guidance and 3–4 percentage-point dilution from the 2nm ramp to CFO Wendell Huang on the Q2 2026 earnings call.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 7,
+   "supported": 6,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 116.8
+ }
+}

@@ -1,0 +1,202 @@
+{
+ "id": "E13",
+ "category": "fiscal vs calendar",
+ "difficulty": "hard",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "estee lauder net sales this year",
+ "grading": "(1) Identifies Estee Lauder (EL) and recognizes its fiscal year ends June 30. (2) Interprets 'this year' explicitly as fiscal, with dates: fiscal 2027 (July 1, 2026 to June 30, 2027) is in progress and has no reported quarter yet as of 2026-10-03 (Q1 FY2027 ends Sept 30, 2026 and is not reported yet), so it gives the latest completed year, fiscal 2026 (July 1, 2025-June 30, 2026; reported Aug 19, 2026), clearly labelled, and/or the company's fiscal 2027 outlook labelled as guidance. (3) Net sales figure for FY2026 is cited. (4) Fail if it presents any FY2027 year-to-date or estimated net sales as actual, uses calendar 2026, or gives no fiscal dates.",
+ "answer": "Estee Lauder: fiscal 2027 (from July 1, 2026) has nothing reported yet; gives fiscal 2026 net sales (year ended June 30, 2026; +5% reported, +3% organic) labelled as latest completed year, and may cite the FY2027 organic net sales growth outlook of 3% to 5%.",
+ "output": {
+  "answer": "**Question:** estee lauder net sales this year\n*As of 2026-10-03*\n\n**Interpreted as:** 'this year' read as the current fiscal year FY2027 (2026-07-01 to 2027-06-30), but nothing of it is reported yet (Q1 FY2027 ended 2026-09-30, results not yet released), so the answer uses the last completed fiscal year, FY2026 (2025-07-01 to 2026-06-30) 'net sales' read as the company's total net sales line on the income statement (top line), not a segment or product-category figure Estee Lauder Companies Inc. (EL) is the reporting company; fiscal year ends June 30, so fiscal labels are not calendar years\n\n- The Estée Lauder Companies Inc. reported net sales of $15,049 million for fiscal 2026, the year ended June 30, 2026, on an as-reported (GAAP) basis. [1][2]\n- For comparison, net sales were $14,326 million in fiscal 2025, the year ended June 30, 2025. [1][2]\n- The company disclosed as-reported net sales growth of 5% for fiscal 2026; calculated from the reported figures, the increase was 5.0%. [1]\n- On a non-GAAP basis, organic net sales were $14,811 million in fiscal 2026, up 3% from $14,323 million in fiscal 2025. [1]\n- The $15,049 million fiscal 2026 net sales figure is the total company top line; the product-category detail sums to a $15,061 million subtotal before returns/charges associated with restructuring and other activities, which reconcile to the $15,049 million reported net sales. [1]\n\n**Not available**\n- Net sales for the current fiscal year, FY2027 (2026-07-01 to 2027-06-30): No period of FY2027 has been reported as of today (2026-10-03): the first quarter of FY2027 ended 2026-09-30 and its results have not yet been released, so no FY2027 net sales figure exists. The most recent completed fiscal year, FY2026 (ended 2026-06-30), is reported above. [1]\n\n**Sources**\n[1] ESTEE LAUDER COMPANIES INC earnings release for FY2026, 8-K EX-99.1 (filed 2026-08-19) (www.sec.gov, 2026-08-19, primary) https://www.sec.gov/Archives/edgar/data/1001250/000100125026000038/elq4fy2026exhibit991.htm\n[2] ESTEE LAUDER COMPANIES INC XBRL data tagged in 10-K filed 2026-08-19 (www.sec.gov, 2026-08-19, primary) https://www.sec.gov/Archives/edgar/data/1001250/000100125026000041/\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 27881,
+   "output": 10669
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 46.4,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/f3ef9bea15aa0a5b5275fd0cdf1e0cdc",
+  "companies": [
+   {
+    "name": "ESTEE LAUDER COMPANIES INC",
+    "ticker": "EL",
+    "cik": "1001250",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "'this year' read as the current fiscal year FY2027 (2026-07-01 to 2027-06-30), but nothing of it is reported yet (Q1 FY2027 ended 2026-09-30, results not yet released), so the answer uses the last completed fiscal year, FY2026 (2025-07-01 to 2026-06-30)",
+    "'net sales' read as the company's total net sales line on the income statement (top line), not a segment or product-category figure",
+    "Estee Lauder Companies Inc. (EL) is the reporting company; fiscal year ends June 30, so fiscal labels are not calendar years"
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Total net sales for FY2026 (2025-07-01 to 2026-06-30)",
+    "Prior-year comparison: total net sales for FY2025 (2024-07-01 to 2025-06-30) and year-over-year change",
+    "Net sales by product category and by geographic region for FY2026 (as disclosed in the 10-K/earnings release)",
+    "Any management commentary on the drivers of the net sales change and, if given, FY2027 outlook for net sales"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "EL",
+     "label": "FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "EL",
+     "period": "FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "EL",
+     "period": "FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "FY2027 (2026-07-01 to 2027-06-30) is the current fiscal year but no period of it has been reported: Q1 FY2027 ended 2026-09-30 with results not yet released, so no FY2027 net sales figure exists yet",
+    "FY2026 net sales is available from the FY2026 earnings release (8-K, 2026-08-19) and the FY2026 10-K (filed 2026-08-19)"
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Net sales for the current fiscal year, FY2027 (2026-07-01 to 2027-06-30)",
+    "kind": "not_reported_yet",
+    "reason": "No period of FY2027 has been reported as of today (2026-10-03): the first quarter of FY2027 ended 2026-09-30 and its results have not yet been released, so no FY2027 net sales figure exists. The most recent completed fiscal year, FY2026 (ended 2026-06-30), is reported above.",
+    "evidence_ids": [
+     "E1"
+    ]
+   }
+  ],
+  "removed": [],
+  "assumptions": [
+   "'this year' read as the current fiscal year FY2027 (2026-07-01 to 2027-06-30), but nothing of it is reported yet (Q1 FY2027 ended 2026-09-30, results not yet released), so the answer uses the last completed fiscal year, FY2026 (2025-07-01 to 2026-06-30)",
+   "'net sales' read as the company's total net sales line on the income statement (top line), not a segment or product-category figure",
+   "Estee Lauder Companies Inc. (EL) is the reporting company; fiscal year ends June 30, so fiscal labels are not calendar years"
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000038/elq4fy2026exhibit991.htm",
+    "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000041/"
+   ],
+   "cited_primary": 2,
+   "retrieved": 3,
+   "retrieved_primary": 3
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Identifies The Estée Lauder Companies (EL) and states that its fiscal year ends June 30.",
+     "optional": false,
+     "met": true,
+     "note": "Identifies Estee Lauder Companies Inc. (EL) and states the fiscal year ends June 30."
+    },
+    {
+     "point": "Explicitly interprets “this year” as the fiscal year, not calendar 2026.",
+     "optional": false,
+     "met": true,
+     "note": "Says “this year” is read as current fiscal year FY2027 and clarifies fiscal labels are not calendar years."
+    },
+    {
+     "point": "States FY2027 runs July 1, 2026 to June 30, 2027, is in progress, and has no reported quarter as of 2026-10-03; identifies Q1 ended September 30, 2026 and is not yet reported.",
+     "optional": false,
+     "met": true,
+     "note": "Gives the FY2027 dates, says no period has been reported as of 2026-10-03, and states Q1 ended 2026-09-30 with results not yet released."
+    },
+    {
+     "point": "Gives the latest completed year as clearly labeled FY2026, July 1, 2025 to June 30, 2026, reported August 19, 2026 (or instead gives FY2027 outlook clearly labeled as guidance).",
+     "optional": false,
+     "met": true,
+     "note": "Clearly labels FY2026 and gives its July 1, 2025–June 30, 2026 dates; the cited primary source is identified as filed August 19, 2026."
+    },
+    {
+     "point": "Cites a net sales figure for FY2026.",
+     "optional": false,
+     "met": true,
+     "note": "States $15,049 million FY2026 net sales on an as-reported basis and cites the FY2026 earnings release and 10-K XBRL source."
+    },
+    {
+     "point": "Avoids presenting FY2027 year-to-date or estimated net sales as actual, using calendar 2026 as the period, or omitting fiscal dates.",
+     "optional": false,
+     "met": true,
+     "note": "Does not present a FY2027 actual/estimate or calendar-year figure, and supplies explicit fiscal dates."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer explicitly distinguishes the in-progress FY2027 from the latest completed FY2026, gives the fiscal dates and current reporting status, and cites the FY2026 net sales figure.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Estée Lauder reported FY2026 net sales of $15,049 million for the year ended June 30, 2026, on an as-reported/GAAP basis.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000038/elq4fy2026exhibit991.htm",
+     "reason": "The release identifies FY2026 results as for the fiscal year ended June 30, 2026, and its unaudited financial-results table reports Net Sales of $15,049 million for 2026. The release labels the figure as net sales and reports it on an as-reported basis; the accompanying XBRL source also shows revenue of $15.049 billion for July 1, 2025–June 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2025 net sales were $14,326 million for the year ended June 30, 2025.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000038/elq4fy2026exhibit991.htm",
+     "reason": "The same release table compares 2026 and 2025 for years ended June 30 and gives 2025 Net Sales as $14,326 million; the accompanying XBRL source reports $14.326 billion for July 1, 2024–June 30, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The company disclosed 5% as-reported FY2026 net-sales growth, and the reported values calculate to 5.0%.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000038/elq4fy2026exhibit991.htm",
+     "reason": "The release headline states as-reported net sales growth of 5% for the full year, and the table gives $15,049 million versus $14,326 million. Calculation: (15,049−14,326)/14,326×100 = 5.0466%, which rounds to 5.0% at one decimal place. Period and as-reported basis match.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Non-GAAP organic net sales were $14,811 million in FY2026, up 3% from $14,323 million in FY2025.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000038/elq4fy2026exhibit991.htm",
+     "reason": "The FY2026 results table explicitly labels Organic Net Sales as Non-GAAP and reports $14,811 million for 2026, $14,323 million for 2025, and a 3% change. The table covers years ended June 30.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2026 product-category sales subtotaled $15,061 million before returns/charges, which reconcile to reported net sales of $15,049 million.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000038/elq4fy2026exhibit991.htm",
+     "reason": "The retrieved release text supports the $15,061 million FY2026 product-category subtotal and separately supports reported total net sales of $15,049 million. Their difference is $12 million, so a $12 million reduction would be needed to reconcile them. However, the retrieved text does not show the relevant annual returns/charges adjustment or establish that it is the reconciling item; the returns/charges figure shown in the retrieved excerpt is in a different table/period. The full reconciliation claim therefore lacks adequate evidence in the retrieved text.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 5,
+   "numeric_cited": 5,
+   "cited": 5,
+   "supported": 4,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 103.2
+ }
+}

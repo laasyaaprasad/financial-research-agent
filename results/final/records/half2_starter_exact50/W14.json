@@ -1,0 +1,212 @@
+{
+ "id": "W14",
+ "category": "private company",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "LEGO Group is privately held. What did it publish for the first half of 2026 (January 1 - June 30, 2026) for revenue in Danish kroner, how did reported revenue growth compare with constant-currency growth and consumer sales growth, and what were operating profit and the implied operating margin?",
+ "grading": "Key points (all required): (1) H1 2026 revenue DKK 41.9 billion, +21% reported (H1 2025 DKK 34.6 billion); (2) +26% in constant currency; (3) consumer sales +22%; (4) operating profit DKK 10.9 billion (+22%), so operating margin about 26.0% (10.9/41.9; accept 25.8%-26.2%); (5) states the figures are published by LEGO itself (private company), not SEC-filed. Optional: net profit DKK 8.6 billion (+32%); operating cash flow DKK 8.6 billion. Fail if +26% is presented as reported growth, if USD is used as the primary currency, or if full-year 2025 figures are used.",
+ "answer": "H1 2026: revenue DKK 41.9 billion, +21% reported (+26% in constant currency); consumer sales +22%; operating profit DKK 10.9 billion (+22%; +29% constant currency), an operating margin of about 26.0%; net profit DKK 8.6 billion (+32%) [W14-E1, W14-E2]. These are LEGO's own published results for a private company, not SEC filings.",
+ "output": {
+  "answer": " Here is a summary of the LEGO Group's first-half 2026 results (Jan 1 – Jun 30, 2026):\n\n* **Revenue:** DKK **41.9 billion**\n* **Revenue growth:** **+21%** reported  \n  **+26%** in constant currency  \n  Consumer sales grew **+22%**\n* **Operating profit:** DKK **10.9 billion** (up 22% year over year)\n* **Implied operating margin:** **~26.0%** (DKK 10.9 billion ÷ DKK 41.9 billion)\n\n**Key points:** reported revenue growth of 21% was five percentage points lower than constant-currency growth (26%), reflecting currency headwinds—chiefly a weaker U.S. dollar. Consumer sales growth of 22% tracked closely to reported revenue growth.\n\n**Sources:**\n- LEGO Group official press release: https://www.lego.com/en-us/aboutus/news/2026/august/strong-demand-and-brand-relevance-drive-lego-group-revenue-up-21-operating-profit-up-22-in-h1-2026\n- Brickset: https://brickset.com/article/134199/lego-achieves-record-revenue-and-increased-profit-in-1h-2026\n- Stonewars: https://stonewars.com/news/lego-financial-results-for-the-first-half-of-2026\n- CNBC: https://www.cnbc.com/2026/08/25/lego-first-half-2026-revenue.html",
+  "tokens": {
+   "input": 7933,
+   "output": 881
+  },
+  "tavily_credits": 2,
+  "latency_s": 12.73,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/afbc3a743c6b6989bff5c509391640b0",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "LEGO Group half year report first half 2026 revenue operating profit",
+     "time_range": "year",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://brickset.com/article/134199/lego-achieves-record-revenue-and-increased-profit-in-1h-2026",
+    "https://stonewars.com/news/lego-financial-results-for-the-first-half-of-2026",
+    "https://www.cnbc.com/2026/08/25/lego-first-half-2026-revenue.html",
+    "https://www.lego.com/en-us/aboutus/news/2026/august/strong-demand-and-brand-relevance-drive-lego-group-revenue-up-21-operating-profit-up-22-in-h1-2026"
+   ],
+   "cited_primary": 1,
+   "retrieved": 10,
+   "retrieved_primary": 1
+  },
+  "recall": {
+   "figures": 14,
+   "found": 14
+  },
+  "correctness": {
+   "score": 0.75,
+   "points": [
+    {
+     "point": "States H1 2026 revenue was DKK 41.9 billion, up 21% reported, and gives H1 2025 revenue as DKK 34.6 billion.",
+     "optional": false,
+     "met": false,
+     "note": "Gives DKK 41.9 billion and +21% reported, but omits H1 2025 revenue of DKK 34.6 billion."
+    },
+    {
+     "point": "States revenue growth was +26% in constant currency.",
+     "optional": false,
+     "met": true,
+     "note": "Correctly labels +26% as constant-currency growth."
+    },
+    {
+     "point": "States consumer sales grew +22%.",
+     "optional": false,
+     "met": true,
+     "note": "Gives consumer sales growth of +22%."
+    },
+    {
+     "point": "States operating profit was DKK 10.9 billion (+22%) and implied operating margin was about 26.0% (10.9/41.9; accept 25.8%-26.2%).",
+     "optional": false,
+     "met": true,
+     "note": "Gives DKK 10.9 billion, +22%, and ~26.0% with the correct calculation."
+    },
+    {
+     "point": "States these are figures published by LEGO itself as a private company, not SEC-filed.",
+     "optional": false,
+     "met": false,
+     "note": "Cites an official LEGO press release, but does not state that LEGO is privately held or that the results are not SEC-filed."
+    },
+    {
+     "point": "Optional: includes net profit DKK 8.6 billion (+32%).",
+     "optional": true,
+     "met": false,
+     "note": "Net profit is not mentioned."
+    },
+    {
+     "point": "Optional: includes operating cash flow DKK 8.6 billion.",
+     "optional": true,
+     "met": false,
+     "note": "Operating cash flow is not mentioned."
+    },
+    {
+     "point": "Does not present +26% as reported revenue growth.",
+     "optional": false,
+     "met": true,
+     "note": "Clearly labels +21% as reported and +26% as constant currency."
+    },
+    {
+     "point": "Does not use USD as the primary currency.",
+     "optional": false,
+     "met": true,
+     "note": "Uses DKK as the currency for the reported figures."
+    },
+    {
+     "point": "Does not use full-year 2025 figures in place of H1 2026 figures.",
+     "optional": false,
+     "met": true,
+     "note": "The answer addresses H1 2026 results."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The core growth rates, operating profit, and margin are correct, but the answer omits the H1 2025 revenue comparison and does not state that LEGO is privately held and the figures are company-published rather than SEC-filed.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "partial",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Results period: January 1–June 30, 2026",
+     "numeric": true,
+     "cited_url": "https://www.lego.com/en-us/aboutus/news/2026/august/strong-demand-and-brand-relevance-drive-lego-group-revenue-up-21-operating-profit-up-22-in-h1-2026",
+     "reason": "The LEGO release identifies the results as H1 2026 and describes revenue during the first six months. For a calendar-year first half, that period is January 1 through June 30.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue was DKK 41.9 billion",
+     "numeric": true,
+     "cited_url": "https://www.lego.com/en-us/aboutus/news/2026/august/strong-demand-and-brand-relevance-drive-lego-group-revenue-up-21-operating-profit-up-22-in-h1-2026",
+     "reason": "The release states revenue for the first six months was DKK 41.9 billion, up from DKK 34.6 billion in H1 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Reported revenue growth was 21%",
+     "numeric": true,
+     "cited_url": "https://www.lego.com/en-us/aboutus/news/2026/august/strong-demand-and-brand-relevance-drive-lego-group-revenue-up-21-operating-profit-up-22-in-h1-2026",
+     "reason": "The release says revenue increased by 21% to DKK 41.9 billion. The stated comparison is H1 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Constant-currency revenue growth was 26%",
+     "numeric": true,
+     "cited_url": "https://brickset.com/article/134199/lego-achieves-record-revenue-and-increased-profit-in-1h-2026",
+     "reason": "Brickset states: “In constant currency, revenue grew 26%.”",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Consumer sales grew 22%",
+     "numeric": true,
+     "cited_url": "https://www.lego.com/en-us/aboutus/news/2026/august/strong-demand-and-brand-relevance-drive-lego-group-revenue-up-21-operating-profit-up-22-in-h1-2026",
+     "reason": "The release says consumer sales grew by 22% in the H1 2026 results.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Operating profit was DKK 10.9 billion and increased 22% year over year",
+     "numeric": true,
+     "cited_url": "https://www.lego.com/en-us/aboutus/news/2026/august/strong-demand-and-brand-relevance-drive-lego-group-revenue-up-21-operating-profit-up-22-in-h1-2026",
+     "reason": "The release states operating profit increased 22% to DKK 10.9 billion for H1 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Implied operating margin was approximately 26.0%",
+     "numeric": true,
+     "cited_url": "https://www.lego.com/en-us/aboutus/news/2026/august/strong-demand-and-brand-relevance-drive-lego-group-revenue-up-21-operating-profit-up-22-in-h1-2026",
+     "reason": "Using the same H1 2026 basis and currency units in the release: DKK 10.9bn operating profit ÷ DKK 41.9bn revenue = 0.26014, or 26.014%, which rounds to approximately 26.0%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The 21% reported growth rate is five percentage points below the 26% constant-currency rate",
+     "numeric": true,
+     "cited_url": "https://brickset.com/article/134199/lego-achieves-record-revenue-and-increased-profit-in-1h-2026",
+     "reason": "Brickset gives the two cited growth rates, 21% and 26%. Subtraction: 26% − 21% = 5 percentage points.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Currency headwinds were chiefly due to a weaker U.S. dollar",
+     "numeric": false,
+     "cited_url": "https://stonewars.com/news/lego-financial-results-for-the-first-half-of-2026",
+     "reason": "Stonewars says the weak U.S. dollar was “spoiling LEGO’s numbers at least a little,” which supports some negative currency effect, but does not establish that the U.S. dollar was chiefly responsible for the gap/headwinds.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 8,
+   "cited": 9,
+   "supported": 8,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 144.3
+ }
+}

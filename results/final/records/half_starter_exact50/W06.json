@@ -1,0 +1,193 @@
+{
+ "id": "W06",
+ "category": "recent event",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "As of 3 October 2026, who is MongoDB's chief executive officer and on what basis, when did that take effect, what did the company say about its fiscal 2027 guidance in the announcement, and what were the revenue ranges in that guidance for the third quarter and the full fiscal year 2027?",
+ "grading": "Key points (all required): (1) Dev Ittycheria is Interim President and CEO (served as CEO 2014-2025), effective immediately on 28 September 2026 (board appointment dated 26 September); (2) he replaced Chirantan 'CJ' Desai, who stepped down (also leaving the board) to take a senior role at Meta Platforms; (3) the board has started a search for a permanent CEO - none named as of 3 October 2026; (4) MongoDB reaffirmed (did not change) the Q3 and full-year fiscal 2027 guidance issued on 1 September 2026; (5) Q3 FY27 revenue $756M-$761M and FY27 revenue $2.99B-$3.03B. Fail if Desai is named as current CEO, a permanent CEO is stated, the guidance is described as raised/lowered, or ranges differ from those above.",
+ "answer": "Dev Ittycheria (MongoDB's CEO from 2014 to 2025) is Interim President and CEO, effective immediately on 28 September 2026 (appointed by the board on 26 September) after CJ Desai resigned as CEO and director to take a senior role at Meta Platforms; the board has launched a search for a permanent CEO with an executive search firm and none had been named as of 3 October [W06-E1, W06-E2]. MongoDB reaffirmed its guidance for Q3 and full-year fiscal 2027 given on 1 September 2026 - Q3 revenue $756M-$761M and FY2027 revenue $2.99B-$3.03B [W06-E1, W06-E3].",
+ "output": {
+  "answer": " **As of October 3, 2026, MongoDB's chief executive officer is Dev Ittycheria, serving as Interim President and CEO.** He was appointed by the Board on September 26, 2026, effective September 28, 2026, following Chirantan \"CJ\" Desai's departure to pursue a senior role at Meta Platforms, Inc.\n\n**Regarding fiscal 2027 guidance**, the company stated that it \"remains confident in the outlook for the business and is **reaffirming its guidance for Q3 and the full year fiscal 2027 provided on September 1st, 2026**.\"\n\n**Revenue guidance ranges** (from the September 1, 2026 announcement):\n\n- **Q3 fiscal 2027**: **$756 million to $761 million**\n- **Full fiscal year 2027**: **$2.99 billion to $3.03 billion**\n\nSources:\n- MongoDB CEO Transition announcement: https://www.mongodb.com/company/newsroom/press-releases/mongodb-announces-ceo-transition\n- MongoDB Q2 FY2027 earnings guidance: https://www.marketbeat.com/instant-alerts/guidance-mongodb-nasdaq-mdb-releases-q3-2027-earnings-guidance-2026-09-01\n- MongoDB Q2 FY2027 financial results: https://www.prnewswire.com/news-releases/mongodb-inc-announces-second-quarter-fiscal-2027-financial-results-302866656.html",
+  "tokens": {
+   "input": 11717,
+   "output": 1372
+  },
+  "tavily_credits": 2,
+  "latency_s": 18.24,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/c88f7bc975a02d12484175b5a9bef2d1",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "MongoDB chief executive officer CEO October 2026 appointment effective date announcement"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "MongoDB fiscal 2027 guidance September 1 2026 revenue Q3 full year investor day earnings"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.marketbeat.com/instant-alerts/guidance-mongodb-nasdaq-mdb-releases-q3-2027-earnings-guidance-2026-09-01",
+    "https://www.mongodb.com/company/newsroom/press-releases/mongodb-announces-ceo-transition",
+    "https://www.prnewswire.com/news-releases/mongodb-inc-announces-second-quarter-fiscal-2027-financial-results-302866656.html"
+   ],
+   "cited_primary": 1,
+   "retrieved": 14,
+   "retrieved_primary": 3
+  },
+  "recall": {
+   "figures": 6,
+   "found": 6
+  },
+  "correctness": {
+   "score": 0.667,
+   "points": [
+    {
+     "point": "Identifies Dev Ittycheria as Interim President and CEO, says this took effect immediately on 28 September 2026 after his board appointment dated 26 September, and notes he served as CEO from 2014 to 2025.",
+     "optional": false,
+     "met": false,
+     "note": "The answer gives his interim title and both dates, but omits that he was CEO from 2014 to 2025."
+    },
+    {
+     "point": "States that Chirantan “CJ” Desai stepped down as CEO, also left the board, and departed to take a senior role at Meta Platforms.",
+     "optional": false,
+     "met": false,
+     "note": "It mentions Desai's departure to pursue a senior Meta role, but does not say he stepped down as CEO or left the board."
+    },
+    {
+     "point": "States that the board has begun a search for a permanent CEO and that no permanent CEO had been named as of 3 October 2026.",
+     "optional": false,
+     "met": false,
+     "note": "The answer does not mention the search or whether a permanent CEO had been named."
+    },
+    {
+     "point": "States that MongoDB reaffirmed, rather than changed, the Q3 and full-year FY2027 guidance issued on 1 September 2026.",
+     "optional": false,
+     "met": true,
+     "note": "It explicitly says the company is “reaffirming its guidance” for Q3 and full-year FY2027 provided on September 1."
+    },
+    {
+     "point": "Gives Q3 FY2027 revenue guidance of $756M–$761M and full-year FY2027 revenue guidance of $2.99B–$3.03B.",
+     "optional": false,
+     "met": true,
+     "note": "Both revenue ranges match the required figures."
+    },
+    {
+     "point": "Does not identify Desai as the current CEO.",
+     "optional": false,
+     "met": true,
+     "note": "It identifies Ittycheria as the interim CEO and describes Desai's departure."
+    },
+    {
+     "point": "Does not state that a permanent CEO has been appointed or name one as current.",
+     "optional": false,
+     "met": true,
+     "note": "No permanent CEO is stated or named."
+    },
+    {
+     "point": "Does not describe the guidance as raised or lowered.",
+     "optional": false,
+     "met": true,
+     "note": "It describes the guidance as reaffirmed."
+    },
+    {
+     "point": "Does not give revenue guidance ranges that differ from the specified ranges.",
+     "optional": false,
+     "met": true,
+     "note": "The stated Q3 and full-year ranges are exact matches."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The response correctly identifies Ittycheria's interim role and effective dates, reports the reaffirmed guidance and both revenue ranges, and avoids the specified traps. It omits the required detail about Ittycheria's prior CEO tenure, Desai stepping down and leaving the board, and the board's search with no permanent CEO named.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "partial",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "As of October 3, 2026, Dev Ittycheria is MongoDB’s CEO, serving as Interim President and CEO",
+     "numeric": true,
+     "cited_url": "https://www.mongodb.com/company/newsroom/press-releases/mongodb-announces-ceo-transition",
+     "reason": "The retrieved announcement says CJ Desai stepped down as President and CEO and the Board began searching for MongoDB’s next permanent CEO. It does not identify Dev Ittycheria or say he is interim CEO; the cited text does not support this claim.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "MongoDB’s Board appointed Dev Ittycheria on September 26, 2026, effective September 28, 2026",
+     "numeric": true,
+     "cited_url": "https://www.mongodb.com/company/newsroom/press-releases/mongodb-announces-ceo-transition",
+     "reason": "The retrieved September 28 announcement says Desai stepped down effective immediately, but does not report an appointment of Ittycheria or a September 26 Board action. The cited text does not support this claim.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Chirantan “CJ” Desai stepped down as MongoDB President and CEO, effective September 28, 2026",
+     "numeric": true,
+     "cited_url": "https://www.mongodb.com/company/newsroom/press-releases/mongodb-announces-ceo-transition",
+     "reason": "The retrieved announcement, dated September 28, 2026, says Desai stepped down as President and CEO effective immediately. This supports the stated role and effective date.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Desai left to pursue a senior role at Meta Platforms, Inc.",
+     "numeric": false,
+     "cited_url": "https://www.mongodb.com/company/newsroom/press-releases/mongodb-announces-ceo-transition",
+     "reason": "The retrieved announcement explicitly states that Desai is leaving to pursue a senior role at Meta Platforms, Inc.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "MongoDB said it was reaffirming Q3 and full-year fiscal 2027 guidance provided on September 1, 2026",
+     "numeric": true,
+     "cited_url": "https://www.mongodb.com/company/newsroom/press-releases/mongodb-announces-ceo-transition",
+     "reason": "The retrieved announcement says the company is reaffirming its guidance for Q3 and the full year fiscal 2027 provided on September 1st, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "MongoDB’s Q3 fiscal 2027 revenue guidance was $756 million to $761 million",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/mongodb-inc-announces-second-quarter-fiscal-2027-financial-results-302866656.html",
+     "reason": "The retrieved financial-results text labels this as third-quarter fiscal 2027 guidance and gives expected revenues of $756 million to $761 million. This matches the period, metric, units, and guidance basis claimed.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "MongoDB’s full-year fiscal 2027 revenue guidance was $2.99 billion to $3.03 billion",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/mongodb-inc-announces-second-quarter-fiscal-2027-financial-results-302866656.html",
+     "reason": "The retrieved text shows a “Full Year Fiscal 2027 Guidance” heading but provides no annual revenue range in the supplied passage. The cited retrieved evidence therefore does not substantiate the figures.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 6,
+   "numeric_cited": 6,
+   "cited": 7,
+   "supported": 4,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 36.6
+ }
+}

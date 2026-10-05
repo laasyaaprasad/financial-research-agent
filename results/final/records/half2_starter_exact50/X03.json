@@ -1,0 +1,350 @@
+{
+ "id": "X03",
+ "category": "Market analysis",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "Build a trailing-twelve-month (TTM) comp table for four U.S. restaurant companies: Darden Restaurants, Brinker International, Cracker Barrel Old Country Store and The Cheesecake Factory. For each company compute TTM revenue (total revenues / net sales) and TTM GAAP net income attributable to the company, both in USD millions, through the company's most recent fiscal quarter reported as of October 3, 2026. Define TTM as the last four reported fiscal quarters, i.e. latest fiscal year + current fiscal year-to-date - prior-year year-to-date (when the most recent reported quarter is the fiscal fourth quarter, TTM equals that fiscal year); do not adjust for 52/53-week differences. State the TTM end date used for each company.",
+ "grading": "Graded cell by cell: each value within tolerance and for the stated period; a missing cell counts as wrong.",
+ "answer": "TTM through each company's most recent reported quarter (USD millions):\n| Row | TTM revenue | TTM net income |\n|---|---|---|\n| Darden Restaurants (TTM ended 2026-08-30) | 13,366.5 | 1,182.3 |\n| Brinker International (TTM ended 2026-06-24) | 5,807.4 | 487.0 |\n| Cracker Barrel Old Country Store (TTM ended 2026-07-31) | 3,318.7 | 31.7 |\n| The Cheesecake Factory (TTM ended 2026-06-30) | 3,877.3 | 178.6 |",
+ "output": {
+  "answer": "",
+  "tokens": {
+   "input": 683847,
+   "output": 24788
+  },
+  "tavily_credits": 54,
+  "latency_s": 144.47,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/b06f89498e96ff5225171ec3e84a69b5",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Restaurants DRI latest quarterly earnings revenue net income 10-Q 2025 fiscal quarter reported",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Brinker International EAT latest quarterly earnings revenue net income 10-Q 2025 fiscal quarter reported",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cracker Barrel CBRL latest quarterly earnings revenue net income 10-Q 2025 fiscal quarter reported",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory CAKE latest quarterly earnings revenue net income 10-Q 2025 fiscal quarter reported",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Restaurants DRI fiscal 2026 full year annual revenue net income GAAP earnings report",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Brinker International EAT fiscal 2026 full year annual revenue net income GAAP earnings report",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cracker Barrel CBRL fiscal 2026 full year annual revenue net income GAAP earnings report",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory CAKE fiscal 2026 quarterly revenue net income Q2 Q3 earnings report",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Cracker Barrel\" fiscal 2026 full year annual revenue net income GAAP diluted earnings per share results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Cheesecake Factory\" fiscal 2026 Q2 revenue net income quarterly results second quarter fiscal year",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Cheesecake Factory\" CAKE fiscal year end date annual revenue 2025 2026 fourth quarter Q3",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Brinker International\" EAT fiscal 2026 Q4 full year annual revenue net income results June 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Restaurants DRI fiscal 2027 first quarter Q1 results revenue net income August 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Brinker International EAT fiscal 2027 first quarter Q1 results revenue net income September October 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory CAKE fiscal 2026 Q3 third quarter results October September 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cracker Barrel CBRL fiscal 2026 full year annual revenue net income July 2026 results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cracker Barrel CBRL fiscal 2026 full year annual net income revenue total results July 31",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Restaurants fiscal 2026 full year annual revenue net income GAAP results May 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory CAKE Q1 fiscal 2026 results revenue net income first quarter March 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Cheesecake Factory\" Q1 2026 revenue net income GAAP earnings per share results first quarter",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cracker Barrel CBRL fiscal 2026 full year annual net income revenue results July 31 2026 GAAP",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Restaurants DRI fiscal 2026 annual revenue net income full year results May 2026 GAAP",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Restaurants Q1 2026 revenue net income first quarter fiscal 2026 August 2025 results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory net income GAAP Q1 Q2 2025 2026 annual quarterly earnings results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cracker Barrel CBRL fiscal 2026 full year annual revenue net income results 2026 July 31",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Restaurants DRI fiscal 2026 full year annual revenue net income results 2026 May GAAP",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory CAKE Q3 2025 revenue net income third quarter fiscal 2025 results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Restaurants Q1 2026 revenue net income first quarter fiscal 2026 August 2025 results",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Cracker Barrel\" fiscal 2026 \"full year\" annual revenue net income GAAP July 2026 earnings release",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "\"Darden Restaurants\" fiscal 2026 \"full year\" annual revenue net income GAAP May 2026",
+     "search_depth": "advanced",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Restaurants fiscal 2026 full year total sales revenue billion net income million",
+     "search_depth": "fast",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cracker Barrel fiscal 2026 full year annual revenue net income million GAAP",
+     "search_depth": "fast",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cheesecake Factory Q3 2025 revenue net income third quarter fiscal 2025 results",
+     "search_depth": "fast",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Q1 2026 fiscal first quarter 2026 net income revenue August 2025 results",
+     "search_depth": "fast",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Darden Restaurants fiscal 2026 full year total sales revenue annual results May 2026"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Cracker Barrel fiscal 2026 full year total revenue annual results July 2026"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [],
+   "cited_primary": 0,
+   "retrieved": 170,
+   "retrieved_primary": 8
+  },
+  "recall": {
+   "figures": 16,
+   "found": 7
+  },
+  "correctness": {
+   "score": 0.0,
+   "verdict": "incorrect",
+   "points": [],
+   "rationale": "No answer produced.",
+   "cells_correct": 0,
+   "cells_total": 8,
+   "votes": [
+    "incorrect",
+    "incorrect",
+    "incorrect"
+   ]
+  },
+  "citations": {
+   "claims": [],
+   "numeric_claims": 0,
+   "numeric_cited": 0,
+   "cited": 0,
+   "supported": 0,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 0.1
+ }
+}

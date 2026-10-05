@@ -15,46 +15,54 @@ It replaces the starter (a LangChain agent with one Tavily search tool on Kimi K
 
 ## Results
 
-The baseline is the **starter exactly as shipped**: its prompt, Tavily tool and agent loop, on its default model, Kimi K2.6. Our agent includes our model choice, DeepSeek V4.1 Flash, the cheapest Nebius model. A middle column runs the starter's design on our model, to separate what the architecture contributes from what the model contributes. All runs are graded by the same different-family judge. Each held-out set was frozen before its first run.
+Measured on **Exact50**: 50 held-out questions weighted toward what an analyst tool has to get right. That means ambiguous and edge-case requests, web-dependent questions (earnings-call commentary, recent events, foreign and private companies), date traps, actual versus guidance, and comparisons across fiscal calendars. Each column is one fresh run of all 50, graded by the same judge: GPT-6 Luna (OpenAI, high reasoning, a different model family from the agents), three votes per answer.
 
-**Held-out sets 1 and 2:** 40 questions, 38 companies. The second set adds point-in-time questions, figures found only in filings for mid- and small-caps, multi-step fiscal calculations and traps.
-
-| Measure | Starter (as shipped) | Starter design on our model | **Our agent** |
+| Measure | Starter as shipped (Kimi K2.6) | Starter design on our model | **Our agent** |
 |---|---|---|---|
-| Fixed answers fully correct | 40/68 (59%) | 64/68 (94%) | **67/68 (99%)** |
-| **Verified-correct**: correct, every cited claim supported by retrieved text, every number cited | 23/68 (34%) | 38/68 (56%) | **56/68 (82%)** |
-| Cited claims not supported by the text the agent retrieved | 19% | 16% | **9%** |
-| Cited sources that are primary (SEC or company) | 21% | 41% | **82%** |
-| Refusals correct (unreported period, undisclosed metric, non-SEC company) | 7/12 | 10/12 | **12/12** |
-| Tavily credits per question | 8.7 | 4.7 | **0.9** |
-| Tokens per question | 80k | 33k | 51k |
-| Median / p95 latency | 18 s / 118 s | 17 s / 116 s | 40 s / 217 s |
+| Fully correct | 14/50 | 25/50 | **32/50** |
+| Mean rubric score | 0.66 | 0.80 | **0.89** |
+| **Verified-correct**: correct, every cited claim supported, every number cited | 2/50 | 0/50 | **18/50** |
+| Cited claims supported by the cited source | 66% | 69% | **94%** |
+| Cited sources that are primary (SEC or company) | 15% | 26% | **73%** |
+| Tavily credits (all 50 questions) | 373 | 338 | **115** |
+| Tokens per question | 58k | 60k | 63k |
+| Median latency | 26 s | **12 s** | 45 s |
 
-Two runs per column (68 graded fixed answers each). The as-shipped starter wasn't run on held-out set 3, the analyst tables (8 tasks, 86 cells): at about 9 credits per question it would have exceeded the 1,500-credit budget. On that set, against the starter's design on our model:
+| Fully correct, by question class | Starter as shipped | Starter design on our model | **Our agent** |
+|---|---|---|---|
+| Edge and ambiguous (16) | 1 | 1 | **11** |
+| Traps: point-in-time, superseded, unreported, deregistered (16) | 6 | **10** | **10** |
+| Web-dependent (10) | 3 | **7** | 3 |
+| Actual versus guidance (4) | 3 | 3 | **4** |
+| Comparisons across fiscal calendars (4) | 1 | **4** | **4** |
 
-| Measure | Starter design on our model | Our agent |
-|---|---|---|
-| Table cells correct | 171/172 (99%) | 167/172 (97%) |
-| Cited figures not supported by retrieved text | 69% | 6% |
-| Tavily credits per table task | 20.8 | 0.2 |
-
-**Dev set:** 30 questions, inspected during development. The starter as shipped got 40/75 fully correct over three runs (53%); our agent got 20/25 (80%).
-
-Baseline credits are counted from its calls (1 per basic search, 2 per advanced), because the starter's LangChain tool doesn't report usage; our agent's are Tavily's per-call usage. All tables, per-question scorecards and records are in [`results/final/results.md`](results/final/results.md). Regenerate it with `uv run python -m evals.report --final`.
+The middle column runs the starter's prompt, Tavily tool and agent loop on our model, DeepSeek V4.1 Flash, to separate what the architecture contributes from what the model contributes. Our agent's first version, before the evaluation review below, scored 24/50 fully correct and 11/50 verified-correct on the same questions.
 
 **What this shows**
-- **Against what was shipped:**
-  - fully correct rises from 59% to 99%
-  - answers an analyst can use without re-checking rise from 34% to 82%
-  - cited claims not supported by the source fall from 19% to 9%
-  - primary sources rise from 21% to 82%
-  - refusals correct rise from 7/12 to 12/12
-  - about 10× fewer Tavily credits
-  - the cost is about 2.2× median latency
-- **Where the gain comes from:**
-  - **The model choice** accounts for most of the correctness gain: the starter's own design on DeepSeek Flash reaches 94%.
-  - **The architecture** accounts for most of the trust and cost gains: verified-correct 56% → 82%, primary sources 41% → 82%, every refusal correct, and Tavily credits 4.7 → 0.9 per question. On tables, unsupported figures fall from 69% to 6%, with about 100× fewer credits.
-- **The search-loop design's cost grows with the task:** one table task took 53 advanced searches. Our agent answers most questions from free SEC data and uses Tavily for news, earnings-call commentary and companies that don't file with the SEC.
+- **Against the starter as shipped:**
+  - fully correct rises from 14 to 32 of 50
+  - verified-correct rises from 2 to 18
+  - cited claims supported rise from 66% to 94%, and primary sources from 15% to 73%
+  - it uses about a third of the Tavily credits
+  - the cost is latency: 45 s median against 26 s
+- **Against the starter's design on the same model:**
+  - fully correct rises from 25 to 32, and edge-case questions from 1 to 11 of 16
+  - verified-correct rises from 0 to 18
+  - Tavily credits fall from 338 to 115
+  - our agent is weaker on web-dependent questions (3 against 7 of 10) and about 4× slower
+- **Where the final gains came from:** generic fixes found by the evaluation review:
+  - bugs in the number check
+  - a lag in SEC's tagged financial data, now covered by reading the filing itself
+  - chained calculations
+  - planner and writer prompts that teach a way of working through a question rather than per-question rules
+
+**How to read these numbers**
+- One run per column: with 50 questions, differences of two or three answers are within run-to-run variation.
+- Exact50's selection rules (`evals/exact50_selection.md`) were written after earlier results on these questions were known. The questions, references and rubrics are copied unchanged from the held-out sets.
+- The final agent's fixes came from diagnosing held-out failures, using the run records and Langfuse traces. So the held-out sets are no longer a clean test of the final agent. The fixes contain no company- or question-specific rules, and the guard test still passes.
+- Our agent's credits are Tavily's reported usage. The starters' are counted from their successful searches, because the starter's LangChain tool doesn't report usage.
+
+Full tables and per-question verdicts are in [`results/final/exact50.md`](results/final/exact50.md); regenerate it with `uv run python -m evals.report --exact50`. The earlier results on the full held-out sets (2026-10-03/04: older agent, Nemotron judge, before the grading fixes) are kept in [`results/final/results.md`](results/final/results.md) as history. They are superseded.
 
 ## Architecture
 
@@ -79,9 +87,9 @@ flowchart TD
 |---|---|---|
 | Resolve | `agents/company.py` | The model names the companies; code resolves them against SEC's ticker list. Private or ambiguous names stay unresolved. |
 | Calendar | `agents/fiscal.py` | Builds each company's reporting periods from its own filings: fiscal labels (naming convention read from its annual-report XBRL), exact dates (including irregular quarters such as 12/12/12/16 weeks) and reporting status as of the question date. |
-| Plan | `agents/planner.py` | One call picks the answer periods, the filings to read and any web searches; code drops anything not in the calendar. |
-| Evidence | `agents/research.py` | **SEC:** BM25-ranked passages from earnings releases and 10-Q/10-K filings, plus XBRL facts for every answer period (core income-statement lines always included). **Tavily:** basic search, one query-focused extract, social media excluded, plus one gap-filling round if the writer reports something missing. |
-| Write and verify | `agents/writer.py` | Claims and table cells must quote their sources verbatim. Code rejects any quote that isn't in its source, rejects any number that isn't in a quote, and evaluates calculations itself (for example, fiscal Q4 = full year minus nine months). A verifier checks meaning. One revision is allowed; anything that still fails is withheld. |
+| Plan | `agents/planner.py` | One call first works out what exactly is asked, where each piece is disclosed and what could make the obvious answer wrong today. It then picks the answer periods, the filings to read and any web searches; code drops anything not in the calendar. |
+| Evidence | `agents/research.py` | **SEC:** BM25-ranked passages from earnings releases, 10-Q/10-K filings and up to 8 recent 8-Ks. Also XBRL facts for every answer period (core income-statement lines always included); a filing SEC's tagged data doesn't include yet is read directly. **Tavily:** basic search and one query-focused extract, with social media excluded. A result must be about the company: named in its title or URL, or at least twice in its text. Companies without quarterly SEC reports (foreign annual filers, private companies) have their own sites searched first. One gap-filling round runs if the writer reports something missing. |
+| Write and verify | `agents/writer.py` | The writer works through the question first: every item asked, the exact passage for each one (watching for near-misses), what must be derived, and what a reader needs in order to rely on it. Claims and table cells must quote their sources verbatim. Code rejects any quote that isn't in its source and any number that isn't in a quote. It evaluates calculations itself, chained where one result feeds another (for example, fiscal Q4 = full year minus nine months). A verifier checks meaning. One revision is allowed; anything that still fails is withheld. |
 | Orchestrate | `agents/pipeline.py` | Runs the steps, renders the brief or table and provides the CLI. |
 | Follow-ups | `agents/followup.py` | In the chat, one model call rewrites a follow-up (or a reply to a clarification question) into a standalone question for the pipeline. It never answers. |
 | Chat UI | `ui/` | Chainlit front end over the same pipeline (see [Chat UI](#chat-ui)). |
@@ -107,24 +115,33 @@ flowchart TD
 | Set | Contents | Role |
 |---|---|---|
 | `evals/golden.jsonl` | 30 questions across the Vals AI Finance Agent task categories and the known failure modes (fiscal periods, units, wrong entity, GAAP vs. non-GAAP, stale data, refusals); user-verified references | **Dev**: inspected during development |
+| `evals/dev_tables.jsonl`, `evals/edge_dev.jsonl`, `evals/web_dev.jsonl` | 3 table tasks, 24 ambiguous or edge-case requests, 10 web-dependent questions | Dev |
 | `evals/test_heldout.jsonl` | 20 questions, 21 other companies | Held-out |
 | `evals/test_hard.jsonl` | 20 questions: point-in-time, filing-only figures for mid/small caps, multi-step fiscal calculations, traps, guidance vs. actual | Held-out |
 | `evals/test_tables.jsonl` | 8 analyst table tasks (peer comps across fiscal calendars, 8-quarter trend with derived Q4, TTM and balance-sheet comps, segments), 86 cells | Held-out |
-| `evals/dev_tables.jsonl` | 3 table tasks on dev-set companies | Dev for table support |
+| `evals/test_edge.jsonl` | 16 ambiguous or incomplete requests (missing period or company, shorthand, share classes, out-of-scope asks, unreported periods, private companies) | Held-out |
+| `evals/test_web.jsonl` | 10 questions whose facts aren't in SEC filings (call commentary, recent events, foreign issuers, private companies, multi-hop) | Held-out |
+| `evals/exact50.jsonl` | 50 of the 74 held-out questions, chosen by fixed rules (`evals/exact50_selection.md`): all edge and web questions, traps, actual vs. guidance and cross-calendar comparisons; plain single-figure lookups dropped | **Headline benchmark** |
 
 How the held-out sets were kept honest:
-- **Built blind.** Each held-out set was built by a research subagent from SEC filings, without seeing either agent's outputs.
-- **Checked.** References were cross-checked against SEC XBRL data.
-- **Frozen first.** Each set's hash was committed before the first run on it (`*_manifest.json`).
-- **No tuning on held-out results.** Agent code changes were driven only by dev-set failures.
-- **Disclosed reuse.** The final agent is the third run on set 1 and the second on the hard set; only the table set was a true first run. The two harder sets were added because the first held-out set turned out too easy to separate the two agents.
+- **Built blind.** Each held-out set was built by a research subagent from primary sources, without seeing either agent's outputs.
+- **Checked.** References were cross-checked against SEC XBRL data where possible.
+- **Frozen first.** Each set's hash was committed before the first run on it (`*_manifest.json`), Exact50 included.
+- **Disclosed reuse.** Until 2026-10-05, agent changes came only from dev-set failures. The evaluation review on that day diagnosed held-out failures and made generic fixes (see Results).
 
-How the answers were graded:
-- **Rubric judge.** `nvidia/Nemotron-3-Ultra-550b-a55b` grades correctness against each question's rubric. It agreed with the user on 8 of 9 hand-graded answers.
+How the answers are graded (`evals/scorers.py`):
+- **Rubric judge.** `gpt-6-luna` (OpenAI, high reasoning) grades correctness against each question's rubric, with three votes; the median verdict counts. It agreed with the user on 8 of 10 hand-graded answers, as `nvidia/Nemotron-3-Ultra-550b-a55b` did before it (8 of 9). GLM-5.3-Flash was tried and dropped: it returned no grade for 5 of 24 answers.
+- **Verdict computed from the rubric points.** The judge marks each requirement met or not; code derives the verdict. Items the rule calls optional never block "correct", and fail conditions are phrased as what the answer must avoid. A malformed reply is retried with the error; a rate limit is waited out.
 - **Cell-by-cell tables.** For table tasks the judge only extracts each cell's value; code compares it to the reference within tolerance.
-- **Citation checks.** Every cited claim is checked against the text the agent actually retrieved.
+- **Citation check.** Every claim an answer makes about a company or source is checked against the source it cites. The judge sees each cited source in full (up to 30,000 characters), chosen the same way for every agent.
 - **No self-grading.** The judge is a different model family from both agents.
 - **Guard test.** `tests/test_agent.py` fails if any evaluation-set company name appears in `agents/`.
+
+**The evaluation review (2026-10-05)** found problems in the harness, not only in the agents. Exact50 and the grading rules above are its result.
+- **Judge failures scored as wrong answers.** 8 answers in one run were scored 0 because the judge's overall verdict contradicted its own per-point marks. That usually happened by counting an optional item as required.
+- **Same-model judge.** One run was graded by the agents' own model.
+- **A truncated citation check.** The check saw only the first 60,000 characters of everything retrieved. That hid the supporting text for long baseline retrievals and left many baseline claims undecided.
+- **Questions that don't separate the agents.** Many held-out questions ask for one headline figure, which both agents find.
 
 ## Usage
 
@@ -203,15 +220,16 @@ every instance in the account); the public IPv4 address is about $3.60 a month. 
 
 ## Limitations and what I didn't do
 
-- **The architecture alone doesn't raise correctness.** Given the same model, the starter's design is about as accurate as ours and slightly ahead on table cells (99% vs. 97%). The architecture's gains are verifiability, primary sourcing, refusals and cost; the correctness gain over the shipped starter comes mostly from the model choice.
-- **The as-shipped starter wasn't run on the table set** (Tavily budget). On held-out sets 1 and 2 all three configurations have two runs.
-- **A known bug found in held-out runs.** A table calculation can come out in a different unit than its column: inputs in thousands under a "USD millions" column, so 1,000× too large. A unit check per column would catch it. It was not fixed after the held-out runs, so the results still include it.
-- **Slower:** 2× median latency.
-- **Not delivered by the verifier:** its "net sales is not revenue" strictness once withheld a correct cell.
-- **SEC filers only:** foreign issuers' local filings and private companies get only what the web provides.
-- **No licensed data:** no consensus, estimates or paywalled transcripts. The beat/miss checks use company guidance, not consensus.
-- **Small samples:** 20-question sets and 8 table tasks detect large differences only, and the dev and table "dev" sets are small.
-- **Follow-up rewriting isn't evaluated.** The evaluation sets are single-turn, so the chat's rewrite of follow-ups into standalone questions was only checked by hand; a wrong rewrite is visible as **Researched as** above the answer.
+- **Web-dependent questions are the weakest class:** 3 of 10 on Exact50, against 7 for the starter's design on the same model. The answers often leave out details the rubric requires, or miss figures that are only in a company's own release.
+- **Slower:** 45 s median latency against 12 s for the starter's design on the same model.
+- **Small, single-run samples:** one run per configuration on Exact50, and only 4 to 16 questions per class. Small differences are within run-to-run variation.
+- **Held-out sets used for diagnosis.** The final agent's fixes came from held-out failures (see Results), so its held-out results are not a clean test.
+- **Simple lookups don't separate the designs.** On the earlier full held-out sets (mostly single-figure questions), the starter's design on the same model was about as accurate as ours. Exact50 leaves those out, so it shows where the designs differ, not accuracy on simple lookups.
+- **A known table bug.** A table calculation can come out in a different unit than its column: inputs in thousands under a "USD millions" column, so 1,000× too large. A unit check per column would catch it.
+- **Verifier strictness:** its "net sales is not revenue" rule once withheld a correct cell.
+- **SEC filers first:** foreign issuers and private companies get only what the web and their own sites provide.
+- **No licensed data:** no consensus, estimates or paywalled transcripts. Beat/miss checks use company guidance, not consensus.
+- **Follow-up rewriting isn't evaluated.** The evaluation sets are single-turn, so the chat's rewrite of follow-ups into standalone questions was only checked by hand. A wrong rewrite is visible as **Researched as** above the answer.
 - **Skipped on purpose:**
   - a multi-agent supervisor: research found it costs about 15× the tokens, and these tasks have known shapes
   - Tavily `/research`: it hides source tiers and claim-level checking
@@ -223,7 +241,7 @@ every instance in the account); the public IPv4 address is about $3.60 a month. 
 agents/      pipeline (company, fiscal, planner, research, writer, pipeline), followup, baseline, tracing, llm, edgar
 ui/          chat UI (Chainlit app, chat rendering, config, readme)
 evals/       question sets + manifests + source notes, run.py (harness), scorers.py, report.py
-results/     final/ (results.md, scorecards, per-question records), history_kimi_baseline/ (starter on its original model)
+results/     final/ (exact50.md, earlier results.md, scorecards, per-question records), history_kimi_baseline/
 scripts/     check_env.py, check_secrets.py, verify_traces.py
 tests/       offline unit tests (no network)
 PLAN.md      milestones, the course correction and how the evaluation evolved

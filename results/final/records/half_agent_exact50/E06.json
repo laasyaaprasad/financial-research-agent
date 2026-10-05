@@ -1,0 +1,283 @@
+{
+ "id": "E06",
+ "category": "vague metric",
+ "difficulty": "hard",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "berkshire cash",
+ "grading": "(1) Identifies Berkshire Hathaway Inc. as one company (Class A and Class B shares) without asking which class. (2) Uses the latest balance sheet date, June 30, 2026 (Q2 2026 10-Q, reported Aug 2026), says so, and notes Q3 2026 not yet reported. (3) States explicitly which definition of 'cash' it uses: the consolidated cash and cash equivalents line, versus the widely quoted 'cash, cash equivalents and U.S. Treasury Bills' held by insurance and other businesses; if it quotes the larger Treasury-bill-inclusive figure it says it includes T-bills; cites the filing. (4) Fail if it gives a 'cash' number with no definition, counts the equity portfolio as cash, uses a different balance-sheet date without saying so, or gives a figure for another company.",
+ "answer": "Berkshire at June 30, 2026: insurance and other businesses held about $359.2B of cash, equivalents and U.S. Treasury Bills (net of unsettled purchases); the answer defines which cash measure it quotes.",
+ "output": {
+  "answer": "**Question:** berkshire cash\n*As of 2026-10-03*\n\n**Interpreted as:** \"Cash\" read as the balance-sheet line \"Cash and cash equivalents\" (Berkshire also reports \"Short-term investments in U.S. Treasury Bills\" separately; that line is not included unless the analyst means total cash plus T-bills). No period given, so the latest reported period is used: Q2 FY2026 (2026-04-01 to 2026-06-30), reported 2026-08-11. Berkshire's fiscal year is the calendar year, so Q2 FY2026 = April-June 2026. \"berkshire\" read as Berkshire Hathaway Inc. (BRK-B); Class A and Class B are one company.\n\n| | Cash and cash equivalents (USD millions, GAAP, as reported) | Short-term investments in U.S. Treasury Bills (USD millions, GAAP, as reported) |\n|---|---|---|\n| Insurance and Other — June 30, 2026 (Q2 FY2026, quarter ended 2026-06-30) | $35,096 [1] | $324,905 [1] |\n| Railroad, Utilities and Energy — June 30, 2026 (Q2 FY2026, quarter ended 2026-06-30) | $5,513 [1] | — |\n| Total (Insurance and Other + Railroad, Utilities and Energy) — June 30, 2026 (Q2 FY2026, quarter ended 2026-06-30) | 40,609 [1] | $324,905 [1] |\n| Insurance and Other — December 31, 2025 (FY2025 year end) | $47,719 [1] | $321,434 [1] |\n| Railroad, Utilities and Energy — December 31, 2025 (FY2025 year end) | $4,158 [1] | — |\n| Total (Insurance and Other + Railroad, Utilities and Energy) — December 31, 2025 (FY2025 year end) | 51,877 [1] | — |\n\n- Berkshire Hathaway reports cash and cash equivalents as two separate balance-sheet lines by segment — \"Insurance and Other\" and \"Railroad, Utilities and Energy\" — rather than as a single consolidated line. [1]\n- At June 30, 2026 (Q2 FY2026, quarter ended 2026-06-30), Berkshire's Insurance and Other segment reported cash and cash equivalents of $35,096 million (GAAP, as reported). [1]\n- At June 30, 2026 (Q2 FY2026, quarter ended 2026-06-30), Berkshire's Railroad, Utilities and Energy segment reported cash and cash equivalents of $5,513 million (GAAP, as reported). [1]\n- Combining the two segment lines, Berkshire's total cash and cash equivalents at June 30, 2026 (Q2 FY2026, quarter ended 2026-06-30) were 40,609 million (GAAP, as reported). [1]\n- Berkshire separately reports \"Short-term investments in U.S. Treasury Bills\" of $324,905 million at June 30, 2026 (Q2 FY2026, quarter ended 2026-06-30), a line shown under Insurance and Other that is not part of cash and cash equivalents. [1]\n- Adding the U.S. Treasury Bill line to the two cash and cash equivalents lines gives 365,514 million at June 30, 2026 (Q2 FY2026, quarter ended 2026-06-30). [1]\n- Berkshire's footnote states that the cash and cash equivalents line includes U.S. Treasury Bills with maturities of three months or less when purchased of $3.2 billion at June 30, 2026 and $17.6 billion at December 31, 2025. [1]\n- Berkshire's footnote states that the U.S. Treasury Bill line includes unsettled purchases of U.S. Treasury Bills of $771 million at June 30, 2026 and $167 million at December 31, 2025, which were also included in liabilities and were paid shortly after the respective balance sheet date. [1]\n- Berkshire's management states that at June 30, 2026 its insurance and other businesses held investments in cash, cash equivalents and U.S. Treasury Bills (net of payables for unsettled purchases) of $359.2 billion. [1]\n- Berkshire's cash flow statement reports cash, cash equivalents, restricted cash and restricted cash equivalents of $41,360 million at June 30, 2026 versus $52,569 million at December 31, 2025, a decrease of $11,209 million for the first six months of 2026 (a broader measure that includes restricted cash). [1][2]\n\n**Not available**\n- Cash and cash equivalents as of Q3 FY2026 (quarter ended 2026-09-30): The quarter ended 2026-09-30 has ended but has not been reported; the latest reported balance-sheet date in the evidence is 2026-06-30. [1]\n- A single consolidated \"Cash and cash equivalents\" total line as reported by Berkshire: Berkshire presents cash and cash equivalents as two segment lines (Insurance and Other; Railroad, Utilities and Energy) rather than one consolidated balance-sheet line; a combined total is only derivable by summing them. [1]\n\n**Sources**\n[1] BERKSHIRE HATHAWAY INC 10-Q for Q2 FY2026 (filed 2026-08-10) (www.sec.gov, 2026-08-10, primary) https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/brka-20260630.htm\n[2] BERKSHIRE HATHAWAY INC XBRL data tagged in 10-Q filed 2026-08-10 (www.sec.gov, 2026-08-10, primary) https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 44459,
+   "output": 19066
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 71.13,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/db54fc8f508b69c433d4dfced2d87bf5",
+  "companies": [
+   {
+    "name": "BERKSHIRE HATHAWAY INC",
+    "ticker": "BRK-B",
+    "cik": "1067983",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "\"Cash\" read as the balance-sheet line \"Cash and cash equivalents\" (Berkshire also reports \"Short-term investments in U.S. Treasury Bills\" separately; that line is not included unless the analyst means total cash plus T-bills).",
+    "No period given, so the latest reported period is used: Q2 FY2026 (2026-04-01 to 2026-06-30), reported 2026-08-11.",
+    "Berkshire's fiscal year is the calendar year, so Q2 FY2026 = April-June 2026.",
+    "\"berkshire\" read as Berkshire Hathaway Inc. (BRK-B); Class A and Class B are one company."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Cash and cash equivalents at 2026-06-30 (Q2 FY2026 balance sheet)",
+    "Cash and cash equivalents at 2025-12-31 (FY2025 year-end) for comparison",
+    "Short-term investments in U.S. Treasury Bills at 2026-06-30, if the analyst means total cash plus T-bills",
+    "Total cash and cash equivalents plus short-term T-bill investments at 2026-06-30, if reported"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "BRK-B",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "BRK-B",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q3 FY2026 (2026-07-01 to 2026-09-30) has ended but is not yet reported, so the most recent quarter-end cash figure available is 2026-06-30.",
+    "Berkshire's cash and cash equivalents and short-term T-bill investments are separate balance-sheet lines; the answer should state which line(s) it reports."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Cash and cash equivalents as of Q3 FY2026 (quarter ended 2026-09-30)",
+    "kind": "not_reported_yet",
+    "reason": "The quarter ended 2026-09-30 has ended but has not been reported; the latest reported balance-sheet date in the evidence is 2026-06-30.",
+    "evidence_ids": [
+     "E1"
+    ]
+   },
+   {
+    "item": "A single consolidated \"Cash and cash equivalents\" total line as reported by Berkshire",
+    "kind": "not_disclosed",
+    "reason": "Berkshire presents cash and cash equivalents as two segment lines (Insurance and Other; Railroad, Utilities and Energy) rather than one consolidated balance-sheet line; a combined total is only derivable by summing them.",
+    "evidence_ids": [
+     "E1"
+    ]
+   }
+  ],
+  "removed": [],
+  "assumptions": [
+   "\"Cash\" read as the balance-sheet line \"Cash and cash equivalents\" (Berkshire also reports \"Short-term investments in U.S. Treasury Bills\" separately; that line is not included unless the analyst means total cash plus T-bills).",
+   "No period given, so the latest reported period is used: Q2 FY2026 (2026-04-01 to 2026-06-30), reported 2026-08-11.",
+   "Berkshire's fiscal year is the calendar year, so Q2 FY2026 = April-June 2026.",
+   "\"berkshire\" read as Berkshire Hathaway Inc. (BRK-B); Class A and Class B are one company."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/",
+    "https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/brka-20260630.htm"
+   ],
+   "cited_primary": 2,
+   "retrieved": 2,
+   "retrieved_primary": 2
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Identifies Berkshire Hathaway Inc. as one company with Class A and Class B shares, without asking which class.",
+     "optional": false,
+     "met": true,
+     "note": "Identifies Berkshire Hathaway Inc. and explicitly says Class A and Class B are one company; it does not ask which class."
+    },
+    {
+     "point": "Uses June 30, 2026 as the latest balance-sheet date, identifies it as Q2 2026, and says the 10-Q was reported in August 2026.",
+     "optional": false,
+     "met": true,
+     "note": "States Q2 FY2026, quarter ended June 30, 2026, and reported August 2026; cites the Q2 2026 10-Q."
+    },
+    {
+     "point": "Notes that Q3 2026 has not yet been reported.",
+     "optional": false,
+     "met": true,
+     "note": "Says the quarter ended September 30, 2026 has ended but has not been reported."
+    },
+    {
+     "point": "Explicitly defines the cash measure as the consolidated cash-and-cash-equivalents balance, distinguishing it from the insurance-and-other businesses' widely quoted cash, equivalents, and Treasury-bills measure; any Treasury-bill-inclusive figure is identified as including T-bills, and the filing is cited.",
+     "optional": false,
+     "met": true,
+     "note": "Defines cash as the cash-and-cash-equivalents balance-sheet line, explains the segment-line aggregation, separately identifies Treasury bills, and cites the 10-Q. It also labels the management figure as cash, equivalents, and U.S. Treasury Bills."
+    },
+    {
+     "point": "Does not give a cash figure without defining what it means.",
+     "optional": false,
+     "met": true,
+     "note": "The $40.609 billion figure is expressly identified as the sum of the cash-and-cash-equivalents lines; the other figures are also labeled by measure."
+    },
+    {
+     "point": "Does not count the equity portfolio as cash.",
+     "optional": false,
+     "met": true,
+     "note": "No equity-portfolio amount is included in the cash calculation."
+    },
+    {
+     "point": "Does not use a different balance-sheet date without saying so.",
+     "optional": false,
+     "met": true,
+     "note": "Clearly labels June 30, 2026 as the latest reported date and separately labels the December 31, 2025 comparative."
+    },
+    {
+     "point": "Does not give a figure for another company.",
+     "optional": false,
+     "met": true,
+     "note": "All figures are presented as Berkshire Hathaway Inc. figures."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer identifies Berkshire Hathaway as one company, uses and labels the latest reported June 30, 2026 balance sheet, notes Q3 is not yet reported, and clearly distinguishes cash and cash equivalents from Treasury-bill-inclusive liquidity measures with the 10-Q cited.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Insurance and Other cash at June 30, 2026: $35,096 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/brka-20260630.htm",
+     "reason": "The 10-Q balance-sheet excerpt lists Insurance and Other cash and cash equivalents of $35,096 million at June 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Railroad, Utilities and Energy cash at June 30, 2026: $5,513 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/brka-20260630.htm",
+     "reason": "The 10-Q balance-sheet excerpt lists Railroad, Utilities and Energy cash and cash equivalents of $5,513 million at June 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Combined cash at June 30, 2026: $40,609 million, characterized as reported",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/brka-20260630.htm",
+     "reason": "The cited 10-Q reports the two segment amounts, not a consolidated $40,609 million cash line. The sum is correct ($35,096m + $5,513m = $40,609m), but describing that combined amount as 'as reported' is inaccurate.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Short-term U.S. Treasury Bills at June 30, 2026: $324,905 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/brka-20260630.htm",
+     "reason": "The 10-Q balance-sheet excerpt lists $324,905 million under Insurance and Other for short-term investments in U.S. Treasury Bills at June 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cash plus the June 30, 2026 Treasury-bill line totals $365,514 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/brka-20260630.htm",
+     "reason": "Using the cited balance-sheet inputs: $35,096m + $5,513m + $324,905m = $365,514m. The arithmetic and input basis are correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "December 31, 2025 cash amounts: Insurance and Other $47,719m; Railroad, Utilities and Energy $4,158m; combined $51,877m",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/brka-20260630.htm",
+     "reason": "The 10-Q lists the two segment balances. Their sum is $47,719m + $4,158m = $51,877m; the combined amount is derived, not separately reported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The table gives a dash for total December 31, 2025 Treasury Bills",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/brka-20260630.htm",
+     "reason": "The table's Insurance and Other line reports $321,434 million of short-term U.S. Treasury Bills at December 31, 2025, while the Railroad segment has no such line. Therefore the table's total row should reflect $321,434 million, not a dash.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cash equivalents include Treasury Bills with maturities of three months or less when purchased: $3.2bn at June 30, 2026 and $17.6bn at December 31, 2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/brka-20260630.htm",
+     "reason": "The 10-Q footnote marked with an asterisk states precisely these amounts and dates.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Treasury-Bill line includes unsettled purchases of $771m at June 30, 2026 and $167m at December 31, 2025, also included in liabilities and paid shortly after the dates",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/brka-20260630.htm",
+     "reason": "The 10-Q double-asterisk footnote gives both unsettled-purchase amounts, says they were included in liabilities, and says they were paid shortly after the respective balance-sheet dates.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management says insurance and other businesses held $359.2bn in cash, cash equivalents and Treasury Bills, net of unsettled-purchase payables, at June 30, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/brka-20260630.htm",
+     "reason": "The 10-Q management discussion states this exact $359.2 billion amount, date, scope and net-of-payables basis.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cash, cash equivalents and restricted cash(-equivalents) were $41,360m at June 30, 2026 versus $52,569m at December 31, 2025, a $11,209m decrease in the first six months of 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/brka-20260630.htm",
+     "reason": "The filing reports the $52,569m beginning balance and a decrease of $11,209m for the six months; the XBRL source reports $41,360m at June 30. Check: $52,569m - $11,209m = $41,360m. This is a broader restricted-cash measure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Berkshire reports cash and cash equivalents on separate Insurance and Other and Railroad, Utilities and Energy segment lines rather than one consolidated cash line",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/brka-20260630.htm",
+     "reason": "The cited consolidated balance-sheet excerpt displays the cash line separately under each of those two segment headings and does not show a separate consolidated total cash line.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The 10-Q period is Q2 FY2026 through June 30, 2026 and was reported on August 11, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/brka-20260630.htm",
+     "reason": "The source covers the June 30, 2026 quarter-end, but its displayed title and publication/filed date are August 10, 2026, not August 11. Thus the report-date assertion is not supported and conflicts with the cited source metadata.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 11,
+   "numeric_cited": 11,
+   "cited": 13,
+   "supported": 10,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 90.0
+ }
+}

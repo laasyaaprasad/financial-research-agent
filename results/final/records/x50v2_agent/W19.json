@@ -1,0 +1,391 @@
+{
+ "id": "W19",
+ "category": "multi-hop",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "On 24 September 2026 Akamai announced a multi-year agreement with Anthropic. As of 3 October 2026: (a) what is the committed contract value and term, (b) the average annual commitment as a percentage of the midpoint of Akamai's 2026 revenue guidance as given with its Q2 2026 results (6 August 2026), and (c) how large is the total capital expenditure Akamai attributes to this commitment, as a multiple of its cash, cash equivalents and marketable securities at 30 June 2026?",
+ "grading": "Key points (all required): (a) US$11.6 billion of contractual commitment over seven years (optional expansion up to a further US$9 billion, about US$20 billion in total); (b) average annual commitment = 11.6 / 7 = about US$1.657 billion = about 36.9% of the US$4,487.5 million midpoint of 2026 revenue guidance (accept 36%-38%); (c) total related capex of about US$5.5 billion = about 1.19x cash, cash equivalents and marketable securities of US$4.616 billion at 30 June 2026 (accept 1.15x-1.23x). Fail if US$20bn, the US$1.7bn capex step-up, or a different guidance range is used, or if the term is not seven years.",
+ "answer": "(a) US$11.6 billion over seven years (plus a potential US$9 billion expansion, about US$20 billion in total) [W19-E1]. (b) 11.6 / 7 = about US$1.657 billion a year, about 36.9% of the US$4,487.5 million midpoint of Akamai's 2026 revenue guidance (US$4,445-4,530 million) [W19-E2]. (c) Total capex tied to the commitment is about US$5.5 billion, about 1.19x the US$4.616 billion of cash, cash equivalents and marketable securities at 30 June 2026 [W19-E1, W19-E2]. Akamai said it expects no impact on 2026 revenue guidance and about US$1.7 billion of extra 2026 capex.",
+ "output": {
+  "answer": "**Question:** On 24 September 2026 Akamai announced a multi-year agreement with Anthropic. As of 3 October 2026: (a) what is the committed contract value and term, (b) the average annual commitment as a percentage of the midpoint of Akamai's 2026 revenue guidance as given with its Q2 2026 results (6 August 2026), and (c) how large is the total capital expenditure Akamai attributes to this commitment, as a multiple of its cash, cash equivalents and marketable securities at 30 June 2026?\n*As of 2026-10-03*\n\n**Interpreted as:** 'Committed contract value' read as the total contract value of the multi-year agreement; 'average annual commitment' = total committed value ÷ term in years. 2026 revenue guidance midpoint taken from the outlook given with Q2 FY2026 results (8-K filed 2026-08-06); Akamai's fiscal year is the calendar year. Cash figure read as cash, cash equivalents and marketable securities on the 30 June 2026 balance sheet (Q2 FY2026 10-Q). The 24 September 2026 announcement is a news/press-release event; its terms are not in a filed financial statement, so web sources are used for (a) and (c).\n\n| | Committed contract value (USD) | Term (years) | Average annual commitment (USD millions) | Average annual commitment as % of FY2026 revenue guidance midpoint (%) | Total capex attributed to commitment (USD) | Attributed capex as multiple of cash at 2026-06-30 (x) | Revenue guidance low (USD millions) | Revenue guidance high (USD millions) | Revenue guidance midpoint (USD millions) | Cash, cash equivalents and marketable securities (USD) |\n|---|---|---|---|---|---|---|---|---|---|---|\n| Anthropic agreement (announced 2026-09-24) | $11.6 billion [1] | 7 [1] | 1,657.1 [1] | 36.9 [1][2] | ~$5.5 billion [1] | 1.2 [1][2] | — | — | — | — |\n| Akamai FY2026 revenue guidance (given 2026-08-06; FY ending 2026-12-31) | — | — | — | — | — | — | $4,445 [2] | $4,530 [2] | 4,487.5 [2] | — |\n| Akamai balance sheet at 2026-06-30 (Q2 FY2026) | — | — | — | — | — | — | — | — | — | $4.616 billion [2][3] |\n\n- The transaction provides for potential expansion of the relationship by up to an additional $9 billion, representing a total potential commitment of approximately $20 billion, so the $11.6 billion is the committed (not maximum) value. [1]\n- As part of the agreement Akamai issued Anthropic a warrant for non-voting convertible Series B Preferred Stock representing 7.7 million shares of Akamai common stock on an as-converted basis, or up to approximately 5% of Akamai's common stock outstanding, at an exercise price of $111.33 per share, with approximately 2% expected to vest with the announced $11.6 billion commitment and the remaining approximately 3% vesting as the commitment expands up to an additional $9 billion. [1]\n- The FY2026 revenue range of $4,445 million to $4,530 million is company guidance issued with Q2 FY2026 results (quarter ended June 30, 2026; 8-K filed 2026-08-06) for the year ending December 31, 2026, not reported actuals. [2]\n- Akamai said it anticipates no impact to the company's 2026 revenue guidance from the Anthropic transaction and an increase of approximately $1.7 billion in capital expenditures in 2026 to secure and pre-purchase critical supply chain components, including memory. [1]\n- The $5.5 billion of capital expenditure Akamai attributes to the commitment is an estimate stated in the announcement, not a reported actual or a filed financial-statement figure. [1]\n\n_2 draft statement(s) were withheld because they could not be verified against the sources (details in the run record)._\n\n**Sources**\n[1] AKAMAI TECHNOLOGIES INC 8-K current report, items 1.01,3.02,5.03,7.01,9.01 (filed 2026-09-24) EX-99.1 (www.sec.gov, 2026-09-24, primary) https://www.sec.gov/Archives/edgar/data/1086222/000119312526401048/d288154dex991.htm\n[2] AKAMAI TECHNOLOGIES INC earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-08-06) (www.sec.gov, 2026-08-06, primary) https://www.sec.gov/Archives/edgar/data/1086222/000108622226000083/exhibit991-q22026.htm\n[3] AKAMAI TECHNOLOGIES INC 10-Q for Q2 FY2026 (filed 2026-08-07) (www.sec.gov, 2026-08-07, primary) https://www.sec.gov/Archives/edgar/data/1086222/000108622226000086/akam-20260630.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 55086,
+   "output": 12244
+  },
+  "tavily_credits": 2.0,
+  "latency_s": 57.71,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/cb4b74ac38c9eaa0977f03cfb42a120c",
+  "companies": [
+   {
+    "name": "AKAMAI TECHNOLOGIES INC",
+    "ticker": "AKAM",
+    "cik": "1086222",
+    "resolved": true
+   },
+   {
+    "name": "Anthropic PBC",
+    "ticker": null,
+    "cik": null,
+    "resolved": false
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "'Committed contract value' read as the total contract value of the multi-year agreement; 'average annual commitment' = total committed value ÷ term in years.",
+    "2026 revenue guidance midpoint taken from the outlook given with Q2 FY2026 results (8-K filed 2026-08-06); Akamai's fiscal year is the calendar year.",
+    "Cash figure read as cash, cash equivalents and marketable securities on the 30 June 2026 balance sheet (Q2 FY2026 10-Q).",
+    "The 24 September 2026 announcement is a news/press-release event; its terms are not in a filed financial statement, so web sources are used for (a) and (c)."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Committed contract value (total contract value) of the Akamai–Anthropic multi-year agreement announced 24 September 2026",
+    "Term of the agreement (in years), to derive the average annual commitment",
+    "Average annual commitment (committed contract value ÷ term)",
+    "Midpoint of Akamai's full-year 2026 revenue guidance as given with Q2 2026 results (8-K filed 2026-08-06)",
+    "Average annual commitment as a percentage of that guidance midpoint",
+    "Total capital expenditure Akamai attributes to this Anthropic commitment",
+    "Cash, cash equivalents and marketable securities at 30 June 2026 (Q2 FY2026 balance sheet)",
+    "Total attributed capex as a multiple of cash + cash equivalents + marketable securities at 30 June 2026"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "AKAM",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "AKAM",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "AKAM",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": 45,
+   "searches": [
+    {
+     "purpose": "Get the terms of the 24 September 2026 Akamai–Anthropic agreement: committed contract value, term, and any capex Akamai attributes to it (announcement is a press release/news event, not in a filed financial statement)",
+     "query": "Akamai Anthropic multi-year agreement September 2026 contract value term capex",
+     "topic": "news",
+     "days_back": 30
+    },
+    {
+     "purpose": "Confirm details/management commentary on the deal size, term and associated capital expenditure if not fully in the press release",
+     "query": "Akamai Anthropic deal committed contract value capital expenditure cloud infrastructure",
+     "topic": "news",
+     "days_back": 30
+    }
+   ],
+   "availability_notes": [
+    "Anthropic PBC is not a currently reporting SEC registrant, so no Anthropic filings exist; all figures come from Akamai's disclosure and the announcement.",
+    "Q3 FY2026 (ended 30 September 2026) is not yet reported as of 3 October 2026, so no Q3 figures are used.",
+    "The contract value, term and attributed capex may be disclosed only in the press release/news coverage rather than in an SEC filing; if not quantified, the answer will report what Akamai stated and not estimate."
+   ]
+  },
+  "unavailable": [],
+  "removed": [
+   {
+    "text": "Akamai announced on 24 September 2026 a significantly expanded relationship with Anthropic for $11.6 billion of contractual commitment over seven years, per its press release dated Sept. 24, 2026 (filed as Exhibit 99.1 to an 8-K on 2026-09-24).",
+    "problem": "number 24 is not in the quotes and not calculated"
+   },
+   {
+    "text": "The $4.616 billion cash figure is corroborated by the Q2 FY2026 10-Q balance sheet at June 30, 2026, which shows cash and cash equivalents of $1,480,257 thousand, current marketable securities of $1,875,130 thousand and noncurrent marketable securities of $1,260,918 thousand.",
+    "problem": "number 4.616 is not in the quotes and not calculated"
+   }
+  ],
+  "assumptions": [
+   "'Committed contract value' read as the total contract value of the multi-year agreement; 'average annual commitment' = total committed value ÷ term in years.",
+   "2026 revenue guidance midpoint taken from the outlook given with Q2 FY2026 results (8-K filed 2026-08-06); Akamai's fiscal year is the calendar year.",
+   "Cash figure read as cash, cash equivalents and marketable securities on the 30 June 2026 balance sheet (Q2 FY2026 10-Q).",
+   "The 24 September 2026 announcement is a news/press-release event; its terms are not in a filed financial statement, so web sources are used for (a) and (c)."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Akamai Anthropic deal committed contract value capital expenditure cloud infrastructure",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2026-09-03",
+     "include_domains": [
+      "anthropic.com",
+      "anthropic.ai",
+      "anthropicpbc.com",
+      "anthropic.news"
+     ]
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Akamai Anthropic multi-year agreement September 2026 contract value term capex",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2026-09-03",
+     "include_domains": [
+      "anthropic.com",
+      "anthropic.ai",
+      "anthropicpbc.com",
+      "anthropic.news"
+     ]
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.anthropic.com/research/what-work-can-robots-do",
+      "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+      "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities"
+     ],
+     "query": "On 24 September 2026 Akamai announced a multi-year agreement with Anthropic. As of 3 October 2026: (a) what is the committed contract value and term, (b) the average annual commitment as a percentage of the midpoint of Akamai's 2026 revenue guidance as given with its Q2 2026 results (6 August 2026), and (c) how large is the total capital expenditure Akamai attributes to this commitment, as a mult",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/1086222/000108622226000083/exhibit991-q22026.htm",
+    "https://www.sec.gov/Archives/edgar/data/1086222/000108622226000086/akam-20260630.htm",
+    "https://www.sec.gov/Archives/edgar/data/1086222/000119312526401048/d288154dex991.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 9,
+   "retrieved_primary": 5
+  },
+  "recall": {
+   "figures": 12,
+   "found": 12
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "States the committed contractual value as US$11.6 billion over seven years.",
+     "optional": false,
+     "met": true,
+     "note": "The table gives $11.6 billion and a 7-year term."
+    },
+    {
+     "point": "States the average annual commitment as about US$1.657 billion (11.6 ÷ 7).",
+     "optional": false,
+     "met": true,
+     "note": "The table reports $1,657.1 million."
+    },
+    {
+     "point": "Uses the US$4,487.5 million midpoint of Akamai's FY2026 revenue guidance.",
+     "optional": false,
+     "met": true,
+     "note": "The answer gives the $4,445–$4,530 million range and $4,487.5 million midpoint."
+    },
+    {
+     "point": "States the average annual commitment is 36%-38% of the guidance midpoint.",
+     "optional": false,
+     "met": true,
+     "note": "The answer reports 36.9%."
+    },
+    {
+     "point": "States total capex attributed to the commitment is about US$5.5 billion.",
+     "optional": false,
+     "met": true,
+     "note": "The table gives approximately $5.5 billion."
+    },
+    {
+     "point": "Uses US$4.616 billion as cash, cash equivalents and marketable securities at 30 June 2026.",
+     "optional": false,
+     "met": true,
+     "note": "The table reports $4.616 billion and identifies the 30 June 2026 balance sheet."
+    },
+    {
+     "point": "States attributed capex is 1.15x-1.23x that cash balance.",
+     "optional": false,
+     "met": true,
+     "note": "The answer reports 1.2x, which is within tolerance."
+    },
+    {
+     "point": "Mentions the optional expansion of up to a further US$9 billion, about US$20 billion total potential commitment.",
+     "optional": true,
+     "met": true,
+     "note": "It states up to an additional $9 billion and about $20 billion total potential."
+    },
+    {
+     "point": "Does not present US$20 billion as the committed contract value.",
+     "optional": false,
+     "met": true,
+     "note": "It explicitly distinguishes the $11.6 billion committed value from the $20 billion potential total."
+    },
+    {
+     "point": "Does not use the US$1.7 billion 2026 capex increase as the total capex attributed to the commitment.",
+     "optional": false,
+     "met": true,
+     "note": "It identifies $1.7 billion only as the 2026 capex increase and separately reports $5.5 billion total related capex."
+    },
+    {
+     "point": "Does not use a different FY2026 revenue guidance range.",
+     "optional": false,
+     "met": true,
+     "note": "It uses $4,445 million to $4,530 million."
+    },
+    {
+     "point": "Does not give a term other than seven years.",
+     "optional": false,
+     "met": true,
+     "note": "The stated term is 7 years."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All required figures and distinctions are correctly stated; the reported 1.2x multiple is within the accepted range.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Akamai announced a $11.6 billion contractual commitment with Anthropic over seven years on September 24, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1086222/000119312526401048/d288154dex991.htm",
+     "reason": "The retrieved Sept. 24, 2026 press release states the agreement is for \"$11.6 billion of contractual commitment over seven years.\"",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The average annual commitment is $1,657.1 million.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1086222/000119312526401048/d288154dex991.htm",
+     "reason": "The cited release provides $11.6 billion over seven years. Calculation: $11,600 million ÷ 7 = $1,657.142857 million, which rounds to $1,657.1 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2026 revenue guidance was $4,445 million to $4,530 million, for the year ending December 31, 2026, and was issued with the Q2 results dated August 6, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1086222/000108622226000083/exhibit991-q22026.htm",
+     "reason": "The earnings release identifies results for the quarter ended June 30, 2026 and gives full-year guidance in a table headed Year Ending December 31, 2026: revenue low $4,445 million and high $4,530 million. The cited release is dated/filed August 6, 2026. This is guidance, not reported FY2026 actual revenue.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The midpoint of FY2026 revenue guidance is $4,487.5 million.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1086222/000108622226000083/exhibit991-q22026.htm",
+     "reason": "Using the release's $4,445 million low and $4,530 million high: ($4,445 + $4,530) ÷ 2 = $4,487.5 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Average annual commitment equals 36.9% of the FY2026 guidance midpoint.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1086222/000108622226000083/exhibit991-q22026.htm",
+     "reason": "Using the cited agreement's $11,600 million commitment over 7 years and the earnings release's guidance midpoint ($4,445m + $4,530m) ÷ 2 = $4,487.5m: (($11,600m ÷ 7) ÷ $4,487.5m) × 100 = 36.92797%, which rounds to 36.9%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Total capital expenditures related to the $11.6 billion commitment are estimated at approximately $5.5 billion.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1086222/000119312526401048/d288154dex991.htm",
+     "reason": "The release states: \"Total capital expenditures related to today's $11.6 billion commitment are estimated to be approximately $5.5 billion.\" It is an estimate, not a reported actual.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cash, cash equivalents and marketable securities totaled $4.616 billion as of June 30, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1086222/000108622226000086/akam-20260630.htm",
+     "reason": "The 10-Q balance sheet (in thousands) lists cash and cash equivalents of $1,480,257, current marketable securities of $1,875,130, and long-term marketable securities of $1,260,918. Their sum is $4,616,305 thousand, or $4.616305 billion, which rounds to $4.616 billion. The date is June 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The commitment-related capex is 1.2 times Akamai's June 30, 2026 cash, cash equivalents and marketable securities.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1086222/000119312526401048/d288154dex991.htm",
+     "reason": "The cited release gives estimated related capex of approximately $5.5 billion; the cited 10-Q gives cash, cash equivalents and marketable securities of $4.616305 billion (balance-sheet sum). Calculation: $5.5bn ÷ $4.616305bn = 1.1914x, rounding to 1.2x. Both inputs are approximate/rounded in the answer, and the answer cites the release and Q2 financial sources.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The agreement may expand by up to an additional $9 billion, representing total potential commitment of approximately $20 billion.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1086222/000119312526401048/d288154dex991.htm",
+     "reason": "The release explicitly says the relationship may expand by up to an additional $9 billion, representing a total potential commitment of approximately $20 billion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Akamai issued Anthropic a warrant for non-voting convertible Series B Preferred Stock representing 7.7 million common shares on an as-converted basis, up to approximately 5% of outstanding common stock, at an exercise price of $111.33 per share.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1086222/000119312526401048/d288154dex991.htm",
+     "reason": "The press release states each of these warrant terms, including the 7.7 million as-converted shares, approximately 5% maximum, and $111.33 exercise price.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Approximately 2% of Akamai's common stock is expected to vest with the announced $11.6 billion commitment; the remaining approximately 3% would vest as the commitment expands up to an additional $9 billion.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1086222/000119312526401048/d288154dex991.htm",
+     "reason": "The release says approximately 2% is expected to vest in connection with the announced commitment and the remaining approximately 3% would vest through successful expansion up to an additional $9 billion within the warrant term.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Akamai anticipates no impact to 2026 revenue guidance and an approximately $1.7 billion increase in 2026 capex to secure and pre-purchase critical supply-chain components, including memory.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1086222/000119312526401048/d288154dex991.htm",
+     "reason": "The press release expressly states no anticipated impact to 2026 revenue guidance and an approximately $1.7 billion increase in 2026 capital expenditures for securing and pre-purchasing critical supply-chain components, including memory.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 12,
+   "numeric_cited": 12,
+   "cited": 12,
+   "supported": 12,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 66.0
+ }
+}

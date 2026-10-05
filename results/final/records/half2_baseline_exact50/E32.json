@@ -1,0 +1,268 @@
+{
+ "id": "E32",
+ "category": "private or non-SEC",
+ "difficulty": "medium",
+ "time_sensitivity": "dynamic",
+ "answer_type": "abstain",
+ "question": "tencent q2 revenue",
+ "grading": "(1) States that Tencent Holdings is listed in Hong Kong and is not an SEC registrant (no 10-K or 20-F; the U.S. ADR is an unsponsored OTC program), so it cannot answer from SEC filings. (2) If it provides company-published Q2 figures from Tencent's own investor materials, it labels them clearly as not SEC-filed, names the source and the currency (RMB), and does not label them as 10-K, 20-F or 6-K data. (3) Fail if it attributes the figure to an SEC filing, uses Tencent Music (TME) or another company's numbers as Tencent's, or gives an estimate.",
+ "answer": "Tencent is not an SEC registrant; says so; any figures from its own HKEX/IR release are clearly labelled non-SEC and in RMB, with no estimate.",
+ "output": {
+  "answer": "Tencent has reported two different \"Q2\" results depending on which year you mean. Here are the key figures:\n\n## Q2 2026 (quarter ended June 30, 2026 — most recent)\n\n- **Total revenue: RMB 204.79 billion** (~US$28.5B), up **+11% YoY**, beating consensus of ~RMB 202.8B\n- Gross profit: +13% YoY\n- Non-IFRS operating profit: +9% YoY; operating profit excluding new AI products was RMB 86.1B (+19% YoY)\n- Net profit attributable to equity holders: RMB 56.0B (roughly flat); non-IFRS net profit RMB 68.4B (+9%)\n- Segments: VAS RMB 98.4B (+8%), domestic games RMB 47.3B (+17%), marketing services RMB 43.6B (+22%), FinTech & Business Services RMB 60.3B (+9%)\n- Monthly active users: WeChat/WeChat combined MAU **1,439 million**\n\n## Q2 2025 (for comparison)\n\n- **Total revenue: RMB 184.5 billion** (~US$25.7B), up **+15% YoY**, beating estimates of ~RMB 178.5B\n- Domestic games RMB 40.4B (+17%); international games RMB 18.8B (+35%)\n- Marketing services RMB 35.8B (+20%)\n- Net profit RMB 55.6B, beating expectations of ~RMB 52.3B\n- Capex RMB 19.1B\n\n**Sources:**\n- Q2 2026 results: [Tencent Q2 2026 results (PRNewswire/Yahoo Finance)](https://finance.yahoo.com/technology/ai/articles/tencent-announces-2026-second-quarter-102900627.html) and [HK Yahoo Finance summary](https://hk.finance.yahoo.com/news/%E6%B8%AF%E8%82%A1%E6%A5%AD%E7%B8%BE-%E9%A8%B0%E8%A8%8A%E7%AC%AC%E4%BA%8C%E5%AD%A3%E7%B8%BE%E5%8B%9D%E9%A0%90%E6%9C%9F-%E7%B6%93%E8%AA%BF%E6%95%B4%E7%B4%94%E5%88%A9%E5%A4%9A%E8%B3%BA9-%E8%87%AA%E7%94%B1%E7%8F%BE%E9%87%91%E6%B5%81%E8%B2%A0138%E5%84%84%E5%85%83%E4%BA%BA%E6%B0%91%E5%B9%A3-093728714.html)\n- Q2 2025 results: [Reuters via Yahoo Finance](https://finance.yahoo.com/news/chinas-tencent-reports-q2-revenue-084229313.html) and [Tencent 2025 Q2 announcement (HK Yahoo)](https://hk.finance.yahoo.com/news/%E9%A8%B0%E8%A8%8A%E5%85%AC%E4%BD%88%E4%BA%8C%E9%9B%B6%E4%BA%8C%E4%BA%94%E5%B9%B4%E7%AC%AC%E4%BA%8C%E5%AD%A3%E6%A5%AD%E7%B8%BE-094600113.html)\n\nLet me know if you want a specific year, the full income statement, or segment-level breakdowns.",
+  "tokens": {
+   "input": 15326,
+   "output": 1623
+  },
+  "tavily_credits": 2,
+  "latency_s": 8.3,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/33173e78b86b3f4a09c60865a9fb2687",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Tencent Q2 2025 revenue results",
+     "topic": "finance"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "腾讯 2025年第二季度 财报 收入",
+     "topic": "finance"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/news/chinas-tencent-reports-q2-revenue-084229313.html",
+    "https://finance.yahoo.com/technology/ai/articles/tencent-announces-2026-second-quarter-102900627.html",
+    "https://hk.finance.yahoo.com/news/%E6%B8%AF%E8%82%A1%E6%A5%AD%E7%B8%BE-%E9%A8%B0%E8%A8%8A%E7%AC%AC%E4%BA%8C%E5%AD%A3%E7%B8%BE%E5%8B%9D%E9%A0%90%E6%9C%9F-%E7%B6%93%E8%AA%BF%E6%95%B4%E7%B4%94%E5%88%A9%E5%A4%9A%E8%B3%BA9-%E8%87%AA%E7%94%B1%E7%8F%BE%E9%87%91%E6%B5%81%E8%B2%A0138%E5%84%84%E5%85%83%E4%BA%BA%E6%B0%91%E5%B9%A3-093728714.html",
+    "https://hk.finance.yahoo.com/news/%E9%A8%B0%E8%A8%8A%E5%85%AC%E4%BD%88%E4%BA%8C%E9%9B%B6%E4%BA%8C%E4%BA%94%E5%B9%B4%E7%AC%AC%E4%BA%8C%E5%AD%A3%E6%A5%AD%E7%B8%BE-094600113.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 20,
+   "retrieved_primary": 0
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 0.462,
+   "points": [
+    {
+     "point": "States Tencent Holdings is listed in Hong Kong.",
+     "optional": false,
+     "met": false,
+     "note": "The answer does not state Tencent's Hong Kong listing."
+    },
+    {
+     "point": "States Tencent is not an SEC registrant.",
+     "optional": false,
+     "met": false,
+     "note": "It does not discuss Tencent's SEC registrant status."
+    },
+    {
+     "point": "States Tencent has no 10-K or 20-F filings.",
+     "optional": false,
+     "met": false,
+     "note": "No such filing-status statement appears."
+    },
+    {
+     "point": "States the U.S. ADR is an unsponsored OTC program.",
+     "optional": false,
+     "met": false,
+     "note": "The answer does not mention the U.S. ADR."
+    },
+    {
+     "point": "States it cannot answer from SEC filings.",
+     "optional": false,
+     "met": false,
+     "note": "It provides Q2 results without an SEC-filings limitation."
+    },
+    {
+     "point": "For company-published Q2 figures, clearly labels them as not SEC-filed.",
+     "optional": false,
+     "met": false,
+     "note": "The figures are not labeled non-SEC-filed."
+    },
+    {
+     "point": "For company-published Q2 figures, names the source.",
+     "optional": false,
+     "met": true,
+     "note": "It identifies Tencent's Q2 results release and links the PRNewswire/Yahoo and HK Yahoo sources."
+    },
+    {
+     "point": "For company-published Q2 figures, states the currency is RMB.",
+     "optional": false,
+     "met": true,
+     "note": "The reported figures are labeled RMB."
+    },
+    {
+     "point": "Does not label the figures as 10-K, 20-F, or 6-K data.",
+     "optional": false,
+     "met": true,
+     "note": "It does not attribute them to any of those filings."
+    },
+    {
+     "point": "Does not attribute figures to an SEC filing.",
+     "optional": false,
+     "met": true,
+     "note": "It cites company-announcement/news sources, not SEC filings."
+    },
+    {
+     "point": "Does not use Tencent Music (TME) or another company's numbers as Tencent's.",
+     "optional": false,
+     "met": true,
+     "note": "The answer's figures are for Tencent Holdings, not TME."
+    },
+    {
+     "point": "Does not give an estimate as Tencent's Q2 revenue answer.",
+     "optional": false,
+     "met": true,
+     "note": "It distinguishes consensus estimates from reported revenue; its stated Q2 revenues are presented as actual reported results."
+    },
+    {
+     "point": "Clearly says the Q2 revenue figure is not available or disclosed and presents no number as an actual reported result.",
+     "optional": false,
+     "met": false,
+     "note": "It presents Q2 2026 and Q2 2025 revenue figures as actual results."
+    }
+   ],
+   "verdict": "incorrect",
+   "rationale": "The answer fails the required abstention: it supplies actual Tencent Q2 revenue figures rather than saying the figure is unavailable from SEC filings. Although it identifies sources and RMB and does not claim SEC filing attribution or substitute Tencent Music, it omits the required SEC-status explanation and labels the figures neither as non-SEC-filed nor as an unavailable SEC answer.",
+   "judge_verdict": "incorrect",
+   "votes": [
+    "incorrect",
+    "incorrect",
+    "incorrect"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q2 2026 quarter ended June 30, 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/technology/ai/articles/tencent-announces-2026-second-quarter-102900627.html",
+     "reason": "The retrieved Tencent results release says the unaudited results are for the quarter ended 30 June 2026 (2Q2026).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 revenue RMB 204.79bn, +11% YoY, above consensus about RMB 202.8bn",
+     "numeric": true,
+     "cited_url": "https://hk.finance.yahoo.com/news/%E6%B8%AF%E8%82%A1%E6%A5%AD%E7%B8%BE-%E9%A8%B0%E8%A8%8A%E7%AC%AC%E4%BA%8C%E5%AD%A3%E7%B8%BE%E5%8B%9D%E9%A0%90%E6%9C%9F-%E7%B6%93%E8%AA%BF%E6%95%B4%E7%B4%94%E5%88%A9%E5%A4%9A%E8%B3%BA9-%E8%87%AA%E7%94%B1%E7%8F%BE%E9%87%91%E6%B5%81%E8%B2%A0138%E5%84%84%E5%85%83%E4%BA%BA%E6%B0%91%E5%B9%A3-093728714.html",
+     "reason": "The retrieved HK Yahoo report gives revenue of RMB 2,047.9 hundred-million (= RMB 204.79bn), up 11%, and market expectations of RMB 2,028.4 hundred-million (= RMB 202.84bn). Rounded as in the answer, the claim is accurate.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 revenue was approximately US$28.5bn",
+     "numeric": true,
+     "cited_url": "https://hk.finance.yahoo.com/news/%E6%B8%AF%E8%82%A1%E6%A5%AD%E7%B8%BE-%E9%A8%B0%E8%A8%8A%E7%AC%AC%E4%BA%8C%E5%AD%A3%E7%B8%BE%E5%8B%9D%E9%A0%90%E6%9C%9F-%E7%B6%93%E8%AA%BF%E6%95%B4%E7%B4%94%E5%88%A9%E5%A4%9A%E8%B3%BA9-%E8%87%AA%E7%94%B1%E7%8F%BE%E9%87%91%E6%B5%81%E8%B2%A0138%E5%84%84%E5%85%83%E4%BA%BA%E6%B0%91%E5%B9%A3-093728714.html",
+     "reason": "The retrieved HK Yahoo text states the RMB revenue but gives no USD equivalent or exchange rate. The cited retrieved evidence therefore does not establish this conversion.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 gross profit rose 13% YoY",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/technology/ai/articles/tencent-announces-2026-second-quarter-102900627.html",
+     "reason": "The retrieved Tencent release explicitly states gross profit: +13% YoY for 2Q2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 non-IFRS operating profit rose 9%; operating profit excluding New AI Products was RMB 86.1bn, up 19%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/technology/ai/articles/tencent-announces-2026-second-quarter-102900627.html",
+     "reason": "The retrieved release explicitly reports non-IFRS operating profit +9% YoY and operating profit excluding New AI Products of RMB86.1bn, +19% YoY.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 profit attributable to equity holders was RMB 56.0bn, up about 0.7%; non-IFRS net profit was RMB 68.4bn, up 9%",
+     "numeric": true,
+     "cited_url": "https://hk.finance.yahoo.com/news/%E6%B8%AF%E8%82%A1%E6%A5%AD%E7%B8%BE-%E9%A8%B0%E8%A8%8A%E7%AC%AC%E4%BA%8C%E5%AD%A3%E7%B8%BE%E5%8B%9D%E9%A0%90%E6%9C%9F-%E7%B6%93%E8%AA%BF%E6%95%B4%E7%B4%94%E5%88%A9%E5%A4%9A%E8%B3%BA9-%E8%87%AA%E7%94%B1%E7%8F%BE%E9%87%91%E6%B5%81%E8%B2%A0138%E5%84%84%E5%85%83%E4%BA%BA%E6%B0%91%E5%B9%A3-093728714.html",
+     "reason": "The retrieved report says shareholder-attributable profit was RMB560.2 hundred-million (= RMB56.02bn), up 0.7%, and adjusted/non-IFRS net profit rose 9% to RMB684.2 hundred-million (= RMB68.42bn). The answer's rounded amounts and characterization as roughly flat match.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 segment revenue: VAS RMB98.4bn (+8%), domestic games RMB47.3bn (+17%), marketing services RMB43.6bn (+22%), FinTech & Business Services RMB60.3bn (+9%)",
+     "numeric": true,
+     "cited_url": "https://hk.finance.yahoo.com/news/%E6%B8%AF%E8%82%A1%E6%A5%AD%E7%B8%BE-%E9%A8%B0%E8%A8%8A%E7%AC%AC%E4%BA%8C%E5%AD%A3%E7%B8%BE%E5%8B%9D%E9%A0%90%E6%9C%9F-%E7%B6%93%E8%AA%BF%E6%95%B4%E7%B4%94%E5%88%A9%E5%A4%9A%E8%B3%BA9-%E8%87%AA%E7%94%B1%E7%8F%BE%E9%87%91%E6%B5%81%E8%B2%A0138%E5%84%84%E5%85%83%E4%BA%BA%E6%B0%91%E5%B9%A3-093728714.html",
+     "reason": "The retrieved report gives VAS RMB984.1 hundred-million (+8%), domestic games RMB473 hundred-million (+17%), marketing RMB435.7 hundred-million (+22%) and FinTech/business services RMB602.9 hundred-million (+9%). Converting hundred-million RMB to billions and rounding to one decimal yields the answer's figures.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 combined WeChat/Weixin MAU was 1,439 million",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/technology/ai/articles/tencent-announces-2026-second-quarter-102900627.html",
+     "reason": "The retrieved 2026 release excerpt contains no MAU figure. The other retrieved Q2 2026 source excerpt also does not give this figure, so the cited material does not substantiate 1,439 million.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2025 revenue was RMB184.5bn (about US$25.7bn), up 15%, beating estimates of about RMB178.5bn",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/chinas-tencent-reports-q2-revenue-084229313.html",
+     "reason": "The retrieved Reuters/Yahoo report states revenue rose 15% to 184.5bn yuan (US$25.7bn) and beat analyst estimates of 178.5bn yuan according to LSEG. The period is Q2, matching the answer.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2025 domestic games revenue was RMB40.4bn (+17%) and international games revenue RMB18.8bn (+35%)",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/chinas-tencent-reports-q2-revenue-084229313.html",
+     "reason": "The retrieved Reuters/Yahoo text explicitly gives domestic revenue of 40.4bn yuan, up 17%, and international revenue of 18.8bn yuan, up 35%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2025 marketing services revenue was RMB35.8bn, up 20% YoY",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/chinas-tencent-reports-q2-revenue-084229313.html",
+     "reason": "The retrieved report explicitly says marketing services revenue increased 20% year-on-year to 35.8bn yuan.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2025 net profit was RMB55.6bn, above expectations of RMB52.3bn",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/chinas-tencent-reports-q2-revenue-084229313.html",
+     "reason": "The retrieved Reuters/Yahoo text states net profit was 55.6bn yuan and surpassed analyst expectations of 52.3bn yuan, citing LSEG data.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tencent Q2 2025 capex was RMB19.1bn",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/chinas-tencent-reports-q2-revenue-084229313.html",
+     "reason": "The retrieved report explicitly says capex fell to 19.1bn yuan in the second quarter.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 13,
+   "numeric_cited": 13,
+   "cited": 13,
+   "supported": 11,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 133.2
+ }
+}

@@ -1,0 +1,221 @@
+{
+ "id": "H03",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "As of January 20, 2026, what were Wingstop's most recently reported quarterly domestic same store sales growth and system-wide sales (state the fiscal quarter)?",
+ "grading": "Key points (both required): fiscal Q3 2025 (13 weeks ended Sep 27, 2025): domestic same store sales growth -5.6%; system-wide sales USD 1,356M (accept USD 1.36B, +10.0% y/y). Fail if fiscal Q4 2025 (-5.8%) or a year-to-date figure is presented as the latest.",
+ "answer": "As of January 20, 2026 the latest reported quarter was Wingstop's fiscal Q3 2025 (13 weeks ended September 27, 2025): domestic same store sales decreased 5.6% and system-wide sales were USD 1,356.4 million (USD 1.4 billion rounded; +10.0% y/y) [H03-E1][H03-E2]. Fiscal Q4 2025 results (domestic same store sales -5.8%) were published on February 18, 2026, after the as_of date [H03-E3].",
+ "output": {
+  "answer": "**Fiscal Q3 2025** (quarter ended September 27, 2025; reported November 4, 2025) was Wingstop's most recently reported quarter as of January 20, 2026 — Q4 FY2025 results weren't released until February 2026.\n\n- **Domestic same store sales growth: −5.6%** (vs. +20.9% in Q3 2024)\n- **System-wide sales: ~$1.4 billion, up 10.0% year over year**\n- Company-owned domestic same store sales grew 3.8%\n\nContext: 114 net new openings in the quarter (19.3% unit growth), 2,932 restaurants globally (2,505 domestic), digital sales at 72.8% of system-wide sales, and guidance was cut that quarter to a full-year domestic same store sales decline of 3%–4%.\n\nSources:\n- https://finance.yahoo.com/news/wingstop-shares-tumble-revenue-misses-131316684.html\n- https://finance.yahoo.com/news/wingstop-inc-wing-q3-2025-211614030.html\n- https://finance.yahoo.com/news/heres-key-metrics-tell-us-143009230.html\n\n(For reference: the subsequent Q4 FY2025 report showed a 5.8% domestic same store sales decline and $1.3 billion in system-wide sales, up 9.3%.)",
+  "tokens": {
+   "input": 10145,
+   "output": 771
+  },
+  "tavily_credits": 4,
+  "latency_s": 8.06,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/28b157bea1572c552949870cb87eda1a",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Wingstop most recent quarterly domestic same store sales growth system-wide sales",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Wingstop Q3 2025 earnings results same store sales system-wide sales",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/news/heres-key-metrics-tell-us-143009230.html",
+    "https://finance.yahoo.com/news/wingstop-inc-wing-q3-2025-211614030.html",
+    "https://finance.yahoo.com/news/wingstop-shares-tumble-revenue-misses-131316684.html"
+   ],
+   "cited_primary": 0,
+   "retrieved": 19,
+   "retrieved_primary": 0
+  },
+  "recall": {
+   "figures": 5,
+   "found": 3
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Identifies fiscal Q3 2025 as the most recently reported quarter as of January 20, 2026.",
+     "optional": false,
+     "met": true,
+     "note": "Explicitly says fiscal Q3 2025 was the most recently reported quarter as of the date."
+    },
+    {
+     "point": "States domestic same store sales growth of -5.6%.",
+     "optional": false,
+     "met": true,
+     "note": "Gives domestic same store sales growth as −5.6%."
+    },
+    {
+     "point": "States system-wide sales of approximately USD 1,356 million (accepting rounded USD 1.4 billion), with +10.0% year-over-year growth.",
+     "optional": false,
+     "met": true,
+     "note": "Gives system-wide sales as approximately $1.4 billion and +10.0% year over year; the reference accepts $1.4 billion rounded."
+    },
+    {
+     "point": "Does not present fiscal Q4 2025 as the latest quarter or its -5.8% result as the answer.",
+     "optional": false,
+     "met": true,
+     "note": "Calls Q4 a subsequent report and says it was released after the as-of date."
+    },
+    {
+     "point": "Does not present a year-to-date same store sales figure or the prior-year +20.9% comparison as the latest domestic same store sales result.",
+     "optional": false,
+     "met": true,
+     "note": "The −5.6% Q3 result is clearly given as the answer; +20.9% is explicitly labeled as the Q3 2024 comparison, and no year-to-date figure is presented."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer gives the latest reported quarter as fiscal Q3 2025 and reports both required metrics accurately. The rounded system-wide sales value is consistent with the verified reference, and the later Q4 result and prior-year comparison are clearly contextualized rather than presented as the latest result.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Fiscal Q3 ended September 27, 2025, and was reported November 4, 2025",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/wingstop-shares-tumble-revenue-misses-131316684.html",
+     "reason": "The retrieved passage discusses Wingstop's third-quarter results but gives neither the September 27 quarter-end date nor November 4 reporting date. The cited text therefore does not substantiate these dates.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q3 2025 was the most recently reported quarter as of January 20, 2026; Q4 results came out in February 2026",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/wingstop-shares-tumble-revenue-misses-131316684.html",
+     "reason": "The retrieved passage contains Q3 results and no January 20 as-of date or Q4 publication timing. It does not verify the claim.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Domestic same-store sales declined 5.6% in Q3 2025",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/wingstop-shares-tumble-revenue-misses-131316684.html",
+     "reason": "The retrieved text explicitly says domestic same-store sales declined 5.6% in the third quarter. Metric and period match.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Domestic same-store sales were up 20.9% in Q3 2024",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/wingstop-shares-tumble-revenue-misses-131316684.html",
+     "reason": "The retrieved text contrasts the 5.6% decline with 20.9% growth in the third quarter of 2024. Metric and comparison period match.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "System-wide sales were about $1.4 billion, up 10.0% year over year",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/wingstop-shares-tumble-revenue-misses-131316684.html",
+     "reason": "The retrieved text says system-wide sales increased 10% to $1.4 billion compared with the same period last year. Metric, period comparison, and units match; the answer's approximation is consistent.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Company-owned domestic same-store sales grew 3.8% in the quarter",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/wingstop-inc-wing-q3-2025-211614030.html",
+     "reason": "The retrieved Q3 2025 earnings-call highlights explicitly state company-owned same-store sales growth of 3.8% in the quarter. The answer's domestic qualifier is also consistent with the retrieved Zacks metrics excerpt at https://finance.yahoo.com/news/heres-key-metrics-tell-us-143009230.html, which says company-owned domestic same-store sales growth was 3.8%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Wingstop opened 114 net new restaurants in the quarter",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/wingstop-inc-wing-q3-2025-211614030.html",
+     "reason": "The retrieved excerpt says 369 net new restaurants opened in the first three quarters of 2025, but does not give 114 openings in Q3. The cited text does not establish the quarter-specific figure.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Quarterly unit growth was 19.3%",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/wingstop-inc-wing-q3-2025-211614030.html",
+     "reason": "The retrieved excerpt reports a 19% unit growth rate across the first three quarters, not a 19.3% rate in Q3. This does not support the answer's specific period and figure.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Wingstop had 2,932 restaurants globally, including 2,505 domestic",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/wingstop-shares-tumble-revenue-misses-131316684.html",
+     "reason": "The retrieved text states that the company operated 2,932 restaurants globally, including 2,505 in the United States. The figures and scope match.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Digital sales were 72.8% of system-wide sales",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/wingstop-shares-tumble-revenue-misses-131316684.html",
+     "reason": "The retrieved passage does not mention digital sales or a 72.8% share, so this cited text does not support the claim.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Wingstop cut full-year 2025 domestic same-store sales guidance to a 3%–4% decline",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/news/wingstop-shares-tumble-revenue-misses-131316684.html",
+     "reason": "The retrieved text says the company revised its full-year 2025 domestic same-store sales guidance to a 3%–4% decline from approximately 1% growth. This supports both the new guidance and the claim that it was lowered.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Subsequent Q4 FY2025 domestic same-store sales declined 5.8%",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer's listed URLs and the retrieved excerpts cover Q3 2025, not the subsequent Q4 report; no cited URL here provides evidence for the 5.8% figure.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Subsequent Q4 FY2025 system-wide sales were $1.3 billion, up 9.3%",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer's listed URLs and the retrieved excerpts cover Q3 2025, not the subsequent Q4 report; no cited URL here provides evidence for the $1.3 billion or 9.3% figures.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 13,
+   "numeric_cited": 11,
+   "cited": 11,
+   "supported": 6,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 136.7
+ }
+}

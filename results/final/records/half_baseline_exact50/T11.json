@@ -1,0 +1,239 @@
+{
+ "id": "T11",
+ "category": "Beat or miss",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "Did lululemon's second-quarter fiscal 2026 (quarter ended August 2, 2026) net revenue and diluted EPS land above, within or below the Q2 guidance ranges the company gave in its first-quarter release in June 2026?",
+ "grading": "Key points: (1) revenue USD 2,415.6M vs guidance USD 2,450M-2,475M = BELOW the range; (2) diluted EPS USD 2.92 vs guidance USD 1.76-1.81 = ABOVE the range; (3) notes the guidance did not include IEEPA tariff refunds and that Q2 EPS included USD 0.86/share from refunds and interest, so EPS excluding that (~USD 2.06) is still above the top of the range; (4) benchmark is company guidance, not consensus. Fail if both are called beats or if consensus is used.",
+ "answer": "Against the Q2 guidance in the June 4, 2026 release (net revenue USD 2.450-2.475 billion; diluted EPS USD 1.76-1.81; guidance excluded any IEEPA tariff refunds) [T11-E1], Q2 FY2026 net revenue was USD 2,415.6 million (below the low end by about 1.4%) and diluted EPS was USD 2.92 (above the high end). The EPS includes USD 0.86 per share from IEEPA tariff refunds ($134.5M) and associated interest ($4.1M); excluding that, EPS is about USD 2.06, still above the USD 1.81 top of the range. [T11-E2]",
+ "output": {
+  "answer": "**Short answer: Revenue came in below the Q2 guidance range, while diluted EPS landed well above it.**\n\n**Guidance given June 4, 2026 (Q1 FY2026 release)**\n- Q2 net revenue: **$2.450B–$2.475B** (down 3% to 2%)\n- Q2 diluted EPS: **$1.76–$1.81**\n\n**Actual Q2 FY2026 results (quarter ended Aug 2, 2026; reported Sept 3, 2026)**\n- Net revenue: **$2.416B** (down 4%) → **below** the low end by ~$34M\n- Diluted EPS: **$2.92** → **above** the high end by ~$1.11\n\nThe EPS beat is largely driven by a one-time item: $134.5M in IEEPA tariff refunds plus $4.1M interest, which added **$0.86 per share**. Even excluding that, EPS would have been ~$2.06 — still above the guided range. The revenue shortfall reflects continued North America weakness (comparable sales down 9%, or 10% in constant dollars).\n\nSources:\n- [lululemon Q1 FY2026 results / Q2 guidance (June 4, 2026)](https://corporate.lululemon.com/newsroom/press-releases/2026/06-04-2026-210523775)\n- [lululemon Q2 FY2026 results (Sept 3, 2026)](https://corporate.lululemon.com/newsroom/press-releases/2026/09-03-2026-210528733)\n- [Q2 2026 financial supplement (PDF)](https://corporate.lululemon.com/~/media/Files/L/Lululemon/investors/results-center/q2-2026-financial-supplement.pdf)",
+  "tokens": {
+   "input": 11316,
+   "output": 944
+  },
+  "tavily_credits": 2,
+  "latency_s": 7.35,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/919ffda53ead6df1cb5abc46e430e734",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "lululemon second quarter fiscal 2026 results net revenue diluted EPS August 2 2026"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "lululemon Q2 guidance first quarter fiscal 2026 June 2026 outlook"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://corporate.lululemon.com/newsroom/press-releases/2026/06-04-2026-210523775",
+    "https://corporate.lululemon.com/newsroom/press-releases/2026/09-03-2026-210528733",
+    "https://corporate.lululemon.com/~/media/Files/L/Lululemon/investors/results-center/q2-2026-financial-supplement.pdf"
+   ],
+   "cited_primary": 0,
+   "retrieved": 19,
+   "retrieved_primary": 0
+  },
+  "recall": {
+   "figures": 8,
+   "found": 8
+  },
+  "correctness": {
+   "score": 0.833,
+   "points": [
+    {
+     "point": "States Q2 net revenue was $2,415.6M (or equivalent rounding) versus company guidance of $2,450M–$2,475M, and therefore below the range.",
+     "optional": false,
+     "met": true,
+     "note": "Gives $2.416B versus $2.450B–$2.475B and calls it below the low end."
+    },
+    {
+     "point": "States diluted EPS was $2.92 versus company guidance of $1.76–$1.81, and therefore above the range.",
+     "optional": false,
+     "met": true,
+     "note": "Gives $2.92 and the guidance range, and calls it above the high end."
+    },
+    {
+     "point": "Notes that the Q2 guidance excluded IEEPA tariff refunds, Q2 EPS included $0.86/share from refunds and interest, and EPS excluding that benefit was about $2.06 and still above guidance.",
+     "optional": false,
+     "met": false,
+     "note": "States $0.86/share benefit from tariff refunds plus interest and approximately $2.06 excluding it, still above the range, but does not say the guidance excluded tariff refunds."
+    },
+    {
+     "point": "Uses the company's own Q2 guidance range as the benchmark, rather than analyst consensus.",
+     "optional": false,
+     "met": true,
+     "note": "Explicitly compares results with the June 4 company Q2 guidance ranges; no consensus comparison."
+    },
+    {
+     "point": "Does not call both revenue and EPS beats.",
+     "optional": false,
+     "met": true,
+     "note": "Calls revenue below guidance and EPS above it."
+    },
+    {
+     "point": "Does not use consensus as the benchmark.",
+     "optional": false,
+     "met": true,
+     "note": "No consensus figures or consensus benchmark are used."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The answer correctly compares revenue and diluted EPS with the company's Q2 guidance and gets both outcomes right. It also gives the tariff-related EPS benefit and adjusted EPS, but omits the required fact that the guidance itself excluded IEEPA tariff refunds.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "partial",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q2 FY2026 net revenue guidance was $2.450B–$2.475B, with a projected decline of 3% to 2%.",
+     "numeric": true,
+     "cited_url": "https://corporate.lululemon.com/newsroom/press-releases/2026/06-04-2026-210523775",
+     "reason": "The retrieved Q1 FY2026 release explicitly gives the Q2 revenue range and says it represents a decline of 3% to 2%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 diluted EPS guidance was $1.76–$1.81.",
+     "numeric": true,
+     "cited_url": "https://corporate.lululemon.com/newsroom/press-releases/2026/06-04-2026-210523775",
+     "reason": "The retrieved release explicitly states the Q2 diluted EPS range as $1.76 to $1.81.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The guidance was in the Q1 FY2026 results release dated June 4, 2026.",
+     "numeric": true,
+     "cited_url": "https://corporate.lululemon.com/newsroom/press-releases/2026/06-04-2026-210523775",
+     "reason": "The retrieved page is titled as the Q1 FY2026 results release and gives the date Jun 4, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Q2 FY2026 quarter ended August 2, 2026.",
+     "numeric": true,
+     "cited_url": "https://corporate.lululemon.com/newsroom/press-releases/2026/09-03-2026-210528733",
+     "reason": "The cited URL is the Q2 results release, but the retrieved passage does not state the quarter-end date. The evidence provided here is insufficient to verify August 2.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Q2 results were reported September 3, 2026.",
+     "numeric": true,
+     "cited_url": "https://corporate.lululemon.com/newsroom/press-releases/2026/09-03-2026-210528733",
+     "reason": "The retrieved release is titled as Q2 FY2026 results and displays Sep 3, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 FY2026 net revenue was $2.416B (reported exactly as $2,415.631M).",
+     "numeric": true,
+     "cited_url": "https://corporate.lululemon.com/newsroom/press-releases/2026/09-03-2026-210528733",
+     "reason": "The retrieved unaudited financial table reports second-quarter 2026 net revenue of $2,415,631 thousand, equivalent to $2.415631B and rounding to $2.416B.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 net revenue decreased 4%.",
+     "numeric": true,
+     "cited_url": "https://corporate.lululemon.com/newsroom/press-releases/2026/09-03-2026-210528733",
+     "reason": "The retrieved release headline states revenue decreased 4% to $2.4 billion; the financial table compares Q2 2026 with Q2 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Revenue was about $34M below the low end of guidance.",
+     "numeric": true,
+     "cited_url": "https://corporate.lululemon.com/newsroom/press-releases/2026/06-04-2026-210523775",
+     "reason": "Using actual revenue $2,415.631M from https://corporate.lululemon.com/newsroom/press-releases/2026/09-03-2026-210528733 and the $2,450M guidance floor from the cited June release: $2,450M - $2,415.631M = $34.369M, which rounds to about $34M. The actual is below the floor.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 diluted EPS was $2.92.",
+     "numeric": true,
+     "cited_url": "https://corporate.lululemon.com/newsroom/press-releases/2026/09-03-2026-210528733",
+     "reason": "The retrieved release states diluted earnings per share of $2.92, and its financial table labels the figure diluted EPS.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Diluted EPS exceeded the high end of guidance by about $1.11.",
+     "numeric": true,
+     "cited_url": "https://corporate.lululemon.com/newsroom/press-releases/2026/09-03-2026-210528733",
+     "reason": "Using reported diluted EPS of $2.92 and the $1.81 guidance ceiling in https://corporate.lululemon.com/newsroom/press-releases/2026/06-04-2026-210523775: $2.92 - $1.81 = $1.11.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The company received $134.5M in IEEPA tariff refunds plus $4.1M in associated interest during Q2.",
+     "numeric": true,
+     "cited_url": "https://corporate.lululemon.com/~/media/Files/L/Lululemon/investors/results-center/q2-2026-financial-supplement.pdf",
+     "reason": "The retrieved supplement explicitly says that in Q2 2026 the company received IEEPA tariff refunds of $134.5 million plus $4.1 million associated interest.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The tariff refunds and associated interest increased diluted EPS by $0.86 per share, net of tax.",
+     "numeric": true,
+     "cited_url": "https://corporate.lululemon.com/~/media/Files/L/Lululemon/investors/results-center/q2-2026-financial-supplement.pdf",
+     "reason": "The retrieved supplement says the amounts increased diluted EPS by $0.86; it also describes the Q2 EPS amount as net of tax.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Excluding the $0.86-per-share effect, EPS would be about $2.06 and remain above guidance.",
+     "numeric": true,
+     "cited_url": "https://corporate.lululemon.com/~/media/Files/L/Lululemon/investors/results-center/q2-2026-financial-supplement.pdf",
+     "reason": "Using reported EPS $2.92 and the $0.86 tariff-related impact from the supplement: $2.92 - $0.86 = $2.06. Compared with the $1.81 guidance ceiling in https://corporate.lululemon.com/newsroom/press-releases/2026/06-04-2026-210523775, this is still $0.25 above the range.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Global comparable sales decreased 9%, or 10% on a constant-dollar basis.",
+     "numeric": true,
+     "cited_url": "https://corporate.lululemon.com/newsroom/press-releases/2026/09-03-2026-210528733",
+     "reason": "The retrieved Q2 release states comparable sales decreased 9%, or 10% on a constant-dollar basis. The statement is global/company-wide, not specifically North American.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The revenue shortfall reflected continued North America weakness.",
+     "numeric": false,
+     "cited_url": "https://corporate.lululemon.com/newsroom/press-releases/2026/09-03-2026-210528733",
+     "reason": "The retrieved release says the decrease in net revenue was primarily due to decreased Americas net revenue, partially offset by Rest of World and China Mainland growth. It does not establish 'continued' weakness or identify North America specifically, and does not directly attribute the miss versus guidance to that cause.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 14,
+   "numeric_cited": 14,
+   "cited": 15,
+   "supported": 13,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 70.9
+ }
+}

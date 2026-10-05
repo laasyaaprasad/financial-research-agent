@@ -1,0 +1,83 @@
+{
+ "id": "E19",
+ "category": "ambiguous company",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "clarify",
+ "question": "united q2 rev",
+ "grading": "(1) Responds with a single clarifying question listing the plausible companies, for example United Airlines Holdings (UAL), United Parcel Service (UPS), UnitedHealth Group (UNH), United Rentals (URI). (2) Gives no revenue figures for any company. (3) Fail if it picks one (e.g., UPS or UnitedHealth) and gives numbers, or lists numbers for several companies.",
+ "answer": "Asks which 'United' (UAL, UPS, UNH, URI) and gives no figures.",
+ "output": {
+  "answer": "**Question:** united q2 rev\n*As of 2026-10-03*\n\n**Clarification needed:** Which \"United\" do you mean — United Airlines (UAL), UnitedHealth Group (UNH), or United Rentals (URI)?\n\n_No figures were looked up; ask again with the company (and period) you mean._",
+  "tokens": {
+   "input": 898,
+   "output": 478
+  },
+  "tavily_credits": 0,
+  "latency_s": 3.21,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/9d7f8f2e062548934cb1e2a36cdce40d",
+  "companies": [],
+  "plan": null,
+  "unavailable": [],
+  "removed": [],
+  "assumptions": [],
+  "out_of_scope": [],
+  "clarification": "Which \"United\" do you mean — United Airlines (UAL), UnitedHealth Group (UNH), or United Rentals (URI)?",
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [],
+   "cited_primary": 0,
+   "retrieved": 0,
+   "retrieved_primary": 0
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 0.667,
+   "points": [
+    {
+     "point": "Asks a single clarifying question listing the plausible United companies (including the relevant alternatives such as UAL, UPS, UNH, and URI).",
+     "optional": false,
+     "met": false,
+     "note": "It asks which United is meant and lists UAL, UNH, and URI, but omits UPS."
+    },
+    {
+     "point": "Gives no revenue figures for any company.",
+     "optional": false,
+     "met": true,
+     "note": "No revenue figures are provided."
+    },
+    {
+     "point": "Does not pick one company and give numbers or list numbers for several companies.",
+     "optional": false,
+     "met": true,
+     "note": "The answer does not select a company or provide numbers."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The response appropriately asks for clarification and gives no figures, but it omits United Parcel Service (UPS) from the plausible-company options.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "partial",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [],
+   "numeric_claims": 0,
+   "numeric_cited": 0,
+   "cited": 0,
+   "supported": 0,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 66.0
+ }
+}

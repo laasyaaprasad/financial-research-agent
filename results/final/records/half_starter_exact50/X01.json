@@ -1,0 +1,284 @@
+{
+ "id": "X01",
+ "category": "Market analysis",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "Build a peer comp table for four analog and mixed-signal semiconductor companies: Texas Instruments, Analog Devices, Microchip Technology and NXP Semiconductors. Alignment rule: for each company use its own fiscal quarter that ended between April 1, 2026 and July 31, 2026 (inclusive); do not calendarize or move any company to a different quarter. Each company has exactly one such quarter. For that quarter report, using GAAP figures from the company's SEC filings as of October 3, 2026: (1) revenue in USD millions; (2) year-over-year revenue growth in % versus the same fiscal quarter a year earlier; (3) gross margin in % = gross profit / revenue; (4) operating margin in % = GAAP operating income / revenue. Also state the fiscal quarter label and quarter-end date used for each company.",
+ "grading": "Graded cell by cell: each value within tolerance and for the stated period; a missing cell counts as wrong.",
+ "answer": "Peer comp, each company's own fiscal quarter ending Apr 1-Jul 31, 2026 (GAAP):\n| Row | Revenue | YoY revenue growth | Gross margin | Operating margin |\n|---|---|---|---|---|\n| Texas Instruments (Q2 FY2026, ended 2026-06-30) | 5,463.0 | 22.82% | 61.36% | 42.28% |\n| Analog Devices (Q2 FY2026, ended 2026-05-02) | 3,623.5 | 37.25% | 67.33% | 38.08% |\n| Microchip Technology (Q1 FY2027, ended 2026-06-30) | 1,484.7 | 38.05% | 63.24% | 22.68% |\n| NXP Semiconductors (Q2 FY2026, ended 2026-06-28) | 3,496.0 | 19.48% | 57.27% | 30.64% |",
+ "output": {
+  "answer": " Here is the peer comparison table for the four analog/mixed-signal semiconductor companies, using each company's own fiscal quarter that ended between April 1, 2026 and July 31, 2026. All figures are GAAP from the companies' respective SEC Form 10-Q filings available as of October 3, 2026.\n\n| Company | Fiscal Quarter Label | Quarter-End Date | Revenue (USD M) | YoY Revenue Growth | Gross Margin | Operating Margin |\n|---|---|---|---|---|---|---|\n| **Texas Instruments** | Q2 2026 | June 30, 2026 | $5,463 | +22.8% | 61.4% | 42.3% |\n| **Analog Devices** | Fiscal Q2 2026 | May 2, 2026 | $3,623 | +37.2% | 67.3% | 38.1% |\n| **Microchip Technology** | Q1 FY2027 | June 30, 2026 | $1,485 | +38.0% | 63.2% | 22.7% |\n| **NXP Semiconductors** | Q2 2026 | June 28, 2026 | $3,496 | +19.5% | 57.3% | 30.6% |\n\n### Sources & Calculation Detail\n**Texas Instruments** – Figures from its 10-Q for Q2 FY2026 (filed July 24, 2026): GAAP revenue $5,463M; GAAP gross profit $3,352M; GAAP operating income $2,310M. YoY compares to Q2 2025 revenue of $4,448M.  \n- Gross margin = $3,352 ÷ $5,463 = **61.4%**  \n- Operating margin = $2,310 ÷ $5,463 = **42.3%**\n\n**Analog Devices** – Figures from its 10-Q for fiscal Q2 2026 (filed May 20, 2026): GAAP revenue $3,623.5M; GAAP gross profit $2,439.8M; GAAP operating income $1,379.7M. YoY compares to fiscal Q2 2025 revenue of $2,640.1M.  \n- Gross margin = $2,439.8 ÷ $3,623.5 = **67.3%**  \n- Operating margin = $1,379.7 ÷ $3,623.5 = **38.1%**\n\n**Microchip Technology** – Figures from its 10-Q for Q1 FY2027 (filed August 2026): GAAP net sales $1,484.7M; GAAP gross profit $938.9M; GAAP operating income $336.8M. YoY compares to Q1 FY2026 revenue of $1,075.5M.  \n- Gross margin = $938.9 ÷ $1,484.7 = **63.2%**  \n- Operating margin = $336.8 ÷ $1,484.7 = **22.7%**\n\n**NXP Semiconductors** – Figures from its 10-Q for Q2 2026 (filed July 28, 2026): GAAP revenue $3,496M; GAAP gross profit $2,002M; GAAP operating income $1,071M. YoY compares to Q2 2025 revenue of $2,926M.  \n- Gross margin = $2,002 ÷ $3,496 = **57.3%**  \n- Operating margin = $1,071 ÷ $3,496 = **30.6%**\n\n### Rankings (high-level)\n- **Highest revenue:** TI ($5,463M)  \n- **Highest YoY revenue growth:** Microchip (+38.0%)  \n- **Highest gross margin:** Analog Devices (67.3%)  \n- **Highest operating margin:** Texas Instruments (42.3%)",
+  "tokens": {
+   "input": 78964,
+   "output": 6762
+  },
+  "tavily_credits": 16,
+  "latency_s": 93.08,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/e6d54c6bdd498390199992c2fdda4660",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Texas Instruments fiscal quarter end dates 2026 Q2 SEC filing 10-Q",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Analog Devices fiscal calendar 2026 quarter end dates",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Microchip Technology fiscal year 2027 quarter end dates",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NXP Semiconductors fiscal quarter end dates 2026",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Analog Devices fiscal Q2 2026 GAAP gross profit operating income 10-Q SEC filing May 2",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Texas Instruments Q2 2026 10-Q GAAP gross profit operating income SEC filing",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Microchip Technology Q1 FY2027 GAAP gross profit operating income revenue year over year growth 10-Q",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "NXP Semiconductors Q2 2026 GAAP operating income gross profit 10-Q SEC filing",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [],
+   "cited_primary": 0,
+   "retrieved": 68,
+   "retrieved_primary": 21
+  },
+  "recall": {
+   "figures": 16,
+   "found": 16
+  },
+  "correctness": {
+   "score": 1.0,
+   "verdict": "correct",
+   "points": [
+    {
+     "point": "Texas Instruments Q2 FY2026 Revenue = 5463.0 USD millions",
+     "met": true,
+     "note": "answer: 5463.0"
+    },
+    {
+     "point": "Texas Instruments Q2 FY2026 YoY revenue growth = 22.82 %",
+     "met": true,
+     "note": "answer: 22.8"
+    },
+    {
+     "point": "Texas Instruments Q2 FY2026 Gross margin = 61.36 %",
+     "met": true,
+     "note": "answer: 61.4"
+    },
+    {
+     "point": "Texas Instruments Q2 FY2026 Operating margin = 42.28 %",
+     "met": true,
+     "note": "answer: 42.3"
+    },
+    {
+     "point": "Analog Devices Q2 FY2026 Revenue = 3623.5 USD millions",
+     "met": true,
+     "note": "answer: 3623.5"
+    },
+    {
+     "point": "Analog Devices Q2 FY2026 YoY revenue growth = 37.25 %",
+     "met": true,
+     "note": "answer: 37.2"
+    },
+    {
+     "point": "Analog Devices Q2 FY2026 Gross margin = 67.33 %",
+     "met": true,
+     "note": "answer: 67.3"
+    },
+    {
+     "point": "Analog Devices Q2 FY2026 Operating margin = 38.08 %",
+     "met": true,
+     "note": "answer: 38.1"
+    },
+    {
+     "point": "Microchip Technology Q1 FY2027 Revenue = 1484.7 USD millions",
+     "met": true,
+     "note": "answer: 1484.7"
+    },
+    {
+     "point": "Microchip Technology Q1 FY2027 YoY revenue growth = 38.05 %",
+     "met": true,
+     "note": "answer: 38.0"
+    },
+    {
+     "point": "Microchip Technology Q1 FY2027 Gross margin = 63.24 %",
+     "met": true,
+     "note": "answer: 63.2"
+    },
+    {
+     "point": "Microchip Technology Q1 FY2027 Operating margin = 22.68 %",
+     "met": true,
+     "note": "answer: 22.7"
+    },
+    {
+     "point": "NXP Semiconductors Q2 FY2026 Revenue = 3496.0 USD millions",
+     "met": true,
+     "note": "answer: 3496.0"
+    },
+    {
+     "point": "NXP Semiconductors Q2 FY2026 YoY revenue growth = 19.48 %",
+     "met": true,
+     "note": "answer: 19.5"
+    },
+    {
+     "point": "NXP Semiconductors Q2 FY2026 Gross margin = 57.27 %",
+     "met": true,
+     "note": "answer: 57.3"
+    },
+    {
+     "point": "NXP Semiconductors Q2 FY2026 Operating margin = 30.64 %",
+     "met": true,
+     "note": "answer: 30.6"
+    }
+   ],
+   "rationale": "16/16 cells correct",
+   "cells_correct": 16,
+   "cells_total": 16,
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Texas Instruments Q2 2026 figures and filing date",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer attributes to TI's Q2 FY2026 10-Q, filed July 24, 2026, quarter-end June 30, revenue $5,463M, gross profit $3,352M, operating income $2,310M, and comparison revenue $4,448M. Using those stated inputs, growth is (5,463−4,448)/4,448=22.82%; gross margin is 3,352/5,463=61.36%; operating margin is 2,310/5,463=42.28%, consistent with the displayed rounded results. No cited URL or retrieved text was supplied, so company/source and date verification cannot be done.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Analog Devices fiscal Q2 2026 figures and filing date",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer attributes to ADI's fiscal Q2 2026 10-Q, filed May 20, 2026, quarter-end May 2, revenue $3,623.5M, gross profit $2,439.8M, operating income $1,379.7M, and comparison revenue $2,640.1M. The stated inputs yield growth 983.4/2,640.1=37.25% (37.2% to one decimal), gross margin 2,439.8/3,623.5=67.33%, and operating margin 1,379.7/3,623.5=38.08%, consistent with the table. No cited URL or retrieved text was supplied, so company/source and date verification cannot be done.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Microchip Technology Q1 FY2027 figures and filing date",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer attributes to Microchip's Q1 FY2027 10-Q, filed August 2026, quarter-end June 30, net sales $1,484.7M, gross profit $938.9M, operating income $336.8M, and comparison revenue $1,075.5M. The stated inputs yield growth 409.2/1,075.5=38.05% (approximately 38.0% to one decimal), gross margin 938.9/1,484.7=63.24%, and operating margin 336.8/1,484.7=22.68%, consistent with displayed figures. No cited URL or retrieved text was supplied, so company/source and date verification cannot be done.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "NXP Semiconductors Q2 2026 figures and filing date",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer attributes to NXP's Q2 2026 10-Q, filed July 28, 2026, quarter-end June 28, revenue $3,496M, gross profit $2,002M, operating income $1,071M, and comparison revenue $2,926M. The stated inputs yield growth 570/2,926=19.48%, gross margin 2,002/3,496=57.27%, and operating margin 1,071/3,496=30.64%, consistent with the displayed rounded figures. No cited URL or retrieved text was supplied, so company/source and date verification cannot be done.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "All figures are GAAP figures from the companies' SEC Form 10-Q filings available as of October 3, 2026",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "This is asserted in the answer, but no citation URL or retrieved source text is available to verify filing identity, accounting basis, or as-of availability.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "The compared fiscal quarters ended between April 1, 2026 and July 31, 2026",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "The answer gives quarter-end dates June 30, May 2, June 30, and June 28, 2026; each lies within the stated interval. The dates themselves are not supported by retrieved source text.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Texas Instruments has the highest revenue among the four listed companies ($5,463M)",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Comparison of the answer's listed revenues ($5,463M, $3,623M, $1,485M, and $3,496M) makes TI the largest. This ranking is arithmetically supported by the answer's own figures, but those figures have no cited/retrieved source for verification.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Microchip Technology has the highest YoY revenue growth (+38.0%) among the four listed companies",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Among the answer's displayed growth figures (+22.8%, +37.2%, +38.0%, +19.5%), Microchip's is highest. This is supported by internal comparison only; no cited/retrieved source verifies the underlying figures.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Analog Devices has the highest gross margin (67.3%) among the four listed companies",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Among the displayed gross margins (61.4%, 67.3%, 63.2%, 57.3%), ADI's is highest. This is supported by internal comparison only; no cited/retrieved source verifies the underlying figures.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "Texas Instruments has the highest operating margin (42.3%) among the four listed companies",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "Among the displayed operating margins (42.3%, 38.1%, 22.7%, 30.6%), TI's is highest. This is supported by internal comparison only; no cited/retrieved source verifies the underlying figures.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 10,
+   "numeric_cited": 0,
+   "cited": 0,
+   "supported": 0,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 30.8
+ }
+}

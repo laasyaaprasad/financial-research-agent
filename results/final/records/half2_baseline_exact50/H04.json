@@ -1,0 +1,205 @@
+{
+ "id": "H04",
+ "category": "Complex retrieval",
+ "difficulty": "medium",
+ "time_sensitivity": "static",
+ "answer_type": "list",
+ "question": "As of May 20, 2026, what was The J.M. Smucker Company's most recently reported quarterly adjusted EPS (state the fiscal quarter), and what fiscal 2026 net sales growth guidance range was in effect?",
+ "grading": "Key points (both required): (1) latest reported quarter = fiscal Q3 2026 (three months ended Jan 31, 2026), adjusted EPS USD 2.38 (GAAP loss per share was USD 6.79); (2) fiscal 2026 net sales growth guidance 3.5% to 4.0% (narrowed from 3.5%-4.5% on 2026-02-26; adjusted EPS range USD 8.75-9.25 unchanged). Fail if fiscal Q4 2026 / FY2026 actuals (released 2026-06-09) are presented as available, or if GAAP EPS is given as the adjusted figure.",
+ "answer": "As of May 20, 2026 Smucker's latest reported quarter was fiscal Q3 2026 (three months ended January 31, 2026): adjusted EPS of USD 2.38 (down 9% from USD 2.61), while GAAP diluted EPS was a loss of USD 6.79 on noncash impairment charges [H04-E1]. Fiscal 2026 guidance in effect (updated February 26, 2026): net sales growth 3.5% to 4.0% (previously 3.5%-4.5%) and adjusted EPS USD 8.75-9.25 (unchanged) [H04-E1]. Fiscal Q4 and full-year results (adjusted EPS USD 2.77 and USD 9.15) were released June 9, 2026, after the as_of date [H04-E2].",
+ "output": {
+  "answer": "**Most recent quarterly adjusted EPS (as of May 20, 2026):**\n- **Fiscal 2026 third quarter** (ended January 31, 2026; reported February 26, 2026): **Adjusted EPS of $2.38**, down 9% year-over-year (GAAP net loss per diluted share was $6.79, driven by noncash Sweet Baked Snacks goodwill/trademark impairments). Net sales were $2.3 billion, up 7%.\n\n**Fiscal 2026 net sales growth guidance in effect:**\n- The company revised its full-year fiscal 2026 outlook to **net sales growth of 3.5% to 4.0%** (narrowed from the prior 3.5%–4.5% range), with comparable net sales growth of ~5.0%–5.5%. The midpoint reduction reflected the estimated impact of a February fire at the Emporia, Kansas plant. Adjusted EPS guidance was maintained at **$8.75–$9.25**, along with free cash flow of ~$975 million.\n\nSources:\n- [The J.M. Smucker Co. Announces Fiscal 2026 Third Quarter Results (PR Newswire)](https://www.prnewswire.com/news-releases/the-jm-smucker-co-announces-fiscal-2026-third-quarter-results-302698274.html)\n- [Smucker Investor Relations – Q3 FY2026 results](https://investors.jmsmucker.com/news/news-details/2026/The-J-M--Smucker-Co--Announces-Fiscal-2026-Third-Quarter-Results/default.aspx)\n- [FY26 Q3 Earnings Supplement (PDF)](https://s203.q4cdn.com/703080298/files/doc_financials/2026/q3/The-J-M-Smucker-Co-FY26-Q3-Earnings-Supplement.pdf)",
+  "tokens": {
+   "input": 15492,
+   "output": 823
+  },
+  "tavily_credits": 4,
+  "latency_s": 12.29,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/b6e3333c1c364aed2c9b86049f6a6718",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "J.M. Smucker fiscal 2026 third quarter adjusted EPS net sales guidance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Smucker third quarter fiscal 2026 earnings adjusted EPS February 2026",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://investors.jmsmucker.com/news/news-details/2026/The-J-M--Smucker-Co--Announces-Fiscal-2026-Third-Quarter-Results/default.aspx",
+    "https://s203.q4cdn.com/703080298/files/doc_financials/2026/q3/The-J-M-Smucker-Co-FY26-Q3-Earnings-Supplement.pdf",
+    "https://www.prnewswire.com/news-releases/the-jm-smucker-co-announces-fiscal-2026-third-quarter-results-302698274.html"
+   ],
+   "cited_primary": 1,
+   "retrieved": 14,
+   "retrieved_primary": 2
+  },
+  "recall": {
+   "figures": 9,
+   "found": 7
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Identifies fiscal Q3 2026 (three months ended January 31, 2026) as the latest reported quarter and states adjusted EPS of $2.38, distinguishing the $6.79 GAAP loss per share from adjusted EPS.",
+     "optional": false,
+     "met": true,
+     "note": "The answer gives fiscal 2026 third quarter, ended January 31, 2026, adjusted EPS $2.38, and separately labels $6.79 as a GAAP net loss per diluted share."
+    },
+    {
+     "point": "States fiscal 2026 net sales growth guidance of 3.5% to 4.0%, narrowed from 3.5% to 4.5% on February 26, 2026, with adjusted EPS guidance of $8.75 to $9.25 unchanged.",
+     "optional": false,
+     "met": true,
+     "note": "The answer gives the 3.5%-4.0% range, prior 3.5%-4.5% range, and maintained adjusted EPS guidance of $8.75-$9.25."
+    },
+    {
+     "point": "Does not present fiscal Q4 2026 or FY2026 actual results as available as of May 20, 2026.",
+     "optional": false,
+     "met": true,
+     "note": "No fiscal Q4 or full-year actual results are presented."
+    },
+    {
+     "point": "Does not give GAAP EPS as the adjusted EPS figure.",
+     "optional": false,
+     "met": true,
+     "note": "The $2.38 figure is explicitly identified as adjusted EPS; $6.79 is identified as a GAAP net loss per diluted share."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer accurately states the latest reported quarter and adjusted EPS, the in-effect net sales growth guidance and its revision, and avoids both specified failure modes.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Fiscal 2026 third quarter ended January 31, 2026",
+     "numeric": true,
+     "cited_url": "https://investors.jmsmucker.com/news/news-details/2026/The-J-M--Smucker-Co--Announces-Fiscal-2026-Third-Quarter-Results/default.aspx",
+     "reason": "The retrieved investor-relations excerpt identifies third-quarter results but does not give the quarter-end date. The claim is not evidenced in the supplied passage.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal 2026 third-quarter results were reported February 26, 2026",
+     "numeric": true,
+     "cited_url": "https://s203.q4cdn.com/703080298/files/doc_financials/2026/q3/The-J-M-Smucker-Co-FY26-Q3-Earnings-Supplement.pdf",
+     "reason": "The retrieved supplement labels the results “FISCAL 2026 THIRD QUARTER RESULTS February 26, 2026,” supporting the stated reporting date.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal 2026 Q3 adjusted EPS was $2.38, down 9% year over year",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/the-jm-smucker-co-announces-fiscal-2026-third-quarter-results-302698274.html",
+     "reason": "The retrieved release says adjusted earnings per share was $2.38, a decrease of 9 percent; this is actual quarterly adjusted EPS, not guidance.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal 2026 Q3 GAAP net loss per diluted share was $6.79",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/the-jm-smucker-co-announces-fiscal-2026-third-quarter-results-302698274.html",
+     "reason": "The retrieved release states “Net loss per diluted share was $6.79,” identifying it as the reported quarterly net loss per diluted share.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The $6.79 loss was driven by Sweet Baked Snacks goodwill/trademark impairments",
+     "numeric": false,
+     "cited_url": "https://www.prnewswire.com/news-releases/the-jm-smucker-co-announces-fiscal-2026-third-quarter-results-302698274.html",
+     "reason": "The release says the loss reflected noncash impairments attributable to the Sweet Baked Snacks reporting unit; its more specific wording identifies goodwill of that unit and separately the Hostess brand trademark. The answer conflates the trademark with Sweet Baked Snacks, so this attribution is not supported as written.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Fiscal 2026 Q3 net sales were $2.3 billion, up 7%",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/the-jm-smucker-co-announces-fiscal-2026-third-quarter-results-302698274.html",
+     "reason": "The retrieved release states net sales were $2.3 billion, an increase of $153.4 million, or 7 percent. This is actual quarterly net sales growth.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The current full-year fiscal 2026 net sales growth outlook was 3.5% to 4.0%",
+     "numeric": true,
+     "cited_url": "https://investors.jmsmucker.com/news/news-details/2026/The-J-M--Smucker-Co--Announces-Fiscal-2026-Third-Quarter-Results/default.aspx",
+     "reason": "The retrieved guidance table labels the current net-sales-increase outlook as 3.5% to 4.0%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The 3.5%-4.0% outlook was narrowed from the prior 3.5%-4.5% range",
+     "numeric": true,
+     "cited_url": "https://s203.q4cdn.com/703080298/files/doc_financials/2026/q3/The-J-M-Smucker-Co-FY26-Q3-Earnings-Supplement.pdf",
+     "reason": "The retrieved outlook table directly compares Current 3.5% to 4.0% with Previous 3.5% to 4.5%, showing a narrower range.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Comparable net sales growth outlook was approximately 5.0%-5.5%",
+     "numeric": true,
+     "cited_url": "https://investors.jmsmucker.com/news/news-details/2026/The-J-M--Smucker-Co--Announces-Fiscal-2026-Third-Quarter-Results/default.aspx",
+     "reason": "The retrieved excerpts do not state a 5.0%-5.5% comparable-net-sales outlook or provide inputs establishing it. The stated ranges therefore lack support in the retrieved evidence.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The lower midpoint reflected the estimated impact of a February fire at the Emporia, Kansas manufacturing facility",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/the-jm-smucker-co-announces-fiscal-2026-third-quarter-results-302698274.html",
+     "reason": "The retrieved release explicitly says the change in the midpoint reflects the estimated impact of a recent fire at the Emporia, Kansas facility in February.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Full-year adjusted EPS guidance was maintained at $8.75-$9.25",
+     "numeric": true,
+     "cited_url": "https://investors.jmsmucker.com/news/news-details/2026/The-J-M--Smucker-Co--Announces-Fiscal-2026-Third-Quarter-Results/default.aspx",
+     "reason": "The current and previous outlook table both show $8.75-$9.25, and the release says the company maintains its adjusted EPS guidance. This is guidance, not actual EPS.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Full-year free cash flow outlook was approximately $975 million",
+     "numeric": true,
+     "cited_url": "https://www.prnewswire.com/news-releases/the-jm-smucker-co-announces-fiscal-2026-third-quarter-results-302698274.html",
+     "reason": "The retrieved release says free cash flow is expected to be approximately $975.0 million at the midpoint of the adjusted EPS guidance range; the table also lists $975.0 million. This is outlook, not actual free cash flow.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 11,
+   "numeric_cited": 11,
+   "cited": 12,
+   "supported": 9,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 92.9
+ }
+}

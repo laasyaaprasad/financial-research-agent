@@ -1,0 +1,263 @@
+{
+ "id": "W10",
+ "category": "foreign issuer",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "For Toyota Motor Corporation's FY2027 first quarter (April 1 - June 30, 2026; Toyota's fiscal year ends March 31), what were consolidated operating income and net income attributable to Toyota shareholders in yen, what is the company's revised FY2027 operating income forecast versus its previous (May 2026) forecast, and which line items explain why net income rose strongly while operating income fell?",
+ "grading": "Key points (all required): (1) Q1 FY2027 operating income about JPY 1,063.5 billion (JPY 1,063,473 million; accept 1,063.4-1,063.5), down 8.8% y/y; (2) net income attributable to Toyota JPY 1,477.0 billion (+75.6%); (3) revised FY2027 operating income forecast JPY 3.4 trillion versus JPY 3.0 trillion previously; (4) explanation: income before income taxes was JPY 1,963.9 billion (+56.8%), about JPY 900 billion above operating income, helped by other finance income (JPY 850.6 billion vs 153.7 billion a year earlier), equity-method profit (JPY 210.7 billion) and a foreign-exchange gain (JPY 112.4 billion vs a JPY 212.4 billion loss), partly offset by other finance costs (JPY 285.6 billion). Fail if the answer states the quarter as calendar 2027 or Jan-Mar, uses the May forecast (JPY 3.0 trillion) as current, or says net income fell.",
+ "answer": "Q1 FY2027 (April 1-June 30, 2026): sales revenues JPY 13,525.4 billion (+10.4%); operating income JPY 1,063.5 billion (-8.8% from JPY 1,166.1 billion); income before income taxes JPY 1,963.9 billion (+56.8%); net income attributable to Toyota JPY 1,477.0 billion (+75.6%) [W10-E1]. The gap is non-operating: other finance income of JPY 850.6 billion (JPY 153.7 billion a year earlier), equity-method profit JPY 210.7 billion and a JPY 112.4 billion FX gain (vs a JPY 212.4 billion loss), less JPY 285.6 billion of other finance costs [W10-E1]. The FY2027 forecast was raised on 4 August to operating income JPY 3.4 trillion (from JPY 3.0 trillion), net income JPY 3.25 trillion (from 3.0 trillion) and sales JPY 54.0 trillion (from 51.0 trillion), with USD/JPY assumed at 160 (from 150) [W10-E2].",
+ "output": {
+  "answer": "## Toyota FY2027 Q1 (April 1 – June 30, 2026)\n\n**Headline results (IFRS, consolidated)**\n\n| Metric | FY2027 Q1 | YoY change |\n|---|---|---|\n| Sales revenues | ¥13,525.4 bn | +¥1,272.0 bn (+10.4%) |\n| **Operating income** | **¥1,063.473 bn** | **−¥102.6 bn (−8.8%)** |\n| Income before income taxes | ¥1,963.862 bn | +¥711.7 bn (+56.8%) |\n| **Net income attributable to Toyota Motor Corp.** | **¥1,477.044 bn** | **+¥635.6 bn (+75.6%)** |\n\nBasic EPS attributable to Toyota: ¥120.69 (vs. ¥64.56 a year earlier).\n\n## FY2027 full-year operating income forecast revision\n\n| | FY2026 actual | Previous forecast (May 2026) | Revised forecast (Aug 4, 2026) | Change |\n|---|---|---|---|---|\n| Sales revenues | ¥50,684.9 bn | ¥51,000.0 bn | **¥54,000.0 bn** | +¥3,000.0 bn |\n| **Operating income** | ¥3,766.2 bn | ¥3,000.0 bn | **¥3,400.0 bn** | **+¥400.0 bn** |\n| Net income attributable to Toyota | ¥3,848.0 bn | ¥3,000.0 bn | ¥3,250.0 bn | +¥250.0 bn |\n\nThe ¥400 bn operating income upgrade reflects changed FX assumptions (weaker yen — now ¥150/US$, €181) plus marketing efforts including newly established alternative logistics routes to the Middle East. Toyota noted the impact of the 2026 Kumamoto earthquake is still under assessment and is **not** reflected in the forecast. Even after the raise, the revised ¥3.4 tn is still −9.7% versus FY2026's ¥3,766.2 bn. It also authorized up to ¥1 tn of share repurchases and the cancellation of 200 million treasury shares.\n\n## Why net income rose sharply while operating income fell\n\nThe gap is entirely *below* the operating line — it is not a case of operations improving.\n\n**Operating income walk (why it fell −¥102.6 bn):**\n- Marketing efforts: **+¥70.0 bn**\n- FX effects: **+¥345.0 bn**\n- Cost reduction efforts: **−¥85.0 bn** (engineering −¥90.0 bn; manufacturing/logistics +¥5.0 bn)\n- Increase in expenses / expense-reduction efforts: **−¥190.0 bn**\n- Other: **−¥242.6 bn**\n- **Total: −¥102.6 bn**\n\nSo FX gains (+345) and marketing (+70) were more than offset by cost inflation and higher expenses/other (−517.6 combined). At the segment level, Automotive operating income fell 21.0% to ¥719.9 bn on \"increased expenses and others,\" while Financial Services rose 24.0% to ¥275.6 bn.\n\n**The bridge from −¥102.6 bn operating income to +¥711.7 bn pre-tax income:**\n- Non-operating income: **+¥814.3 bn** — the dominant driver (other income jumped from ¥86.0 bn to ¥900.3 bn)\n- Share of profit of equity-method investments: **+¥69.6 bn**\n- Total below-the-line swing: **+¥883.9 bn**, which more than covers the operating decline\n\nSo the strong net income gain came almost entirely from non-operating/other income (e.g., interest and other non-operating items, valuation/financial gains) plus equity-method income — not from Toyota's core vehicle business, which was pressured by expenses and costs despite favorable FX tailwinds.\n\n**Sources:**\n- Toyota FY2027 Q1 Financial Summary (official): https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_summary_en.pdf\n- Toyota Form 6-K FY2027 Q1 (SEC): https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex991.htm and https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex992.htm\n- Toyota Times FY2027 1Q results: https://toyotatimes.jp/en/toyota_news/financial_results_2027/001.html\n- StockTitan summary of the 6-K: https://www.stocktitan.net/sec-filings/TM/6-k-toyota-motor-corp-current-report-foreign-issuer-bc5b6a9ae3a4.html\n- Just Auto: https://www.just-auto.com/news/toyota-raises-guidance-net-income\n- WardsAuto: https://www.wardsauto.com/news/toyota-sees-north-american-profitability-targets-cost-savings-in-hybrids/827022",
+  "tokens": {
+   "input": 15546,
+   "output": 1823
+  },
+  "tavily_credits": 4,
+  "latency_s": 15.06,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/7d922983ffc6193c5855c7aedce1d0de",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Toyota FY2027 first quarter results operating income net income April-June 2026",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Toyota Motor Corporation FY2027 Q1 operating income forecast revised",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_summary_en.pdf",
+    "https://toyotatimes.jp/en/toyota_news/financial_results_2027/001.html",
+    "https://www.just-auto.com/news/toyota-raises-guidance-net-income",
+    "https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex991.htm",
+    "https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex992.htm",
+    "https://www.stocktitan.net/sec-filings/TM/6-k-toyota-motor-corp-current-report-foreign-issuer-bc5b6a9ae3a4.html",
+    "https://www.wardsauto.com/news/toyota-sees-north-american-profitability-targets-cost-savings-in-hybrids/827022"
+   ],
+   "cited_primary": 3,
+   "retrieved": 15,
+   "retrieved_primary": 3
+  },
+  "recall": {
+   "figures": 38,
+   "found": 31
+  },
+  "correctness": {
+   "score": 0.615,
+   "points": [
+    {
+     "point": "States Q1 FY2027 consolidated operating income at about JPY 1,063.4–1,063.5 billion.",
+     "optional": false,
+     "met": true,
+     "note": "Gives ¥1,063.473 billion."
+    },
+    {
+     "point": "States operating income was down 8.8% year over year.",
+     "optional": false,
+     "met": true,
+     "note": "Gives −8.8%."
+    },
+    {
+     "point": "States net income attributable to Toyota shareholders was JPY 1,477.0 billion (+75.6%).",
+     "optional": false,
+     "met": true,
+     "note": "Gives ¥1,477.044 billion and +75.6%."
+    },
+    {
+     "point": "States income before income taxes was about JPY 1,963.9 billion (+56.8%).",
+     "optional": false,
+     "met": true,
+     "note": "Gives ¥1,963.862 billion and +56.8%."
+    },
+    {
+     "point": "Explains that income before taxes was about JPY 900 billion above operating income.",
+     "optional": false,
+     "met": false,
+     "note": "The answer instead gives a purported below-the-line swing of ¥883.9 billion and does not state the roughly ¥900 billion pre-tax-to-operating-income gap."
+    },
+    {
+     "point": "Identifies other finance income of about JPY 850.6 billion versus JPY 153.7 billion a year earlier as a driver.",
+     "optional": false,
+     "met": false,
+     "note": "Those amounts are not stated; the answer instead refers to non-operating/other income with different figures."
+    },
+    {
+     "point": "Identifies equity-method profit of about JPY 210.7 billion as a driver.",
+     "optional": false,
+     "met": false,
+     "note": "It gives an equity-method profit increase of ¥69.6 billion, not the quarter's ¥210.7 billion profit."
+    },
+    {
+     "point": "Identifies the JPY 112.4 billion foreign-exchange gain versus a JPY 212.4 billion loss a year earlier as a driver.",
+     "optional": false,
+     "met": false,
+     "note": "No FX gain/loss figures or year-over-year swing are given in the net-income explanation."
+    },
+    {
+     "point": "Identifies other finance costs of about JPY 285.6 billion as a partial offset.",
+     "optional": false,
+     "met": false,
+     "note": "Other finance costs are not stated."
+    },
+    {
+     "point": "States the revised FY2027 operating-income forecast is JPY 3.4 trillion versus the previous May 2026 forecast of JPY 3.0 trillion.",
+     "optional": false,
+     "met": true,
+     "note": "The table gives revised ¥3,400.0 billion and previous May forecast ¥3,000.0 billion."
+    },
+    {
+     "point": "Does not present the quarter as calendar 2027 or January–March 2027.",
+     "optional": false,
+     "met": true,
+     "note": "Correctly labels the quarter April 1–June 30, 2026."
+    },
+    {
+     "point": "Does not use the May 2026 forecast of JPY 3.0 trillion as the current/revised forecast.",
+     "optional": false,
+     "met": true,
+     "note": "Clearly labels ¥3.0 trillion as previous and ¥3.4 trillion as revised."
+    },
+    {
+     "point": "Does not say net income fell.",
+     "optional": false,
+     "met": true,
+     "note": "It correctly states net income rose +75.6%."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The answer correctly gives the quarter, operating income and its decline, net income and its increase, and the revised-versus-May forecast. However, it omits or misstates the specified line-item explanation for the divergence between operating income and net income, including the roughly ¥900 billion pre-tax gap and the required finance-income, equity-method, FX, and finance-cost figures.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "partial",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "FY2027 Q1 covered April 1–June 30, 2026, was prepared under IFRS, and the results/forecast revision were dated August 4, 2026.",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/TM/6-k-toyota-motor-corp-current-report-foreign-issuer-bc5b6a9ae3a4.html",
+     "reason": "The retrieved filing summary identifies FY2027 first quarter as April 1 through June 30, 2026, says the financial information was prepared under IFRS, and gives the 6-K signature date as August 4, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 consolidated results were sales revenue ¥13,525.4bn (+¥1,272.0bn, +10.4%), operating income ¥1,063.473bn (−¥102.6bn, −8.8%), pretax income ¥1,963.862bn (+¥711.7bn, +56.8%), and net income attributable to Toyota Motor Corporation ¥1,477.044bn (+¥635.6bn, +75.6%).",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex991.htm",
+     "reason": "The retrieved SEC summary gives the exact million-yen amounts (13,525,400; 1,063,473; 1,963,862; 1,477,044) and the corresponding YoY amounts/percentages. Converting million yen to billion yen gives the displayed figures.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Basic EPS attributable to Toyota was ¥120.69 versus ¥64.56 in the prior-year quarter.",
+     "numeric": true,
+     "cited_url": "https://www.just-auto.com/news/toyota-raises-guidance-net-income",
+     "reason": "Retrieved Just Auto passage explicitly states basic EPS of ¥120.69 against ¥64.56 in the equivalent prior-year quarter.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2026 actual / previous FY2027 forecast / revised FY2027 forecast were sales ¥50,684.9bn / ¥51,000bn / ¥54,000bn, operating income ¥3,766.2bn / ¥3,000bn / ¥3,400bn, and Toyota-attributable net income ¥3,848bn / ¥3,000bn / ¥3,250bn; forecast increases were ¥3,000bn, ¥400bn, and ¥250bn, respectively.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex992.htm",
+     "reason": "The retrieved SEC results presentation displays these three forecast columns and values, as well as the stated changes. The differences also check arithmetically: 54,000−51,000=3,000; 3,400−3,000=400; 3,250−3,000=250 (all ¥bn).",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The revised ¥3,400bn operating-income forecast is 9.7% below FY2026 actual ¥3,766.2bn.",
+     "numeric": true,
+     "cited_url": "https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_summary_en.pdf",
+     "reason": "The cited official summary reports the revised forecast's change as −9.7%. Calculation from the cited values: (3,400−3,766.2)/3,766.2×100 = −9.723%, which rounds to −9.7%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The revised forecast's FX assumptions were ¥150 per US dollar and ¥181 per euro, described as a weaker-yen assumption.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex992.htm",
+     "reason": "The retrieved forecast table lists FY2027 previous forecast USD/JPY 150 and new forecast 160 (+10); EUR/JPY is 180 previous and 181 new. Thus ¥150/USD is the previous, not revised, forecast rate. The new USD rate is ¥160, so the answer's stated pair is wrong even though the direction versus the prior USD assumption is weaker yen.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Toyota said the forecast increase reflected alternative logistics routes to the Middle East and other operational/marketing efforts.",
+     "numeric": false,
+     "cited_url": "https://www.stocktitan.net/sec-filings/TM/6-k-toyota-motor-corp-current-report-foreign-issuer-bc5b6a9ae3a4.html",
+     "reason": "The retrieved 6-K summary says the upward revision reflected changed external/foreign-exchange assumptions and marketing efforts including establishment of alternative logistics routes to the Middle East.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Toyota said the impact of the 2026 Kumamoto earthquake was under assessment and not reflected in the forecast.",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/TM/6-k-toyota-motor-corp-current-report-foreign-issuer-bc5b6a9ae3a4.html",
+     "reason": "The retrieved source states that the impact of the 2026 Kumamoto Earthquake was currently under assessment and had not been reflected in the forecast.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Toyota authorized share repurchases up to ¥1tn and cancellation of 200m treasury shares.",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/TM/6-k-toyota-motor-corp-current-report-foreign-issuer-bc5b6a9ae3a4.html",
+     "reason": "The retrieved filing summary states a ¥1tn maximum share-repurchase authorization and retirement/cancellation of 200m treasury shares.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Toyota's Q1 operating-income walk was +¥70.0bn marketing, +¥345.0bn FX, −¥85.0bn cost-reduction efforts, −¥190.0bn expenses/expense-reduction efforts, and −¥242.6bn other, totaling −¥102.6bn; cost reductions comprised engineering −¥90bn and manufacturing/logistics +¥5bn.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex991.htm",
+     "reason": "The retrieved SEC bridge lists each item and total. Arithmetic: 70.0+345.0−85.0−190.0−242.6=−102.6. The subcomponents −90.0+5.0=−85.0.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Automotive operating income fell 21.0% to ¥719.9bn; Financial Services operating income rose 24.0% to ¥275.6bn.",
+     "numeric": true,
+     "cited_url": "https://www.stocktitan.net/sec-filings/TM/6-k-toyota-motor-corp-current-report-foreign-issuer-bc5b6a9ae3a4.html",
+     "reason": "The retrieved source states automotive operating income declined 21.0% to ¥719.9bn and financial-services operating income grew 24.0% to ¥275.6bn.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Below operating income, non-operating/other income increased ¥814.3bn (other income from ¥86.0bn to ¥900.3bn) and equity-method profit increased ¥69.6bn; the answer calls their ¥883.9bn sum the total below-the-line swing bridging to the ¥711.7bn pretax increase.",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex992.htm",
+     "reason": "The source supports the component figures: other income 86.0→900.3 (+814.3), equity-method profit 141.0→210.6 (+69.6), and pretax income change +711.7 (¥bn). Although 814.3+69.6=883.9, that is not the total below-operating-line change reconciling pretax income: +711.7−(−102.6)=+814.3. The stated 'total below-the-line swing' therefore fails to reconcile and omits other below-line movements.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 11,
+   "numeric_cited": 11,
+   "cited": 12,
+   "supported": 10,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 105.1
+ }
+}

@@ -1,0 +1,225 @@
+{
+ "id": "W18",
+ "category": "multi-hop",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "In August 2026 Nielsen agreed to acquire DoubleVerify. As of 3 October 2026, what enterprise value did the companies announce, and what multiple is that of DoubleVerify's trailing-twelve-month (TTM) Adjusted EBITDA for the twelve months ended June 30, 2026? (TTM = FY2025 + first-half 2026 - first-half 2025, using DoubleVerify's reported Adjusted EBITDA.)",
+ "grading": "Key points (all required): (1) enterprise value of about US$2.15 billion at US$13.60 per share in cash; (2) TTM Adjusted EBITDA to 30 June 2026 about US$264.2 million (245.6 + 120.5 - 101.9); (3) EV / TTM Adjusted EBITDA about 8.1x (accept 8.0x-8.3x). Optional: EV / TTM revenue about 2.8x (TTM revenue about US$768.8M). Fail if the EV is taken from a different media figure (e.g., US$2.5 billion), if FY2025 EBITDA or guidance is used, or if the multiple is computed on revenue only.",
+ "answer": "About 8.1x: EV of about US$2.15 billion (US$13.60 per share in cash) [W18-E1] divided by TTM Adjusted EBITDA of about US$264.2 million = FY2025 US$245.6M [W18-E3] + H1 2026 US$120.5M - H1 2025 US$101.9M [W18-E2] = 2,150 / 264.2 = 8.14x. (On TTM revenue of about US$768.8M it is about 2.8x.)",
+ "output": {
+  "answer": "## Answer\n\n**Announced enterprise value:** approximately **$2.15 billion** (all-cash, $13.60 per share, a 30% premium to DV's 60-trading-day VWAP as of August 5, 2026). The deal was announced August 6, 2026.\n\n**Multiple of TTM Adjusted EBITDA:** approximately **8.1x** (≈8.14x).\n\n### TTM Adjusted EBITDA calculation (DoubleVerify reported figures)\n\n| Component | Adjusted EBITDA |\n|---|---|\n| FY2025 (twelve months ended Dec 31, 2025) | $245.621M |\n| Plus: H1 2026 (six months ended June 30, 2026) | $120.529M |\n| Less: H1 2025 (six months ended June 30, 2025) | ($101.928M) |\n| **TTM Adjusted EBITDA (12 months ended June 30, 2026)** | **$264.222M** |\n\n**Multiple:** $2.15 billion ÷ $264.2 million ≈ **8.1x**\n\n### Sources\n- Nielsen press release (Aug 6, 2026): https://www.nielsen.com/news-center/2026/nielsen-to-acquire-doubleverify-creating-a-leading-independent-media-intelligence\n- DoubleVerify Q4/FY2025 results (Adjusted EBITDA $245.6M; Feb 26, 2026): https://www.globenewswire.com/news-release/2026/02/26/3246093/0/en/doubleverify-reports-fourth-quarter-and-full-year-2025-financial-results.html\n- DoubleVerify Q2 2026 results (H1 2026 Adjusted EBITDA $120.529M; H1 2025 $101.928M): https://www.globenewswire.com/news-release/2026/08/06/3340812/0/en/doubleverify-reports-second-quarter-2026-financial-results.html\n\n**Note:** Nielsen's release did not itself state an Adjusted EBITDA multiple; the ~8.1x is my calculation from the announced EV and DV's reported Adjusted EBITDA figures using the TTM formula you specified. It's also worth flagging that press coverage varied on the headline figure ($2.15B enterprise value vs. references to \"up to $2.5B\"), so treat the $2.15B as the announced enterprise value.",
+  "tokens": {
+   "input": 27921,
+   "output": 1094
+  },
+  "tavily_credits": 4,
+  "latency_s": 10.5,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/00314ce569596ce2667cbec6461eede9",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nielsen acquire DoubleVerify enterprise value"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "DoubleVerify acquisition Nielsen August 2026"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "DoubleVerify fourth quarter full year 2025 results adjusted EBITDA"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "DoubleVerify second quarter 2026 results adjusted EBITDA six months ended June 30 2026"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.globenewswire.com/news-release/2026/02/26/3246093/0/en/doubleverify-reports-fourth-quarter-and-full-year-2025-financial-results.html",
+    "https://www.globenewswire.com/news-release/2026/08/06/3340812/0/en/doubleverify-reports-second-quarter-2026-financial-results.html",
+    "https://www.nielsen.com/news-center/2026/nielsen-to-acquire-doubleverify-creating-a-leading-independent-media-intelligence"
+   ],
+   "cited_primary": 0,
+   "retrieved": 33,
+   "retrieved_primary": 10
+  },
+  "recall": {
+   "figures": 17,
+   "found": 12
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "States enterprise value of about US$2.15 billion at US$13.60 per share in cash.",
+     "optional": false,
+     "met": true,
+     "note": "States approximately $2.15 billion, all-cash, at $13.60 per share."
+    },
+    {
+     "point": "Calculates TTM Adjusted EBITDA to June 30, 2026 at about US$264.2 million using FY2025 + H1 2026 - H1 2025 (about 245.6 + 120.5 - 101.9).",
+     "optional": false,
+     "met": true,
+     "note": "Shows $245.621M + $120.529M - $101.928M = $264.222M, with the correct TTM period and formula."
+    },
+    {
+     "point": "Gives EV / TTM Adjusted EBITDA of about 8.1x, within 8.0x–8.3x.",
+     "optional": false,
+     "met": true,
+     "note": "Reports approximately 8.1x (≈8.14x)."
+    },
+    {
+     "point": "Optionally gives EV / TTM revenue of about 2.8x, based on TTM revenue about US$768.8M.",
+     "optional": true,
+     "met": false,
+     "note": "Does not give the optional revenue multiple."
+    },
+    {
+     "point": "Does not use a different media EV figure, such as US$2.5 billion, as the announced enterprise value.",
+     "optional": false,
+     "met": true,
+     "note": "Uses $2.15B as announced EV; its note only distinguishes varying press coverage."
+    },
+    {
+     "point": "Does not use FY2025 Adjusted EBITDA alone or guidance in place of the specified TTM Adjusted EBITDA.",
+     "optional": false,
+     "met": true,
+     "note": "Uses FY2025 EBITDA combined with H1 2026 and H1 2025 as specified; does not use guidance."
+    },
+    {
+     "point": "Does not compute the requested multiple on revenue only instead of Adjusted EBITDA.",
+     "optional": false,
+     "met": true,
+     "note": "Denominator is the calculated $264.2M TTM Adjusted EBITDA."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "All required deal-value, TTM Adjusted EBITDA, and EV/EBITDA multiple requirements are satisfied. The optional revenue multiple is omitted, which does not affect the verdict.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Announced enterprise value approximately $2.15 billion",
+     "numeric": true,
+     "cited_url": "https://www.nielsen.com/news-center/2026/nielsen-to-acquire-doubleverify-creating-a-leading-independent-media-intelligence",
+     "reason": "Nielsen's retrieved release says the all-cash acquisition has enterprise value of approximately $2.15 billion and says the per-share value implies that EV.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Acquisition consideration is all cash at $13.60 per share",
+     "numeric": true,
+     "cited_url": "https://www.nielsen.com/news-center/2026/nielsen-to-acquire-doubleverify-creating-a-leading-independent-media-intelligence",
+     "reason": "The retrieved Nielsen text directly says Nielsen will acquire DoubleVerify for $13.60 per share in an all-cash transaction and shareholders receive $13.60 in cash.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "$13.60 per share is a 30% premium to DoubleVerify's 60-trading-day VWAP as of August 5, 2026",
+     "numeric": true,
+     "cited_url": "https://www.nielsen.com/news-center/2026/nielsen-to-acquire-doubleverify-creating-a-leading-independent-media-intelligence",
+     "reason": "The retrieved release directly gives the 30% premium, 60-trading-day VWAP basis, and August 5, 2026 reference date.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Nielsen and DoubleVerify announced the definitive agreement on August 6, 2026",
+     "numeric": true,
+     "cited_url": "https://www.nielsen.com/news-center/2026/nielsen-to-acquire-doubleverify-creating-a-leading-independent-media-intelligence",
+     "reason": "The retrieved release dateline is August 6, 2026 and says the companies today announced the agreement.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "DoubleVerify FY2025 Adjusted EBITDA was $245.621 million, for the twelve months ended December 31, 2025",
+     "numeric": true,
+     "cited_url": "https://www.globenewswire.com/news-release/2026/02/26/3246093/0/en/doubleverify-reports-fourth-quarter-and-full-year-2025-financial-results.html",
+     "reason": "The retrieved release reports full-year 2025 Adjusted EBITDA as $245.6 million, but does not show the exact $245.621 million figure or the stated December 31 period end in the provided passage. The answer's source citation itself also summarizes the result as $245.6M. Exact precision and period-end detail are not substantiated by the retrieved text.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "DoubleVerify H1 2026 Adjusted EBITDA was $120.529 million for the six months ended June 30, 2026",
+     "numeric": true,
+     "cited_url": "https://www.globenewswire.com/news-release/2026/08/06/3340812/0/en/doubleverify-reports-second-quarter-2026-financial-results.html",
+     "reason": "The retrieved table labels the figures in thousands and shows Adjusted EBITDA of 120,529 in the Six Months Ended June 30, 2026 column, which is $120.529 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "DoubleVerify H1 2025 Adjusted EBITDA was $101.928 million for the six months ended June 30, 2025",
+     "numeric": true,
+     "cited_url": "https://www.globenewswire.com/news-release/2026/08/06/3340812/0/en/doubleverify-reports-second-quarter-2026-financial-results.html",
+     "reason": "The retrieved table labels the figures in thousands and shows Adjusted EBITDA of 101,928 in the Six Months Ended June 30, 2025 column, which is $101.928 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TTM Adjusted EBITDA for the twelve months ended June 30, 2026 was $264.222 million",
+     "numeric": true,
+     "cited_url": "https://www.globenewswire.com/news-release/2026/02/26/3246093/0/en/doubleverify-reports-fourth-quarter-and-full-year-2025-financial-results.html; https://www.globenewswire.com/news-release/2026/08/06/3340812/0/en/doubleverify-reports-second-quarter-2026-financial-results.html",
+     "reason": "The TTM formula is FY2025 + H1 2026 - H1 2025. Using the exact FY number asserted in the answer gives 245.621 + 120.529 - 101.928 = 264.222 million, but the retrieved FY source supports only rounded $245.6 million, not $245.621 million. Using the retrieved displayed inputs gives 245.6 + 120.529 - 101.928 = $264.201 million, or about $264.2 million; therefore the stated exact result lacks an adequately supported input.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "The announced EV divided by TTM Adjusted EBITDA is approximately 8.1x (about 8.14x)",
+     "numeric": true,
+     "cited_url": "https://www.nielsen.com/news-center/2026/nielsen-to-acquire-doubleverify-creating-a-leading-independent-media-intelligence; https://www.globenewswire.com/news-release/2026/02/26/3246093/0/en/doubleverify-reports-fourth-quarter-and-full-year-2025-financial-results.html; https://www.globenewswire.com/news-release/2026/08/06/3340812/0/en/doubleverify-reports-second-quarter-2026-financial-results.html",
+     "reason": "Using the reported rounded FY figure and reported half-year figures: $2,150 million / ($245.6 million + $120.529 million - $101.928 million) = $2,150 / $264.201 = approximately 8.137, which rounds to 8.14x or 8.1x. This supports the approximate multiple, though not the answer's unsupported exact TTM EBITDA amount.",
+     "supported": null,
+     "in_retrieved": false
+    },
+    {
+     "claim": "The FY2025 results release was dated February 26, 2026",
+     "numeric": true,
+     "cited_url": "https://www.globenewswire.com/news-release/2026/02/26/3246093/0/en/doubleverify-reports-fourth-quarter-and-full-year-2025-financial-results.html",
+     "reason": "The retrieved release text explicitly states February 26, 2026 16:05 ET.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Press coverage varied between $2.15 billion enterprise value and references to 'up to $2.5 billion'",
+     "numeric": true,
+     "cited_url": null,
+     "reason": "No URL is cited for the press-coverage comparison, and the retrieved sources include Nielsen's approximately $2.15 billion figure but do not mention 'up to $2.5 billion'.",
+     "supported": null,
+     "in_retrieved": false
+    }
+   ],
+   "numeric_claims": 11,
+   "numeric_cited": 10,
+   "cited": 10,
+   "supported": 7,
+   "not_retrieved": 2,
+   "undecided": 0
+  },
+  "judge_s": 145.5
+ }
+}

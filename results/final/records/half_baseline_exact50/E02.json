@@ -1,0 +1,254 @@
+{
+ "id": "E02",
+ "category": "missing period",
+ "difficulty": "medium",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "wells fargo nim",
+ "grading": "(1) Identifies Wells Fargo & Company (WFC). (2) States the period interpretation: latest reported quarter is Q2 2026 (three months ended June 30, 2026; reported July 14, 2026), and notes Q3 2026 has not been reported as of 2026-10-03 (due mid-October). (3) Gives the reported net interest margin for Q2 2026 with a citation (earnings release or 10-Q), does not confuse NIM with net interest income, and (optionally) gives the prior-year comparison. (4) Fail if it gives a NIM for an unnamed or different quarter, gives any Q3 2026 figure, or gives a number for another bank.",
+ "answer": "Wells Fargo, Q2 2026 (ended June 30, 2026; reported July 14, 2026): NIM 2.43% vs 2.68% a year earlier; Q3 2026 not yet reported.",
+ "output": {
+  "answer": "## Wells Fargo (WFC) Net Interest Margin (NIM)\n\nThe most recent figure is **Q2 2026: ~2.43%**, down from the prior quarter and the year-earlier period, and slightly below analyst estimates. This decline (revenue and EPS beat, but NIM miss) contributed to WFC shares falling ~2.7% on the July 14, 2026 earnings day.\n\n**Recent trend (taxable-equivalent basis):**\n\n| Period | NIM |\n|---|---|\n| FY 2025 (full year) | 2.64% |\n| Q4 2025 | ~2.6% |\n| Q3 2025 | 2.61% |\n| Q2 2026 | 2.43% |\n\n**Context:**\n- Management attributed Q2 2026 NIM compression to *deliberate* balance-sheet growth in lower-spread market financing and interest-bearing deposits, rather than external market pressures.\n- Despite the NIM decline, net interest income (NII) rose 5.2% YoY to $12.32 billion on lower deposit costs, higher loan/investment securities balances, and Markets balance-sheet growth.\n- Wells Fargo maintained its full-year 2026 NII guidance of ~$50 billion (expecting growth driven by loan and securities balances, with margin compression anticipated in Q2).\n- Over the past two years, the NIM has averaged around 2.6% — the long-term drift down reflects balance-sheet mix shifts and rate dynamics.\n\n**Sources:**\n- [Earnings Preview: What To Expect From Wells Fargo's Report (Yahoo Finance)](https://finance.yahoo.com/markets/stocks/articles/earnings-preview-expect-wells-fargos-134303390.html)\n- [Wells Fargo Q2 Earnings Beat on NII & Fee Income Growth (Zacks/Yahoo Finance)](https://finance.yahoo.com/markets/stocks/articles/wells-fargo-q2-earnings-beat-170700685.html)\n- [Wells Fargo 3Q25 Presentation (Wells Fargo IR)](https://www.wellsfargo.com/assets/pdf/about/investor-relations/earnings/third-quarter-2025-presentation.pdf)\n- [Wells Fargo 2025 Annual Report (Wells Fargo IR)](https://www.wellsfargo.com/assets/pdf/about/investor-relations/annual-reports/2025-annual-report.pdf)\n- [Wells Fargo (WFC): Buy, Sell, or Hold Post Q2 Earnings? (Yahoo Finance)](https://finance.yahoo.com/markets/stocks/articles/wells-fargo-wfc-buy-sell-192347412.html)\n\nNote: the \"Q2 2026\" figures come from sources dated into 2026; if you're looking for a specific reporting period, let me know and I can pull the exact filing.",
+  "tokens": {
+   "input": 27947,
+   "output": 1199
+  },
+  "tavily_credits": 8,
+  "latency_s": 18.15,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/d4c586535db5dd40eb130e28281adc49",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Wells Fargo net interest margin NIM latest quarter",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Wells Fargo net interest margin Q3 2026 quarterly results percentage",
+     "topic": "finance",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Wells Fargo net interest margin 2.7% quarterly earnings report",
+     "include_domains": [
+      "wellsfargo.com",
+      "reuters.com",
+      "wsj.com"
+     ],
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Wells Fargo net interest margin latest quarter 2025",
+     "topic": "finance",
+     "search_depth": "advanced",
+     "time_range": "year"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/earnings-preview-expect-wells-fargos-134303390.html",
+    "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-q2-earnings-beat-170700685.html",
+    "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-wfc-buy-sell-192347412.html",
+    "https://www.wellsfargo.com/assets/pdf/about/investor-relations/annual-reports/2025-annual-report.pdf",
+    "https://www.wellsfargo.com/assets/pdf/about/investor-relations/earnings/third-quarter-2025-presentation.pdf"
+   ],
+   "cited_primary": 0,
+   "retrieved": 37,
+   "retrieved_primary": 0
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 0.571,
+   "points": [
+    {
+     "point": "Identifies Wells Fargo & Company (WFC).",
+     "optional": false,
+     "met": true,
+     "note": "The heading names “Wells Fargo (WFC).”"
+    },
+    {
+     "point": "States that Q2 2026 is the latest reported quarter and specifies the three months ended June 30, 2026, reported July 14, 2026, with Q3 2026 not yet reported as of 2026-10-03 and due mid-October.",
+     "optional": false,
+     "met": false,
+     "note": "It calls Q2 2026 the most recent figure and mentions the July 14 earnings day, but omits the June 30 quarter-end and does not say Q3 2026 is unreported or due mid-October."
+    },
+    {
+     "point": "Gives Q2 2026 reported NIM with a citation to an earnings release or 10-Q.",
+     "optional": false,
+     "met": false,
+     "note": "It gives 2.43% for Q2 2026, but cites a Yahoo Finance earnings preview rather than an earnings release or 10-Q."
+    },
+    {
+     "point": "Does not confuse net interest margin with net interest income.",
+     "optional": false,
+     "met": true,
+     "note": "It separately identifies NIM as 2.43% and NII as $12.32 billion."
+    },
+    {
+     "point": "Optionally gives the prior-year comparison.",
+     "optional": true,
+     "met": true,
+     "note": "It says the Q2 2026 NIM was down from the year-earlier period."
+    },
+    {
+     "point": "Does not give a NIM for an unnamed or different quarter.",
+     "optional": false,
+     "met": false,
+     "note": "The trend table also supplies NIM figures for Q3 2025 and Q4 2025, which are quarters different from the requested latest quarter, Q2 2026."
+    },
+    {
+     "point": "Does not give any Q3 2026 NIM figure.",
+     "optional": false,
+     "met": true,
+     "note": "No Q3 2026 NIM number appears."
+    },
+    {
+     "point": "Does not give a NIM number for another bank.",
+     "optional": false,
+     "met": true,
+     "note": "All NIM figures are presented as Wells Fargo figures."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The response identifies Wells Fargo and correctly gives Q2 2026 NIM as 2.43%, distinguishing it from NII. However, it omits required reporting-period context, lacks the specified earnings-release/10-Q citation, and includes NIM figures for other quarters.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "partial",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q2 2026 Wells Fargo NIM was about 2.43%, lower than the prior quarter and year-earlier period, and below analyst estimates.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/earnings-preview-expect-wells-fargos-134303390.html",
+     "reason": "The retrieved preview explicitly says NIM declined to 2.43% from the prior quarter and a year earlier, and was below the estimate. It does not quantify how far below, and does not specify taxable-equivalent accounting basis; those extra characterizations are not verified by this passage.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The 2.43% Q2 2026 NIM was on a taxable-equivalent basis, as implied by the table heading.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/earnings-preview-expect-wells-fargos-134303390.html",
+     "reason": "The retrieved text reports NIM of 2.43% but does not say it is on a taxable-equivalent basis. The table labels all listed rates taxable-equivalent, but the cited passage does not verify this basis for Q2 2026.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Wells Fargo shares fell about 2.7% on July 14, 2026, after Q2 results beat on revenue and EPS, with weaker NIM cited as the reason.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/earnings-preview-expect-wells-fargos-134303390.html",
+     "reason": "The retrieved preview says Q2 2026 EPS of $2 and revenue of $22.62 billion were better than expected, and that shares fell 2.7% on Jul. 14 due to weaker NIM. The result and share-move details support the claim; the passage gives no explicit year for Jul. 14, though its Q2 2026 context and answer identify 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Wells Fargo's FY 2025 NIM was 2.64% on a taxable-equivalent basis.",
+     "numeric": true,
+     "cited_url": "https://www.wellsfargo.com/assets/pdf/about/investor-relations/annual-reports/2025-annual-report.pdf",
+     "reason": "The retrieved annual-report excerpt lists net interest margin and net interest income on a taxable-equivalent basis, with the 2025 annual NIM at 2.64%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Wells Fargo Q4 2025 NIM was about 2.6%.",
+     "numeric": true,
+     "cited_url": "https://www.wellsfargo.com/assets/pdf/about/investor-relations/annual-reports/2025-annual-report.pdf",
+     "reason": "The retrieved annual-report excerpt gives annual NIM figures and quarterly income data, but does not show the Q4 2025 NIM figure. Thus the cited retrieved text does not establish this quarterly rate.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Wells Fargo Q3 2025 NIM was 2.61%.",
+     "numeric": true,
+     "cited_url": "https://www.wellsfargo.com/assets/pdf/about/investor-relations/earnings/third-quarter-2025-presentation.pdf",
+     "reason": "The retrieved 3Q25 presentation excerpt explicitly states NIM of 2.61% in the 3Q25 financial-results discussion.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management attributed Q2 2026 NIM compression to deliberate balance-sheet growth in lower-spread market financing and interest-bearing deposits, rather than external market pressures.",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-q2-earnings-beat-170700685.html",
+     "reason": "The retrieved Q2 earnings article lists drivers of NII growth and some offsets, but does not attribute NIM compression to deliberate lower-spread market financing or deposits, nor contrast it with external pressures. The management attribution is not evidenced by the supplied passage.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 NII rose 5.2% year over year to $12.32 billion, driven in part by lower deposit costs, higher loan and investment-securities balances, and Markets balance-sheet growth.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-q2-earnings-beat-170700685.html",
+     "reason": "The retrieved Zacks/Yahoo article states NII was $12.32 billion, up 5.2% year over year, and names lower deposit costs, higher loan and investment-securities balances, and balance-sheet growth in Markets among the drivers. It also names higher interest-bearing commercial deposits and offsets, which the answer omits but does not contradict.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Wells Fargo maintained full-year 2026 NII guidance of about $50 billion.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/earnings-preview-expect-wells-fargos-134303390.html",
+     "reason": "The retrieved preview explicitly says Wells Fargo maintained its 2026 net interest income guidance of about $50 billion rather than raising it.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The $50 billion 2026 NII outlook expected growth driven by loan and securities balances, with margin compression anticipated in Q2.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/earnings-preview-expect-wells-fargos-134303390.html",
+     "reason": "The supplied preview passage supports maintaining guidance, but does not state that guidance growth was driven by loan and securities balances or that management anticipated Q2 margin compression. Those added rationale and timing are not established in the retrieved text.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Wells Fargo's NIM averaged about 2.6% over the past two years.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-wfc-buy-sell-192347412.html",
+     "reason": "The retrieved Yahoo Finance article explicitly says that over the past two years Wells Fargo's net interest margin averaged 2.6%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Wells Fargo's long-term NIM drift down reflects balance-sheet mix shifts and rate dynamics.",
+     "numeric": false,
+     "cited_url": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-wfc-buy-sell-192347412.html",
+     "reason": "The retrieved article says prevailing rates are a major determinant of NIM changes and says a decline could mean competition for loans/deposits or a negative balance-sheet mix shift. It presents the mix explanation as a possibility, not an established cause of a long-term downward drift; the answer states the causal account more definitively than the retrieved text supports.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 10,
+   "numeric_cited": 10,
+   "cited": 12,
+   "supported": 7,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 124.6
+ }
+}

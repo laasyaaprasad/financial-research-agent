@@ -1,0 +1,477 @@
+{
+ "id": "T19",
+ "category": "Quantitative retrieval",
+ "difficulty": "easy",
+ "time_sensitivity": "static",
+ "answer_type": "abstain",
+ "question": "Pull Enterprise Holdings' fiscal 2025 10-K and give me net income and operating income in USD millions. I want to compare its margins against Hertz and Avis.",
+ "grading": "Must state that Enterprise Holdings (Enterprise Mobility) is privately held, files no 10-K or other SEC periodic reports, and does not publish net income or operating income. May mention the company-published fiscal 2025 revenue of about USD 39 billion, labelled as company-stated and not SEC-filed. Fail if net income or operating income is given.",
+ "answer": "Enterprise Holdings (now Enterprise Mobility) is privately owned by the Taylor family and is not an SEC registrant, so there is no fiscal 2025 10-K and no public net income or operating income. Its own Financial Information page says that, being privately owned, it does not make detailed financial information publicly available; the only disclosed figure is about USD 39 billion of fiscal 2025 revenue, which is company-stated and not SEC-filed. [T19-E1] An EDGAR company-name search for Enterprise Holdings, Enterprise Rent-A-Car and Enterprise Mobility returns no matching companies. [T19-E2]",
+ "output": {
+  "answer": "**Question:** Pull Enterprise Holdings' fiscal 2025 10-K and give me net income and operating income in USD millions. I want to compare its margins against Hertz and Avis.\n*As of 2026-10-03*\n\n**Interpreted as:** 'Enterprise Holdings' fiscal 2025 10-K' was read as the private car-rental company Enterprise Holdings, Inc.; it files nothing with the SEC, so no 10-K exists. Since the Enterprise leg is unavailable, the plan falls back to what exists: Hertz and Avis FY2025 margins (the comparison periods the question named) plus each company's latest reported quarter (Q2 FY2026) headline results and guidance. 'Margins' read as gross margin and operating margin, computed from revenue and the corresponding income-statement lines. 'Hertz' read as Hertz Global Holdings, Inc. (HTZ); 'Avis' read as Avis Budget Group, Inc. (CAR); each is a single reporting company. Fiscal years for both peers coincide with the calendar year, so FY2025 is the year ended 2025-12-31.\n\n| | Net income (loss), GAAP (USD millions) | Total revenues (USD millions) | Net income (loss) margin (%) | Operating income (loss), GAAP (USD millions) | Operating margin (%) | Gross margin (%) | Adjusted Corporate EBITDA, non-GAAP (USD millions) | Adjusted Corporate EBITDA margin, non-GAAP (%) | Adjusted EBITDA, non-GAAP (USD millions) | Adjusted EBITDA margin, non-GAAP (%) |\n|---|---|---|---|---|---|---|---|---|---|---|\n| Hertz Global Holdings, Inc. — FY2025 (year ended 2025-12-31) | -747 [1][2] | 8,504 [2] | -8.8 [1][2] | Not disclosed [1][2] | Not disclosed [1][2] | Not disclosed [1][3] | — | — | — | — |\n| Avis Budget Group, Inc. — FY2025 (year ended 2025-12-31) | -889 [3][4] | 11,652 [3][4] | -7.6 [3][4] | Not disclosed [3][4] | Not disclosed [3][4] | Not disclosed [3] | — | — | — | — |\n| Hertz Global Holdings, Inc. — Q2 FY2026 (quarter ended 2026-06-30) | 64 [5] | 2,396 [5] | 3 [5] | — | — | — | 81 [5] | 3 [5] | — | — |\n| Avis Budget Group, Inc. — Q2 FY2026 (quarter ended 2026-06-30) | 35 [6] | 2,998 [6] | 1.2 [6] | — | — | — | — | — | 286 [6] | 9.5 [6] |\n\n- Enterprise Holdings, Inc. is a privately held company owned by the Taylor family and, as a privately held business, does not disclose net income, so no fiscal 2025 10-K or net income/operating income figures exist for it. [7]\n- Hertz Global Holdings, Inc. reported GAAP net loss of $747 million for full-year 2025 (year ended December 31, 2025), per its FY2025 earnings release. [1][2]\n- Hertz's FY2025 total revenues were $8,504 million (year ended December 31, 2025), per XBRL data tagged in its 10-K filed 2026-02-26. [2]\n- Avis Budget Group, Inc. reported GAAP net loss attributable to Avis Budget Group, Inc. of $889 million for full-year 2025 (year ended December 31, 2025), per its FY2025 earnings release. [3][4]\n- Avis's FY2025 total revenues were $11,652 million (year ended December 31, 2025), per its FY2025 earnings release. [3][4]\n- Hertz reported GAAP net income of $64 million for Q2 FY2026 (quarter ended June 30, 2026), per its Q2 FY2026 earnings release. [5]\n- Hertz's Q2 FY2026 total revenues were $2,396 million (quarter ended June 30, 2026). [5]\n- Avis reported GAAP net income attributable to Avis Budget Group, Inc. of $35 million for Q2 FY2026 (quarter ended June 30, 2026), per its Q2 FY2026 earnings release. [6]\n- Avis's Q2 FY2026 total revenues were $2,998 million (quarter ended June 30, 2026). [6]\n\n**Not available**\n- Enterprise Holdings, Inc. fiscal 2025 10-K: Enterprise Holdings, Inc. is a privately held, family-owned company that does not file with the SEC; no 10-K exists. [7]\n- Enterprise Holdings net income and operating income for fiscal 2025 (USD millions): As a privately held business, Enterprise Holdings does not disclose net income, and no operating income figure is publicly reported. [7]\n- Three-way margin comparison including Enterprise Holdings: Enterprise Holdings' revenue and income figures are not publicly disclosed, so its margins cannot be computed. [7]\n- Hertz FY2025 operating income and operating margin: The Hertz FY2025 release and XBRL data provided show net loss, pre-tax loss and Adjusted Corporate EBITDA, but no GAAP operating income line. [1][2]\n- Avis FY2025 operating income and operating margin: The Avis FY2025 release and XBRL data provided show net loss, pre-tax loss and Adjusted EBITDA, but no GAAP operating income line. [3][4]\n- Gross margin for Hertz and Avis: Neither company reports a gross profit or gross margin line; their income statements begin with revenues and operating expenses, and the only 'gross' measure defined is Gross Adjusted EBITDA (a non-GAAP measure), with no value given in the evidence. [1][3]\n- Hertz and Avis Q3 FY2026 results (quarter ended 2026-09-30): Q3 FY2026 has not been reported as of 2026-10-03; the latest reported quarter for both is Q2 FY2026 (ended 2026-06-30). [5][6]\n\n**Sources**\n[1] HERTZ GLOBAL HOLDINGS, INC earnings release for FY2025, 8-K EX-99.1 (filed 2026-02-26) (www.sec.gov, 2026-02-26, primary) https://www.sec.gov/Archives/edgar/data/47129/000165785326000010/q42025earningsrelease.htm\n[2] HERTZ GLOBAL HOLDINGS, INC XBRL data tagged in 10-K filed 2026-02-26 (www.sec.gov, 2026-02-26, primary) https://www.sec.gov/Archives/edgar/data/1657853/000165785326000008/\n[3] AVIS BUDGET GROUP, INC. earnings release for FY2025, 8-K EX-99.1 (filed 2026-02-18) (www.sec.gov, 2026-02-18, primary) https://www.sec.gov/Archives/edgar/data/723612/000072361226000010/a03-prxpressreleasexq4f25.htm\n[4] AVIS BUDGET GROUP, INC. XBRL data tagged in 10-K filed 2026-02-19 (www.sec.gov, 2026-02-19, primary) https://www.sec.gov/Archives/edgar/data/723612/000072361226000012/\n[5] HERTZ GLOBAL HOLDINGS, INC earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-08-06) (www.sec.gov, 2026-08-06, primary) https://www.sec.gov/Archives/edgar/data/47129/000165785326000045/q22026earningsrelease.htm\n[6] AVIS BUDGET GROUP, INC. earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-07-28) (www.sec.gov, 2026-07-28, primary) https://www.sec.gov/Archives/edgar/data/723612/000072361226000037/a03-pressreleasexq2f26.htm\n[7] Enterprise Holdings Expanding Global Network, Neighborhood Services and Airport Market Share (www.prnewswire.com, undated, secondary) https://www.prnewswire.com/news-releases/enterprise-holdings-expanding-global-network-neighborhood-services-and-airport-market-share-300167086.html\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 174079,
+   "output": 56535
+  },
+  "tavily_credits": 3.0,
+  "latency_s": 241.96,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/2ae19f8f42a85a593cd5e948c00551d4",
+  "companies": [
+   {
+    "name": "Enterprise Holdings, Inc.",
+    "ticker": null,
+    "cik": null,
+    "resolved": false
+   },
+   {
+    "name": "HERTZ GLOBAL HOLDINGS, INC",
+    "ticker": "HTZ",
+    "cik": "1657853",
+    "resolved": true
+   },
+   {
+    "name": "AVIS BUDGET GROUP, INC.",
+    "ticker": "CAR",
+    "cik": "723612",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "'Enterprise Holdings' fiscal 2025 10-K' was read as the private car-rental company Enterprise Holdings, Inc.; it files nothing with the SEC, so no 10-K exists.",
+    "Since the Enterprise leg is unavailable, the plan falls back to what exists: Hertz and Avis FY2025 margins (the comparison periods the question named) plus each company's latest reported quarter (Q2 FY2026) headline results and guidance.",
+    "'Margins' read as gross margin and operating margin, computed from revenue and the corresponding income-statement lines.",
+    "'Hertz' read as Hertz Global Holdings, Inc. (HTZ); 'Avis' read as Avis Budget Group, Inc. (CAR); each is a single reporting company.",
+    "Fiscal years for both peers coincide with the calendar year, so FY2025 is the year ended 2025-12-31."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Enterprise Holdings FY2025 net income (USD millions) — not obtainable: private company, no SEC filings",
+    "Enterprise Holdings FY2025 operating income (USD millions) — not obtainable",
+    "Hertz (HTZ) FY2025 total revenue, operating income (loss) and operating margin, gross margin, net income (loss), diluted EPS",
+    "Avis Budget (CAR) FY2025 total revenue, operating income (loss) and operating margin, gross margin, net income (loss), diluted EPS",
+    "Hertz (HTZ) latest reported quarter (Q2 FY2026) headline results: revenue and growth, operating income/margin, net income, diluted EPS, and any guidance",
+    "Avis Budget (CAR) latest reported quarter (Q2 FY2026) headline results: revenue and growth, operating income/margin, net income, diluted EPS, and any guidance",
+    "Any management commentary on margin drivers (fleet costs, depreciation, pricing) for the two public peers"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "HTZ",
+     "label": "FY2025"
+    },
+    {
+     "ticker": "CAR",
+     "label": "FY2025"
+    },
+    {
+     "ticker": "HTZ",
+     "label": "Q2 FY2026"
+    },
+    {
+     "ticker": "CAR",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "HTZ",
+     "period": "FY2025",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "CAR",
+     "period": "FY2025",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "HTZ",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "CAR",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Check whether the private Enterprise Holdings publishes any financial results (revenue, net income, operating income) outside SEC filings",
+     "query": "Enterprise Holdings Inc private company annual financial results revenue net income disclosure",
+     "topic": "general",
+     "days_back": null
+    }
+   ],
+   "availability_notes": [
+    "Enterprise Holdings, Inc. is not a currently reporting SEC registrant (privately held, family-owned); there is no fiscal 2025 10-K and no public disclosure of net income or operating income, so the primary request cannot be fulfilled from filings.",
+    "Because Enterprise's figures do not exist publicly, the requested three-way margin comparison cannot be completed; only the Hertz and Avis legs can be shown.",
+    "Hertz and Avis Q3 FY2026 (period ended 2026-09-30) is not yet reported, so the latest reported quarter for both is Q2 FY2026 (ended 2026-06-30).",
+    "Hertz and Avis report on a calendar fiscal year, so FY2025 = 2025-01-01 to 2025-12-31 for both."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Enterprise Holdings, Inc. fiscal 2025 10-K",
+    "kind": "not_sec_filer",
+    "reason": "Enterprise Holdings, Inc. is a privately held, family-owned company that does not file with the SEC; no 10-K exists.",
+    "evidence_ids": [
+     "E7"
+    ]
+   },
+   {
+    "item": "Enterprise Holdings net income and operating income for fiscal 2025 (USD millions)",
+    "kind": "not_disclosed",
+    "reason": "As a privately held business, Enterprise Holdings does not disclose net income, and no operating income figure is publicly reported.",
+    "evidence_ids": [
+     "E7"
+    ]
+   },
+   {
+    "item": "Three-way margin comparison including Enterprise Holdings",
+    "kind": "not_disclosed",
+    "reason": "Enterprise Holdings' revenue and income figures are not publicly disclosed, so its margins cannot be computed.",
+    "evidence_ids": [
+     "E7"
+    ]
+   },
+   {
+    "item": "Hertz FY2025 operating income and operating margin",
+    "kind": "not_in_evidence",
+    "reason": "The Hertz FY2025 release and XBRL data provided show net loss, pre-tax loss and Adjusted Corporate EBITDA, but no GAAP operating income line.",
+    "evidence_ids": [
+     "E1",
+     "E5"
+    ]
+   },
+   {
+    "item": "Avis FY2025 operating income and operating margin",
+    "kind": "not_in_evidence",
+    "reason": "The Avis FY2025 release and XBRL data provided show net loss, pre-tax loss and Adjusted EBITDA, but no GAAP operating income line.",
+    "evidence_ids": [
+     "E2",
+     "E6"
+    ]
+   },
+   {
+    "item": "Gross margin for Hertz and Avis",
+    "kind": "not_disclosed",
+    "reason": "Neither company reports a gross profit or gross margin line; their income statements begin with revenues and operating expenses, and the only 'gross' measure defined is Gross Adjusted EBITDA (a non-GAAP measure), with no value given in the evidence.",
+    "evidence_ids": [
+     "E1",
+     "E2"
+    ]
+   },
+   {
+    "item": "Hertz and Avis Q3 FY2026 results (quarter ended 2026-09-30)",
+    "kind": "not_reported_yet",
+    "reason": "Q3 FY2026 has not been reported as of 2026-10-03; the latest reported quarter for both is Q2 FY2026 (ended 2026-06-30).",
+    "evidence_ids": [
+     "E3",
+     "E4"
+    ]
+   }
+  ],
+  "removed": [],
+  "assumptions": [
+   "'Enterprise Holdings' fiscal 2025 10-K' was read as the private car-rental company Enterprise Holdings, Inc.; it files nothing with the SEC, so no 10-K exists.",
+   "Since the Enterprise leg is unavailable, the plan falls back to what exists: Hertz and Avis FY2025 margins (the comparison periods the question named) plus each company's latest reported quarter (Q2 FY2026) headline results and guidance.",
+   "'Margins' read as gross margin and operating margin, computed from revenue and the corresponding income-statement lines.",
+   "'Hertz' read as Hertz Global Holdings, Inc. (HTZ); 'Avis' read as Avis Budget Group, Inc. (CAR); each is a single reporting company.",
+   "Fiscal years for both peers coincide with the calendar year, so FY2025 is the year ended 2025-12-31."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Enterprise Holdings Inc private company annual financial results revenue net income disclosure",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.prnewswire.com/news-releases/enterprise-holdings-expanding-global-network-neighborhood-services-and-airport-market-share-300167086.html",
+      "https://ir.enterpriseproducts.com/static-files/e67d1879-0903-4a9c-99de-837e44fb65e6"
+     ],
+     "query": "Pull Enterprise Holdings' fiscal 2025 10-K and give me net income and operating income in USD millions. I want to compare its margins against Hertz and Avis.",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Enterprise Holdings Hertz Avis Hertz FY2025 operating income (GAAP) and operating margin",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Enterprise Holdings Hertz Avis Avis FY2025 operating income (GAAP) and operating margin",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://nsearchives.nseindia.com/emerge/corporates/content/WiseTravel_RHP.pdf",
+      "https://www.renoairport.com/wp-content/uploads/2025/09/01-08-2026-Board-Agenda_packet.pdf"
+     ],
+     "query": "Pull Enterprise Holdings' fiscal 2025 10-K and give me net income and operating income in USD millions. I want to compare its margins against Hertz and Avis.",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.prnewswire.com/news-releases/enterprise-holdings-expanding-global-network-neighborhood-services-and-airport-market-share-300167086.html",
+    "https://www.sec.gov/Archives/edgar/data/1657853/000165785326000008/",
+    "https://www.sec.gov/Archives/edgar/data/47129/000165785326000010/q42025earningsrelease.htm",
+    "https://www.sec.gov/Archives/edgar/data/47129/000165785326000045/q22026earningsrelease.htm",
+    "https://www.sec.gov/Archives/edgar/data/723612/000072361226000010/a03-prxpressreleasexq4f25.htm",
+    "https://www.sec.gov/Archives/edgar/data/723612/000072361226000012/",
+    "https://www.sec.gov/Archives/edgar/data/723612/000072361226000037/a03-pressreleasexq2f26.htm"
+   ],
+   "cited_primary": 6,
+   "retrieved": 10,
+   "retrieved_primary": 7
+  },
+  "recall": {
+   "figures": 1,
+   "found": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "States that Enterprise Holdings (Enterprise Mobility) is privately held.",
+     "optional": false,
+     "met": true,
+     "note": "It says Enterprise Holdings is a “privately held company owned by the Taylor family.”"
+    },
+    {
+     "point": "States that Enterprise Holdings files no 10-K or other SEC periodic reports.",
+     "optional": false,
+     "met": true,
+     "note": "It says the company “files nothing with the SEC” and that “no 10-K exists.”"
+    },
+    {
+     "point": "States that Enterprise does not publish net income.",
+     "optional": false,
+     "met": true,
+     "note": "It says Enterprise “does not disclose net income” and marks Enterprise net income unavailable."
+    },
+    {
+     "point": "States that Enterprise does not publish operating income.",
+     "optional": false,
+     "met": true,
+     "note": "It says no operating-income figure is publicly reported for Enterprise."
+    },
+    {
+     "point": "Does not give or substitute any net income or operating income figure as Enterprise’s reported result.",
+     "optional": false,
+     "met": true,
+     "note": "Enterprise’s figures are explicitly unavailable; the net-income values in the table are explicitly attributed to Hertz and Avis, not Enterprise. No Enterprise operating-income figure is given."
+    },
+    {
+     "point": "If mentioning Enterprise FY2025 revenue, labels about USD 39 billion as company-stated and not SEC-filed.",
+     "optional": true,
+     "met": true,
+     "note": "The answer does not mention Enterprise revenue, so it does not mislabel a revenue figure."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer clearly abstains on Enterprise’s requested figures, identifies the company as privately held and non-filing with the SEC, and does not substitute Hertz or Avis values for Enterprise. Peer net-income figures are separately labeled as peer results.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Hertz FY2025 GAAP net loss was $747 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/47129/000165785326000010/q42025earningsrelease.htm",
+     "reason": "The February 26, 2026 release says Hertz reported a $747 million net loss for full-year 2025; its summary results show the year ended December 31. The amount is in USD millions and is the GAAP net-loss figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hertz FY2025 revenue was $8,504 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1657853/000165785326000008/",
+     "reason": "The cited XBRL facts give Revenues of $8,504,000,000 for 2025-01-01 through 2025-12-31, equivalent to USD 8,504 million. The associated 10-K filing is dated February 26, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hertz FY2025 net income margin was -8.8%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/47129/000165785326000010/q42025earningsrelease.htm",
+     "reason": "Using the GAAP net loss and revenue supported by the cited release/XBRL: (-747 ÷ 8,504) × 100 = -8.7841%, which rounds to -8.8% at one decimal. Both inputs are for FY2025, USD millions, and Hertz consolidated results.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Avis FY2025 net loss attributable to Avis Budget Group, Inc. was $889 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723612/000072361226000010/a03-prxpressreleasexq4f25.htm",
+     "reason": "The February 18, 2026 FY2025 release's summary data sheet reports net loss attributable to Avis Budget Group, Inc. of $(889) million for the year ended December 31, 2025. This is the parent-attributable GAAP loss, not the consolidated net loss of $(995) million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Avis FY2025 revenue was $11,652 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723612/000072361226000010/a03-prxpressreleasexq4f25.htm",
+     "reason": "The FY2025 release table reports revenues of $11,652 million for the year ended December 31, 2025; this is the exact USD-million figure, rather than the rounded $11.7 billion headline.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Avis FY2025 net income margin was -7.6%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723612/000072361226000010/a03-prxpressreleasexq4f25.htm",
+     "reason": "Using parent-attributable GAAP net loss and consolidated revenue from the FY2025 release: (-889 ÷ 11,652) × 100 = -7.6339%, which rounds to -7.6% at one decimal. Both figures cover the year ended December 31, 2025 and are in USD millions.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Enterprise Holdings was owned by the Taylor family and privately held",
+     "numeric": false,
+     "cited_url": "https://www.prnewswire.com/news-releases/enterprise-holdings-expanding-global-network-neighborhood-services-and-airport-market-share-300167086.html",
+     "reason": "The retrieved PR Newswire text says Enterprise Holdings and Enterprise Fleet Management are owned by the Taylor family and describes them as privately held businesses. However, the retrieved source has no publication date and refers to fiscal 2015, so it does not establish that this remains true as of the answer's stated 2026-10-03 date.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hertz Q2 FY2026 GAAP net income was $64 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/47129/000165785326000045/q22026earningsrelease.htm",
+     "reason": "The August 6, 2026 Q2 release explicitly reports GAAP net income of $64 million for the quarter ended June 30, 2026; the summary table identifies consolidated results and USD millions.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hertz Q2 FY2026 revenue was $2,396 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/47129/000165785326000045/q22026earningsrelease.htm",
+     "reason": "The Q2 2026 summary results table reports total revenues of $2,396 million for the three months ended June 30, 2026. The release date is August 6, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hertz Q2 FY2026 net income margin was 3%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/47129/000165785326000045/q22026earningsrelease.htm",
+     "reason": "From the cited Q2 release's GAAP net income and revenue: (64 ÷ 2,396) × 100 = 2.6711%, which rounds to 3% at the table's whole-percent precision. Period and consolidated basis match.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hertz Q2 FY2026 Adjusted Corporate EBITDA was $81 million and its margin was 3%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/47129/000165785326000045/q22026earningsrelease.htm",
+     "reason": "The August 6, 2026 release reports Q2 Adjusted Corporate EBITDA of $81 million and Adjusted Corporate EBITDA margin of 3%. Independently, 81 ÷ 2,396 × 100 = 3.3806%, consistent with rounding to 3%. Adjusted Corporate EBITDA is explicitly non-GAAP; it is not operating income.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Avis Q2 FY2026 net income attributable to Avis Budget Group, Inc. was $35 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723612/000072361226000037/a03-pressreleasexq2f26.htm",
+     "reason": "The July 28, 2026 Q2 release's summary data sheet reports net income attributable to Avis Budget Group, Inc. of $35 million for the quarter ended June 30, 2026. This is the parent-attributable amount; consolidated net income including noncontrolling interests was $63 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Avis Q2 FY2026 revenue was $2,998 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723612/000072361226000037/a03-pressreleasexq2f26.htm",
+     "reason": "The Q2 2026 release reports revenues of $2,998 million in the summary data sheet and statement of operations for the three months ended June 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Avis Q2 FY2026 net income margin was 1.2%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723612/000072361226000037/a03-pressreleasexq2f26.htm",
+     "reason": "Using the parent-attributable net income figure shown in the answer and the release's consolidated revenue: (35 ÷ 2,998) × 100 = 1.1674%, which rounds to 1.2% at one decimal. Both inputs are Q2 2026 and in USD millions.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Avis Q2 FY2026 Adjusted EBITDA was $286 million and its margin was 9.5%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/723612/000072361226000037/a03-pressreleasexq2f26.htm",
+     "reason": "The July 28, 2026 release reports Q2 Adjusted EBITDA of $286 million. Calculating 286 ÷ 2,998 × 100 = 9.5397%, which rounds to the stated 9.5%. Adjusted EBITDA is a non-GAAP measure as the release explains; it is not operating income.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 14,
+   "numeric_cited": 14,
+   "cited": 15,
+   "supported": 14,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 111.6
+ }
+}

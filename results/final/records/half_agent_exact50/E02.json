@@ -1,0 +1,258 @@
+{
+ "id": "E02",
+ "category": "missing period",
+ "difficulty": "medium",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "wells fargo nim",
+ "grading": "(1) Identifies Wells Fargo & Company (WFC). (2) States the period interpretation: latest reported quarter is Q2 2026 (three months ended June 30, 2026; reported July 14, 2026), and notes Q3 2026 has not been reported as of 2026-10-03 (due mid-October). (3) Gives the reported net interest margin for Q2 2026 with a citation (earnings release or 10-Q), does not confuse NIM with net interest income, and (optionally) gives the prior-year comparison. (4) Fail if it gives a NIM for an unnamed or different quarter, gives any Q3 2026 figure, or gives a number for another bank.",
+ "answer": "Wells Fargo, Q2 2026 (ended June 30, 2026; reported July 14, 2026): NIM 2.43% vs 2.68% a year earlier; Q3 2026 not yet reported.",
+ "output": {
+  "answer": "**Question:** wells fargo nim\n*As of 2026-10-03*\n\n**Interpreted as:** No period given, so read as the latest reported quarter: Q2 FY2026 (2026-04-01 to 2026-06-30), the most recent period with results released. WFC's fiscal year is the calendar year, so FY2026 quarters align with calendar quarters. 'nim' read as net interest margin, the company's reported net interest margin on a taxable-equivalent basis, plus the net interest income and average earning-asset figures behind it. Q3 FY2026 (ended 2026-09-30) is not yet reported, so it is not covered.\n\n| | Net interest margin on a taxable-equivalent basis (%) | Net interest income, as reported (USD millions) | Net interest income on a taxable-equivalent basis (USD millions) | Average earning assets, derived (USD millions) |\n|---|---|---|---|---|\n| Q2 FY2026 (quarter ended June 30, 2026) | 2.43 [1][2] | 12,317 [1][3] | 12,392 [2] | 2,039,835 [2] |\n\n- Wells Fargo's net interest margin on a taxable-equivalent basis was 2.43% in Q2 FY2026 (quarter ended June 30, 2026), the latest reported quarter. [1][4][3][2]\n- The company disclosed that Q2 FY2026 net interest margin of 2.43% was down 4 bps from Q1 FY2026 (quarter ended March 31, 2026), when it was 2.47%. [3][1]\n- Q2 FY2026 net interest margin of 2.43% compares with 2.68% in Q2 FY2025 (quarter ended June 30, 2025), a change of -25.0 bps. [1][2]\n- The taxable-equivalent basis figures for Q2 FY2026 include taxable-equivalent adjustments of $75 million, predominantly related to tax-exempt income on certain loans and securities. [2]\n- The 10-Q states that net interest margin decreased in the second quarter of 2026 versus a year ago, driven by growth in lower-yielding assets in the Markets business as well as growth in interest-bearing deposits. [2]\n\n**Not available**\n- Net interest margin for Q3 FY2026 (quarter ended September 30, 2026): The quarter has ended but results were not yet released as of 2026-10-03; the latest reported quarter is Q2 FY2026.\n\n**Sources**\n[1] WELLS FARGO & COMPANY/MN earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-07-14) (www.sec.gov, 2026-07-14, primary) https://www.sec.gov/Archives/edgar/data/72971/000007297126000288/wfc2qer07-14x26ex991xrelea.htm\n[2] WELLS FARGO & COMPANY/MN 10-Q for Q2 FY2026 (filed 2026-07-28) (www.sec.gov, 2026-07-28, primary) https://www.sec.gov/Archives/edgar/data/72971/000007297126000302/wfc-20260630.htm\n[3] WELLS FARGO & COMPANY/MN earnings release for Q2 FY2026, 8-K EX-99.3 (filed 2026-07-14) (www.sec.gov, 2026-07-14, primary) https://www.sec.gov/Archives/edgar/data/72971/000007297126000288/ex993-wellsfargo2q26pres.htm\n[4] WELLS FARGO & COMPANY/MN earnings release for Q2 FY2026, 8-K EX-99.2 (filed 2026-07-14) (www.sec.gov, 2026-07-14, primary) https://www.sec.gov/Archives/edgar/data/72971/000007297126000288/wfc2qer07-14x26ex992xsuppl.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 49180,
+   "output": 7029
+  },
+  "tavily_credits": 0.0,
+  "latency_s": 46.16,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/da6d6db378e07649a30fee9f68b0be45",
+  "companies": [
+   {
+    "name": "WELLS FARGO & COMPANY/MN",
+    "ticker": "WFC",
+    "cik": "72971",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "No period given, so read as the latest reported quarter: Q2 FY2026 (2026-04-01 to 2026-06-30), the most recent period with results released.",
+    "WFC's fiscal year is the calendar year, so FY2026 quarters align with calendar quarters.",
+    "'nim' read as net interest margin, the company's reported net interest margin on a taxable-equivalent basis, plus the net interest income and average earning-asset figures behind it.",
+    "Q3 FY2026 (ended 2026-09-30) is not yet reported, so it is not covered."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Net interest margin (taxable-equivalent) for Q2 FY2026",
+    "Net interest income for Q2 FY2026",
+    "Average earning assets / average interest-earning assets for Q2 FY2026",
+    "Change in net interest margin vs Q1 FY2026 and vs Q2 FY2025 (prior-year quarter)",
+    "Management commentary on drivers of the net interest margin (rates, deposit costs, balance sheet mix)"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "WFC",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "WFC",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "WFC",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    },
+    {
+     "ticker": "WFC",
+     "period": "Q1 FY2026",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q3 FY2026 (2026-07-01 to 2026-09-30) has ended but results are not yet released, so no Q3 net interest margin exists as of 2026-10-03.",
+    "Net interest margin is a non-GAAP-style ratio disclosed in the earnings release and MD&A; it is not a tagged financial-statement line, so it must be read from the release/10-Q text."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Net interest margin for Q3 FY2026 (quarter ended September 30, 2026)",
+    "kind": "not_reported_yet",
+    "reason": "The quarter has ended but results were not yet released as of 2026-10-03; the latest reported quarter is Q2 FY2026.",
+    "evidence_ids": []
+   }
+  ],
+  "removed": [],
+  "assumptions": [
+   "No period given, so read as the latest reported quarter: Q2 FY2026 (2026-04-01 to 2026-06-30), the most recent period with results released.",
+   "WFC's fiscal year is the calendar year, so FY2026 quarters align with calendar quarters.",
+   "'nim' read as net interest margin, the company's reported net interest margin on a taxable-equivalent basis, plus the net interest income and average earning-asset figures behind it.",
+   "Q3 FY2026 (ended 2026-09-30) is not yet reported, so it is not covered."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": []
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.sec.gov/Archives/edgar/data/72971/000007297126000288/ex993-wellsfargo2q26pres.htm",
+    "https://www.sec.gov/Archives/edgar/data/72971/000007297126000288/wfc2qer07-14x26ex991xrelea.htm",
+    "https://www.sec.gov/Archives/edgar/data/72971/000007297126000288/wfc2qer07-14x26ex992xsuppl.htm",
+    "https://www.sec.gov/Archives/edgar/data/72971/000007297126000302/wfc-20260630.htm"
+   ],
+   "cited_primary": 4,
+   "retrieved": 8,
+   "retrieved_primary": 8
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 0.889,
+   "points": [
+    {
+     "point": "Identifies Wells Fargo & Company (WFC).",
+     "optional": false,
+     "met": true,
+     "note": "The answer identifies Wells Fargo and refers to “WFC.”"
+    },
+    {
+     "point": "States that the latest reported quarter is Q2 2026, ended June 30, 2026.",
+     "optional": false,
+     "met": true,
+     "note": "It calls Q2 FY2026 the latest reported quarter and gives the June 30, 2026 quarter end."
+    },
+    {
+     "point": "States that Q2 2026 was reported July 14, 2026.",
+     "optional": false,
+     "met": true,
+     "note": "The cited Q2 earnings-release source is identified as dated/filed July 14, 2026."
+    },
+    {
+     "point": "Notes that Q3 2026 had not been reported as of 2026-10-03.",
+     "optional": false,
+     "met": true,
+     "note": "The answer says Q3 results were not yet released as of 2026-10-03."
+    },
+    {
+     "point": "Notes that Q3 2026 results were due mid-October.",
+     "optional": false,
+     "met": false,
+     "note": "The answer says results were not yet released but does not give the expected mid-October timing."
+    },
+    {
+     "point": "Gives Wells Fargo’s reported Q2 2026 NIM with a citation to an earnings release or 10-Q, without confusing NIM with NII.",
+     "optional": false,
+     "met": true,
+     "note": "It reports 2.43% NIM for Q2 FY2026, cites the earnings release and 10-Q, and distinguishes NIM from NII."
+    },
+    {
+     "point": "Does not give a NIM for an unnamed or different quarter.",
+     "optional": false,
+     "met": true,
+     "note": "The stated NIM is explicitly labeled Q2 FY2026."
+    },
+    {
+     "point": "Does not give any Q3 2026 NIM figure.",
+     "optional": false,
+     "met": true,
+     "note": "It says Q3 NIM is not available and provides no Q3 figure."
+    },
+    {
+     "point": "Does not give a NIM number for another bank.",
+     "optional": false,
+     "met": true,
+     "note": "All reported figures are identified as Wells Fargo’s."
+    },
+    {
+     "point": "Optionally gives the prior-year NIM comparison.",
+     "optional": true,
+     "met": true,
+     "note": "It compares Q2 2026 NIM of 2.43% with Q2 2025 NIM of 2.68%."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The Q2 2026 Wells Fargo NIM is correctly identified, period-labeled, and cited, and the response correctly states Q3 had not been reported as of the snapshot date. However, it omits the required expectation that Q3 results were due mid-October.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "partial",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Q2 2026 taxable-equivalent net interest margin was 2.43% for quarter ended June 30, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000288/wfc2qer07-14x26ex991xrelea.htm",
+     "reason": "The Q2 2026 earnings release reports net interest margin on a taxable-equivalent basis of 2.43%; its comparative table identifies the quarter as ended June 30, 2026. The 10-Q also reports 2.43% in its quarterly taxable-equivalent table.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 as-reported net interest income was $12,317 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000288/wfc2qer07-14x26ex991xrelea.htm",
+     "reason": "The earnings release's quarter-comparison table lists net interest income of $12,317 million for June 30, 2026; this is the reported figure, distinct from the taxable-equivalent figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 taxable-equivalent net interest income was $12,392 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000302/wfc-20260630.htm",
+     "reason": "The 10-Q Table 2 states taxable-equivalent net interest income of $12,392 million for the quarter ended June 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 average earning assets, derived, were $2,039,835 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000302/wfc-20260630.htm",
+     "reason": "The cited 10-Q gives taxable-equivalent quarterly NII of $12,392 million and NIM of 2.43%. Using the stated annualized-quarter calculation, 12,392 × 4 ÷ 0.0243 = 2,039,835.39 million, which rounds to $2,039,835 million. The retrieved table also presents average-balance components. This supports the reported derived figure on the stated basis.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 NIM fell 4 basis points from Q1 2026's 2.47%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000288/ex993-wellsfargo2q26pres.htm",
+     "reason": "The investor presentation states Q2 NIM was 2.43%, down 4 bps, and its quarterly series lists Q1 2026 at 2.47%. The calculation 2.47% − 2.43% = 0.04 percentage points = 4 basis points.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 NIM of 2.43% was 25 basis points below Q2 2025's 2.68%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000288/wfc2qer07-14x26ex991xrelea.htm",
+     "reason": "The earnings release lists taxable-equivalent NIM as 2.43% for June 2026 and 2.68% for June 2025. 2.43% − 2.68% = −0.25 percentage points, or −25 basis points.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 taxable-equivalent figures include a $75 million adjustment, predominantly for tax-exempt income on certain loans and securities",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000302/wfc-20260630.htm",
+     "reason": "The 10-Q footnote states taxable-equivalent adjustments of $75 million for the quarter ended June 30, 2026, predominantly related to tax-exempt income on certain loans and securities. The reported-to-taxable-equivalent NII difference also reconciles: $12,317 million + $75 million = $12,392 million.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The 10-Q says year-over-year Q2 2026 NIM declined due to growth in lower-yielding Markets assets and interest-bearing deposits",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000302/wfc-20260630.htm",
+     "reason": "The retrieved 10-Q passage explicitly says NIM decreased in the second quarter versus the same period a year ago, driven by growth in lower-yielding Markets assets and growth in interest-bearing deposits.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 7,
+   "numeric_cited": 7,
+   "cited": 8,
+   "supported": 8,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 66.6
+ }
+}

@@ -1,0 +1,237 @@
+{
+ "id": "W01",
+ "category": "call commentary",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "On Bank of America's second-quarter 2026 earnings call (July 14, 2026), what full-year 2026 outlook did the CFO give for (a) net interest income (NII) growth and (b) operating leverage, and how did each compare with the outlook he said had been given earlier in 2026 (in January and/or April)?",
+ "grading": "Key points (all required): (1) full-year 2026 NII growth expected at the UPPER END of the 6%-8% range (not a new numeric range); (2) full-year 2026 operating leverage expected in the range of 300 to 400 basis points; (3) comparison with earlier outlook: NII growth was 5%-7% in January and raised to 6%-8% in April; operating leverage was 'more than 200 basis points' as of the April (Q1) call. Accept equivalent wording ('top end of 6-8%', '3-4 percentage points'). Fail if the answer gives plain 6%-8% or 5%-7% as the current NII view without 'upper end', gives 'more than 200 bps' as the current operating-leverage view, states a dollar NII figure as guidance, or relies on remarks from the Q3 2026 call (mid-October 2026, after the as_of date) or the mid-September Barclays conference.",
+ "answer": "(a) Full-year 2026 NII growth is now expected at the upper end of the 6%-8% range (the CFO recalled 5%-7% in January, raised to 6%-8% in April) [W01-E1]. (b) Full-year 2026 operating leverage is now expected to be 300 to 400 basis points, up from 'more than 200 basis points' given on the April call; first-half 2026 operating leverage had already exceeded 450 bps (Q2: 6.6%) [W01-E1]. Neither full-year outlook appears in the July 14 press release or in the slide deck filed with the 8-K [W01-E2, W01-E3].",
+ "output": {
+  "answer": "**Bank of America Q2 2026 earnings call — July 14, 2026 (CFO Alastair Borthwick)**\n\n**(a) Full-year 2026 net interest income (NII) growth**\n- **New outlook:** NII growth for full-year 2026 is expected **at the upper end of the 6%–8% range** (vs. 2025). Drivers cited: anticipated loan and deposit growth, fixed-rate asset repricing, and balance sheet optimization. The guidance assumes modest loan/deposit growth in H2 and the then-current forward curve (one 25 bp hike in September).\n- **Prior outlooks:** In **January**, BAC guided to **5%–7%** full-year NII growth. In **April**, it **raised the range to 6%–8%**. So the July update is an upgrade within/above the April range (top end) and a clear step up from January's 5%–7%.\n\n**(b) Full-year 2026 operating leverage**\n- **New outlook:** **300–400 basis points**, after first-half 2026 operating leverage exceeded **450 bps**.\n- **Prior outlook:** On the **Q1 (April) call**, Borthwick guided to **more than 200 bps** for the full year. He also noted that at Investor Day the bank had committed to **200–300 bps** of operating leverage over the next three-to-five years. So the July figure is an increase from \">200 bps\" (and above the longer-term 200–300 bps commitment).\n\n**Summary of comparisons**\n| Metric | January 2026 guide | April 2026 guide | July 14, 2026 guide |\n|---|---|---|---|\n| FY26 NII growth | 5%–7% | 6%–8% (raised) | Upper end of 6%–8% (raised again) |\n| FY26 operating leverage | ~>200 bps (consistent with prior) | >200 bps (reiterated) | 300–400 bps (raised) |\n\nSources:\n- Q2 2026 transcript (Borthwick: \"in January, we told you to expect 5%-7%... In April, we raised that... to 6%-8%. We now expect... upper end\"; \"On our first quarter earnings call in April, we told you we expected full-year operating leverage of more than 200 basis points... we now expect full-year operating leverage to be in the range of 300-400 basis points\"): https://stockanalysis.com/stocks/bac/transcripts/649666-q2-2026 ; https://finance.yahoo.com/quote/BAC/earnings/BAC-Q2-2026-earnings_call-649666.html\n- Reuters (July 14, 2026): https://www.reuters.com/business/finance/bank-america-profit-rises-trading-boost-2026-07-14\n- Q1 2026 call highlights (April guidance: NII raised to 6%–8%; >200 bps operating leverage): https://www.defenseworld.net/2026/04/17/bank-of-america-q1-earnings-call-highlights.html ; https://finance.yahoo.com/markets/stocks/articles/bank-america-q1-earnings-call-190422400.html",
+  "tokens": {
+   "input": 38833,
+   "output": 1382
+  },
+  "tavily_credits": 8,
+  "latency_s": 20.54,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/b40d9b099f37f4dbd15266db3b340f2d",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Bank of America second quarter 2026 earnings call July 14 2026 CFO net interest income outlook operating leverage",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Bank of America Q2 2026 earnings CFO full-year NII growth guidance operating leverage",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Borthwick Q2 2026 operating leverage \"we told you\" OR \"in April\" 200 basis points full year guidance transcript",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Bank of America Q1 2026 earnings call January 2026 NII 5-7% operating leverage guidance Borthwick",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/bank-america-q1-earnings-call-190422400.html",
+    "https://finance.yahoo.com/quote/BAC/earnings/BAC-Q2-2026-earnings_call-649666.html",
+    "https://stockanalysis.com/stocks/bac/transcripts/649666-q2-2026",
+    "https://www.defenseworld.net/2026/04/17/bank-of-america-q1-earnings-call-highlights.html",
+    "https://www.reuters.com/business/finance/bank-america-profit-rises-trading-boost-2026-07-14"
+   ],
+   "cited_primary": 0,
+   "retrieved": 36,
+   "retrieved_primary": 2
+  },
+  "recall": {
+   "figures": 16,
+   "found": 13
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "States current full-year 2026 NII growth outlook as the upper end of the 6%-8% range, not as a newly issued numeric range.",
+     "optional": false,
+     "met": true,
+     "note": "Says expected “at the upper end of the 6%–8% range.”"
+    },
+    {
+     "point": "States current full-year 2026 operating leverage outlook as 300 to 400 basis points.",
+     "optional": false,
+     "met": true,
+     "note": "Gives “300–400 basis points.”"
+    },
+    {
+     "point": "Compares NII outlook with January's 5%-7% and April's raised 6%-8% outlook.",
+     "optional": false,
+     "met": true,
+     "note": "Explicitly identifies January at 5%–7% and April raised to 6%–8%."
+    },
+    {
+     "point": "Compares operating-leverage outlook with the April/Q1-call outlook of more than 200 basis points.",
+     "optional": false,
+     "met": true,
+     "note": "Says the April Q1 call gave “more than 200 bps” for full-year operating leverage."
+    },
+    {
+     "point": "Does not present 6%-8% or 5%-7% as the current NII outlook without qualifying it as the upper end of the 6%-8% range.",
+     "optional": false,
+     "met": true,
+     "note": "The current outlook is specifically qualified as the upper end; earlier ranges are labeled prior."
+    },
+    {
+     "point": "Does not present 'more than 200 bps' as the current operating-leverage outlook.",
+     "optional": false,
+     "met": true,
+     "note": "Current view is stated as 300–400 bps; >200 bps is explicitly attributed to the April call."
+    },
+    {
+     "point": "Does not state a dollar NII figure as guidance.",
+     "optional": false,
+     "met": true,
+     "note": "No dollar NII guidance is given."
+    },
+    {
+     "point": "Does not rely on remarks from the Q3 2026 call or the mid-September Barclays conference.",
+     "optional": false,
+     "met": true,
+     "note": "The answer attributes its outlook to the July 14 Q2 call and April Q1 call."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer gives both required current outlooks and correctly compares each with the superseded guidance, while avoiding the listed traps.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "The Bank of America Q2 2026 earnings call was July 14, 2026, with Alastair Borthwick identified as CFO.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/BAC/earnings/BAC-Q2-2026-earnings_call-649666.html",
+     "reason": "The retrieved Yahoo transcript identifies the Q2 FY2026 call as Jul 14, 2026, and labels Alastair Borthwick EVP and CFO.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Borthwick said full-year 2026 NII growth would be at the upper end of 6%–8%.",
+     "numeric": true,
+     "cited_url": "https://stockanalysis.com/stocks/bac/transcripts/649666-q2-2026",
+     "reason": "The retrieved transcript says January guidance was 5%–7%, April guidance was 6%–8%, and the bank now expects full-year 2026 NII growth at the upper end of 6%–8%. This is forward guidance, not a reported actual result.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The NII outlook was supported by anticipated loan and deposit growth, fixed-rate asset repricing, and balance-sheet optimization.",
+     "numeric": false,
+     "cited_url": "https://stockanalysis.com/stocks/bac/transcripts/649666-q2-2026",
+     "reason": "The retrieved Q2 transcript states these three factors as support for the outlook.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The NII outlook assumed modest loan and deposit growth in the second half and the current forward curve, including one 25-basis-point rate hike in September.",
+     "numeric": true,
+     "cited_url": "https://stockanalysis.com/stocks/bac/transcripts/649666-q2-2026",
+     "reason": "The retrieved Q2 transcript explicitly gives the second-half assumption and says the then-current curve had one 25-basis-point September hike.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "In January, Bank of America told investors to expect 5%–7% full-year NII growth.",
+     "numeric": true,
+     "cited_url": "https://stockanalysis.com/stocks/bac/transcripts/649666-q2-2026",
+     "reason": "The retrieved Q2 transcript directly recounts the January full-year NII growth outlook as 5%–7%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "In April, Bank of America raised its full-year NII growth range to 6%–8%.",
+     "numeric": true,
+     "cited_url": "https://stockanalysis.com/stocks/bac/transcripts/649666-q2-2026",
+     "reason": "The Q2 transcript directly says that in April it raised the full-year range to 6%–8%; the retrieved Q1 call highlights independently report the same updated guidance.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The new full-year 2026 operating-leverage outlook was 300–400 basis points.",
+     "numeric": true,
+     "cited_url": "https://finance.yahoo.com/quote/BAC/earnings/BAC-Q2-2026-earnings_call-649666.html",
+     "reason": "The retrieved Yahoo Q2 call summary says management expects full-year operating leverage of 300–400 bps. This is guidance, not an actual result.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "First-half 2026 operating leverage exceeded 450 basis points.",
+     "numeric": true,
+     "cited_url": "https://stockanalysis.com/stocks/bac/transcripts/649666-q2-2026",
+     "reason": "The retrieved passage from this Q2 transcript does not state a first-half operating-leverage figure; its summary only says strong operating leverage without giving a number. The cited retrieved text therefore does not substantiate the claimed >450 bps actual.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "On the Q1 (April) call, Borthwick guided to more than 200 basis points of full-year operating leverage.",
+     "numeric": true,
+     "cited_url": "https://www.defenseworld.net/2026/04/17/bank-of-america-q1-earnings-call-highlights.html",
+     "reason": "The retrieved Q1 highlights say Borthwick reiterated the expectation of more than 200 basis points of positive operating leverage for the full year. This is guidance.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "At Investor Day, Bank of America committed to 200–300 basis points of operating leverage over the next three to five years.",
+     "numeric": true,
+     "cited_url": "https://stockanalysis.com/stocks/bac/transcripts/649666-q2-2026",
+     "reason": "The retrieved Q2 transcript text contains no Investor Day commitment or 200–300 bps / three-to-five-year figure, so the cited retrieved evidence does not substantiate this claim.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The summary table gives January 2026 full-year operating-leverage guidance as approximately more than 200 basis points.",
+     "numeric": true,
+     "cited_url": "https://www.defenseworld.net/2026/04/17/bank-of-america-q1-earnings-call-highlights.html",
+     "reason": "The retrieved Q1 highlights support a more-than-200-bps full-year outlook stated on the Q1 call, but do not establish that this was the January 2026 guide. The table's January attribution is not supported by the cited retrieved text.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 10,
+   "numeric_cited": 10,
+   "cited": 11,
+   "supported": 8,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 89.1
+ }
+}

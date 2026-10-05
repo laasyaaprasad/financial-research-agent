@@ -1,0 +1,282 @@
+{
+ "id": "E27",
+ "category": "not yet reported",
+ "difficulty": "easy",
+ "time_sensitivity": "dynamic",
+ "answer_type": "abstain",
+ "question": "jpm 3q26 eps",
+ "grading": "(1) Identifies JPMorgan Chase (JPM) and states that Q3 2026 results have not been reported as of 2026-10-03 (scheduled Oct 13, 2026). (2) Gives no EPS figure for Q3 2026, whether estimate, consensus or guess. (3) Offers the latest reported quarter, Q2 2026 (ended June 30, 2026; reported July 14, 2026), with EPS labelled and cited. (4) Fail if it gives any Q3 2026 EPS number or analyst estimate.",
+ "answer": "Cannot give Q3 2026 EPS (JPM reports Oct 13, 2026); offers Q2 2026 reported EPS of $7.70 (and the figure excluding significant items) with citations.",
+ "output": {
+  "answer": "**Question:** jpm 3q26 eps\n*As of 2026-10-03*\n\n**Interpreted as:** '3q26' = Q3 FY2026 (2026-07-01 to 2026-09-30), JPMorgan Chase & Co. (JPM), fiscal year = calendar year. Q3 FY2026 has ended but is not yet reported as of 2026-10-03 (results not released), so the answer covers the latest reported quarter instead: Q2 FY2026 (2026-04-01 to 2026-06-30), with its headline results and the company's guidance. EPS read as GAAP diluted EPS per share, with net income and revenue for context.\n\n| | Diluted EPS (GAAP, USD/share) | Basic EPS (GAAP, USD/share) | Net income (USD millions) | Total net revenue, reported (USD millions) |\n|---|---|---|---|---|\n| JPM — Q2 FY2026 (quarter ended June 30, 2026) | 7.70 [1][2][3] | 7.71 [2][3] | 21,155 [1][3] | 57,347 [1][3] |\n\n- JPMorgan Chase's Q3 FY2026 (quarter ending September 30, 2026) diluted EPS is not yet reported as of October 3, 2026: the quarter has ended, but the latest reported period in the evidence is Q2 FY2026 (quarter ended June 30, 2026), and the Q3 FY2026 earnings release is still listed as upcoming. [2][4]\n- JPMorgan Chase reported GAAP diluted EPS of $7.70 for Q2 FY2026 (quarter ended June 30, 2026), versus $5.24 in the prior-year quarter (Q2 FY2025), a 47% increase as disclosed. [1][2][3]\n- Calculated on the printed inputs, Q2 FY2026 diluted EPS of $7.70 versus $5.24 in Q2 FY2025 is a 46.9% year-over-year increase, against the 47% the company disclosed. [2]\n- Q2 FY2026 GAAP diluted EPS of $7.70 included significant items in the quarter: a $4.6 billion net gain related to Visa shares (a $1.27 increase in EPS) and $1.0 billion of gains on certain equity investments (a $0.29 increase in EPS). [1]\n- For the year-ago comparable, JPMorgan Chase reported GAAP diluted EPS of $5.07 for Q3 FY2025 (quarter ended September 30, 2025), on net income of $14,393 million and total net revenue of $46,427 million. [2][5]\n- JPMorgan Chase does not disclose EPS guidance; the guidance it updated after Q2 FY2026 covers net interest income, adjusted expense and the card net charge-off rate, not earnings per share. [6]\n- As reported by Hudson Labs, JPMorgan Chase's FY2026 guidance as of the Q2 FY2026 report was for NII excluding Markets of ~$96.5B (raised from $95B), total NII of ~$105.5B (raised from $103B), adjusted expense of ~$107.5B (raised from $105B) and a Card net charge-off rate of ~3.2% (lowered from 3.4%). [6]\n- TIKR.com reported the same raised FY2026 total NII guidance of $105.5B following the Q2 FY2026 results. [7]\n- JPMorgan Chase's Q3 FY2026 earnings release is scheduled for October 13, 2026, according to Trefis's upcoming-events calendar. [4]\n\n**Not available**\n- Q3 FY2026 (quarter ended September 30, 2026) diluted EPS for JPMorgan Chase: The quarter has ended but JPMorgan Chase had not reported Q3 FY2026 results as of 2026-10-03; the latest earnings release and 10-Q in the evidence cover Q2 FY2026 (filed 2026-07-14 and 2026-08-06). The Q3 FY2026 earnings release is scheduled for 2026-10-13 per Trefis's upcoming-events calendar, with the 10-Q to follow. [2][4]\n- Q3 FY2026 net income and total net revenue for JPMorgan Chase: No Q3 FY2026 income statement figures exist in the evidence; the most recent reported quarter is Q2 FY2026 (quarter ended June 30, 2026). [2][5]\n- Company-issued EPS guidance for Q3 FY2026 or FY2026: JPMorgan Chase's post-Q2 guidance covers FY2026 net interest income, adjusted expense and card net charge-off rate; no EPS guidance is disclosed in the evidence. [6]\n\n**Sources**\n[1] JPMORGAN CHASE & CO earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-07-14) (www.sec.gov, 2026-07-14, primary) https://www.sec.gov/Archives/edgar/data/19617/000162828026048078/a2q26erfexhibit991narrative.htm\n[2] JPMORGAN CHASE & CO earnings release for Q2 FY2026, 8-K EX-99.2 (filed 2026-07-14) (www.sec.gov, 2026-07-14, primary) https://www.sec.gov/Archives/edgar/data/19617/000162828026048078/a2q26erfex992supplement.htm\n[3] JPMORGAN CHASE & CO XBRL data tagged in 10-Q filed 2026-08-06 (www.sec.gov, 2026-08-06, primary) https://www.sec.gov/Archives/edgar/data/19617/000162828026054343/\n[4] JPMorgan Chase (JPM) | Trefis (www.trefis.com, undated, secondary) https://www.trefis.com/data/companies/JPM\n[5] JPMORGAN CHASE & CO 10-Q for Q2 FY2026 (filed 2026-08-06) (www.sec.gov, 2026-08-06, primary) https://www.sec.gov/Archives/edgar/data/19617/000162828026054343/jpm-20260630.htm\n[6] JPMorgan Q3 2026 Earnings Preview: Revenue, Guidance, Outlook | Hudson Labs (www.hudson-labs.com, undated, secondary) https://www.hudson-labs.com/research/jpmorgan-q3-2026-earnings-preview-revenue-guidance-outlook\n[7] JPMorgan Chase Stock Beats Q2 Estimates as Equities Trading Revenue Surges 86% | TIKR.com (www.tikr.com, undated, secondary) https://www.tikr.com/blog/jpmorgan-chase-stock-beats-q2-estimates-as-equities-trading-revenue-surges-86\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 170418,
+   "output": 33168
+  },
+  "tavily_credits": 2.0,
+  "latency_s": 120.45,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/f4af91e07bf74468c5de6c896b92458b",
+  "companies": [
+   {
+    "name": "JPMORGAN CHASE & CO",
+    "ticker": "JPM",
+    "cik": "19617",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "'3q26' = Q3 FY2026 (2026-07-01 to 2026-09-30), JPMorgan Chase & Co. (JPM), fiscal year = calendar year.",
+    "Q3 FY2026 has ended but is not yet reported as of 2026-10-03 (results not released), so the answer covers the latest reported quarter instead: Q2 FY2026 (2026-04-01 to 2026-06-30), with its headline results and the company's guidance.",
+    "EPS read as GAAP diluted EPS per share, with net income and revenue for context."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Q2 FY2026 diluted EPS (GAAP) and net income",
+    "Q2 FY2026 total net revenue and year-over-year growth",
+    "Q2 FY2026 noninterest expense and provision for credit losses",
+    "Q2 FY2026 return on common equity / book value per share if disclosed",
+    "Company guidance given with Q2 FY2026 results (e.g. FY2026 net interest income and expense outlook)",
+    "Q3 FY2026 reporting date if announced"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "JPM",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "JPM",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "JPM",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [],
+   "availability_notes": [
+    "Q3 FY2026 (2026-07-01 to 2026-09-30) EPS is not yet reported as of 2026-10-03; the period has ended but no earnings release or 10-Q exists, so no Q3 figure can be given or estimated.",
+    "JPM's Q3 FY2026 earnings release is expected mid-October 2026 (Q1 and Q2 releases were filed 2026-04-14 and 2026-07-14); the 10-Q would follow in early November."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Q3 FY2026 (quarter ended September 30, 2026) diluted EPS for JPMorgan Chase",
+    "kind": "not_reported_yet",
+    "reason": "The quarter has ended but JPMorgan Chase had not reported Q3 FY2026 results as of 2026-10-03; the latest earnings release and 10-Q in the evidence cover Q2 FY2026 (filed 2026-07-14 and 2026-08-06). The Q3 FY2026 earnings release is scheduled for 2026-10-13 per Trefis's upcoming-events calendar, with the 10-Q to follow.",
+    "evidence_ids": [
+     "E2",
+     "E7"
+    ]
+   },
+   {
+    "item": "Q3 FY2026 net income and total net revenue for JPMorgan Chase",
+    "kind": "not_reported_yet",
+    "reason": "No Q3 FY2026 income statement figures exist in the evidence; the most recent reported quarter is Q2 FY2026 (quarter ended June 30, 2026).",
+    "evidence_ids": [
+     "E2",
+     "E3"
+    ]
+   },
+   {
+    "item": "Company-issued EPS guidance for Q3 FY2026 or FY2026",
+    "kind": "not_disclosed",
+    "reason": "JPMorgan Chase's post-Q2 guidance covers FY2026 net interest income, adjusted expense and card net charge-off rate; no EPS guidance is disclosed in the evidence.",
+    "evidence_ids": [
+     "E5"
+    ]
+   }
+  ],
+  "removed": [],
+  "assumptions": [
+   "'3q26' = Q3 FY2026 (2026-07-01 to 2026-09-30), JPMorgan Chase & Co. (JPM), fiscal year = calendar year.",
+   "Q3 FY2026 has ended but is not yet reported as of 2026-10-03 (results not released), so the answer covers the latest reported quarter instead: Q2 FY2026 (2026-04-01 to 2026-06-30), with its headline results and the company's guidance.",
+   "EPS read as GAAP diluted EPS per share, with net income and revenue for context."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "jpm Company guidance for Q3 FY2026 EPS (or for Q3 FY2026 results generally)",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.hudson-labs.com/research/jpmorgan-q3-2026-earnings-preview-revenue-guidance-outlook",
+      "https://tickeron.com/trading-investing-101/q2-2026-earnings-preview-july-1317-2026--fast-jpm-bac-gs-wfc-c-asml-jnj-ms-blk-pnc-tsm-unh-ge-nflx-stx",
+      "https://www.trefis.com/data/companies/JPM"
+     ],
+     "query": "jpm 3q26 eps",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.hudson-labs.com/research/jpmorgan-q3-2026-earnings-preview-revenue-guidance-outlook",
+    "https://www.sec.gov/Archives/edgar/data/19617/000162828026048078/a2q26erfex992supplement.htm",
+    "https://www.sec.gov/Archives/edgar/data/19617/000162828026048078/a2q26erfexhibit991narrative.htm",
+    "https://www.sec.gov/Archives/edgar/data/19617/000162828026054343/",
+    "https://www.sec.gov/Archives/edgar/data/19617/000162828026054343/jpm-20260630.htm",
+    "https://www.tikr.com/blog/jpmorgan-chase-stock-beats-q2-estimates-as-equities-trading-revenue-surges-86",
+    "https://www.trefis.com/data/companies/JPM"
+   ],
+   "cited_primary": 4,
+   "retrieved": 9,
+   "retrieved_primary": 4
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Identifies JPMorgan Chase (JPM) and states that Q3 2026 results had not been reported as of 2026-10-03, with the release scheduled for Oct. 13, 2026.",
+     "optional": false,
+     "met": true,
+     "note": "Identifies JPMorgan Chase and says Q3 results are not yet reported as of Oct. 3; states the release is scheduled for Oct. 13 and cites Trefis."
+    },
+    {
+     "point": "Gives no Q3 2026 EPS figure, whether estimate, consensus, or guess.",
+     "optional": false,
+     "met": true,
+     "note": "No Q3 2026 EPS figure is stated in the answer."
+    },
+    {
+     "point": "Offers latest reported quarter Q2 2026, ended June 30, 2026, with EPS labelled and cited.",
+     "optional": false,
+     "met": true,
+     "note": "Provides Q2 FY2026 diluted GAAP EPS of $7.70, labels it, gives the quarter-end date, and cites the SEC earnings release and filing."
+    },
+    {
+     "point": "Does not give any Q3 2026 EPS number or analyst estimate.",
+     "optional": false,
+     "met": true,
+     "note": "Although a retrieved source contains a Q3 consensus estimate, the answer itself does not quote or provide one."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer clearly abstains on Q3 2026 EPS, supplies no Q3 EPS number or estimate, and gives cited, labeled Q2 2026 reported EPS.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "JPM Q2 2026 actuals: diluted EPS $7.70, basic EPS $7.71, net income $21,155 million, reported total net revenue $57,347 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026048078/a2q26erfexhibit991narrative.htm",
+     "reason": "The SEC earnings release identifies the quarter as 2Q26 and reports diluted EPS $7.70, net income $21,155 million, and reported net revenue $57,347 million. The cited supplement and 10-Q give basic EPS $7.71. These are reported/GAAP figures, and the 10-Q period is the three months ended June 30, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "JPM reported Q2 2026 diluted EPS $7.70 versus $5.24 in Q2 2025, a disclosed 47% increase",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026048078/a2q26erfex992supplement.htm",
+     "reason": "The release supplement’s diluted-EPS row shows $7.70 for 2Q26 and $5.24 for 2Q25, with a 47% change; the comparison is the year-ago quarter.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Calculated diluted-EPS year-over-year growth from $7.70 and $5.24 is 46.9%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026048078/a2q26erfex992supplement.htm",
+     "reason": "Using the cited printed inputs: ((7.70 − 5.24) / 5.24) × 100 = 46.94656…%, which rounds to 46.9% to one decimal place.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 2026 included a $4.6 billion net gain related to Visa shares that increased EPS by $1.27, and $1.0 billion of equity-investment gains that increased EPS by $0.29",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026048078/a2q26erfexhibit991narrative.htm",
+     "reason": "The earnings release’s significant-items section gives both gains and their respective per-share EPS effects. The quarter and dollar/EPS units match the answer.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "JPM Q3 2025 reported diluted EPS of $5.07, net income of $14,393 million, and reported total net revenue of $46,427 million",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026048078/a2q26erfex992supplement.htm",
+     "reason": "The supplement’s quarterly trends list 3Q25 total net revenue $46,427 million, net income $14,393 million, and diluted EPS $5.07; the cited Q2 2026 10-Q also shows these comparative Q3 2025 figures.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Hudson Labs reports FY2026 guidance after Q2 of about $96.5 billion NII excluding Markets, $105.5 billion total NII, $107.5 billion adjusted expense, and a 3.2% Card net charge-off rate, with the stated increases/decrease from prior guidance",
+     "numeric": true,
+     "cited_url": "https://www.hudson-labs.com/research/jpmorgan-q3-2026-earnings-preview-revenue-guidance-outlook",
+     "reason": "The retrieved Hudson Labs text explicitly lists those FY2026 guidance figures and says NII ex Markets was raised from $95B, total NII from $103B, adjusted expense from $105B, and Card NCO lowered from 3.4%. This supports the figures, units, and direction of revisions as secondary-source reporting.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TIKR reported FY2026 total NII guidance of $105.5 billion, raised after Q2 2026 results",
+     "numeric": true,
+     "cited_url": "https://www.tikr.com/blog/jpmorgan-chase-stock-beats-q2-estimates-as-equities-trading-revenue-surges-86",
+     "reason": "The retrieved TIKR text states FY2026 Total NII Guidance (raised): $105.5B in its Q2 2026 results summary.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Trefis listed JPMorgan Chase’s Q3 2026 earnings release for October 13, 2026",
+     "numeric": true,
+     "cited_url": "https://www.trefis.com/data/companies/JPM",
+     "reason": "The retrieved Trefis upcoming-events calendar lists 10/13/2026 as an Earnings Release for JPM. This supports the scheduled event date as a Trefis listing, not as a primary company announcement.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "JPM’s Q2 2026 earnings release was filed July 14, 2026, and its Q2 2026 Form 10-Q was filed August 6, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026054343/jpm-20260630.htm",
+     "reason": "The cited SEC source metadata/title identifies the 10-Q as filed 2026-08-06; the earnings release sources identify the 8-K exhibits as filed 2026-07-14. Both publication dates match the answer’s source list.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 9,
+   "numeric_cited": 9,
+   "cited": 9,
+   "supported": 9,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 120.2
+ }
+}

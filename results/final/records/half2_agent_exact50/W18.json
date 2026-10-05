@@ -1,0 +1,309 @@
+{
+ "id": "W18",
+ "category": "multi-hop",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "number",
+ "question": "In August 2026 Nielsen agreed to acquire DoubleVerify. As of 3 October 2026, what enterprise value did the companies announce, and what multiple is that of DoubleVerify's trailing-twelve-month (TTM) Adjusted EBITDA for the twelve months ended June 30, 2026? (TTM = FY2025 + first-half 2026 - first-half 2025, using DoubleVerify's reported Adjusted EBITDA.)",
+ "grading": "Key points (all required): (1) enterprise value of about US$2.15 billion at US$13.60 per share in cash; (2) TTM Adjusted EBITDA to 30 June 2026 about US$264.2 million (245.6 + 120.5 - 101.9); (3) EV / TTM Adjusted EBITDA about 8.1x (accept 8.0x-8.3x). Optional: EV / TTM revenue about 2.8x (TTM revenue about US$768.8M). Fail if the EV is taken from a different media figure (e.g., US$2.5 billion), if FY2025 EBITDA or guidance is used, or if the multiple is computed on revenue only.",
+ "answer": "About 8.1x: EV of about US$2.15 billion (US$13.60 per share in cash) [W18-E1] divided by TTM Adjusted EBITDA of about US$264.2 million = FY2025 US$245.6M [W18-E3] + H1 2026 US$120.5M - H1 2025 US$101.9M [W18-E2] = 2,150 / 264.2 = 8.14x. (On TTM revenue of about US$768.8M it is about 2.8x.)",
+ "output": {
+  "answer": "**Question:** In August 2026 Nielsen agreed to acquire DoubleVerify. As of 3 October 2026, what enterprise value did the companies announce, and what multiple is that of DoubleVerify's trailing-twelve-month (TTM) Adjusted EBITDA for the twelve months ended June 30, 2026? (TTM = FY2025 + first-half 2026 - first-half 2025, using DoubleVerify's reported Adjusted EBITDA.)\n*As of 2026-10-03*\n\n**Interpreted as:** 'Nielsen' read as Nielsen Holdings plc, which is not a currently reporting SEC registrant, so the announced deal terms must come from news/announcements rather than its filings. The TTM Adjusted EBITDA is computed exactly as the question specifies: FY2025 + H1 FY2026 − H1 2025, using DoubleVerify's reported (non-GAAP) Adjusted EBITDA. H1 figures are taken from the Q2 earnings releases, which report both the quarter and the six-month period. The multiple is a factual arithmetic ratio of the announced enterprise value to the computed TTM Adjusted EBITDA, not a valuation opinion.\n\n| | Adjusted EBITDA (USD thousands, non-GAAP, as reported) | Adjusted EBITDA (USD thousands, non-GAAP, calculated) | Enterprise value (USD billions, as announced) |\n|---|---|---|---|\n| DoubleVerify FY2025 (year ended December 31, 2025) | $245,621 [1] | — | — |\n| DoubleVerify H1 FY2026 (six months ended June 30, 2026) | $120,529 [2] | — | — |\n| DoubleVerify H1 FY2025 (six months ended June 30, 2025) | $101,928 [2] | — | — |\n| DoubleVerify TTM ended June 30, 2026 (FY2025 + H1 FY2026 − H1 FY2025) | — | 264,222 [1][2] | — |\n| Announced transaction (August 6, 2026) | — | — | approximately $2.15 billion [3][4] |\n\n- On August 6, 2026, Nielsen Holdings and DoubleVerify announced a definitive agreement under which Nielsen will acquire DoubleVerify in an all-cash transaction with an enterprise value of approximately $2.15 billion. [3][4]\n- The announced consideration is $13.60 per share in cash, representing a 30% premium to DoubleVerify's 60-trading day volume weighted average price as of August 5, 2026. [3]\n- DoubleVerify's reported (non-GAAP) Adjusted EBITDA for the twelve months ended June 30, 2026, computed as FY2025 plus first-half 2026 minus first-half 2025, is 264,222 thousand. [1][2]\n\n_2 draft statement(s) were withheld because they could not be verified against the sources (details in the run record)._\n\n**Sources**\n[1] DoubleVerify Holdings, Inc. earnings release for FY2025, 8-K EX-99.1 (filed 2026-02-26) (www.sec.gov, 2026-02-26, primary) https://www.sec.gov/Archives/edgar/data/1819928/000110465926020508/dv-20260226xex99d1.htm\n[2] DoubleVerify Holdings, Inc. earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-08-06) (www.sec.gov, 2026-08-06, primary) https://www.sec.gov/Archives/edgar/data/1819928/000110465926092119/tm2621904d3_ex99-1.htm\n[3] DoubleVerify Holdings, Inc. 8-K current report, items 8.01,9.01 (filed 2026-08-06) EX-99.1 (www.sec.gov, 2026-08-06, primary) https://www.sec.gov/Archives/edgar/data/1819928/000110465926092121/tm2621904d1_ex99-1.htm\n[4] Nielsen to Acquire DoubleVerify, Creating a Leading, Independent Media Intelligence Platform | Nielsen (www.nielsen.com, 2026-08-06, primary) https://www.nielsen.com/news-center/2026/nielsen-to-acquire-doubleverify-creating-a-leading-independent-media-intelligence\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 84909,
+   "output": 9607
+  },
+  "tavily_credits": 2.0,
+  "latency_s": 55.69,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/7e2e9e7ca14c7884670e5cf0fe38273d",
+  "companies": [
+   {
+    "name": "Nielsen Holdings plc",
+    "ticker": null,
+    "cik": null,
+    "resolved": false
+   },
+   {
+    "name": "DoubleVerify Holdings, Inc.",
+    "ticker": "DV",
+    "cik": "1819928",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "'Nielsen' read as Nielsen Holdings plc, which is not a currently reporting SEC registrant, so the announced deal terms must come from news/announcements rather than its filings.",
+    "The TTM Adjusted EBITDA is computed exactly as the question specifies: FY2025 + H1 FY2026 − H1 2025, using DoubleVerify's reported (non-GAAP) Adjusted EBITDA.",
+    "H1 figures are taken from the Q2 earnings releases, which report both the quarter and the six-month period.",
+    "The multiple is a factual arithmetic ratio of the announced enterprise value to the computed TTM Adjusted EBITDA, not a valuation opinion."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Announced enterprise value of the Nielsen–DoubleVerify transaction (as announced August 2026)",
+    "DoubleVerify FY2025 reported Adjusted EBITDA",
+    "DoubleVerify H1 FY2026 reported Adjusted EBITDA (Q1 FY2026 + Q2 FY2026)",
+    "DoubleVerify H1 FY2025 reported Adjusted EBITDA (Q1 FY2025 + Q2 FY2025)",
+    "TTM Adjusted EBITDA for the twelve months ended 2026-06-30 = FY2025 + H1 2026 − H1 2025",
+    "Implied multiple = announced enterprise value ÷ TTM Adjusted EBITDA"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "DV",
+     "label": "FY2025"
+    },
+    {
+     "ticker": "DV",
+     "label": "Q1 FY2026"
+    },
+    {
+     "ticker": "DV",
+     "label": "Q2 FY2026"
+    },
+    {
+     "ticker": "DV",
+     "label": "Q1 FY2025"
+    },
+    {
+     "ticker": "DV",
+     "label": "Q2 FY2025"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "DV",
+     "period": "FY2025",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "DV",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "DV",
+     "period": "Q2 FY2025",
+     "document": "earnings_release"
+    }
+   ],
+   "recent_filings_days": 60,
+   "searches": [
+    {
+     "purpose": "Deal terms (announced enterprise value) for the Nielsen–DoubleVerify acquisition, which is not in DoubleVerify's periodic filings and Nielsen does not file with the SEC",
+     "query": "Nielsen DoubleVerify acquisition enterprise value announced August 2026",
+     "topic": "news",
+     "days_back": 90
+    }
+   ],
+   "availability_notes": [
+    "Nielsen Holdings plc is not an SEC registrant (last periodic report filed 2022-10-27), so the announced enterprise value is not available from its filings and is sourced from the deal announcement/news.",
+    "DoubleVerify Q3 FY2026 (period ended 2026-09-30) is not yet reported, but it is not needed for the twelve months ended 2026-06-30.",
+    "Adjusted EBITDA is a non-GAAP measure; it is disclosed in DoubleVerify's earnings releases rather than the face of the financial statements."
+   ]
+  },
+  "unavailable": [],
+  "removed": [
+   {
+    "text": "The announced enterprise value of approximately $2.15 billion equals {result} times that TTM Adjusted EBITDA for the twelve months ended June 30, 2026.",
+    "problem": "input ttm_ebitda_millions=264.222 is not printed in its quote"
+   },
+   {
+    "text": "Announced transaction (August 6, 2026) | Enterprise value / TTM Adjusted EBITDA (x, calculated): {result}",
+    "problem": "input ttm_ebitda_millions=264.222 is not printed in its quote"
+   }
+  ],
+  "assumptions": [
+   "'Nielsen' read as Nielsen Holdings plc, which is not a currently reporting SEC registrant, so the announced deal terms must come from news/announcements rather than its filings.",
+   "The TTM Adjusted EBITDA is computed exactly as the question specifies: FY2025 + H1 FY2026 − H1 2025, using DoubleVerify's reported (non-GAAP) Adjusted EBITDA.",
+   "H1 figures are taken from the Q2 earnings releases, which report both the quarter and the six-month period.",
+   "The multiple is a factual arithmetic ratio of the announced enterprise value to the computed TTM Adjusted EBITDA, not a valuation opinion."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Nielsen DoubleVerify acquisition enterprise value announced August 2026",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2026-07-05"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.nielsen.com/news-center/2026/nielsen-to-acquire-doubleverify-creating-a-leading-independent-media-intelligence",
+      "https://ppc.land/nielsen-acquires-doubleverify-for-2-15-billion-in-all-cash-deal",
+      "https://portalerp.com/noticia/nielsen-to-acquire-doubleverify-in-2-15-billion-all-cash-deal"
+     ],
+     "query": "In August 2026 Nielsen agreed to acquire DoubleVerify. As of 3 October 2026, what enterprise value did the companies announce, and what multiple is that of DoubleVerify's trailing-twelve-month (TTM) Adjusted EBITDA for the twelve months ended June 30, 2026? (TTM = FY2025 + first-half 2026 - first-half 2025, using DoubleVerify's reported Adjusted EBITDA.)",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.nielsen.com/news-center/2026/nielsen-to-acquire-doubleverify-creating-a-leading-independent-media-intelligence",
+    "https://www.sec.gov/Archives/edgar/data/1819928/000110465926020508/dv-20260226xex99d1.htm",
+    "https://www.sec.gov/Archives/edgar/data/1819928/000110465926092119/tm2621904d3_ex99-1.htm",
+    "https://www.sec.gov/Archives/edgar/data/1819928/000110465926092121/tm2621904d1_ex99-1.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 15,
+   "retrieved_primary": 10
+  },
+  "recall": {
+   "figures": 17,
+   "found": 17
+  },
+  "correctness": {
+   "score": 0.833,
+   "points": [
+    {
+     "point": "States the announced enterprise value at about US$2.15 billion and the offer price at US$13.60 per share in cash.",
+     "optional": false,
+     "met": true,
+     "note": "Answer states approximately $2.15 billion EV and $13.60 per share in cash."
+    },
+    {
+     "point": "Calculates TTM Adjusted EBITDA to June 30, 2026 at about US$264.2 million using FY2025 + H1 2026 − H1 2025 (245.6 + 120.5 − 101.9).",
+     "optional": false,
+     "met": true,
+     "note": "Reports $264,222 thousand, equivalent to $264.222 million, using the specified periods and figures."
+    },
+    {
+     "point": "States EV / TTM Adjusted EBITDA of about 8.1x (acceptable range 8.0x–8.3x).",
+     "optional": false,
+     "met": false,
+     "note": "The answer never states or calculates the EV/Adjusted EBITDA multiple."
+    },
+    {
+     "point": "Does not use a different media EV figure, such as US$2.5 billion.",
+     "optional": false,
+     "met": true,
+     "note": "Uses the announced approximately $2.15 billion EV."
+    },
+    {
+     "point": "Does not use FY2025 EBITDA alone or guidance as the TTM EBITDA denominator.",
+     "optional": false,
+     "met": true,
+     "note": "Uses FY2025 plus H1 2026 minus H1 2025, not FY2025 alone or guidance."
+    },
+    {
+     "point": "Does not compute the requested multiple on revenue only.",
+     "optional": false,
+     "met": true,
+     "note": "Does not provide a revenue-based substitute multiple; it omits the requested multiple."
+    },
+    {
+     "point": "Optionally, states EV / TTM revenue of about 2.8x (TTM revenue about US$768.8 million).",
+     "optional": true,
+     "met": false,
+     "note": "No TTM revenue or revenue multiple is stated."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The announced EV and offer price, and the correctly calculated TTM Adjusted EBITDA, are provided. However, the answer omits the central requested EV/TTM Adjusted EBITDA multiple.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "partial",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Nielsen and DoubleVerify announced a definitive acquisition agreement on August 6, 2026, for an all-cash transaction",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1819928/000110465926092121/tm2621904d1_ex99-1.htm",
+     "reason": "The release is dated August 6, 2026 and says Nielsen Holdings and DoubleVerify announced a definitive agreement under which Nielsen will acquire DoubleVerify in an all-cash transaction.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Announced enterprise value was approximately $2.15 billion",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1819928/000110465926092121/tm2621904d1_ex99-1.htm",
+     "reason": "The transaction announcement states an enterprise value of approximately $2.15 billion for DoubleVerify.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "DoubleVerify FY2025 Adjusted EBITDA was $245,621 thousand, non-GAAP, for year ended December 31, 2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1819928/000110465926020508/dv-20260226xex99d1.htm",
+     "reason": "The FY2025 reconciliation labels amounts in thousands and reports Adjusted EBITDA of $245,621 for year ended December 31, 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "DoubleVerify H1 FY2026 Adjusted EBITDA was $120,529 thousand, non-GAAP, for six months ended June 30, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1819928/000110465926092119/tm2621904d3_ex99-1.htm",
+     "reason": "The Q2 FY2026 release reconciliation labels amounts in thousands and reports six-month Adjusted EBITDA of $120,529 for 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "DoubleVerify H1 FY2025 Adjusted EBITDA was $101,928 thousand, non-GAAP, for six months ended June 30, 2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1819928/000110465926092119/tm2621904d3_ex99-1.htm",
+     "reason": "The Q2 FY2026 release reconciliation labels amounts in thousands and reports six-month Adjusted EBITDA of $101,928 for 2025.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "TTM Adjusted EBITDA ended June 30, 2026 was $264,222 thousand",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1819928/000110465926020508/dv-20260226xex99d1.htm",
+     "reason": "Using the cited inputs from sources [1] and [2]: FY2025 $245,621 thousand + H1 2026 $120,529 thousand − H1 2025 $101,928 thousand = $264,222 thousand. Both inputs and the stated formula are supported; the computed result is correct.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "DoubleVerify shareholders would receive $13.60 per share in cash",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1819928/000110465926092121/tm2621904d1_ex99-1.htm",
+     "reason": "The transaction announcement states that shareholders will receive $13.60 per share in cash.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The $13.60 consideration represented a 30% premium to the 60-trading-day VWAP as of August 5, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1819928/000110465926092121/tm2621904d1_ex99-1.htm",
+     "reason": "The transaction announcement explicitly identifies a 30% premium to DoubleVerify's 60-trading-day volume weighted average price as of August 5, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 8,
+   "numeric_cited": 8,
+   "cited": 8,
+   "supported": 8,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 95.4
+ }
+}

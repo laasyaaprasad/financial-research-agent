@@ -1,0 +1,350 @@
+{
+ "id": "W13",
+ "category": "private company",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "Huawei is privately held and files nothing with the SEC. What revenue and net profit attributable to the parent company did Huawei publish for the first half of 2026 (six months ended June 30, 2026), how much did it spend on R&D (and what share of revenue is that), and what net profit margin does that imply? Note which profit figure you use, because two different 'net profit' numbers circulate.",
+ "grading": "Key points (all required): (1) revenue RMB 467.82 billion, +9.55% (about +9.6%); (2) net profit attributable to the parent about RMB 23.43 billion (accept 23.4-23.5), down about 36.8% - OR, if the answer instead uses the Bloomberg headline net profit of RMB 23.81 billion (-36%), it must label that as the consolidated/headline figure; (3) R&D spending RMB 121.38 billion = about 25.9% of revenue (25.94%), up 25.2%; (4) implied net margin about 5.0% on the attributable figure (accept 4.9%-5.1%; 5.1% if 23.81 is used); (5) states that the figures are company-published, not SEC-filed. Optional: operating profit about RMB 32.77 billion (about 7.0% of revenue, one Chinese source). Fail if H1 2025 or full-year figures are used, if US dollars replace RMB, if net profit and its growth rate come from different definitions, or if the answer says Huawei filed with the SEC.",
+ "answer": "H1 2026 (Jan-Jun, published 31 Aug 2026): revenue RMB 467.82bn (+9.55%); net profit attributable to the parent about RMB 23.43bn (-36.8%) - Bloomberg's RMB 23.81bn (-36%) is the headline/consolidated net profit; R&D RMB 121.38bn (+25.2%) = 25.9% of revenue; implied net margin about 5.0% (23.43/467.82; 5.1% on 23.81). Operating profit was about RMB 32.77bn (about 7.0%). These are Huawei's own published figures, not an SEC filing [W13-E1 to W13-E4].",
+ "output": {
+  "answer": "**Question:** Huawei is privately held and files nothing with the SEC. What revenue and net profit attributable to the parent company did Huawei publish for the first half of 2026 (six months ended June 30, 2026), how much did it spend on R&D (and what share of revenue is that), and what net profit margin does that imply? Note which profit figure you use, because two different 'net profit' numbers circulate.\n*As of 2026-10-03*\n\n**Interpreted as:** 'Huawei' read as Huawei Technologies Co., Ltd., a privately held Chinese company that is not an SEC registrant, so all figures come from its own published interim results rather than SEC filings. H1 2026 read as the six months ended June 30, 2026, the period Huawei reports in its half-year results announcement (typically published in August). 'Net profit attributable to the parent company' read as Huawei's reported net profit attributable to shareholders, distinct from any 'total net profit' figure; the answer should state which of the two circulating numbers it uses. R&D 'share of revenue' read as R&D expense divided by total revenue for the same six-month period; net profit margin read as the chosen net profit figure divided by revenue.\n\n| | Revenue (RMB) | Net profit (RMB) | R&D spending (RMB) | R&D as % of revenue | Net profit margin (%) |\n|---|---|---|---|---|---|\n| Huawei H1 2026 (six months ended June 30, 2026) — Reuters | 467.82 billion yuan [1] | 23.81 billion yuan [1] | 121.38 billion yuan [1] | 25.9% (as disclosed) [1] | 5.1 [1] |\n| Huawei H1 2026 (six months ended June 30, 2026) — Light Reading | 467.8 billion yuan [2] | RMB23.4 billion [2] | RMB121.4 billion [2] | just over a quarter of revenue (as reported) [2] | — |\n\n- Huawei Technologies is privately held and files nothing with the SEC; it makes financial disclosures to its bondholders, so its H1 2026 figures come from its own half-year results announcement as reported by news outlets. [2]\n- For H1 2026 (six months ended June 30, 2026), Reuters reported Huawei's revenue rose 9.6% to 467.82 billion yuan. [1]\n- Light Reading reported the same H1 2026 (six months ended June 30, 2026) revenue as 467.8 billion Chinese yuan (US$69.5 billion), up 9.6% over last year. [2]\n- The net profit figure used in this answer is the single net profit line Huawei published for January to June 2026, which Reuters reported fell 36% to 23.81 billion yuan ($3.54 billion); the evidence does not separately label a 'net profit attributable to the parent company' figure. [1]\n- The second circulating net profit number is Light Reading's RMB23.4 billion ($3.5 billion) for H1 2026 (six months ended June 30, 2026), down from RMB37.1 billion ($5.5 billion) a year earlier, a 37% decline. [2]\n- For H1 2026 (six months ended June 30, 2026), Reuters reported Huawei's research and development spending rose 25.2% to 121.38 billion yuan, equivalent to 25.9% of revenue. [1]\n- Light Reading reported the same H1 2026 (six months ended June 30, 2026) R&D spend as RMB121.4 billion ($18.1 billion), expanding by 25% and accounting for just over a quarter of revenue. [2]\n- The net profit margin implied by the chosen figure (Reuters' 23.81 billion yuan net profit on 467.82 billion yuan revenue) for H1 2026 (six months ended June 30, 2026) is 5.1%. [1]\n- The R&D share of revenue calculated from Reuters' H1 2026 (six months ended June 30, 2026) figures is 25.9%, consistent with the 25.9% the company disclosed. [1]\n\n**Not available**\n- Net profit attributable to the parent company as a separately labeled figure for H1 2026 (six months ended June 30, 2026): The evidence reports only a single net profit line for January to June 2026 (23.81 billion yuan per Reuters; RMB23.4 billion per Light Reading) and does not distinguish a 'net profit attributable to shareholders/parent' figure from a 'total net profit' figure. [2][1]\n- Huawei SEC filings for H1 2026: Huawei is privately held and files nothing with the SEC; it discloses results to its bondholders and via its own half-year announcement. [2]\n\n**Sources**\n[1] Huawei H1 profit drop quickens to 36% on rising costs, R&D spending - Reuters (www.reuters.com, 2026-08-31, secondary) https://www.reuters.com/world/asia-pacific/huawei-h1-profit-drop-quickens-36-rising-costs-rd-spending-2026-08-31/\n[2] Huawei net profit drops as R&D spending soars - Light Reading (www.lightreading.com, 2026-08-31, secondary) https://www.lightreading.com/5g/huawei-net-profit-drops-as-r-d-spending-soars\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 22154,
+   "output": 15006
+  },
+  "tavily_credits": 2.0,
+  "latency_s": 74.69,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/ddec1d0c10a893c5de8ea40976cda56e",
+  "companies": [
+   {
+    "name": "Huawei Technologies Co., Ltd.",
+    "ticker": null,
+    "cik": null,
+    "resolved": false
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "'Huawei' read as Huawei Technologies Co., Ltd., a privately held Chinese company that is not an SEC registrant, so all figures come from its own published interim results rather than SEC filings.",
+    "H1 2026 read as the six months ended June 30, 2026, the period Huawei reports in its half-year results announcement (typically published in August).",
+    "'Net profit attributable to the parent company' read as Huawei's reported net profit attributable to shareholders, distinct from any 'total net profit' figure; the answer should state which of the two circulating numbers it uses.",
+    "R&D 'share of revenue' read as R&D expense divided by total revenue for the same six-month period; net profit margin read as the chosen net profit figure divided by revenue."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Huawei H1 2026 (six months ended June 30, 2026) total revenue",
+    "Huawei H1 2026 net profit attributable to the parent/shareholders, and the alternative 'net profit' figure that circulates, with a note on which is used",
+    "Huawei H1 2026 R&D expenditure",
+    "R&D as a percentage of H1 2026 revenue",
+    "Net profit margin implied for H1 2026 (chosen net profit figure / revenue)",
+    "Year-over-year comparison figures for H1 2025 revenue and net profit, if disclosed, for context"
+   ],
+   "answer_periods": [],
+   "documents": [],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Find Huawei's published H1 2026 (six months ended June 30, 2026) revenue, net profit and R&D figures from its half-year results announcement",
+     "query": "Huawei 2026 first half results revenue net profit R&D spending",
+     "topic": "news",
+     "days_back": 120
+    },
+    {
+     "purpose": "Confirm which net profit figure Huawei reports (net profit vs net profit attributable to shareholders) and the exact R&D share of revenue for H1 2026",
+     "query": "Huawei half-year 2026 interim results net profit attributable to shareholders R&D percentage of revenue",
+     "topic": "general",
+     "days_back": null
+    }
+   ],
+   "availability_notes": [
+    "Huawei is not an SEC registrant and files nothing with the SEC, so no periodic_report or earnings_release is available; figures must come from Huawei's own half-year results press release and news coverage.",
+    "Huawei's half-year announcement typically gives revenue, net profit and R&D spend but may not separately label 'net profit attributable to the parent company'; if only a single net profit line is published, that limitation should be stated rather than estimated.",
+    "If Huawei's H1 2026 results have not yet been published as of 2026-10-03, the figures cannot be provided and no estimate will be made.",
+    "Huawei H1 2026 (six months ended June 30, 2026) is not in the company's reporting calendar"
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Net profit attributable to the parent company as a separately labeled figure for H1 2026 (six months ended June 30, 2026)",
+    "kind": "not_disclosed",
+    "reason": "The evidence reports only a single net profit line for January to June 2026 (23.81 billion yuan per Reuters; RMB23.4 billion per Light Reading) and does not distinguish a 'net profit attributable to shareholders/parent' figure from a 'total net profit' figure.",
+    "evidence_ids": [
+     "E1",
+     "E2"
+    ]
+   },
+   {
+    "item": "Huawei SEC filings for H1 2026",
+    "kind": "not_sec_filer",
+    "reason": "Huawei is privately held and files nothing with the SEC; it discloses results to its bondholders and via its own half-year announcement.",
+    "evidence_ids": [
+     "E1"
+    ]
+   }
+  ],
+  "removed": [],
+  "assumptions": [
+   "'Huawei' read as Huawei Technologies Co., Ltd., a privately held Chinese company that is not an SEC registrant, so all figures come from its own published interim results rather than SEC filings.",
+   "H1 2026 read as the six months ended June 30, 2026, the period Huawei reports in its half-year results announcement (typically published in August).",
+   "'Net profit attributable to the parent company' read as Huawei's reported net profit attributable to shareholders, distinct from any 'total net profit' figure; the answer should state which of the two circulating numbers it uses.",
+   "R&D 'share of revenue' read as R&D expense divided by total revenue for the same six-month period; net profit margin read as the chosen net profit figure divided by revenue."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Huawei half-year 2026 interim results net profit attributable to shareholders R&D percentage of revenue",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Huawei 2026 first half results revenue net profit R&D spending",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2026-06-05"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.lightreading.com/5g/huawei-net-profit-drops-as-r-d-spending-soars",
+      "https://www.reuters.com/world/asia-pacific/huawei-h1-profit-drop-quickens-36-rising-costs-rd-spending-2026-08-31/"
+     ],
+     "query": "Huawei is privately held and files nothing with the SEC. What revenue and net profit attributable to the parent company did Huawei publish for the first half of 2026 (six months ended June 30, 2026), how much did it spend on R&D (and what share of revenue is that), and what net profit margin does that imply? Note which profit figure you use, because two different 'net profit' numbers circulate.",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://www.lightreading.com/5g/huawei-net-profit-drops-as-r-d-spending-soars",
+    "https://www.reuters.com/world/asia-pacific/huawei-h1-profit-drop-quickens-36-rising-costs-rd-spending-2026-08-31/"
+   ],
+   "cited_primary": 0,
+   "retrieved": 2,
+   "retrieved_primary": 0
+  },
+  "recall": {
+   "figures": 29,
+   "found": 11
+  },
+  "correctness": {
+   "score": 0.889,
+   "points": [
+    {
+     "point": "Reports H1 2026 revenue of RMB 467.82 billion, up about 9.55% (approximately 9.6%).",
+     "optional": false,
+     "met": true,
+     "note": "States revenue of RMB 467.82 billion and a 9.6% rise."
+    },
+    {
+     "point": "Uses net profit attributable to the parent of about RMB 23.43 billion, down about 36.8%; alternatively, if using RMB 23.81 billion (-36%), labels it as the consolidated/headline figure.",
+     "optional": false,
+     "met": false,
+     "note": "Uses RMB 23.81 billion (-36%) but calls it the single net-profit line and says no separately labeled parent-attributable figure is evidenced; it does not identify RMB 23.81 billion as consolidated/headline."
+    },
+    {
+     "point": "Reports R&D spending of RMB 121.38 billion, about 25.9% of revenue, up 25.2%.",
+     "optional": false,
+     "met": true,
+     "note": "Gives RMB 121.38 billion, 25.9% of revenue, and a 25.2% increase."
+    },
+    {
+     "point": "Gives an implied net profit margin of about 5.0% on the attributable figure (4.9%-5.1% accepted), or 5.1% if using RMB 23.81 billion.",
+     "optional": false,
+     "met": true,
+     "note": "Calculates 5.1% from RMB 23.81 billion over RMB 467.82 billion."
+    },
+    {
+     "point": "States that the figures are company-published, not SEC-filed.",
+     "optional": false,
+     "met": true,
+     "note": "Says the figures come from Huawei's own half-year results announcement and that Huawei files nothing with the SEC."
+    },
+    {
+     "point": "Does not use H1 2025 or full-year figures as the answer to the requested H1 2026 figures.",
+     "optional": false,
+     "met": true,
+     "note": "The requested answer is consistently for H1 2026; prior-year data is mentioned only as a comparison."
+    },
+    {
+     "point": "Does not substitute US dollars for RMB as the reported figures.",
+     "optional": false,
+     "met": true,
+     "note": "Primary reported figures are in RMB; dollar equivalents are only supplementary."
+    },
+    {
+     "point": "Does not mix a net-profit amount with the growth rate belonging to a different net-profit definition.",
+     "optional": false,
+     "met": true,
+     "note": "Pairs RMB 23.81 billion with -36% and the separate rounded RMB 23.4 billion comparison with a roughly 37% decline; it does not cross-pair the two definitions."
+    },
+    {
+     "point": "Does not say Huawei filed with the SEC.",
+     "optional": false,
+     "met": true,
+     "note": "It explicitly says Huawei files nothing with the SEC."
+    },
+    {
+     "point": "Optionally reports operating profit of about RMB 32.77 billion (about 7.0% of revenue).",
+     "optional": true,
+     "met": false,
+     "note": "Operating profit is not reported."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The response gets the revenue, R&D, margin arithmetic, and company-publication/SEC status right. However, the question specifically requires distinguishing the parent-attributable RMB 23.43 billion figure from the RMB 23.81 billion consolidated/headline figure. The answer uses RMB 23.81 billion without labeling it consolidated/headline and incorrectly treats the attributable figure as unavailable.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "partial",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Reuters (published August 31, 2026) reported Huawei H1 2026 revenue of 467.82 billion yuan, up 9.6% year over year",
+     "numeric": true,
+     "cited_url": "https://www.reuters.com/world/asia-pacific/huawei-h1-profit-drop-quickens-36-rising-costs-rd-spending-2026-08-31/",
+     "reason": "The retrieved Reuters passage dated August 31 says revenue rose 9.6% to 467.82 billion yuan for January to June. That period is H1 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Reuters reported Huawei January–June 2026 net profit fell 36% to 23.81 billion yuan ($3.54 billion)",
+     "numeric": true,
+     "cited_url": "https://www.reuters.com/world/asia-pacific/huawei-h1-profit-drop-quickens-36-rising-costs-rd-spending-2026-08-31/",
+     "reason": "The retrieved Reuters text says net profit for January to June fell to 23.81 billion yuan ($3.54 billion), with a 36% plunge.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Reuters reported Huawei H1 2026 R&D spending rose 25.2% to 121.38 billion yuan, equal to 25.9% of revenue",
+     "numeric": true,
+     "cited_url": "https://www.reuters.com/world/asia-pacific/huawei-h1-profit-drop-quickens-36-rising-costs-rd-spending-2026-08-31/",
+     "reason": "Reuters explicitly states spending rose 25.2% to 121.38 billion yuan and equaled 25.9% of revenue.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The net profit margin using Reuters figures is 5.1%",
+     "numeric": true,
+     "cited_url": "https://www.reuters.com/world/asia-pacific/huawei-h1-profit-drop-quickens-36-rising-costs-rd-spending-2026-08-31/",
+     "reason": "Using the cited figures: 23.81 ÷ 467.82 × 100 = 5.0896%, which rounds to 5.1% to one decimal place. Both inputs are Reuters' H1 2026 figures in billion yuan.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "R&D as a share of revenue calculated from Reuters figures is 25.9%",
+     "numeric": true,
+     "cited_url": "https://www.reuters.com/world/asia-pacific/huawei-h1-profit-drop-quickens-36-rising-costs-rd-spending-2026-08-31/",
+     "reason": "Using the cited figures: 121.38 ÷ 467.82 × 100 = 25.943%, which rounds to 25.9% to one decimal place. Reuters also directly reports 25.9%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Light Reading (published August 31, 2026) reported H1 revenue of 467.8 billion yuan (US$69.5 billion), up 9.6% year over year",
+     "numeric": true,
+     "cited_url": "https://www.lightreading.com/5g/huawei-net-profit-drops-as-r-d-spending-soars",
+     "reason": "The retrieved article, dated August 31, says total revenue was 467.8 billion Chinese yuan (US$69.5 billion), up 9.6% over last year.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Light Reading reported H1 earnings/net profit of RMB23.4 billion ($3.5 billion), down from RMB37.1 billion ($5.5 billion) a year earlier",
+     "numeric": true,
+     "cited_url": "https://www.lightreading.com/5g/huawei-net-profit-drops-as-r-d-spending-soars",
+     "reason": "The article calls first-half net profit down 37%, and states earnings totaled RMB23.4 billion ($3.5 billion), down from RMB37.1 billion ($5.5 billion) last year.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Light Reading reported that the RMB23.4 billion figure was down 37%",
+     "numeric": true,
+     "cited_url": "https://www.lightreading.com/5g/huawei-net-profit-drops-as-r-d-spending-soars",
+     "reason": "The article says first-half net profit sank 37%. Check against displayed values: (37.1−23.4) ÷ 37.1 = 36.93%, which rounds to 37%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Light Reading reported H1 R&D spending of RMB121.4 billion ($18.1 billion), up 25%, and described it as just over a quarter of revenue",
+     "numeric": true,
+     "cited_url": "https://www.lightreading.com/5g/huawei-net-profit-drops-as-r-d-spending-soars",
+     "reason": "The retrieved article says R&D expanded by 25% to RMB121.4 billion ($18.1 billion) and accounts for just over a quarter of revenue.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Huawei is privately held and makes financial disclosures to bondholders",
+     "numeric": false,
+     "cited_url": "https://www.lightreading.com/5g/huawei-net-profit-drops-as-r-d-spending-soars",
+     "reason": "Light Reading explicitly says Huawei is privately held and makes financial disclosures to its bondholders.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Huawei files nothing with the SEC",
+     "numeric": false,
+     "cited_url": "https://www.lightreading.com/5g/huawei-net-profit-drops-as-r-d-spending-soars",
+     "reason": "The cited retrieved text says the company is privately held and discloses financial information to bondholders, but says nothing about SEC registration or filings. The cited evidence does not support this assertion.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Huawei H1 2026 refers to the first half, January through June 2026",
+     "numeric": true,
+     "cited_url": "https://www.reuters.com/world/asia-pacific/huawei-h1-profit-drop-quickens-36-rising-costs-rd-spending-2026-08-31/",
+     "reason": "Reuters describes the results as first-half results and specifies net profit for January to June; this supports the stated H1 period (six months ended June 30).",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 10,
+   "numeric_cited": 10,
+   "cited": 12,
+   "supported": 11,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 119.3
+ }
+}

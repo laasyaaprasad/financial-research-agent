@@ -1,0 +1,400 @@
+{
+ "id": "E09",
+ "category": "open-ended update",
+ "difficulty": "medium",
+ "time_sensitivity": "dynamic",
+ "answer_type": "text",
+ "question": "latest on medtronic?",
+ "grading": "(1) Identifies Medtronic plc (MDT). (2) Treats 'latest' as the latest quarterly results: Q1 fiscal 2027 (quarter ended July 31, 2026; reported Sept 1, 2026) and says it is fiscal (year ends around April 30), not calendar. (3) Gives headline revenue (about $9.8B) and growth, EPS (GAAP and/or non-GAAP, labelled) and the raised FY2027 guidance, each cited; may note that FY2027 is a 53-week year with the extra week in Q1. (4) Fail if it uses Q4 FY2026 or an older quarter as the latest, omits guidance and EPS, or offers an investment view.",
+ "answer": "Medtronic Q1 FY2027 (ended July 31, 2026; reported Sept 1, 2026): revenue $9.756B (+13.7% reported and organic, boosted by a 53rd week), GAAP EPS $1.14, non-GAAP EPS $1.45, FY27 guidance raised.",
+ "output": {
+  "answer": "**Question:** latest on medtronic?\n*As of 2026-10-03*\n\n**Interpreted as:** 'Latest on Medtronic' read as a general update: the most recently reported quarter's headline results plus the company's own guidance. Medtronic plc (MDT) is read as the reporting company; fiscal year ends in late April, so fiscal labels are not calendar labels. Latest reported period is Q1 FY2027 (2026-04-25 to 2026-07-31), reported 2026-09-01; Q2 FY2027 (2026-08-01 to 2026-10-23) is still in progress and not yet reported. Guidance for Q2 FY2027 and FY2027 was published in the Q1 FY2027 earnings release of 2026-09-01. Prior-year comparison for Q1 FY2027 is Q1 FY2026 (2025-04-26 to 2025-07-25), whose figures appear in the Q1 FY2027 release and 10-Q.\n\n| | Q1 FY2027 (quarter ended July 31, 2026) |\n|---|---|\n| Revenue (USD millions) | $9,756 [1] |\n| Revenue growth, as reported (%) | 13.7 [1] |\n| Revenue growth, organic (%) | 13.7 [1] |\n| GAAP diluted EPS (USD) | $1.14 [1] |\n| Non-GAAP diluted EPS (USD) | $1.45 [1] |\n| GAAP operating margin (%) | 18.1 [1] |\n| Non-GAAP operating margin (%) | 23.7 [1] |\n| GAAP net income (USD millions) | $1,470 [1] |\n| Non-GAAP net income (USD millions) | $1,860 [1] |\n\n- Medtronic plc reported first quarter fiscal 2027 results on September 1, 2026, for the quarter ended July 31, 2026. [1]\n- Q1 FY2027 (quarter ended July 31, 2026) revenue was $9,756 million, up 13.7% as reported and 13.7% organic, roughly 200 basis points above the guidance midpoint. [1]\n- Q1 FY2027 GAAP diluted EPS was $1.14 and non-GAAP diluted EPS was $1.45, ahead of guidance; GAAP diluted EPS rose 40.7% and non-GAAP diluted EPS rose 15.1% year over year. [1]\n- Q1 FY2027 GAAP net income was $1.470 billion (up 41.4%) and non-GAAP net income was $1.860 billion (up 14.4%). [1]\n- Q1 FY2027 GAAP operating profit was $1.764 billion with an 18.1% operating margin (up 22.1% and 120 basis points), and non-GAAP operating profit was $2.316 billion with a 23.7% operating margin (up 14.9% and 10 basis points). [1]\n- In Q1 FY2027, Cardiovascular revenue grew 18.9% organically, led by 15% growth in Cardiac Rhythm Management and 88% growth in Cardiac Ablation Solutions. [1]\n- Q1 FY2027 Diabetes business revenue was $843 million, up 16.9% as reported and 14.9% organic. [1]\n- Medtronic raised its FY2027 organic revenue growth guidance to 7.25% to 7.75%, an increase from the prior guidance of 6.75% to 7.25%. [1]\n- Medtronic raised its FY2027 diluted non-GAAP EPS guidance to the new range of $5.94 to $6.00 versus the prior $5.90 to $6.00, including an estimated neutral to 1% accretive impact from foreign currency exchange based on recent rates. [1]\n- MarketBeat reported that Medtronic has set its Q2 FY2027 guidance at $1.320-$1.340 EPS and its FY2027 guidance at $5.940-$6.000 EPS. [2]\n- FY2027 is a 53-week fiscal year, with the extra week occurring in the first fiscal month of the first quarter and included in the three months ended July 31, 2026 results. [3]\n- Investing.com reported that the extra selling week added about 670 basis points to Q1 FY2027 organic growth, and that excluding that benefit growth was approximately 7%. [4]\n- On September 14, 2026, Medtronic commenced an offer to exchange up to 225,361,295 newly issued shares of MiniMed Group, Inc. common stock for outstanding Medtronic ordinary shares, as disclosed in an 8-K filed September 17, 2026. [5]\n- Investing.com reported that Medtronic's Q2 FY2027 earnings are scheduled for November 24, 2026, and an Investor Day for December 10-11, 2026. [4]\n\n**Not available**\n- Q2 FY2027 (2026-08-01 to 2026-10-23) actual results: Q2 FY2027 is still in progress and has not been reported; the evidence only contains the company's guidance for that period (Q2 FY2027 EPS guidance of $1.320-$1.340 per MarketBeat) and a scheduled earnings date of November 24, 2026. [2][4]\n- FY2027 actual results: FY2027 is in progress; only guidance (organic revenue growth of 7.25%-7.75% and non-GAAP diluted EPS of $5.94-$6.00) is available, not actual results. [1]\n\n**Sources**\n[1] Medtronic plc earnings release for Q1 FY2027, 8-K EX-99.1 (filed 2026-09-01) (www.sec.gov, 2026-09-01, primary) https://www.sec.gov/Archives/edgar/data/1613103/000162828026059697/exhibit991-fy27q1earningsr.htm\n[2] Medtronic (NYSE:MDT) Raised to Buy at Wall Street Zen (www.marketbeat.com, undated, secondary) https://www.marketbeat.com/instant-alerts/analyst-medtronic-nyse-mdt-raised-to-buy-at-wall-street-zen-2026-10-03\n[3] Medtronic plc 10-Q for Q1 FY2027 (filed 2026-09-03) (www.sec.gov, 2026-09-03, primary) https://www.sec.gov/Archives/edgar/data/1613103/000162828026060473/mdt-20260731.htm\n[4] Medtronic earnings analysis: questions answered and next catalysts By Investing.com (uk.investing.com, undated, secondary) https://uk.investing.com/news/stock-market-news/medtronic-earnings-analysis-questions-answered-and-next-catalysts-93CH-4854348\n[5] Medtronic plc 8-K current report, items 8.01,9.01 (filed 2026-09-17) 8-K (www.sec.gov, 2026-09-17, primary) https://www.sec.gov/Archives/edgar/data/1613103/000162828026062505/mdt-20260917.htm\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 83242,
+   "output": 23752
+  },
+  "tavily_credits": 2.0,
+  "latency_s": 102.22,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/1b40b3fba53a78f7e8bfd1370ae2aebc",
+  "companies": [
+   {
+    "name": "Medtronic plc",
+    "ticker": "MDT",
+    "cik": "1613103",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "'Latest on Medtronic' read as a general update: the most recently reported quarter's headline results plus the company's own guidance.",
+    "Medtronic plc (MDT) is read as the reporting company; fiscal year ends in late April, so fiscal labels are not calendar labels.",
+    "Latest reported period is Q1 FY2027 (2026-04-25 to 2026-07-31), reported 2026-09-01; Q2 FY2027 (2026-08-01 to 2026-10-23) is still in progress and not yet reported.",
+    "Guidance for Q2 FY2027 and FY2027 was published in the Q1 FY2027 earnings release of 2026-09-01.",
+    "Prior-year comparison for Q1 FY2027 is Q1 FY2026 (2025-04-26 to 2025-07-25), whose figures appear in the Q1 FY2027 release and 10-Q."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Q1 FY2027 total revenue (net sales) and year-over-year growth, as reported and organic",
+    "Q1 FY2027 GAAP and non-GAAP diluted EPS",
+    "Q1 FY2027 GAAP net income and operating income / operating margin",
+    "Q1 FY2027 segment revenue and growth (Cardiovascular, Neuroscience, Medical Surgical, Diabetes)",
+    "Company guidance for Q2 FY2027 (revenue growth and EPS) and FY2027 (revenue growth, EPS, margin expansion)",
+    "Any notable one-time items, restructuring or FX commentary in the quarter",
+    "Any material recent events or leadership changes disclosed in 8-Ks"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "MDT",
+     "label": "Q1 FY2027"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "MDT",
+     "period": "Q1 FY2027",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "MDT",
+     "period": "Q1 FY2027",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": 45,
+   "searches": [
+    {
+     "purpose": "Management commentary and any guidance detail given on the Q1 FY2027 earnings call rather than in the release",
+     "query": "Medtronic Q1 FY2027 earnings call August 2026 guidance commentary",
+     "topic": "news",
+     "days_back": 60
+    }
+   ],
+   "availability_notes": [
+    "Q2 FY2027 (2026-08-01 to 2026-10-23) is still in progress and not yet reported; no results exist for it, so only the company's guidance for that period can be quoted.",
+    "FY2027 is in progress; only guidance, not actual results, is available."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Q2 FY2027 (2026-08-01 to 2026-10-23) actual results",
+    "kind": "not_reported_yet",
+    "reason": "Q2 FY2027 is still in progress and has not been reported; the evidence only contains the company's guidance for that period (Q2 FY2027 EPS guidance of $1.320-$1.340 per MarketBeat) and a scheduled earnings date of November 24, 2026.",
+    "evidence_ids": [
+     "E7",
+     "E8"
+    ]
+   },
+   {
+    "item": "FY2027 actual results",
+    "kind": "not_reported_yet",
+    "reason": "FY2027 is in progress; only guidance (organic revenue growth of 7.25%-7.75% and non-GAAP diluted EPS of $5.94-$6.00) is available, not actual results.",
+    "evidence_ids": [
+     "E1"
+    ]
+   }
+  ],
+  "removed": [],
+  "assumptions": [
+   "'Latest on Medtronic' read as a general update: the most recently reported quarter's headline results plus the company's own guidance.",
+   "Medtronic plc (MDT) is read as the reporting company; fiscal year ends in late April, so fiscal labels are not calendar labels.",
+   "Latest reported period is Q1 FY2027 (2026-04-25 to 2026-07-31), reported 2026-09-01; Q2 FY2027 (2026-08-01 to 2026-10-23) is still in progress and not yet reported.",
+   "Guidance for Q2 FY2027 and FY2027 was published in the Q1 FY2027 earnings release of 2026-09-01.",
+   "Prior-year comparison for Q1 FY2027 is Q1 FY2026 (2025-04-26 to 2025-07-25), whose figures appear in the Q1 FY2027 release and 10-Q."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Medtronic Q1 FY2027 earnings call August 2026 guidance commentary",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2026-08-04"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.medtechdive.com/news/medtronic-kicks-off-its-fiscal-year-on-a-high-note/829299/"
+     ],
+     "query": "latest on medtronic?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "medtronic Q2 FY2027 guidance (revenue and EPS)",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "general"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.marketbeat.com/instant-alerts/filing-state-street-corp-purchases-1658301-shares-of-medtronic-plc-mdt-2026-09-22",
+      "https://www.marketbeat.com/instant-alerts/analyst-medtronic-nyse-mdt-raised-to-buy-at-wall-street-zen-2026-10-03",
+      "https://uk.investing.com/news/stock-market-news/medtronic-earnings-analysis-questions-answered-and-next-catalysts-93CH-4854348"
+     ],
+     "query": "latest on medtronic?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://uk.investing.com/news/stock-market-news/medtronic-earnings-analysis-questions-answered-and-next-catalysts-93CH-4854348",
+    "https://www.marketbeat.com/instant-alerts/analyst-medtronic-nyse-mdt-raised-to-buy-at-wall-street-zen-2026-10-03",
+    "https://www.sec.gov/Archives/edgar/data/1613103/000162828026059697/exhibit991-fy27q1earningsr.htm",
+    "https://www.sec.gov/Archives/edgar/data/1613103/000162828026060473/mdt-20260731.htm",
+    "https://www.sec.gov/Archives/edgar/data/1613103/000162828026062505/mdt-20260917.htm"
+   ],
+   "cited_primary": 3,
+   "retrieved": 10,
+   "retrieved_primary": 4
+  },
+  "recall": {
+   "figures": 0,
+   "found": 0
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "Identifies Medtronic plc (MDT).",
+     "optional": false,
+     "met": true,
+     "note": "Explicitly identifies Medtronic plc and its ticker MDT."
+    },
+    {
+     "point": "Treats “latest” as Q1 fiscal 2027, ended July 31, 2026 and reported September 1, 2026.",
+     "optional": false,
+     "met": true,
+     "note": "States Q1 FY2027, the July 31 quarter-end, and September 1, 2026 reporting date."
+    },
+    {
+     "point": "States that the reporting year is fiscal rather than calendar, with the fiscal year ending around April 30.",
+     "optional": false,
+     "met": true,
+     "note": "Says Medtronic's fiscal year ends in late April and that fiscal labels are not calendar labels."
+    },
+    {
+     "point": "Gives headline revenue of about $9.8 billion and revenue growth, supported by a cited source.",
+     "optional": false,
+     "met": true,
+     "note": "Reports $9,756 million and 13.7% reported and organic growth, citing the earnings release [1]."
+    },
+    {
+     "point": "Gives labelled GAAP and/or non-GAAP EPS, supported by a cited source.",
+     "optional": false,
+     "met": true,
+     "note": "Labels GAAP diluted EPS as $1.14 and non-GAAP diluted EPS as $1.45, citing [1]."
+    },
+    {
+     "point": "Gives the raised FY2027 guidance, supported by a cited source.",
+     "optional": false,
+     "met": true,
+     "note": "Reports raised organic revenue growth guidance of 7.25%–7.75% and non-GAAP EPS guidance of $5.94–$6.00, citing [1]."
+    },
+    {
+     "point": "Does not present Q4 FY2026 or an older quarter as the latest quarter.",
+     "optional": false,
+     "met": true,
+     "note": "Correctly presents Q1 FY2027 as the latest reported quarter."
+    },
+    {
+     "point": "Does not omit EPS or guidance.",
+     "optional": false,
+     "met": true,
+     "note": "Includes both EPS results and raised full-year guidance."
+    },
+    {
+     "point": "Does not offer an investment view.",
+     "optional": false,
+     "met": true,
+     "note": "Provides results and reported corporate developments, but no investment recommendation or view."
+    },
+    {
+     "point": "May note that FY2027 is a 53-week year with the extra week in Q1.",
+     "optional": true,
+     "met": true,
+     "note": "Includes the 53-week-year detail and says the extra week fell in Q1, citing the 10-Q [3]."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer identifies Medtronic plc and correctly treats Q1 FY2027 as the latest reported quarter, with the fiscal-year context, cited revenue/growth, labelled EPS, and raised FY2027 guidance. It avoids the specified failure modes and includes the optional extra-week note.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Medtronic announced Q1 FY2027 results September 1, 2026, for the quarter ended July 31, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1613103/000162828026059697/exhibit991-fy27q1earningsr.htm",
+     "reason": "The release is dated September 1, 2026 and says Medtronic announced Q1 FY2027 results for the quarter ended July 31, 2026. Exact company, period, and publication date match.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 revenue was $9,756 million, up 13.7% reported and 13.7% organically, about 200 bps above guidance midpoint",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1613103/000162828026059697/exhibit991-fy27q1earningsr.htm",
+     "reason": "The release's revenue schedule lists total revenue of $9,756 million, reported growth of 13.7%, and organic growth of 13.7%; its highlights say revenue was roughly 200 basis points above guidance midpoint. Comparisons are for Q1 FY27 versus Q1 FY26.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 GAAP diluted EPS was $1.14 and non-GAAP diluted EPS $1.45, ahead of guidance; year-over-year increases were 40.7% and 15.1%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1613103/000162828026059697/exhibit991-fy27q1earningsr.htm",
+     "reason": "The release states $1.14 GAAP and $1.45 non-GAAP diluted EPS, ahead of guidance, with increases of 40.7% and 15.1%. Its comparative schedules show prior-year EPS $0.81 and $1.26; calculations (1.14/.81−1)=40.74% and (1.45/1.26−1)=15.08%, which round to the stated figures.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 GAAP net income was $1.470 billion, up 41.4%, and non-GAAP net income $1.860 billion, up 14.4%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1613103/000162828026059697/exhibit991-fy27q1earningsr.htm",
+     "reason": "The release prose uses the shorthand 'GAAP net income' for $1.470 billion and reports the 41.4% increase; it gives non-GAAP net income $1.860 billion and 14.4%. However, the financial schedules specify $1.470 billion as net income attributable to Medtronic, while consolidated GAAP net income is $1.479 billion. Thus the answer's unqualified metric label is not precise under the accounting schedule, although its figures and growth rates match the issuer's prose (1,470/1,040−1=41.35%; 1,860/1,626−1=14.39%).",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 GAAP operating profit was $1.764 billion, margin 18.1% (up 22.1% and 120 bps); non-GAAP operating profit was $2.316 billion, margin 23.7% (up 14.9% and 10 bps)",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1613103/000162828026059697/exhibit991-fy27q1earningsr.htm",
+     "reason": "The release states both operating-profit and margin amounts and their year-over-year changes in its Q1 results discussion. It identifies the quarter as ended July 31, 2026 and distinguishes GAAP from non-GAAP measures.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Cardiovascular grew 18.9% organically, led by 15% Cardiac Rhythm Management growth and 88% Cardiac Ablation Solutions growth",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1613103/000162828026059697/exhibit991-fy27q1earningsr.htm",
+     "reason": "The release highlights these exact Q1 growth rates; the worldwide revenue table identifies Cardiovascular organic growth as 18.9%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q1 Diabetes business revenue was $843 million, up 16.9% reported and 14.9% organically",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1613103/000162828026059697/exhibit991-fy27q1earningsr.htm",
+     "reason": "The release revenue schedule lists Diabetes at $843 million, with 16.9% reported growth and 14.9% organic growth for Q1 FY27 versus Q1 FY26.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Medtronic raised FY2027 organic revenue growth guidance from 6.75%-7.25% to 7.25%-7.75%",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1613103/000162828026059697/exhibit991-fy27q1earningsr.htm",
+     "reason": "The release explicitly gives the prior and revised full-year organic revenue growth ranges and calls this a 50-basis-point increase. This is guidance, not an actual result.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Medtronic raised FY2027 diluted non-GAAP EPS guidance from $5.90-$6.00 to $5.94-$6.00, including estimated neutral-to-1% accretion from FX",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1613103/000162828026059697/exhibit991-fy27q1earningsr.htm",
+     "reason": "The release states both old and new FY27 diluted non-GAAP EPS guidance ranges and says the outlook includes estimated neutral to 1% accretion from foreign exchange based on recent rates. This is company guidance, not actual EPS.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2027 is a 53-week fiscal year, with the extra week in the first fiscal month of Q1 and included in the quarter ended July 31, 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1613103/000162828026060473/mdt-20260731.htm",
+     "reason": "The 10-Q states FY2027 is a 53-week fiscal year and that the extra week occurred in the first fiscal month of the first quarter and was included in the three months ended July 31, 2026.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The extra selling week added about 670 bps to Q1 organic growth; excluding it, growth was approximately 7%",
+     "numeric": true,
+     "cited_url": "https://uk.investing.com/news/stock-market-news/medtronic-earnings-analysis-questions-answered-and-next-catalysts-93CH-4854348",
+     "reason": "Investing.com states that the extra selling week added about 670 basis points and that growth excluding the benefit was approximately 7%. This is the secondary source's characterization of Q1 FY2027 growth.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "MarketBeat reported Q2 FY2027 EPS guidance of $1.320-$1.340",
+     "numeric": true,
+     "cited_url": "https://www.marketbeat.com/instant-alerts/analyst-medtronic-nyse-mdt-raised-to-buy-at-wall-street-zen-2026-10-03",
+     "reason": "The retrieved MarketBeat text says Medtronic 'has set its Q2 2027 guidance at 1.320-1.340 EPS.' It does not specify the GAAP/non-GAAP basis, so the answer appropriately attributes the range to MarketBeat without naming a basis.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "On September 14, 2026, Medtronic commenced an offer to exchange up to 225,361,295 newly issued MiniMed Group common shares for Medtronic ordinary shares; the 8-K was filed September 17",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1613103/000162828026062505/mdt-20260917.htm",
+     "reason": "The 8-K gives September 17, 2026 as report date and states that Medtronic commenced the exchange offer on September 14 for up to 225,361,295 newly issued MiniMed common shares in exchange for Medtronic ordinary shares.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Investing.com reported Q2 FY2027 earnings scheduled for November 24, 2026, and Investor Day on December 10-11, 2026",
+     "numeric": true,
+     "cited_url": "https://uk.investing.com/news/stock-market-news/medtronic-earnings-analysis-questions-answered-and-next-catalysts-93CH-4854348",
+     "reason": "The retrieved article's Next Catalysts section lists Q2 earnings as scheduled Nov. 24, 2026 and Investor Day as Dec. 10-11, 2026. These are source-attributed scheduled events, not completed events.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Medtronic fiscal year ends in late April",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1613103/000162828026060473/mdt-20260731.htm",
+     "reason": "The 10-Q identifies the previous fiscal year as ended April 24, 2026, which supports the general statement that the fiscal year ends in late April.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 15,
+   "numeric_cited": 15,
+   "cited": 15,
+   "supported": 14,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 146.0
+ }
+}

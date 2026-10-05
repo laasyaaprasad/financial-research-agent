@@ -1,0 +1,246 @@
+{
+ "id": "W01",
+ "category": "call commentary",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "text",
+ "question": "On Bank of America's second-quarter 2026 earnings call (July 14, 2026), what full-year 2026 outlook did the CFO give for (a) net interest income (NII) growth and (b) operating leverage, and how did each compare with the outlook he said had been given earlier in 2026 (in January and/or April)?",
+ "grading": "Key points (all required): (1) full-year 2026 NII growth expected at the UPPER END of the 6%-8% range (not a new numeric range); (2) full-year 2026 operating leverage expected in the range of 300 to 400 basis points; (3) comparison with earlier outlook: NII growth was 5%-7% in January and raised to 6%-8% in April; operating leverage was 'more than 200 basis points' as of the April (Q1) call. Accept equivalent wording ('top end of 6-8%', '3-4 percentage points'). Fail if the answer gives plain 6%-8% or 5%-7% as the current NII view without 'upper end', gives 'more than 200 bps' as the current operating-leverage view, states a dollar NII figure as guidance, or relies on remarks from the Q3 2026 call (mid-October 2026, after the as_of date) or the mid-September Barclays conference.",
+ "answer": "(a) Full-year 2026 NII growth is now expected at the upper end of the 6%-8% range (the CFO recalled 5%-7% in January, raised to 6%-8% in April) [W01-E1]. (b) Full-year 2026 operating leverage is now expected to be 300 to 400 basis points, up from 'more than 200 basis points' given on the April call; first-half 2026 operating leverage had already exceeded 450 bps (Q2: 6.6%) [W01-E1]. Neither full-year outlook appears in the July 14 press release or in the slide deck filed with the 8-K [W01-E2, W01-E3].",
+ "output": {
+  "answer": " On Bank of America’s Q2 2026 earnings call on July 14, 2026, CFO Alastair Borthwick raised the company’s full‑year 2026 guidance for both metrics versus the outlooks given earlier in the year.\n\n| Metric | July 14, 2026 Outlook | Prior 2026 Outlook(s) | Comparison |\n|--------|----------------------|-----------------------|------------|\n| **(a) Net Interest Income (NII) growth** | Upper end of the **6%–8%** range (effectively ~8%) | **January:** **5%–7%**; **April (Q1):** raised to **6%–8%** | Raised twice during 2026; the July guidance landed at the top of the April range[^6^][^1^] |\n| **(b) Operating leverage** | **300–400 bps** | **April (Q1):** **“more than 200 bps”** (alternatively framed as the medium‑term **200–300 bps** target) | Raised by 100 bps at the low end, lifting the floor from ~200 bps to 300 bps after a strong first half (450 bps through June)[^5^][^2^][^9^] |\n\n**Key details from the call**\n\n* **NII:** Borthwick explicitly reminded analysts: *“In January, we told you to expect 5%–7% full year NII growth. In April, we raised that full year range to be 6%–8%”* and said the bank now expected to finish at the **upper end of that 6%–8% range**, assuming modest loan/deposit growth and one 25 bp rate hike in September[^6^][^1^].\n\n* **Operating leverage:** After delivering **660 bps** of operating leverage in Q2 and **~450 bps** in the first half, Borthwick lifted the full‑year target. He noted that the bank had previously committed to a **200–300 bp** medium‑term framework, but the strong H1 performance gave confidence to guide **above that range**, settling on **300–400 bps** for the full year[^5^][^2^].\n\n**Sources**\n\n* Motley Fool Q2 2026 transcript (July 14, 2026): https://www.fool.com/earnings/call-transcripts/2026/07/21/bank-of-america-bac-q2-2026-earnings-call-transcript\n* Alpha Sense Q2 2026 summary: https://www.alpha-sense.com/earnings/bac\n* Hudson Labs Q3 2026 preview (summarizing Q2 guidance changes): https://www.hudson-labs.com/research/bank-of-america-q3-2026-earnings-preview-bac-results-preview\n* BigGo Finance Q1 2026 recap (April 15, 2026, showing earlier NII and operating leverage guidance): https://finance.biggo.com/news/US_BAC_2026-04-15",
+  "tokens": {
+   "input": 20200,
+   "output": 3772
+  },
+  "tavily_credits": 4,
+  "latency_s": 35.66,
+  "model": "moonshotai/Kimi-K2.6",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/1264ed31b59b57de1036981102cbc9f8",
+  "companies": null,
+  "plan": null,
+  "unavailable": null,
+  "removed": null,
+  "assumptions": null,
+  "out_of_scope": null,
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Bank of America Q2 2026 earnings call July 14 2026 CFO outlook full year 2026 net interest income NII growth operating leverage",
+     "search_depth": "advanced"
+    }
+   },
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Bank of America CFO Alastair Borthwick January April 2026 guidance net interest income NII 5-7% 6-8% operating leverage 200-300 bps",
+     "search_depth": "advanced"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://finance.biggo.com/news/US_BAC_2026-04-15",
+    "https://www.alpha-sense.com/earnings/bac",
+    "https://www.fool.com/earnings/call-transcripts/2026/07/21/bank-of-america-bac-q2-2026-earnings-call-transcript",
+    "https://www.hudson-labs.com/research/bank-of-america-q3-2026-earnings-preview-bac-results-preview"
+   ],
+   "cited_primary": 0,
+   "retrieved": 18,
+   "retrieved_primary": 2
+  },
+  "recall": {
+   "figures": 16,
+   "found": 13
+  },
+  "correctness": {
+   "score": 1.0,
+   "points": [
+    {
+     "point": "States full-year 2026 NII growth is expected at the upper end of the 6%-8% range, rather than giving a new numeric range.",
+     "optional": false,
+     "met": true,
+     "note": "Identifies the July outlook as the “Upper end of the 6%–8% range” and explains it is the top of the April range."
+    },
+    {
+     "point": "Compares the NII outlook with earlier 2026 outlooks: 5%-7% in January, raised to 6%-8% in April.",
+     "optional": false,
+     "met": true,
+     "note": "Both the January 5%–7% and April 6%–8% outlooks are stated."
+    },
+    {
+     "point": "States full-year 2026 operating leverage is expected in the range of 300 to 400 basis points.",
+     "optional": false,
+     "met": true,
+     "note": "Gives the July outlook as 300–400 bps."
+    },
+    {
+     "point": "Compares the operating-leverage outlook with the April outlook of “more than 200 basis points.”",
+     "optional": false,
+     "met": true,
+     "note": "Explicitly identifies April's prior outlook as “more than 200 bps.”"
+    },
+    {
+     "point": "Does not present plain 6%-8% or 5%-7% as the current NII view without identifying the upper-end position.",
+     "optional": false,
+     "met": true,
+     "note": "The current view is clearly qualified as the upper end of 6%–8%."
+    },
+    {
+     "point": "Does not give “more than 200 bps” as the current operating-leverage view.",
+     "optional": false,
+     "met": true,
+     "note": "Current operating-leverage guidance is stated as 300–400 bps."
+    },
+    {
+     "point": "Does not state a dollar NII figure as guidance.",
+     "optional": false,
+     "met": true,
+     "note": "No dollar NII amount is given as guidance."
+    },
+    {
+     "point": "Does not rely on remarks from the Q3 2026 call or the mid-September Barclays conference.",
+     "optional": false,
+     "met": true,
+     "note": "The answer attributes the outlook to the July 14 Q2 call and earlier January/April outlooks; it does not use those disallowed remarks."
+    }
+   ],
+   "verdict": "correct",
+   "rationale": "The answer provides both requested July full-year outlooks and the required January/April comparisons, while avoiding the specified traps.",
+   "judge_verdict": "correct",
+   "votes": [
+    "correct",
+    "correct",
+    "correct"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "FY2026 NII growth outlook: upper end of 6%–8% range",
+     "numeric": true,
+     "cited_url": "https://www.fool.com/earnings/call-transcripts/2026/07/21/bank-of-america-bac-q2-2026-earnings-call-transcript",
+     "reason": "The retrieved transcript summary says management expects full-year 2026 NII growth at the upper end of its 6% to 8% range. This is FY guidance, not a reported actual.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NII guidance progression: January 5%–7%, raised in April to 6%–8%",
+     "numeric": true,
+     "cited_url": "https://www.fool.com/earnings/call-transcripts/2026/07/21/bank-of-america-bac-q2-2026-earnings-call-transcript",
+     "reason": "The retrieved transcript explicitly states: in January the expected full-year NII growth was 5%–7%, and in April the range was raised to 6%–8%.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Borthwick said the January 5%–7% range had been raised in April to 6%–8%",
+     "numeric": true,
+     "cited_url": "https://www.fool.com/earnings/call-transcripts/2026/07/21/bank-of-america-bac-q2-2026-earnings-call-transcript",
+     "reason": "The transcript passage attributes that guidance history to Borthwick and contains the same statement. The answer's quote is a slightly polished rendering, but its factual content is supported.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The Q2 2026 call occurred on July 14, 2026",
+     "numeric": true,
+     "cited_url": "https://www.fool.com/earnings/call-transcripts/2026/07/21/bank-of-america-bac-q2-2026-earnings-call-transcript",
+     "reason": "The retrieved excerpt identifies a Q2 2026 transcript but gives no call date. The URL path contains July 21, which is not evidence that the call occurred on July 14; the retrieved metadata has no publication date.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The speaker was CFO Alastair Borthwick",
+     "numeric": false,
+     "cited_url": "https://www.fool.com/earnings/call-transcripts/2026/07/21/bank-of-america-bac-q2-2026-earnings-call-transcript",
+     "reason": "The retrieved passage attributes the remarks to “Borthwick,” but does not provide the first name or CFO title. Those parts of the answer's attribution are not established by the retrieved text.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NII outlook assumes modest loan and deposit growth",
+     "numeric": false,
+     "cited_url": "https://www.alpha-sense.com/earnings/bac",
+     "reason": "The retrieved AlphaSense text says the guidance assumes modest loan and deposit growth in the second half of the year.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "NII outlook assumes one 25-basis-point rate hike in September",
+     "numeric": true,
+     "cited_url": "https://www.alpha-sense.com/earnings/bac",
+     "reason": "The retrieved AlphaSense wording says the outlook is based on a forward curve with a 125-basis-point rate hike in September, not one 25-basis-point hike. The stated rate assumption is therefore not supported and conflicts with the cited wording.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "FY2026 operating-leverage guidance is 300–400 bps, raised from prior guidance of more than 200 bps",
+     "numeric": true,
+     "cited_url": "https://www.alpha-sense.com/earnings/bac",
+     "reason": "The retrieved AlphaSense passage states full-year operating leverage is now expected at 300–400 basis points, up from prior guidance of more than 200 basis points. These are guidance figures, not actual results.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The April Q1 2026 full-year operating-leverage target was more than 200 bps",
+     "numeric": true,
+     "cited_url": "https://finance.biggo.com/news/US_BAC_2026-04-15",
+     "reason": "The retrieved April recap says the bank continued to target more than 200 basis points of operating leverage for the full year.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Management had committed to a 200–300 bps medium-term operating-leverage framework",
+     "numeric": true,
+     "cited_url": "https://www.hudson-labs.com/research/bank-of-america-q3-2026-earnings-preview-bac-results-preview",
+     "reason": "Hudson's retrieved text does give a prior 200–300 bps range, but describes it as previous full-year guidance; it does not identify it as a medium-term framework or say management had committed to that framework. The answer's added period/basis is unsupported.",
+     "supported": false,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Q2 operating leverage was 660 bps",
+     "numeric": true,
+     "cited_url": "https://www.hudson-labs.com/research/bank-of-america-q3-2026-earnings-preview-bac-results-preview",
+     "reason": "Hudson's retrieved text states Q2 2026 operating leverage was 6.6%, equivalent to 660 basis points (6.6 × 100). This is presented as Q2 actual performance.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "First-half operating leverage was approximately 450 bps",
+     "numeric": true,
+     "cited_url": "https://www.fool.com/earnings/call-transcripts/2026/07/21/bank-of-america-bac-q2-2026-earnings-call-transcript",
+     "reason": "The retrieved transcript says the company achieved 450 basis points in the first half. The answer's approximate 450 bps is consistent.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The low end of operating-leverage guidance increased by 100 bps, from about 200 to 300",
+     "numeric": true,
+     "cited_url": "https://www.hudson-labs.com/research/bank-of-america-q3-2026-earnings-preview-bac-results-preview",
+     "reason": "Hudson gives the previous range as 200–300 bps and the new range as 300–400 bps. Comparing the lower bounds: 300 − 200 = 100 bps. That calculation is correct on Hudson's range-to-range comparison; the April recap separately characterizes the earlier outlook as “more than 200 bps,” not a specific 200–300 range.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Strong first-half performance supported raising full-year operating-leverage guidance to 300–400 bps",
+     "numeric": true,
+     "cited_url": "https://www.fool.com/earnings/call-transcripts/2026/07/21/bank-of-america-bac-q2-2026-earnings-call-transcript",
+     "reason": "The transcript summary links the increase to 300–400 bps with first-half achievement of 450 bps. This supports the substance of the claimed rationale, though not the answer's separate 200–300 medium-term characterization.",
+     "supported": true,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 12,
+   "numeric_cited": 12,
+   "cited": 14,
+   "supported": 10,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 59.2
+ }
+}

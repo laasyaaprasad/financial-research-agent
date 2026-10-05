@@ -1,0 +1,296 @@
+{
+ "id": "T18",
+ "category": "Quantitative retrieval",
+ "difficulty": "hard",
+ "time_sensitivity": "static",
+ "answer_type": "abstain",
+ "question": "How many Cybertrucks did Tesla deliver in the second quarter of 2026?",
+ "grading": "Must state that Tesla does not disclose Cybertruck deliveries separately: it reports only 'Model 3/Y' (467,762 delivered in Q2 2026) and 'Other Models' (12,364) combined, and the 10-Q has no Cybertruck unit count. May give the 'Other Models' figure with that label. Fail if a Cybertruck unit number is presented as reported.",
+ "answer": "Tesla does not disclose Cybertruck deliveries. Its Q2 2026 delivery release reports only Model 3/Y deliveries of 467,762 and 'Other Models' deliveries of 12,364 (total 480,126), and the Q2 2026 update deck and 10-Q give no model-level Cybertruck unit count (Cybertruck appears only in the installed-capacity table, >125,000 per year at Gigafactory Texas, which is not a delivery figure). Any Cybertruck figure would be a third-party estimate. [T18-E1, T18-E2, T18-E3]",
+ "output": {
+  "answer": "**Question:** How many Cybertrucks did Tesla deliver in the second quarter of 2026?\n*As of 2026-10-03*\n\n**Interpreted as:** 'Second quarter of 2026' = Tesla's fiscal Q2 FY2026, the quarter ended 2026-06-30 (Tesla's fiscal year is the calendar year). Tesla does not report Cybertruck deliveries as a standalone line: its delivery/production table splits only 'Model 3/Y' and 'Other Models' (Model S, Model X and Cybertruck combined), so the Cybertruck-only figure is not a disclosed number; the answer will give the Other Models line and any Cybertruck-specific commentary management provided. No estimate or third-party guess at the Cybertruck split will be produced; only figures Tesla itself disclosed are reported.\n\n| | Other models deliveries (vehicles) | Other models production (vehicles) | Total deliveries (vehicles) |\n|---|---|---|---|\n| Q2 FY2026 (quarter ended 2026-06-30) | 12,364 [1] | 8,822 [1] | 480,126 [1] |\n\n- Tesla does not report Cybertruck deliveries as a standalone line: in its Q2 FY2026 (quarter ended June 30, 2026) production and delivery table it discloses only \"Model 3/Y\" and \"Other models\" (Model S, Model X and Cybertruck combined), so no Cybertruck-only delivery count is disclosed. [1][2]\n- Tesla's \"Other models\" deliveries in Q2 FY2026 (quarter ended June 30, 2026) were 12,364 vehicles, up 19% year over year from 10,394 in Q2 FY2025. [1]\n- Tesla's \"Other models\" production in Q2 FY2026 (quarter ended June 30, 2026) was 8,822 vehicles, down 34% year over year from 13,409 in Q2 FY2025. [1]\n- Tesla's total Q2 FY2026 (quarter ended June 30, 2026) deliveries were 480,126 vehicles, of which the Other models line was 12,364, so the Cybertruck share of that line is not derivable from Tesla's disclosure. [1]\n- Tesla lists installed annual manufacturing capacity for the Cybertruck at more than 125,000 units in Texas with status \"Production\" as of the Q2 FY2026 report. [1]\n- Tesla's Q2 FY2026 earnings release contains no Cybertruck-specific delivery or production commentary; its automotive commentary cites record Q2 deliveries supported by record deliveries in several markets and the Model YL U.S. launch, and its manufacturing commentary cites Cybercab production start and Model S & X line decommissioning at Fremont. [1]\n\n**Not available**\n- Cybertruck-only deliveries in Q2 FY2026 (quarter ended June 30, 2026): Tesla does not break out Cybertruck deliveries separately in its quarterly production/delivery report or its 10-Q; Cybertruck volume is folded into the \"Other models\" line (Model S, Model X and Cybertruck combined), which totaled 12,364 deliveries in Q2 FY2026. No Cybertruck-only figure is disclosed, and no estimate is given. [1][2]\n- Cybertruck-specific production volume in Q2 FY2026: Cybertruck production is reported only within the \"Other models\" production line (8,822 units in Q2 FY2026); Tesla discloses no Cybertruck-only production number. [1]\n\n**Sources**\n[1] Tesla, Inc. earnings release for Q2 FY2026, 8-K EX-99.1 (filed 2026-07-22) (www.sec.gov, 2026-07-22, primary) https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/exhibit991.htm\n[2] Tesla (TSLA) Q2 2026 deliveries jump 25% to 480,126, beating estimates - Electrek (electrek.co, 2026-07-02, secondary) https://electrek.co/2026/07/02/tesla-q2-2026-deliveries-480126/\n\n_Draft for analyst review. Every figure is quoted from the cited source or computed in code from quoted inputs; claims that failed verification were removed._",
+  "tokens": {
+   "input": 35169,
+   "output": 5895
+  },
+  "tavily_credits": 2.0,
+  "latency_s": 39.27,
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": null,
+  "trace_url": "https://us.cloud.langfuse.com/project/cmuugqo1k06h0ad0dculyh3n5/traces/3dd6daecc6afdc13fe14332c5c7acbfe",
+  "companies": [
+   {
+    "name": "Tesla, Inc.",
+    "ticker": "TSLA",
+    "cik": "1318605",
+    "resolved": true
+   }
+  ],
+  "plan": {
+   "assumptions": [
+    "'Second quarter of 2026' = Tesla's fiscal Q2 FY2026, the quarter ended 2026-06-30 (Tesla's fiscal year is the calendar year).",
+    "Tesla does not report Cybertruck deliveries as a standalone line: its delivery/production table splits only 'Model 3/Y' and 'Other Models' (Model S, Model X and Cybertruck combined), so the Cybertruck-only figure is not a disclosed number; the answer will give the Other Models line and any Cybertruck-specific commentary management provided.",
+    "No estimate or third-party guess at the Cybertruck split will be produced; only figures Tesla itself disclosed are reported."
+   ],
+   "out_of_scope": [],
+   "metrics": [
+    "Total vehicle deliveries and production, Q2 FY2026 (quarter ended 2026-06-30)",
+    "Deliveries and production split by Tesla's reported categories: Model 3/Y vs. Other Models (Model S/X/Cybertruck)",
+    "Any Cybertruck-specific volume, production or demand commentary in the Q2 FY2026 earnings release, shareholder deck or 10-Q MD&A",
+    "Q2 FY2026 revenue and automotive gross margin context for the Other Models line, if Cybertruck commentary is tied to it",
+    "Prior-year comparison (Q2 FY2025) deliveries for the same categories, for growth context"
+   ],
+   "answer_periods": [
+    {
+     "ticker": "TSLA",
+     "label": "Q2 FY2026"
+    }
+   ],
+   "documents": [
+    {
+     "ticker": "TSLA",
+     "period": "Q2 FY2026",
+     "document": "earnings_release"
+    },
+    {
+     "ticker": "TSLA",
+     "period": "Q2 FY2026",
+     "document": "periodic_report"
+    }
+   ],
+   "recent_filings_days": null,
+   "searches": [
+    {
+     "purpose": "Find management commentary or news coverage quantifying Cybertruck volumes/demand in Q2 2026, since Tesla does not disclose it in filings",
+     "query": "Tesla Cybertruck deliveries Q2 2026 earnings call commentary",
+     "topic": "news",
+     "days_back": 120
+    }
+   ],
+   "availability_notes": [
+    "Tesla has never broken out Cybertruck deliveries separately in its quarterly production/delivery report or 10-Q; Cybertruck volumes are folded into the 'Other Models' category, so an exact Cybertruck delivery count for Q2 FY2026 is not available from SEC filings.",
+    "Q2 FY2026 is reported (10-Q filed 2026-07-23, earnings release 8-K filed 2026-07-22), so the quarter's headline delivery figures are available even though the Cybertruck-only number is not.",
+    "Tesla's Q3 FY2026 earnings release (8-K filed 2026-10-02) is the most recent disclosure and may contain updated commentary on Cybertruck production/volume, but it covers Q3, not Q2."
+   ]
+  },
+  "unavailable": [
+   {
+    "item": "Cybertruck-only deliveries in Q2 FY2026 (quarter ended June 30, 2026)",
+    "kind": "not_disclosed",
+    "reason": "Tesla does not break out Cybertruck deliveries separately in its quarterly production/delivery report or its 10-Q; Cybertruck volume is folded into the \"Other models\" line (Model S, Model X and Cybertruck combined), which totaled 12,364 deliveries in Q2 FY2026. No Cybertruck-only figure is disclosed, and no estimate is given.",
+    "evidence_ids": [
+     "E1",
+     "E5"
+    ]
+   },
+   {
+    "item": "Cybertruck-specific production volume in Q2 FY2026",
+    "kind": "not_disclosed",
+    "reason": "Cybertruck production is reported only within the \"Other models\" production line (8,822 units in Q2 FY2026); Tesla discloses no Cybertruck-only production number.",
+    "evidence_ids": [
+     "E1"
+    ]
+   }
+  ],
+  "removed": [],
+  "assumptions": [
+   "'Second quarter of 2026' = Tesla's fiscal Q2 FY2026, the quarter ended 2026-06-30 (Tesla's fiscal year is the calendar year).",
+   "Tesla does not report Cybertruck deliveries as a standalone line: its delivery/production table splits only 'Model 3/Y' and 'Other Models' (Model S, Model X and Cybertruck combined), so the Cybertruck-only figure is not a disclosed number; the answer will give the Other Models line and any Cybertruck-specific commentary management provided.",
+   "No estimate or third-party guess at the Cybertruck split will be produced; only figures Tesla itself disclosed are reported."
+  ],
+  "out_of_scope": [],
+  "clarification": null,
+  "tool_calls": [
+   {
+    "name": "tavily_search",
+    "args": {
+     "query": "Tesla Cybertruck deliveries Q2 2026 earnings call commentary",
+     "search_depth": "basic",
+     "max_results": 5,
+     "end_date": "2026-10-03",
+     "exclude_domains": [
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "instagram.com",
+      "tiktok.com",
+      "reddit.com",
+      "youtube.com",
+      "quora.com"
+     ],
+     "topic": "news",
+     "start_date": "2026-06-05"
+    }
+   },
+   {
+    "name": "tavily_extract",
+    "args": {
+     "urls": [
+      "https://www.tradingview.com/news/tradingview:735399db01748:0-tesla-posts-28-24b-revenue-1-12b-gaap-net-income-in-q2-2026-deliveries-record/",
+      "https://electrek.co/2026/07/02/tesla-q2-2026-deliveries-480126/",
+      "https://electrek.co/2026/07/21/tesla-tsla-q2-2026-earnings-preview/"
+     ],
+     "query": "How many Cybertrucks did Tesla deliver in the second quarter of 2026?",
+     "chunks_per_source": 5,
+     "extract_depth": "basic"
+    }
+   }
+  ]
+ },
+ "scores": {
+  "sources": {
+   "cited_urls": [
+    "https://electrek.co/2026/07/02/tesla-q2-2026-deliveries-480126/",
+    "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/exhibit991.htm"
+   ],
+   "cited_primary": 1,
+   "retrieved": 8,
+   "retrieved_primary": 3
+  },
+  "recall": {
+   "figures": 4,
+   "found": 4
+  },
+  "correctness": {
+   "score": 0.833,
+   "points": [
+    {
+     "point": "Clearly states that Tesla does not disclose Cybertruck deliveries separately and that the Cybertruck-only figure is unavailable, without presenting a Cybertruck count as an actual reported result.",
+     "optional": false,
+     "met": true,
+     "note": "The answer repeatedly says no Cybertruck-only delivery count is disclosed and gives no estimate."
+    },
+    {
+     "point": "States that Tesla reports only the 'Model 3/Y' and 'Other Models' delivery categories, with Cybertruck included in the combined 'Other Models' category.",
+     "optional": false,
+     "met": true,
+     "note": "It says the table splits only 'Model 3/Y' and 'Other models' and identifies Model S, Model X, and Cybertruck as combined in Other models."
+    },
+    {
+     "point": "Gives Model 3/Y deliveries as 467,762 for Q2 2026.",
+     "optional": false,
+     "met": false,
+     "note": "It names the Model 3/Y category but does not state the 467,762 delivery figure."
+    },
+    {
+     "point": "Gives the 'Other Models' deliveries figure as 12,364, labeled as Other Models rather than as Cybertruck deliveries.",
+     "optional": false,
+     "met": true,
+     "note": "The table and text label 12,364 as 'Other models' deliveries."
+    },
+    {
+     "point": "States that the Q2 2026 10-Q contains no Cybertruck unit count.",
+     "optional": false,
+     "met": true,
+     "note": "It explicitly says Tesla does not break out Cybertruck deliveries in its 10-Q."
+    },
+    {
+     "point": "Does not present a Cybertruck unit number as a reported delivery figure.",
+     "optional": false,
+     "met": true,
+     "note": "No Cybertruck-specific delivery count is supplied; the 12,364 figure is clearly labeled as the combined Other models line."
+    }
+   ],
+   "verdict": "partial",
+   "rationale": "The answer correctly abstains from giving a Cybertruck delivery count, identifies the combined Other Models figure as 12,364, and states that the 10-Q has no Cybertruck breakout. It omits the required Model 3/Y figure of 467,762, so it does not satisfy every required element.",
+   "judge_verdict": "partial",
+   "votes": [
+    "partial",
+    "partial",
+    "partial"
+   ]
+  },
+  "citations": {
+   "claims": [
+    {
+     "claim": "Other-model deliveries: 12,364 in Q2 2026, up 19% from 10,394 in Q2 2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/exhibit991.htm",
+     "reason": "The SEC release table reports Other models deliveries of 10,394 for Q2-2025 and 12,364 for Q2-2026, with YoY 19%. Calculation check: (12,364−10,394)/10,394 × 100 = 18.95%, which rounds to 19%. These are delivery counts, not production or guidance.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tesla total deliveries were 480,126 vehicles in Q2 2026",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/exhibit991.htm",
+     "reason": "The SEC release operational summary lists Q2-2026 Total deliveries as 480,126 vehicles. This is an actual quarterly delivery figure.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Other-model production was 8,822 in Q2 2026, down 34% from 13,409 in Q2 2025",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/exhibit991.htm",
+     "reason": "The SEC release table lists Other models production of 13,409 for Q2-2025 and 8,822 for Q2-2026, with YoY −34%. Calculation check: (8,822−13,409)/13,409 × 100 = −34.21%, which rounds to −34%. These are production counts, distinct from deliveries.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tesla listed Cybertruck installed annual manufacturing capacity in Texas as more than 125,000 units, with status Production",
+     "numeric": true,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/exhibit991.htm",
+     "reason": "The manufacturing and hardware table lists Texas / Cybertruck / >125,000 / Production under Installed Annual Manufacturing Capacity. This is stated capacity/status, not a report of actual quarterly production or a delivery target.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tesla said it achieved record second-quarter vehicle deliveries",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/exhibit991.htm",
+     "reason": "The release highlights say Tesla achieved record second-quarter vehicle deliveries, and the operations summary also says Record Q2 vehicle deliveries.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tesla said overall Q2 record deliveries were supported by record deliveries in several markets",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/exhibit991.htm",
+     "reason": "The release's Automotive commentary states that overall Q2 record deliveries were supported by record deliveries in several markets, then names examples.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tesla said it launched the Model YL in the U.S. market in July",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/exhibit991.htm",
+     "reason": "The Automotive commentary says, “We launched the Model YL in the U.S. market in July.” This is a company statement about a July event, not a Q2 launch.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tesla said Cybercab began production at Gigafactory Texas",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/exhibit991.htm",
+     "reason": "The release highlights state that Cybercab began production at Gigafactory Texas.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "Tesla said it decommissioned Model S and X manufacturing lines at Fremont and was installing first-generation Optimus lines there",
+     "numeric": false,
+     "cited_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/exhibit991.htm",
+     "reason": "The release says construction at Fremont began after decommissioning Model S & X lines, and its Robotics section says those lines were decommissioned and first-generation Optimus lines were being installed.",
+     "supported": true,
+     "in_retrieved": true
+    },
+    {
+     "claim": "The answer's listed composition of the Other Models line—Model S, Model X, and Cybertruck combined—is complete",
+     "numeric": false,
+     "cited_url": "https://electrek.co/2026/07/02/tesla-q2-2026-deliveries-480126/",
+     "reason": "The cited Electrek text defines Other Models as Model S, Model X, Cybertruck, and Semi. Thus it supports that the listed three are included, but contradicts the answer's implied complete grouping by additionally naming Semi. Tesla's retrieved release excerpt gives the Other models table line but does not define its membership.",
+     "supported": false,
+     "in_retrieved": true
+    }
+   ],
+   "numeric_claims": 4,
+   "numeric_cited": 4,
+   "cited": 10,
+   "supported": 9,
+   "not_retrieved": 0,
+   "undecided": 0
+  },
+  "judge_s": 117.5
+ }
+}
