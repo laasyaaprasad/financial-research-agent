@@ -83,7 +83,7 @@ flowchart TD
 | Evidence | `agents/research.py` | **SEC:** BM25-ranked passages from earnings releases and 10-Q/10-K filings, plus XBRL facts for every answer period (core income-statement lines always included). **Tavily:** basic search, one query-focused extract, social media excluded, plus one gap-filling round if the writer reports something missing. |
 | Write and verify | `agents/writer.py` | Claims and table cells must quote their sources verbatim. Code rejects any quote that isn't in its source, rejects any number that isn't in a quote, and evaluates calculations itself (for example, fiscal Q4 = full year minus nine months). A verifier checks meaning. One revision is allowed; anything that still fails is withheld. |
 | Orchestrate | `agents/pipeline.py` | Runs the steps, renders the brief or table and provides the CLI. |
-| Trace | `agents/tracing.py` | Langfuse via OpenTelemetry: one trace per question, with model and Tavily calls and the eval scores attached. |
+| Trace | `agents/tracing.py` | Plain OpenTelemetry over OTLP (Langfuse by default, any OTLP backend via `OTEL_EXPORTER_OTLP_ENDPOINT`; `TRACING=off` disables it): one trace per question, a span per pipeline step, a `chat <model>` span per model call with tokens and cost, a retriever span per Tavily call (live, cache or offline, credits, result URLs), and eval scores that re-grading updates in place. |
 
 ## Scope
 
