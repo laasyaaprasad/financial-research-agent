@@ -1,5 +1,43 @@
 # Final report: a cited financial research agent
 
+## Technical statement
+
+**The problem.** An analyst researching a public company needs figures they can rely on: the right company, the right fiscal period, the reported number rather than a guess, and a source they can check. A wrong number is expensive, and re-checking every answer by hand erases the time an assistant is meant to save. The starter searched the web for everything, didn't know today's date and did arithmetic in its head. On Exact50, 50 held-out analyst questions, it got 14 fully correct, and only 66% of its cited claims were supported by the source it cited.
+
+**Why search, and why SEC first.** Much of what analysts ask isn't in a filing: what management said on the earnings call, deal terms announced last week, results from companies that don't file with the SEC, and anything newer than the model's training data. Search is necessary for these. But reported figures are already exact, structured and free in SEC filings, so searching the web for them costs credits and adds secondary sources. The agent therefore reads SEC filings first and uses Tavily only for what filings lack, with one gap-filling round when the writer reports something missing. Tavily settings were measured, not guessed: basic search plus one query-focused extract got 8 of 10 web dev questions right at 3.9 credits each, ahead of advanced depth (7/10), `topic="finance"` (4/10) and `auto_parameters` (2/10).
+
+**Why each step is there.** Every component targets a failure mode seen in the baseline or in published finance benchmarks:
+- **Company resolution** against SEC's ticker list prevents wrong-entity answers.
+- **A reporting calendar** built from each company's own filings prevents fiscal-period errors.
+- **One planning call, validated in code,** can't choose a period that hasn't been reported.
+- **The writer** must quote its sources verbatim. Code rejects any quote that isn't in its source and any number that isn't in a quote, and does every calculation itself.
+- **A verifier** catches the right number with the wrong meaning (GAAP vs. non-GAAP, guidance vs. actual). Whatever still fails is withheld rather than shown.
+
+**Thought process.**
+1. **Measure before building.** I ran the starter exactly as shipped and with its design on our model, to separate the model's contribution from the architecture's.
+2. **Make every component intentional.** Each part had to answer a measured failure; the list above shows which.
+3. **Build in phases.** The architecture was planned as milestones, each with acceptance criteria, built and checked one at a time.
+4. **Iterate and validate.** I improved against dev sets and tested on held-out sets frozen by hash before their first run, graded by a different model family. When a first attempt overfit the dev set, I re-scoped and rebuilt it generically (§5). The first version scored 24 of 50 on Exact50 and the final one 32.
+5. **Keep the end user, cost and latency in view.** Fixed reasoning effort per step halved median latency without changing dev quality. Tavily credits were treated as part of the scope: most development runs had web search off or replayed cached responses at zero cost.
+
+**Technical value: less ambiguity, more trust.** On Exact50, against the starter as shipped:
+- 94% of cited claims are supported by the cited source, against 66%.
+- 18 of 50 answers are verified-correct (correct, every cited claim supported, every number cited), against 2.
+- 73% of cited sources are primary (SEC or the company), against 15%.
+- 11 of 16 ambiguous or edge-case requests are handled correctly, against 1. The agent asks one clarifying question, declines the out-of-scope part, or states how it read the question, instead of guessing.
+
+Search is what answers the questions filings can't. The final agent got Nintendo's quarterly results right (Nintendo doesn't file with the SEC), as well as the terms of the Nielsen–DoubleVerify deal and of Akamai's agreement with Anthropic. On the dev set, the Tavily stage was added after failures where management's guidance existed only on the earnings call.
+
+**Business value.**
+- **Analyst time:** the saving comes from answers that don't need re-checking.
+- **Risk and compliance:** every figure traces to a filing or release passage, and anything unsupported is refused.
+- **Cost:** $0.049 per question against $0.126, using a third of the Tavily credits (115 against 373 for 50 questions), because the web is searched only when filings can't answer.
+- **Operability:** Langfuse traces show each step's inputs, cost and timing; CI/CD keeps the app deployed; and secrets never passed through the coding agent.
+
+**Trade-offs.** Median latency is 45 s against 26 s, mostly spent writing and verifying. Web-dependent questions are the weakest class: 3 of 10, against 7 for the starter's design on the same model. Each configuration ran once, and Exact50 was selected with earlier held-out results known, so it is a discriminating benchmark rather than a blind test.
+
+**Next.** Faster verification, a per-column unit check for tables, better coverage of web-dependent questions, and licensed data for consensus estimates.
+
 ## 1. Problem
 
 Financial analysts research companies against a hard standard. Every number must be:

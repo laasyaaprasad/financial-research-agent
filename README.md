@@ -1,6 +1,6 @@
 # Cited financial research agent (Tavily + SEC EDGAR)
 
-**Links:** [live chat app](https://3-143-102-144.sslip.io) (shared-password sign-in) · [kanban](https://github.com/users/laasyaaprasad/projects/3) · [report](REPORT.md)
+**Links:** [live chat app](https://3-143-102-144.sslip.io) (shared-password sign-in) · [kanban](https://github.com/users/laasyaaprasad/projects/3) · [technical statement and report](REPORT.md)
 
 An agent for financial analysts researching SEC-reporting companies. It answers questions, and builds comps and trend tables, about:
 - reported results
