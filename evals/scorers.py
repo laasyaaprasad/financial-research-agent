@@ -1,14 +1,17 @@
 """Scorers: answer correctness, citation support and source quality.
 
-The judge is a different model family (NVIDIA Nemotron) from the agents under test (DeepSeek),
-so no agent grades its own output. On the user-graded sample it agreed with the user on 8 of 9.
-(The first choice, Qwen3.5-397B, also 8/9, was withdrawn from Nebius on 2026-10-03.)
+The judge is OpenAI's GPT-6 Luna on high reasoning, a different model family from the agents under test
+(DeepSeek), so no agent grades its own output. On the 10 user-graded answers it agreed with the user on 8
+(majority of three votes), as Nemotron-3-Ultra did before it (8 of 9). GLM-5.3-Flash was tried and dropped: on
+2026-10-05 it returned no grade for 5 of 24 answers and 19 of 24 citation checks. Nebius judges remain available
+by their prefixed ids (e.g. nvidia/Nemotron-3-Ultra-550b-a55b).
 """
 
 from __future__ import annotations
 
 import json
 import re
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
 from typing import Literal
@@ -20,10 +23,11 @@ from pydantic import BaseModel, Field, model_validator
 
 load_dotenv()
 
-JUDGE_MODEL = "nvidia/Nemotron-3-Ultra-550b-a55b"
+JUDGE_MODEL = "gpt-6-luna"     # OpenAI, high reasoning: a different family from the agents' DeepSeek
+JUDGE_REASONING = "high"
 URL_RE = re.compile(r"https?://[^\s\)\]>\"'`,]+")
 CONTENT_CHARS = 200_000   # per URL kept in the index; judges see only the passages relevant to the answer
-SOURCE_CHARS = 6000       # per cited source shown to the citation judge
+SOURCE_CHARS = 30_000     # per cited source shown to the citation judge: almost every source in full
 
 
 # ---------- judge output schemas ----------
@@ -84,22 +88,48 @@ class CellExtraction(BaseModel):
     cells: list[CellValue]
 
 
+def _judge_llm(model: str):
+    """OpenAI model ids have no provider prefix ("gpt-6-luna"); Nebius ids do ("nvidia/...")."""
+    if "/" not in model:
+        from langchain_openai import ChatOpenAI  # reads OPENAI_API_KEY from the environment
+
+        return ChatOpenAI(model=model, reasoning_effort=JUDGE_REASONING, timeout=600, max_retries=2)
+    return ChatNebius(model=model, temperature=0, timeout=240)
+
+
+OPENAI_SLOTS = threading.Semaphore(4)  # concurrent OpenAI judge calls: keeps a run under the org's tokens-per-minute limit
+
+
+def _rate_limited(exc: Exception) -> bool:
+    return "429" in str(exc) or "rate limit" in str(exc).lower()
+
+
 def _judge(schema, prompt: str, retries: int = 4, model: str = JUDGE_MODEL):
-    llm = ChatNebius(model=model, temperature=0, timeout=240).with_structured_output(schema, method="function_calling")
-    error = None
-    for attempt in range(retries):
+    """Grade with structured output. A bad reply is retried up to `retries` times with what was wrong; a rate-limit
+    error is waited out (up to 8 times) without using up those tries."""
+    llm = _judge_llm(model).with_structured_output(schema, method="function_calling")
+    slots = OPENAI_SLOTS if "/" not in model else threading.Semaphore(1_000)
+    error, attempt, waits = None, 0, 0
+    while attempt < retries:
         if attempt:
             time.sleep(10 * attempt)  # transient provider errors (5xx) clear after a short wait
         try:
-            result = llm.invoke(prompt)
+            with slots:
+                result = llm.invoke(prompt)
             if result is not None:
                 return result
             error = "no structured output"
             # The judge sometimes answers in prose instead of calling the function; ask explicitly.
             prompt += "\n\nReturn the grade only by calling the provided function, not as plain text."
-        except Exception as exc:  # malformed judge output: ask again, saying what was wrong
+        except Exception as exc:
             error = exc
+            if _rate_limited(exc) and waits < 8:
+                waits += 1
+                time.sleep(min(30 * waits, 150))
+                continue
+            # malformed judge output: ask again, saying what was wrong
             prompt += f"\n\nYour previous reply could not be used ({str(exc)[:300]}). Call the function again with valid fields."
+        attempt += 1
     raise RuntimeError(f"judge failed after {retries} attempts: {error}")
 
 
@@ -182,7 +212,7 @@ def score_correctness(row: dict, answer: str, retrieved: dict[str, dict], judge:
             "only; do not require an exact match.\n\n"
             f"Snapshot answer (context): {row.get('answer')}\n\n"
             "Agent's retrieved sources (cited ones first; passages most relevant to the answer):\n"
-            + json.dumps(excerpts(retrieved, answer, chars=3000, limit=15), ensure_ascii=False))
+            + json.dumps(excerpts(retrieved, answer, chars=8000, limit=15), ensure_ascii=False))
     else:
         reference = (f"Verified reference answer: {row.get('answer')}\n"
                      f"Reference facts: {json.dumps([e.get('facts') for e in row.get('evidence') or []], ensure_ascii=False)}\n"
@@ -298,7 +328,7 @@ Answer:
 >>>
 
 Retrieved sources the answer cites (what the agent saw; passages most relevant to the answer):
-{json.dumps(excerpts(retrieved, answer, chars=SOURCE_CHARS, cited_only=True), ensure_ascii=False)[:120000]}"""
+{json.dumps(excerpts(retrieved, answer, chars=SOURCE_CHARS, cited_only=True), ensure_ascii=False)[:400_000]}"""
     for _ in range(attempts):
         out = []
         for c in _judge(Citations, prompt, model=judge).claims:

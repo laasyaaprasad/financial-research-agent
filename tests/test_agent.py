@@ -603,3 +603,22 @@ def test_web_results_must_be_about_the_company():
     about = {**passing, "content": "Acme Widgets reported Q2 sales. Acme Widgets also raised its outlook."}
     assert _mentions_company(about, [c])
     assert _mentions_company({**passing, "url": "https://news.example.com/acme-widgets-q2-results"}, [c])
+
+
+def test_judge_waits_out_rate_limits_without_using_up_retries(monkeypatch):
+    import evals.scorers as scorers
+    replies = [RuntimeError("Error code: 429 - Rate limit reached")] * 3 + ["graded"]
+
+    class FakeLLM:
+        def with_structured_output(self, *a, **k):
+            return self
+
+        def invoke(self, prompt):
+            reply = replies.pop(0)
+            if isinstance(reply, Exception):
+                raise reply
+            return reply
+
+    monkeypatch.setattr(scorers, "_judge_llm", lambda model: FakeLLM())
+    monkeypatch.setattr(scorers.time, "sleep", lambda s: None)
+    assert scorers._judge(object, "grade this", retries=1, model="gpt-x") == "graded"
