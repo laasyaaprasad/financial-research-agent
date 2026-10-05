@@ -34,3 +34,11 @@ infra/*.tfstate.*
 
 # Per-question run records (large; scorecards and results/final/exact50.md are committed instead)
 results/final/records/
+
+# Chainlit writes this when the UI is started from the repo root
+/.chainlit/
+# Per-run outputs the harness writes at the top of results/ (curated results live in results/final/)
+/results/scorecard_*.md
+/results/summary_*.json
+/results/judge_sample_*.md
+/results/compare_*.md
