@@ -6,7 +6,8 @@ A message that follows up on the conversation is first rewritten into a standalo
 then answered by the same pipeline as the CLI and the evals. Pipeline stages show as steps
 while it runs; the answer cites a source after every statement and links the sources at the
 end, and each answer's evidence (the quotes and calculations behind every statement) opens in
-the side panel.
+the side panel. Thumbs up and down under each reply record the analyst's verdict on that turn's
+trace in Langfuse.
 """
 
 from __future__ import annotations
@@ -15,6 +16,7 @@ import asyncio
 import hmac
 import os
 import secrets
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date
 
 import chainlit as cl
@@ -22,15 +24,8 @@ from chainlit.input_widget import Switch, TextInput
 from chainlit.utils import utc_now
 
 from agents import tracing
-from agents.followup import standalone, turn
-from agents.pipeline import run
-from ui.render import EVIDENCE, render
-
-HELP = ("I research SEC-reporting companies and cite a source for every statement. Ask about reported results, "
-        "calculations over them (growth, margins, trailing twelve months), guidance, management commentary, recent "
-        "developments, or a comparison table across companies or periods. Follow-up questions can refer to earlier "
-        "answers. I don't give investment advice, price targets, share prices or consensus estimates.")
-
+from ui.chat import Stopped, describe, failure, research
+from ui.render import EVIDENCE
 
 # One shared password keeps the app from being used up by strangers; the name on the sign-in form is optional.
 PASSWORD = "tavilyfde"
@@ -79,10 +74,6 @@ async def settings_update(settings: dict):
     cl.user_session.set("settings", settings)
 
 
-class Stopped(Exception):
-    pass
-
-
 class Steps:
     """Shows pipeline stages as Chainlit steps. Called from the worker thread that runs the pipeline,
     which stops at the next stage once the user presses stop."""
@@ -115,23 +106,6 @@ class Steps:
         self.running.clear()
 
 
-def research(message: str, history: list[str], today: date, live_web: bool, steps: Steps,
-             session: str) -> tuple[str | None, dict | None]:
-    """(Question researched, pipeline output); (None, None) when the message isn't a research request."""
-    with tracing.trace_question("agent", message, session) as trace:
-        question = message
-        if history:
-            steps("Read the conversation", None)
-            question, _ = standalone(message, history, today, trace.callbacks)
-            steps("Read the conversation", f"Researching: {question}" if question else "Not a research request")
-        output = None
-        if question:
-            output = run(question, today=today, callbacks=trace.callbacks, live_web=live_web, on_step=steps)
-            trace.finish(output)
-    tracing.flush()
-    return question, output
-
-
 @cl.on_stop
 async def stop():
     steps: Steps | None = cl.user_session.get("steps")
@@ -150,26 +124,52 @@ async def on_message(message: cl.Message):
                                       "fix it in the settings.").send()
         return
     history: list[str] = cl.user_session.get("history")
-    text = message.content.strip()
+    user: cl.User | None = cl.user_session.get("user")
     steps = Steps(parent_id=cl.context.current_step.id)
     cl.user_session.set("steps", steps)
     try:
         async with _one_at_a_time:
-            question, output = await cl.make_async(research)(text, history, today, settings.get("live_web", True),
-                                                             steps, f"ui-{cl.context.session.thread_id}")
+            reply = await cl.make_async(research)(message.content.strip(), history, today,
+                                                  settings.get("live_web", True), steps,
+                                                  f"ui-{cl.context.session.thread_id}", user and user.identifier)
     except Exception as exc:  # model or network failure: report it in the chat and keep the session usable
-        error = f"{type(exc).__name__}: {exc}"[:300]
+        error = describe(exc)
         await steps.fail(error)
-        await cl.ErrorMessage(content=f"The research failed ({error}). Try again, or rephrase the question.").send()
+        await cl.ErrorMessage(content=failure(error)).send()
         return
-    if output is None:
-        await cl.Message(content=HELP).send()
-        return
-    content, panel = render(output, today, question, rewritten=question != text)
-    answer = await cl.Message(content=content).send()
-    if panel:
-        await show_evidence(cl.Text(name=EVIDENCE, content=panel, display="side"), answer.id)
-    history.append(turn(text, question, output))
+    answer = await cl.Message(content=reply.content, actions=feedback_buttons(reply.trace_id)).send()
+    if reply.panel:
+        await show_evidence(cl.Text(name=EVIDENCE, content=reply.panel, display="side"), answer.id)
+    if reply.turn:
+        history.append(reply.turn)
+
+
+VOTES = {True: ("thumbs-up", "Helpful"), False: ("thumbs-down", "Not helpful")}
+_votes = ThreadPoolExecutor(max_workers=1)  # posts scores in click order, off the event loop
+
+
+def feedback_buttons(trace_id: str | None, chosen: bool | None = None) -> list[cl.Action]:
+    """Thumbs up and down under a reply (none when tracing is off). The chosen one shows its label.
+
+    Ids are derived from the trace, so a vote can redraw both buttons without keeping them in the session.
+    """
+    if not trace_id:
+        return []
+    return [cl.Action(name="feedback", payload={"trace_id": trace_id, "helpful": helpful}, icon=icon, tooltip=tip,
+                      label=tip if helpful is chosen else "", id=f"{trace_id}-{icon}")
+            for helpful, (icon, tip) in VOTES.items()]
+
+
+@cl.action_callback("feedback")
+async def feedback(action: cl.Action):
+    """Show the vote at once and score the reply's trace in Langfuse in the background (the API may be slow
+    or rate-limited); a click on the other button changes the vote."""
+    trace_id, helpful = action.payload["trace_id"], action.payload["helpful"]
+    _votes.submit(tracing.feedback, trace_id, helpful)
+    for button in feedback_buttons(trace_id):
+        await button.remove()
+    for button in feedback_buttons(trace_id, chosen=helpful):
+        await button.send(for_id=action.forId)
 
 
 async def show_evidence(panel: cl.Text, answer_id: str) -> None:

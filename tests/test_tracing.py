@@ -1,9 +1,10 @@
-"""Offline tests for tracing: span structure, Tavily spans, scores and the off switch (no network)."""
+"""Offline tests for tracing: span structure, Tavily spans, chat turns, scores and the off switch (no network)."""
 
 import asyncio
 import hashlib
 import json
 import uuid
+from datetime import date
 
 import pytest
 from langchain_core.language_models.fake_chat_models import GenericFakeChatModel
@@ -12,6 +13,7 @@ from opentelemetry.sdk.trace.export.in_memory_span_exporter import InMemorySpanE
 
 from agents import tracing
 from agents.research import Web
+from ui import chat
 
 ROW = {"id": "G01", "category": "reported", "difficulty": "easy"}
 MODEL = "deepseek-ai/DeepSeek-V4.1-Flash"
@@ -63,6 +65,7 @@ def test_model_calls_nest_under_their_step_with_tokens_and_cost(rec):
     assert root.attributes["langfuse.trace.metadata.golden_id"] == "G01"
     assert root.attributes["session.id"] == "run1"
     assert root.attributes["output.value"] == "Revenue was $1."
+    assert "user.id" not in root.attributes  # eval runs have no user
     assert plan.parent.span_id == root.context.span_id
     assert chat.parent.span_id == plan.context.span_id
     assert chat.attributes["gen_ai.usage.input_tokens"] == 1000
@@ -158,6 +161,59 @@ def test_parallel_questions_all_get_a_trace(monkeypatch):
         assert len(ids) == 4 and all(ids) and len(set(ids)) == 4
     finally:
         tracing._tracer, tracing._provider = False, None  # leave tracing off for the rest of the session
+
+
+def _turn(message, history, monkeypatch, run=None):
+    """One chat turn with the follow-up rewrite, pipeline and rendering stubbed out."""
+    monkeypatch.setattr(chat, "standalone", lambda message, history, today, callbacks: (
+        "What was Acme's gross margin in Q2 FY2026?" if message.startswith("and") else None, {}))
+    monkeypatch.setattr(chat, "run", run or (lambda question, **kw: {
+        "answer": "CLI brief", "companies": [], "claims": [], "unavailable": [], "tokens": {}}))
+    monkeypatch.setattr(chat, "render", lambda output, today, question, rewritten: (
+        f"**Researched as:** {question}\n\n- Gross margin was 40%. [[1]](<https://www.sec.gov/x>)", "panel"))
+    return chat.research(message, history, date(2026, 10, 5), False, lambda stage, detail: None, "ui-t1", "ana")
+
+
+def test_a_chat_turn_is_traced_as_the_analyst_saw_it(rec, monkeypatch):
+    reply = _turn("and gross margin?", ["Analyst: What was Acme's revenue in Q2 FY2026?"], monkeypatch)
+    root, followup = rec.one("invoke_agent agent"), rec.one("followup")
+    assert root.attributes["input.value"] == "and gross margin?"
+    assert root.attributes["output.value"] == reply.content  # the chat's rendering, not the CLI brief
+    assert root.attributes["session.id"] == "ui-t1" and root.attributes["user.id"] == "ana"
+    assert list(root.attributes["langfuse.trace.tags"]) == ["agent", "chat"]
+    assert followup.parent.span_id == root.context.span_id
+    assert followup.attributes["output.value"] == "What was Acme's gross margin in Q2 FY2026?"
+    assert reply.trace_id == format(root.context.trace_id, "032x") and reply.panel == "panel"
+    assert reply.turn.startswith("Analyst: and gross margin?\nResearched as: What was Acme's gross margin")
+
+
+def test_small_talk_and_failures_record_what_the_chat_said(rec, monkeypatch):
+    reply = _turn("thanks!", ["Analyst: What was Acme's revenue?"], monkeypatch)
+    assert reply.content == chat.HELP and reply.turn is None and reply.panel is None
+
+    def timeout(question, **kw):
+        raise TimeoutError("model timed out")
+
+    with pytest.raises(TimeoutError):
+        _turn("What was Acme's revenue?", [], monkeypatch, run=timeout)
+    small_talk, failed = rec.spans("invoke_agent agent")
+    assert small_talk.attributes["output.value"] == chat.HELP
+    assert failed.attributes["output.value"] == chat.failure("TimeoutError: model timed out")
+    assert not failed.status.is_ok
+
+
+def test_a_long_reply_is_kept_whole(rec):
+    with tracing.trace_question("agent", "q", "ui-t1", user="ana", tags=["chat"]) as trace:
+        trace.reply("x" * 5000)
+    assert rec.one("invoke_agent agent").attributes["output.value"] == "x" * 5000
+
+
+def test_feedback_is_one_score_per_answer_that_a_second_click_replaces(rec):
+    tracing.feedback("abc123", True)
+    tracing.feedback("abc123", False)
+    up, down = [kw["json"] for method, path, kw in rec.api_calls if path == "/api/public/scores"]
+    assert up["id"] == down["id"] and up["traceId"] == "abc123"
+    assert (up["name"], up["dataType"], up["value"], down["value"]) == ("user_feedback", "BOOLEAN", 1.0, 0.0)
 
 
 def test_tracing_off_is_a_no_op(monkeypatch, tmp_path):

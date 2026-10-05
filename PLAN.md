@@ -17,6 +17,7 @@ The baseline comes first so every later change can be measured against the start
 | M5 | Final evaluation | Baseline vs. agent on dev, held-out, hard and table sets, same model, within the credit budget | done |
 | M6 | Submission package | README, final report, build record | done |
 | M7 | Conversational UI | Analysts can research in a chat, with every statement cited and linked | done |
+| M8 | User-side observability | Each chat can be replayed in Langfuse as the analyst saw it, by user, with their feedback | done |
 
 ## M0: Project setup
 
@@ -283,3 +284,24 @@ The superseded code was removed from the working tree; it remains in git history
   - 4-quarter table, with the derived Q4 cited to both input filings
 - **Bug found and fixed in the browser:** a quoted table row's `|` characters in a citation's hover text split table cells. They are now escaped, and a test covers it.
 - **Chainlit behaviour designed around:** since 2.11, Chainlit opens the side panel with every side element in the chat. So each answer gets one Evidence panel, and earlier panels are re-sent so the newest is first.
+
+## M8: User-side observability (done; branch `feature/chat-observability`, issue #19)
+
+**Why:** Langfuse groups traces that share a session id into a session and replays it as a conversation; its Session Timeline (a feature preview since September 2026) shows each turn as the user's message, the agent's steps collapsed underneath, and the reply. Chat traces already had a session id per chat, but production traces from 2026-10-02 to 2026-10-05 showed no user id on any chat trace, the CLI brief as each turn's output instead of what the chat showed, and no output at all for turns that weren't research requests.
+
+**What we build**
+- `ui/chat.py`: one chat turn (follow-up rewrite, pipeline, rendering) as one trace, moved out of the Chainlit app so it is tested offline. The trace's input is the analyst's message; its output is the reply exactly as the chat showed it (cited answer, help text, or failure), kept whole rather than cut at 2,000 characters.
+- `user.id` from the sign-in name and the tag `chat` on chat traces; the follow-up rewrite as a `followup` step whose output is the researched question.
+- Thumbs up and down under each reply, as Chainlit actions next to the copy button. A click records a `user_feedback` BOOLEAN score on the turn's trace; the score id comes from (trace, name), so changing the vote replaces it. Scores are posted in the background, in click order, so a slow or rate-limited Langfuse API never holds up the chat.
+- Chainlit's built-in feedback buttons need a data layer, which would also turn on a thread-history sidebar, so they aren't used.
+
+**Acceptance criteria**
+- Offline tests cover a chat turn's input and output, user id, tags, the `followup` step, the help-text and failure replies, a long reply kept whole, and the feedback score.
+- In a browser (live web off): a chat with a follow-up, small talk and votes appears in Langfuse as one session with the user id, readable turns and the scores.
+- Eval and CLI traces are unchanged apart from carrying no user id; no key material in spans.
+
+**Result (2026-10-05)**
+- **Offline tests:** 66 pass (4 new).
+- **Browser check (live web off, 0 Tavily credits):** a three-turn chat as user `preview` (a question, the follow-up "and membership fees in the same quarter a year earlier?", then "thanks, that's all") plus votes. Read back through the Langfuse API: one session, three traces with `userId` `preview`, each input the typed message, each output the chat's reply (406 to 4,728 characters), a `followup` step holding the rewritten question ("Not a research request" for the small talk), and `user_feedback` scores of true, true and false on the voted turns.
+- **Not checked by eye:** the Session Timeline rendering itself. The browser used for the check isn't signed in to Langfuse, and the timeline is a feature preview that each user enables in Langfuse.
+- **Found while checking:** the first vote waited about 15 s on a rate-limited Langfuse API (429) before the button updated; votes are now posted in the background.

@@ -10,6 +10,7 @@ Cited answers to analyst questions about SEC-reporting companies: reported resul
 - **Interpreted as** says how anything the question left open was read (period, metric, company).
 - **Not available** lists what was asked but can't be given (not reported yet, not disclosed, not an SEC filer), instead of an estimate.
 - The steps above each answer show the companies identified, the research plan, and how many statements were verified or withheld.
+- **Thumbs up or down** under an answer says whether it helped. Click the other one to change your vote.
 
 ## Conversation
 
@@ -24,4 +25,4 @@ Out of scope: investment advice, price targets, share prices, analyst consensus 
 
 ## About
 
-Filings and financial data come from SEC EDGAR, web search from the Tavily API, and the language model runs on Nebius. This is an independent project: it is not affiliated with, sponsored or endorsed by Tavily. The color palette follows Tavily's published brand colors; no Tavily logos, marks or fonts are used.
+Filings and financial data come from SEC EDGAR, web search from the Tavily API, and the language model runs on Nebius. Conversations and votes are recorded for quality review (Langfuse), under the name you signed in with. This is an independent project: it is not affiliated with, sponsored or endorsed by Tavily. The color palette follows Tavily's published brand colors; no Tavily logos, marks or fonts are used.

@@ -85,7 +85,7 @@ flowchart TD
 | Orchestrate | `agents/pipeline.py` | Runs the steps, renders the brief or table and provides the CLI. |
 | Follow-ups | `agents/followup.py` | In the chat, one model call rewrites a follow-up (or a reply to a clarification question) into a standalone question for the pipeline. It never answers. |
 | Chat UI | `ui/` | Chainlit front end over the same pipeline (see [Chat UI](#chat-ui)). |
-| Trace | `agents/tracing.py` | Plain OpenTelemetry over OTLP (Langfuse by default, any OTLP backend via `OTEL_EXPORTER_OTLP_ENDPOINT`; `TRACING=off` disables it): one trace per question, a span per pipeline step, a `chat <model>` span per model call with tokens and cost, a retriever span per Tavily call (live, cache or offline, credits, result URLs), and eval scores that re-grading updates in place. |
+| Trace | `agents/tracing.py` | Plain OpenTelemetry over OTLP (Langfuse by default, any OTLP backend via `OTEL_EXPORTER_OTLP_ENDPOINT`; `TRACING=off` disables it): one trace per question, a span per pipeline step, a `chat <model>` span per model call with tokens and cost, a retriever span per Tavily call (live, cache or offline, credits, result URLs), and eval scores that re-grading updates in place. Each chat is a Langfuse session with the analyst's user id, so it can be replayed turn by turn, with analysts' thumbs up/down as scores. |
 
 ## Scope
 
@@ -149,6 +149,7 @@ uv run --group ui python -m ui            # http://localhost:8000; Chainlit opti
 - **Evidence panel.** A side panel lists every source of the answer with the quotes behind each statement and any calculation, both the inputs and the expression computed in code. Each answer has its own panel, newest first.
 - **Progress steps.** While it runs (median 40 s), the chat shows each pipeline stage: companies identified (name, ticker, CIK), the research plan, filings read, web results, and statements verified or withheld.
 - **Conversation.** Follow-ups ("and the prior quarter?", "compare that with its closest peer") and replies to clarification questions are rewritten into a standalone question, shown as **Researched as**, before research. The rewrite runs only when there is earlier conversation. Later in a conversation, a message that isn't a research request (thanks, a greeting) gets a short description of the tool instead of research.
+- **Feedback and replay.** Thumbs up and down sit next to the copy button under each reply; a click records a `user_feedback` score on that turn's trace (a second click changes it). Each chat is one Langfuse session and each turn one trace, under the name the analyst signed in with (`user.id`, tag `chat`). A turn's input is the analyst's message and its output is the reply exactly as the chat showed it: the cited answer, the help text or the failure. Langfuse's session view therefore replays the chat as the analyst saw it, with the pipeline's steps nested under each turn and the follow-up rewrite as a `followup` step. The Session Timeline layout is a Langfuse feature preview (Compact Session View and Session Timeline, under the v4 beta).
 - **Settings:** an as-of date for point-in-time questions, and a switch for live web search. With it off, the chat answers from SEC data and cached Tavily responses only, without spending credits.
 
 **Look and feel.** The theme (`ui/public/theme.json`, `ui/public/brand.css`) follows the color palette in [Tavily's brand guidelines](https://www.tavily.com/brand): Off White and Black as the foundation, light by default, and Lavender as the accent. Lavender text on Off White falls short of WCAG AA contrast, so links are black with a lavender underline. Nothing is used that the project has no rights to: no Tavily logo, wordmark or brand mark (the app has its own name and mark), and no Suisse Int'l, the commercial typeface on tavily.com. Type is Inter and Geist Mono, both under the SIL Open Font License. The app's readme states that it is not affiliated with or endorsed by Tavily.
@@ -221,7 +222,7 @@ every instance in the account); the public IPv4 address is about $3.60 a month. 
 
 ```
 agents/      pipeline (company, fiscal, planner, research, writer, pipeline), followup, baseline, tracing, llm, edgar
-ui/          chat UI (Chainlit app, chat rendering, config, readme)
+ui/          chat UI (Chainlit app, chat turn, chat rendering, config, readme)
 evals/       question sets + manifests + source notes, run.py (harness), scorers.py, report.py
 results/     final/ (results.md, scorecards, per-question records), history_kimi_baseline/ (starter on its original model)
 scripts/     check_env.py, check_secrets.py, verify_traces.py

@@ -9,6 +9,10 @@ Jaeger, Grafana Tempo…) can receive them. Per question:
   - one span per Tavily call (parameters, cache or live, credits, result URLs).
 LangChain's internal chain and graph runs are deliberately not traced: Langfuse counts every observation.
 
+A chat turn's root records the analyst's message as input and the reply exactly as the chat showed it as
+output (`Trace.reply`), with `user.id` and the chat's `session.id`, so Langfuse's session view replays the
+conversation as the analyst saw it: one trace per turn, the pipeline's spans nested under each.
+
 Backend selection: if OTEL_EXPORTER_OTLP_TRACES_ENDPOINT / OTEL_EXPORTER_OTLP_ENDPOINT is set, the
 standard OTel env config is used as-is. Otherwise spans go to Langfuse's OTLP endpoint using
 LANGFUSE_BASE_URL (or LANGFUSE_HOST) / LANGFUSE_PUBLIC_KEY / LANGFUSE_SECRET_KEY. TRACING=off
@@ -44,6 +48,7 @@ load_dotenv()
 
 SERVICE = "fin-research-agent"
 MAX_CHARS = 2000  # per text field, to keep payloads small
+REPLY_CHARS = 20000  # a chat reply is kept whole: the session view shows it as the analyst saw it
 _tracer: Any = None
 _provider: TracerProvider | None = None
 _setup_lock = threading.Lock()
@@ -91,9 +96,9 @@ def enabled() -> bool:
     return tracer() is not None
 
 
-def _clip(value: Any) -> str:
+def _clip(value: Any, limit: int = MAX_CHARS) -> str:
     text = value if isinstance(value, str) else json.dumps(value, ensure_ascii=False, default=str)
-    return text if len(text) <= MAX_CHARS else text[:MAX_CHARS] + f"… [+{len(text) - MAX_CHARS} chars]"
+    return text if len(text) <= limit else text[:limit] + f"… [+{len(text) - limit} chars]"
 
 
 def _in_trace() -> bool:
@@ -133,16 +138,25 @@ class Trace:
         if output.get("error"):
             self._span.set_status(otel.Status(otel.StatusCode.ERROR, _clip(output["error"])))
 
+    def reply(self, text: str) -> None:
+        """Record what the analyst was shown as the turn's output: the chat's answer, help text or error."""
+        if self._span is not None:
+            self._span.set_attribute("output.value", _clip(text, REPLY_CHARS))
+
 
 @contextmanager
-def trace_question(agent: str, question: str, run_name: str, row: dict | None = None) -> Iterator[Trace]:
-    """Root span for one question. Model calls made with `trace.callbacks` and steps opened inside nest under it."""
+def trace_question(agent: str, question: str, run_name: str, row: dict | None = None, *, user: str | None = None,
+                   tags: list[str] | None = None) -> Iterator[Trace]:
+    """Root span for one question. Model calls made with `trace.callbacks` and steps opened inside nest under it.
+
+    `run_name` is the Langfuse session (an eval run, or one chat); `user` is who asked, for per-user views.
+    """
     t = tracer()
     if not t:
         yield Trace()
         return
     golden_id = (row or {}).get("id")
-    tags = [agent] + ([golden_id, row["category"], row["difficulty"]] if row else [])
+    tags = [agent, *(tags or [])] + ([golden_id, row["category"], row["difficulty"]] if row else [])
     metadata = {"golden_id": golden_id or "", "run": run_name, "agent": agent}
     attributes = {
         "gen_ai.operation.name": "invoke_agent", "gen_ai.agent.name": agent,
@@ -152,6 +166,7 @@ def trace_question(agent: str, question: str, run_name: str, row: dict | None = 
         "langfuse.trace.tags": [str(x) for x in tags if x],
         **{f"langfuse.trace.metadata.{k}": v for k, v in metadata.items()},
         **{f"langfuse.observation.metadata.{k}": v for k, v in metadata.items()},
+        **({"user.id": user} if user else {}),
     }
     with t.start_as_current_span(f"invoke_agent {agent}", attributes=attributes) as span:
         tid = format(span.get_span_context().trace_id, "032x")
@@ -361,6 +376,11 @@ def score(tid: str | None, name: str, value, data_type: str, comment: str | None
             "traceId": tid, "name": name, "value": value, "dataType": data_type,
             **({"comment": _clip(comment)} if comment else {}),
         })
+
+
+def feedback(trace_id: str | None, helpful: bool) -> None:
+    """Record an analyst's thumbs up or down on a chat answer; a second click on the same answer replaces it."""
+    score(trace_id, "user_feedback", float(helpful), "BOOLEAN")
 
 
 def attach_scores(trace_id: str | None, scores: dict) -> None:
