@@ -300,7 +300,7 @@ def test_citation_check_asks_again_when_claims_are_left_undecided(monkeypatch):
     url = "https://www.sec.gov/a.htm"
     replies = [[{"claim": "Revenue was $5 million.", "numeric": True, "cited_url": url, "reason": "", "supported": None}],
                [{"claim": "Revenue was $5 million.", "numeric": True, "cited_url": url, "reason": "", "supported": True}]]
-    monkeypatch.setattr(scorers, "_judge", lambda schema, prompt: schema(claims=replies.pop(0)))
+    monkeypatch.setattr(scorers, "_judge", lambda schema, prompt, **_: schema(claims=replies.pop(0)))
     result = scorers.score_citations("Revenue was $5 million [1].", {scorers.norm_url(url): {"url": url, "content": "x"}})
     assert result["supported"] == 1 and result["undecided"] == 0 and not replies
 
@@ -518,3 +518,31 @@ def test_company_match_keeps_short_official_names():
     assert _mentions_company(_result("4D reports record revenue"), [d])
     e = Company(requested="ab", name="Alpha Beta Gamma Corp", ticker="ABG", cik="6", aliases=["AB"])  # 2-letter alias ignored
     assert not _mentions_company(_result("AB testing results"), [e])
+
+
+# ---------- eval harness ----------
+
+def test_baseline_search_cache_replays_without_calling_tavily(monkeypatch, tmp_path):
+    from langchain_tavily import TavilySearch
+    from agents.baseline import CachedTavilySearch
+    monkeypatch.setenv("TAVILY_API_KEY", "dummy")
+    calls = []
+
+    def fake_run(self, query, run_manager=None, **kwargs):
+        calls.append(query)
+        return {"error": "Error 432: usage limit"} if query == "refused" else {"query": query, "results": []}
+
+    monkeypatch.setattr(TavilySearch, "_run", fake_run)
+    first, second = CachedTavilySearch(cache_dir=tmp_path), CachedTavilySearch(cache_dir=tmp_path)
+    assert first._run("acme revenue", search_depth="advanced") == second._run("acme revenue", search_depth="advanced")
+    assert calls == ["acme revenue"] and first.live_depths == ["advanced"] and second.live_depths == []
+    first._run("refused"), second._run("refused")  # failed calls: not cached, not counted
+    assert calls.count("refused") == 2 and first.live_depths == ["advanced"]
+
+
+def test_usage_limit_is_detected_for_both_agents():
+    from evals.run import usage_limit_hit
+    baseline = {"tool_results": [{"raw": "{'error': ValueError(\"Error 432: This request exceeds your plan's set usage limit.\")}"}]}
+    agent = {"tool_calls": [{"name": "tavily_search", "credits": 0, "error": "ValueError: Error 432: exceeds the usage limit"}]}
+    ok = {"tool_results": [{"results": [{"content": "Revenue was $432 million"}]}], "tool_calls": [{"credits": 1}]}
+    assert usage_limit_hit(baseline) and usage_limit_hit(agent) and not usage_limit_hit(ok)

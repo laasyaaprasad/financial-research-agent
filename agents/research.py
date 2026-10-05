@@ -281,10 +281,13 @@ class Web:
             span.finish(response)
         credits = (response.get("usage") or {}).get("credits", 0)
         self.credits += credits
-        self.calls.append({"name": f"tavily_{operation}", "args": params, "credits": credits})
+        self.calls.append({"name": f"tavily_{operation}", "args": params, "credits": credits,
+                           **({"error": response["error"]} if "error" in response else {})})
         if "error" not in response:
             self.cache_dir.mkdir(parents=True, exist_ok=True)
-            path.write_text(json.dumps({"operation": operation, "params": params, "response": response}))
+            tmp = path.with_suffix(f".{id(self)}.tmp")  # write then rename: parallel readers never see half a file
+            tmp.write_text(json.dumps({"operation": operation, "params": params, "response": response}))
+            os.replace(tmp, path)
         return response
 
 

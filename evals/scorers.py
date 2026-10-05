@@ -10,6 +10,7 @@ from __future__ import annotations
 import json
 import re
 import time
+from concurrent.futures import ThreadPoolExecutor
 from typing import Literal
 from urllib.parse import urlparse
 
@@ -69,8 +70,8 @@ class CellExtraction(BaseModel):
     cells: list[CellValue]
 
 
-def _judge(schema, prompt: str, retries: int = 4):
-    llm = ChatNebius(model=JUDGE_MODEL, temperature=0, timeout=240).with_structured_output(schema, method="function_calling")
+def _judge(schema, prompt: str, retries: int = 4, model: str = JUDGE_MODEL):
+    llm = ChatNebius(model=model, temperature=0, timeout=240).with_structured_output(schema, method="function_calling")
     error = None
     for attempt in range(retries):
         if attempt:
@@ -133,7 +134,7 @@ TYPE_RULES = {
 }
 
 
-def score_correctness(row: dict, answer: str, retrieved: dict[str, dict]) -> dict:
+def score_correctness(row: dict, answer: str, retrieved: dict[str, dict], judge: str = JUDGE_MODEL) -> dict:
     if not answer.strip():
         return {"score": 0.0, "verdict": "incorrect", "points": [], "rationale": "No answer produced."}
     if row["time_sensitivity"] == "dynamic":
@@ -170,7 +171,7 @@ Instructions:
 - When checking a figure against the agent's sources, use the source the answer cites for it (match by URL and title).
 {TYPE_RULES.get(row["answer_type"], "")}
 - verdict = correct if every requirement is met, partial if some, incorrect if none or the core answer is wrong."""
-    result = _judge(Correctness, prompt)
+    result = _judge(Correctness, prompt, model=judge)
     score = sum(p.met for p in result.points) / len(result.points)
     return {"score": round(score, 3), **result.model_dump()}
 
@@ -188,7 +189,7 @@ def _same_label(answer: str, reference: str) -> bool:
     return key(answer) == key(reference)
 
 
-def score_table(row: dict, answer: str) -> dict:
+def score_table(row: dict, answer: str, judge: str = JUDGE_MODEL) -> dict:
     """Table tasks: the judge only EXTRACTS each requested cell from the answer; code compares to the reference."""
     cells = row["cells"]
     if not answer.strip():
@@ -212,7 +213,7 @@ Answer:
 <<<
 {answer}
 >>>"""
-    extracted = {c.index: c for c in _judge(CellExtraction, prompt).cells}
+    extracted = {c.index: c for c in _judge(CellExtraction, prompt, model=judge).cells}
     points, correct = [], 0
     for i, ref in enumerate(cells):
         got = extracted.get(i)
@@ -232,7 +233,7 @@ Answer:
             "rationale": f"{correct}/{len(cells)} cells correct", "cells_correct": correct, "cells_total": len(cells)}
 
 
-def score_citations(answer: str, retrieved: dict[str, dict], attempts: int = 3) -> dict:
+def score_citations(answer: str, retrieved: dict[str, dict], attempts: int = 3, judge: str = JUDGE_MODEL) -> dict:
     """Claim-level citation check against the text the agent retrieved.
 
     The judge sometimes leaves claims undecided even though their source was retrieved; it is asked
@@ -259,7 +260,7 @@ Retrieved sources (what the agent actually saw):
 {json.dumps(list(retrieved.values()), ensure_ascii=False)[:60000]}"""
     for _ in range(attempts):
         out = []
-        for c in _judge(Citations, prompt).claims:
+        for c in _judge(Citations, prompt, model=judge).claims:
             in_retrieved = bool(c.cited_url) and norm_url(c.cited_url) in retrieved
             out.append({**c.model_dump(), "in_retrieved": in_retrieved, "supported": c.supported if in_retrieved else None})
         if not any(c["in_retrieved"] and c["supported"] is None for c in out):
@@ -308,25 +309,34 @@ def _majority(grades: list[dict]) -> dict:
     return {**ordered[len(ordered) // 2], "votes": [g["verdict"] for g in grades]}
 
 
-def score_row(row: dict, output: dict, hosts: set[str], votes: int = 1) -> dict:
+def score_row(row: dict, output: dict, hosts: set[str], votes: int = 1, judge: str = JUDGE_MODEL) -> dict:
     """All scores for one answer. A judge failure is recorded (scored 0) rather than stopping the run.
 
     With votes > 1 the correctness judge runs that many times and the majority verdict is kept,
-    because reference-free rubric grading varies from call to call.
+    because reference-free rubric grading varies from call to call. The correctness votes and the
+    citation check are independent judge calls, so they run at the same time.
     """
+    start = time.perf_counter()
     answer = output.get("answer") or ""
     retrieved = retrieved_index(output.get("tool_results") or [])
     scores = {"sources": score_sources(answer, retrieved, hosts), "recall": evidence_recall(row, retrieved)}
-    try:
-        grades = [score_table(row, answer) if row.get("cells") else score_correctness(row, answer, retrieved)
-                  for _ in range(votes)]
-        scores["correctness"] = grades[0] if votes == 1 else _majority(grades)
-    except RuntimeError as exc:
-        scores["correctness"] = {"score": 0.0, "verdict": "incorrect", "points": [], "rationale": f"JUDGE ERROR: {exc}"[:300],
-                                 "judge_error": True}
-    try:
-        scores["citations"] = score_citations(answer, retrieved)
-    except RuntimeError as exc:
-        scores["citations"] = {"claims": [], "numeric_claims": 0, "numeric_cited": 0, "cited": 0, "supported": 0,
-                               "not_retrieved": 0, "judge_error": str(exc)[:300]}
+
+    def grade():
+        return score_table(row, answer, judge) if row.get("cells") else score_correctness(row, answer, retrieved, judge)
+
+    with ThreadPoolExecutor(max_workers=votes + 1) as pool:
+        grades = [pool.submit(grade) for _ in range(votes)]
+        citations = pool.submit(score_citations, answer, retrieved, judge=judge)
+        try:
+            results = [g.result() for g in grades]
+            scores["correctness"] = results[0] if votes == 1 else _majority(results)
+        except RuntimeError as exc:
+            scores["correctness"] = {"score": 0.0, "verdict": "incorrect", "points": [],
+                                     "rationale": f"JUDGE ERROR: {exc}"[:300], "judge_error": True}
+        try:
+            scores["citations"] = citations.result()
+        except RuntimeError as exc:
+            scores["citations"] = {"claims": [], "numeric_claims": 0, "numeric_cited": 0, "cited": 0, "supported": 0,
+                                   "not_retrieved": 0, "judge_error": str(exc)[:300]}
+    scores["judge_s"] = round(time.perf_counter() - start, 1)
     return scores

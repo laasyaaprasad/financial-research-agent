@@ -2,6 +2,7 @@
 
     uv run python -m evals.run run --agent baseline --set test --name baseline_test_r1
     uv run python -m evals.run run --agent agent --set dev --name agent_dev --no-web
+    uv run python -m evals.run suite --agents baseline,agent --sets test,hard --name e2e
     uv run python -m evals.run rescore agent_dev agent_dev_rejudged
     uv run python -m evals.run compare baseline_test_r1 agent_test_r1
 """
@@ -13,12 +14,14 @@ import json
 import random
 import statistics
 import subprocess
+import threading
 import traceback
 from collections import defaultdict
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor
+from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
-from typing import Annotated
+from typing import Annotated, Callable
 
 import typer
 from rich.console import Console
@@ -66,7 +69,9 @@ def agent_runner(agent: str, name: str, web: bool, web_cache_from: str | None, s
         from agents.baseline import STARTER_MODEL, run
 
         model = STARTER_MODEL if agent == "starter" else None  # starter = exactly as shipped (Kimi K2.6)
-        return lambda row, callbacks: run(row["question"], callbacks=callbacks, **({"model": model} if model else {}))
+        cache = RESULTS / "tavily_cache" / (web_cache_from or name)
+        return lambda row, callbacks: run(row["question"], callbacks=callbacks, cache_dir=cache,
+                                          **({"model": model} if model else {}))
     if agent == "agent":
         from agents.pipeline import run
         from agents.planner import Plan
@@ -155,7 +160,7 @@ def write_scorecard(name: str, manifest: dict, summary: dict, records: list[dict
     o, ops = summary["overall"], summary["ops"]
     lines = [
         f"# Scorecard: {name}", "",
-        f"Agent `{manifest['agent']}` · set `{manifest['set']}` · model `{manifest.get('model')}` · judge `{JUDGE_MODEL}` "
+        f"Agent `{manifest['agent']}` · set `{manifest['set']}` · model `{manifest.get('model')}` · judge `{manifest.get('judge', JUDGE_MODEL)}` "
         f"· code `{manifest['code']}` · questions {o['n']} · agent errors {o['errors']} · judge errors {o['judge_errors']}", "",
         HEAD, _row("All", o), "",
         "| Median latency | p95 latency | Tokens / question | Tavily credits / question | Tavily credits total |",
@@ -206,23 +211,23 @@ def finish(name: str, manifest: dict, records: list[dict]) -> dict:
     return summary
 
 
-# ---------- commands ----------
+# ---------- execution ----------
 
-@app.command()
-def run(
-    agent: Annotated[str, typer.Option(help="baseline | agent")] = "agent",
-    set_name: Annotated[str, typer.Option("--set", help="dev | test | hard | dev_tables | tables")] = "dev",
-    name: Annotated[str, typer.Option(help="Run name (output files)")] = "dev_run",
-    ids: Annotated[str | None, typer.Option(help="Comma-separated question IDs")] = None,
-    workers: Annotated[int, typer.Option(help="Questions in parallel")] = 4,
-    web: Annotated[bool, typer.Option(help="Allow live Tavily calls (agent only)")] = True,
-    web_cache_from: Annotated[str | None, typer.Option(help="Replay Tavily responses from an earlier run; no credits")] = None,
-    resume: Annotated[bool, typer.Option(help="Continue an interrupted run, skipping saved questions")] = False,
-    votes: Annotated[int, typer.Option(help="Judge each answer this many times and keep the majority verdict")] = 1,
-    search: Annotated[str | None, typer.Option(help='Tavily settings as JSON, e.g. \'{"depth": "advanced"}\'')] = None,
-    plans_from: Annotated[str | None, typer.Option(help="Reuse each question's research plan from this run")] = None,
-) -> None:
-    """Run an agent on a question set, score every answer, and write the scorecard."""
+@dataclass
+class Job:
+    """One run: an agent on a question set, saved to results/raw/<name>/."""
+    name: str
+    agent: str
+    raw_dir: Path
+    manifest: dict
+    runner: Callable
+    todo: list[dict]       # questions still to answer
+    records: list[dict]    # saved records (from --resume), then new ones as they are graded
+
+
+def prepare(agent: str, set_name: str, name: str, *, ids: str | None = None, web: bool = True,
+            web_cache_from: str | None = None, resume: bool = False, votes: int = 1, search: str | None = None,
+            plans_from: str | None = None, judge: str = JUDGE_MODEL) -> Job:
     rows = load_set(set_name, ids)
     raw_dir = RESULTS / "raw" / name
     done = {}
@@ -232,43 +237,145 @@ def run(
         done = {p.stem: json.loads(p.read_text()) for p in raw_dir.glob("[GTHDXEW][0-9]*.json")}
     raw_dir.mkdir(parents=True, exist_ok=True)
     runner = agent_runner(agent, name, web, web_cache_from, search, plans_from)
-    hosts = primary_hosts([r for s in SETS for r in load_set(s)])
     manifest = {"agent": agent, "set": set_name, "set_sha256": sha256(SETS[set_name]), "code": code_version(),
-                "ids": [r["id"] for r in rows], "web": web, "web_cache_from": web_cache_from, "judge_votes": votes,
-                "search": json.loads(search) if search else None, "plans_from": plans_from}
+                "ids": [r["id"] for r in rows], "web": web, "web_cache_from": web_cache_from, "judge": judge,
+                "judge_votes": votes, "search": json.loads(search) if search else None, "plans_from": plans_from}
     if done and (raw_dir / "manifest.json").exists():
         first = json.loads((raw_dir / "manifest.json").read_text())
         manifest = {**first, "resumed": first.get("resumed", []) + [{"code": manifest["code"], "skipped": sorted(done)}]}
     (raw_dir / "manifest.json").write_text(json.dumps(manifest, indent=1))
+    return Job(name=name, agent=agent, raw_dir=raw_dir, manifest=manifest, runner=runner,
+               todo=[r for r in rows if r["id"] not in done], records=[done[r["id"]] for r in rows if r["id"] in done])
 
-    def one(row: dict) -> dict:
-        with tracing.trace_question(agent, row["question"], name, row) as trace:
+
+def _past_latency() -> dict[tuple[str, str], float]:
+    """Mean latency in earlier runs per (agent, question id), so the slowest questions can start first."""
+    seen = defaultdict(list)
+    for folder in [*(RESULTS / "final" / "records").glob("*"), *(RESULTS / "raw").glob("*")]:
+        agent = next((a for a in ("starter", "baseline") if folder.name.startswith(a)), "agent")
+        for path in folder.glob("[GTHDXEW][0-9]*.json"):
+            latency = json.loads(path.read_text())["output"].get("latency_s")
+            if latency:
+                seen[(agent, path.stem)].append(latency)
+    return {key: statistics.mean(v) for key, v in seen.items()}
+
+
+def usage_limit_hit(output: dict) -> bool:
+    """True if Tavily refused a call because the plan's usage limit was reached (HTTP 432)."""
+    errors = [str(t.get("raw") or t.get("error") or "") for t in output.get("tool_results") or [] if isinstance(t, dict)]
+    errors += [str(c.get("error") or "") for c in output.get("tool_calls") or []]
+    return any("432" in e or "usage limit" in e.lower() for e in errors)
+
+
+def execute(jobs: list[Job], workers: int, judge_workers: int, votes: int, judge: str) -> None:
+    """Answer the pending questions of every job in one shared pool, slowest first, and grade each answer
+    in a second pool as soon as it arrives, so agents never wait for the judge and one slow question
+    doesn't hold up a whole run.
+
+    If Tavily refuses a call for its usage limit, no new questions start and the answers that hit the
+    limit are not saved, so `--resume` continues exactly there once the limit is raised.
+    """
+    hosts = primary_hosts([r for s in SETS for r in load_set(s)])
+    past = _past_latency()
+
+    def expected(task) -> float:
+        job, row = task
+        guess = 150 if row.get("cells") else 45 if job.agent == "agent" else 20
+        return past.get(("baseline" if job.agent == "baseline" else job.agent, row["id"]), guess)
+
+    tasks = sorted(((job, row) for job in jobs for row in job.todo), key=expected, reverse=True)
+    lock = threading.Lock()
+    label = (lambda job: f"{job.name} ") if len(jobs) > 1 else (lambda job: "")
+
+    def grade(job: Job, row: dict, output: dict) -> None:
+        scores = score_row(row, output, hosts, votes, judge)
+        tracing.attach_scores(output["trace_id"], scores)
+        record = {**{k: row[k] for k in FIELDS}, "output": output, "scores": scores}
+        (job.raw_dir / f"{row['id']}.json").write_text(json.dumps(record, indent=1, ensure_ascii=False, default=str))
+        c = scores["correctness"]
+        err = f" · ERROR {output['error'][:100]}" if output.get("error") else ""
+        with lock:
+            job.records.append(record)
+            console.print(f"{label(job)}{row['id']}: {c['verdict']} ({c['score']:.2f}) · {output.get('latency_s', 0):.0f}s"
+                          f" · judge {scores['judge_s']:.0f}s · {output.get('tavily_credits', 0):g} cr{err}")
+
+    limit = threading.Event()
+    unsaved = []
+
+    def answer(job: Job, row: dict):
+        if limit.is_set():
+            unsaved.append(row["id"])
+            return None
+        with tracing.trace_question(job.agent, row["question"], job.name, row) as trace:
             try:
-                output = runner(row, trace.callbacks)
+                output = job.runner(row, trace.callbacks)
             except Exception as exc:
                 output = {"answer": "", "tool_calls": [], "tool_results": [], "tokens": {"input": 0, "output": 0},
                           "tavily_credits": 0, "latency_s": 0.0,
                           "error": f"{type(exc).__name__}: {exc}"[:500], "traceback": traceback.format_exc()[-2000:]}
             trace.finish(output)
         output["trace_id"], output["trace_url"] = trace.trace_id, trace.url
-        scores = score_row(row, output, hosts, votes)
-        tracing.attach_scores(trace.trace_id, scores)
-        record = {**{k: row[k] for k in FIELDS}, "output": output, "scores": scores}
-        (raw_dir / f"{row['id']}.json").write_text(json.dumps(record, indent=1, ensure_ascii=False, default=str))
-        return record
+        if usage_limit_hit(output):
+            limit.set()
+            unsaved.append(row["id"])
+            return None
+        return judges.submit(grade, job, row, output)
 
-    records = [done[r["id"]] for r in rows if r["id"] in done]
-    with ThreadPoolExecutor(max_workers=workers) as pool:
-        for future in as_completed([pool.submit(one, r) for r in rows if r["id"] not in done]):
-            rec = future.result()
-            records.append(rec)
-            c = rec["scores"]["correctness"]
-            err = f" · ERROR {rec['output']['error'][:100]}" if rec["output"].get("error") else ""
-            console.print(f"{rec['id']}: {c['verdict']} ({c['score']:.2f}) · {rec['output'].get('latency_s', 0):.0f}s"
-                          f" · {rec['output'].get('tavily_credits', 0):g} cr{err}")
+    with ThreadPoolExecutor(max_workers=judge_workers) as judges, ThreadPoolExecutor(max_workers=workers) as agents:
+        for future in [agents.submit(answer, job, row) for job, row in tasks]:
+            if (graded := future.result()) is not None:
+                graded.result()
     tracing.flush()
-    manifest["model"] = next((r["output"].get("model") for r in records if r["output"].get("model")), None)
-    finish(name, manifest, records)
+    if limit.is_set():
+        console.print(f"[bold red]Tavily refused calls: plan usage limit reached.[/bold red] {len(unsaved)} answers were "
+                      "not saved and no scorecards were written; raise the limit, then rerun with --resume.")
+        raise typer.Exit(1)
+    for job in (j for j in jobs if j.records):
+        job.manifest["model"] = next((r["output"].get("model") for r in job.records if r["output"].get("model")), None)
+        finish(job.name, job.manifest, job.records)
+
+
+# ---------- commands ----------
+
+@app.command()
+def run(
+    agent: Annotated[str, typer.Option(help="baseline | starter | agent")] = "agent",
+    set_name: Annotated[str, typer.Option("--set", help="dev | test | hard | dev_tables | tables | edge_dev | edge | web_dev | web")] = "dev",
+    name: Annotated[str, typer.Option(help="Run name (output files)")] = "dev_run",
+    ids: Annotated[str | None, typer.Option(help="Comma-separated question IDs")] = None,
+    workers: Annotated[int, typer.Option(help="Questions answered in parallel")] = 12,
+    judge_workers: Annotated[int, typer.Option(help="Answers graded in parallel")] = 12,
+    web: Annotated[bool, typer.Option(help="Allow live Tavily calls (agent only)")] = True,
+    web_cache_from: Annotated[str | None, typer.Option(help="Replay Tavily responses from an earlier run; no credits")] = None,
+    resume: Annotated[bool, typer.Option(help="Continue an interrupted run, skipping saved questions")] = False,
+    votes: Annotated[int, typer.Option(help="Judge each answer this many times and keep the majority verdict")] = 1,
+    judge: Annotated[str, typer.Option(help="Judge model (a different family from the agents)")] = JUDGE_MODEL,
+    search: Annotated[str | None, typer.Option(help='Tavily settings as JSON, e.g. \'{"depth": "advanced"}\'')] = None,
+    plans_from: Annotated[str | None, typer.Option(help="Reuse each question's research plan from this run")] = None,
+) -> None:
+    """Run an agent on a question set, score every answer, and write the scorecard."""
+    job = prepare(agent, set_name, name, ids=ids, web=web, web_cache_from=web_cache_from, resume=resume, votes=votes,
+                  search=search, plans_from=plans_from, judge=judge)
+    execute([job], workers, judge_workers, votes, judge)
+
+
+@app.command()
+def suite(
+    agents: Annotated[str, typer.Option(help="Comma-separated agents")] = "baseline,agent",
+    sets: Annotated[str, typer.Option(help="Comma-separated question sets")] = "test,hard,tables,edge,web",
+    name: Annotated[str, typer.Option(help="Prefix: each run is saved as <prefix>_<agent>_<set>")] = "e2e",
+    ids: Annotated[str | None, typer.Option(help="Comma-separated question IDs (from any of the sets)")] = None,
+    workers: Annotated[int, typer.Option(help="Questions answered in parallel, across all runs")] = 12,
+    judge_workers: Annotated[int, typer.Option(help="Answers graded in parallel")] = 12,
+    web: Annotated[bool, typer.Option(help="Allow live Tavily calls (agent only)")] = True,
+    resume: Annotated[bool, typer.Option(help="Continue an interrupted suite, skipping saved questions")] = False,
+    votes: Annotated[int, typer.Option(help="Judge each answer this many times and keep the majority verdict")] = 1,
+    judge: Annotated[str, typer.Option(help="Judge model (a different family from the agents)")] = JUDGE_MODEL,
+) -> None:
+    """Run several agents on several sets at once, in one pool, and write a scorecard per run."""
+    jobs = [prepare(a, s, f"{name}_{a}_{s}", ids=ids, web=web, resume=resume, votes=votes, judge=judge)
+            for a in agents.split(",") for s in sets.split(",") if load_set(s, ids)]
+    execute(jobs, workers, judge_workers, votes, judge)
 
 
 @app.command()
@@ -278,11 +385,14 @@ def rescore(source: str, name: Annotated[str | None, typer.Argument(help="New ru
             judge_errors: Annotated[bool, typer.Option(
                 help="Re-judge, in place, only answers whose grading failed (e.g. provider overload)")] = False,
             undecided_citations: Annotated[bool, typer.Option(
-                help="Re-check, in place, only the citations of answers with undecided claims")] = False) -> None:
+                help="Re-check, in place, only the citations of answers with undecided claims")] = False,
+            judge: Annotated[str | None, typer.Option(help="Judge model; default: the one the run was graded with")] = None,
+            ) -> None:
     """Re-judge a saved run's answers without re-running the agent."""
     src = RESULTS / "raw" / source
     first = json.loads((src / "manifest.json").read_text()) if (src / "manifest.json").exists() else {
         "agent": "starter", "set": "dev", "code": "6300b5f (M1 harness)", "model": "moonshotai/Kimi-K2.6"}
+    judge = judge or first.get("judge", JUDGE_MODEL)
     rows = {r["id"]: r for s in SETS for r in load_set(s)}
     hosts = primary_hosts(list(rows.values()))
     if undecided_citations:
@@ -297,7 +407,7 @@ def rescore(source: str, name: Annotated[str | None, typer.Argument(help="New ru
             rec = json.loads(path.read_text())
             retrieved = retrieved_index(rec["output"].get("tool_results") or [])
             try:
-                rec["scores"]["citations"] = score_citations(rec["output"].get("answer") or "", retrieved)
+                rec["scores"]["citations"] = score_citations(rec["output"].get("answer") or "", retrieved, judge=judge)
             except RuntimeError as exc:
                 rec["scores"]["citations"]["judge_error"] = str(exc)[:300]
             tracing.attach_scores(rec["output"].get("trace_id"), rec["scores"])  # same score ids: updates in place
@@ -317,7 +427,7 @@ def rescore(source: str, name: Annotated[str | None, typer.Argument(help="New ru
     else:
         if not name:
             raise typer.BadParameter("give a new run name (or pass --judge-errors)")
-        manifest = {**first, "rescored_from": source, "judge_votes": votes}
+        manifest = {**first, "rescored_from": source, "judge": judge, "judge_votes": votes}
         out_dir = RESULTS / "raw" / name
         out_dir.mkdir(parents=True, exist_ok=False)
         redo = sorted(src.glob("[GTHDXEW][0-9]*.json"))
@@ -325,7 +435,7 @@ def rescore(source: str, name: Annotated[str | None, typer.Argument(help="New ru
 
     def one(path: Path) -> dict:
         rec = json.loads(path.read_text())
-        rec["scores"] = score_row(rows[rec["id"]], rec["output"], hosts, votes)
+        rec["scores"] = score_row(rows[rec["id"]], rec["output"], hosts, votes, judge)
         tracing.attach_scores(rec["output"].get("trace_id"), rec["scores"])  # same score ids: updates in place
         (out_dir / path.name).write_text(json.dumps(rec, indent=1, ensure_ascii=False, default=str))
         return rec

@@ -66,7 +66,10 @@ class EdgarClient:
             if response.status_code != 200:
                 raise EdgarError(f"SEC returned HTTP {response.status_code} for {url}")
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(response.text)
+            # Write then rename, so a parallel reader never sees a half-written file.
+            tmp = path.with_suffix(f".{threading.get_ident()}.tmp")
+            tmp.write_text(response.text)
+            os.replace(tmp, path)
             return response.text
         raise EdgarError(f"SEC request failed after retries: {url}")
 
