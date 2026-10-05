@@ -27,6 +27,7 @@ Measured on **Exact50**: 50 held-out questions on what an analyst tool has to ge
 | Cited claims supported by the cited source | 66% | 69% | **94%** |
 | Cited sources that are primary (SEC or company) | 15% | 26% | **73%** |
 | Tavily credits (all 50 questions) | 373 | 338 | **115** |
+| Cost per question (model + Tavily)\* | $0.126 | $0.074 | **$0.049** |
 | Tokens per question | 58k | 60k | 63k |
 | Median latency | 26 s | **12 s** | 45 s |
 
@@ -40,13 +41,15 @@ Measured on **Exact50**: 50 held-out questions on what an analyst tool has to ge
 
 The middle column runs the starter's prompt, Tavily tool and agent loop on our model. It separates what the architecture contributes from what the model contributes.
 
-**What this shows**
+\* Model tokens at Nebius list prices (`agents/pricing.py`) plus Tavily credits at the $0.008 pay-as-you-go rate.
+
+**What this shows: trust and cost, paid for in speed.** When a wrong number is expensive, an analyst would rather wait 45 seconds for an answer they don't have to re-check.
 - **Against the starter as shipped:**
   - more than twice as many fully correct answers (32 against 14)
   - verified-correct answers rise from 2 to 18
   - 94% of cited claims are supported against 66%, and 73% of sources are primary against 15%
-  - about a third of the Tavily credits
-  - the cost is latency: 45 s median against 26 s
+  - about a third of the Tavily credits and less than half the cost per question ($0.049 against $0.126)
+  - the price is latency: 45 s median against 26 s
 - **Against the starter's design on the same model:**
   - 32 against 25 fully correct; the gap is mostly ambiguous and edge-case requests (11 against 1 of 16)
   - 18 verified-correct answers against none
@@ -59,6 +62,31 @@ The middle column runs the starter's prompt, Tavily tool and agent loop on our m
 - Our agent's credits are Tavily's reported usage. The starters' are counted from their successful searches, because the starter's LangChain tool doesn't report usage.
 
 Full tables and per-question verdicts: [`results/final/exact50.md`](results/final/exact50.md).
+
+## Design decisions and trade-offs
+
+- **The model is the cheapest big upgrade.** DeepSeek V4.1 Flash replaced the starter's Kimi K2.6. On [Artificial Analysis](https://artificialanalysis.ai/models/deepseek-v4-1-flash) it scores 39 on the Intelligence Index against Kimi K2.6's 27, generates 214 output tokens/s against Kimi K2.6's [71](https://artificialanalysis.ai/models/comparisons/deepseek-v4-flash-vs-kimi-k2-6), and costs $0.30/$1.20 per million tokens against $0.95/$4.00. Measured here, the starter's own design on DeepSeek went from 14 to 25 of 50 on Exact50, with median latency falling from 26 s to 12 s. The speed matters for a customer-facing chat. With reasoning this cheap, what the model is shown (the context) is where the remaining gains are, which is what the pipeline works on.
+- **Source quality and cost over speed.** Latency is 45 s median. Langfuse step timings on 29 of the final run's traces put most of it in writing and verification (median 24 s: drafting with verbatim quotes, code checks, the verifier and any revision). The planner takes 5 s, company resolution 3 s, Tavily 6 s and SEC retrieval under 1 s.
+- **Tavily settings were measured, not guessed.** On the 10 web dev questions, with the research plans replayed so only search settings differed:
+
+  | Setting | Correct | Credits per question |
+  |---|---|---|
+  | **basic search + one query-focused extract (kept)** | **8/10** | **3.9** |
+  | advanced depth | 7/10 | 5.6 |
+  | company sites first | 6/10 (64% primary sources) | 6.4 |
+  | `topic="finance"` | 4/10 | 6.6 |
+  | `auto_parameters` | 2/10 | 8.0 |
+
+  The expensive settings didn't help. Company sites first is used only where it pays: companies without quarterly SEC reports. (Older agent, Nemotron judge, small sample.)
+- **Credits were treated as part of the scope.** Most development runs had web search off or replayed cached Tavily responses (`--web-cache-from`) at zero credits; live credits went mainly to final and baseline runs. Saved research plans can be replayed so experiments differ only in what they test.
+- **Kept simple on purpose.** Reasoning effort is fixed per step, which halved median latency without changing dev quality. A per-question effort selector using Jev (a new decision model) was tried on a branch and not merged. A multi-agent supervisor and Tavily `/research` were skipped too (see Limitations).
+- **A different model family judges.** The agents run on DeepSeek. Early runs were graded by NVIDIA's Nemotron. GLM-5.3-Flash on Nebius was the first choice for Exact50, but it was throttled in the first smoke runs (no grade for 5 of 24 answers), so Exact50 was graded by OpenAI's GPT-6 Luna through the OpenAI API (8 of 10 agreement with the user's own grades).
+- **Built to be run, not just demoed.**
+  - GitHub Actions tests every push; `main` deploys itself to AWS, so it is always live and testable.
+  - Work was tracked on a [kanban board](https://github.com/users/laasyaaprasad/projects/3), and later work went through pull requests.
+  - Langfuse traces (OpenTelemetry) show each step's inputs, outputs, tokens, cost and timing, during development and from the deployed app.
+  - The chat sits behind a shared password and answers one question at a time, to prevent abuse.
+- **Secrets never passed through the coding agent.** Claude Code was instructed never to read `.env` (see `CLAUDE.md`). Keys are loaded only in code (`load_dotenv`), and a one-off script copies them into AWS SSM Parameter Store without printing them. They never enter the image, Terraform state or GitHub.
 
 ## Architecture
 
@@ -119,13 +147,19 @@ flowchart TD
 | `evals/test_web.jsonl` | 10 questions whose facts aren't in SEC filings (call commentary, recent events, foreign issuers, private companies, multi-hop) | Held-out |
 | `evals/exact50.jsonl` | 50 of the 74 held-out questions, chosen by fixed rules (`evals/exact50_selection.md`): every edge and web question, the date traps, actual vs. guidance and cross-calendar comparisons | **Benchmark** |
 
+**Why Exact50 is hard.** Plain single-figure lookups were dropped: every configuration answers them, so they can't tell the designs apart. What's left tests what an analyst tool has to get right:
+- **"pt for crwd by yr end":** a terse request for a price target, which the tool should decline. Both starter configurations failed it; ours passed.
+- **"tsla q3 deliveries and q3 net income":** deliveries were public, but Q3 net income wasn't reported yet as of the question date. The answer has to give one part and decline the other, not invent it. Both starters failed; ours passed.
+- **Paychex's "current" fiscal 2027 outlook:** the June outlook was raised in September, so stopping at the first release returns superseded guidance. The starter as shipped got partial credit.
+- **A trailing-twelve-month comp for four restaurant chains:** Darden's latest quarter is fiscal Q1 2027, not its fiscal 2026 annual report, and each company's quarter must be mapped separately. The starter as shipped failed it.
+
 **How the held-out sets were built**
 - **Built blind:** each set was built by a research subagent from primary sources, without seeing either agent's outputs.
 - **Checked:** references were cross-checked against SEC XBRL data where possible.
 - **Frozen:** each set's hash was committed before the first run on it (`*_manifest.json`).
 
 **How answers are graded** (`evals/scorers.py`)
-- **Rubric judge:** `gpt-6-luna` (OpenAI, high reasoning) grades each answer against its question's rubric, three times; the median verdict counts. It agreed with the user on 8 of 10 hand-graded answers.
+- **Rubric judge:** `gpt-6-luna` (OpenAI, high reasoning) grades each answer against its question's rubric, three times; the median verdict counts. It agreed with the user on 8 of 10 hand-graded answers. (GLM-5.3-Flash on Nebius was used first and dropped after throttling; see Design decisions.)
 - **Verdict from the rubric points:** the judge marks each requirement met or not met, and code derives the verdict. Optional items never block "correct", and fail conditions are phrased as what the answer must avoid.
 - **Tables cell by cell:** the judge only extracts each cell's value; code compares it to the reference within tolerance.
 - **Citation check:** every claim an answer makes about a company or source is checked against the source it cites. The judge sees each cited source in full (up to 30,000 characters), chosen the same way for every agent.
@@ -204,7 +238,7 @@ terraform -chdir=infra output -raw url
 ## Limitations and what I didn't do
 
 - **Web-dependent questions are the weakest class:** 3 of 10 on Exact50, against 7 for the starter's design on the same model. The answers often leave out details the rubric requires, or miss figures that only a company's own release gives.
-- **Slower:** 45 s median latency against 12 s for the starter's design on the same model.
+- **Slower:** 45 s median latency against 12 s for the starter's design on the same model, mostly writing and verification (see Design decisions).
 - **Small samples:** one run per configuration, and 4 to 16 questions per class.
 - **Simple lookups don't separate the designs:** Exact50 leaves out plain single-figure questions, which every configuration answers. It shows where the designs differ, not accuracy on simple lookups.
 - **A known table bug:** a table calculation can come out in a different unit than its column (inputs in thousands under a "USD millions" column). A unit check per column would catch it.
@@ -212,6 +246,7 @@ terraform -chdir=infra output -raw url
 - **SEC filers first:** foreign issuers and private companies get only what the web and their own sites provide.
 - **No licensed data:** no consensus, estimates or paywalled transcripts. Beat/miss checks use company guidance, not consensus.
 - **Follow-up rewriting isn't evaluated:** the evaluation sets are single-turn. A wrong rewrite is visible as **Researched as** above the answer.
+- **Budget:** Tavily's usage endpoint reported 1,884 credits used against the 1,500-credit plan, mostly on starter baseline runs; the 384 over were billed pay-as-you-go.
 - **Skipped on purpose:**
   - **a multi-agent supervisor:** research found it costs about 15× the tokens, and these tasks have known shapes
   - **Tavily `/research`:** it hides source tiers and claim-level checking
@@ -223,7 +258,7 @@ terraform -chdir=infra output -raw url
 agents/      pipeline steps (company, fiscal, planner, research, writer, pipeline), followup, baseline, tracing, llm, edgar
 ui/          chat UI (Chainlit app, chat rendering, config, readme)
 evals/       question sets, manifests and source notes; run.py (harness), scorers.py (judge), report.py
-results/     final/exact50.md and per-run scorecards
+results/     final/: exact50.md, results.md (earlier held-out runs), scorecards and per-question records
 infra/       Terraform for the AWS deployment; deploy/ holds the instance's deploy script and secrets upload
 scripts/     check_env.py, check_secrets.py, verify_traces.py
 tests/       offline unit tests (no network)
