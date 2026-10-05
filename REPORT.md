@@ -16,14 +16,9 @@ That discipline mattered most when it was uncomfortable. My first version scored
 
 **What I traded off.** Answers take 45 seconds against the starter's 26, because writing with exact quotes and checking every claim takes time. I accepted that because an analyst would rather wait than re-check, but I still halved the response time by tuning how hard the model thinks at each step, and treated search credits as a real budget.
 
-**What it delivers.** On the same 50 questions, against the starter as shipped:
-- **94%** of cited claims are backed by their source, against 66%.
-- **18** answers are fully correct with every claim and number sourced, against 2. These are answers an analyst can use without re-checking.
-- **73%** of citations are official sources (SEC or the company), against 15%.
-- Given an unclear or incomplete question, it asks, declines, or says how it read the question instead of guessing: **11 of 16** handled, against 1.
-- It costs **$0.049** per question against $0.126, using a third of the search credits.
+**Technical value.** The agent's answers can be checked, and they hold up when checked. On the same 50 questions, 94% of its cited claims are backed by the source they cite (against 66% for the starter), 73% of its citations are official SEC or company sources (against 15%), and 18 answers are fully correct with every claim and number sourced (against 2). When a question is unclear or incomplete, it asks, declines, or says how it read the question instead of guessing, and handled 11 of 16 such questions against the starter's 1.
 
-For a business, that means analyst time saved, lower risk because every figure traces to a filing, lower cost, and a system that can be run and debugged: every step is traced, and the app redeploys itself on each update.
+**Business value.** An analyst's time goes into re-checking, so an answer that doesn't need re-checking is where the saving comes from. Every figure traces to a filing or company release and nothing unsupported is shown, which lowers the risk of a wrong number reaching a model or a client. It also costs less to run: $0.049 per question against $0.126, using a third of the search credits. And it is ready to operate: every step is traced for debugging, and the app tests and redeploys itself on each update.
 
 **Where it falls short.** It is weakest on questions that depend on the web: 3 of 10, against 7 for the starter's design on the same model. Next I'd improve web coverage, make the checking faster, and add licensed data such as analyst consensus.
 
