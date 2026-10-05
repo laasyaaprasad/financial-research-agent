@@ -173,9 +173,9 @@ hostname of its Elastic IP. Sign-in uses one shared password, and the instance a
 
 - **CI** ([.github/workflows/ci-cd.yml](.github/workflows/ci-cd.yml)): every push runs the tests, checks the
   Terraform, builds the image and checks that it holds no `.env` file or API key.
-- **CD (pull-based):** a push to `main` (or a manual run of the workflow) publishes the image to the private package
-  `ghcr.io/laasyaaprasad/financial-research-agent`. A systemd timer on the instance checks for a new image every
-  2 minutes, logging in with a read-only package token, and restarts the app when the image or the secrets change.
+- **CD (pull-based):** a push to `main` (or a manual run of the workflow) publishes the image to the public package
+  `ghcr.io/laasyaaprasad/financial-research-agent` (it holds only this repo's code). A systemd timer on the instance
+  checks for a new image every 2 minutes and restarts the app when the image or the secrets change.
   GitHub has no AWS access: the AWS organization's policy doesn't allow GitHub OIDC.
 - **Infrastructure:** [infra/main.tf](infra/main.tf) (Terraform, local state). It creates the instance, the Elastic IP,
   a security group (ports 80 and 443 only; no SSH, SSM Session Manager instead) and the instance's IAM role. Every
@@ -185,7 +185,7 @@ hostname of its Elastic IP. Sign-in uses one shared password, and the instance a
   printing them. They never go into the image, the Terraform state or GitHub; the workflow uses only GitHub's
   built-in token.
 
-One-time setup: create a GitHub token with only the `read:packages` scope and add it to `.env` as `GHCR_TOKEN`, then
+One-time setup:
 
 ```bash
 terraform -chdir=infra init
@@ -193,7 +193,8 @@ terraform -chdir=infra apply
 uv run --with boto3 deploy/put_secrets.py
 ```
 
-and push to `main` (or run the workflow). The URL is `terraform -chdir=infra output -raw url`; sign in with the shared
+then push to `main` (or run the workflow) and make the package public once (GitHub → Packages → Package settings →
+Change visibility), so the instance can pull it without credentials. The URL is `terraform -chdir=infra output -raw url`; sign in with the shared
 password set in [ui/app.py](ui/app.py) (the name is optional).
 
 **Cost:** t3.micro and 20 GB of gp3 storage are free-tier eligible (the free tier's 750 hours a month are shared by

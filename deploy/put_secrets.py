@@ -14,7 +14,7 @@ from dotenv import dotenv_values, find_dotenv
 
 PATH = "/fin-research-agent"
 KEYS = ["NEBIUS_API_KEY", "TAVILY_API_KEY", "SEC_USER_AGENT", "LANGFUSE_PUBLIC_KEY", "LANGFUSE_SECRET_KEY",
-        "LANGFUSE_BASE_URL", "GHCR_TOKEN"]  # GHCR_TOKEN: read:packages only, for pulling the image
+        "LANGFUSE_BASE_URL"]
 GENERATED = {"CHAINLIT_AUTH_SECRET": lambda: secrets.token_urlsafe(48)}
 
 # DOTENV_PATH, else the nearest .env from the current directory upward (so it works from the repo root or a worktree).

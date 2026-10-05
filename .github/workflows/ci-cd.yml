@@ -1,5 +1,5 @@
-# CI on every push: tests and a Terraform check. CD on main: build the image and push it to ghcr.io (private); the
-# instance pulls a new image within about 2 minutes, with a read-only package token, and restarts the app. GitHub holds
+# CI on every push: tests and a Terraform check. CD on main: build the image and push it to ghcr.io (public: the image
+# holds only the repo's code); the instance pulls a new image within about 2 minutes and restarts the app. GitHub holds
 # no API keys and no AWS access: the app's secrets live in AWS SSM Parameter Store, read only by the instance.
 # See README, "Deployment".
 name: CI/CD

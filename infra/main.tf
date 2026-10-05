@@ -1,6 +1,6 @@
 # One small EC2 instance running the chat UI in Docker behind Caddy (HTTPS). Deployment is pull-based: GitHub Actions
-# pushes the image to ghcr.io (private), and the instance checks for a new one every 2 minutes, logging in with a
-# read-only package token, so GitHub needs no AWS access (the AWS organization's policy doesn't allow GitHub OIDC).
+# pushes the image to ghcr.io (public), and the instance checks for a new one every 2 minutes, so GitHub needs no AWS
+# access (the AWS organization's policy doesn't allow GitHub OIDC).
 # No SSH (SSM Session Manager instead); secrets stay in SSM Parameter Store (uploaded by deploy/put_secrets.py), never
 # in this state. Every resource is named after var.name, so this sits beside other deployments in the account.
 #
@@ -116,7 +116,7 @@ resource "aws_instance" "app" {
     caddyfile = file("${path.module}/../deploy/Caddyfile")
     deploy_sh = templatefile("${path.module}/../deploy/deploy.sh", {
       region     = var.region, image = local.image, domain = local.domain,
-      param_path = local.param_path, registry_user = split("/", var.github_repo)[0]
+      param_path = local.param_path
     })
   })
   user_data_replace_on_change = true

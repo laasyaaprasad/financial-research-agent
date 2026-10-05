@@ -3,7 +3,7 @@
 # the image or the secrets changed. Terraform fills in the region, image, domain and parameter path (bash expansions
 # are escaped as $${...}). Run it by hand with `sudo /opt/app/deploy.sh` (e.g. through SSM Session Manager).
 set -euo pipefail
-REGION="${region}" IMAGE="${image}:latest" DOMAIN="${domain}" PARAMS="${param_path}" REGISTRY_USER="${registry_user}"
+REGION="${region}" IMAGE="${image}:latest" DOMAIN="${domain}" PARAMS="${param_path}"
 cd /opt/app
 
 # Secrets: SSM Parameter Store (SecureString) -> an env file only root can read.
@@ -12,10 +12,6 @@ aws ssm get-parameters-by-path --region "$REGION" --path "$PARAMS" --with-decryp
   --query 'Parameters[].[Name,Value]' --output text | while IFS=$'\t' read -r name value; do
   echo "$${name##*/}=$value"; done | sort > app.env.new
 if [ ! -s app.env.new ]; then echo "no secrets in SSM under $PARAMS yet"; rm -f app.env.new; exit 0; fi
-# The image is private: log in with the read-only package token, which the app itself never sees.
-grep '^GHCR_TOKEN=' app.env.new | cut -d= -f2- | docker login ghcr.io -u "$REGISTRY_USER" --password-stdin >/dev/null 2>&1 \
-  || echo "ghcr.io login failed (is GHCR_TOKEN in SSM?)"
-sed -i '/^GHCR_TOKEN=/d' app.env.new
 
 docker pull -q "$IMAGE" >/dev/null 2>&1 || { echo "no image at $IMAGE yet"; rm -f app.env.new; exit 0; }
 want="$(docker image inspect -f '{{.Id}}' "$IMAGE") $(sha256sum app.env.new | cut -c1-64)"
