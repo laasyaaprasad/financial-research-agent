@@ -83,6 +83,22 @@ class Review(BaseModel):
 
 WRITER = """You answer a financial analyst's question using ONLY the evidence provided.
 
+Work through it the way an analyst preparing a brief would, before writing anything:
+1. Break the question into every item it asks for (each figure, comparison, explanation, date
+   or yes/no), using the interpretation you are given.
+2. For each item, search all of the evidence (text, tables and tagged financial data alike) for
+   the passage that states it for exactly the right company, metric, period and basis. Watch for
+   near-misses: another period, a segment instead of the total, GAAP vs non-GAAP, guidance vs
+   actual, an older figure that a later one superseded.
+3. Work out whatever has to be derived (growth, margins, differences, multiples, adjusted
+   figures, a period reported only inside a total) with `calculation`; one calculation's result
+   may feed another.
+4. Decide what a reader needs in order to rely on each item: its date, the document or source it
+   comes from, and any reason or qualification the company gives with it.
+5. Only then write. An item goes under `unavailable` only after step 2 found nothing for it, and
+   the reason says why (not reported yet, and when it is expected if the evidence says; not
+   disclosed; the company doesn't file with the SEC), not just that it is missing.
+
 Write the answer as a list of claims. Each claim is one factual sentence with:
 - evidence_ids: the evidence it comes from, and quotes: short verbatim excerpts from that
   evidence (copy the exact characters, including numbers) that support it.
@@ -113,7 +129,7 @@ Write the answer as a list of claims. Each claim is one factual sentence with:
   calculation that projects an unreported figure from guidance); items declined as out of scope
   are shown to the user separately. Quote company guidance as guidance.
 - Prefer company filings and releases. Use news sources for events and commentary, and say
-  who reported it. Keep it concise: only claims that answer the question."""
+  who reported it. Be complete on what was asked and brief on everything else."""
 
 VERIFIER = """You check a draft answer to a financial analyst's question against its evidence.
 
@@ -257,16 +273,19 @@ def check_claim(claim: Claim, evidence: dict[str, Evidence], computed: list[floa
             source = evidence.get(i.evidence_id)
             if not source or not quote_found(i.quote, [normalize(source.text)]):
                 return f"calculation input quote not found in {i.evidence_id}: {i.quote[:80]!r}", text
-            if not grounded(i.value, 9, printed(i.quote)):
+            shown = len(repr(float(i.value)).split(".")[1].rstrip("0")) if "." in repr(float(i.value)) else 0
+            # An input is printed in its quote, or is another claim's calculated result (a chained calculation).
+            if not (grounded(i.value, 9, printed(i.quote)) or grounded(i.value, shown, list(computed))):
                 return f"input {i.name}={i.value} is not printed in its quote", text
             variables[i.name] = i.value
         try:
             result = evaluate(calc.expression, variables)
         except (ValueError, ZeroDivisionError, SyntaxError) as exc:
             return f"calculation failed: {exc}", text
-        if "{result}" not in text:
+        if "{result}" in text:
+            text = text.replace("{result}", f"{result:,.{max(0, calc.decimals)}f}")
+        elif not any(grounded(v, d, [result]) for v, d in numbers(text)):  # the text may already show the value
             return "calculation result placeholder {result} missing from claim text", text
-        text = text.replace("{result}", f"{result:,.{max(0, calc.decimals)}f}")
         allowed += [result] + list(variables.values())
     if re.search(r"\{\w*\}", text):  # only {result} is filled in; any other placeholder would reach the reader
         return "claim text has an unfilled placeholder", text
@@ -332,7 +351,7 @@ def write(question: str, today: date, plan_notes: list[str], evidence: list[Evid
             tokens[k] += t.get(k, 0)
 
     try:
-        draft, t = structured(Draft, WRITER, context, reasoning="medium", callbacks=callbacks)
+        draft, t = structured(Draft, WRITER, context, reasoning="high", callbacks=callbacks)
     except ValueError as exc:
         # Usually the provider timing out on a long context: once more with each source cut to its
         # two most relevant passages and less thinking, so the question still gets a checked answer.
@@ -376,7 +395,7 @@ def write(question: str, today: date, plan_notes: list[str], evidence: list[Evid
         try:
             draft, t = structured(Draft, WRITER, context + "\n\nYOUR PREVIOUS DRAFT\n" + _draft_block(draft, texts)
                                   + "\n\nPROBLEMS TO FIX (rewrite the whole answer)\n" + feedback,
-                                  reasoning="medium", callbacks=callbacks)
+                                  reasoning="high", callbacks=callbacks)
         except ValueError:
             break  # revision failed: keep the checked first draft; its failing claims are withheld below
         add(t)

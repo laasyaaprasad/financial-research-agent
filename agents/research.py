@@ -151,7 +151,7 @@ def _sec_documents(plan: Plan, companies: list[Company], today: date, client: Ed
         since = today - timedelta(days=plan.recent_filings_days)
         for company in by_ticker.values():
             recent = [f for f in filings_as_of(client, company.cik, today) if f.form == "8-K" and f.filed >= since]
-            for f in recent[:4]:
+            for f in recent[:8]:
                 for ex in _exhibits(client, company.cik, f) or [{"url": f.url, "type": "8-K"}]:
                     docs.append((company, None, f, ex["url"],
                                  f"{company.name} {f.form} current report, items {f.items} (filed {f.filed}) {ex['type']}"))
@@ -244,7 +244,21 @@ def sec_evidence(question: str, plan: Plan, companies: list[Company], today: dat
                 used_filings.setdefault(company.cik, (company, []))[1].append(p.report)
     for company, filings in used_filings.values():
         unique = list({f.accession: f for f in filings if f.form not in ("8-K", "6-K")}.values())
-        evidence += _xbrl_evidence(company, unique, query, client)
+        tagged = _xbrl_evidence(company, unique, query, client)
+        evidence += tagged
+        # SEC's tagged-data feed can lag a filing by months: read any filing it doesn't have yet.
+        have = {e.url for e in tagged}
+        for f in unique:
+            if f"{ARCHIVES}/{int(company.cik)}/{f.accession.replace('-', '')}/" in have or f.url in seen:
+                continue
+            seen.add(f.url)
+            try:
+                text = client.text(f.url)
+            except EdgarError:
+                continue
+            evidence.append(Evidence(id="", url=f.url, title=f"{company.name} {f.form} (filed {f.filed}); not yet in "
+                                     "SEC's tagged data, so read from the filing", tier="primary", date=str(f.filed),
+                                     text=top_passages(text, query, 6)))
     return evidence
 
 
@@ -285,7 +299,7 @@ class Web:
                            **({"error": response["error"]} if "error" in response else {})})
         if "error" not in response:
             self.cache_dir.mkdir(parents=True, exist_ok=True)
-            tmp = path.with_suffix(f".{id(self)}.tmp")  # write then rename: parallel readers never see half a file
+            tmp = path.with_suffix(f".{os.getpid()}.{id(self)}.tmp")  # write then rename: readers never see half a file
             tmp.write_text(json.dumps({"operation": operation, "params": params, "response": response}))
             os.replace(tmp, path)
         return response
@@ -378,7 +392,11 @@ async def web_evidence(question: str, plan: Plan, companies: list[Company], toda
                        config: SearchConfig = SearchConfig()) -> list[Evidence]:
     if not plan.searches:
         return []
-    own = [d for c in companies for d in official_domains(c.name)] if config.company_sites else []
+    # The company's own sites are searched first when asked to, and for companies whose results aren't in quarterly
+    # SEC reports (foreign annual filers, private companies): there the company's release is the primary source.
+    no_quarterlies = [c for c in companies
+                      if not c.resolved or (c.periods and not any(p.label.startswith("Q") for p in c.periods))]
+    own = [d for c in (companies if config.company_sites else no_quarterlies) for d in official_domains(c.name)]
 
     async def search(s, include=None):
         params = {"query": s.query[:399], "search_depth": config.depth, "max_results": config.max_results,

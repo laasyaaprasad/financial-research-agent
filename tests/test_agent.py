@@ -449,7 +449,7 @@ def test_writer_retries_with_shorter_evidence_after_a_failure(monkeypatch):
     good = Draft(claims=[Claim(text="Revenue was $5 million.", evidence_ids=["E1"], quotes=["Revenue was $5 million"])])
     result, calls = _writer_with(monkeypatch, [ValueError("Draft: timed out"), good])
     (_, first_effort, first_len), (_, second_effort, second_len) = calls[0], calls[1]
-    assert (first_effort, second_effort) == ("medium", "low") and second_len < first_len / 3
+    assert (first_effort, second_effort) == ("high", "low") and second_len < first_len / 3
     assert [c["text"] for c in result["claims"]] == ["Revenue was $5 million."]  # still checked against full evidence
 
 
@@ -633,3 +633,60 @@ def test_claim_with_an_unfilled_placeholder_fails():
     assert check_claim(good, ev) == (None, "The price rose 4.0%.")
     bad = Claim(text="The price rose {result2}%.", evidence_ids=["E1"], quotes=[], calculation=calc)
     assert check_claim(bad, ev)[0]
+
+
+def test_chained_calculation_and_shown_result():
+    ev = {"E1": Evidence(id="E1", url="u", title="t", tier="primary", date=None,
+                         text="Adjusted EBITDA was $245.6 million for 2025, $120.5 million for H1 2026 and $101.9 million "
+                              "for H1 2025. The deal values the company at $2.15 billion.")}
+    ttm = Claim(text="TTM adjusted EBITDA was ${result} million.", evidence_ids=["E1"], quotes=[], calculation=Calculation(
+        expression="fy + h1 - h1_prior", decimals=1, inputs=[
+            Input(name="fy", value=245.6, evidence_id="E1", quote="$245.6 million for 2025"),
+            Input(name="h1", value=120.5, evidence_id="E1", quote="$120.5 million for H1 2026"),
+            Input(name="h1_prior", value=101.9, evidence_id="E1", quote="$101.9 million for H1 2025")]))
+    assert check_claim(ttm, ev) == (None, "TTM adjusted EBITDA was $264.2 million.")
+    multiple = Claim(text="That is {result}x TTM adjusted EBITDA.", evidence_ids=["E1"], quotes=[], calculation=Calculation(
+        expression="ev / ttm", decimals=1, inputs=[
+            Input(name="ev", value=2150, evidence_id="E1", quote="at $2.15 billion"),
+            Input(name="ttm", value=264.2, evidence_id="E1", quote="Adjusted EBITDA was $245.6 million")]))
+    assert check_claim(multiple, ev)[0]  # 264.2 isn't printed in the quote ...
+    assert check_claim(multiple, ev, computed=[264.2]) == (None, "That is 8.1x TTM adjusted EBITDA.")  # ... but is calculated
+    shown = ttm.model_copy(update={"text": "TTM adjusted EBITDA was $264.2 million."})  # value written out, no placeholder
+    assert check_claim(shown, ev)[0] is None
+    assert check_claim(ttm.model_copy(update={"text": "TTM adjusted EBITDA was $270 million."}), ev)[0]
+
+
+def test_filing_is_read_when_tagged_data_lacks_it():
+    from agents.fiscal import Filing, Period
+    from agents.research import sec_evidence
+    report = Filing(form="10-Q", filed=date(2026, 7, 29), accession="0009-26-000104",
+                    url="https://www.sec.gov/Archives/edgar/data/9/000926000104/q3.htm", report_date=date(2026, 6, 30))
+    company = Company(requested="x", name="X CORP", ticker="XX", cik="9", periods=[
+        Period(label="Q3 FY2026", start=date(2026, 4, 1), end=date(2026, 6, 30), status="filed", report=report)])
+
+    class Client:
+        def companyfacts(self, cik):
+            return {"facts": {}}  # the feed has nothing for this filing yet
+
+        def text(self, url):
+            return "Net revenue | 11,633 | 10,172\\nOperating expenses | 4,100 | 3,900"
+
+    plan = Plan(metrics=["net revenue"], answer_periods=[PeriodRef(ticker="XX", label="Q3 FY2026")])
+    evidence = sec_evidence("net revenue last quarter", plan, [company], date(2026, 10, 3), Client())
+    assert len(evidence) == 1 and "11,633" in evidence[0].text and evidence[0].url == report.url
+
+
+def test_companies_without_quarterly_reports_search_their_own_sites_first(monkeypatch):
+    from agents.fiscal import Period
+    from agents.research import SearchConfig
+    import agents.research as research
+    annual_only = [Period(label="FY2026", start=date(2025, 4, 1), end=date(2026, 3, 31), status="filed")]
+    calls, _ = _web_evidence(SearchConfig(), monkeypatch)  # a quarterly filer: open web, as before
+    assert "include_domains" not in calls[0][1]
+    monkeypatch.setattr(research, "official_domains", lambda name: ("acme.com",))
+    import asyncio
+    web = FakeWeb()
+    plan = Plan(metrics=["q1 results"], searches=[SearchRequest(purpose="p", query="Acme Q1 results")])
+    foreign = Company(requested="acme", name="Acme Corp", ticker="ACME", cik="1", periods=annual_only)
+    asyncio.run(research.web_evidence("q", plan, [foreign], date(2026, 10, 3), web, SearchConfig()))
+    assert web.calls[0][1].get("include_domains") == ["acme.com"]

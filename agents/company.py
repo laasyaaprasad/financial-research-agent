@@ -50,7 +50,8 @@ PROMPT = """List the companies a financial analyst's question is about.
   - the text is not a question about companies (unreadable, or a bare term with no company);
   - a screen or ranking across a whole sector or market: say that ranking a universe of
     companies is out of scope and ask which companies to compare.
-  If one reading is clearly most likely, use it instead of asking.
+  If one reading is clearly most likely, use it instead of asking: a question that can be answered
+  once you say how you read it (a share class, a shorthand, a brand) is not ambiguous.
 - Do not answer the question."""
 
 

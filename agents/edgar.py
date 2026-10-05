@@ -67,7 +67,7 @@ class EdgarClient:
                 raise EdgarError(f"SEC returned HTTP {response.status_code} for {url}")
             path.parent.mkdir(parents=True, exist_ok=True)
             # Write then rename, so a parallel reader never sees a half-written file.
-            tmp = path.with_suffix(f".{threading.get_ident()}.tmp")
+            tmp = path.with_suffix(f".{os.getpid()}.{threading.get_ident()}.tmp")  # unique across processes and threads
             tmp.write_text(response.text)
             os.replace(tmp, path)
             return response.text
