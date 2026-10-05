@@ -314,7 +314,10 @@ def score_citations(answer: str, retrieved: dict[str, dict], attempts: int = 3, 
              "undecided": 0}
     if not answer.strip():
         return empty
-    prompt = f"""List the factual claims in this answer (at most 15, most important first). For each, give the URL
+    prompt = f"""List the factual claims this answer makes about companies and their sources: figures, dates, events and
+statements attributed to a company or a source (at most 15, most important first). Leave out the answer's own reading
+of the question (e.g. "interpreted as ...") and statements that something is unavailable, not reported or not
+disclosed: those are graded separately. For each claim, give the URL
 the answer cites for it (inline or via a numbered source list), or null if none. If that URL appears in the
 retrieved sources below, decide whether the retrieved text supports the claim; otherwise set supported to null.
 Verify company, metric, period, units, accounting basis, actual versus guidance and publication date.

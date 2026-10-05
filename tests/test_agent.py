@@ -622,3 +622,14 @@ def test_judge_waits_out_rate_limits_without_using_up_retries(monkeypatch):
     monkeypatch.setattr(scorers, "_judge_llm", lambda model: FakeLLM())
     monkeypatch.setattr(scorers.time, "sleep", lambda s: None)
     assert scorers._judge(object, "grade this", retries=1, model="gpt-x") == "graded"
+
+
+def test_claim_with_an_unfilled_placeholder_fails():
+    ev = {"E1": Evidence(id="E1", url="u", title="t", tier="primary", date=None, text="Price rose from US$6.75 to US$7.02.")}
+    calc = Calculation(expression="(new / old - 1) * 100", decimals=1, inputs=[
+        Input(name="new", value=7.02, evidence_id="E1", quote="to US$7.02"),
+        Input(name="old", value=6.75, evidence_id="E1", quote="from US$6.75")])
+    good = Claim(text="The price rose {result}%.", evidence_ids=["E1"], quotes=[], calculation=calc)
+    assert check_claim(good, ev) == (None, "The price rose 4.0%.")
+    bad = Claim(text="The price rose {result2}%.", evidence_ids=["E1"], quotes=[], calculation=calc)
+    assert check_claim(bad, ev)[0]

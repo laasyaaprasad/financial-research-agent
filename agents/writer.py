@@ -268,6 +268,8 @@ def check_claim(claim: Claim, evidence: dict[str, Evidence], computed: list[floa
             return "calculation result placeholder {result} missing from claim text", text
         text = text.replace("{result}", f"{result:,.{max(0, calc.decimals)}f}")
         allowed += [result] + list(variables.values())
+    if re.search(r"\{\w*\}", text):  # only {result} is filled in; any other placeholder would reach the reader
+        return "claim text has an unfilled placeholder", text
     for value, decimals in numbers(claim.text.replace("{result}", "")):
         if not grounded(value, decimals, allowed):
             return f"number {value:g} is not in the quotes and not calculated", text
