@@ -33,13 +33,16 @@ HELP = ("I research SEC-reporting companies and cite a source for every statemen
 
 
 # One shared password keeps the app from being used up by strangers; the name on the sign-in form is optional.
-PASSWORD = "tavilyfde"
+# It comes from the environment (.env locally, SSM when deployed), never the code: the repo is public.
+PASSWORD = os.getenv("APP_PASSWORD", "")
+if not PASSWORD:
+    print("APP_PASSWORD is not set: sign-in is refused until it is.")
 os.environ.setdefault("CHAINLIT_AUTH_SECRET", secrets.token_urlsafe(48))  # signs sessions; a restart signs users out
 
 
 @cl.password_auth_callback
 async def login(username: str, password: str) -> cl.User | None:
-    if hmac.compare_digest(password.encode(), PASSWORD.encode()):
+    if PASSWORD and hmac.compare_digest(password.encode(), PASSWORD.encode()):
         return cl.User(identifier=username.strip() or "guest")
     await asyncio.sleep(1)  # slows down password guessing
     return None
