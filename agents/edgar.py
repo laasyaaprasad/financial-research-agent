@@ -66,7 +66,10 @@ class EdgarClient:
             if response.status_code != 200:
                 raise EdgarError(f"SEC returned HTTP {response.status_code} for {url}")
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(response.text)
+            # Write then rename, so a parallel reader never sees a half-written file.
+            tmp = path.with_suffix(f".{os.getpid()}.{threading.get_ident()}.tmp")  # unique across processes and threads
+            tmp.write_text(response.text)
+            os.replace(tmp, path)
             return response.text
         raise EdgarError(f"SEC request failed after retries: {url}")
 
@@ -157,7 +160,7 @@ def html_to_text(html: str) -> str:
     parser.feed(html)
     lines = []
     for line in "".join(parser.parts).splitlines():
-        line = re.sub(r"[ \t\xa0]+", " ", line).strip()
+        line = re.sub(r"[ \t\xa0\u200b\u200c\u200d\u2060\ufeff]+", " ", line).strip()  # zero-width cell spacers too
         line = re.sub(r"(\|\s*)+\|", "|", line).strip(" |")  # collapse empty table cells
         if line:
             lines.append(line)

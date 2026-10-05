@@ -1,15 +1,19 @@
 """Scorers: answer correctness, citation support and source quality.
 
-The judge is a different model family (NVIDIA Nemotron) from the agents under test (DeepSeek),
-so no agent grades its own output. On the user-graded sample it agreed with the user on 8 of 9.
-(The first choice, Qwen3.5-397B, also 8/9, was withdrawn from Nebius on 2026-10-03.)
+The judge is OpenAI's GPT-6 Luna on high reasoning, a different model family from the agents under test
+(DeepSeek), so no agent grades its own output. On the 10 user-graded answers it agreed with the user on 8
+(majority of three votes), as Nemotron-3-Ultra did before it (8 of 9). GLM-5.3-Flash was tried and dropped: on
+2026-10-05 it returned no grade for 5 of 24 answers and 19 of 24 citation checks. Nebius judges remain available
+by their prefixed ids (e.g. nvidia/Nemotron-3-Ultra-550b-a55b).
 """
 
 from __future__ import annotations
 
 import json
 import re
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
 from typing import Literal
 from urllib.parse import urlparse
 
@@ -19,31 +23,46 @@ from pydantic import BaseModel, Field, model_validator
 
 load_dotenv()
 
-JUDGE_MODEL = "nvidia/Nemotron-3-Ultra-550b-a55b"
+JUDGE_MODEL = "gpt-6-luna"     # OpenAI, high reasoning: a different family from the agents' DeepSeek
+JUDGE_REASONING = "high"
 URL_RE = re.compile(r"https?://[^\s\)\]>\"'`,]+")
-CONTENT_CHARS = 6000
+CONTENT_CHARS = 200_000   # per URL kept in the index; judges see only the passages relevant to the answer
+SOURCE_CHARS = 30_000     # per cited source shown to the citation judge: almost every source in full
 
 
 # ---------- judge output schemas ----------
 
 class Point(BaseModel):
-    point: str = Field(description="One grading requirement, taken from the grading rule")
-    met: bool
+    point: str = Field(description="One grading requirement from the rule, phrased as what a good answer does; "
+                                   "a fail condition becomes what the answer must avoid, e.g. 'Does not use Q3'")
+    optional: bool = Field(default=False, description="True if the rule marks this item optional")
+    met: bool = Field(description="True if the answer satisfies the point (for a fail condition: avoids that failure)")
     note: str = Field(description="Short reason, quoting the agent's value where relevant")
 
 
 class Correctness(BaseModel):
     points: list[Point]
-    verdict: Literal["correct", "partial", "incorrect"]
+    verdict: Literal["correct", "partial", "incorrect"] = Field(
+        description="Your overall verdict; code recomputes it from the required points")
     rationale: str
 
     @model_validator(mode="after")
-    def consistent_verdict(self):
+    def has_points(self):
         if not self.points:
             raise ValueError("Correctness requires rubric points")
-        if all(p.met for p in self.points) != (self.verdict == "correct"):
-            raise ValueError("verdict must be 'correct' exactly when every requirement is met")
         return self
+
+
+def verdict(result: Correctness) -> tuple[str, float]:
+    """(verdict, score) from the required points: optional items never block "correct". When some but not all
+    required points are met, the judge's "incorrect" (the core answer is wrong) stands; otherwise "partial"."""
+    required = [p for p in result.points if not p.optional] or result.points
+    met = sum(p.met for p in required)
+    if met == len(required):
+        return "correct", 1.0
+    if met == 0 or result.verdict == "incorrect":
+        return "incorrect", met / len(required)
+    return "partial", met / len(required)
 
 
 class Claim(BaseModel):
@@ -69,21 +88,48 @@ class CellExtraction(BaseModel):
     cells: list[CellValue]
 
 
-def _judge(schema, prompt: str, retries: int = 4):
-    llm = ChatNebius(model=JUDGE_MODEL, temperature=0, timeout=240).with_structured_output(schema, method="function_calling")
-    error = None
-    for attempt in range(retries):
+def _judge_llm(model: str):
+    """OpenAI model ids have no provider prefix ("gpt-6-luna"); Nebius ids do ("nvidia/...")."""
+    if "/" not in model:
+        from langchain_openai import ChatOpenAI  # reads OPENAI_API_KEY from the environment
+
+        return ChatOpenAI(model=model, reasoning_effort=JUDGE_REASONING, timeout=600, max_retries=2)
+    return ChatNebius(model=model, temperature=0, timeout=240)
+
+
+OPENAI_SLOTS = threading.Semaphore(4)  # concurrent OpenAI judge calls: keeps a run under the org's tokens-per-minute limit
+
+
+def _rate_limited(exc: Exception) -> bool:
+    return "429" in str(exc) or "rate limit" in str(exc).lower()
+
+
+def _judge(schema, prompt: str, retries: int = 4, model: str = JUDGE_MODEL):
+    """Grade with structured output. A bad reply is retried up to `retries` times with what was wrong; a rate-limit
+    error is waited out (up to 8 times) without using up those tries."""
+    llm = _judge_llm(model).with_structured_output(schema, method="function_calling")
+    slots = OPENAI_SLOTS if "/" not in model else threading.Semaphore(1_000)
+    error, attempt, waits = None, 0, 0
+    while attempt < retries:
         if attempt:
             time.sleep(10 * attempt)  # transient provider errors (5xx) clear after a short wait
         try:
-            result = llm.invoke(prompt)
+            with slots:
+                result = llm.invoke(prompt)
             if result is not None:
                 return result
             error = "no structured output"
             # The judge sometimes answers in prose instead of calling the function; ask explicitly.
             prompt += "\n\nReturn the grade only by calling the provided function, not as plain text."
-        except Exception as exc:  # malformed or inconsistent judge output: ask again
+        except Exception as exc:
             error = exc
+            if _rate_limited(exc) and waits < 8:
+                waits += 1
+                time.sleep(min(30 * waits, 150))
+                continue
+            # malformed judge output: ask again, saying what was wrong
+            prompt += f"\n\nYour previous reply could not be used ({str(exc)[:300]}). Call the function again with valid fields."
+        attempt += 1
     raise RuntimeError(f"judge failed after {retries} attempts: {error}")
 
 
@@ -92,6 +138,9 @@ def _judge(schema, prompt: str, retries: int = 4):
 def norm_url(url: str) -> str:
     p = urlparse(url.strip().rstrip(".,;"))
     return (p.netloc.lower().removeprefix("www.") + p.path.rstrip("/")).lower()
+
+
+QUOTED = re.compile(r"^Quoted: .*?\n---\n", re.S)  # our agent's records list its quotes first; judges get source text only
 
 
 def retrieved_index(tool_results: list[dict]) -> dict[str, dict]:
@@ -104,8 +153,28 @@ def retrieved_index(tool_results: list[dict]) -> dict[str, dict]:
             key = norm_url(r["url"])
             entry = idx.setdefault(key, {"url": r["url"], "title": r.get("title", ""),
                                          "published_date": r.get("published_date"), "content": ""})
-            entry["content"] = (entry["content"] + "\n" + (r.get("content") or "")).strip()[:CONTENT_CHARS]
+            text = QUOTED.sub("", r.get("content") or "")
+            entry["content"] = (entry["content"] + "\n" + text).strip()[:CONTENT_CHARS]
     return idx
+
+
+def excerpts(retrieved: dict[str, dict], answer: str, chars: int, limit: int | None = None,
+             cited_only: bool = False) -> list[dict]:
+    """The sources a judge sees: those the answer cites first, each cut to the passages most relevant to the answer
+    (the same ranking for every agent), so a long page doesn't push the supporting text out of view."""
+    from agents.research import terms, top_passages
+
+    cited = [k for k in dict.fromkeys(norm_url(u) for u in URL_RE.findall(answer)) if k in retrieved]
+    keys = cited if cited_only else cited + [k for k in retrieved if k not in cited]
+    query = terms(answer)
+    out = []
+    for k in keys[:limit]:
+        r = retrieved[k]
+        text = r.get("content", "")
+        if len(text) > chars:
+            text = top_passages(text, query, k=max(1, chars // 1500))[:chars]
+        out.append({**r, "content": text})
+    return out
 
 
 def primary_hosts(rows: list[dict]) -> set[str]:
@@ -133,7 +202,7 @@ TYPE_RULES = {
 }
 
 
-def score_correctness(row: dict, answer: str, retrieved: dict[str, dict]) -> dict:
+def score_correctness(row: dict, answer: str, retrieved: dict[str, dict], judge: str = JUDGE_MODEL) -> dict:
     if not answer.strip():
         return {"score": 0.0, "verdict": "incorrect", "points": [], "rationale": "No answer produced."}
     if row["time_sensitivity"] == "dynamic":
@@ -142,9 +211,8 @@ def score_correctness(row: dict, answer: str, retrieved: dict[str, dict]) -> dic
             f"retrieved sources for recency and support. The snapshot answer (as of {row.get('as_of')}) is context "
             "only; do not require an exact match.\n\n"
             f"Snapshot answer (context): {row.get('answer')}\n\n"
-            "Agent's retrieved sources (excerpts; each starts with the passages the answer quoted):\n"
-            + json.dumps([{**r, "content": r.get("content", "")[:3000]} for r in list(retrieved.values())[:15]],
-                         ensure_ascii=False))
+            "Agent's retrieved sources (cited ones first; passages most relevant to the answer):\n"
+            + json.dumps(excerpts(retrieved, answer, chars=8000, limit=15), ensure_ascii=False))
     else:
         reference = (f"Verified reference answer: {row.get('answer')}\n"
                      f"Reference facts: {json.dumps([e.get('facts') for e in row.get('evidence') or []], ensure_ascii=False)}\n"
@@ -164,15 +232,19 @@ Agent's answer:
 >>>
 
 Instructions:
-- Split the grading rule into its individual requirements and judge each as met or not met.
+- Split the grading rule into its individual requirements and judge each as met or not met. Items the rule
+  calls optional get optional=true; they never affect the verdict. Write each fail condition as a point the
+  answer must avoid ("Does not present Q3 as the latest quarter"): met=true when the answer avoids it.
 - Judge only the requirements written in the grading rule (and its fail conditions); add none of your own.
+  Details given in parentheses or as evidence (dates, filing names, sources) help you check a requirement;
+  they are not separate requirements unless the rule says they must be stated.
 - Numbers: apply the stated tolerance. Wrong fiscal period, unit, scale or entity means not met even if a number is close.
 - When checking a figure against the agent's sources, use the source the answer cites for it (match by URL and title).
 {TYPE_RULES.get(row["answer_type"], "")}
 - verdict = correct if every requirement is met, partial if some, incorrect if none or the core answer is wrong."""
-    result = _judge(Correctness, prompt)
-    score = sum(p.met for p in result.points) / len(result.points)
-    return {"score": round(score, 3), **result.model_dump()}
+    result = _judge(Correctness, prompt, model=judge)
+    final, score = verdict(result)
+    return {"score": round(score, 3), **result.model_dump(), "verdict": final, "judge_verdict": result.verdict}
 
 
 def _same_label(answer: str, reference: str) -> bool:
@@ -188,7 +260,7 @@ def _same_label(answer: str, reference: str) -> bool:
     return key(answer) == key(reference)
 
 
-def score_table(row: dict, answer: str) -> dict:
+def score_table(row: dict, answer: str, judge: str = JUDGE_MODEL) -> dict:
     """Table tasks: the judge only EXTRACTS each requested cell from the answer; code compares to the reference."""
     cells = row["cells"]
     if not answer.strip():
@@ -212,7 +284,7 @@ Answer:
 <<<
 {answer}
 >>>"""
-    extracted = {c.index: c for c in _judge(CellExtraction, prompt).cells}
+    extracted = {c.index: c for c in _judge(CellExtraction, prompt, model=judge).cells}
     points, correct = [], 0
     for i, ref in enumerate(cells):
         got = extracted.get(i)
@@ -232,7 +304,7 @@ Answer:
             "rationale": f"{correct}/{len(cells)} cells correct", "cells_correct": correct, "cells_total": len(cells)}
 
 
-def score_citations(answer: str, retrieved: dict[str, dict], attempts: int = 3) -> dict:
+def score_citations(answer: str, retrieved: dict[str, dict], attempts: int = 3, judge: str = JUDGE_MODEL) -> dict:
     """Claim-level citation check against the text the agent retrieved.
 
     The judge sometimes leaves claims undecided even though their source was retrieved; it is asked
@@ -242,7 +314,10 @@ def score_citations(answer: str, retrieved: dict[str, dict], attempts: int = 3) 
              "undecided": 0}
     if not answer.strip():
         return empty
-    prompt = f"""List the factual claims in this answer (at most 15, most important first). For each, give the URL
+    prompt = f"""List the factual claims this answer makes about companies and their sources: figures, dates, events and
+statements attributed to a company or a source (at most 15, most important first). Leave out the answer's own reading
+of the question (e.g. "interpreted as ...") and statements that something is unavailable, not reported or not
+disclosed: those are graded separately. For each claim, give the URL
 the answer cites for it (inline or via a numbered source list), or null if none. If that URL appears in the
 retrieved sources below, decide whether the retrieved text supports the claim; otherwise set supported to null.
 Verify company, metric, period, units, accounting basis, actual versus guidance and publication date.
@@ -255,11 +330,11 @@ Answer:
 {answer}
 >>>
 
-Retrieved sources (what the agent actually saw):
-{json.dumps(list(retrieved.values()), ensure_ascii=False)[:60000]}"""
+Retrieved sources the answer cites (what the agent saw; passages most relevant to the answer):
+{json.dumps(excerpts(retrieved, answer, chars=SOURCE_CHARS, cited_only=True), ensure_ascii=False)[:400_000]}"""
     for _ in range(attempts):
         out = []
-        for c in _judge(Citations, prompt).claims:
+        for c in _judge(Citations, prompt, model=judge).claims:
             in_retrieved = bool(c.cited_url) and norm_url(c.cited_url) in retrieved
             out.append({**c.model_dump(), "in_retrieved": in_retrieved, "supported": c.supported if in_retrieved else None})
         if not any(c["in_retrieved"] and c["supported"] is None for c in out):
@@ -308,25 +383,34 @@ def _majority(grades: list[dict]) -> dict:
     return {**ordered[len(ordered) // 2], "votes": [g["verdict"] for g in grades]}
 
 
-def score_row(row: dict, output: dict, hosts: set[str], votes: int = 1) -> dict:
+def score_row(row: dict, output: dict, hosts: set[str], votes: int = 1, judge: str = JUDGE_MODEL) -> dict:
     """All scores for one answer. A judge failure is recorded (scored 0) rather than stopping the run.
 
     With votes > 1 the correctness judge runs that many times and the majority verdict is kept,
-    because reference-free rubric grading varies from call to call.
+    because reference-free rubric grading varies from call to call. The correctness votes and the
+    citation check are independent judge calls, so they run at the same time.
     """
+    start = time.perf_counter()
     answer = output.get("answer") or ""
     retrieved = retrieved_index(output.get("tool_results") or [])
     scores = {"sources": score_sources(answer, retrieved, hosts), "recall": evidence_recall(row, retrieved)}
-    try:
-        grades = [score_table(row, answer) if row.get("cells") else score_correctness(row, answer, retrieved)
-                  for _ in range(votes)]
-        scores["correctness"] = grades[0] if votes == 1 else _majority(grades)
-    except RuntimeError as exc:
-        scores["correctness"] = {"score": 0.0, "verdict": "incorrect", "points": [], "rationale": f"JUDGE ERROR: {exc}"[:300],
-                                 "judge_error": True}
-    try:
-        scores["citations"] = score_citations(answer, retrieved)
-    except RuntimeError as exc:
-        scores["citations"] = {"claims": [], "numeric_claims": 0, "numeric_cited": 0, "cited": 0, "supported": 0,
-                               "not_retrieved": 0, "judge_error": str(exc)[:300]}
+
+    def grade():
+        return score_table(row, answer, judge) if row.get("cells") else score_correctness(row, answer, retrieved, judge)
+
+    with ThreadPoolExecutor(max_workers=votes + 1) as pool:
+        grades = [pool.submit(grade) for _ in range(votes)]
+        citations = pool.submit(score_citations, answer, retrieved, judge=judge)
+        try:
+            results = [g.result() for g in grades]
+            scores["correctness"] = results[0] if votes == 1 else _majority(results)
+        except RuntimeError as exc:
+            scores["correctness"] = {"score": 0.0, "verdict": "incorrect", "points": [],
+                                     "rationale": f"JUDGE ERROR: {exc}"[:300], "judge_error": True}
+        try:
+            scores["citations"] = citations.result()
+        except RuntimeError as exc:
+            scores["citations"] = {"claims": [], "numeric_claims": 0, "numeric_cited": 0, "cited": 0, "supported": 0,
+                                   "not_retrieved": 0, "judge_error": str(exc)[:300]}
+    scores["judge_s"] = round(time.perf_counter() - start, 1)
     return scores

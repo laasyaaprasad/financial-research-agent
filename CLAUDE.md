@@ -26,7 +26,7 @@ API keys live in `.env` (`TAVILY_API_KEY`, `NEBIUS_API_KEY`, plus any added late
 ## Evaluation discipline (no overfitting)
 
 - `evals/golden.jsonl` is the **dev set**: it may be inspected and used during development.
-- `evals/test_heldout.jsonl`, `evals/test_hard.jsonl` and `evals/test_tables.jsonl` are **held-out sets**: once a set's hash is recorded, don't change agent code in response to its results (crash fixes only, reported).
+- `evals/test_heldout.jsonl`, `evals/test_hard.jsonl`, `evals/test_tables.jsonl`, `evals/test_edge.jsonl` and `evals/test_web.jsonl` are **held-out sets**, and `evals/exact50.jsonl` is a fixed-rule selection of them (`evals/exact50_selection.md`): once a set's hash is recorded, don't change agent code in response to its results (crash fixes only, reported). The 2026-10-05 review was an approved exception, disclosed in the README.
 - Production code (`agents/`) must stay generic: no company names, tickers, or rules written for a specific evaluation question. `tests/test_agent.py` enforces the company part.
 - Tavily credits are scarce (about 1,500 for the remaining work): develop with `--no-web` or `--web-cache-from`, and spend credits only on final end-to-end runs.
 - The baseline and the agent use the same model (`agents/llm.py`); the judge (`evals/scorers.py`) is a different model family.

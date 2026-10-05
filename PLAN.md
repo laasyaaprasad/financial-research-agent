@@ -17,6 +17,8 @@ The baseline comes first so every later change can be measured against the start
 | M5 | Final evaluation | Baseline vs. agent on dev, held-out, hard and table sets, same model, within the credit budget | done |
 | M6 | Submission package | README, final report, build record | done |
 | M7 | Conversational UI | Analysts can research in a chat, with every statement cited and linked | done |
+| M8 | Deployment | The chat UI runs on AWS behind HTTPS and a shared password, redeployed on every push to `main` | done |
+| M9 | Evaluation review and Exact50 | Grading fixed; a 50-question benchmark that separates the designs; generic agent fixes, measured | done |
 
 ## M0: Project setup
 
@@ -283,3 +285,51 @@ The superseded code was removed from the working tree; it remains in git history
   - 4-quarter table, with the derived Q4 cited to both input filings
 - **Bug found and fixed in the browser:** a quoted table row's `|` characters in a citation's hover text split table cells. They are now escaped, and a test covers it.
 - **Chainlit behaviour designed around:** since 2.11, Chainlit opens the side panel with every side element in the chat. So each answer gets one Evidence panel, and earlier panels are re-sent so the newest is first.
+
+## M8: Deployment (done; PRs #15–#17)
+
+- **Image and CI:** a Docker image of the chat UI and agent. CI runs the tests, checks the Terraform, builds the image and checks it holds no secrets; a push to `main` publishes it to `ghcr.io/laasyaaprasad/financial-research-agent`.
+- **Infrastructure:** `infra/main.tf` creates a t3.micro in `us-east-2` behind Caddy for HTTPS, with no SSH (SSM Session Manager instead). Deployment is pull-based: the instance checks for a new image every 2 minutes. Secrets are in SSM Parameter Store under `/fin-research-agent/`, and every resource is named for this deployment, beside the separate `analyst-agent` one.
+- **Access:** sign-in with one shared password, the name optional; one question at a time.
+- **Result (2026-10-05):** deployed at `https://3-143-102-144.sslip.io`. The deployed build was checked in a browser: sign-in, then a live question answered with SEC citations and the evidence panel.
+
+## M9: Evaluation review and Exact50 (done; issue #18)
+
+**Why:** a full rerun on 2026-10-05 had the starter's design on our model ahead of our agent on correctness (47 against 38 of 52). The review looked for problems in the testing before the agent.
+
+**Problems found in the harness**
+- **Judge failures scored as wrong answers.** 8 answers were scored 0 because the judge's verdict contradicted its own per-point marks. The verdict is now computed in code from the required points; optional items never block "correct"; fail conditions are phrased as what the answer must avoid.
+- **Same-model judge.** That run was graded by the agents' own model. The judge is now `gpt-6-luna` (OpenAI, high reasoning), with 8 of 10 agreement with the user's grades. GLM-5.3-Flash was tried and dropped: it returned no grade for 5 of 24 answers and 19 of 24 citation checks.
+- **A truncated citation check.** It saw only the first 60,000 characters of everything retrieved: 22 of 74 baseline answers retrieved more, against 6 of ours, and 66 baseline claims were left undecided. Each cited source is now shown in full, up to 30,000 characters, chosen the same way for every agent.
+- **Questions that don't separate the designs.** Many held-out questions ask for one headline figure, which every configuration answers.
+
+**Exact50:** 50 of the 74 held-out questions, chosen by rules written down before selection (`evals/exact50_selection.md`). It has all 16 edge and 10 web questions, 16 date traps, 4 actual-versus-guidance questions and 4 cross-calendar comparisons; single-figure lookups were dropped. Its hash was recorded before any run on it. The rules were written after earlier results were known; that's disclosed with the results.
+
+**Agent fixes (generic; found from held-out failures, in the records and Langfuse traces)**
+- **Number check:** "Margin 29.4%" was read as a date. Zero-width spaces in SEC tables broke quote matching. Spelled-out numbers weren't counted. Calculations couldn't chain.
+- **Retrieval:**
+  - a filing SEC's tagged data hasn't picked up yet is read directly (two companies' July 10-Qs were missing)
+  - the latest 8 recent 8-Ks are read, not 4
+  - a web result must be about the company
+  - companies without quarterly SEC reports have their own sites searched first
+- **Prompts:** the planner and writer now work through a question the way an analyst would, with no rules for particular questions. Writer reasoning is high and planner reasoning medium.
+
+**Acceptance criteria**
+- The harness and judge changes are covered by tests; the guard test still finds no evaluation-set company in `agents/`. *Met: 75 tests pass.*
+- Exact50 exists, with its selection rules and hash recorded before the first run. *Met.*
+- Both agents run fresh on Exact50 and graded by the different-family judge; the README and REPORT report the numbers as measured, with the caveats. *Met.*
+
+**Result (2026-10-05, Exact50, one run each, GPT-6 Luna, 3 votes)**
+
+| Measure | Starter as shipped | Starter design, our model | Our agent, first version | Our agent, final |
+|---|---|---|---|---|
+| Fully correct | 14/50 | 25/50 | 24/50 | 32/50 |
+| Verified-correct | 2/50 | 0/50 | 11/50 | 18/50 |
+| Cited claims supported | 66% | 69% | 92% | 94% |
+| Edge-case requests correct | 1/16 | 1/16 | 8/16 | 11/16 |
+| Web-dependent questions correct | 3/10 | 7/10 | 3/10 | 3/10 |
+| Tavily credits (50 questions) | 373 | 338 | 89 | 115 |
+| Median latency | 26 s | 12 s | 39 s | 45 s |
+
+Still weak: web-dependent questions and latency. All tables: `results/final/exact50.md`.
+

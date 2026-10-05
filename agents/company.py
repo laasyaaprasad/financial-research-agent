@@ -37,7 +37,9 @@ class Mentions(BaseModel):
 PROMPT = """List the companies a financial analyst's question is about.
 - Use the parent reporting company: map products, brands, segments, subsidiaries and former
   names to the company that files the financial reports (e.g. a cloud unit -> its parent).
-- Analysts type tersely: a lowercase word or a lone ticker may be a company; fix obvious typos.
+- Analysts type tersely: a lowercase word or a lone ticker may be a company; fix obvious typos. A short
+  abbreviation after a company or ticker is normally a metric (shorthand for gross margin, revenue, EPS and
+  the like), not a second company, even when it matches another ticker.
 - One entry per company, even if several share classes or tickers are mentioned.
 - Give the primary US ticker only if you are confident it is publicly listed; otherwise null.
 - Set `clarification` only when there is no reasonable reading, and then list no companies:
@@ -48,7 +50,8 @@ PROMPT = """List the companies a financial analyst's question is about.
   - the text is not a question about companies (unreadable, or a bare term with no company);
   - a screen or ranking across a whole sector or market: say that ranking a universe of
     companies is out of scope and ask which companies to compare.
-  If one reading is clearly most likely, use it instead of asking.
+  If one reading is clearly most likely, use it instead of asking: a question that can be answered
+  once you say how you read it (a share class, a shorthand, a brand) is not ambiguous.
 - Do not answer the question."""
 
 

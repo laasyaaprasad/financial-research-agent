@@ -300,7 +300,7 @@ def test_citation_check_asks_again_when_claims_are_left_undecided(monkeypatch):
     url = "https://www.sec.gov/a.htm"
     replies = [[{"claim": "Revenue was $5 million.", "numeric": True, "cited_url": url, "reason": "", "supported": None}],
                [{"claim": "Revenue was $5 million.", "numeric": True, "cited_url": url, "reason": "", "supported": True}]]
-    monkeypatch.setattr(scorers, "_judge", lambda schema, prompt: schema(claims=replies.pop(0)))
+    monkeypatch.setattr(scorers, "_judge", lambda schema, prompt, **_: schema(claims=replies.pop(0)))
     result = scorers.score_citations("Revenue was $5 million [1].", {scorers.norm_url(url): {"url": url, "content": "x"}})
     assert result["supported"] == 1 and result["undecided"] == 0 and not replies
 
@@ -449,7 +449,7 @@ def test_writer_retries_with_shorter_evidence_after_a_failure(monkeypatch):
     good = Draft(claims=[Claim(text="Revenue was $5 million.", evidence_ids=["E1"], quotes=["Revenue was $5 million"])])
     result, calls = _writer_with(monkeypatch, [ValueError("Draft: timed out"), good])
     (_, first_effort, first_len), (_, second_effort, second_len) = calls[0], calls[1]
-    assert (first_effort, second_effort) == ("medium", "low") and second_len < first_len / 3
+    assert (first_effort, second_effort) == ("high", "low") and second_len < first_len / 3
     assert [c["text"] for c in result["claims"]] == ["Revenue was $5 million."]  # still checked against full evidence
 
 
@@ -518,3 +518,175 @@ def test_company_match_keeps_short_official_names():
     assert _mentions_company(_result("4D reports record revenue"), [d])
     e = Company(requested="ab", name="Alpha Beta Gamma Corp", ticker="ABG", cik="6", aliases=["AB"])  # 2-letter alias ignored
     assert not _mentions_company(_result("AB testing results"), [e])
+
+
+# ---------- eval harness ----------
+
+def test_baseline_search_cache_replays_without_calling_tavily(monkeypatch, tmp_path):
+    from langchain_tavily import TavilySearch
+    from agents.baseline import CachedTavilySearch
+    monkeypatch.setenv("TAVILY_API_KEY", "dummy")
+    calls = []
+
+    def fake_run(self, query, run_manager=None, **kwargs):
+        calls.append(query)
+        return {"error": "Error 432: usage limit"} if query == "refused" else {"query": query, "results": []}
+
+    monkeypatch.setattr(TavilySearch, "_run", fake_run)
+    first, second = CachedTavilySearch(cache_dir=tmp_path), CachedTavilySearch(cache_dir=tmp_path)
+    assert first._run("acme revenue", search_depth="advanced") == second._run("acme revenue", search_depth="advanced")
+    assert calls == ["acme revenue"] and first.live_depths == ["advanced"] and second.live_depths == []
+    first._run("refused"), second._run("refused")  # failed calls: not cached, not counted
+    assert calls.count("refused") == 2 and first.live_depths == ["advanced"]
+
+
+def test_usage_limit_is_detected_for_both_agents():
+    from evals.run import usage_limit_hit
+    baseline = {"tool_results": [{"raw": "{'error': ValueError(\"Error 432: This request exceeds your plan's set usage limit.\")}"}]}
+    agent = {"tool_calls": [{"name": "tavily_search", "credits": 0, "error": "ValueError: Error 432: exceeds the usage limit"}]}
+    ok = {"tool_results": [{"results": [{"content": "Revenue was $432 million"}]}], "tool_calls": [{"credits": 1}]}
+    assert usage_limit_hit(baseline) and usage_limit_hit(agent) and not usage_limit_hit(ok)
+
+
+def test_correctness_verdict_comes_from_required_points():
+    from evals.scorers import Correctness, Point, verdict
+    pt = lambda met, optional=False: Point(point="x", optional=optional, met=met, note="")
+    # an unmet optional item doesn't block "correct", whatever the judge said overall
+    assert verdict(Correctness(points=[pt(True), pt(False, optional=True)], verdict="partial", rationale="")) == ("correct", 1.0)
+    assert verdict(Correctness(points=[pt(True), pt(False)], verdict="correct", rationale="")) == ("partial", 0.5)
+    assert verdict(Correctness(points=[pt(True), pt(False)], verdict="incorrect", rationale="")) == ("incorrect", 0.5)
+    assert verdict(Correctness(points=[pt(False)], verdict="partial", rationale="")) == ("incorrect", 0.0)
+
+
+# ---------- grounding repairs ----------
+
+def test_quotes_match_across_zero_width_table_spacers():
+    from agents.writer import normalize, quote_found
+    source = "Adjusted EBITDA\n$\n77,842\n​\n$\n73,841\n​\nAdjusted EBITDA margin"
+    assert quote_found("Adjusted EBITDA $ 77,842 $ 73,841", [normalize(source)])
+
+
+def test_spelled_out_numbers_count_as_printed():
+    ev = {"E1": Evidence(id="E1", url="u", title="t", tier="primary", date=None,
+                         text="a contractual commitment of $11.6 billion over seven years")}
+    calc = Calculation(expression="total / years", decimals=2, inputs=[
+        Input(name="total", value=11.6, evidence_id="E1", quote="commitment of $11.6 billion"),
+        Input(name="years", value=7, evidence_id="E1", quote="over seven years")])
+    claim = Claim(text="That is {result} billion a year.", evidence_ids=["E1"], quotes=[], calculation=calc)
+    assert check_claim(claim, ev) == (None, "That is 1.66 billion a year.")
+
+
+def test_unquoted_number_gets_the_passage_that_prints_it():
+    from agents.writer import attach_quotes
+    ev = {"E1": Evidence(id="E1", url="u", title="t", tier="primary", date=None,
+                         text="Revenue of $321.1 million, up 9%\nGAAP Operating Margin of 10.2% and Non-GAAP Operating Margin 29.4%")}
+    claim = Claim(text="Non-GAAP operating margin was 29.4%.", evidence_ids=["E1"], quotes=["GAAP Operating Margin of 10.2%"])
+    assert check_claim(claim, ev)[0]  # the figure isn't in the writer's quote
+    attach_quotes(claim, ev)
+    assert len(claim.quotes) == 2 and check_claim(claim, ev)[0] is None
+    other = Claim(text="Non-GAAP operating margin was 31.5%.", evidence_ids=["E1"], quotes=["Operating Margin of 10.2%"])
+    attach_quotes(other, ev)  # a figure the source doesn't print gets no quote, and still fails
+    assert len(other.quotes) == 1 and check_claim(other, ev)[0]
+
+
+def test_words_starting_like_months_are_not_dates():
+    assert numbers("Non-GAAP Operating Margin 29.4% and Marketing 5") == [(29.4, 1), (5.0, 0)]
+    assert numbers("quarter ended Sept. 3 and Dec 31, 2026") == []
+
+
+def test_web_results_must_be_about_the_company():
+    from agents.research import _mentions_company
+    c = Company(requested="acme", name="ACME WIDGETS CORP", ticker="ACMW", cik="7", aliases=["Acme Widgets"])
+    passing = {"title": "Zeta Corp beats estimates", "url": "https://news.example.com/zeta-q2",
+               "content": "Zeta reported record sales. Analysts at Acme Widgets raised their target."}
+    assert not _mentions_company(passing, [c])  # one passing mention isn't a page about the company
+    about = {**passing, "content": "Acme Widgets reported Q2 sales. Acme Widgets also raised its outlook."}
+    assert _mentions_company(about, [c])
+    assert _mentions_company({**passing, "url": "https://news.example.com/acme-widgets-q2-results"}, [c])
+
+
+def test_judge_waits_out_rate_limits_without_using_up_retries(monkeypatch):
+    import evals.scorers as scorers
+    replies = [RuntimeError("Error code: 429 - Rate limit reached")] * 3 + ["graded"]
+
+    class FakeLLM:
+        def with_structured_output(self, *a, **k):
+            return self
+
+        def invoke(self, prompt):
+            reply = replies.pop(0)
+            if isinstance(reply, Exception):
+                raise reply
+            return reply
+
+    monkeypatch.setattr(scorers, "_judge_llm", lambda model: FakeLLM())
+    monkeypatch.setattr(scorers.time, "sleep", lambda s: None)
+    assert scorers._judge(object, "grade this", retries=1, model="gpt-x") == "graded"
+
+
+def test_claim_with_an_unfilled_placeholder_fails():
+    ev = {"E1": Evidence(id="E1", url="u", title="t", tier="primary", date=None, text="Price rose from US$6.75 to US$7.02.")}
+    calc = Calculation(expression="(new / old - 1) * 100", decimals=1, inputs=[
+        Input(name="new", value=7.02, evidence_id="E1", quote="to US$7.02"),
+        Input(name="old", value=6.75, evidence_id="E1", quote="from US$6.75")])
+    good = Claim(text="The price rose {result}%.", evidence_ids=["E1"], quotes=[], calculation=calc)
+    assert check_claim(good, ev) == (None, "The price rose 4.0%.")
+    bad = Claim(text="The price rose {result2}%.", evidence_ids=["E1"], quotes=[], calculation=calc)
+    assert check_claim(bad, ev)[0]
+
+
+def test_chained_calculation_and_shown_result():
+    ev = {"E1": Evidence(id="E1", url="u", title="t", tier="primary", date=None,
+                         text="Adjusted EBITDA was $245.6 million for 2025, $120.5 million for H1 2026 and $101.9 million "
+                              "for H1 2025. The deal values the company at $2.15 billion.")}
+    ttm = Claim(text="TTM adjusted EBITDA was ${result} million.", evidence_ids=["E1"], quotes=[], calculation=Calculation(
+        expression="fy + h1 - h1_prior", decimals=1, inputs=[
+            Input(name="fy", value=245.6, evidence_id="E1", quote="$245.6 million for 2025"),
+            Input(name="h1", value=120.5, evidence_id="E1", quote="$120.5 million for H1 2026"),
+            Input(name="h1_prior", value=101.9, evidence_id="E1", quote="$101.9 million for H1 2025")]))
+    assert check_claim(ttm, ev) == (None, "TTM adjusted EBITDA was $264.2 million.")
+    multiple = Claim(text="That is {result}x TTM adjusted EBITDA.", evidence_ids=["E1"], quotes=[], calculation=Calculation(
+        expression="ev / ttm", decimals=1, inputs=[
+            Input(name="ev", value=2150, evidence_id="E1", quote="at $2.15 billion"),
+            Input(name="ttm", value=264.2, evidence_id="E1", quote="Adjusted EBITDA was $245.6 million")]))
+    assert check_claim(multiple, ev)[0]  # 264.2 isn't printed in the quote ...
+    assert check_claim(multiple, ev, computed=[264.2]) == (None, "That is 8.1x TTM adjusted EBITDA.")  # ... but is calculated
+    shown = ttm.model_copy(update={"text": "TTM adjusted EBITDA was $264.2 million."})  # value written out, no placeholder
+    assert check_claim(shown, ev)[0] is None
+    assert check_claim(ttm.model_copy(update={"text": "TTM adjusted EBITDA was $270 million."}), ev)[0]
+
+
+def test_filing_is_read_when_tagged_data_lacks_it():
+    from agents.fiscal import Filing, Period
+    from agents.research import sec_evidence
+    report = Filing(form="10-Q", filed=date(2026, 7, 29), accession="0009-26-000104",
+                    url="https://www.sec.gov/Archives/edgar/data/9/000926000104/q3.htm", report_date=date(2026, 6, 30))
+    company = Company(requested="x", name="X CORP", ticker="XX", cik="9", periods=[
+        Period(label="Q3 FY2026", start=date(2026, 4, 1), end=date(2026, 6, 30), status="filed", report=report)])
+
+    class Client:
+        def companyfacts(self, cik):
+            return {"facts": {}}  # the feed has nothing for this filing yet
+
+        def text(self, url):
+            return "Net revenue | 11,633 | 10,172\\nOperating expenses | 4,100 | 3,900"
+
+    plan = Plan(metrics=["net revenue"], answer_periods=[PeriodRef(ticker="XX", label="Q3 FY2026")])
+    evidence = sec_evidence("net revenue last quarter", plan, [company], date(2026, 10, 3), Client())
+    assert len(evidence) == 1 and "11,633" in evidence[0].text and evidence[0].url == report.url
+
+
+def test_companies_without_quarterly_reports_search_their_own_sites_first(monkeypatch):
+    from agents.fiscal import Period
+    from agents.research import SearchConfig
+    import agents.research as research
+    annual_only = [Period(label="FY2026", start=date(2025, 4, 1), end=date(2026, 3, 31), status="filed")]
+    calls, _ = _web_evidence(SearchConfig(), monkeypatch)  # a quarterly filer: open web, as before
+    assert "include_domains" not in calls[0][1]
+    monkeypatch.setattr(research, "official_domains", lambda name: ("acme.com",))
+    import asyncio
+    web = FakeWeb()
+    plan = Plan(metrics=["q1 results"], searches=[SearchRequest(purpose="p", query="Acme Q1 results")])
+    foreign = Company(requested="acme", name="Acme Corp", ticker="ACME", cik="1", periods=annual_only)
+    asyncio.run(research.web_evidence("q", plan, [foreign], date(2026, 10, 3), web, SearchConfig()))
+    assert web.calls[0][1].get("include_domains") == ["acme.com"]

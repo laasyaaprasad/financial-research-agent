@@ -51,6 +51,16 @@ PROMPT = f"""You plan research for a financial analyst's question. Do not answer
 You get today's date and, for each company, its reporting calendar from SEC filings: fiscal
 period labels, exact dates and status (filed / earnings release only / not yet reported).
 
+Think it through as an analyst would before choosing anything:
+- What exactly is asked: which company, which metric on which basis, which period, and any
+  comparison (against a prior period, guidance or another company).
+- Where each piece is disclosed: the financial statements, the earnings release (results,
+  outlook, reconciliations), the 10-Q/10-K notes and MD&A, recent 8-Ks, the earnings call, the
+  news, or the company's own site. Plan to read every source the answer needs, for every company.
+- What could make the obvious answer wrong as of today: a later report or an updated outlook,
+  fiscal versus calendar labels, a period that ended but isn't reported yet, a company that
+  changed its fiscal year, was acquired or doesn't file with the SEC.
+
 0. Analysts type tersely. Read the question the way an analyst would mean it and record every
    choice the question left open in `assumptions` (one short sentence each, with the fiscal label
    and dates where relevant); leave it empty if nothing was open.
@@ -71,7 +81,9 @@ period labels, exact dates and status (filed / earnings release only / not yet r
    recommendation, a price target or valuation opinion, share prices or market capitalization,
    analyst consensus or estimates, or a ranking of a sector or market. A request to guess,
    estimate, ballpark or forecast a figure the company hasn't reported is declined here too
-   (the company's own guidance can still be quoted). Plan research only for the rest.
+   (the company's own guidance can still be quoted). Plan research only for the rest. If nothing that was asked
+   can be answered (all of it declined, or its period not yet reported), plan the company's latest reported
+   quarter's headline results and guidance instead and say so in `assumptions`, so the answer offers what exists.
 1. answer_periods: the periods the question asks about, using the calendar's labels. Map
    calendar-date wording (e.g. "April-June 2026") to the fiscal period with those dates.
 2. documents (at most 6): the filings that contain the facts.
@@ -117,7 +129,7 @@ def _calendar_text(companies: list[Company]) -> str:
 
 def plan(question: str, companies: list[Company], today: date, callbacks=None) -> tuple[Plan, dict]:
     user = f"Today: {today}\nQuestion: {question}\n\nCompany calendars:\n{_calendar_text(companies)}"
-    result, tokens = structured(Plan, PROMPT, user, callbacks=callbacks)
+    result, tokens = structured(Plan, PROMPT, user, reasoning="medium", callbacks=callbacks)
     return validate(result, companies), tokens
 
 

@@ -151,7 +151,7 @@ def _sec_documents(plan: Plan, companies: list[Company], today: date, client: Ed
         since = today - timedelta(days=plan.recent_filings_days)
         for company in by_ticker.values():
             recent = [f for f in filings_as_of(client, company.cik, today) if f.form == "8-K" and f.filed >= since]
-            for f in recent[:4]:
+            for f in recent[:8]:
                 for ex in _exhibits(client, company.cik, f) or [{"url": f.url, "type": "8-K"}]:
                     docs.append((company, None, f, ex["url"],
                                  f"{company.name} {f.form} current report, items {f.items} (filed {f.filed}) {ex['type']}"))
@@ -244,7 +244,21 @@ def sec_evidence(question: str, plan: Plan, companies: list[Company], today: dat
                 used_filings.setdefault(company.cik, (company, []))[1].append(p.report)
     for company, filings in used_filings.values():
         unique = list({f.accession: f for f in filings if f.form not in ("8-K", "6-K")}.values())
-        evidence += _xbrl_evidence(company, unique, query, client)
+        tagged = _xbrl_evidence(company, unique, query, client)
+        evidence += tagged
+        # SEC's tagged-data feed can lag a filing by months: read any filing it doesn't have yet.
+        have = {e.url for e in tagged}
+        for f in unique:
+            if f"{ARCHIVES}/{int(company.cik)}/{f.accession.replace('-', '')}/" in have or f.url in seen:
+                continue
+            seen.add(f.url)
+            try:
+                text = client.text(f.url)
+            except EdgarError:
+                continue
+            evidence.append(Evidence(id="", url=f.url, title=f"{company.name} {f.form} (filed {f.filed}); not yet in "
+                                     "SEC's tagged data, so read from the filing", tier="primary", date=str(f.filed),
+                                     text=top_passages(text, query, 6)))
     return evidence
 
 
@@ -281,10 +295,13 @@ class Web:
             span.finish(response)
         credits = (response.get("usage") or {}).get("credits", 0)
         self.credits += credits
-        self.calls.append({"name": f"tavily_{operation}", "args": params, "credits": credits})
+        self.calls.append({"name": f"tavily_{operation}", "args": params, "credits": credits,
+                           **({"error": response["error"]} if "error" in response else {})})
         if "error" not in response:
             self.cache_dir.mkdir(parents=True, exist_ok=True)
-            path.write_text(json.dumps({"operation": operation, "params": params, "response": response}))
+            tmp = path.with_suffix(f".{os.getpid()}.{id(self)}.tmp")  # write then rename: readers never see half a file
+            tmp.write_text(json.dumps({"operation": operation, "params": params, "response": response}))
+            os.replace(tmp, path)
         return response
 
 
@@ -339,14 +356,19 @@ def _names(company: Company) -> list[str]:
 
 
 def _mentions_company(result: dict, companies: list[Company]) -> bool:
-    raw = result.get("title", "") + " " + result.get("content", "")
-    text = f" {_normal(raw)} "
+    """The result is about one of the companies: named in its title or URL, or more than once in its text.
+    A single passing mention (a bank quoted as an analyst, a customer in a list) doesn't make a page about it."""
+    head = result.get("title", "") + " " + result.get("url", "").replace("-", " ").replace("/", " ")
+    body = result.get("content", "")
     for c in companies:
-        if any(f" {n} " in text for n in _names(c)):
+        names = sorted(_names(c), key=len, reverse=True)  # longest first: "acme widgets" counts once, not twice
+        mention = re.compile(r"(?<!\S)(?:" + "|".join(map(re.escape, names)) + r")(?!\S)") if names else None
+        if mention and (mention.search(_normal(head)) or len(mention.findall(_normal(body))) >= 2):
             return True
-        if c.ticker and len(c.ticker) >= 2 and not c.ticker.startswith("CIK") and \
-                re.search(rf"(?<![A-Za-z0-9]){re.escape(c.ticker)}(?![A-Za-z0-9])", raw):
-            return True
+        if c.ticker and len(c.ticker) >= 2 and not c.ticker.startswith("CIK"):
+            pattern = rf"(?<![A-Za-z0-9]){re.escape(c.ticker)}(?![A-Za-z0-9])"
+            if re.search(pattern, result.get("title", "")) or len(re.findall(pattern, body)) >= 2:
+                return True
     return False
 
 
@@ -370,7 +392,11 @@ async def web_evidence(question: str, plan: Plan, companies: list[Company], toda
                        config: SearchConfig = SearchConfig()) -> list[Evidence]:
     if not plan.searches:
         return []
-    own = [d for c in companies for d in official_domains(c.name)] if config.company_sites else []
+    # The company's own sites are searched first when asked to, and for companies whose results aren't in quarterly
+    # SEC reports (foreign annual filers, private companies): there the company's release is the primary source.
+    no_quarterlies = [c for c in companies
+                      if not c.resolved or (c.periods and not any(p.label.startswith("Q") for p in c.periods))]
+    own = [d for c in (companies if config.company_sites else no_quarterlies) for d in official_domains(c.name)]
 
     async def search(s, include=None):
         params = {"query": s.query[:399], "search_depth": config.depth, "max_results": config.max_results,
@@ -426,7 +452,8 @@ async def web_evidence(question: str, plan: Plan, companies: list[Company], toda
 async def gap_evidence(question: str, gaps: list[str], companies: list[Company], today: date, web: Web,
                        config: SearchConfig = SearchConfig()) -> list[Evidence]:
     """One targeted search per item the writer couldn't find (at most two), plus one extract."""
-    names = " ".join(c.name for c in companies)
+    # The name people use (the user's words or a press name), not the SEC registry form with its state suffix.
+    names = " ".join(next((a for a in c.aliases if len(a) > 2), c.name) for c in companies)
     searches = [SearchRequest(purpose="fill a gap", query=f"{names} {gap}"[:200]) for gap in gaps[:2]]
     return await web_evidence(question, Plan(metrics=gaps, searches=searches), companies, today, web, config)
 
