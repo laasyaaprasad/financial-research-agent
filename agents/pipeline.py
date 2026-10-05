@@ -155,37 +155,48 @@ def run(question: str, *, today: date | None = None, callbacks=None, web_cache: 
             tokens[k] += t.get(k, 0)
 
     step("Identify companies", None)
-    try:
-        companies, clarification, t = resolve(question, today, client, callbacks)
-    except (ValueError, EdgarError) as exc:  # model or SEC unavailable: say so rather than return nothing
-        return failed(question, today, f"identifying the company failed ({type(exc).__name__})", tokens, start)
+    with tracing.step("resolve", today=today.isoformat()) as span:
+        try:
+            companies, clarification, t = resolve(question, today, client, callbacks)
+        except (ValueError, EdgarError) as exc:  # model or SEC unavailable: say so rather than return nothing
+            return failed(question, today, f"identifying the company failed ({type(exc).__name__})", tokens, start)
+        tracing.set_output(span, {"companies": [f"{c.name} ({c.ticker or c.cik})" for c in companies],
+                                  "clarification": clarification})
     add(t)
     step("Identify companies", f"Needs clarification: {clarification}" if clarification else _companies_note(companies))
     if clarification:  # nothing to research until the user says what they mean
         return clarify(question, today, clarification, tokens, start)
     step("Plan research", None)
-    if fixed_plan:
-        research_plan = validate(fixed_plan, companies)
-    else:
-        try:
-            research_plan, t = plan(question, companies, today, callbacks)
-            add(t)
-        except ValueError:
-            research_plan = fallback(question, companies)
+    with tracing.step("plan", fixed=bool(fixed_plan)) as span:
+        if fixed_plan:
+            research_plan = validate(fixed_plan, companies)
+        else:
+            try:
+                research_plan, t = plan(question, companies, today, callbacks)
+                add(t)
+            except ValueError:
+                research_plan = fallback(question, companies)
+        tracing.set_output(span, research_plan.model_dump())
     step("Plan research", _plan_note(research_plan))
     web = Web(web_cache, live=live_web)
     step("Read SEC filings", None)
-    evidence = sec_evidence(question, research_plan, companies, today, client)
+    with tracing.step("sec_evidence") as span:
+        evidence = sec_evidence(question, research_plan, companies, today, client)
+        tracing.set_output(span, [e.url for e in evidence], items=len(evidence))
     step("Read SEC filings", f"{len(evidence)} source(s) read: filing passages and tagged XBRL data")
     if research_plan.searches:
         step("Search the web", None)
-        found = asyncio.run(web_evidence(question, research_plan, companies, today, web, search))
-        evidence += found
-        step("Search the web", f"{len(found)} result(s) kept" + ("" if live_web else " (cached responses only)"))
-    evidence = number_evidence(evidence)
+    with tracing.step("web_evidence", live=live_web) as span:
+        web_items = asyncio.run(web_evidence(question, research_plan, companies, today, web, search))
+        tracing.set_output(span, [e.url for e in web_items], items=len(web_items))
+    if research_plan.searches:
+        step("Search the web", f"{len(web_items)} result(s) kept" + ("" if live_web else " (cached responses only)"))
+    evidence = number_evidence(evidence + web_items)
     framing = {"assumptions": research_plan.assumptions, "out_of_scope": research_plan.out_of_scope}
     step("Write and verify", None)
-    result = write(question, today, research_plan.availability_notes, evidence, callbacks, **framing)
+    with tracing.step("write", evidence=len(evidence)) as span:
+        result = write(question, today, research_plan.availability_notes, evidence, callbacks, **framing)
+        tracing.set_output(span, {k: len(result.get(k) or []) for k in ("claims", "table", "unavailable", "removed")})
     add(result["tokens"])
     step("Write and verify", _verified_note(result))
     # Gap filling: if something may exist but wasn't in the evidence, search for it once and rewrite.
@@ -193,10 +204,14 @@ def run(question: str, *, today: date | None = None, callbacks=None, web_cache: 
     if gaps:
         step("Fill gaps", None)
         known = {e.url for e in evidence}
-        extra = [e for e in asyncio.run(gap_evidence(question, gaps, companies, today, web, search)) if e.url not in known]
+        with tracing.step("gap_search", gaps=gaps) as span:
+            extra = [e for e in asyncio.run(gap_evidence(question, gaps, companies, today, web, search)) if e.url not in known]
+            tracing.set_output(span, [e.url for e in extra], items=len(extra))
         if extra:
             evidence = number_evidence(evidence + extra)  # new items are numbered after the existing ones
-            rewritten = write(question, today, research_plan.availability_notes, evidence, callbacks, **framing)
+            with tracing.step("rewrite", evidence=len(evidence)) as span:
+                rewritten = write(question, today, research_plan.availability_notes, evidence, callbacks, **framing)
+                tracing.set_output(span, {"kept": not rewritten.get("draft_failed")})
             add(rewritten["tokens"])
             if not rewritten.get("draft_failed"):  # otherwise keep the first, already checked answer
                 result = rewritten

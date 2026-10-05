@@ -109,6 +109,8 @@ The baseline comes first so every later change can be measured against the start
 - **Span names:** the root span follows OpenTelemetry's naming for AI agents. Child spans keep LangChain's names (`ChatNebius`, `tavily_search`), with Langfuse types `GENERATION` and `TOOL`.
 - **Langfuse API note:** new Langfuse organizations can only read data through the v2 observations API and the v3 scores API. The older trace endpoints are unavailable.
 
+**Update (2026-10-05): plain OpenTelemetry.** Tracing moved from the Langfuse SDK and its LangChain callback handler to plain OpenTelemetry over OTLP, so any OTLP backend can receive it (Langfuse stays the default; `TRACING=off` disables it). Each trace now has a span per pipeline step (`resolve`, `plan`, `sec_evidence`, `web_evidence`, `write`, `gap_search`, `rewrite`), one `chat <model>` span per model call with tokens and cost, and one retriever span per Tavily call, including cache hits and offline misses. LangChain's internal chain runs are no longer recorded. Score ids are derived from (trace, name), so `rescore` updates scores instead of adding new ones. Checked on 3 dev questions with web off: `scripts/verify_traces.py` reports 3/3 complete traces and no key material.
+
 ## Course correction (2026-10-03)
 
 A first M3–M5 implementation (commits `b01e1ed`, `1898e41`, `9c42987` and uncommitted M5 work) reached 21/25 on the dev set in its best fresh run, but a review found it would not hold up:

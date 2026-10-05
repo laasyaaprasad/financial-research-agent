@@ -17,11 +17,10 @@ from collections import defaultdict
 from pathlib import Path
 
 import httpx
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 
 ROOT = Path(__file__).resolve().parent.parent
-# LANGFUSE_PUBLIC_KEY is excluded: the Langfuse SDK itself stamps it on every span
-# (scope.attributes.public_key) to identify the project; it is not a secret.
+# LANGFUSE_PUBLIC_KEY is excluded: it identifies the project and is not a secret.
 SECRET_VARS = ["TAVILY_API_KEY", "NEBIUS_API_KEY", "LANGFUSE_SECRET_KEY"]
 
 
@@ -42,10 +41,10 @@ def fetch_observations(host: str, auth: tuple[str, str], start: dt.datetime, end
 
 
 def main(run_name: str) -> int:
-    load_dotenv(ROOT / ".env")
-    host = os.getenv("LANGFUSE_HOST") or os.getenv("LANGFUSE_BASE_URL") or "https://us.cloud.langfuse.com"
+    load_dotenv(find_dotenv(usecwd=True))  # also finds the main checkout's .env from a worktree
+    host = (os.getenv("LANGFUSE_BASE_URL") or os.getenv("LANGFUSE_HOST") or "https://us.cloud.langfuse.com").rstrip("/")
     auth = (os.environ["LANGFUSE_PUBLIC_KEY"], os.environ["LANGFUSE_SECRET_KEY"])
-    records = [json.loads(p.read_text()) for p in sorted((ROOT / "results" / "raw" / run_name).glob("G*.json"))]
+    records = [json.loads(p.read_text()) for p in sorted((ROOT / "results" / "raw" / run_name).glob("[A-Z]*[0-9].json"))]
     if not records:
         print(f"no records for {run_name}")
         return 1
@@ -63,7 +62,9 @@ def main(run_name: str) -> int:
         spans = by_trace.get(tid, [])
         roots = [s for s in spans if s.get("isRootObservation")]
         gens = [s for s in spans if s["type"] == "GENERATION"]
-        tools = [s for s in spans if s["type"] == "TOOL"]
+        # Live Tavily calls only: cache hits and offline misses are traced too but cost nothing and aren't tool calls.
+        tools = [s for s in spans if s["type"] in ("TOOL", "RETRIEVER")
+                 and (s.get("metadata") or {}).get("attributes.tavily.served_by", "live") == "live"]
         expected_tools = len(rec["output"].get("tool_calls") or [])
         if not tid or not spans:
             problems.append(f"{rid}: no trace found")

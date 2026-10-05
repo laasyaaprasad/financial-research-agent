@@ -85,7 +85,7 @@ flowchart TD
 | Orchestrate | `agents/pipeline.py` | Runs the steps, renders the brief or table and provides the CLI. |
 | Follow-ups | `agents/followup.py` | In the chat, one model call rewrites a follow-up (or a reply to a clarification question) into a standalone question for the pipeline. It never answers. |
 | Chat UI | `ui/` | Chainlit front end over the same pipeline (see [Chat UI](#chat-ui)). |
-| Trace | `agents/tracing.py` | Langfuse via OpenTelemetry: one trace per question, with model and Tavily calls and the eval scores attached. |
+| Trace | `agents/tracing.py` | Plain OpenTelemetry over OTLP (Langfuse by default, any OTLP backend via `OTEL_EXPORTER_OTLP_ENDPOINT`; `TRACING=off` disables it): one trace per question, a span per pipeline step, a `chat <model>` span per model call with tokens and cost, a retriever span per Tavily call (live, cache or offline, credits, result URLs), and eval scores that re-grading updates in place. |
 
 ## Scope
 
