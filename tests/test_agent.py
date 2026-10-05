@@ -592,3 +592,14 @@ def test_unquoted_number_gets_the_passage_that_prints_it():
 def test_words_starting_like_months_are_not_dates():
     assert numbers("Non-GAAP Operating Margin 29.4% and Marketing 5") == [(29.4, 1), (5.0, 0)]
     assert numbers("quarter ended Sept. 3 and Dec 31, 2026") == []
+
+
+def test_web_results_must_be_about_the_company():
+    from agents.research import _mentions_company
+    c = Company(requested="acme", name="ACME WIDGETS CORP", ticker="ACMW", cik="7", aliases=["Acme Widgets"])
+    passing = {"title": "Zeta Corp beats estimates", "url": "https://news.example.com/zeta-q2",
+               "content": "Zeta reported record sales. Analysts at Acme Widgets raised their target."}
+    assert not _mentions_company(passing, [c])  # one passing mention isn't a page about the company
+    about = {**passing, "content": "Acme Widgets reported Q2 sales. Acme Widgets also raised its outlook."}
+    assert _mentions_company(about, [c])
+    assert _mentions_company({**passing, "url": "https://news.example.com/acme-widgets-q2-results"}, [c])

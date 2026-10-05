@@ -342,14 +342,19 @@ def _names(company: Company) -> list[str]:
 
 
 def _mentions_company(result: dict, companies: list[Company]) -> bool:
-    raw = result.get("title", "") + " " + result.get("content", "")
-    text = f" {_normal(raw)} "
+    """The result is about one of the companies: named in its title or URL, or more than once in its text.
+    A single passing mention (a bank quoted as an analyst, a customer in a list) doesn't make a page about it."""
+    head = result.get("title", "") + " " + result.get("url", "").replace("-", " ").replace("/", " ")
+    body = result.get("content", "")
     for c in companies:
-        if any(f" {n} " in text for n in _names(c)):
+        names = sorted(_names(c), key=len, reverse=True)  # longest first: "acme widgets" counts once, not twice
+        mention = re.compile(r"(?<!\S)(?:" + "|".join(map(re.escape, names)) + r")(?!\S)") if names else None
+        if mention and (mention.search(_normal(head)) or len(mention.findall(_normal(body))) >= 2):
             return True
-        if c.ticker and len(c.ticker) >= 2 and not c.ticker.startswith("CIK") and \
-                re.search(rf"(?<![A-Za-z0-9]){re.escape(c.ticker)}(?![A-Za-z0-9])", raw):
-            return True
+        if c.ticker and len(c.ticker) >= 2 and not c.ticker.startswith("CIK"):
+            pattern = rf"(?<![A-Za-z0-9]){re.escape(c.ticker)}(?![A-Za-z0-9])"
+            if re.search(pattern, result.get("title", "")) or len(re.findall(pattern, body)) >= 2:
+                return True
     return False
 
 
@@ -429,7 +434,8 @@ async def web_evidence(question: str, plan: Plan, companies: list[Company], toda
 async def gap_evidence(question: str, gaps: list[str], companies: list[Company], today: date, web: Web,
                        config: SearchConfig = SearchConfig()) -> list[Evidence]:
     """One targeted search per item the writer couldn't find (at most two), plus one extract."""
-    names = " ".join(c.name for c in companies)
+    # The name people use (the user's words or a press name), not the SEC registry form with its state suffix.
+    names = " ".join(next((a for a in c.aliases if len(a) > 2), c.name) for c in companies)
     searches = [SearchRequest(purpose="fill a gap", query=f"{names} {gap}"[:200]) for gap in gaps[:2]]
     return await web_evidence(question, Plan(metrics=gaps, searches=searches), companies, today, web, config)
 

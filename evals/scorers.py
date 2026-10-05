@@ -22,7 +22,8 @@ load_dotenv()
 
 JUDGE_MODEL = "nvidia/Nemotron-3-Ultra-550b-a55b"
 URL_RE = re.compile(r"https?://[^\s\)\]>\"'`,]+")
-CONTENT_CHARS = 6000
+CONTENT_CHARS = 200_000   # per URL kept in the index; judges see only the passages relevant to the answer
+SOURCE_CHARS = 6000       # per cited source shown to the citation judge
 
 
 # ---------- judge output schemas ----------
@@ -109,6 +110,9 @@ def norm_url(url: str) -> str:
     return (p.netloc.lower().removeprefix("www.") + p.path.rstrip("/")).lower()
 
 
+QUOTED = re.compile(r"^Quoted: .*?\n---\n", re.S)  # our agent's records list its quotes first; judges get source text only
+
+
 def retrieved_index(tool_results: list[dict]) -> dict[str, dict]:
     """Normalized URL -> what the agent retrieved from it (content merged if a URL appears twice)."""
     idx: dict[str, dict] = {}
@@ -119,8 +123,28 @@ def retrieved_index(tool_results: list[dict]) -> dict[str, dict]:
             key = norm_url(r["url"])
             entry = idx.setdefault(key, {"url": r["url"], "title": r.get("title", ""),
                                          "published_date": r.get("published_date"), "content": ""})
-            entry["content"] = (entry["content"] + "\n" + (r.get("content") or "")).strip()[:CONTENT_CHARS]
+            text = QUOTED.sub("", r.get("content") or "")
+            entry["content"] = (entry["content"] + "\n" + text).strip()[:CONTENT_CHARS]
     return idx
+
+
+def excerpts(retrieved: dict[str, dict], answer: str, chars: int, limit: int | None = None,
+             cited_only: bool = False) -> list[dict]:
+    """The sources a judge sees: those the answer cites first, each cut to the passages most relevant to the answer
+    (the same ranking for every agent), so a long page doesn't push the supporting text out of view."""
+    from agents.research import terms, top_passages
+
+    cited = [k for k in dict.fromkeys(norm_url(u) for u in URL_RE.findall(answer)) if k in retrieved]
+    keys = cited if cited_only else cited + [k for k in retrieved if k not in cited]
+    query = terms(answer)
+    out = []
+    for k in keys[:limit]:
+        r = retrieved[k]
+        text = r.get("content", "")
+        if len(text) > chars:
+            text = top_passages(text, query, k=max(1, chars // 1500))[:chars]
+        out.append({**r, "content": text})
+    return out
 
 
 def primary_hosts(rows: list[dict]) -> set[str]:
@@ -157,9 +181,8 @@ def score_correctness(row: dict, answer: str, retrieved: dict[str, dict], judge:
             f"retrieved sources for recency and support. The snapshot answer (as of {row.get('as_of')}) is context "
             "only; do not require an exact match.\n\n"
             f"Snapshot answer (context): {row.get('answer')}\n\n"
-            "Agent's retrieved sources (excerpts; each starts with the passages the answer quoted):\n"
-            + json.dumps([{**r, "content": r.get("content", "")[:3000]} for r in list(retrieved.values())[:15]],
-                         ensure_ascii=False))
+            "Agent's retrieved sources (cited ones first; passages most relevant to the answer):\n"
+            + json.dumps(excerpts(retrieved, answer, chars=3000, limit=15), ensure_ascii=False))
     else:
         reference = (f"Verified reference answer: {row.get('answer')}\n"
                      f"Reference facts: {json.dumps([e.get('facts') for e in row.get('evidence') or []], ensure_ascii=False)}\n"
@@ -274,8 +297,8 @@ Answer:
 {answer}
 >>>
 
-Retrieved sources (what the agent actually saw):
-{json.dumps(list(retrieved.values()), ensure_ascii=False)[:60000]}"""
+Retrieved sources the answer cites (what the agent saw; passages most relevant to the answer):
+{json.dumps(excerpts(retrieved, answer, chars=SOURCE_CHARS, cited_only=True), ensure_ascii=False)[:120000]}"""
     for _ in range(attempts):
         out = []
         for c in _judge(Citations, prompt, model=judge).claims:
