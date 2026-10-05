@@ -22,6 +22,7 @@ results/sec/
 results/archive_superseded/
 results/tavily_cache/
 
-# Chat UI runtime files (Chainlit regenerates translations on start)
+# Chat UI runtime files (Chainlit writes translations on start; only the edited English strings are kept)
 ui/.files/
-ui/.chainlit/translations/
+ui/.chainlit/translations/*
+!ui/.chainlit/translations/en-US.json
