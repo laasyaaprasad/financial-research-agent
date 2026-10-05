@@ -11,6 +11,9 @@ the side panel.
 
 from __future__ import annotations
 
+import asyncio
+import hmac
+import os
 from datetime import date
 
 import chainlit as cl
@@ -26,6 +29,18 @@ HELP = ("I research SEC-reporting companies and cite a source for every statemen
         "calculations over them (growth, margins, trailing twelve months), guidance, management commentary, recent "
         "developments, or a comparison table across companies or periods. Follow-up questions can refer to earlier "
         "answers. I don't give investment advice, price targets, share prices or consensus estimates.")
+
+
+APP_PASSWORD = os.getenv("APP_PASSWORD")
+if APP_PASSWORD:  # deployed: one shared password keeps the public URL from being used up by strangers
+    @cl.password_auth_callback
+    async def login(username: str, password: str) -> cl.User | None:
+        if hmac.compare_digest(password.encode(), APP_PASSWORD.encode()):
+            return cl.User(identifier=username.strip() or "reviewer")
+        await asyncio.sleep(1)  # slows down password guessing
+        return None
+
+_one_at_a_time = asyncio.Lock()  # a small instance answers one question at a time
 
 
 @cl.set_starters
@@ -134,8 +149,9 @@ async def on_message(message: cl.Message):
     steps = Steps(parent_id=cl.context.current_step.id)
     cl.user_session.set("steps", steps)
     try:
-        question, output = await cl.make_async(research)(text, history, today, settings.get("live_web", True), steps,
-                                                         f"ui-{cl.context.session.thread_id}")
+        async with _one_at_a_time:
+            question, output = await cl.make_async(research)(text, history, today, settings.get("live_web", True),
+                                                             steps, f"ui-{cl.context.session.thread_id}")
     except Exception as exc:  # model or network failure: report it in the chat and keep the session usable
         error = f"{type(exc).__name__}: {exc}"[:300]
         await steps.fail(error)

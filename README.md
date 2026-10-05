@@ -166,6 +166,44 @@ uv run pytest -q
 uv run python scripts/check_secrets.py       # scan files for key material
 ```
 
+### Deployment (AWS)
+
+The chat UI runs on one EC2 instance (t3.micro, `us-east-2`) in Docker, behind Caddy for HTTPS, at an `sslip.io`
+hostname of its Elastic IP. Sign-in uses one shared password, and the instance answers one question at a time.
+
+- **CI** ([.github/workflows/ci-cd.yml](.github/workflows/ci-cd.yml)): every push runs the tests, checks the
+  Terraform, builds the image and checks that it holds no `.env` file or API key.
+- **CD (pull-based):** a push to `main` (or a manual run of the workflow) publishes the image to the private package
+  `ghcr.io/laasyaaprasad/financial-research-agent`. A systemd timer on the instance checks for a new image every
+  2 minutes, logging in with a read-only package token, and restarts the app when the image or the secrets change.
+  GitHub has no AWS access: the AWS organization's policy doesn't allow GitHub OIDC.
+- **Infrastructure:** [infra/main.tf](infra/main.tf) (Terraform, local state). It creates the instance, the Elastic IP,
+  a security group (ports 80 and 443 only; no SSH, SSM Session Manager instead) and the instance's IAM role. Every
+  resource is named `fin-research-agent`, so it sits beside other deployments in the same account.
+- **Secrets:** API keys live only in `.env` and in SSM Parameter Store (SecureString) under `/fin-research-agent/`,
+  which only the instance can read. [deploy/put_secrets.py](deploy/put_secrets.py) copies them from `.env` without
+  printing them. They never go into the image, the Terraform state or GitHub; the workflow uses only GitHub's
+  built-in token.
+
+One-time setup: create a GitHub token with only the `read:packages` scope and add it to `.env` as `GHCR_TOKEN`, then
+
+```bash
+terraform -chdir=infra init
+terraform -chdir=infra apply
+uv run --with boto3 deploy/put_secrets.py
+```
+
+and push to `main` (or run the workflow). The URL is `terraform -chdir=infra output -raw url`. To read the shared
+password:
+
+```bash
+aws ssm get-parameter --region us-east-2 --name /fin-research-agent/APP_PASSWORD --with-decryption --query Parameter.Value --output text
+```
+
+**Cost:** t3.micro and 20 GB of gp3 storage are free-tier eligible (the free tier's 750 hours a month are shared by
+every instance in the account); the public IPv4 address is about $3.60 a month. To remove everything, run
+`terraform -chdir=infra destroy`, then delete the `/fin-research-agent/*` parameters.
+
 ## Limitations and what I didn't do
 
 - **The architecture alone doesn't raise correctness.** Given the same model, the starter's design is about as accurate as ours and slightly ahead on table cells (99% vs. 97%). The architecture's gains are verifiability, primary sourcing, refusals and cost; the correctness gain over the shipped starter comes mostly from the model choice.

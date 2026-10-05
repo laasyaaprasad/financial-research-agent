@@ -25,3 +25,8 @@ results/tavily_cache/
 # Chat UI runtime files (Chainlit regenerates translations on start)
 ui/.files/
 ui/.chainlit/translations/
+
+# Terraform (local state stays on the machine that applies it)
+infra/.terraform/
+infra/*.tfstate
+infra/*.tfstate.*
