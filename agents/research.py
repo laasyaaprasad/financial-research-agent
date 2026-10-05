@@ -263,19 +263,22 @@ class Web:
     async def call(self, operation: str, **params) -> dict:
         key = hashlib.sha256(json.dumps([operation, params], sort_keys=True).encode()).hexdigest()
         path = self.cache_dir / f"{key}.json"
-        if path.exists():
-            return json.loads(path.read_text())["response"]
-        if not self.live:
-            return {"results": [], "error": "not cached"}
-        from tavily import AsyncTavilyClient
-
-        client = AsyncTavilyClient(api_key=os.getenv("TAVILY_API_KEY"), project_id=self.project_id)
         with tracing.tool_span(f"tavily_{operation}", params) as span:
+            if path.exists():
+                response = json.loads(path.read_text())["response"]
+                span.finish(response, served_by="cache")
+                return response
+            if not self.live:
+                span.finish({"error": "not cached"}, served_by="offline")
+                return {"results": [], "error": "not cached"}
+            from tavily import AsyncTavilyClient
+
+            client = AsyncTavilyClient(api_key=os.getenv("TAVILY_API_KEY"), project_id=self.project_id)
             try:
                 response = await getattr(client, operation)(**params, include_usage=True)
             except Exception as exc:  # network/quota errors: record and continue without this source
                 response = {"results": [], "error": f"{type(exc).__name__}: {str(exc)[:200]}"}
-            span.finish({"credits": (response.get("usage") or {}).get("credits", 0)})
+            span.finish(response)
         credits = (response.get("usage") or {}).get("credits", 0)
         self.credits += credits
         self.calls.append({"name": f"tavily_{operation}", "args": params, "credits": credits})

@@ -300,6 +300,7 @@ def rescore(source: str, name: Annotated[str | None, typer.Argument(help="New ru
                 rec["scores"]["citations"] = score_citations(rec["output"].get("answer") or "", retrieved)
             except RuntimeError as exc:
                 rec["scores"]["citations"]["judge_error"] = str(exc)[:300]
+            tracing.attach_scores(rec["output"].get("trace_id"), rec["scores"])  # same score ids: updates in place
             path.write_text(json.dumps(rec, indent=1, ensure_ascii=False, default=str))
             return rec
 
@@ -325,6 +326,7 @@ def rescore(source: str, name: Annotated[str | None, typer.Argument(help="New ru
     def one(path: Path) -> dict:
         rec = json.loads(path.read_text())
         rec["scores"] = score_row(rows[rec["id"]], rec["output"], hosts, votes)
+        tracing.attach_scores(rec["output"].get("trace_id"), rec["scores"])  # same score ids: updates in place
         (out_dir / path.name).write_text(json.dumps(rec, indent=1, ensure_ascii=False, default=str))
         return rec
 
