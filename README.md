@@ -28,7 +28,7 @@ Measured on **Exact50**, 50 held-out questions on what an analyst tool has to ge
 | Cost per question (model + Tavily) | $0.126 | **$0.049** |
 | Median time to answer | 26 s | 45 s |
 
-**The trade-off:** more trustworthy and cheaper, but slower. Running the starter's own design on our model scores 25/50, so part of the gain comes from the model and part from the design. The full comparison, results by question type and caveats are in the [report](REPORT.md#4-results).
+**The trade-off:** more trustworthy and cheaper, but slower. Running the starter's own design on our model scores 25/50, so part of the gain comes from the model and part from the design. The full comparison, results by question type and caveats are in the [report](REPORT.md#3-results).
 
 ## How it works
 
@@ -43,7 +43,7 @@ A question and as-of date go through company resolution, the reporting calendar 
 5. **Write** an answer in which every claim quotes its source; code checks each quote, number and calculation.
 6. **Verify** the meaning (right metric, period and basis), fix once, and withhold whatever still fails.
 
-The agent runs on DeepSeek V4.1 Flash (Nebius). Evaluations are graded by GPT-6 Luna (OpenAI), a different model family. Why each step and model was chosen: [report §3](REPORT.md#3-architecture).
+The agent runs on DeepSeek V4.1 Flash (Nebius). Evaluations are graded by GPT-6 Luna (OpenAI), a different model family. Why each step and model was chosen: [report §2](REPORT.md#2-architecture).
 
 ## Quick start
 
@@ -85,7 +85,7 @@ Setup, cost and teardown: [report appendix B](REPORT.md#appendix-b-deployment).
 - **Slower:** 45 s median, mostly spent writing and verifying the answer.
 - **Small samples:** one run per configuration, so differences of two or three answers are within run-to-run variation.
 
-The full list and next steps are in [report §8](REPORT.md#8-limitations-and-next-steps).
+The full list and next steps are in [report §7](REPORT.md#7-limitations-and-next-steps).
 
 ## Repository
 

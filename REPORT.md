@@ -4,9 +4,11 @@
 
 **Build record:** the coding-agent session log (`SESSIONS.md`) is shared with the submission.
 
-**Contents:** [Technical statement](#1-technical-statement) · [How this answers the brief](#2-how-this-answers-the-brief) · [Architecture](#3-architecture) · [Results](#4-results) · [Design decisions](#5-design-decisions-and-trade-offs) · [Evaluation method](#6-evaluation-method) · [How the result was reached](#7-how-the-result-was-reached) · [Limitations and next steps](#8-limitations-and-next-steps) · Appendices: [chat UI](#appendix-a-chat-ui), [deployment](#appendix-b-deployment), [commands](#appendix-c-commands)
+**Contents:** [Technical statement](#1-technical-statement) · [Architecture](#2-architecture) · [Results](#3-results) · [Design decisions](#4-design-decisions-and-trade-offs) · [Evaluation method](#5-evaluation-method) · [How the result was reached](#6-how-the-result-was-reached) · [Limitations and next steps](#7-limitations-and-next-steps) · Appendices: [chat UI](#appendix-a-chat-ui), [deployment](#appendix-b-deployment), [commands](#appendix-c-commands)
 
 ## 1. Technical statement
+
+**The task.** The brief was to take a simple starter agent and improve it in a way that creates clear business or technical value for a real user or customer. It suggested several directions: adapting it to a customer workflow, adding a useful integration, improving retrieval quality, improving source handling and citations, adding an evaluation loop, improving context engineering, and improving observability. I took on all of them, for one user, as described below.
 
 **Why I built this.** I follow stocks and investment portfolios, and the hardest part of that is getting figures I can trust: the real reported number, for the right period, from a source I can check. A financial research agent that answers with credible, sourced information is something I would use myself, so I built for that user: someone researching public companies who can't afford a wrong number.
 
@@ -26,24 +28,7 @@ That discipline mattered most when it was uncomfortable. My first version scored
 
 **Business value.** An analyst's time goes into re-checking, so an answer that doesn't need re-checking is where the saving comes from. Every figure traces to a filing or company release and nothing unsupported is shown, which lowers the risk of a wrong number reaching a model or a client. It also costs less to run: $0.049 per question against $0.126, using a third of the search credits. And it is ready to operate: every step is traced for debugging, and the app tests and redeploys itself on each update.
 
-**Where it falls short.** It is weakest on questions that depend on the web: 3 of 10, against 7 for the starter's design on the same model. Next I'd improve web coverage, make the checking faster, and add licensed data such as analyst consensus.
-
-**Glossary**
-
-| Term | Meaning |
-|---|---|
-| SEC filing | A report US-listed companies must file with the regulator: annual (10-K), quarterly (10-Q) or event (8-K). |
-| XBRL | The machine-readable data inside filings, which gives exact figures for each reporting period. |
-| Fiscal period | A company's own reporting year or quarter, which may not match the calendar. |
-| Primary source | The company's own filing or release, rather than news or a data site. |
-| Held-out questions | Test questions kept apart and never used while building, so results aren't flattering. |
-| Exact50 | The 50 held-out questions used for the headline results (§4). |
-| Verified-correct | Fully correct, with every cited claim backed by its source and every number cited. |
-| Tavily credit | The unit Tavily bills web searches in (about $0.008 each, pay-as-you-go). |
-
-## 2. How this answers the brief
-
-The brief suggested a few directions for improving the starter. Here's how I took each one.
+**How this covers the brief's directions.** Here's how I took each one.
 
 **Adapt it to a specific customer workflow.** I built it for one user: a financial analyst researching US-listed companies. It answers what they actually ask about (reported results, calculations like growth and margins, guidance and recent developments) and builds the comps and trend tables they make every day. It's just as clear about what it won't do: periods not yet reported, undisclosed metrics, investment advice. And the chat lets them ask follow-ups or pick an as-of date for point-in-time questions.
 
@@ -59,9 +44,26 @@ The brief suggested a few directions for improving the starter. Here's how I too
 
 **Improve observability/debuggability.** Every question becomes one trace in Langfuse, built on OpenTelemetry. It has a step for each part of the pipeline, every model call with its tokens and cost, and every Tavily call with the credits spent and the results returned. Evaluation scores are attached to each trace, so I could go from a failing answer straight to the step that broke it.
 
-**What I'd add next.** Today, finding which step or model call caused a wrong answer means reading its trace. The next step would be flagging that automatically, so failures are grouped by cause without opening each trace.
+**Where it falls short.** It is weakest on questions that depend on the web: 3 of 10, against 7 for the starter's design on the same model. Next I'd improve web coverage, make the checking faster, flag automatically which step caused a wrong answer (today that means reading its trace), and add licensed data such as analyst consensus.
 
-## 3. Architecture
+**Deliverables.** The implementation is this public GitHub repository, which doesn't include the provided `starter_agent.py`. This section is the technical statement, and the build record (`SESSIONS.md`, the coding-agent session log) is shared with the submission.
+
+**Glossary**
+
+| Term | Meaning |
+|---|---|
+| SEC filing | A report US-listed companies must file with the regulator: annual (10-K), quarterly (10-Q) or event (8-K). |
+| XBRL | The machine-readable data inside filings, which gives exact figures for each reporting period. |
+| Fiscal period | A company's own reporting year or quarter, which may not match the calendar. |
+| Primary source | The company's own filing or release, rather than news or a data site. |
+| Held-out questions | Test questions kept apart and never used while building, so results aren't flattering. |
+| Exact50 | The 50 held-out questions used for the headline results (§3). |
+| Verified-correct | Fully correct, with every cited claim backed by its source and every number cited. |
+| Tavily credit | The unit Tavily bills web searches in (about $0.008 each, pay-as-you-go). |
+
+**Full report.** The rest of this document is an add-on to this technical statement, with the detail and evidence behind it: [architecture](#2-architecture), [results](#3-results), [design decisions](#4-design-decisions-and-trade-offs), [evaluation method](#5-evaluation-method), [how the result was reached](#6-how-the-result-was-reached), [limitations and next steps](#7-limitations-and-next-steps), and appendices on the [chat UI](#appendix-a-chat-ui), [deployment](#appendix-b-deployment) and [commands](#appendix-c-commands).
+
+## 2. Architecture
 
 ![Architecture](docs/architecture.png)
 
@@ -73,12 +75,12 @@ A question and as-of date go through company resolution, the reporting calendar 
 | **Calendar** (`agents/fiscal.py`) | Builds each company's reporting periods from its own filings: fiscal labels (naming convention read from its annual-report XBRL), exact dates including irregular quarters such as 12/12/12/16 weeks, and reporting status as of the question date. | **Fiscal-period errors:** confusing fiscal and calendar periods caused 63% of the best model's errors in Daloopa's benchmark. Reporting status drives both refusals and point-in-time answers. |
 | **Plan** (`agents/planner.py`) | One call works out exactly what is asked, where each piece is disclosed and what could make the obvious answer wrong as of today. It picks the answer periods, the filings to read and at most 3 web searches; code drops anything not in the calendar. | Scales effort to the question (Anthropic's guidance; OpenAI's `financial_research_agent`), and can't pick a period the company hasn't reported. |
 | **SEC evidence** (`agents/research.py`) | Ranked passages from earnings releases, 10-Q/10-K filings and recent 8-Ks, plus XBRL facts for every answer period, with core income-statement lines always included. A filing not yet in SEC's tagged data is read directly. | Primary, exact numbers at no cost. In Daloopa's benchmark, structured filings data took agents from 20–71% accuracy to about 90%. |
-| **Tavily evidence** (`agents/research.py`) | Basic search plus one query-focused extract, with social media excluded; a result must be about the company. Companies without quarterly SEC reports have their own sites searched first. One gap-filling round runs if the writer reports something missing. | News, earnings-call guidance and companies that don't file with the SEC. Added after dev failures where guidance existed only on the call. Settings were measured (§5). |
+| **Tavily evidence** (`agents/research.py`) | Basic search plus one query-focused extract, with social media excluded; a result must be about the company. Companies without quarterly SEC reports have their own sites searched first. One gap-filling round runs if the writer reports something missing. | News, earnings-call guidance and companies that don't file with the SEC. Added after dev failures where guidance existed only on the call. Settings were measured (§4). |
 | **Write** (`agents/writer.py`) | The writer works through the question first, then writes claims and table cells that must quote their sources verbatim. Code rejects any quote not in its source and any number not in a quote, and evaluates calculations itself, chained where one result feeds another (fiscal Q4 = full year minus nine months). | **Invented or mis-computed numbers.** Arithmetic is never left to the model. |
 | **Verify** (`agents/writer.py`) | A verifier checks meaning: company, metric, period, basis, actual vs. guidance. One revision is allowed; anything that still fails is withheld. | **Meaning errors code can't see** (net sales vs. revenue, GAAP vs. non-GAAP). Follows OpenAI's verifier pattern and Bloomberg's post-generation checks. |
 | **Orchestrate** (`agents/pipeline.py`) | Runs the steps, renders the brief or table and provides the CLI. | One entry point shared by the CLI, the chat UI and the eval harness, so what is evaluated is what users get. |
 | **Follow-ups** (`agents/followup.py`) | In the chat, one call rewrites a follow-up (or a reply to a clarifying question) into a standalone question. It never answers. | Lets analysts converse without changing the checked pipeline. |
-| **Trace** (`agents/tracing.py`) | OpenTelemetry over OTLP (Langfuse by default; `TRACING=off` disables it): one trace per question, with a span for each step, model call (tokens and cost) and Tavily call (live or cached, credits, result URLs). Eval scores are attached. | Every run is inspectable step by step. The traces located the failures fixed in §7 and show where time goes. |
+| **Trace** (`agents/tracing.py`) | OpenTelemetry over OTLP (Langfuse by default; `TRACING=off` disables it): one trace per question, with a span for each step, model call (tokens and cost) and Tavily call (live or cached, credits, result URLs). Eval scores are attached. | Every run is inspectable step by step. The traces located the failures fixed in §6 and show where time goes. |
 
 **Models**
 
@@ -95,7 +97,7 @@ A question and as-of date go through company resolution, the reporting calendar 
 
 All production code is generic: a unit test fails if any evaluation-set company name appears in `agents/`.
 
-## 4. Results
+## 3. Results
 
 **Exact50** is 50 of the 74 held-out questions, chosen by fixed rules (`evals/exact50_selection.md`): all 16 edge-case and ambiguous requests, all 10 web-dependent questions, 16 date traps, 4 actual-versus-guidance questions and 4 cross-calendar comparisons. Plain single-figure lookups were dropped, because every configuration answers them. Each column is one fresh run of all 50, graded by GPT-6 Luna with three votes per answer. The middle column runs the starter's prompt, Tavily tool and agent loop on our model, which separates what the architecture contributes from what the model contributes.
 
@@ -137,14 +139,14 @@ All production code is generic: a unit test fails if any evaluation-set company 
 
 **How to read these numbers.**
 - One run per column: with 50 questions, differences of two or three answers are within run-to-run variation.
-- The questions, references and rubrics come unchanged from the held-out sets, but Exact50's selection rules were written with earlier results on those sets known, and held-out failures informed the agent's generic fixes (§7). So this is a discriminating benchmark, not a blind test.
+- The questions, references and rubrics come unchanged from the held-out sets, but Exact50's selection rules were written with earlier results on those sets known, and held-out failures informed the agent's generic fixes (§6). So this is a discriminating benchmark, not a blind test.
 
 Full tables and per-question verdicts: [`results/final/exact50.md`](results/final/exact50.md). The earlier full held-out results (older agent, Nemotron judge, before the grading fixes) are in [`results/final/results.md`](results/final/results.md). Their citation check also saw quotes attached to sources that didn't contain them, which may have flattered our agent's supported-claim rate there; the Exact50 grading strips them. On those mostly single-figure questions, the starter's design on our model was about as accurate as our agent (94% against 99% fully correct), and the architecture's gain was in trust and cost.
 
-## 5. Design decisions and trade-offs
+## 4. Design decisions and trade-offs
 
 - **The model is the cheapest big upgrade.** Moving the starter's own design from Kimi K2.6 to DeepSeek V4.1 Flash raised it from 14 to 25 of 50 on Exact50 and cut median latency from 26 s to 12 s. With reasoning this cheap, what the model is shown (the context) is where the remaining gains are, which is what the pipeline works on.
-- **Source quality and cost over speed.** Latency is 45 s median, mostly in writing and verification (§4). For factual research, a checked answer is worth the wait.
+- **Source quality and cost over speed.** Latency is 45 s median, mostly in writing and verification (§3). For factual research, a checked answer is worth the wait.
 - **Tavily settings were measured, not guessed.** On the 10 web dev questions, with the research plans replayed so only search settings differed:
 
   | Setting | Correct | Credits per question |
@@ -157,12 +159,12 @@ Full tables and per-question verdicts: [`results/final/exact50.md`](results/fina
 
   The expensive settings didn't help. Company sites first is used only where it pays: companies without quarterly SEC reports. (Older agent, Nemotron judge, small sample.)
 - **Credits were treated as part of the scope.** Most development runs had web search off or replayed cached Tavily responses (`--web-cache-from`) at zero credits; live credits went mainly to final and baseline runs. Saved research plans can be replayed so experiments differ only in what they test.
-- **Kept simple on purpose.** Reasoning effort is fixed per step, which halved median latency without changing dev quality. A per-question effort selector using Jev (a new decision model) was tried on a branch and not merged. A multi-agent supervisor and Tavily `/research` were skipped too (§8).
+- **Kept simple on purpose.** Reasoning effort is fixed per step, which halved median latency without changing dev quality. A per-question effort selector using Jev (a new decision model) was tried on a branch and not merged. A multi-agent supervisor and Tavily `/research` were skipped too (§7).
 - **A different model family judges.** The agents run on DeepSeek. Early runs were graded by NVIDIA's Nemotron. GLM-5.3-Flash on Nebius was the first choice for Exact50, but it was throttled in the first smoke runs (no grade for 5 of 24 answers), so Exact50 was graded by OpenAI's GPT-6 Luna.
 - **Built to be run, not just demoed.** GitHub Actions tests every push, and `main` deploys itself to AWS, so it is always live. Work was tracked on a kanban board, and later work went through pull requests. The chat sits behind a shared password and answers one question at a time, to prevent abuse.
 - **Secrets never passed through the coding agent.** Claude Code was instructed never to read `.env` (see `CLAUDE.md`). Keys are loaded only in code, and a one-off script copies them into AWS SSM Parameter Store without printing them. They never enter the image, Terraform state or GitHub.
 
-## 6. Evaluation method
+## 5. Evaluation method
 
 | Set | Contents | Role |
 |---|---|---|
@@ -188,7 +190,7 @@ Full tables and per-question verdicts: [`results/final/exact50.md`](results/fina
 - **No self-grading:** the judge is a different model family from both agents.
 - **Guard test:** `tests/test_agent.py` fails if any evaluation-set company name appears in `agents/`.
 
-## 7. How the result was reached
+## 6. How the result was reached
 
 1. **A first implementation was rebuilt.** It reached 21/25 on the dev set but was overfit: named-company rules and one prompt rule per test question. It was also unstable, ranging from 11 to 21 out of 25 across runs. It was replaced by the generic pipeline above, about 1,400 lines instead of about 5,700.
 2. **Two more held-out sets were added.** On the first held-out set, the starter's design on our model and our agent both scored near the ceiling, so I added the harder set and the table set to test where the architecture matters. They were built blind from SEC filings, without seeing either agent's outputs.
@@ -211,7 +213,7 @@ Full tables and per-question verdicts: [`results/final/exact50.md`](results/fina
 
    These were fixed in code. The planner and writer prompts were rewritten to teach a way of working through a question rather than rules for particular questions, and the writer's reasoning effort was raised. That moved Exact50 from 24 to 32 fully correct.
 
-## 8. Limitations and next steps
+## 7. Limitations and next steps
 
 - **Web-dependent questions are the weakest class:** 3 of 10 on Exact50, against 7 for the starter's design on the same model. The answers often leave out details the rubric requires, or miss figures that only a company's own release gives.
 - **Slower:** 45 s median latency against 12 s for the starter's design on the same model, mostly writing and verification.
