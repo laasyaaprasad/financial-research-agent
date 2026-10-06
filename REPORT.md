@@ -2,6 +2,8 @@
 
 **Live app:** [3-143-102-144.sslip.io](https://3-143-102-144.sslip.io) (shared-password sign-in)
 
+**Build record:** the coding-agent session log (`SESSIONS.md`) is shared with the submission.
+
 **Contents:** [Technical statement](#1-technical-statement) · [How this answers the brief](#2-how-this-answers-the-brief) · [Architecture](#3-architecture) · [Results](#4-results) · [Design decisions](#5-design-decisions-and-trade-offs) · [Evaluation method](#6-evaluation-method) · [How the result was reached](#7-how-the-result-was-reached) · [Limitations and next steps](#8-limitations-and-next-steps) · Appendices: [chat UI](#appendix-a-chat-ui), [deployment](#appendix-b-deployment), [commands](#appendix-c-commands)
 
 ## 1. Technical statement

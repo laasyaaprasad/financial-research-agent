@@ -6,6 +6,8 @@ A research assistant for financial analysts. It answers questions about US-liste
 
 **Sign-in:** the username and password for the live app are in the submission document.
 
+**Build record:** the coding-agent session log (`SESSIONS.md`, the Claude Code chat history of how this was built) is shared with the submission rather than kept in the repo.
+
 ## What it does
 
 - **Answers analyst questions** about SEC-reporting companies: reported results, calculations over them (growth, margins, trailing twelve months), guidance and management commentary, and recent developments. It also builds comparison and trend tables.
